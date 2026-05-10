@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ভেষজ চিকিৎসাকোষ | ১০০টি ঔষধি গাছের তালিকা</title>
+    <title>ভেষজ চিকিৎসা কোষ | ১০০টি ঔষধি গাছের তালিকা</title>
     <style>
         :root {
             --primary-green: #2d5a27;
+            --dark-green: #1e3d1a;
             --light-green: #eaf2ea;
             --accent-orange: #d35400;
+            --white: #ffffff;
         }
 
         body {
@@ -20,135 +22,242 @@
             color: #333;
         }
 
-        header {
-            background: linear-gradient(135deg, #2d5a27 0%, #1e3d1a 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        /* Navigation Bar with Dropdown */
+        nav {
+            background: var(--dark-green);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            height: 70px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
+        nav .logo { color: white; font-weight: bold; font-size: 22px; text-decoration: none; }
+
+        .nav-links { display: flex; list-style: none; margin: 0; padding: 0; }
+
+        .nav-links li { position: relative; }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 24px 15px;
+            display: block;
+            font-size: 15px;
         }
+
+        .nav-links a:hover { background: var(--primary-green); }
+
+        /* Dropdown Style */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            top: 70px;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-content a { color: #333; padding: 12px 20px; border-bottom: 1px solid #eee; }
+
+        .dropdown-content a:hover { background-color: #f1f1f1; color: var(--primary-green); }
+
+        .dropdown:hover .dropdown-content { display: block; }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        header h1 { margin: 0; font-size: 2.8rem; }
 
         .search-container {
-            max-width: 600px;
-            margin: -30px auto 30px;
+            max-width: 650px;
+            margin: -35px auto 40px;
             padding: 0 20px;
         }
 
         #searchInput {
             width: 100%;
-            padding: 15px 25px;
+            padding: 18px 30px;
             font-size: 18px;
             border: none;
             border-radius: 50px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             outline: none;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+        /* Plant Grid */
+        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
 
         .plant-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 20px;
         }
 
         .plant-item {
             background: white;
-            border-radius: 12px;
-            padding: 20px;
+            border-radius: 15px;
+            padding: 25px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: 0.3s;
             border: 1px solid #eee;
             text-decoration: none;
             color: inherit;
-            display: block;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
 
         .plant-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             border-color: var(--primary-green);
         }
 
         .plant-item span {
             display: block;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: bold;
             color: var(--primary-green);
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
 
-        .plant-item small {
-            color: #777;
-            font-style: italic;
-        }
+        .plant-item small { color: #888; font-style: italic; }
 
-        .footer {
+        /* Footer */
+        footer {
+            background: var(--dark-green);
+            color: white;
+            padding: 60px 20px;
             text-align: center;
-            padding: 40px;
-            background: #eee;
-            margin-top: 50px;
+            margin-top: 80px;
         }
+
+        .footer-links a { color: #bbb; text-decoration: none; margin: 0 15px; }
+        .footer-links a:hover { color: white; }
 
         /* Responsive */
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .nav-links { display: none; }
             .plant-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
 
+<nav>
+    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসাকোষ</a>
+    <ul class="nav-links">
+        <li><a href="index.html">হোম</a></li>
+        <li class="dropdown">
+            <a href="#">প্রধান ভেষজ ▼</a>
+            <div class="dropdown-content">
+                <a href="neem.html">নিম</a>
+                <a href="tulsi.html">তুলসী</a>
+                <a href="aloevera.html">ঘৃতকুমারী</a>
+                <a href="amla.html">আমলকী</a>
+            </div>
+        </li>
+        <li><a href="about.html">সম্পর্কে</a></li>
+        <li><a href="contact.html">যোগাযোগ</a></li>
+    </ul>
+</nav>
+
 <header>
-    <h1>প্রাকৃতিক ভেষজ চিকিৎসাকোষ</h1>
-    <p>১০০টি ঔষধি গাছের বিস্তারিত গাইডবুক</p>
+    <h1>প্রাকৃতিক ভেষজ চিকিৎসা কোষ</h1>
+    <p>রোগমুক্তির সহজ ভেষজ—১০০টি ঔষধি গাছের পূর্ণাঙ্গ নির্দেশিকা</p>
 </header>
 
 <div class="search-container">
-    <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="গাছের নাম লিখে সার্চ করুন...">
+    <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="গাছের নাম লিখে সার্চ করুন (যেমন: নিম, আদা)...">
 </div>
 
 <div class="container">
     <div class="plant-grid" id="plantList">
-        <!-- ১-১০ -->
         <a href="neem.html" class="plant-item"><span>১. নিম</span><small>Neem</small></a>
         <a href="tulsi.html" class="plant-item"><span>২. তুলসী</span><small>Holy Basil</small></a>
-        <a href="arjun.html" class="plant-item"><span>৩. অর্জুন</span><small>Arjun</small></a>
-        <a href="kalmegh.html" class="plant-item"><span>৪. কালমেঘ</span><small>Kalmegh</small></a>
-        <a href="aloevera.html" class="plant-item"><span>৫. ঘৃতকুমারী</span><small>Aloe Vera</small></a>
-        <a href="ashwagandha.html" class="plant-item"><span>৬. অশ্বগন্ধা</span><small>Ashwagandha</small></a>
-        <a href="amla.html" class="plant-item"><span>৭. আমলকী</span><small>Amla</small></a>
+        <a href="thankuni.html" class="plant-item"><span>৩. থানকুনি</span><small>Thankuni</small></a>
+        <a href="aloevera.html" class="plant-item"><span>৪. ঘৃতকুমারী</span><small>Aloe Vera</small></a>
+        <a href="ada.html" class="plant-item"><span>৫. আদা</span><small>Ginger</small></a>
+        <a href="rashun.html" class="plant-item"><span>৬. রসুন</span><small>Garlic</small></a>
+        <a href="pudina.html" class="plant-item"><span>৭. পুদিনা</span><small>Mint</small></a>
         <a href="basak.html" class="plant-item"><span>৮. বাসক</span><small>Vasaka</small></a>
-        <a href="haritaki.html" class="plant-item"><span>৯. হরিতকী</span><small>Haritaki</small></a>
-        <a href="shatavari.html" class="plant-item"><span>১০. শতমূলী</span><small>Shatavari</small></a>
+        <a href="halud.html" class="plant-item"><span>৯. হলুদ</span><small>Turmeric</small></a>
+        <a href="chirota.html" class="plant-item"><span>১০. চিরতা</span><small>Chirata</small></a>
 
-        <!-- ১১-২০ -->
-        <a href="pudina.html" class="plant-item"><span>১১. পুদিনা</span><small>Mint</small></a>
-        <a href="halud.html" class="plant-item"><span>১২. হলুদ</span><small>Turmeric</small></a>
-        <a href="bahera.html" class="plant-item"><span>১৩. বহেড়া</span><small>Bahera</small></a>
-        <a href="chirata.html" class="plant-item"><span>১৪. চিরতা</span><small>Chirata</small></a>
-        <a href="nishinda.html" class="plant-item"><span>১৫. নিশিন্দা</span><small>Nishinda</small></a>
-        <a href="akanda.html" class="plant-item"><span>১৬. আকন্দ</span><small>Akanda</small></a>
-        <a href="rashun.html" class="plant-item"><span>১৭. রসুন</span><small>Garlic</small></a>
-        <a href="ada.html" class="plant-item"><span>১৮. আদা</span><small>Ginger</small></a>
-        <a href="methi.html" class="plant-item"><span>১৯. মেথি</span><small>Fenugreek</small></a>
-        <a href="kalojira.html" class="plant-item"><span>২০. কালোজিরা</span><small>Black Seed</small></a>
+        <a href="kalojira.html" class="plant-item"><span>১১. কালোজিরা</span><small>Black Seed</small></a>
+        <a href="methi.html" class="plant-item"><span>১২. মেথি</span><small>Fenugreek</small></a>
+        <a href="amla.html" class="plant-item"><span>১৩. আমলকী</span><small>Amla</small></a>
+        <a href="haritaki.html" class="plant-item"><span>১৪. হরিতকী</span><small>Haritaki</small></a>
+        <a href="bahera.html" class="plant-item"><span>১৫. বহেড়া</span><small>Bahera</small></a>
+        <a href="arjun.html" class="plant-item"><span>১৬. অর্জুন</span><small>Arjun</small></a>
+        <a href="shatavari.html" class="plant-item"><span>১৭. শতমূলী</span><small>Shatavari</small></a>
+        <a href="ashwagondha.html" class="plant-item"><span>১৮. অশ্বগন্ধা</span><small>Ashwagandha</small></a>
+        <a href="kalmegh.html" class="plant-item"><span>১৯. কালোমেঘ</span><small>Kalmegh</small></a>
+        <a href="pathorkuchi.html" class="plant-item"><span>২০. পাথরকুচি</span><small>Pathorkuchi</small></a>
 
-        <!-- একইভাবে ২১ থেকে ১০০ পর্যন্ত লিঙ্ক যোগ করুন -->
+        <a href="sojne.html" class="plant-item"><span>২১. সজিনা</span><small>Moringa</small></a>
+        <a href="akanda.html" class="plant-item"><span>২২. আকন্দ</span><small>Akanda</small></a>
+        <a href="dhone.html" class="plant-item"><span>২৩. ধনিয়া</span><small>Coriander</small></a>
+        <a href="daruchini.html" class="plant-item"><span>২৪. দারুচিনি</span><small>Cinnamon</small></a>
+        <a href="elachi.html" class="plant-item"><span>২৫. এলাচ</span><small>Cardamom</small></a>
+        <a href="lobongo.html" class="plant-item"><span>২৬. লবঙ্গ</span><small>Clove</small></a>
+        <a href="mouri.html" class="plant-item"><span>২৭. মৌরি</span><small>Fennel</small></a>
+        <a href="jowan.html" class="plant-item"><span>২৮. জোয়ান</span><small>Carom Seeds</small></a>
+        <a href="tejpata.html" class="plant-item"><span>২৯. তেজপাতা</span><small>Bay Leaf</small></a>
+        <a href="jashtimadhu.html" class="plant-item"><span>৩০. যষ্টিমধু</span><small>Licorice</small></a>
+        
+        <a href="shiuli.html" class="plant-item"><span>৩১. শিউলি</span><small>Night Jasmine</small></a>
+        <a href="oporajita.html" class="plant-item"><span>৩২. অপরাজিতা</span><small>Blue Pea</small></a>
+        <a href="lojjaboti.html" class="plant-item"><span>৩৩. লজ্জাবতী</span><small>Mimosa</small></a>
+        <a href="hatishur.html" class="plant-item"><span>৩৪. হাতিশুঁড়</span><small>Heliotrope</small></a>
+        <a href="keshraj.html" class="plant-item"><span>৩৫. কেশরাজ</span><small>Eclipta</small></a>
+        <a href="babla.html" class="plant-item"><span>৩৬. বাবলা</span><small>Acacia</small></a>
+        <a href="nishinda.html" class="plant-item"><span>৩৭. নিশিন্দা</span><small>Nishinda</small></a>
+        <a href="joba.html" class="plant-item"><span>৩৮. জবা</span><small>Hibiscus</small></a>
+        <a href="karomcha.html" class="plant-item"><span>৩৯. করমচা</span><small>Bengal Currant</small></a>
+        <a href="dumur.html" class="plant-item"><span>৪০. ডুমুর</span><small>Fig</small></a>
+
+        <a href="isabgol.html" class="plant-item"><span>৪১. ইসুবগুল</span><small>Psyllium</small></a>
+        <a href="alkushi.html" class="plant-item"><span>৪২. আলকুশি</span><small>Velvet Bean</small></a>
+        <a href="talmakhana.html" class="plant-item"><span>৪৩. তালমাখানা</span><small>Talmakhana</small></a>
+        <a href="jaam.html" class="plant-item"><span>৪৪. জাম</span><small>Black Plum</small></a>
+        <a href="aam.html" class="plant-item"><span>৪৫. আম</span><small>Mango</small></a>
+        <a href="bel.html" class="plant-item"><span>৪৬. বেল</span><small>Wood Apple</small></a>
+        <a href="peyara.html" class="plant-item"><span>৪৭. পেয়ারা</span><small>Guava</small></a>
+        <a href="dalim.html" class="plant-item"><span>৪৮. ডালিম</span><small>Pomegranate</small></a>
+        <a href="mendi_pata.html" class="plant-item"><span>৪৯. মেহেদি</span><small>Henna</small></a>
+        <a href="gokhru.html" class="plant-item"><span>৫০. গোকখুর</span><small>Gokhru</small></a>
+
+        <p style="grid-column: 1/-1; text-align: center; color: #888;">বাকি ভেষজগুলোর লিঙ্ক ধারাবাহিকভাবে যোগ করা হচ্ছে...</p>
+
     </div>
 </div>
 
-<footer class="footer">
-    <p>&copy; ২০২৬ ভেষজ চিকিৎসাকোষ | গিটহাব প্রোজেক্ট</p>
+<footer>
+    <h2>ভেষজ চিকিৎসাকোষ</h2>
+    <div class="footer-links">
+        <a href="index.html">হোম</a>
+        <a href="about.html">সম্পর্কে</a>
+        <a href="contact.html">যোগাযোগ</a>
+        <a href="disclaimer.html">সতর্কবার্তা</a>
+    </div>
+    <div style="margin: 20px 0;">
+        <a href="#" style="color: white; margin: 10px;">Facebook</a>
+        <a href="#" style="color: white; margin: 10px;">YouTube</a>
+        <a href="#" style="color: white; margin: 10px;">GitHub</a>
+    </div>
+    <p>&copy; ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="background:var(--primary-green); color:white; border:none; padding:10px 20px; border-radius:30px; cursor:pointer; margin-top: 15px;">উপরে যান ↑</button>
 </footer>
 
 <script>
@@ -170,4 +279,4 @@
 </script>
 
 </body>
-          </html>
+</html>
