@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ভেষজ চিকিৎসাকোষ | ১০০টি ঔষধি গাছের তালিকা</title>
+    <style>
+        :root {
+            --primary-green: #2d5a27;
+            --light-green: #eaf2ea;
+            --accent-orange: #d35400;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fbf9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2d5a27 0%, #1e3d1a 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: -30px auto 30px;
+            padding: 0 20px;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 15px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            outline: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .plant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .plant-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #eee;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .plant-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--primary-green);
+        }
+
+        .plant-item span {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            margin-bottom: 5px;
+        }
+
+        .plant-item small {
+            color: #777;
+            font-style: italic;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: #eee;
+            margin-top: 50px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .plant-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>প্রাকৃতিক ভেষজ চিকিৎসাকোষ</h1>
+    <p>১০০টি ঔষধি গাছের বিস্তারিত গাইডবুক</p>
+</header>
+
+<div class="search-container">
+    <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="গাছের নাম লিখে সার্চ করুন...">
+</div>
+
+<div class="container">
+    <div class="plant-grid" id="plantList">
+        <!-- ১-১০ -->
+        <a href="neem.html" class="plant-item"><span>১. নিম</span><small>Neem</small></a>
+        <a href="tulsi.html" class="plant-item"><span>২. তুলসী</span><small>Holy Basil</small></a>
+        <a href="arjun.html" class="plant-item"><span>৩. অর্জুন</span><small>Arjun</small></a>
+        <a href="kalmegh.html" class="plant-item"><span>৪. কালমেঘ</span><small>Kalmegh</small></a>
+        <a href="aloevera.html" class="plant-item"><span>৫. ঘৃতকুমারী</span><small>Aloe Vera</small></a>
+        <a href="ashwagandha.html" class="plant-item"><span>৬. অশ্বগন্ধা</span><small>Ashwagandha</small></a>
+        <a href="amla.html" class="plant-item"><span>৭. আমলকী</span><small>Amla</small></a>
+        <a href="basak.html" class="plant-item"><span>৮. বাসক</span><small>Vasaka</small></a>
+        <a href="haritaki.html" class="plant-item"><span>৯. হরিতকী</span><small>Haritaki</small></a>
+        <a href="shatavari.html" class="plant-item"><span>১০. শতমূলী</span><small>Shatavari</small></a>
+
+        <!-- ১১-২০ -->
+        <a href="pudina.html" class="plant-item"><span>১১. পুদিনা</span><small>Mint</small></a>
+        <a href="halud.html" class="plant-item"><span>১২. হলুদ</span><small>Turmeric</small></a>
+        <a href="bahera.html" class="plant-item"><span>১৩. বহেড়া</span><small>Bahera</small></a>
+        <a href="chirata.html" class="plant-item"><span>১৪. চিরতা</span><small>Chirata</small></a>
+        <a href="nishinda.html" class="plant-item"><span>১৫. নিশিন্দা</span><small>Nishinda</small></a>
+        <a href="akanda.html" class="plant-item"><span>১৬. আকন্দ</span><small>Akanda</small></a>
+        <a href="rashun.html" class="plant-item"><span>১৭. রসুন</span><small>Garlic</small></a>
+        <a href="ada.html" class="plant-item"><span>১৮. আদা</span><small>Ginger</small></a>
+        <a href="methi.html" class="plant-item"><span>১৯. মেথি</span><small>Fenugreek</small></a>
+        <a href="kalojira.html" class="plant-item"><span>২০. কালোজিরা</span><small>Black Seed</small></a>
+
+        <!-- একইভাবে ২১ থেকে ১০০ পর্যন্ত লিঙ্ক যোগ করুন -->
+    </div>
+</div>
+
+<footer class="footer">
+    <p>&copy; ২০২৬ ভেষজ চিকিৎসাকোষ | গিটহাব প্রোজেক্ট</p>
+</footer>
+
+<script>
+    function searchFunction() {
+        let input = document.getElementById('searchInput');
+        let filter = input.value.toUpperCase();
+        let grid = document.getElementById('plantList');
+        let items = grid.getElementsByClassName('plant-item');
+
+        for (let i = 0; i < items.length; i++) {
+            let txtValue = items[i].textContent || items[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                items[i].style.display = "";
+            } else {
+                items[i].style.display = "none";
+            }
+        }
+    }
+</script>
+
+</body>
+          </html>
