@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ভেষজ চিকিৎসা কোষ | ১০০টি ঔষধি গাছের তালিকা</title>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
             --primary-green: #2d5a27;
@@ -20,6 +24,35 @@
             padding: 0;
             background-color: #f9fbf9;
             color: #333;
+        }
+
+        /* ================= TOP SOCIAL BAR ================= */
+        .top-social-bar {
+            background: #111;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 8px 10px;
+            flex-wrap: wrap;
+        }
+
+        .top-social-bar a {
+            color: white;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .top-social-bar a:hover { background: #333; }
+
+        @media(max-width: 480px) {
+            .top-social-bar a span { display: none; }
+            .top-social-bar a { font-size: 16px; padding: 5px 10px; }
         }
 
         /* Navigation Bar with Dropdown */
@@ -39,9 +72,7 @@
         nav .logo { color: white; font-weight: bold; font-size: 22px; text-decoration: none; }
 
         .nav-links { display: flex; list-style: none; margin: 0; padding: 0; }
-
         .nav-links li { position: relative; }
-
         .nav-links a {
             color: white;
             text-decoration: none;
@@ -49,7 +80,6 @@
             display: block;
             font-size: 15px;
         }
-
         .nav-links a:hover { background: var(--primary-green); }
 
         /* Dropdown Style */
@@ -62,11 +92,8 @@
             top: 70px;
             border-radius: 0 0 8px 8px;
         }
-
         .dropdown-content a { color: #333; padding: 12px 20px; border-bottom: 1px solid #eee; }
-
         .dropdown-content a:hover { background-color: #f1f1f1; color: var(--primary-green); }
-
         .dropdown:hover .dropdown-content { display: block; }
 
         /* Header */
@@ -76,7 +103,6 @@
             padding: 80px 20px;
             text-align: center;
         }
-
         header h1 { margin: 0; font-size: 2.8rem; }
 
         .search-container {
@@ -97,7 +123,6 @@
 
         /* Plant Grid */
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-
         .plant-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -115,13 +140,11 @@
             color: inherit;
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
         }
-
         .plant-item:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             border-color: var(--primary-green);
         }
-
         .plant-item span {
             display: block;
             font-size: 1.3rem;
@@ -129,10 +152,9 @@
             color: var(--primary-green);
             margin-bottom: 8px;
         }
-
         .plant-item small { color: #888; font-style: italic; }
 
-        /* Footer */
+        /* ================= FOOTER & SOCIAL WRAPPER ================= */
         footer {
             background: var(--dark-green);
             color: white;
@@ -141,18 +163,72 @@
             margin-top: 80px;
         }
 
-        .footer-links a { color: #bbb; text-decoration: none; margin: 0 15px; }
+        .footer-links a { color: #bbb; text-decoration: none; margin: 0 15px; transition: 0.3s; }
         .footer-links a:hover { color: white; }
+
+        .social-wrapper {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            height: 45px;
+            min-width: 45px;
+            padding: 0 20px;
+        }
+
+        .facebook { background: #1877F2; }
+        .youtube { background: #FF0000; }
+        .linkedin { background: #0077B5; }
+        .instagram { background: #E4405F; }
+        .tumblr { background: #35465c; }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            filter: brightness(1.1);
+        }
+
+        .social-btn i { font-size: 18px; }
+        .social-btn span { margin-left: 8px; font-weight: 500; }
 
         /* Responsive */
         @media (max-width: 768px) {
             header h1 { font-size: 2rem; }
             .nav-links { display: none; }
             .plant-grid { grid-template-columns: 1fr 1fr; }
+            .social-btn span { display: none; }
+            .social-btn { padding: 0; width: 45px; }
         }
     </style>
 </head>
 <body>
+
+<!-- ================= TOP SOCIAL BAR ================= -->
+<div class="top-social-bar">
+    <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank">
+        <i class="fab fa-facebook-f"></i> <span>Facebook</span>
+    </a>
+    <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank">
+        <i class="fab fa-youtube"></i> <span>YouTube</span>
+    </a>
+    <a href="https://www.instagram.com/mddulal596" target="_blank">
+        <i class="fab fa-instagram"></i> <span>Instagram</span>
+    </a>
+    <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank">
+        <i class="fab fa-linkedin-in"></i> <span>LinkedIn</span>
+    </a>
+</div>
 
 <nav>
     <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসাকোষ</a>
@@ -193,7 +269,6 @@
         <a href="basak.html" class="plant-item"><span>৮. বাসক</span><small>Vasaka</small></a>
         <a href="halud.html" class="plant-item"><span>৯. হলুদ</span><small>Turmeric</small></a>
         <a href="chirota.html" class="plant-item"><span>১০. চিরতা</span><small>Chirata</small></a>
-
         <a href="kalojira.html" class="plant-item"><span>১১. কালোজিরা</span><small>Black Seed</small></a>
         <a href="methi.html" class="plant-item"><span>১২. মেথি</span><small>Fenugreek</small></a>
         <a href="amla.html" class="plant-item"><span>১৩. আমলকী</span><small>Amla</small></a>
@@ -204,7 +279,6 @@
         <a href="ashwagondha.html" class="plant-item"><span>১৮. অশ্বগন্ধা</span><small>Ashwagandha</small></a>
         <a href="kalmegh.html" class="plant-item"><span>১৯. কালোমেঘ</span><small>Kalmegh</small></a>
         <a href="pathorkuchi.html" class="plant-item"><span>২০. পাথরকুচি</span><small>Pathorkuchi</small></a>
-
         <a href="sojne.html" class="plant-item"><span>২১. সজিনা</span><small>Moringa</small></a>
         <a href="akanda.html" class="plant-item"><span>২২. আকন্দ</span><small>Akanda</small></a>
         <a href="dhone.html" class="plant-item"><span>২৩. ধনিয়া</span><small>Coriander</small></a>
@@ -215,7 +289,6 @@
         <a href="jowan.html" class="plant-item"><span>২৮. জোয়ান</span><small>Carom Seeds</small></a>
         <a href="tejpata.html" class="plant-item"><span>২৯. তেজপাতা</span><small>Bay Leaf</small></a>
         <a href="jashtimadhu.html" class="plant-item"><span>৩০. যষ্টিমধু</span><small>Licorice</small></a>
-        
         <a href="shiuli.html" class="plant-item"><span>৩১. শিউলি</span><small>Night Jasmine</small></a>
         <a href="oporajita.html" class="plant-item"><span>৩২. অপরাজিতা</span><small>Blue Pea</small></a>
         <a href="lojjaboti.html" class="plant-item"><span>৩৩. লজ্জাবতী</span><small>Mimosa</small></a>
@@ -226,7 +299,6 @@
         <a href="joba.html" class="plant-item"><span>৩৮. জবা</span><small>Hibiscus</small></a>
         <a href="karomcha.html" class="plant-item"><span>৩৯. করমচা</span><small>Bengal Currant</small></a>
         <a href="dumur.html" class="plant-item"><span>৪০. ডুমুর</span><small>Fig</small></a>
-
         <a href="isabgol.html" class="plant-item"><span>৪১. ইসুবগুল</span><small>Psyllium</small></a>
         <a href="alkushi.html" class="plant-item"><span>৪২. আলকুশি</span><small>Velvet Bean</small></a>
         <a href="talmakhana.html" class="plant-item"><span>৪৩. তালমাখানা</span><small>Talmakhana</small></a>
@@ -239,7 +311,6 @@
         <a href="gokhru.html" class="plant-item"><span>৫০. গোকখুর</span><small>Gokhru</small></a>
 
         <p style="grid-column: 1/-1; text-align: center; color: #888;">বাকি ভেষজগুলোর লিঙ্ক ধারাবাহিকভাবে যোগ করা হচ্ছে...</p>
-
     </div>
 </div>
 
@@ -251,11 +322,26 @@
         <a href="contact.html">যোগাযোগ</a>
         <a href="disclaimer.html">সতর্কবার্তা</a>
     </div>
-    <div style="margin: 20px 0;">
-        <a href="https://www.facebook.com/bonargidawahkana.net" style="color: white; margin: 10px;">Facebook</a>
-        <a href="https://www.youtube.com/bonarjidawakhana" style="color: white; margin: 10px;">YouTube</a>
-        <a href="#" style="color: white; margin: 10px;">GitHub</a>
+
+    <!-- আধুনিক সোশ্যাল বাটন -->
+    <div class="social-wrapper">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="social-btn facebook" target="_blank">
+            <i class="fab fa-facebook-f"></i><span>Facebook</span>
+        </a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="social-btn youtube" target="_blank">
+            <i class="fab fa-youtube"></i><span>YouTube</span>
+        </a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="social-btn linkedin" target="_blank">
+            <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
+        </a>
+        <a href="https://www.instagram.com/mddulal596" class="social-btn instagram" target="_blank">
+            <i class="fab fa-instagram"></i><span>Instagram</span>
+        </a>
+        <a href="https://www.tumblr.com/healthybdshop" class="social-btn tumblr" target="_blank">
+            <i class="fab fa-tumblr"></i><span>Tumblr</span>
+        </a>
     </div>
+
     <p>&copy; ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
     <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="background:var(--primary-green); color:white; border:none; padding:10px 20px; border-radius:30px; cursor:pointer; margin-top: 15px;">উপরে যান ↑</button>
 </footer>
