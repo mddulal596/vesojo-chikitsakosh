@@ -23,7 +23,7 @@ body{
     line-height:1.6;
 }
 
-/* ================= NAVBAR (Same as Index) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--dark); display:flex;
@@ -93,18 +93,24 @@ header{
     color: var(--primary);
 }
 
-/* ================= FOOTER (Same as Index) ================= */
+/* ================= FOOTER ================= */
 footer{ background:var(--dark); color:#fff; text-align:center; padding:60px 20px; margin-top:70px; }
-.footer-links a{ color:#ccc; text-decoration:none; margin:0 10px; }
-.social-wrapper{ display:flex; justify-content:center; gap:12px; margin:25px 0; }
-.social-btn{ color:#fff; text-decoration:none; border-radius:40px; padding:12px 20px; display:flex; align-items:center; gap:8px; }
-.facebook{background:#1877F2;} .youtube{background:#FF0000;} .instagram{background:#E4405F;} .linkedin{background:#0077B5;}
+.footer-links { margin-bottom: 25px; }
+.footer-links a{ color:#ccc; text-decoration:none; margin:0 10px; transition: 0.3s; }
+.footer-links a:hover { color: var(--white); }
+
+.social-wrapper{ display:flex; justify-content:center; gap:12px; margin:25px 0; flex-wrap: wrap; }
+.social-btn{ color:#fff; text-decoration:none; border-radius:40px; padding:12px 20px; display:flex; align-items:center; gap:8px; transition: 0.3s; font-size: 14px; }
+.social-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+
+.facebook{background:#1877F2;} .youtube{background:#FF0000;} .linkedin{background:#0077B5;}
 
 /* MOBILE OPTIMIZATION */
 @media(max-width:768px){
-    nav{ flex-wrap:wrap; height:auto; padding:15px; }
-    .nav-links, .nav-social, .logo { width:100%; justify-content:center; text-align:center; }
+    nav{ flex-direction: column; height:auto; padding:15px; gap: 10px; }
+    .nav-links{ flex-wrap: wrap; justify-content: center; }
     .plant-detail-card { padding: 20px; }
+    .plant-detail-card h2 { font-size: 1.5rem; }
 }
 </style>
 </head>
@@ -133,37 +139,37 @@ footer{ background:var(--dark); color:#fff; text-align:center; padding:60px 20px
 <!-- MAIN CONTENT -->
 <div class="container">
     <div class="plant-detail-card">
-        
         <div class="plant-header">
-            <div class="plant-icon-large">🌿</div>
+            <div class="plant-icon-large">🍃</div>
             <h2>১. নিম (Neem)</h2>
             <small>Scientific Name: Azadirachta indica</small>
         </div>
 
         <div class="info-section">
             <h3>পরিচিতি</h3>
-            <p>নিম একটি ঔষধি গাছ যার ডাল, পাতা, রস সবই কাজে লাগে। নিমের বহুবিধ গুণের কারণে একে 'প্রাকৃতিক নিরাময়কারী' বলা হয়। এটি চর্মরোগ নিরাময় এবং রক্ত পরিশোধনে জাদুকরী ভূমিকা রাখে।</p>
+            <p>নিম একটি অত্যন্ত শক্তিশালী ঔষধি গাছ। এর তিক্ত গুণাগুণের জন্য এটি সারা বিশ্বে পরিচিত। আয়ুর্বেদ শাস্ত্রে নিমকে 'সর্ব রোগ নিবারণী' বলা হয়।</p>
         </div>
 
         <div class="info-section">
             <h3>প্রধান উপকারিতা</h3>
             <ul class="benefit-list">
-                <li>চর্মরোগ, ব্রণ ও চুলকানি নিরাময়ে অত্যন্ত কার্যকর।</li>
-                <li>রক্তের বিষাক্ত উপাদান দূর করে রক্ত পরিষ্কার রাখে।</li>
-                <li>কৃমিনাশক হিসেবে কাজ করে এবং লিভারের কার্যক্ষমতা বাড়ায়।</li>
-                <li>দাঁতের মাড়ি মজবুত করতে এবং মুখের দুর্গন্ধ দূর করতে সাহায্য করে।</li>
+                <li>ত্বকের যেকোনো ইনফেকশন এবং অ্যালার্জি দূর করে।</li>
+                <li>রক্তের শর্করা বা সুগার নিয়ন্ত্রণে সাহায্য করে।</li>
+                <li>খুশকি দূর করতে এবং চুলের গোড়া মজবুত করতে কার্যকরী।</li>
+                <li>প্রাকৃতিক অ্যান্টি-সেপটিক হিসেবে ক্ষত নিরাময়ে কাজ করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
             <h3>ব্যবহার বিধি</h3>
-            <p>নিমের কচি পাতা সকালে খালি পেটে চিবিয়ে খেলে লিভার ও রক্ত পরিষ্কার থাকে। ত্বকের জন্য নিমের পাতা বেটে পেস্ট তৈরি করে সরাসরি আক্রান্ত স্থানে লাগানো যায়। দাঁতের জন্য নিমের ডাল দিয়ে মেসওয়াক করা অত্যন্ত উপকারী।</p>
+            <p>নিমের পাতা শুকিয়ে গুঁড়ো করে সংরক্ষণ করা যায়। এছাড়া নিমের তেলের সাথে নারিকেল তেল মিশিয়ে ত্বকে ব্যবহার করলে ভালো ফল পাওয়া যায়।</p>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" style="text-decoration: none; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px;">তালিকায় ফিরে যান</a>
+            <a href="index.html" style="text-decoration: none; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;">
+                <i class="fas fa-home"></i> তালিকায় ফিরে যান
+            </a>
         </div>
-
     </div>
 </div>
 
@@ -174,9 +180,12 @@ footer{ background:var(--dark); color:#fff; text-align:center; padding:60px 20px
         <a href="index.html">হোম</a>
         <a href="about.html">সম্পর্কে</a>
         <a href="contact.html">যোগাযোগ</a>
-         <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    
+    <div class="social-wrapper">
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank" class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank" class="social-btn youtube"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
     
     <p>© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
