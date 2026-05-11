@@ -2,36 +2,171 @@
 <html lang="bn">
 <head>
     <meta charset="UTF-8">
-    <title>নিম - ভেষজ চিকিৎসাকোষ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>নিম - ভেষজ চিকিৎসা কোষ | বিস্তারিত তথ্য</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body { font-family: 'Arial', sans-serif; line-height: 1.8; color: #2c3e50; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f7f6; }
-        .card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 25px rgba(0,0,0,0.1); border-top: 10px solid #27ae60; }
-        h1 { color: #27ae60; text-align: center; }
-        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; margin-top: 25px; }
-        .method { background: #f9f9f9; padding: 15px; border-radius: 8px; border: 1px solid #ddd; }
+        :root {
+            --primary: #2d5a27;
+            --dark: #1e3d1a;
+            --light: #f4faf4;
+            --accent: #8bc34a;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--light);
+            margin: 0;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        /* হেডার স্টাইল */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&w=800&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 20px;
+            font-size: 14px;
+            border: 1px solid white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { background: white; color: var(--dark); }
+
+        /* কন্টেন্ট এরিয়া */
+        .container {
+            max-width: 900px;
+            margin: -50px auto 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .plant-title {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+
+        .scientific-name {
+            font-style: italic;
+            color: #666;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .info-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-left: 5px solid var(--primary);
+            border-radius: 8px;
+        }
+
+        .info-card h3 {
+            margin-top: 0;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefit-list li {
+            background: #fff;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .benefit-list i { color: var(--primary); }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: var(--dark);
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            .container { margin: -30px 15px 30px; padding: 20px; }
+            .plant-title { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>১. নিম (Neem)</h1>
-        <h2>রোগের বিবরণ:</h2>
-        <p>নিম মূলত চর্মরোগ, খোস-পাচড়া, ব্রন, এবং কৃমি বিনাশে কাজ করে। এটি একটি শক্তিশালী প্রাকৃতিক অ্যান্টি-সেপটিক। রক্ত পরিষ্কার রাখতে এবং যকৃতের কার্যকারিতা বাড়াতেও এটি অতুলনীয়।</p>
-        
-        <h2>ব্যবহৃত অংশ:</h2>
-        <p>পাতা, ছাল, মূল, ফল এবং বীজ।</p>
 
-        <h2>ঔষধ তৈরির পদ্ধতি:</h2>
-        <div class="method">
-            <p><strong>পাতার রস:</strong> তাজা পাতা ধুয়ে পিষে রস বের করুন।</p>
-            <p><strong>গুঁড়া:</strong> পাতা ছায়ায় শুকিয়ে মচমচে হলে পিষে পাউডার তৈরি করুন।</p>
-            <p><strong>কাথ:</strong> ১ লিটার পানিতে ২৫০ গ্রাম পাতা ফুটিয়ে পানি অর্ধেক করুন।</p>
+    <header class="page-header">
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> তালিকায় ফিরে যান</a>
+        <h1>ভেষজ উদ্ভিদ পরিচিতি</h1>
+    </header>
+
+    <div class="container">
+        <span class="scientific-name">Azadirachta indica</span>
+        <h1 class="plant-title">১. নিম (Neem)</h1>
+        
+        <p class="description">
+            নিম একটি বহু গুণসম্পন্ন ঐতিহ্যবাহী ঔষধি গাছ। ভারতের উপমহাদেশে একে 'গ্রামের ডাক্তার' বলা হয়। এর পাতা, ছাল, বীজ এবং তেল প্রতিটি অংশই মানবদেহের বিভিন্ন রোগ নিরাময়ে জাদুকরী ভূমিকা পালন করে।
+        </p>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <h3><i class="fas fa-heartbeat"></i> প্রধান উপকারিতা</h3>
+                <ul class="benefit-list">
+                    <li><i class="fas fa-check-circle"></i> চর্মরোগ ও ব্রণ দূর করে।</li>
+                    <li><i class="fas fa-check-circle"></i> রক্ত পরিশোধন করতে সাহায্য করে।</li>
+                    <li><i class="fas fa-check-circle"></i> কৃমিনাশক হিসেবে কাজ করে।</li>
+                    <li><i class="fas fa-check-circle"></i> রোগ প্রতিরোধ ক্ষমতা বাড়ায়।</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h3><i class="fas fa-mortar-pestle"></i> ব্যবহার বিধি</h3>
+                <p>নিমের কচি পাতা চিবিয়ে বা রস করে সকালে খালি পেটে খেলে রক্ত পরিষ্কার হয়। ত্বকের সমস্যার জন্য পাতা বেটে পেস্ট হিসেবে ব্যবহার করা যায়।</p>
+            </div>
         </div>
 
-        <h2>উপকারিতা ও খাবার নিয়ম:</h2>
-        <p>রক্ত পরিষ্কারের জন্য প্রতিদিন সকালে খালি পেটে ১ চা চামচ নিমের রস সামান্য মধুসহ খেতে হবে। চর্মরোগের জন্য নিমের কাথ দিয়ে গোসল করতে হবে।</p>
-        
-        <h2>কতদিন খেতে হবে:</h2>
-        <p>সাধারণত ৭ থেকে ১৫ দিন। দীর্ঘমেয়াদী ব্যবহারের জন্য চিকিৎসকের পরামর্শ নিন।</p>
+        <div class="info-card" style="background: #fff3e0; border-left-color: #ff9800;">
+            <h3><i class="fas fa-exclamation-triangle"></i> সতর্কতা</h3>
+            <p>অতিরিক্ত পরিমাণে নিম সেবন করবেন না। শিশু এবং গর্ভবতী নারীদের ক্ষেত্রে ডাক্তারের পরামর্শ ছাড়া এটি ব্যবহার করা উচিত নয়।</p>
+        </div>
     </div>
+
+    <footer>
+        <p>© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ভেষজ চিকিৎসা কোষ</p>
+    </footer>
+
 </body>
 </html>
