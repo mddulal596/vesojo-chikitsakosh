@@ -1,46 +1,228 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ডালিম - ভেষজ চিকিৎসা কোষ</title>
-    <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; margin: 0; background: #f4f7f6; color: #333; }
-        nav { background: #1e3d1a; display: flex; justify-content: space-between; align-items: center; padding: 0 5%; height: 60px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        nav a { color: white; text-decoration: none; font-size: 14px; margin-left: 15px; }
-        .logo { font-weight: bold; font-size: 18px !important; margin-left: 0 !important; }
-        .container { padding: 20px; }
-        .card { background: #fff; max-width: 800px; margin: 30px auto; padding: 40px; border-radius: 15px; border-top: 10px solid #27ae60; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h1 { color: #27ae60; text-align: center; margin-top: 0; }
-        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; margin-top: 25px; }
-        footer { background: #1e3d1a; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
-        footer a { color: white; text-decoration: none; margin: 0 10px; font-size: 14px; }
-        .social-btn { font-size: 18px; display: inline-block; margin: 15px 10px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ডালিম (Dalim) - বিস্তারিত তথ্য | ভেষজ চিকিৎসা কোষ</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#c62828;
+    --dark:#8e0000;
+    --light:#ffebee;
+    --accent:#ff5252;
+    --white:#fff;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--light);
+    color:#333;
+    line-height:1.6;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+    position:sticky; top:0; z-index:999;
+    background:var(--dark); display:flex;
+    justify-content:space-between; align-items:center;
+    padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+.logo{ color:#fff; text-decoration:none; font-size:24px; font-weight:bold; }
+.nav-links{ display:flex; align-items:center; list-style:none; }
+.nav-links a{ color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover{ background:var(--primary); }
+
+.nav-social{ display:flex; gap:10px; }
+.nav-social a{ color:white; font-size:16px; width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover{ background:rgba(255,255,255,.15); }
+
+/* ================= HEADER ================= */
+header{
+    background:linear-gradient(135deg,var(--primary),var(--dark));
+    color:#fff; text-align:center; padding:60px 20px;
+}
+
+/* ================= CONTENT CONTAINER ================= */
+.container {
+    max-width: 1000px;
+    margin: -30px auto 50px;
+    padding: 20px;
+}
+
+.plant-detail-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.plant-header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.plant-icon-large { font-size: 4rem; margin-bottom: 10px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 2rem; }
+.plant-detail-card small { color: #777; font-size: 1.1rem; font-style: italic; }
+
+.info-section { margin-bottom: 30px; }
+.info-section h3 {
+    color: var(--dark);
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.benefit-list { list-style: none; }
+.benefit-list li {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+}
+.benefit-list li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute; left: 0;
+    color: var(--primary);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #2b0000;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px 30px;
+    margin-top: 50px;
+}
+
+footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
+
+.footer-nav { margin-bottom: 25px; }
+.footer-nav a { color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px; }
+
+.social-container {
+    display: flex; justify-content: center;
+    gap: 12px; flex-wrap: wrap; margin-bottom: 30px;
+}
+
+.s-btn {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 20px; border-radius: 50px;
+    color: white; text-decoration: none; font-size: 14px;
+    transition: 0.3s;
+}
+
+.s-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+.fb { background: #1877F2; }
+.yt { background: #FF0000; }
+.ig { background: #E4405F; }
+.ln { background: #0077B5; }
+
+.copyright {
+    font-size: 13px; color: #b0b0b0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px; margin-bottom: 20px;
+}
+
+.back-to-top {
+    background: var(--primary); color: white; border: none;
+    padding: 8px 20px; border-radius: 20px; cursor: pointer;
+    font-size: 14px; transition: 0.3s;
+}
+
+.back-to-top:hover { background: var(--dark); }
+
+/* MOBILE OPTIMIZATION */
+@media(max-width:768px){
+    nav{ flex-direction: column; height:auto; padding:15px; gap: 10px; }
+    .plant-detail-card { padding: 20px; }
+    .plant-detail-card h2 { font-size: 1.5rem; }
+}
+</style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
-        <div><a href="index.html">হোম</a><a href="about.html">সম্পর্কে</a><a href="contact.html">যোগাযোগ</a></div>
-    </nav>
-    <div class="container">
-        <div class="card">
-            <h1>ডালিম (Pomegranate)</h1>
-            <h2>রোগের বিবরণ:</h2>
-            <p>ডালিম রক্তাল্পতা দূর করতে এবং হৃদরোগের ঝুঁকি কমাতে অত্যন্ত কার্যকর। এর খোসা আমাশয় এবং পেটের অসুখ সারাতে ব্যবহৃত হয়। এছাড়া এটি রোগ প্রতিরোধ ক্ষমতা বাড়াতে সাহায্য করে।</p>
-            <h2>ব্যবহৃত অংশ:</h2> <p>ফল, ফলের খোসা, পাতা ও মূলের ছাল।</p>
-            <h2>ঔষধ তৈরির পদ্ধতি:</h2>
-            <p>ফলের রস সরাসরি খাওয়া হয়। আমাশয়ের জন্য শুকনো খোসা সেদ্ধ করে ক্বাথ তৈরি করা হয়।</p>
-            <h2>খাবার নিয়ম:</h2>
-            <p>রক্তশূন্যতায় প্রতিদিন এক গ্লাস ডালিমের রস খান। ডায়রিয়ার জন্য খোসা সেদ্ধ পানি ১-২ চামচ দিনে ৩ বার সেবন করুন।</p>
+
+<nav>
+    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
+    <ul class="nav-links">
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="about.html">সম্পর্কে</a></li>
+        <li><a href="contact.html">যোগাযোগ</a></li>
+    </ul>
+    <div class="nav-social">
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</nav>
+
+<header>
+    <h1>ভেষজ উদ্ভিদের বিস্তারিত তথ্য</h1>
+</header>
+
+<div class="container">
+    <div class="plant-detail-card">
+        <div class="plant-header">
+            <div class="plant-icon-large">🍎</div>
+            <h2>৪৮. ডালিম (Dalim)</h2>
+            <small>Scientific Name: Punica granatum</small>
+        </div>
+
+        <div class="info-section">
+            <h3>পরিচিতি</h3>
+            <p>ডালিম বা বেদানা একটি অত্যন্ত পুষ্টিকর এবং ঔষধি গুণসম্পন্ন ফল। আয়ুর্বেদ শাস্ত্রে একে 'হৃদ্য' বলা হয়, যার অর্থ হৃদপিণ্ডের জন্য উপকারী। ডালিমের লাল দানার রস রক্তস্বল্পতা দূর করতে অপ্রতিদ্বন্দ্বী। শুধু ফলই নয়, ডালিমের শুকনো খোসা ডায়েরিয়া ও কৃমি নাশে ব্যবহৃত হয় এবং এর ফুল রক্তক্ষরণ বন্ধে কার্যকর। এটি শরীরে প্রচুর পরিমাণে অ্যান্টি-অক্সিডেন্ট সরবরাহ করে।</p>
+        </div>
+
+        <div class="info-section">
+            <h3>প্রধান উপকারিতা</h3>
+            <ul class="benefit-list">
+                <li>রক্তে হিমোগ্লোবিনের মাত্রা বাড়িয়ে রক্তশূন্যতা বা অ্যানিমিয়া দূর করে।</li>
+                <li>হৃদপিণ্ডের রক্তসঞ্চালন বৃদ্ধি করে এবং উচ্চ রক্তচাপ নিয়ন্ত্রণে সাহায্য করে।</li>
+                <li>দীর্ঘস্থায়ী ডায়েরিয়া ও আমাশয় নিরাময়ে ডালিমের খোসা দারুণ কার্যকর।</li>
+                <li>স্মৃতিশক্তি বৃদ্ধি করে এবং শরীরে ক্যানসার কোষের বৃদ্ধিতে বাধা প্রদান করে।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3>ব্যবহার বিধি</h3>
+            <p>রক্তশূন্যতা দূর করতে প্রতিদিন এক গ্লাস ডালিমের তাজা রস খাওয়া উচিত। আমাশয়ের চিকিৎসায় ডালিমের শুকনো খোসা চূর্ণ ১ চা-চামচ পরিমাণ কুসুম গরম পানির সাথে মিশিয়ে দিনে দুবার সেবন করা হয়। শিশুদের কৃমি সমস্যার জন্য ডালিম গাছের মূলের ছালের ক্বাথ অত্যন্ত উপকারী। এছাড়া নাক দিয়ে রক্ত পড়া বন্ধ করতে ডালিম ফুলের রসের নস্যি বা ঘ্রাণ নিলে দ্রুত সুফল পাওয়া যায়।</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" style="text-decoration: none; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;">
+                <i class="fas fa-home"></i> তালিকায় ফিরে যান
+            </a>
         </div>
     </div>
-    <footer>
-        <div style="max-width: 1200px; margin: auto;">
-            <h3 style="margin-bottom: 10px;">ভেষজ চিকিৎসা কোষ</h3>
-            <p>&copy; ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
-            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="background: #27ae60; color: white; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer;">উপরে যান ↑</button>
-        </div>
-    </footer>
+</div>
+
+<footer>
+    <h2>ভেষজ চিকিৎসা কোষ</h2>
+    <div class="footer-nav">
+        <a href="index.html">হোম</a>
+        <a href="about.html">সম্পর্কে</a>
+        <a href="contact.html">যোগাযোগ</a>
+        <a href="disclaimer.html">সতর্কবার্তা</a>
+    </div>
+    
+    <div class="social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+    
+    <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">উপরে যান ↑</button>
+</footer>
+
 </body>
 </html>
