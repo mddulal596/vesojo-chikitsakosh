@@ -88,27 +88,60 @@ header{
     content: "\f00c";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
-    position: absolute;
-    left: 0;
+    position: absolute; left: 0;
     color: var(--primary);
 }
 
-/* ================= FOOTER ================= */
-footer{ background:var(--dark); color:#fff; text-align:center; padding:60px 20px; margin-top:70px; }
-.footer-links { margin-bottom: 25px; }
-.footer-links a{ color:#ccc; text-decoration:none; margin:0 10px; transition: 0.3s; }
-.footer-links a:hover { color: var(--white); }
+/* ================= FOOTER (As per your Screenshot) ================= */
+footer {
+    background: #1e3d1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px 30px;
+    margin-top: 50px;
+}
 
-.social-wrapper{ display:flex; justify-content:center; gap:12px; margin:25px 0; flex-wrap: wrap; }
-.social-btn{ color:#fff; text-decoration:none; border-radius:40px; padding:12px 20px; display:flex; align-items:center; gap:8px; transition: 0.3s; font-size: 14px; }
-.social-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
 
-.facebook{background:#1877F2;} .youtube{background:#FF0000;} .linkedin{background:#0077B5;}
+.footer-nav { margin-bottom: 25px; }
+.footer-nav a { color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px; }
+
+.social-container {
+    display: flex; justify-content: center;
+    gap: 12px; flex-wrap: wrap; margin-bottom: 30px;
+}
+
+.s-btn {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 20px; border-radius: 50px;
+    color: white; text-decoration: none; font-size: 14px;
+    transition: 0.3s;
+}
+
+.s-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+.fb { background: #1877F2; }
+.yt { background: #FF0000; }
+.ig { background: #E4405F; }
+.ln { background: #0077B5; }
+
+.copyright {
+    font-size: 13px; color: #b0b0b0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px; margin-bottom: 20px;
+}
+
+.back-to-top {
+    background: #2d5a27; color: white; border: none;
+    padding: 8px 20px; border-radius: 20px; cursor: pointer;
+    font-size: 14px; transition: 0.3s;
+}
+
+.back-to-top:hover { background: #3d7a35; }
 
 /* MOBILE OPTIMIZATION */
 @media(max-width:768px){
     nav{ flex-direction: column; height:auto; padding:15px; gap: 10px; }
-    .nav-links{ flex-wrap: wrap; justify-content: center; }
     .plant-detail-card { padding: 20px; }
     .plant-detail-card h2 { font-size: 1.5rem; }
 }
@@ -116,7 +149,6 @@ footer{ background:var(--dark); color:#fff; text-align:center; padding:60px 20px
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসাকোষ</a>
     <ul class="nav-links">
@@ -131,64 +163,64 @@ footer{ background:var(--dark); color:#fff; text-align:center; padding:60px 20px
     </div>
 </nav>
 
-<!-- HEADER -->
 <header>
     <h1>ভেষজ উদ্ভিদের বিস্তারিত তথ্য</h1>
 </header>
 
-<!-- MAIN CONTENT -->
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🍃</div>
+            <div class="plant-icon-large">🌿</div>
             <h2>১. নিম (Neem)</h2>
             <small>Scientific Name: Azadirachta indica</small>
         </div>
 
         <div class="info-section">
             <h3>পরিচিতি</h3>
-            <p>নিম একটি অত্যন্ত শক্তিশালী ঔষধি গাছ। এর তিক্ত গুণাগুণের জন্য এটি সারা বিশ্বে পরিচিত। আয়ুর্বেদ শাস্ত্রে নিমকে 'সর্ব রোগ নিবারণী' বলা হয়।</p>
+            <p>নিম একটি অপ্রতিদ্বন্দ্বী ঔষধি গাছ। এর তিক্ত রস এবং প্রতিটি অংশই ভেষজ চিকিৎসায় গুরুত্বপূর্ণ ভূমিকা পালন করে। আয়ুর্বেদ শাস্ত্রে একে 'সর্ব রোগ নিবারণী' বলা হয়, কারণ এটি ভাইরাস, ব্যাকটেরিয়া এবং ছত্রাকবিরোধী গুণে ভরপুর।</p>
         </div>
 
         <div class="info-section">
             <h3>প্রধান উপকারিতা</h3>
             <ul class="benefit-list">
-                <li>ত্বকের যেকোনো ইনফেকশন এবং অ্যালার্জি দূর করে।</li>
-                <li>রক্তের শর্করা বা সুগার নিয়ন্ত্রণে সাহায্য করে।</li>
-                <li>খুশকি দূর করতে এবং চুলের গোড়া মজবুত করতে কার্যকরী।</li>
-                <li>প্রাকৃতিক অ্যান্টি-সেপটিক হিসেবে ক্ষত নিরাময়ে কাজ করে।</li>
+                <li>যেকোনো ধরনের চর্মরোগ, ব্রণ ও খোস-পাঁচড়া দ্রুত নিরাময় করে।</li>
+                <li>রক্তের বিষাক্ত উপাদান দূর করে রক্ত পরিষ্কার রাখতে সাহায্য করে।</li>
+                <li>কৃমিনাশক হিসেবে কাজ করে এবং লিভারের কার্যক্ষমতা বৃদ্ধি করে।</li>
+                <li>দাঁতের মাড়ি মজবুত করতে এবং মুখের দুর্গন্ধ দূর করতে নিমের ডাল ব্যবহার করা হয়।</li>
             </ul>
         </div>
 
         <div class="info-section">
             <h3>ব্যবহার বিধি</h3>
-            <p>নিমের পাতা শুকিয়ে গুঁড়ো করে সংরক্ষণ করা যায়। এছাড়া নিমের তেলের সাথে নারিকেল তেল মিশিয়ে ত্বকে ব্যবহার করলে ভালো ফল পাওয়া যায়।</p>
+            <p>নিমের কচি পাতা বেটে বড়ি তৈরি করে সকালে খালি পেটে সেবন করা যায়। ত্বকের সমস্যার জন্য নিমের পাতা ফুটিয়ে সেই পানি দিয়ে গোসল করা খুবই উপকারী। এছাড়া নিমের তেল বা পাতার পেস্ট চর্মরোগের জায়গায় সরাসরি ব্যবহার করা যায়।</p>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
             <a href="index.html" style="text-decoration: none; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;">
-                <i class="fas fa-home"></i> তালিকায় ফিরে যান
+                <i class="fas fa-arrow-left"></i> তালিকায় ফিরে যান
             </a>
         </div>
     </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
     <h2>ভেষজ চিকিৎসাকোষ</h2>
-    <div class="footer-links">
+    <div class="footer-nav">
         <a href="index.html">হোম</a>
         <a href="about.html">সম্পর্কে</a>
         <a href="contact.html">যোগাযোগ</a>
+        <a href="disclaimer.html">সতর্কবার্তা</a>
     </div>
     
-    <div class="social-wrapper">
-        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank" class="social-btn facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
-        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank" class="social-btn youtube"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank" class="social-btn linkedin"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    <div class="social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
     
-    <p>© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
+    <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">উপরে যান ↑</button>
 </footer>
 
 </body>
