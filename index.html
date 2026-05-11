@@ -1,284 +1,614 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ভেষজ চিকিৎসা কোষ | ১০০টি ঔষধি গাছের তালিকা</title>
-    
-    <!-- Font Awesome Icons (ফুটারে আইকন দেখানোর জন্য প্রয়োজন) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        :root {
-            --primary-green: #2d5a27;
-            --dark-green: #1e3d1a;
-            --light-green: #eaf2ea;
-            --accent-orange: #d35400;
-            --white: #ffffff;
-        }
+<title>ভেষজ চিকিৎসা কোষ | ১০০টি ঔষধি গাছের তালিকা</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f9fbf9;
-            color: #333;
-        }
+<meta name="description" content="১০০টি ঔষধি গাছের বাংলা ভেষজ চিকিৎসা নির্দেশিকা">
 
-        /* Navigation Bar with Dropdown */
-        nav {
-            background: var(--dark-green);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 5%;
-            height: 70px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        nav .logo { color: white; font-weight: bold; font-size: 22px; text-decoration: none; }
+<style>
 
-        .nav-links { display: flex; list-style: none; margin: 0; padding: 0; }
-        .nav-links li { position: relative; }
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 24px 15px;
-            display: block;
-            font-size: 15px;
-        }
-        .nav-links a:hover { background: var(--primary-green); }
+:root{
+    --primary:#2d5a27;
+    --dark:#1e3d1a;
+    --light:#f4faf4;
+    --white:#fff;
+}
 
-        /* Dropdown Style */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-            top: 70px;
-            border-radius: 0 0 8px 8px;
-        }
-        .dropdown-content a { color: #333; padding: 12px 20px; border-bottom: 1px solid #eee; }
-        .dropdown-content a:hover { background-color: #f1f1f1; color: var(--primary-green); }
-        .dropdown:hover .dropdown-content { display: block; }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        /* Header */
-        header {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-        header h1 { margin: 0; font-size: 2.8rem; }
+html{
+    scroll-behavior:smooth;
+}
 
-        .search-container {
-            max-width: 650px;
-            margin: -35px auto 40px;
-            padding: 0 20px;
-        }
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--light);
+    color:#333;
+    line-height:1.6;
+}
 
-        #searchInput {
-            width: 100%;
-            padding: 18px 30px;
-            font-size: 18px;
-            border: none;
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            outline: none;
-        }
+/* ================= NAVBAR ================= */
 
-        /* Plant Grid */
-        .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-        .plant-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 20px;
-        }
+nav{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:var(--dark);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 5%;
+    height:70px;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
 
-        .plant-item {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            transition: 0.3s;
-            border: 1px solid #eee;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-        }
-        .plant-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            border-color: var(--primary-green);
-        }
-        .plant-item span {
-            display: block;
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: var(--primary-green);
-            margin-bottom: 8px;
-        }
-        .plant-item small { color: #888; font-style: italic; }
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:24px;
+    font-weight:bold;
+    white-space:nowrap;
+}
 
-        /* ================= FOOTER & SOCIAL BUTTONS ================= */
-        footer {
-            background: var(--dark-green);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-            margin-top: 80px;
-        }
+/* MENU */
 
-        .footer-links a { color: #bbb; text-decoration: none; margin: 0 15px; transition: 0.3s; }
-        .footer-links a:hover { color: white; }
+.nav-links{
+    display:flex;
+    align-items:center;
+    list-style:none;
+}
 
-        .social-wrapper {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin: 25px 0;
-        }
+.nav-links li{
+    position:relative;
+}
 
-        .social-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            height: 45px;
-            min-width: 45px;
-            padding: 0 20px;
-        }
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    padding:24px 16px;
+    display:block;
+    transition:.3s;
+    font-size:15px;
+}
 
-        .facebook { background: #1877F2; }
-        .youtube { background: #FF0000; }
-        .linkedin { background: #0077B5; }
-        .instagram { background: #E4405F; }
-        .tumblr { background: #35465c; }
+.nav-links a:hover{
+    background:var(--primary);
+}
 
-        .social-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            filter: brightness(1.1);
-        }
+/* DROPDOWN */
 
-        .social-btn i { font-size: 18px; }
-        .social-btn span { margin-left: 8px; font-weight: 500; }
+.dropdown-content{
+    display:none;
+    position:absolute;
+    background:#fff;
+    min-width:220px;
+    top:70px;
+    border-radius:0 0 10px 10px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            .nav-links { display: none; }
-            .plant-grid { grid-template-columns: 1fr 1fr; }
-            .social-btn span { display: none; }
-            .social-btn { padding: 0; width: 45px; }
-        }
-    </style>
+.dropdown-content a{
+    color:#333;
+    padding:12px 18px;
+    border-bottom:1px solid #eee;
+}
+
+.dropdown-content a:hover{
+    background:#f1f1f1;
+    color:var(--primary);
+}
+
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+/* SOCIAL ICONS */
+
+.nav-social{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.nav-social a{
+    color:white;
+    font-size:16px;
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.nav-social a:hover{
+    background:rgba(255,255,255,.15);
+    transform:translateY(-2px);
+}
+
+/* ================= HERO ================= */
+
+header{
+    background:linear-gradient(135deg,var(--primary),var(--dark));
+    color:#fff;
+    text-align:center;
+    padding:90px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:18px;
+}
+
+/* ================= SEARCH ================= */
+
+.search-container{
+    max-width:650px;
+    margin:-35px auto 40px;
+    padding:0 20px;
+}
+
+#searchInput{
+    width:100%;
+    padding:18px 25px;
+    border:none;
+    border-radius:50px;
+    font-size:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    outline:none;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+/* GRID */
+
+.plant-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:20px;
+}
+
+.plant-item{
+    background:#fff;
+    border-radius:16px;
+    padding:25px;
+    text-align:center;
+    text-decoration:none;
+    color:inherit;
+    border:1px solid #eee;
+    transition:.3s;
+    box-shadow:0 4px 10px rgba(0,0,0,.04);
+}
+
+.plant-item:hover{
+    transform:translateY(-8px);
+    border-color:var(--primary);
+    box-shadow:0 15px 30px rgba(0,0,0,.12);
+}
+
+.plant-item span{
+    display:block;
+    color:var(--primary);
+    font-size:1.3rem;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.plant-item small{
+    color:#777;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:var(--dark);
+    color:#fff;
+    text-align:center;
+    padding:60px 20px;
+    margin-top:70px;
+}
+
+.footer-links{
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:#ccc;
+    text-decoration:none;
+    margin:0 10px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+.social-wrapper{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin:25px 0;
+}
+
+.social-btn{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#fff;
+    text-decoration:none;
+    border-radius:40px;
+    padding:12px 20px;
+    transition:.3s;
+}
+
+.social-btn:hover{
+    transform:translateY(-3px);
+}
+
+.facebook{background:#1877F2;}
+.youtube{background:#FF0000;}
+.instagram{background:#E4405F;}
+.linkedin{background:#0077B5;}
+.tumblr{background:#35465c;}
+
+.top-btn{
+    margin-top:15px;
+    background:var(--primary);
+    color:#fff;
+    border:none;
+    padding:12px 24px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+    nav{
+        flex-wrap:wrap;
+        height:auto;
+        padding:15px;
+    }
+
+    .logo{
+        width:100%;
+        text-align:center;
+        margin-bottom:10px;
+    }
+
+    .nav-links{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .nav-links a{
+        padding:12px;
+        font-size:14px;
+    }
+
+    .nav-social{
+        width:100%;
+        justify-content:center;
+        margin-top:10px;
+    }
+
+    header h1{
+        font-size:2rem;
+    }
+
+    .plant-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .social-btn span{
+        display:none;
+    }
+
+    .social-btn{
+        width:45px;
+        height:45px;
+        justify-content:center;
+        padding:0;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .plant-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
 </head>
+
 <body>
 
+<!-- ================= NAVBAR ================= -->
+
 <nav>
-    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসাকোষ</a>
+
+    <!-- LOGO -->
+    <a href="index.html" class="logo">
+        🌿 ভেষজ চিকিৎসাকোষ
+    </a>
+
+    <!-- MENU -->
     <ul class="nav-links">
+
         <li><a href="index.html">হোম</a></li>
+
         <li class="dropdown">
+
             <a href="#">প্রধান ভেষজ ▼</a>
+
             <div class="dropdown-content">
                 <a href="neem.html">নিম</a>
                 <a href="tulsi.html">তুলসী</a>
                 <a href="aloevera.html">ঘৃতকুমারী</a>
                 <a href="amla.html">আমলকী</a>
             </div>
+
         </li>
+
         <li><a href="about.html">সম্পর্কে</a></li>
+
         <li><a href="contact.html">যোগাযোগ</a></li>
+
     </ul>
+
+    <!-- SOCIAL -->
+    <div class="nav-social">
+
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="https://www.instagram.com/mddulal596" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+
+    </div>
+
 </nav>
 
+<!-- ================= HERO ================= -->
+
 <header>
+
     <h1>প্রাকৃতিক ভেষজ চিকিৎসা কোষ</h1>
-    <p>রোগমুক্তির সহজ ভেষজ—১০০টি ঔষধি গাছের পূর্ণাঙ্গ নির্দেশিকা</p>
+
+    <p>
+        রোগমুক্তির সহজ ভেষজ — ১০০টি ঔষধি গাছের পূর্ণাঙ্গ নির্দেশিকা
+    </p>
+
 </header>
 
+<!-- ================= SEARCH ================= -->
+
 <div class="search-container">
-    <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="গাছের নাম লিখে সার্চ করুন (যেমন: নিম, আদা)...">
+
+<input
+type="text"
+id="searchInput"
+onkeyup="searchFunction()"
+placeholder="গাছের নাম লিখে সার্চ করুন..."
+>
+
 </div>
+
+<!-- ================= PLANT GRID ================= -->
 
 <div class="container">
-    <div class="plant-grid" id="plantList">
-        <!-- ১ থেকে ২০ পর্যন্ত ভেষজ তালিকা আগের মতই থাকবে -->
-        <a href="neem.html" class="plant-item"><span>১. নিম</span><small>Neem</small></a>
-        <a href="tulsi.html" class="plant-item"><span>২. তুলসী</span><small>Holy Basil</small></a>
-        <a href="thankuni.html" class="plant-item"><span>৩. থানকুনি</span><small>Thankuni</small></a>
-        <a href="aloevera.html" class="plant-item"><span>৪. ঘৃতকুমারী</span><small>Aloe Vera</small></a>
-        <a href="ada.html" class="plant-item"><span>৫. আদা</span><small>Ginger</small></a>
-        <a href="rashun.html" class="plant-item"><span>৬. রসুন</span><small>Garlic</small></a>
-        <a href="pudina.html" class="plant-item"><span>৭. পুদিনা</span><small>Mint</small></a>
-        <a href="basak.html" class="plant-item"><span>৮. বাসক</span><small>Vasaka</small></a>
-        <a href="halud.html" class="plant-item"><span>৯. হলুদ</span><small>Turmeric</small></a>
-        <a href="chirota.html" class="plant-item"><span>১০. চিরতা</span><small>Chirata</small></a>
-        <!-- বাকিগুলো একইভাবে চলবে... -->
-        <p style="grid-column: 1/-1; text-align: center; color: #888;">বাকি ভেষজগুলোর লিঙ্ক ধারাবাহিকভাবে যোগ করা হচ্ছে...</p>
-    </div>
+
+<div class="plant-grid" id="plantList">
+
+<a href="neem.html" class="plant-item">
+<span>১. নিম</span>
+<small>Neem</small>
+</a>
+
+<a href="tulsi.html" class="plant-item">
+<span>২. তুলসী</span>
+<small>Holy Basil</small>
+</a>
+
+<a href="thankuni.html" class="plant-item">
+<span>৩. থানকুনি</span>
+<small>Thankuni</small>
+</a>
+
+<a href="aloevera.html" class="plant-item">
+<span>৪. ঘৃতকুমারী</span>
+<small>Aloe Vera</small>
+</a>
+
+<a href="ada.html" class="plant-item">
+<span>৫. আদা</span>
+<small>Ginger</small>
+</a>
+
+<a href="rashun.html" class="plant-item">
+<span>৬. রসুন</span>
+<small>Garlic</small>
+</a>
+
+<a href="halud.html" class="plant-item">
+<span>৭. হলুদ</span>
+<small>Turmeric</small>
+</a>
+
+<a href="amla.html" class="plant-item">
+<span>৮. আমলকী</span>
+<small>Amla</small>
+</a>
+
+<a href="ashwagondha.html" class="plant-item">
+<span>৯. অশ্বগন্ধা</span>
+<small>Ashwagandha</small>
+</a>
+
+<a href="arjun.html" class="plant-item">
+<span>১০. অর্জুন</span>
+<small>Arjun</small>
+</a>
+
 </div>
 
+</div>
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
-    <h2>ভেষজ চিকিৎসাকোষ</h2>
- <p>&copy; ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
-    <div class="footer-links">
-        <a href="index.html">হোম</a>
-        <a href="about.html">সম্পর্কে</a>
-        <a href="contact.html">যোগাযোগ</a>
-        <a href="disclaimer.html">সতর্কবার্তা</a>
-    </div>
 
-    <!-- আধুনিক সোশ্যাল বাটন -->
-    <div class="social-wrapper">
-        <a href="https://www.facebook.com/bonargidawahkana.net" class="social-btn facebook" target="_blank">
-            <i class="fab fa-facebook-f"></i><span>Facebook</span>
-        </a>
-        <a href="https://www.youtube.com/c/bonarjidawakhana" class="social-btn youtube" target="_blank">
-            <i class="fab fa-youtube"></i><span>YouTube</span>
-        </a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="social-btn linkedin" target="_blank">
-            <i class="fab fa-linkedin-in"></i><span>LinkedIn</span>
-        </a>
-        <a href="https://www.instagram.com/mddulal596" class="social-btn instagram" target="_blank">
-            <i class="fab fa-instagram"></i><span>Instagram</span>
-        </a>
-        <a href="https://www.tumblr.com/healthybdshop" class="social-btn tumblr" target="_blank">
-            <i class="fab fa-tumblr"></i><span>Tumblr</span>
-        </a>
-    </div>
+<h2>ভেষজ চিকিৎসাকোষ</h2>
 
-   
-    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="background:var(--primary-green); color:white; border:none; padding:10px 20px; border-radius:30px; cursor:pointer; margin-top: 15px;">উপরে যান ↑</button>
+<div class="footer-links">
+
+<a href="index.html">হোম</a>
+
+<a href="about.html">সম্পর্কে</a>
+
+<a href="contact.html">যোগাযোগ</a>
+
+<a href="disclaimer.html">সতর্কবার্তা</a>
+
+</div>
+
+<!-- FOOTER SOCIAL -->
+
+<div class="social-wrapper">
+
+<a href="https://www.facebook.com/bonargidawahkana.net"
+class="social-btn facebook"
+target="_blank">
+
+<i class="fab fa-facebook-f"></i>
+<span>Facebook</span>
+
+</a>
+
+<a href="https://www.youtube.com/c/bonarjidawakhana"
+class="social-btn youtube"
+target="_blank">
+
+<i class="fab fa-youtube"></i>
+<span>YouTube</span>
+
+</a>
+
+<a href="https://www.instagram.com/mddulal596"
+class="social-btn instagram"
+target="_blank">
+
+<i class="fab fa-instagram"></i>
+<span>Instagram</span>
+
+</a>
+
+<a href="https://www.linkedin.com/in/bonargidawakhana/"
+class="social-btn linkedin"
+target="_blank">
+
+<i class="fab fa-linkedin-in"></i>
+<span>LinkedIn</span>
+
+</a>
+
+<a href="https://www.tumblr.com/healthybdshop"
+class="social-btn tumblr"
+target="_blank">
+
+<i class="fab fa-tumblr"></i>
+<span>Tumblr</span>
+
+</a>
+
+</div>
+
+<p>
+© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত
+</p>
+
+<button class="top-btn"
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+উপরে যান ↑
+
+</button>
+
 </footer>
 
-<script>
-    function searchFunction() {
-        let input = document.getElementById('searchInput');
-        let filter = input.value.toUpperCase();
-        let grid = document.getElementById('plantList');
-        let items = grid.getElementsByClassName('plant-item');
+<!-- ================= SEARCH SCRIPT ================= -->
 
-        for (let i = 0; i < items.length; i++) {
-            let txtValue = items[i].textContent || items[i].innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                items[i].style.display = "";
-            } else {
-                items[i].style.display = "none";
-            }
-        }
-    }
+<script>
+
+function searchFunction(){
+
+let input =
+document.getElementById("searchInput");
+
+let filter =
+input.value.toUpperCase();
+
+let items =
+document.getElementsByClassName("plant-item");
+
+for(let i=0;i<items.length;i++){
+
+let txt =
+items[i].textContent || items[i].innerText;
+
+if(txt.toUpperCase().indexOf(filter)>-1){
+
+items[i].style.display="";
+
+}else{
+
+items[i].style.display="none";
+
+}
+
+}
+
+}
+
 </script>
 
 </body>
