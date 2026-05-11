@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>কেশরাজ (Keshraj) - বিস্তারিত তথ্য | ভেষজ চিকিৎসা কোষ</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#1b5e20;
+    --dark:#0a2d0c;
+    --light:#f1f8e9;
+    --accent:#4caf50;
+    --white:#fff;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--light);
+    color:#333;
+    line-height:1.6;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+    position:sticky; top:0; z-index:999;
+    background:var(--dark); display:flex;
+    justify-content:space-between; align-items:center;
+    padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+.logo{ color:#fff; text-decoration:none; font-size:24px; font-weight:bold; }
+.nav-links{ display:flex; align-items:center; list-style:none; }
+.nav-links a{ color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover{ background:var(--primary); }
+
+.nav-social{ display:flex; gap:10px; }
+.nav-social a{ color:white; font-size:16px; width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover{ background:rgba(255,255,255,.15); }
+
+/* ================= HEADER ================= */
+header{
+    background:linear-gradient(135deg,var(--primary),var(--dark));
+    color:#fff; text-align:center; padding:60px 20px;
+}
+
+/* ================= CONTENT CONTAINER ================= */
+.container {
+    max-width: 1000px;
+    margin: -30px auto 50px;
+    padding: 20px;
+}
+
+.plant-detail-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.plant-header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.plant-icon-large { font-size: 4rem; margin-bottom: 10px; }
+.plant-detail-card h2 { color: var(--primary); font-size: 2rem; }
+.plant-detail-card small { color: #777; font-size: 1.1rem; font-style: italic; }
+
+.info-section { margin-bottom: 30px; }
+.info-section h3 {
+    color: var(--dark);
+    border-left: 5px solid var(--accent);
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.benefit-list { list-style: none; }
+.benefit-list li {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+}
+.benefit-list li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute; left: 0;
+    color: var(--accent);
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #0a2d0c;
+    color: #ffffff;
+    text-align: center;
+    padding: 50px 20px 30px;
+    margin-top: 50px;
+}
+
+footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
+
+.footer-nav { margin-bottom: 25px; }
+.footer-nav a { color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px; }
+
+.social-container {
+    display: flex; justify-content: center;
+    gap: 12px; flex-wrap: wrap; margin-bottom: 30px;
+}
+
+.s-btn {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 20px; border-radius: 50px;
+    color: white; text-decoration: none; font-size: 14px;
+    transition: 0.3s;
+}
+
+.s-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+.fb { background: #1877F2; }
+.yt { background: #FF0000; }
+.ig { background: #E4405F; }
+.ln { background: #0077B5; }
+
+.copyright {
+    font-size: 13px; color: #b0b0b0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px; margin-bottom: 20px;
+}
+
+.back-to-top {
+    background: #1b5e20; color: white; border: none;
+    padding: 8px 20px; border-radius: 20px; cursor: pointer;
+    font-size: 14px; transition: 0.3s;
+}
+
+.back-to-top:hover { background: #2e7d32; }
+
+/* MOBILE OPTIMIZATION */
+@media(max-width:768px){
+    nav{ flex-direction: column; height:auto; padding:15px; gap: 10px; }
+    .plant-detail-card { padding: 20px; }
+    .plant-detail-card h2 { font-size: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
+    <ul class="nav-links">
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="about.html">সম্পর্কে</a></li>
+        <li><a href="contact.html">যোগাযোগ</a></li>
+    </ul>
+    <div class="nav-social">
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</nav>
+
+<header>
+    <h1>ভেষজ উদ্ভিদের বিস্তারিত তথ্য</h1>
+</header>
+
+<div class="container">
+    <div class="plant-detail-card">
+        <div class="plant-header">
+            <div class="plant-icon-large">🌿</div>
+            <h2>৩৫. কেশরাজ (Keshraj)</h2>
+            <small>Scientific Name: Eclipta prostrata</small>
+        </div>
+
+        <div class="info-section">
+            <h3>পরিচিতি</h3>
+            <p>কেশরাজ বা কালোকেশী একটি অতি প্রয়োজনীয় ভেষজ উদ্ভিদ যা আর্দ্র স্থানে জন্মে। এর নাম থেকেই বোঝা যায় এটি চুলের (কেশ) জন্য অত্যন্ত উপকারী। আয়ুর্বেদ শাস্ত্রে একে 'ভৃঙ্গরাজ' বলা হয়। চুলের যত্ন ছাড়াও জন্ডিস বা লিভারের বিভিন্ন রোগ সারাতে এর ব্যবহার অতি প্রাচীন। এর পাতা পিষলে কালো রং বের হয় যা প্রাকৃতিক রঞ্জক হিসেবে কাজ করে।</p>
+        </div>
+
+        <div class="info-section">
+            <h3>প্রধান উপকারিতা</h3>
+            <ul class="benefit-list">
+                <li>চুল পড়া বন্ধ করতে এবং নতুন চুল গজাতে এটি জাদুকরী ভূমিকা পালন করে।</li>
+                <li>অকালে চুল পেকে যাওয়া রোধ করে এবং চুলকে প্রাকৃতিকভাবে কালো ও উজ্জ্বল রাখে।</li>
+                <li>লিভারের টনিক হিসেবে কাজ করে এবং জন্ডিস নিরাময়ে সহায়তা করে।</li>
+                <li>মাথাব্যথা এবং সাইনাসের সমস্যায় এর রসের ব্যবহার অত্যন্ত আরামদায়ক।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3>ব্যবহার বিধি</h3>
+            <p>চুলের জন্য কেশরাজ পাতার রস নারিকেল তেলের সাথে মিশিয়ে ফুটিয়ে চুলে ব্যবহার করা হয়। জন্ডিস বা লিভারের সমস্যার জন্য এর পাতার রস এক চা চামচ পরিমাণ সামান্য মধুর সাথে মিশিয়ে সকালে খালি পেটে খাওয়ার পরামর্শ দেওয়া হয়। এছাড়া কোনো ঘা বা চর্মরোগে পাতার প্রলেপ লাগালে দ্রুত নিরাময় হয়। চোখের জ্যোতি বাড়াতেও এই ভেষজের পরিমিত ব্যবহার উপকারী।</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" style="text-decoration: none; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;">
+                <i class="fas fa-home"></i> তালিকায় ফিরে যান
+            </a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <h2>ভেষজ চিকিৎসা কোষ</h2>
+    <div class="footer-nav">
+        <a href="index.html">হোম</a>
+        <a href="about.html">সম্পর্কে</a>
+        <a href="contact.html">যোগাযোগ</a>
+        <a href="disclaimer.html">সতর্কবার্তা</a>
+    </div>
+    
+    <div class="social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+    
+    <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">উপরে যান ↑</button>
+</footer>
+
+</body>
+</html>
