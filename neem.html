@@ -1,172 +1,187 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>নিম - ভেষজ চিকিৎসা কোষ | বিস্তারিত তথ্য</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary: #2d5a27;
-            --dark: #1e3d1a;
-            --light: #f4faf4;
-            --accent: #8bc34a;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>নিম (Neem) - বিস্তারিত তথ্য | ভেষজ চিকিৎসা কোষ</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: var(--light);
-            margin: 0;
-            line-height: 1.8;
-            color: #333;
-        }
+<style>
+:root{
+    --primary:#2d5a27;
+    --dark:#1e3d1a;
+    --light:#f4faf4;
+    --white:#fff;
+}
 
-        /* হেডার স্টাইল */
-        .page-header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?auto=format&fit=crop&w=800&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--light);
+    color:#333;
+    line-height:1.6;
+}
 
-        .back-btn {
-            display: inline-block;
-            color: white;
-            text-decoration: none;
-            margin-bottom: 20px;
-            font-size: 14px;
-            border: 1px solid white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
+/* ================= NAVBAR (Same as Index) ================= */
+nav{
+    position:sticky; top:0; z-index:999;
+    background:var(--dark); display:flex;
+    justify-content:space-between; align-items:center;
+    padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+.logo{ color:#fff; text-decoration:none; font-size:24px; font-weight:bold; }
+.nav-links{ display:flex; align-items:center; list-style:none; }
+.nav-links a{ color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover{ background:var(--primary); }
 
-        .back-btn:hover { background: white; color: var(--dark); }
+.nav-social{ display:flex; gap:10px; }
+.nav-social a{ color:white; font-size:16px; width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover{ background:rgba(255,255,255,.15); }
 
-        /* কন্টেন্ট এরিয়া */
-        .container {
-            max-width: 900px;
-            margin: -50px auto 50px;
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
+/* ================= HEADER ================= */
+header{
+    background:linear-gradient(135deg,var(--primary),var(--dark));
+    color:#fff; text-align:center; padding:60px 20px;
+}
 
-        .plant-title {
-            color: var(--primary);
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
+/* ================= CONTENT CONTAINER ================= */
+.container {
+    max-width: 1000px;
+    margin: -30px auto 50px;
+    padding: 20px;
+}
 
-        .scientific-name {
-            font-style: italic;
-            color: #666;
-            margin-bottom: 30px;
-            display: block;
-        }
+.plant-detail-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
+.plant-header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
 
-        .info-card {
-            background: #f9f9f9;
-            padding: 20px;
-            border-left: 5px solid var(--primary);
-            border-radius: 8px;
-        }
+.plant-icon-large { font-size: 4rem; margin-bottom: 10px; }
+.plant-detail-card h2 { color: var(--primary); font-size: 2rem; }
+.plant-detail-card small { color: #777; font-size: 1.1rem; font-style: italic; }
 
-        .info-card h3 {
-            margin-top: 0;
-            color: var(--dark);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.info-section { margin-bottom: 30px; }
+.info-section h3 {
+    color: var(--dark);
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
 
-        .description {
-            font-size: 1.1rem;
-            text-align: justify;
-        }
+.benefit-list { list-style: none; }
+.benefit-list li {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+}
+.benefit-list li::before {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
 
-        .benefit-list {
-            list-style: none;
-            padding: 0;
-        }
+/* ================= FOOTER (Same as Index) ================= */
+footer{ background:var(--dark); color:#fff; text-align:center; padding:60px 20px; margin-top:70px; }
+.footer-links a{ color:#ccc; text-decoration:none; margin:0 10px; }
+.social-wrapper{ display:flex; justify-content:center; gap:12px; margin:25px 0; }
+.social-btn{ color:#fff; text-decoration:none; border-radius:40px; padding:12px 20px; display:flex; align-items:center; gap:8px; }
+.facebook{background:#1877F2;} .youtube{background:#FF0000;} .instagram{background:#E4405F;} .linkedin{background:#0077B5;}
 
-        .benefit-list li {
-            background: #fff;
-            margin-bottom: 10px;
-            padding: 10px 15px;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .benefit-list i { color: var(--primary); }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            background: var(--dark);
-            color: white;
-        }
-
-        @media (max-width: 600px) {
-            .container { margin: -30px 15px 30px; padding: 20px; }
-            .plant-title { font-size: 1.8rem; }
-        }
-    </style>
+/* MOBILE OPTIMIZATION */
+@media(max-width:768px){
+    nav{ flex-wrap:wrap; height:auto; padding:15px; }
+    .nav-links, .nav-social, .logo { width:100%; justify-content:center; text-align:center; }
+    .plant-detail-card { padding: 20px; }
+}
+</style>
 </head>
 <body>
 
-    <header class="page-header">
-        <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> তালিকায় ফিরে যান</a>
-        <h1>ভেষজ উদ্ভিদ পরিচিতি</h1>
-    </header>
-
-    <div class="container">
-        <span class="scientific-name">Azadirachta indica</span>
-        <h1 class="plant-title">১. নিম (Neem)</h1>
-        
-        <p class="description">
-            নিম একটি বহু গুণসম্পন্ন ঐতিহ্যবাহী ঔষধি গাছ। ভারতের উপমহাদেশে একে 'গ্রামের ডাক্তার' বলা হয়। এর পাতা, ছাল, বীজ এবং তেল প্রতিটি অংশই মানবদেহের বিভিন্ন রোগ নিরাময়ে জাদুকরী ভূমিকা পালন করে।
-        </p>
-
-        <div class="info-grid">
-            <div class="info-card">
-                <h3><i class="fas fa-heartbeat"></i> প্রধান উপকারিতা</h3>
-                <ul class="benefit-list">
-                    <li><i class="fas fa-check-circle"></i> চর্মরোগ ও ব্রণ দূর করে।</li>
-                    <li><i class="fas fa-check-circle"></i> রক্ত পরিশোধন করতে সাহায্য করে।</li>
-                    <li><i class="fas fa-check-circle"></i> কৃমিনাশক হিসেবে কাজ করে।</li>
-                    <li><i class="fas fa-check-circle"></i> রোগ প্রতিরোধ ক্ষমতা বাড়ায়।</li>
-                </ul>
-            </div>
-
-            <div class="info-card">
-                <h3><i class="fas fa-mortar-pestle"></i> ব্যবহার বিধি</h3>
-                <p>নিমের কচি পাতা চিবিয়ে বা রস করে সকালে খালি পেটে খেলে রক্ত পরিষ্কার হয়। ত্বকের সমস্যার জন্য পাতা বেটে পেস্ট হিসেবে ব্যবহার করা যায়।</p>
-            </div>
-        </div>
-
-        <div class="info-card" style="background: #fff3e0; border-left-color: #ff9800;">
-            <h3><i class="fas fa-exclamation-triangle"></i> সতর্কতা</h3>
-            <p>অতিরিক্ত পরিমাণে নিম সেবন করবেন না। শিশু এবং গর্ভবতী নারীদের ক্ষেত্রে ডাক্তারের পরামর্শ ছাড়া এটি ব্যবহার করা উচিত নয়।</p>
-        </div>
+<!-- NAVBAR -->
+<nav>
+    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসাকোষ</a>
+    <ul class="nav-links">
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="about.html">সম্পর্কে</a></li>
+        <li><a href="contact.html">যোগাযোগ</a></li>
+    </ul>
+    <div class="nav-social">
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
+</nav>
 
-    <footer>
-        <p>© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ভেষজ চিকিৎসা কোষ</p>
-    </footer>
+<!-- HEADER -->
+<header>
+    <h1>ভেষজ উদ্ভিদের বিস্তারিত তথ্য</h1>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+    <div class="plant-detail-card">
+        
+        <div class="plant-header">
+            <div class="plant-icon-large">🌿</div>
+            <h2>১. নিম (Neem)</h2>
+            <small>Scientific Name: Azadirachta indica</small>
+        </div>
+
+        <div class="info-section">
+            <h3>পরিচিতি</h3>
+            <p>নিম একটি ঔষধি গাছ যার ডাল, পাতা, রস সবই কাজে লাগে। নিমের বহুবিধ গুণের কারণে একে 'প্রাকৃতিক নিরাময়কারী' বলা হয়। এটি চর্মরোগ নিরাময় এবং রক্ত পরিশোধনে জাদুকরী ভূমিকা রাখে।</p>
+        </div>
+
+        <div class="info-section">
+            <h3>প্রধান উপকারিতা</h3>
+            <ul class="benefit-list">
+                <li>চর্মরোগ, ব্রণ ও চুলকানি নিরাময়ে অত্যন্ত কার্যকর।</li>
+                <li>রক্তের বিষাক্ত উপাদান দূর করে রক্ত পরিষ্কার রাখে।</li>
+                <li>কৃমিনাশক হিসেবে কাজ করে এবং লিভারের কার্যক্ষমতা বাড়ায়।</li>
+                <li>দাঁতের মাড়ি মজবুত করতে এবং মুখের দুর্গন্ধ দূর করতে সাহায্য করে।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3>ব্যবহার বিধি</h3>
+            <p>নিমের কচি পাতা সকালে খালি পেটে চিবিয়ে খেলে লিভার ও রক্ত পরিষ্কার থাকে। ত্বকের জন্য নিমের পাতা বেটে পেস্ট তৈরি করে সরাসরি আক্রান্ত স্থানে লাগানো যায়। দাঁতের জন্য নিমের ডাল দিয়ে মেসওয়াক করা অত্যন্ত উপকারী।</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="index.html" style="text-decoration: none; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px;">তালিকায় ফিরে যান</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <h2>ভেষজ চিকিৎসাকোষ</h2>
+    <div class="footer-links">
+        <a href="index.html">হোম</a>
+        <a href="about.html">সম্পর্কে</a>
+        <a href="contact.html">যোগাযোগ</a>
+    </div>
+    <div class="social-wrapper">
+         <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p>© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
+</footer>
 
 </body>
 </html>
