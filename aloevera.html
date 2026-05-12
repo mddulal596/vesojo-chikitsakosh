@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#4caf50;
-    --dark:#2e7d32;
-    --light:#f1f8e9;
-    --accent:#8bc34a;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #f9fff5;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #c8e6c9;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -199,77 +227,113 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
             <small>Scientific Name: Aloe barbadensis miller</small>
             <div class="ayurvedic-specs">
                 <div class="spec-item">রস: তিক্ত, মধুর</div>
-                <div class="spec-item">বীর্য: শীত (Cooling)</div>
+                <div class="spec-item">বীর্য: শীতল (Cold)</div>
                 <div class="spec-item">বিপাক: মধুর</div>
-                <div class="spec-item">গুণ: স্নিগ্ধ, গুরু</div>
+                <div class="spec-item">দোষ: ত্রিদোষ নাশক (বাত-পিত্ত-কফ)</div>
+                <div class="spec-item">বিশেষত্ব: ত্বক ও লিভারের জন্য মহৌষধ</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও ঐতিহাসিক গুরুত্ব</h3>
-            <p>ঘৃতকুমারী বা অ্যালোভেরা বিশ্বের অন্যতম জনপ্রিয় ওষুধি উদ্ভিদ। প্রাচীন মিশরীয়রা একে 'অমরত্বের উদ্ভিদ' (Plant of Immortality) বলত। আলেকজান্ডার দ্য গ্রেট তাঁর সৈন্যদের ক্ষত নিরাময়ের জন্য অ্যালোভেরা ব্যবহার করতেন। আয়ুর্বেদ শাস্ত্রে একে 'কুমারী' বলা হয় কারণ এটি মহিলাদের প্রজনন স্বাস্থ্যের জন্য অত্যন্ত উপকারী।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>ঘৃতকুমারী বা অ্যালোভেরা কয়েক হাজার বছর ধরে ভেষজ চিকিৎসায় ব্যবহৃত হয়ে আসছে। প্রাচীন মিশরীয়রা একে 'অমরত্বের উদ্ভিদ' (Plant of Immortality) বলত। আলেকজান্ডার দ্য গ্রেট তার সৈন্যদের ক্ষত সারাতে এই গাছ ব্যবহার করতেন। আয়ুর্বেদ শাস্ত্রে একে 'কুমারী' বলা হয়, কারণ এটি নারীদেহের পুনর্যৌবন দান এবং অভ্যন্তরীণ প্রজনন স্বাস্থ্য রক্ষায় অপ্রতিদ্বন্দ্বী। এটি আধুনিক প্রসাধনী শিল্পেরও অবিচ্ছেদ্য অংশ।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> কুমারী, গৃহকন্যা, স্থূলদলা</div>
+                <div><strong>সংস্কৃত:</strong> কুমারী, ঘৃতকুমারী, কন্যা</div>
                 <div><strong>ইংরেজি:</strong> Aloe Vera / Burn Plant</div>
                 <div><strong>আরবি:</strong> সাব্বার (Sabbar)</div>
-                <div><strong>হিন্দি:</strong> ঘৃতকুমারী / গাওয়ারপাঠা</div>
+                <div><strong>ফার্সি:</strong> দিরখতে-সাব্বর</div>
+                <div><strong>হিন্দি:</strong> ঘিকোয়ার (Ghee-kumar)</div>
                 <div><strong>তামিল:</strong> কাটরালাই</div>
-                <div><strong>ফার্সি:</strong> দরখতে সবর</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>অ্যালোভেরা লিলি (Liliaceae) পরিবারের অন্তর্গত একটি রসালো (Succulent) উদ্ভিদ। এর পাতাগুলো লম্বা, পুরু এবং দুপাশে কাঁটাযুক্ত থাকে। পাতার ভেতরে স্বচ্ছ থকথকে জেল বা শাঁস থাকে যা এর প্রধান ওষুধি অংশ। এটি মূলত মরুভূমি বা শুষ্ক অঞ্চলের উদ্ভিদ হলেও এখন সারাবিশ্বে টবে চাষ করা হয়।</p>
+            <p>ঘৃতকুমারী একটি রসালো (Succulent) ক্যাকটাস জাতীয় উদ্ভিদ। এর পাতাগুলো দীর্ঘ, পুরু এবং মাংসল। পাতার দুই পাশে করাতের মতো ছোট ছোট কাঁটা থাকে। পাতার ভেতরে স্বচ্ছ, পিচ্ছিল জেল বা শাঁস থাকে যা এর প্রধান ওষুধি অংশ। এটি মূলত মরু বা শুষ্ক অঞ্চলে ভালো জন্মালেও এখন সারা বিশ্বেই চাষ করা হয়। এর কোনো কাণ্ড থাকে না, পাতাগুলো সরাসরি মাটি থেকে গুচ্ছাকারে বের হয়।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>অ্যালোইন (Aloin):</strong> এটি শক্তিশালী ল্যাক্সেটিভ হিসেবে কাজ করে এবং কোষ্ঠকাঠিন্য দূর করে।</li>
-                <li><strong>অ্যামিনো অ্যাসিড:</strong> মানবদেহের প্রয়োজনীয় ২২টি অ্যামিনো অ্যাসিডের মধ্যে ২০টিই অ্যালোভেরাতে পাওয়া যায়।</li>
-                <li><strong>ভিটামিন ও খনিজ:</strong> এতে প্রচুর পরিমাণে ভিটামিন এ, সি, ই, বি১২ এবং ফলিক অ্যাসিড থাকে।</li>
-                <li><strong>পলিস্যাকারাইড:</strong> যা রোগ প্রতিরোধ ক্ষমতা বৃদ্ধি করে এবং ত্বকের প্রদাহ কমায়।</li>
+                <li><strong>ভিটামিন ও খনিজ:</strong> এতে ভিটামিন এ, সি, ই, বি১২ এবং ফলিক অ্যাসিডের পাশাপাশি ক্যালসিয়াম ও ম্যাগনেসিয়াম থাকে।</li>
+                <li><strong>অ্যালোইন (Aloin):</strong> এটি কোষ্ঠকাঠিন্য দূর করতে শক্তিশালী ল্যাক্সেটিভ হিসেবে কাজ করে।</li>
+                <li><strong>অ্যামিনো অ্যাসিড:</strong> মানবদেহের জন্য প্রয়োজনীয় ২২টি অ্যামিনো অ্যাসিডের মধ্যে ২০টিই অ্যালোভেরাতে পাওয়া যায়।</li>
+                <li><strong>এনজাইম:</strong> এতে ব্র্যাডিকিনেজ নামক এনজাইম থাকে যা ত্বকের প্রদাহ বা জ্বালাপোড়া কমায়।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>ত্বকের যত্ন:</strong> রোদে পোড়া দাগ দূর করতে এবং ত্বককে হাইড্রেটেড রাখতে অ্যালোভেরা জেলের কোনো বিকল্প নেই।</li>
-                <li><strong>হজম শক্তি বৃদ্ধি:</strong> নিয়মিত অ্যালোভেরা জুস পান করলে অ্যাসিডিটি ও বুক জ্বালাপোড়া দ্রুত কমে।</li>
-                <li><strong>চুলের সুরক্ষা:</strong> এটি খুশকি দূর করে এবং চুলের গোড়া শক্ত করে চুল পড়া বন্ধ করে।</li>
-                <li><strong>রক্তে শর্করা নিয়ন্ত্রণ:</strong> টাইপ-২ ডায়াবেটিস রোগীদের রক্তে শর্করার মাত্রা নিয়ন্ত্রণে এটি সহায়ক ভূমিকা পালন করে।</li>
-                <li><strong>রোগ প্রতিরোধ ক্ষমতা:</strong> এর অ্যান্টি-সেপটিক ও অ্যান্টি-ব্যাকটেরিয়াল গুণ শরীরকে সংক্রমণের হাত থেকে রক্ষা করে।</li>
+                <li><strong>ত্বকের যত্ন ও পোড়া:</strong> রোদে পোড়া বা আগুনের ছ্যাঁকা লাগা স্থানে অ্যালোভেরা জেল লাগালে দ্রুত নিরাময় হয় এবং দাগ পড়ে না।</li>
+                <li><strong>হজম ও কোষ্ঠকাঠিন্য:</strong> এর জুস নিয়মিত খেলে পেটের গ্যাস কমে এবং কোষ্ঠকাঠিন্য দূর হয়।</li>
+                <li><strong>রক্তশূন্যতা ও লিভার:</strong> ঘৃতকুমারী লিভারের কার্যক্ষমতা বাড়ায় এবং জন্ডিস উপশমে সাহায্য করে।</li>
+                <li><strong>চুলের সুরক্ষা:</strong> খুশকি দূর করতে এবং চুল পড়া বন্ধ করে চুলকে উজ্জ্বল ও সিল্কি করতে এর জেল অত্যন্ত কার্যকর।</li>
+                <li><strong>ডায়াবেটিস নিয়ন্ত্রণ:</strong> গবেষণায় দেখা গেছে, নিয়মিত অ্যালোভেরা জুস খেলে রক্তে শর্করার মাত্রা নিয়ন্ত্রণে থাকে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. কোষ্ঠকাঠিন্য দূর করতে:</h4>
-                <p>অ্যালোভেরা জেল বা শাঁস ২০ গ্রাম পরিমাণ নিয়ে এক গ্লাস পানি ও সামান্য মিছরি মিশিয়ে শরবত বানিয়ে সকালে খালি পেটে খান।</p>
+                <h4>১. এনার্জি ড্রিংক হিসেবে:</h4>
+                <p>২ চামচ তাজা অ্যালোভেরা জেলের সাথে এক গ্লাস পানি ও সামান্য লেবুর রস মিশিয়ে সকালে খালি পেটে পান করুন। এটি শরীরকে ডিটক্স করে।</p>
             </div>
             <div class="usage-card">
-                <h4>২. পুড়ে যাওয়া বা ক্ষতের চিকিৎসায়:</h4>
-                <p>আগুনে পোড়া স্থানে বা যেকোনো ক্ষতে টাটকা অ্যালোভেরা জেল সরাসরি লাগিয়ে দিন। এটি তাৎক্ষণিক জ্বালা কমায় এবং দাগ পড়তে দেয় না।</p>
+                <h4>২. ফেসপ্যাক হিসেবে:</h4>
+                <p>অ্যালোভেরা জেলের সাথে সামান্য মধু মিশিয়ে মুখে ২০ মিনিট লাগিয়ে রাখুন। এটি ব্রণ দূর করে এবং ত্বকের উজ্জ্বলতা বাড়ায়।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. চুলের খুশকি নাশক মাস্ক:</h4>
-                <p>অ্যালোভেরা জেলের সাথে সামান্য লেবুর রস মিশিয়ে মাথায় মেখে ৩০ মিনিট রাখুন, তারপর ধুয়ে ফেলুন। সপ্তাহে ২ দিন ব্যবহারে খুশকি দূর হবে।</p>
+                <h4>৩. পাইলস বা অর্শ রোগে:</h4>
+                <p>অ্যালোভেরার শাঁস চিনির সাথে শরবত করে নিয়মিত খেলে অর্শের যন্ত্রণা ও রক্ত পড়া কমে।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• গর্ভবতী ও স্তন্যদানকারী মায়েদের অ্যালোভেরা জুস পান করা থেকে বিরত থাকা উচিত।</p>
-            <p>• অতিরিক্ত সেবনে পটাশিয়ামের অভাব দেখা দিতে পারে।</p>
-            <p>• ১২ বছরের নিচের শিশুদের অভ্যন্তরীণ সেবন (জুস) না করানোই ভালো।</p>
-            <p>• কিডনি রোগীদের জন্য অতিরিক্ত অ্যালোভেরা সেবন ক্ষতিকর হতে পারে।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি (ডোজ)</h3>
+            <p style="margin-bottom: 20px;">অ্যালোভেরা জুস বা জেল সেবনের সাধারণ মাত্রা নিচে দেওয়া হলো:</p>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>অ্যালোভেরা জুস/জেল (মাত্রা)</th>
+                            <th>সেবনের নিয়ম</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>৫ - ১২ বছর</td>
+                            <td>৫ - ১০ মিলি</td>
+                            <td>সকালে খালি পেটে</td>
+                        </tr>
+                        <tr>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>২০ - ৩০ মিলি</td>
+                            <td>সকাল ও রাতে খাবারের আগে</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ (৬৫+)</td>
+                            <td>১৫ - ২০ মিলি</td>
+                            <td>দিনে ১ বার</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• অতিরিক্ত অ্যালোভেরা জুস খেলে ডায়রিয়া বা পটাশিয়ামের অভাব হতে পারে।</p>
+                <p>• গর্ভবতী মহিলারা অ্যালোভেরা জুস এড়িয়ে চলবেন, কারণ এটি জরায়ুর সংকোচনের কারণ হতে পারে।</p>
+                <p>• কিডনি রোগীদের জন্য এর দীর্ঘমেয়াদী ব্যবহার ক্ষতিকর হতে পারে।</p>
+                <p>• পাতার একদম গোড়ার হলুদ অংশ (অ্যালো ল্যাটেক্স) সাবধানে এড়িয়ে চলা উচিত, কারণ এটি অতিমাত্রায় ল্যাক্সেটিভ।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
