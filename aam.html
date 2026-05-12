@@ -47,7 +47,7 @@ nav{
 /* ================= HEADER ================= */
 header{
     background:linear-gradient(135deg,var(--accent),var(--dark));
-    color:#fff; text-align:center; padding:80px 20px;
+    color:#fff; text-align:center; padding:100px 20px;
 }
 
 /* ================= CONTENT CONTAINER ================= */
@@ -59,64 +59,67 @@ header{
 
 .plant-detail-card {
     background: white;
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
 .plant-header {
     text-align: center;
     border-bottom: 2px solid #eee;
-    padding-bottom: 30px;
+    padding-bottom: 40px;
     margin-bottom: 40px;
 }
 
-.plant-icon-large { font-size: 5rem; margin-bottom: 15px; }
-.plant-detail-card h2 { color: var(--dark); font-size: 2.8rem; margin-bottom: 5px; }
-.plant-detail-card small { color: #777; font-size: 1.2rem; font-style: italic; }
+.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
+.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
 
 .ayurvedic-specs {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 25px;
+    gap: 15px;
+    margin-top: 30px;
     justify-content: center;
 }
 .spec-item {
     background: var(--blue-btn);
-    padding: 10px 22px;
+    padding: 12px 25px;
     border-radius: 50px;
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
-.info-section { margin-bottom: 50px; }
+.info-section { margin-bottom: 60px; }
 .info-section h3 {
     color: var(--dark);
-    border-left: 6px solid var(--accent);
-    padding-left: 18px;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-size: 2rem;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .lang-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #fff8e1;
-    padding: 25px;
-    border-radius: 12px;
+    background: #fffcf0;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
 .benefit-list li {
-    margin-bottom: 18px;
-    padding-left: 45px;
+    margin-bottom: 22px;
+    padding-left: 50px;
     position: relative;
+    font-size: 1.1rem;
 }
 .benefit-list li::before {
     content: "\f058";
@@ -124,45 +127,50 @@ header{
     font-weight: 900;
     position: absolute; left: 0;
     color: var(--dark);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 .usage-card {
     background: #fdfdfd;
     border: 1px solid #eee;
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 20px;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
 
 .warning-box {
     background: #fff5f5;
-    border-radius: 12px;
-    padding: 30px;
-    border-left: 6px solid #e53935;
-    margin-bottom: 40px;
+    border-radius: 15px;
+    padding: 35px;
+    border-left: 8px solid #e53935;
+    margin-top: 30px;
 }
 
-.btn-back-container { text-align: center; }
+.btn-back-container { text-align: center; margin-top: 40px; }
 .btn-back-list {
     text-decoration: none; background: var(--blue-btn); color: white; 
-    padding: 14px 40px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
 }
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
     position: fixed; bottom: 30px; right: 30px; background: var(--accent);
-    color: white; border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer;
+    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
 /* ================= FOOTER (#999999) ================= */
-footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 60px 20px 40px; }
-.footer-social-container { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 35px; }
-.footer-s-btn { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 50px; color: white; text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.3s; }
+footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
-.footer-copyright { font-size: 14px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px; margin-top: 25px; }
+.footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 30px 15px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -184,6 +192,7 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 
 <header>
     <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
 </header>
 
 <div class="container">
@@ -196,45 +205,82 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
                 <div class="spec-item">রস: কষায়, মধুর</div>
                 <div class="spec-item">বীর্য: শীত (Cold)</div>
                 <div class="spec-item">বিপাক: মধুর</div>
-                <div class="spec-item">গুণ: লঘু, রুক্ষ</div>
+                <div class="spec-item">দোষ: পিত্ত-বাত নাশক</div>
+                <div class="spec-item">জাতীয় বৃক্ষ: বাংলাদেশ ও ভারত</div>
             </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>আমকে "ফলের রাজা" বলা হয় শুধু এর স্বাদের জন্য নয়, বরং এর বহুমুখী ভেষজ গুণের জন্য। প্রায় ৪০০০ বছর আগে দক্ষিণ এশিয়ায় এর উৎপত্তি। প্রাচীন আয়ুর্বেদ শাস্ত্র 'চরক সংহিতা' এবং 'সুশ্রুত সংহিতা'-তে আমের ফল, পাতা, ছাল এবং মূলের ওষুধি ব্যবহার সম্পর্কে বিশদ বর্ণনা পাওয়া যায়। মুঘল সম্রাট আকবর ভারতের বিহারে ১ লক্ষ আমের চারা রোপণ করে 'লাখী বাগ' তৈরি করেছিলেন, যা এর গুরুত্ব প্রমাণ করে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> আম্র, চ্যুত, সহকার</div>
-                <div><strong>ইংরেজি:</strong> Mango Tree</div>
-                <div><strong>আরবি:</strong> মানজু (Manju)</div>
+                <div><strong>সংস্কৃত:</strong> আম্র, চ্যুত, সহকার, অতিসৌরভ</div>
+                <div><strong>ইংরেজি:</strong> Mango Tree / Common Mango</div>
+                <div><strong>আরবি:</strong> জানজাবিলুল হিন্দু / মানজু</div>
+                <div><strong>ফার্সি:</strong> আম্ব / নগজক</div>
+                <div><strong>হিন্দি:</strong> আম (Aam)</div>
                 <div><strong>তামিল:</strong> মাঙ্গাই</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-seedling"></i> উদ্ভিদ পরিচিতি ও বর্ণনা</h3>
-            <p>আম Anacardiaceae পরিবারের অন্তর্ভুক্ত একটি অত্যন্ত গুরুত্বপূর্ণ ভেষজ বৃক্ষ। এটি সাধারণত ১৫ থেকে ৩০ মিটার পর্যন্ত লম্বা হতে পারে। আমকে ভারত এবং বাংলাদেশের জাতীয় বৃক্ষ হিসেবে মর্যাদা দেওয়া হয়েছে।</p>
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>আম Anacardiaceae পরিবারের অন্তর্ভুক্ত একটি চিরহরিৎ বৃক্ষ। এটি সাধারণত ৪০ মিটার পর্যন্ত উঁচু হতে পারে। এর মূল অনেক গভীরে যায় যা মাটির আর্দ্রতা ধরে রাখে। পাতাগুলো গাঢ় সবুজ এবং কচি অবস্থায় লালচে-তামাটে বর্ণের হয়। আমের ফুল বা মুকুল ছোট এবং সুগন্ধি। এর ফল 'ড্রুপ' (Drupe) জাতীয়, যার ভেতরে একটি শক্ত আঁটি থাকে। আমের বিভিন্ন অংশ ভেষজ তেল এবং ক্বাথ তৈরিতে ব্যবহৃত হয়।</p>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-flask"></i> রাসায়নিক উপাদান</h3>
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>ম্যাঙ্গিফেরিন:</strong> এটি শক্তিশালী অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে।</li>
-                <li><strong>ভিটামিন সমৃদ্ধ:</strong> এটি ভিটামিন এ, সি, এবং ই এর আধার।</li>
+                <li><strong>ম্যাঙ্গিফেরিন (Mangiferin):</strong> এটি আমের পাতা ও মূলের ছালের প্রধান সক্রিয় উপাদান। এটি একটি শক্তিশালী প্রাকৃতিক অ্যান্টি-অক্সিডেন্ট যা ক্যানসার কোষের বৃদ্ধি রোধ করে।</li>
+                <li><strong>পলিফেনল ও ফ্ল্যাভোনয়েড:</strong> এতে প্রচুর পরিমাণে কোয়ারসেটিন এবং ক্যাটেচিন থাকে যা হৃদরোগের ঝুঁকি কমায়।</li>
+                <li><strong>ভিটামিন প্রোফাইল:</strong> আম ভিটামিন এ (বিটা-ক্যারোটিন), সি, ই এবং কে এর অন্যতম সেরা উৎস।</li>
+                <li><strong>ট্যানিন:</strong> আমের ছাল এবং কচি পাতায় ট্যানিন থাকে যা রক্ত আমাশয় সারাতে কার্যকরী।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>ডায়াবেটিস নিয়ন্ত্রণ:</strong> কচি আম পাতার ক্বাথ সুগারের মাত্রা কমায়।</li>
-                <li><strong>হজম শক্তি:</strong> এর ফাইবার কোষ্ঠকাঠিন্য দূর করতে সাহায্য করে।</li>
-                <li><strong>ত্বকের সুরক্ষা:</strong> পাতার রস চর্মরোগ সারাতে ব্যবহৃত হয়।</li>
+                <li><strong>ডায়াবেটিস নিয়ন্ত্রণ:</strong> আমের কচি পাতার গুঁড়ো অগ্ন্যাশয়ের কর্মক্ষমতা বাড়িয়ে ইনসুলিন নিঃসরণে সাহায্য করে।</li>
+                <li><strong>রক্তাল্পতা (Anemia):</strong> আমের আঁটির ভেতরের অংশ আয়রন সমৃদ্ধ, যা লোহিত রক্তকণিকা তৈরিতে সাহায্য করে।</li>
+                <li><strong>কিডনির পাথর:</strong> আমের পাতার চূর্ণ নিয়মিত সেবনে কিডনির ছোট পাথর অপসারণে সাহায্য করে বলে প্রচলিত আছে।</li>
+                <li><strong>উচ্চ রক্তচাপ:</strong> আম পাতায় থাকা হাইপোটেনসিভ উপাদান রক্তচাপ কমাতে সহায়ক।</li>
+                <li><strong>হজম ও লিভার:</strong> পাকা আম লিভারের টনিক হিসেবে কাজ করে এবং পিত্তের ভারসাম্য রক্ষা করে।</li>
             </ul>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 12px;"><i class="fas fa-exclamation-circle"></i> সতর্কতা</h4>
-            <p>কিডনি রোগীদের আম খাওয়ার আগে চিকিৎসকের পরামর্শ নেওয়া জরুরি কারণ এতে পটাশিয়াম থাকে।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
+            <div class="usage-card">
+                <h4>১. ডায়াবেটিসের বিশেষ পানীয়:</h4>
+                <p>১০টি কচি আম পাতা ১ লিটার পানিতে সারারাত ভিজিয়ে রাখুন। সকালে পানিটি ছেঁকে খালি পেটে পান করুন। এটি রক্তে শর্করার মাত্রা নিয়ন্ত্রণে আধুনিক ভেষজ বিজ্ঞানেও স্বীকৃত।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. দাঁত ও মাড়ির ব্যথায়:</h4>
+                <p>আম পাতা সেদ্ধ করা পানি দিয়ে কুলকুচি করলে দাঁতের গোড়া থেকে রক্ত পড়া বন্ধ হয় এবং ব্যথা কমে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৩. রক্ত আমাশয় ও ডায়রিয়ায়:</h4>
+                <p>আমের ছালের শুকনো গুঁড়ো ১ গ্রাম পরিমাণ সামান্য দই বা মধুর সাথে মিশিয়ে দিনে ২ বার সেবন করুন।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৪. পুড়ে যাওয়া স্থানে:</h4>
+                <p>আম পাতা পুড়িয়ে তার ছাই ভ্যাসলিন বা নারকেল তেলের সাথে মিশিয়ে দগ্ধ স্থানে লাগালে জ্বালা কমে এবং দ্রুত চামড়া শুকায়।</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• অতিরিক্ত পাকা আম রক্তে সুগার বাড়িয়ে দিতে পারে, তাই ডায়াবেটিস রোগীদের ডাক্তারী পরামর্শে খাওয়া উচিত।</p>
+                <p>• আমের বোঁটার আঠায় 'ইউরুশিওল' থাকে যা অনেকের ত্বকে অ্যালার্জি সৃষ্টি করতে পারে।</p>
+                <p>• কাঁচা আম খাওয়ার পর সাথে সাথে দুধ পান করা উচিত নয়, এতে হজমের সমস্যা হতে পারে।</p>
+                <p>• কিডনি বা লিভারের জটিল রোগে আক্রান্তদের চিকিৎসকের পরামর্শ ছাড়া ঘন ক্বাথ সেবন করা নিষেধ।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
