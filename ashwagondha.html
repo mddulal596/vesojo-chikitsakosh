@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#9c27b0;
-    --dark:#4a148c;
-    --light:#f3e5f5;
-    --accent:#7b1fa2;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #fdfafd;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #e1bee7;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -194,20 +222,21 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🦾</div>
+            <div class="plant-icon-large">🍶</div>
             <h2>১১. অশ্বগন্ধা (Ashwagandha)</h2>
             <small>Scientific Name: Withania somnifera (L.) Dunal</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: কটু, তিক্ত, কষায়</div>
-                <div class="spec-item">বীর্য: উষ্ণ (Heating)</div>
-                <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">গুণ: লঘু, স্নিগ্ধ</div>
+                <div class="spec-item">রস: তিক্ত, কষায়, কটু</div>
+                <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
+                <div class="spec-item">বিপাক: মধুর</div>
+                <div class="spec-item">দোষ: কফ ও বাত নাশক</div>
+                <div class="spec-item">বিশেষত্ব: শ্রেষ্ঠ বলকারক ও স্ট্রেস রিলিভার</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>অশ্বগন্ধা ভারতীয় উপমহাদেশের অন্যতম শক্তিশালী এবং জনপ্রিয় ওষুধি ভেষজ। আয়ুর্বেদ শাস্ত্রে একে 'রসায়ন' বা যৌবন ধরে রাখার মহৌষধ হিসেবে গণ্য করা হয়। এর মূল থেকে ঘোড়ার মতো এক প্রকার গন্ধ বের হয় এবং এটি সেবনে ঘোড়ার মতো শক্তি ও জীবনীশক্তি লাভ করা যায় বলে একে 'অশ্বগন্ধা' বলা হয়। এটি মূলত শরীরের রোগ প্রতিরোধ ক্ষমতা বাড়াতে এবং মানসিক চাপ কমাতে ব্যবহৃত হয়।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>অশ্বগন্ধাকে আয়ুর্বেদ শাস্ত্রের 'রাজকীয় ভেষজ' বলা হয়। এর নামের অর্থ হলো 'ঘোড়ার গন্ধ'—বলা হয় এটি সেবন করলে ঘোড়ার মতো শক্তি এবং জীবনীশক্তি পাওয়া যায়। ৩০০০ বছরেরও বেশি সময় ধরে এটি অ্যাডাপ্টোজেন (Adaptogen) হিসেবে ব্যবহৃত হয়ে আসছে, যা শরীরকে মানসিক ও শারীরিক চাপের সাথে খাপ খাওয়াতে সাহায্য করে। আধুনিক বিজ্ঞান একে 'ইন্ডিয়ান জিনসেং' হিসেবে স্বীকৃতি দিয়েছে।</p>
         </div>
 
         <div class="info-section">
@@ -216,58 +245,94 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
                 <div><strong>সংস্কৃত:</strong> অশ্বগন্ধা, বরাহকর্ণী, বাজিকরী</div>
                 <div><strong>ইংরেজি:</strong> Winter Cherry / Indian Ginseng</div>
                 <div><strong>হিন্দি:</strong> আসগন্ধ (Asgandh)</div>
-                <div><strong>তামিল:</strong> আমুক্কিরা (Amukkira)</div>
-                <div><strong>ফার্সি:</strong> আসগন্ধ-ই-নাগোরি</div>
-                <div><strong>আরবি:</strong> ওবরাত কানজু</div>
+                <div><strong>আরবি:</strong> উবাবেকা</div>
+                <div><strong>ফার্সি:</strong> ফনজে গঞ্জ</div>
+                <div><strong>তামিল:</strong> আমুক্কিরা</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>অশ্বগন্ধা Solanaceae পরিবারের অন্তর্ভুক্ত একটি চিরহরিৎ গুল্মজাতীয় উদ্ভিদ। এটি সাধারণত ১.৫ মিটার পর্যন্ত লম্বা হয়। এর পাতাগুলো ডিম্বাকৃতির এবং রোমশ। ফুলগুলো ছোট, সবুজ-হলুদাভ রঙের হয় এবং ফলগুলো পাকা অবস্থায় উজ্জ্বল লাল বর্ণের হয়, যা দেখতে অনেকটা ছোট টমেটোর মতো। ওষুধি কাজে মূলত এর মূল বা শিকড় ব্যবহার করা হয়।</p>
+            <p>অশ্বগন্ধা একটি চিরহরিৎ গুল্ম জাতীয় উদ্ভিদ যা সাধারণত ৩৫-৭৫ সেন্টিমিটার উঁচু হয়। এর পাতাগুলো ডিম্বাকৃতি এবং ফুলগুলো ছোট ও সবুজাভ। এর ফলগুলো ছোট ও লাল বর্ণের হয় যা দেখতে টমেটোর মতো। তবে চিকিৎসার প্রধান অংশ হলো এর মূল বা শিকড়, যা মাংসল এবং সাদাটে বর্ণের হয়। এটি শুকনো অবস্থায় উগ্র গন্ধযুক্ত।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>উইদ্যানোলাইডস (Withanolides):</strong> এটি অশ্বগন্ধার প্রধান সক্রিয় উপাদান যা প্রদাহ কমাতে এবং টিউমার প্রতিরোধে সাহায্য করে।</li>
-                <li><strong>অ্যালকালয়েডস (Withanine, Somniferine):</strong> যা স্নায়ুতন্ত্রকে শান্ত রাখতে এবং ঘুমের উন্নতি করতে কাজ করে।</li>
-                <li><strong>স্যাফোনিন ও আয়রন:</strong> যা শরীরের রক্তস্বল্পতা দূর করতে এবং শক্তি বৃদ্ধিতে সহায়ক।</li>
+                <li><strong>উইথ্যানোলাইডস:</strong> এটি গাছের প্রধান সক্রিয় উপাদান যা প্রদাহ নাশক এবং টিউমার বিরোধী হিসেবে কাজ করে।</li>
+                <li><strong>অ্যালকালয়েডস:</strong> যেমন সোমনিফেরিন, যা ভালো ঘুমে এবং স্নায়ুতন্ত্র শান্ত রাখতে সাহায্য করে।</li>
+                <li><strong>অ্যামিনো অ্যাসিড:</strong> শরীরের টিস্যু পুনর্গঠন এবং পেশি মজবুত করতে ভূমিকা রাখে।</li>
+                <li><strong>আয়রন:</strong> যা রক্তস্বল্পতা দূর করতে সাহায্য করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>মানসিক চাপ ও উদ্বেগ হ্রাস:</strong> এটি কর্টিসল হরমোনের মাত্রা কমিয়ে দুশ্চিন্তা এবং বিষণ্নতা দূর করতে সাহায্য করে।</li>
-                <li><strong>যৌন শক্তি ও প্রজনন ক্ষমতা বৃদ্ধি:</strong> এটি পুরুষদের টেস্টোস্টেরন হরমোনের মাত্রা বাড়ায় এবং শুক্রাণুর গুণমান উন্নত করে।</li>
-                <li><strong>স্মৃতিশক্তি ও মস্তিষ্ক সুরক্ষা:</strong> এটি মস্তিষ্কের কোষের ক্ষয় রোধ করে এবং মনোযোগ ও স্মৃতিশক্তি বৃদ্ধিতে সহায়তা করে।</li>
-                <li><strong>শারীরিক দুর্বলতা দূরীকরণ:</strong> দীর্ঘস্থায়ী রোগ পরবর্তী দুর্বলতা কাটাতে এবং পেশী গঠনে অশ্বগন্ধা অত্যন্ত কার্যকর।</li>
-                <li><strong>অনিদ্রা দূরীকরণ:</strong> রাতে ভালো ঘুমের জন্য অশ্বগন্ধা চূর্ণ দুধের সাথে মিশিয়ে খেলে জাদুকরী উপকার পাওয়া যায়।</li>
+                <li><strong>মানসিক প্রশান্তি:</strong> এটি কর্টিসল হরমোনের মাত্রা কমিয়ে দুশ্চিন্তা (Anxiety) এবং অবসাদ দূর করে।</li>
+                <li><strong>শারীরিক শক্তি বৃদ্ধি:</strong> অশ্বগন্ধা শারীরিক ক্লান্তি দূর করে এবং শরীরের সামগ্রিক স্ট্যামিনা বাড়ায়।</li>
+                <li><strong>যৌন স্বাস্থ্য:</strong> এটি পুরুষদের শুক্রাণুর সংখ্যা বৃদ্ধি এবং টেস্টোস্টেরন হরমোনের মাত্রা উন্নত করতে ব্যবহৃত হয়।</li>
+                <li><strong>স্মৃতিশক্তি ও মস্তিষ্ক:</strong> এটি মস্তিষ্কের কোষকে রক্ষা করে এবং মনোযোগ ও স্মৃতিশক্তি তীক্ষ্ণ করে।</li>
+                <li><strong>থাইরয়েড নিয়ন্ত্রণ:</strong> হাইপোথাইরয়েডিজমের চিকিৎসায় এটি হরমোনের ভারসাম্য রক্ষা করতে সহায়ক।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. সাধারণ দুর্বলতা ও শক্তিবর্ধনে:</h4>
-                <p>৩-৫ গ্রাম অশ্বগন্ধা চূর্ণ এক গ্লাস কুসুম গরম দুধ এবং এক চামচ মধুর সাথে মিশিয়ে রাতে ঘুমানোর আগে সেবন করুন।</p>
+                <h4>১. অনিদ্রা ও দুশ্চিন্তা কমাতে:</h4>
+                <p>১ চামচ অশ্বগন্ধা চূর্ণ এক গ্লাস গরম দুধ এবং সামান্য মধুর সাথে রাতে ঘুমানোর আগে সেবন করুন।</p>
             </div>
             <div class="usage-card">
-                <h4>২. দুশ্চিন্তা ও অনিদ্রায়:</h4>
-                <p>অশ্বগন্ধা চূর্ণ এবং ঘৃত (ঘি) মিশিয়ে হালকা গরম দুধের সাথে খেলে স্নায়বিক উত্তেজনা প্রশমিত হয়।</p>
+                <h4>২. পেশি ও শারীরিক দুর্বলতায়:</h4>
+                <p>অশ্বগন্ধা চূর্ণ এবং ঘৃত (ঘি) সমপরিমাণ মিশিয়ে নিয়মিত সকালে খেলে শরীরের ওজন বৃদ্ধি পায় এবং হাড় মজবুত হয়।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. বাতের ব্যথায়:</h4>
-                <p>অশ্বগন্ধার মূল বেটে তিলের তেলের সাথে গরম করে ব্যথার স্থানে মালিশ করলে জয়েন্টের ব্যথা ও ফোলা দ্রুত কমে।</p>
+                <h4>৩. বাতের ব্যথায়:</h4>
+                <p>অশ্বগন্ধার মূল বেটে প্রলেপ দিলে জয়েন্টের ব্যথা এবং ফোলা দ্রুত কমে যায়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• গর্ভাবস্থায় অশ্বগন্ধা সেবন করা থেকে বিরত থাকা উচিত, কারণ এটি প্রসব বেদনা ত্বরান্বিত করতে পারে।</p>
-            <p>• হাইপারথাইরয়েডিজম বা থাইরয়েডের সমস্যা থাকলে চিকিৎসকের পরামর্শ ছাড়া এটি সেবন করবেন না।</p>
-            <p>• দীর্ঘমেয়াদী কোনো ওষুধ (যেমন ডায়াবেটিস বা উচ্চ রক্তচাপের ওষুধ) সেবন করলে অশ্বগন্ধা ব্যবহারের আগে বিশেষজ্ঞের পরামর্শ নিন।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>শিশুদের মাত্রা (৭-১৫ বছর)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>মূল চূর্ণ (পাউডার)</td>
+                            <td>৩ - ৬ গ্রাম</td>
+                            <td>১ - ২ গ্রাম</td>
+                        </tr>
+                        <tr>
+                            <td>ক্যাপসুল/ট্যাবলেট</td>
+                            <td>১ - ২ টি</td>
+                            <td>চিকিৎসকের পরামর্শে</td>
+                        </tr>
+                        <tr>
+                            <td>অশ্বগন্ধারিষ্ট (তরল)</td>
+                            <td>১৫ - ২০ মিলি</td>
+                            <td>৫ - ১০ মিলি</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• **গর্ভাবস্থায়:** অশ্বগন্ধা সেবন একেবারে এড়িয়ে চলুন কারণ এটি জরায়ুর সংকোচন ঘটাতে পারে।</p>
+                <p>• অতিরিক্ত সেবনে পেট খারাপ, বমি বা ঝিমুনি হতে পারে।</p>
+                <p>• যাদের অটোইমিউন ডিজিজ (যেমন লুপাস, টাইপ-১ ডায়াবেটিস) আছে, তারা সাবধানে ব্যবহার করবেন।</p>
+                <p>• দীর্ঘ সময় ধরে কোনো ঘুমের ওষুধের সাথে এটি সেবন করবেন না।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
