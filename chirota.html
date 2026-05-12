@@ -3,148 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>চিরতা (Chirota) - বিস্তারিত তথ্য | ভেষজ চিকিৎসা কোষ</title>
+<title>চিরতা (Chirota) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
-    --primary:#2d5a27;
-    --dark:#1e3d1a;
-    --light:#f4faf4;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
+    --nav-blue: #1976d2; 
+    --blue-btn: #1976d2; 
+    --blue-hover: #115293; 
     --white:#fff;
+    --footer-grey-light: #999999;
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body{
-    font-family:'Segoe UI',sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background:var(--light);
     color:#333;
-    line-height:1.6;
+    line-height:1.8;
 }
 
 /* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
-    background:var(--dark); display:flex;
+    background:var(--nav-blue); display:flex;
     justify-content:space-between; align-items:center;
     padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
 }
-.logo{ color:#fff; text-decoration:none; font-size:24px; font-weight:bold; }
-.nav-links{ display:flex; align-items:center; list-style:none; }
-.nav-links a{ color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
-.nav-links a:hover{ background:var(--primary); }
+.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+.nav-links { display:flex; align-items:center; list-style:none; }
+.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover { background:var(--blue-hover); }
 
-.nav-social{ display:flex; gap:10px; }
-.nav-social a{ color:white; font-size:16px; width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
-.nav-social a:hover{ background:rgba(255,255,255,.15); }
+.nav-social { display:flex; gap:10px; align-items:center; }
+.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover { background:rgba(255,255,255,0.2); }
 
 /* ================= HEADER ================= */
 header{
-    background:linear-gradient(135deg,var(--primary),var(--dark));
-    color:#fff; text-align:center; padding:60px 20px;
+    background:linear-gradient(135deg,var(--accent),var(--dark));
+    color:#fff; text-align:center; padding:100px 20px;
 }
 
 /* ================= CONTENT CONTAINER ================= */
 .container {
     max-width: 1000px;
-    margin: -30px auto 50px;
-    padding: 20px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
 }
 
 .plant-detail-card {
     background: white;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
 .plant-header {
     text-align: center;
     border-bottom: 2px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
-.plant-icon-large { font-size: 4rem; margin-bottom: 10px; }
-.plant-detail-card h2 { color: var(--primary); font-size: 2rem; }
-.plant-detail-card small { color: #777; font-size: 1.1rem; font-style: italic; }
+.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
+.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
 
-.info-section { margin-bottom: 30px; }
+.ayurvedic-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+.spec-item {
+    background: var(--blue-btn);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
+}
+
+.info-section { margin-bottom: 60px; }
 .info-section h3 {
     color: var(--dark);
-    border-left: 5px solid var(--primary);
-    padding-left: 15px;
-    margin-bottom: 15px;
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    background: #fffcf0;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
 .benefit-list li {
-    margin-bottom: 10px;
-    padding-left: 30px;
+    margin-bottom: 22px;
+    padding-left: 50px;
     position: relative;
+    font-size: 1.1rem;
 }
 .benefit-list li::before {
-    content: "\f00c";
+    content: "\f058";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute; left: 0;
-    color: var(--primary);
+    color: var(--dark);
+    font-size: 1.4rem;
 }
 
-/* ================= FOOTER ================= */
-footer {
-    background: #1e3d1a;
-    color: #ffffff;
-    text-align: center;
-    padding: 50px 20px 30px;
-    margin-top: 50px;
-}
-
-footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
-
-.footer-nav { margin-bottom: 25px; }
-.footer-nav a { color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px; }
-
-.social-container {
-    display: flex; justify-content: center;
-    gap: 12px; flex-wrap: wrap; margin-bottom: 30px;
-}
-
-.s-btn {
-    display: flex; align-items: center; gap: 8px;
-    padding: 10px 20px; border-radius: 50px;
-    color: white; text-decoration: none; font-size: 14px;
+.usage-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
     transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
 
-.s-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
-
-.fb { background: #1877F2; }
-.yt { background: #FF0000; }
-.ig { background: #E4405F; }
-.ln { background: #0077B5; }
-
-.copyright {
-    font-size: 13px; color: #b0b0b0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px; margin-bottom: 20px;
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
 }
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
+
+.warning-box {
+    background: #fff5f5;
+    border-radius: 15px;
+    padding: 35px;
+    border-left: 8px solid #e53935;
+    margin-top: 30px;
+}
+
+.btn-back-container { text-align: center; margin-top: 40px; }
+.btn-back-list {
+    text-decoration: none; background: var(--blue-btn); color: white; 
+    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+.btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    background: #2d5a27; color: white; border: none;
-    padding: 8px 20px; border-radius: 20px; cursor: pointer;
-    font-size: 14px; transition: 0.3s;
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
+    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-.back-to-top:hover { background: #3d7a35; }
+footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
+.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
+.footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-/* MOBILE OPTIMIZATION */
-@media(max-width:768px){
-    nav{ flex-direction: column; height:auto; padding:15px; gap: 10px; }
-    .plant-detail-card { padding: 20px; }
-    .plant-detail-card h2 { font-size: 1.5rem; }
-}
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -159,68 +209,153 @@ footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
     <div class="nav-social">
         <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
 </nav>
 
 <header>
-    <h1>ভেষজ উদ্ভিদের বিস্তারিত তথ্য</h1>
+    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
 </header>
 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🪵</div>
-            <h2>১০. চিরতা (Chirota)</h2>
-            <small>Scientific Name: Swertia chirayita</small>
+            <div class="plant-icon-large">🍵</div>
+            <h2>২৮. চিরতা (Chirota)</h2>
+            <small>Scientific Name: Swertia chirata Buch.-Ham.</small>
+            <div class="ayurvedic-specs">
+                <div class="spec-item">রস: অতি তিক্ত (Extremely Bitter)</div>
+                <div class="spec-item">বীর্য: শীতল (Cooling)</div>
+                <div class="spec-item">বিপাক: কটু</div>
+                <div class="spec-item">দোষ: কফ ও পিত্ত নাশক</div>
+                <div class="spec-item">বিশেষত্ব: সর্বজ্বর নাশক ও রক্তশোধনকারী</div>
+            </div>
         </div>
 
         <div class="info-section">
-            <h3>পরিচিতি</h3>
-            <p>চিরতা একটি অত্যন্ত তিক্ত স্বাদের ঔষধি উদ্ভিদ যা ভারত ও বাংলাদেশের পার্বত্য অঞ্চলে বেশি জন্মে। আয়ুর্বেদিক চিকিৎসায় একে 'বিটার টনিক' বলা হয়। এটি রক্ত পরিষ্কার করতে এবং শরীরের দীর্ঘস্থায়ী জ্বর ও লিভারের সমস্যায় জাদুকরী সমাধান হিসেবে পরিচিত। এর ডাল ও পাতা উভয়ই চিকিৎসায় ব্যবহৃত হয়।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>চিরতা আয়ুর্বেদ ও ইউনানি চিকিৎসার অন্যতম শ্রেষ্ঠ তিতকুটে ভেষজ। হিমালয়ের উচ্চ পার্বত্য অঞ্চলে এটি প্রচুর পরিমাণে পাওয়া যায়। প্রাচীন কাল থেকেই দীর্ঘস্থায়ী জ্বর এবং লিভারের জটিলতা নিরাময়ে এর অদ্বিতীয় ব্যবহার চলে আসছে। আয়ুর্বেদ শাস্ত্রে একে 'কিরাততিক্ত' বলা হয়, যা মূলত রক্তের বিষাক্ত পদার্থ বা টক্সিন দূর করতে এবং রোগ প্রতিরোধ ক্ষমতা বৃদ্ধিতে ব্যবহৃত হয়।</p>
         </div>
 
         <div class="info-section">
-            <h3>প্রধান উপকারিতা</h3>
+            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+            <div class="lang-grid">
+                <div><strong>সংস্কৃত:</strong> কিরাততিক্ত, ভূনিম্ব</div>
+                <div><strong>ইংরেজি:</strong> Chirata, Bitter Stick</div>
+                <div><strong>হিন্দি:</strong> চিরায়তা (Chirayata)</div>
+                <div><strong>তামিল:</strong> নিলাবেমবু (Nilavembu)</div>
+                <div><strong>বাংলা:</strong> চিরতা</div>
+                <div><strong>আরবি:</strong> কাসাবুজ জারিরা</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>চিরতা একটি বর্ষজীবী বা দ্বিবর্ষজীবী বিরুৎ জাতীয় উদ্ভিদ যা ২ থেকে ৪ ফুট পর্যন্ত লম্বা হয়। এর কাণ্ড চারকোনা এবং লালচে-বাদামী রঙের হয়। পাতাগুলো বিপরীতমুখী এবং জোড়ায় জোড়ায় থাকে। ফুলগুলো ছোট, সবুজ-হলুদ বা বেগুনি রঙের এবং প্রচুর পরিমাণে ফোটে। এর প্রতিটি অংশই অত্যন্ত তিতকুটে, তবে মূল ও কাণ্ড ভেষজ হিসেবে সবচেয়ে বেশি ব্যবহৃত হয়।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li>ডায়াবেটিস নিয়ন্ত্রণে ইনসুলিনের নিঃসরণ স্বাভাবিক রাখতে সাহায্য করে।</li>
-                <li>রক্ত পরিষ্কার করে এবং চর্মরোগ ও অ্যালার্জির সমস্যা দূর করে।</li>
-                <li>লিভারকে টক্সিনমুক্ত রাখতে এবং কর্মক্ষমতা বাড়াতে অত্যন্ত কার্যকর।</li>
-                <li>দীর্ঘদিনের পুরনো জ্বর এবং কৃমিনাশক হিসেবে কাজ করে।</li>
+                <li><strong>Amarogentin:</strong> পৃথিবীর অন্যতম তিতকুটে গ্লাইকোসাইড যা লিভার সুরক্ষা দেয়।</li>
+                <li><strong>Swertiamarin:</strong> এটি যকৃৎ বা লিভারের প্রদাহ কমাতে সাহায্য করে।</li>
+                <li><strong>Xanthones:</strong> শক্তিশালী অ্যান্টি-অক্সিডেন্ট যা জীবাণু ধ্বংস করতে পারে।</li>
+                <li><strong>Ophelic Acid:</strong> যা রক্ত পরিষ্কার রাখতে এবং হজম প্রক্রিয়া উন্নত করতে সহায়ক।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3>ব্যবহার বিধি</h3>
-            <p>চিরতার ডাল রাতে এক গ্লাস পানিতে ভিজিয়ে রেখে পরদিন সকালে খালি পেটে সেই পানি ছেঁকে পান করা সবচেয়ে জনপ্রিয় নিয়ম। এটি অত্যন্ত তিতা হওয়ায় অনেকে মধুর সাথে মিশিয়েও পান করেন। এছাড়া লিভারের সমস্যায় চিরতার ক্বাথ ফুটিয়ে ঠান্ডা করে খাওয়ার বিধান রয়েছে।</p>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
+            <ul class="benefit-list">
+                <li><strong>ডায়াবেটিস নিয়ন্ত্রণ:</strong> চিরতা রক্তের সুগার লেভেল নিয়ন্ত্রণে রাখতে এবং ইনসুলিনের কার্যকারিতা বাড়াতে সাহায্য করে।</li>
+                <li><strong>দীর্ঘমেয়াদী জ্বর:</strong> ম্যালেরিয়া বা ক্রনিক জ্বরের পর শরীরের ক্লান্তি ও বিষক্রিয়া দূর করতে চিরতার ভেজানো জল মহৌষধ।</li>
+                <li><strong>রক্ত পরিষ্কারক:</strong> এটি ত্বক থেকে টক্সিন বের করে দেয়, যার ফলে ব্রণ ও অ্যালার্জির সমস্যা দূর হয়।</li>
+                <li><strong>হজম শক্তি বৃদ্ধি:</strong> ক্ষুধামন্দা দূর করতে এবং পেটের কৃমি বিনাশে চিরতা অত্যন্ত কার্যকর।</li>
+                <li><strong>লিভার টনিক:</strong> ফ্যাটি লিভার বা লিভারের এনজাইম ভারসাম্যহীনতায় চিরতা জাদুর মতো কাজ করে।</li>
+            </ul>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" style="text-decoration: none; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;">
-                <i class="fas fa-home"></i> তালিকায় ফিরে যান
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
+            <div class="usage-card">
+                <h4>১. ডায়াবেটিস ও রক্ত পরিষ্কারে:</h4>
+                <p>রাতে এক গ্লাস পানিতে ৪-৫টি চিরতার শুকনো ডাল ভিজিয়ে রাখুন। সকালে খালি পেটে সেই পানি ছেঁকে পান করুন। এটি নিয়ম করে খেলে রক্ত পরিষ্কার থাকে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. অ্যালার্জি ও চুলকানিতে:</h4>
+                <p>চিরতা ভেজানো পানি দিয়ে গোসল করলে বা আক্রান্ত স্থান ধুয়ে ফেললে ত্বকের অ্যালার্জি ও চুলকানি দ্রুত কমে যায়।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৩. কৃমির সমস্যায়:</h4>
+                <p>চিরতার গুঁড়ো সামান্য মধুর সাথে মিশিয়ে খেলে পেটের কৃমি মরে যায় এবং পেট পরিষ্কার হয়।</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> সেবন বিধি ও মাত্রা</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>ব্যবহারের পদ্ধতি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>চিরতা ভেজানো পানি</td>
+                            <td>৩০ - ৫০ মিলি</td>
+                            <td>সকালে খালি পেটে</td>
+                        </tr>
+                        <tr>
+                            <td>শুকনো চূর্ণ (Powder)</td>
+                            <td>১ - ২ গ্রাম</td>
+                            <td>পানি বা মধুর সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>চিরতার ক্বাথ</td>
+                            <td>১০ - ১৫ মিলি</td>
+                            <td>খাবার আগে (হজম বৃদ্ধিতে)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• অতিরিক্ত মাত্রায় চিরতা সেবন করলে বমি ভাব বা গ্যাস্ট্রিকের সমস্যা হতে পারে।</p>
+                <p>• যাদের সুগার অনেক লো (Hypoglycemia), তাদের চিরতা সেবনে সতর্কতা অবলম্বন করা উচিত কারণ এটি সুগার কমিয়ে দেয়।</p>
+                <p>• গর্ভাবস্থায় এবং দুগ্ধদানকারী মায়েদের চিকিৎসকের পরামর্শ ছাড়া চিরতা সেবন করা নিষেধ।</p>
+                <p>• শিশুদের ক্ষেত্রে মাত্রা খুব সামান্য হওয়া উচিত এবং দীর্ঘ সময় ধরে দেওয়া যাবে না।</p>
+            </div>
+        </div>
+
+        <div class="btn-back-container">
+            <a href="index.html" class="btn-back-list">
+                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
             </a>
         </div>
     </div>
 </div>
 
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 <footer>
     <h2>ভেষজ চিকিৎসা কোষ</h2>
-    <div class="footer-nav">
-        <a href="index.html">হোম</a>
-        <a href="about.html">সম্পর্কে</a>
-        <a href="contact.html">যোগাযোগ</a>
-        <a href="disclaimer.html">সতর্কবার্তা</a>
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
-    
-    <div class="social-container">
-        <a href="https://www.facebook.com/bonargidawahkana.net" class="s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-        <a href="https://www.youtube.com/c/bonarjidawakhana" class="s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://www.instagram.com/mddulal596" class="s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-    </div>
-    
-    <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
-    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">উপরে যান ↑</button>
+    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
 </body>
