@@ -1,51 +1,292 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>দাদমর্দন - ভেষজ চিকিৎসা কোষ</title>
-    <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; margin: 0; background: #f4f7f6; color: #333; }
-        nav { background: #1e3d1a; display: flex; justify-content: space-between; align-items: center; padding: 0 5%; height: 60px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        nav a { color: white; text-decoration: none; font-size: 14px; margin-left: 15px; }
-        .logo { font-weight: bold; font-size: 18px !important; margin-left: 0 !important; }
-        .container { padding: 20px; }
-        .card { background: #fff; max-width: 800px; margin: 30px auto; padding: 40px; border-radius: 15px; border-top: 10px solid #27ae60; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h1 { color: #27ae60; text-align: center; margin-top: 0; }
-        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; margin-top: 25px; }
-        footer { background: #1e3d1a; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
-        footer a { color: white; text-decoration: none; margin: 0 10px; font-size: 14px; }
-        .social-btn { font-size: 18px; display: inline-block; margin: 15px 10px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>দাদমর্দন (Dadmordon) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
+    --nav-blue: #1976d2; 
+    --blue-btn: #1976d2; 
+    --blue-hover: #115293; 
+    --white:#fff;
+    --footer-grey-light: #999999;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:var(--light);
+    color:#333;
+    line-height:1.8;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+    position:sticky; top:0; z-index:999;
+    background:var(--nav-blue); display:flex;
+    justify-content:space-between; align-items:center;
+    padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+.nav-links { display:flex; align-items:center; list-style:none; }
+.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover { background:var(--blue-hover); }
+
+.nav-social { display:flex; gap:10px; align-items:center; }
+.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover { background:rgba(255,255,255,0.2); }
+
+/* ================= HEADER ================= */
+header{
+    background:linear-gradient(135deg,var(--accent),var(--dark));
+    color:#fff; text-align:center; padding:100px 20px;
+}
+
+/* ================= CONTENT CONTAINER ================= */
+.container {
+    max-width: 1000px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
+}
+
+.plant-detail-card {
+    background: white;
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.plant-header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
+.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
+
+.ayurvedic-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+.spec-item {
+    background: var(--blue-btn);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
+}
+
+.info-section { margin-bottom: 60px; }
+.info-section h3 {
+    color: var(--dark);
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    background: #fffcf0;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #ffe082;
+}
+
+.benefit-list { list-style: none; }
+.benefit-list li {
+    margin-bottom: 22px;
+    padding-left: 50px;
+    position: relative;
+    font-size: 1.1rem;
+}
+.benefit-list li::before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute; left: 0;
+    color: var(--dark);
+    font-size: 1.4rem;
+}
+
+.usage-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.warning-box {
+    background: #fff5f5;
+    border-radius: 15px;
+    padding: 35px;
+    border-left: 8px solid #e53935;
+    margin-top: 30px;
+}
+
+.btn-back-container { text-align: center; margin-top: 40px; }
+.btn-back-list {
+    text-decoration: none; background: var(--blue-btn); color: white; 
+    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+.btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
+
+.back-to-top {
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
+    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
+}
+
+footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
+.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
+.footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
+
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
+</style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
-        <div><a href="index.html">হোম</a><a href="about.html">সম্পর্কে</a><a href="contact.html">যোগাযোগ</a></div>
-    </nav>
-    <div class="container">
-        <div class="card">
-            <h1>দাদমর্দন (Ringworm Bush)</h1>
-            <h2>রোগের বিবরণ:</h2>
-            <p>নাম শুনেই বোঝা যায় এটি দাদ ও চুলকানি নিরাময়ে অব্যর্থ। যেকোনো ধরণের চর্মরোগ ও ফাংগাল ইনফেকশনে এটি কাজ করে।</p>
-            <h2>ব্যবহৃত অংশ:</h2> <p>পাতা ও ফুল।</p>
-            <h2>ঔষধ তৈরির পদ্ধতি:</h2>
-            <p>তাজা পাতা বেটে পেস্ট তৈরি করতে হয়।</p>
-            <h2>ব্যবহারের নিয়ম:</h2>
-            <p>আক্রান্ত স্থানে পাতার পেস্ট লাগিয়ে ১ ঘণ্টা রেখে ধুয়ে ফেলুন। দিনে ২ বার ব্যবহার করুন।</p>
+
+<nav>
+    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
+    <ul class="nav-links">
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="about.html">সম্পর্কে</a></li>
+        <li><a href="contact.html">যোগাযোগ</a></li>
+    </ul>
+    <div class="nav-social">
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</nav>
+
+<header>
+    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
+</header>
+
+<div class="container">
+    <div class="plant-detail-card">
+        <div class="plant-header">
+            <div class="plant-icon-large">🌼</div>
+            <h2>৩১. দাদমর্দন (Dadmordon)</h2>
+            <small>Scientific Name: Senna alata (L.) Roxb.</small>
+            <div class="ayurvedic-specs">
+                <div class="spec-item">রস: কটু ও তিক্ত</div>
+                <div class="spec-item">বীর্য: উষ্ণ</div>
+                <div class="spec-item">গুণ: লঘু ও তীক্ষ্ণ</div>
+                <div class="spec-item">প্রধান কাজ: কুষ্ঠ ও দাদ নাশক</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>দাদমর্দন নামের মাধ্যমেই এই ভেষজের প্রধান গুণের পরিচয় পাওয়া যায়। 'দাদ' এবং 'মর্দন' (বিনাশ করা)—অর্থাৎ যা দাদ বা চর্মরোগ ধ্বংস করে। এটি একটি অত্যন্ত পরিচিত ভেষজ যা গ্রাম বাংলার আনাচে-কানাচে জন্মে থাকে। প্রাচীন কাল থেকেই আয়ুর্বেদ এবং লোকজ চিকিৎসায় ছত্রাকজনিত ত্বকের সংক্রমণের জন্য এটি অপ্রতিদ্বন্দ্বী ঔষধ হিসেবে ব্যবহৃত হয়ে আসছে। এর সুন্দর হলুদ ফুলের স্তবকের কারণে একে 'Candle Bush' বা মোমবাতি গাছও বলা হয়।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+            <div class="lang-grid">
+                <div><strong>সংস্কৃত:</strong> দদ্রুঘ্ন, দ্বিপকাস্য</div>
+                <div><strong>ইংরেজি:</strong> Candle Bush, Ringworm Shrub</div>
+                <div><strong>হিন্দি:</strong> দাদমর্দন (Dadmardan)</div>
+                <div><strong>তামিল:</strong> ভান্দুকারি</div>
+                <div><strong>বাংলা:</strong> দাদমর্দন / দাদমারী</div>
+                <div><strong>থাই:</strong> Chumhet thet</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>দাদমর্দন একটি ঝোপালো বা গুল্মজাতীয় উদ্ভিদ যা সাধারণত ২ থেকে ৪ মিটার উঁচু হয়। এর পাতাগুলো বেশ বড় এবং যৌগিক, জোড়ায় জোড়ায় সাজানো থাকে। এই গাছের প্রধান আকর্ষণ হলো এর খাড়া হলুদ ফুলের থোকা, যা দেখতে অনেকটা মোমবাতির শিখার মতো। এর ফলগুলো চ্যাপ্টা এবং লম্বা শুঁটির মতো হয়, যার ভেতরে ছোট ছোট বীজ থাকে।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
+            <ul class="benefit-list">
+                <li><strong>দাদ ও ছত্রাকনাশক:</strong> এর পাতায় অ্যান্টি-ফাঙ্গাল উপাদান থাকে যা দাদ (Ringworm), হাজা এবং ছুলির চিকিৎসায় সরাসরি কাজ করে।</li>
+                <li><strong>কোষ্ঠকাঠিন্য দূরীকরণ:</strong> এর পাতার চা বা ক্বাথ মৃদু রেচক (Laxative) হিসেবে কাজ করে যা কোষ্ঠকাঠিন্য উপশমে সহায়ক।</li>
+                <li><strong>রক্ত পরিষ্কারক:</strong> দাদমর্দন শরীরের অভ্যন্তরীণ টক্সিন দূর করে রক্ত পরিষ্কার রাখতে সাহায্য করে।</li>
+                <li><strong>ব্রণ ও ক্ষত নিরাময়:</strong> ত্বকের পুরনো ক্ষত এবং ব্রণ সারাতে এর পাতার রস অত্যন্ত উপকারী।</li>
+                <li><strong>পেটের কৃমি:</strong> শিশুদের পেটের কৃমি দূর করতেও বিশেষজ্ঞের পরামর্শে এর সীমিত ব্যবহার রয়েছে।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
+            <div class="usage-card">
+                <h4>১. দাদ ও চুলকানির চিকিৎসায়:</h4>
+                <p>দাদমর্দনের টাটকা পাতা সামান্য লবণের সাথে বেটে পেস্ট তৈরি করুন। আক্রান্ত স্থানে প্রতিদিন ২-৩ বার প্রলেপ দিলে কয়েক দিনের মধ্যেই দাদ সেরে যায়।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. কোষ্ঠকাঠিন্য কমাতে:</h4>
+                <p>কয়েকটি শুকনো পাতা গরম পানিতে ফুটিয়ে চা তৈরি করে রাতে ঘুমানোর আগে পান করলে পেট পরিষ্কার হয়।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৩. বিষাক্ত পোকার কামড়ে:</h4>
+                <p>মৌমাছি বা বিষাক্ত কোনো পোকা কামড়ালে পাতার রস লাগালে জ্বালাপোড়া ও ফোলা দ্রুত কমে যায়।</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• এই ভেষজটি মূলত বাহ্যিক ব্যবহারের জন্য বেশি নিরাপদ। সেবনের ক্ষেত্রে অবশ্যই মাত্রার দিকে খেয়াল রাখতে হবে।</p>
+                <p>• অতিরিক্ত সেবনে ডায়রিয়া বা পেটে মোচড় দিতে পারে।</p>
+                <p>• সংবেদনশীল ত্বকের ক্ষেত্রে সরাসরি ব্যবহারের আগে প্যাচ টেস্ট (সামান্য অংশে লাগিয়ে দেখা) করে নেওয়া ভালো।</p>
+                <p>• গর্ভবতী এবং স্তন্যদানকারী মায়েদের চিকিৎসকের পরামর্শ ছাড়া এটি সেবন করা উচিত নয়।</p>
+            </div>
+        </div>
+
+        <div class="btn-back-container">
+            <a href="index.html" class="btn-back-list">
+                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
+            </a>
         </div>
     </div>
-    <footer>
-        <div style="max-width: 1200px; margin: auto;">
-            <h3 style="margin-bottom: 10px;">ভেষজ চিকিৎসা কোষ</h3>
-            <div style="margin: 20px 0;"><a href="index.html">হোম</a> | <a href="about.html">সম্পর্কে</a> | <a href="contact.html">যোগাযোগ</a></div>
-            <div style="margin-bottom: 20px;">
-                <a href="https://www.facebook.com/bonargidawahkana.net/" target="_blank" class="social-btn" style="color: #1877f2;">Facebook</a>
-                <a href="https://www.youtube.com/bonarjidawakhana" target="_blank" class="social-btn" style="color: #ff0000;">YouTube</a>
-            </div>
-            <p>&copy; ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
-            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="background: #27ae60; color: white; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer;">উপরে যান ↑</button>
-        </div>
-    </footer>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<footer>
+    <h2>ভেষজ চিকিৎসা কোষ</h2>
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+    </div>
+    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
+</footer>
+
 </body>
 </html>
