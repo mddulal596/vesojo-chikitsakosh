@@ -3,112 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>আলকুশী বিচি (Mucuna Seed) - বিস্তারিত তথ্য | ভেষজ চিকিৎসা কোষ</title>
+<title>আত্মগুপ্তা (Atmagupta) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
-    --primary:#795548;
-    --dark:#4e342e;
-    --light:#efebe9;
-    --accent:#a1887f;
+    --primary:#2e7d32;
+    --dark:#1b5e20;
+    --light:#e8f5e9;
+    --accent:#4caf50;
+    --nav-blue: #1976d2; 
+    --blue-btn: #1976d2; 
+    --blue-hover: #115293; 
     --white:#fff;
+    --footer-grey-light: #999999;
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body{
-    font-family:'Segoe UI',sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background:var(--light);
     color:#333;
-    line-height:1.6;
+    line-height:1.8;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= NAVBAR (BLUE) ================= */
 nav{
     position:sticky; top:0; z-index:999;
-    background:var(--dark); display:flex;
+    background:var(--nav-blue); display:flex;
     justify-content:space-between; align-items:center;
     padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
 }
-.logo{ color:#fff; text-decoration:none; font-size:24px; font-weight:bold; }
-.nav-links{ display:flex; align-items:center; list-style:none; }
-.nav-links a{ color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
-.nav-links a:hover{ background:var(--primary); }
+.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+.nav-links { display:flex; align-items:center; list-style:none; }
+.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover { background:var(--blue-hover); }
+
+.nav-social { display:flex; gap:10px; align-items:center; }
+.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover { background:rgba(255,255,255,0.2); }
 
 /* ================= HEADER ================= */
 header{
-    background:linear-gradient(135deg,var(--primary),var(--dark));
-    color:#fff; text-align:center; padding:60px 20px;
+    background:linear-gradient(135deg,var(--accent),var(--dark));
+    color:#fff; text-align:center; padding:100px 20px;
 }
 
 /* ================= CONTENT CONTAINER ================= */
 .container {
     max-width: 1000px;
-    margin: -30px auto 50px;
-    padding: 20px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
 }
 
 .plant-detail-card {
     background: white;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
 .plant-header {
     text-align: center;
     border-bottom: 2px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
-.plant-icon-large { font-size: 4rem; margin-bottom: 10px; }
-.plant-detail-card h2 { color: var(--dark); font-size: 2rem; }
-.plant-detail-card small { color: #777; font-size: 1.1rem; font-style: italic; }
+.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
+.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
 
-.info-section { margin-bottom: 30px; }
+.ayurvedic-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+.spec-item {
+    background: var(--blue-btn);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.info-section { margin-bottom: 60px; }
 .info-section h3 {
     color: var(--dark);
-    border-left: 5px solid var(--primary);
-    padding-left: 15px;
-    margin-bottom: 15px;
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    background: #f1f8e9;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #c8e6c9;
 }
 
 .benefit-list { list-style: none; }
 .benefit-list li {
-    margin-bottom: 10px;
-    padding-left: 30px;
+    margin-bottom: 22px;
+    padding-left: 50px;
     position: relative;
+    font-size: 1.1rem;
 }
 .benefit-list li::before {
-    content: "\f00c";
+    content: "\f058";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute; left: 0;
     color: var(--dark);
+    font-size: 1.4rem;
 }
 
-/* ================= FOOTER ================= */
-footer {
-    background: #1d120a;
-    color: #ffffff;
-    text-align: center;
-    padding: 50px 20px 30px;
-    margin-top: 50px;
+.usage-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
 }
 
-.copyright {
-    font-size: 13px; color: #b0b0b0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px;
+.warning-box {
+    background: #fff5f5;
+    border-radius: 15px;
+    padding: 35px;
+    border-left: 8px solid #e53935;
+    margin-top: 30px;
 }
+
+.btn-back-container { text-align: center; margin-top: 40px; }
+.btn-back-list {
+    text-decoration: none; background: var(--blue-btn); color: white; 
+    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+.btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    background: var(--primary); color: white; border: none;
-    padding: 8px 20px; border-radius: 20px; cursor: pointer;
-    font-size: 14px; margin-top: 15px;
+    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
+
+/* ================= FOOTER (#999999) ================= */
+footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
+.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
+.footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
+
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
 </style>
 </head>
 <body>
@@ -118,52 +176,121 @@ footer {
     <ul class="nav-links">
         <li><a href="index.html">হোম</a></li>
         <li><a href="about.html">সম্পর্কে</a></li>
+        <li><a href="contact.html">যোগাযোগ</a></li>
     </ul>
+    <div class="nav-social">
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
 </nav>
 
 <header>
-    <h1>ভেষজ উদ্ভিদের বিস্তারিত তথ্য</h1>
+    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
 </header>
 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🌿</div>
-            <h2>৯৩. আলকুশী বিচি (Mucuna Seed)</h2>
-            <small>Scientific Name: Mucuna pruriens</small>
+            <div class="plant-icon-large">🥜</div>
+            <h2>১৩. আত্মগুপ্তা (Atmagupta)</h2>
+            <small>Scientific Name: Mucuna pruriens (L.) DC.</small>
+            <div class="ayurvedic-specs">
+                <div class="spec-item">রস: মধুর, তিক্ত</div>
+                <div class="spec-item">বীর্য: উষ্ণ (Heating)</div>
+                <div class="spec-item">বিপাক: মধুর</div>
+                <div class="spec-item">গুণ: গুরু, স্নিগ্ধ</div>
+            </div>
         </div>
 
         <div class="info-section">
-            <h3>পরিচিতি</h3>
-            <p>আলকুশী একটি লতানো উদ্ভিদ যার ফল শিম জাতীয় এবং এর গায়ে প্রচুর শুঁয়া থাকে। আয়ুর্বেদ শাস্ত্রে এটি 'আত্মগুপ্তা' নামে পরিচিত। এর বীজে প্রচুর পরিমাণে এল-ডোপা (L-Dopa) নামক রাসায়নিক উপাদান থাকে, যা মস্তিষ্কের ডোপামিন হরমোন বাড়াতে সহায়তা করে। এটি মূলত শারীরিক শক্তি বৃদ্ধি এবং স্নায়বিক সুস্থতার জন্য ব্যবহৃত হয়।</p>
+            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
+            <p>আত্মগুপ্তা বা আলকুশী একটি সুপরিচিত লতাজাতীয় ভেষজ উদ্ভিদ। আয়ুর্বেদ শাস্ত্রে একে শ্রেষ্ঠ 'বাজিকরণ' বা যৌন শক্তিবর্ধক হিসেবে গণ্য করা হয়। এর শুঁটির গায়ে থাকা রোম ত্বকের সংস্পর্শে আসলে প্রচণ্ড চুলকানি সৃষ্টি করে বলে একে লোকভাষায় 'আলকুশী' বলা হয়। তবে এর বীজ আধুনিক চিকিৎসাবিজ্ঞানে পার্কিনসন রোগের চিকিৎসায় ব্যবহৃত এল-ডোপা (L-Dopa) এর প্রধান প্রাকৃতিক উৎস।</p>
         </div>
 
         <div class="info-section">
-            <h3>প্রধান উপকারিতা</h3>
+            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+            <div class="lang-grid">
+                <div><strong>সংস্কৃত:</strong> আত্মগুপ্তা, কপিকচ্ছু, বানরী</div>
+                <div><strong>ইংরেজি:</strong> Velvet Bean / Cowhage</div>
+                <div><strong>হিন্দি:</strong> কৌঁচ (Kaunch)</div>
+                <div><strong>তামিল:</strong> পুনালাইকালি</div>
+                <div><strong>তেলেগু:</strong> দুলগুন্দি</div>
+                <div><strong>ফার্সি:</strong> হাব-উল-কুলকুল</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>আলকুশী Fabaceae পরিবারের একটি লতানো উদ্ভিদ। এটি সাধারণত ঝোপঝাড় বা বড় গাছকে আশ্রয় করে বেয়ে ওঠে। এর ফুলগুলো গাঢ় বেগুনি বা সাদা রঙের হয়। ফল বা শুঁটি দেখতে অনেকটা শিমের মতো, যা মখমলের মতো রোমে ঢাকা থাকে। ওষুধি কাজে মূলত এর বীজ এবং মূল ব্যবহৃত হয়।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li>**পুরুষত্বহীনতা:** এটি প্রাকৃতিক উপায়ে টেস্টোস্টেরন লেভেল ঠিক রাখতে এবং প্রজনন ক্ষমতা বৃদ্ধিতে অত্যন্ত কার্যকর।</li>
-                <li>**পার্কিনসন রোগ:** এল-ডোপা সমৃদ্ধ হওয়ায় এটি পার্কিনসন রোগের স্নায়বিক লক্ষণ ও কাঁপুনি কমাতে সাহায্য করে।</li>
-                <li>**মানসিক প্রশান্তি:** এটি দুশ্চিন্তা কমাতে এবং ঘুমের মান উন্নত করতে সহায়ক।</li>
-                <li>**পেশি গঠন:** এটি শরীরের জীবনীশক্তি ও পেশির দৃঢ়তা বাড়াতে ভূমিকা রাখে।</li>
+                <li><strong>এল-ডোপা (L-Dopa):</strong> যা মস্তিষ্কে ডোপামিন হরমোন তৈরি করে পার্কিনসন নিরাময়ে কাজ করে।</li>
+                <li><strong>অ্যালকালয়েডস (Mucunine, Prurienine):</strong> যা স্নায়ুতন্ত্রকে উদ্দীপিত করে।</li>
+                <li><strong>প্রোটিন ও ফ্যাটি অ্যাসিড:</strong> যা শরীরের পেশী গঠন ও শক্তি বৃদ্ধিতে সহায়ক।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3>ব্যবহার বিধি</h3>
-            <p>আলকুশী বিচি সরাসরি ব্যবহার করা বিপজ্জনক, এটি অবশ্যই শোধন করে নিতে হয়। সাধারণত শোধিত বিচি চূর্ণ ৩-৫ গ্রাম পরিমাণ এক গ্লাস কুসুম গরম দুধের সাথে মিশিয়ে রাতে শোয়ার আগে সেবন করা হয়। তবে এটি অত্যন্ত শক্তিশালী ভেষজ হওয়ায় অবশ্যই বিশেষজ্ঞ চিকিৎসকের পরামর্শ অনুযায়ী সেবন করতে হবে।</p>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <ul class="benefit-list">
+                <li><strong>যৌন স্বাস্থ্য উন্নতি:</strong> এটি শুক্রাণুর সংখ্যা বৃদ্ধি করে এবং ধ্বজভঙ্গ বা যৌন অক্ষমতা দূর করতে অত্যন্ত কার্যকর।</li>
+                <li><strong>পার্কিনসন রোগের চিকিৎসা:</strong> ডোপামিনের প্রাকৃতিক উৎস হওয়ায় এটি হাত-পা কাঁপা বা স্নায়বিক দুর্বলতা কমাতে সাহায্য করে।</li>
+                <li><strong>মানসিক প্রশান্তি:</strong> এটি অবসাদ ও দুশ্চিন্তা কমিয়ে মনকে চনমনে রাখে এবং ভালো ঘুমে সাহায্য করে।</li>
+                <li><strong>পেশী গঠন ও শক্তিবৃদ্ধি:</strong> বডি-বিল্ডারদের জন্য এটি প্রাকৃতিক স্টেরয়েডের বিকল্প হিসেবে পেশীর জোর বাড়াতে কাজ করে।</li>
+                <li><strong>মাসিকের সমস্যা:</strong> নারীদের অনিয়মিত মাসিক ও শ্বেতপ্রদর সমস্যায় এর মূলের রস উপকারী।</li>
+            </ul>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" style="text-decoration: none; background: var(--dark); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold;">
-                <i class="fas fa-home"></i> তালিকায় ফিরে যান
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <div class="usage-card">
+                <h4>১. বাজিকরণ বা শক্তিবর্ধনে:</h4>
+                <p>৩-৫ গ্রাম আলকুশী বীজের চূর্ণ এক গ্লাস গরম দুধ ও চিনির সাথে মিশিয়ে রাতে সেবন করলে বিশেষ উপকার পাওয়া যায়।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. স্নায়বিক দুর্বলতায়:</h4>
+                <p>আলকুশী বীজের গুড়ো এবং অশ্বগন্ধা চূর্ণ সমপরিমাণ মিশিয়ে দুধের সাথে খেলে শরীরের কাঁপুনি ও দুর্বলতা কমে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৩. বাতের ব্যথায়:</h4>
+                <p>আলকুশী মূলের ক্বাথ বা ডিককশন তৈরি করে পান করলে জয়েন্টের ব্যথা ও বাত প্রশমিত হয়।</p>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+            <p>• আলকুশী বীজের খোসা বিষাক্ত হতে পারে, তাই ব্যবহারের আগে বীজগুলো দুধে সেদ্ধ করে খোসা ছাড়িয়ে (শোধন করে) চূর্ণ করা উচিত।</p>
+            <p>• এর শুঁটির গায়ে থাকা রোম সরাসরি স্পর্শ করবেন না, এটি তীব্র চুলকানি ও ত্বকে ফোস্কা সৃষ্টি করতে পারে।</p>
+            <p>• ডোপামিন বা সাইকিয়াট্রিক ওষুধ সেবনকারী এবং গর্ভবতী নারীদের এটি এড়িয়ে চলা উচিত।</p>
+        </div>
+
+        <div class="btn-back-container">
+            <a href="index.html" class="btn-back-list">
+                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
             </a>
         </div>
     </div>
 </div>
 
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 <footer>
-    <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
-    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">উপরে যান ↑</button>
+    <h2>ভেষজ চিকিৎসা কোষ</h2>
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
 </body>
