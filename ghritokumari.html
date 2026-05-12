@@ -1,44 +1,360 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ঘৃতকুমারী - ভেষজ চিকিৎসা কোষ</title>
-    <style>
-        /* ... Same Styles ... */
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; margin: 0; background: #f4f7f6; color: #333; }
-        nav { background: #1e3d1a; display: flex; justify-content: space-between; align-items: center; padding: 0 5%; height: 60px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        nav a { color: white; text-decoration: none; font-size: 14px; margin-left: 15px; }
-        .logo { font-weight: bold; font-size: 18px !important; margin-left: 0 !important; }
-        .container { padding: 20px; }
-        .card { background: #fff; max-width: 800px; margin: 30px auto; padding: 40px; border-radius: 15px; border-top: 10px solid #27ae60; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h1 { color: #27ae60; text-align: center; margin-top: 0; }
-        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; margin-top: 25px; }
-        footer { background: #1e3d1a; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
-        footer a { color: white; text-decoration: none; margin: 0 10px; font-size: 14px; }
-        .social-btn { font-size: 18px; display: inline-block; margin: 15px 10px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ঘৃতকুমারী (Ghritokumari) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#81c784; /* ঘৃতকুমারীর ভেতরের জেলের স্বচ্ছ সবুজ আভা */
+    --dark:#2e7d32;
+    --light:#f1f8e9;
+    --accent:#4caf50;
+    --nav-blue: #1976d2; 
+    --blue-btn: #1976d2; 
+    --blue-hover: #115293; 
+    --white:#fff;
+    --footer-grey-light: #999999;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:var(--light);
+    color:#333;
+    line-height:1.8;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+    position:sticky; top:0; z-index:999;
+    background:var(--nav-blue); display:flex;
+    justify-content:space-between; align-items:center;
+    padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+.nav-links { display:flex; align-items:center; list-style:none; }
+.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover { background:var(--blue-hover); }
+
+.nav-social { display:flex; gap:10px; align-items:center; }
+.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover { background:rgba(255,255,255,0.2); }
+
+/* ================= HEADER ================= */
+header{
+    background:linear-gradient(135deg,var(--accent),var(--dark));
+    color:#fff; text-align:center; padding:100px 20px;
+}
+
+/* ================= CONTENT CONTAINER ================= */
+.container {
+    max-width: 1000px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
+}
+
+.plant-detail-card {
+    background: white;
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.plant-header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
+.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
+
+.ayurvedic-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+.spec-item {
+    background: var(--blue-btn);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
+}
+
+.info-section { margin-bottom: 60px; }
+.info-section h3 {
+    color: var(--dark);
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    background: #e8f5e9;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #c8e6c9;
+}
+
+.benefit-list { list-style: none; }
+.benefit-list li {
+    margin-bottom: 22px;
+    padding-left: 50px;
+    position: relative;
+    font-size: 1.1rem;
+}
+.benefit-list li::before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute; left: 0;
+    color: var(--dark);
+    font-size: 1.4rem;
+}
+
+.usage-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:hover { background: #e8f5e9; }
+
+.warning-box {
+    background: #fff3e0;
+    border-radius: 15px;
+    padding: 35px;
+    border-left: 8px solid #ff9800;
+    margin-top: 30px;
+}
+
+.btn-back-container { text-align: center; margin-top: 40px; }
+.btn-back-list {
+    text-decoration: none; background: var(--blue-btn); color: white; 
+    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+.btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
+
+.back-to-top {
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
+    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
+}
+
+footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
+.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
+.footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
+
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
+</style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
-        <div><a href="index.html">হোম</a><a href="about.html">সম্পর্কে</a><a href="contact.html">যোগাযোগ</a></div>
-    </nav>
-    <div class="container">
-        <div class="card">
-            <h1>২৪. ঘৃতকুমারী (Aloe Vera)</h1>
-            <h2>রোগের বিবরণ:</h2> 
-            <p>অ্যালোভেরা বা ঘৃতকুমারী লিভারের সমস্যা, কোষ্ঠকাঠিন্য এবং অ্যাসিডিটি কমাতে সাহায্য করে। এটি ত্বকের উজ্জ্বলতা বাড়াতে এবং চুলের গোড়া মজবুত করতে অত্যন্ত কার্যকর।</p>
-            <h2>ব্যবহৃত অংশ:</h2> <p>পাতার ভেতরের জেল।</p>
-            <h2>ঔষধ তৈরির পদ্ধতি:</h2> <p>তাজা জেল বের করে শরবত বা সরাসরি ব্যবহার করা হয়।</p>
-            <h2>খাবার নিয়ম:</h2> <p>প্রতিদিন সকালে খালি পেটে ২ চামচ জেল এক গ্লাস পানিতে মিশিয়ে পান করুন।</p>
+
+<nav>
+    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
+    <ul class="nav-links">
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="about.html">সম্পর্কে</a></li>
+        <li><a href="contact.html">যোগাযোগ</a></li>
+    </ul>
+    <div class="nav-social">
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</nav>
+
+<header>
+    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
+</header>
+
+<div class="container">
+    <div class="plant-detail-card">
+        <div class="plant-header">
+            <div class="plant-icon-large">🌵</div>
+            <h2>৪৭. ঘৃতকুমারী (Ghritokumari / Aloe Vera)</h2>
+            <small>Scientific Name: Aloe barbadensis miller</small>
+            <div class="ayurvedic-specs">
+                <div class="spec-item">রস: তিক্ত, মিষ্টি</div>
+                <div class="spec-item">বীর্য: শীতল (Cold)</div>
+                <div class="spec-item">বিপাক: মধুর</div>
+                <div class="spec-item">গুণ: স্নিগ্ধ, গুরু</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>ঘৃতকুমারী বা অ্যালোভেরা হাজার হাজার বছর ধরে একটি ওষধি উদ্ভিদ হিসেবে ব্যবহৃত হয়ে আসছে। প্রাচীন মিশরীয়রা একে 'অমরত্বের উদ্ভিদ' (Plant of Immortality) বলতেন। আয়ুর্বেদে একে 'কুমারী' বলা হয় কারণ এটি নারীদের প্রজননতন্ত্রের স্বাস্থ্য রক্ষায় এবং তারুণ্য বজায় রাখতে দারুণ কার্যকর। এটি ক্লিওপেট্রার সৌন্দর্য চর্চা থেকে শুরু করে যুদ্ধক্ষেত্রে সৈনিকদের ক্ষত সারাতে ব্যবহৃত হতো।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+            <div class="lang-grid">
+                <div><strong>সংস্কৃত:</strong> কুমারী, গৃহকন্যা</div>
+                <div><strong>ইংরেজি:</strong> Aloe Vera</div>
+                <div><strong>হিন্দি:</strong> ঘৃতকুমারী / গুয়ারপাঠা</div>
+                <div><strong>বাংলা:</strong> ঘৃতকুমারী / অ্যালোভেরা</div>
+                <div><strong>তামিল:</strong> কাটরালাই (Kattralai)</div>
+                <div><strong>আরবি:</strong> সাব্বার (Sabbar)</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>ঘৃতকুমারী একটি রসালো (Succulent) কন্দজাতীয় উদ্ভিদ। এর পাতাগুলো লম্বা, পুরু এবং দুপাশে কাঁটাযুক্ত হয়। পাতার ভেতর স্বচ্ছ, পিচ্ছিল জেল থাকে যা মূলত পানির আধার এবং ওষধি উপাদানে ভরপুর। এই গাছটি শুষ্ক এবং উষ্ণ জলবায়ুতে ভালো জন্মায় এবং খুব অল্প যত্নে টবে বা বাগানে বেঁচে থাকে।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
+            <ul class="benefit-list">
+                <li><strong>ভিটামিন ও মিনারেল:</strong> এতে ভিটামিন এ, সি, ই, বি-১২ এবং ফলিক অ্যাসিড রয়েছে।</li>
+                <li><strong>এনজাইম:</strong> অ্যামাইলেজ এবং লাইপেজ যা হজম ও প্রদাহ কমাতে সাহায্য করে।</li>
+                <li><strong>অ্যানথ্রাকুইনোনস:</strong> যা প্রাকৃতিক ল্যাক্সেটিভ বা কোষ্ঠকাঠিন্য দূরকারক।</li>
+                <li><strong>অ্যামিনো অ্যাসিড:</strong> মানবদেহের জন্য প্রয়োজনীয় ২২টি অ্যামিনো অ্যাসিডের মধ্যে ২০টিই এতে বিদ্যমান।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
+            <ul class="benefit-list">
+                <li><strong>ত্বকের যত্ন:</strong> রোদে পোড়া দাগ, ব্রণ এবং বলিরেখা দূর করতে এর জেল অত্যন্ত কার্যকর।</li>
+                <li><strong>হজমের সমস্যায়:</strong> নিয়মিত অ্যালোভেরা জুস খেলে কোষ্ঠকাঠিন্য দূর হয় এবং পাকস্থলীর আলসার নিরাময় হয়।</li>
+                <li><strong>চুলের সুরক্ষা:</strong> মাথার খুশকি দূর করতে এবং চুল পড়া বন্ধ করতে অ্যালোভেরা জেল সরাসরি মাথায় লাগানো যায়।</li>
+                <li><strong>লিভারের স্বাস্থ্য:</strong> এটি লিভারকে টক্সিনমুক্ত করে এবং জন্ডিসের চিকিৎসায় ব্যবহৃত হয়।</li>
+                <li><strong>ডায়াবেটিস নিয়ন্ত্রণ:</strong> গবেষণায় দেখা গেছে এটি রক্তে গ্লুকোজের মাত্রা নিয়ন্ত্রণে রাখতে সাহায্য করে।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
+            <div class="usage-card">
+                <h4>১. পোড়া বা কাটার চিকিৎসায়:</h4>
+                <p>আক্রান্ত স্থানে তৎক্ষণাৎ ঘৃতকুমারীর তাজা জেল লাগিয়ে দিন। এটি জ্বালাপোড়া কমায় এবং কোনো দাগ ছাড়াই ক্ষত শুকাতে সাহায্য করে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. কোষ্ঠকাঠিন্য দূর করতে:</h4>
+                <p>সকালে খালি পেটে ১ গ্লাস পানিতে ২ চা চামচ অ্যালোভেরা জেল ও সামান্য মধু মিশিয়ে পান করুন।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৩. চুলের কন্ডিশনার হিসেবে:</h4>
+                <p>শ্যাম্পু করার ৩০ মিনিট আগে চুলে জেল লাগিয়ে রাখুন। এটি চুলকে নরম, উজ্জ্বল এবং সিল্কি করে তোলে।</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>সেবনের মাত্রা (জেল/জুস)</th>
+                            <th>সময়কাল ও নিয়ম</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>১০ - ১৮ বছর</td>
+                            <td>১০ - ১৫ মিলি</td>
+                            <td>সকালে খালি পেটে হালকা পানির সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>২০ - ৩০ মিলি</td>
+                            <td>দিনে ২ বার খাবার ৩০ মিনিট আগে</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ</td>
+                            <td>১৫ মিলি</td>
+                            <td>কোষ্ঠকাঠিন্য থাকলে রাতে শোবার আগে</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e65100; margin-bottom: 15px;"><i class="fas fa-exclamation-triangle"></i> বিশেষ সতর্কতা</h4>
+                <p>• গর্ভাবস্থায় অ্যালোভেরা জুস পান করা একদম নিষেধ, কারণ এটি জরায়ুর সংকোচন ঘটাতে পারে।</p>
+                <p>• জেলের ওপরের হলুদ রঙের আঠালো অংশ (Latex) সাবধানে সরিয়ে ব্যবহার করুন, এটি পেটে ব্যথার কারণ হতে পারে।</p>
+                <p>• ছোট শিশুদের অভ্যন্তরীণভাবে অ্যালোভেরা সেবন করানো উচিত নয়।</p>
+                <p>• অতিরিক্ত সেবনে শরীরে পটাশিয়ামের অভাব দেখা দিতে পারে।</p>
+            </div>
+        </div>
+
+        <div class="btn-back-container">
+            <a href="index.html" class="btn-back-list">
+                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
+            </a>
         </div>
     </div>
-    <footer>
-        <div style="max-width: 1200px; margin: auto;">
-            <h3 style="margin-bottom: 10px;">ভেষজ চিকিৎসা কোষ</h3>
-            <p>&copy; ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
-        </div>
-    </footer>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<footer>
+    <h2>ভেষজ চিকিৎসা কোষ</h2>
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
+</footer>
+
 </body>
 </html>
