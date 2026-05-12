@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -159,14 +188,13 @@ header{
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -200,70 +228,121 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
             <div class="ayurvedic-specs">
                 <div class="spec-item">রস: কটু (Pungent)</div>
                 <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
-                <div class="spec-item">বিপাক: মধুর (Sweet)</div>
+                <div class="spec-item">বিপাক: মধুর (শুকনো), কটু (কাঁচা)</div>
                 <div class="spec-item">দোষ: কফ-বাত নাশক</div>
+                <div class="spec-item">উপকারিতা: পরিপাক ও প্রদাহ বিরোধী</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> ঐতিহাসিক ও সাংস্কৃতিক গুরুত্ব</h3>
-            <p>আদা বিশ্বের প্রাচীনতম ভেষজগুলোর একটি। ৫০০০ বছর আগে দক্ষিণ এশিয়ায় এর উৎপত্তি। প্রাচীন রোমানরা এর ওষুধি গুণের জন্য আদা আমদানি করত। আয়ুর্বেদ শাস্ত্রে একে 'বিশ্বভেষজ' বা 'মহা-ঔষধি' বলা হয়েছে কারণ শরীরের প্রায় সব রোগের উপশমে এর ভূমিকা রয়েছে।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>আদা বিশ্বের অন্যতম প্রাচীন এবং জনপ্রিয় ভেষজ মশলা। এর ব্যবহার ৫০০০ বছরেরও বেশি পুরনো। প্রাচীন চীন ও ভারতের চিকিৎসাবিজ্ঞানে আদাকে 'মহৌষধ' হিসেবে বিবেচনা করা হতো। মধ্যযুগে ইউরোপে আদা এতটাই মূল্যবান ছিল যে এক পাউন্ড আদার দাম একটি ভেড়ার সমান ছিল। আয়ুর্বেদ শাস্ত্র অনুযায়ী, আদা শরীরের 'অগ্নি' বা হজম শক্তি উদ্দীপিত করতে অতুলনীয়।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> আর্দ্রক, শৃঙ্গবের, বিশ্বভেষজ</div>
-                <div><strong>ইংরেজি:</strong> Ginger / Garden Ginger</div>
+                <div><strong>সংস্কৃত:</strong> আর্দ্রক (কাঁচা), শুণ্ঠী (শুকনো)</div>
+                <div><strong>ইংরেজি:</strong> Ginger</div>
                 <div><strong>আরবি:</strong> জানজাবিল (Zanjabil)</div>
-                <div><strong>হিন্দি:</strong> অদ্রক (Adrak) / সোঁঠ (শুষ্ক)</div>
-                <div><strong>চীনা:</strong> শেং জিয়াং (Sheng Jiang)</div>
-                <div><strong>ফার্সি:</strong> জংজাবীল</div>
+                <div><strong>ফার্সি:</strong> শংগবীর (Shangabir)</div>
+                <div><strong>হিন্দি:</strong> আদরাক (Adrak)</div>
+                <div><strong>চীনা:</strong> শেং চিয়াং</div>
             </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>আদা একটি বহুবর্ষজীবী কন্দজাতীয় উদ্ভিদ। এর মাটির নিচের অংশ বা রাইজোম (Rhizome) মূলত ওষুধি কাজে ব্যবহৃত হয়। এটি ক্রান্তীয় অঞ্চলের উদ্ভিদ এবং আর্দ্র জলবায়ুতে ভালো জন্মায়। এর পাতাগুলো লম্বা ও সরু এবং ফুলগুলো হলুদাভ সবুজ বর্ণের হয়। কাঁচা আদা রসালো ও কটু স্বাদের, কিন্তু শুকিয়ে গেলে এটি আরও তীব্র ও ঝাঁঝালো হয়।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>জিঞ্জেরল (Gingerol):</strong> এটি আদার প্রধান জৈব-সক্রিয় উপাদান যা শক্তিশালী অ্যান্টি-অক্সিডেন্ট এবং প্রদাহরোধী হিসেবে কাজ করে।</li>
-                <li><strong>শোগাওল (Shogaol):</strong> এটি শুষ্ক আদায় বেশি থাকে এবং দীর্ঘস্থায়ী ব্যথা কমাতে অত্যন্ত কার্যকর।</li>
-                <li><strong>জিঞ্জিবেরিন (Zingiberene):</strong> আদার বিশেষ সুগন্ধের জন্য দায়ী এই উপাদানটি হজম শক্তি বৃদ্ধিতে সহায়তা করে।</li>
+                <li><strong>জিনজেরল (Gingerol):</strong> এটি আদার প্রধান বায়োঅ্যাক্টিভ উপাদান যা এর বিশেষ ঘ্রাণ এবং ওষুধি গুণের জন্য দায়ী।</li>
+                <li><strong>শোগাওল (Shogaol):</strong> শুকনো আদায় এটি বেশি থাকে, যা প্রদাহ এবং ব্যথানাশক হিসেবে কাজ করে।</li>
+                <li><strong>ভোলাটাইল অয়েল:</strong> এতে থাকা এসেনশিয়াল অয়েল পাকস্থলী ও অন্ত্রের গ্যাস দূর করতে সাহায্য করে।</li>
+                <li><strong>অ্যান্টি-অক্সিডেন্ট:</strong> শরীরকে অক্সিডেটিভ স্ট্রেস থেকে রক্ষা করে এবং কোষের ক্ষয় রোধ করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>শ্বাসতন্ত্রের যত্ন:</strong> আদা ফুসফুসের শ্লেষ্মা পরিষ্কার করে এবং দীর্ঘস্থায়ী কাশি ও হাপানি কমাতে কাজ করে।</li>
-                <li><strong>হজম ও বিপাক:</strong> এটি পাচক এনজাইমের নিঃসরণ বাড়িয়ে খাবার দ্রুত হজম করতে এবং পেট ফাঁপা কমাতে সাহায্য করে।</li>
-                <li><strong>বমিভাব প্রতিরোধ:</strong> গর্ভাবস্থায় বা দীর্ঘ ভ্রমণে বমিভাব দূর করতে আদা চা একটি পরীক্ষিত সমাধান।</li>
-                <li><strong>বাতের ব্যথা:</strong> নিয়মিত আদা সেবন করলে অস্টিওআর্থ্রাইটিস বা বাতের জয়েন্টের ফোলাভাব ও ব্যথা উল্লেখযোগ্যভাবে কমে।</li>
-                <li><strong>হৃৎপিণ্ড সুরক্ষা:</strong> এটি রক্ত সঞ্চালন স্বাভাবিক রাখে এবং ক্ষতিকর কোলেস্টেরল কমিয়ে স্ট্রোকের ঝুঁকি কমায়।</li>
+                <li><strong>হজম শক্তি বৃদ্ধি:</strong> আদা লালা গ্রন্থি ও পরিপাক এনজাইম নিঃসরণ বাড়িয়ে হজমে দ্রুত সহায়তা করে।</li>
+                <li><strong>বমি ভাব রোধ:</strong> গর্ভাবস্থার বমি ভাব বা মোশন সিকনেস দূর করতে আদা অত্যন্ত কার্যকর।</li>
+                <li><strong>প্রদাহ ও বাতের ব্যথা:</strong> শরীরের যেকোনো দীর্ঘস্থায়ী প্রদাহ ও হাড়ের জয়েন্টের ব্যথা কমাতে আদা নিয়মিত ব্যবহার করা হয়।</li>
+                <li><strong>শ্বাসকষ্ট ও ঠান্ডা-কাশি:</strong> ফুসফুসের শ্লেষ্মা দূর করতে এবং গলার সংক্রমণ কমাতে আদার রস জাদুর মতো কাজ করে।</li>
+                <li><strong>কোলেস্টেরল নিয়ন্ত্রণ:</strong> রক্তে এলডিএল (LDL) কোলেস্টেরল কমিয়ে হৃদরোগের ঝুঁকি কমাতে সাহায্য করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. তীব্র সর্দি ও কাশির নিরাময়ে:</h4>
-                <p>এক চা চামচ আদার রস, এক চা চামচ মধু এবং সামান্য তুলসী পাতার রস মিশিয়ে হালকা গরম করে দিনে ৩ বার পান করুন।</p>
+                <h4>১. আদা-চা (সর্দি-কাশির জন্য):</h4>
+                <p>১ ইঞ্চি আদা কুচি করে পানিতে ফুটিয়ে সামান্য মধু মিশিয়ে দিনে ২-৩ বার পান করুন। এটি গলার খুসখুসে ভাব দূর করে।</p>
             </div>
             <div class="usage-card">
-                <h4>২. খাবারে অরুচি ও বদহজমে:</h4>
-                <p>খাবারের ১০ মিনিট আগে সামান্য লবণ ও লেবুর রস মিশিয়ে আদা কুচি চিবিয়ে খান। এটি ক্ষুধা বাড়াতে ম্যাজিকের মতো কাজ করে।</p>
+                <h4>২. হজম ও গ্যাসের সমস্যায়:</h4>
+                <p>খাবার খাওয়ার ১০ মিনিট আগে এক টুকরো কাঁচা আদা সামান্য লবণ দিয়ে চিবিয়ে খান। এটি ক্ষুধা বাড়াবে এবং গ্যাস প্রতিরোধ করবে।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. মাইগ্রেন বা তীব্র মাথা ব্যথায়:</h4>
-                <p>আদা ফুটিয়ে সেই পানির ভাপ নিন অথবা আদা চা পান করুন। এটি মস্তিষ্কের রক্তনালীর প্রদাহ কমিয়ে ব্যথা উপশম করে।</p>
+                <h4>৩. মাইগ্রেনের ব্যথায়:</h4>
+                <p>আদার রস কপালে মালিশ করলে এবং আদার রস হালকা গরম পানিতে মিশিয়ে পান করলে মাইগ্রেনের তীব্রতা কমে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৪. পেশির ব্যথায়:</h4>
+                <p>আদা ছেঁচে করা ক্বাথ দিয়ে হালকা গরম সেঁক দিলে মাংসপেশির ক্লান্তি ও ব্যথা দ্রুত উপশম হয়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• দিনে ৫ গ্রামের বেশি আদা সেবন করা উচিত নয়।</p>
-            <p>• যাদের পিত্তথলিতে পাথর আছে তারা আদা খাওয়ার আগে বিশেষজ্ঞ চিকিৎসকের পরামর্শ নিন।</p>
-            <p>• রক্ত পাতলা করার ওষুধ সেবন করলে আদা পরিমিত খাওয়া উচিত।</p>
-            <p>• অতিরিক্ত ব্যবহারে বুক জ্বালাপোড়া বা ডায়রিয়া হতে পারে।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি (ডোজ)</h3>
+            <p style="margin-bottom: 20px;">আদা একটি শক্তিশালী ভেষজ, তাই এটি সঠিক মাত্রায় সেবন করা উচিত:</p>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>সেবনের মাত্রা (কাঁচা/রস)</th>
+                            <th>শুকনো আদা (শুণ্ঠী) গুঁড়ো</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>২ - ৬ বছর</td>
+                            <td>১/৪ চা চামচ রস</td>
+                            <td>১০০ - ২৫০ মি.গ্রা.</td>
+                        </tr>
+                        <tr>
+                            <td>৬ - ১২ বছর</td>
+                            <td>১/২ চা চামচ রস</td>
+                            <td>৫০০ মি.গ্রা. - ১ গ্রাম</td>
+                        </tr>
+                        <tr>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>১ - ২ চা চামচ রস</td>
+                            <td>১ গ্রাম - ৩ গ্রাম</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ (৬৫+)</td>
+                            <td>১ চা চামচ রস</td>
+                            <td>১ গ্রাম (হজম ক্ষমতা অনুযায়ী)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• অতিরিক্ত আদা সেবনে বুকজ্বালা বা এসিডিটি হতে পারে।</p>
+                <p>• যারা রক্ত পাতলা করার ঔষধ (যেমন- ওয়ারফারিন) খাচ্ছেন, তারা আদা সেবনের আগে চিকিৎসকের পরামর্শ নিন।</p>
+                <p>• পিত্তপাথরি (Gallstones) থাকলে আদা মাত্রাতিরিক্ত সেবন করা উচিত নয়।</p>
+                <p>• অস্ত্রোপচারের অন্তত ২ সপ্তাহ আগে থেকে আদা সেবন কমিয়ে দেওয়া নিরাপদ।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
