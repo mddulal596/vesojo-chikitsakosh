@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#f8bbd0;
-    --dark:#ad1457;
-    --light:#fce4ec;
-    --accent:#d81b60;
+    --primary:#a5d6a7; /* হালকা সবুজ ও সাদাটে আভা */
+    --dark:#2e7d32;
+    --light:#f9fbe7;
+    --accent:#4caf50;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -108,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #fff0f5;
+    background: #f1f8e9;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #f8bbd0;
+    border: 1px solid #c8e6c9;
 }
 
 .benefit-list { list-style: none; }
@@ -141,11 +141,35 @@ header{
 .usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 .usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
 
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:hover { background: #e8f5e9; }
+
 .warning-box {
-    background: #fff5f5;
+    background: #fff3e0;
     border-radius: 15px;
     padding: 35px;
-    border-left: 8px solid #e53935;
+    border-left: 8px solid #ff9800;
     margin-top: 30px;
 }
 
@@ -158,7 +182,7 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--dark);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
@@ -197,67 +221,121 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🧬</div>
-            <h2>৪০. দুধলতা (Dudhlata)</h2>
-            <small>Scientific Name: Oxystelma esculentum (L.f.) Sm.</small>
+            <div class="plant-icon-large">🌿</div>
+            <h2>৪০. দুধলতা (Dudhlata / Dudhia)</h2>
+            <small>Scientific Name: Euphorbia hirta</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: মধুর ও তিক্ত</div>
-                <div class="spec-item">বীর্য: শীতল (Cold)</div>
-                <div class="spec-item">গুণ: গুরু ও স্নিগ্ধ</div>
-                <div class="spec-item">প্রভাব: স্তন্যবর্ধক</div>
+                <div class="spec-item">রস: তিক্ত, কটু</div>
+                <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
+                <div class="spec-item">বিপাক: কটু</div>
+                <div class="spec-item">গুণ: লঘু, তীক্ষ্ণ</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
-            <p>দুধলতা বা 'ক্ষীরুই' একটি আরোহী লতা জাতীয় উদ্ভিদ। এর নাম থেকেই বোঝা যায় এর সাথে দুধের একটি নিবিড় সম্পর্ক রয়েছে। প্রাচীন আয়ুর্বেদিক চিকিৎসায় এটি মূলত 'স্তন্যজনন' (মায়ের বুকের দুধ বৃদ্ধি) ভেষজ হিসেবে পরিচিত। জলাশয়ের ধারে বা আর্দ্র মাটিতে এটি জন্মায়। এর পাতা ছিঁড়লে সাদা দুধের মতো কষ বের হয়, যা অত্যন্ত ঔষধি গুণসম্পন্ন। গ্রামবাংলার ধাত্রীবিদ্যায় প্রসূতি মায়েদের পুষ্টি ও দুগ্ধ বৃদ্ধির জন্য এই লতা ব্যবহারের প্রচলন শতাব্দী প্রাচীন।</p>
+            <p>দুধলতা বা 'বড় দুধিয়া' একটি অত্যন্ত শক্তিশালী ভেষজ লতা যা ছিঁড়লে দুধের মতো সাদা কষ বের হয়। আয়ুর্বেদ ও লোকজ চিকিৎসায় একে শ্বাসকষ্ট এবং পেটের কৃমি বিনাশকারী প্রধান ভেষজ হিসেবে গণ্য করা হয়। এটি সাধারণত স্যাঁতসেঁতে মাঠ বা রাস্তার পাশে আগাছা হিসেবে জন্মালেও এর ব্যবহার প্রাচীনকাল থেকেই বিশ্বজুড়ে সমাদৃত।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> ক্ষীরিণী, দুগ্ধিকা</div>
-                <div><strong>ইংরেজি:</strong> Rosy Milkweed / Oxystelma</div>
-                <div><strong>হিন্দি:</strong> দুধলতা (Dudhlata)</div>
-                <div><strong>বাংলা:</strong> দুধিয়া লতা / ক্ষীরুই</div>
-                <div><strong>মারাঠি:</strong> দুধাণী</div>
-                <div><strong>তেলেগু:</strong> পালিকা</div>
+                <div><strong>সংস্কৃত:</strong> দুগ্ধিকা, ক্ষীরিণী</div>
+                <div><strong>ইংরেজি:</strong> Asthma Plant / Pill-bearing Spurge</div>
+                <div><strong>হিন্দি:</strong> দুধী (Dudhi)</div>
+                <div><strong>বাংলা:</strong> দুধলতা, বড় দুধি</div>
+                <div><strong>তামিল:</strong> আম্মান পামারিছি (Amman Pacharisi)</div>
+                <div><strong>আরবি:</strong> লুবাইনা (Lubaina)</div>
             </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>দুধলতা একটি লতানো বা খাড়া হয়ে বেড়ে ওঠা ভেষজ। এর কাণ্ড লালচে রঙের এবং লোমশ হয়। পাতাগুলো বিপরীতমুখী এবং ডিম্বাকৃতি। কাণ্ড বা পাতা ছিঁড়লে সাদা আঠালো কষ বের হয়। এর ছোট ছোট গুচ্ছাকারে ফুল ফোটে এবং সারা বছরই এটি জন্মায়। এটি ইউফোরবিয়াসি (Euphorbiaceae) পরিবারের উদ্ভিদ।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
+            <ul class="benefit-list">
+                <li><strong>ফ্ল্যাভোনয়েডস:</strong> যা রোগ প্রতিরোধ ক্ষমতা বাড়াতে অত্যন্ত কার্যকর।</li>
+                <li><strong>কোয়ারসেটিন (Quercetin):</strong> এটি অ্যালার্জি এবং শ্বাসকষ্ট উপশমে কাজ করে।</li>
+                <li><strong>অ্যালকালয়েডস ও ট্যানিন:</strong> যা অন্ত্রের ক্ষতিকারক জীবাণু ধ্বংস করতে সাহায্য করে।</li>
+                <li><strong>ইউফোরবন (Euphorbon):</strong> যা এই লতার কষের প্রধান নিরাময়কারী উপাদান।</li>
+            </ul>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>মাতৃদুগ্ধ বৃদ্ধি:</strong> প্রসূতি মায়েদের বুকের দুধ কম হলে এই লতা ও পাতার রস মিছরির সাথে সেবন করলে দ্রুত দুধ বৃদ্ধি পায়।</li>
-                <li><strong>শারীরিক দুর্বলতা:</strong> দীর্ঘস্থায়ী রোগের পর শরীর দুর্বল হয়ে পড়লে দুধলতার রস বলবর্ধক হিসেবে কাজ করে।</li>
-                <li><strong>মূত্রনালীর সংক্রমণ:</strong> প্রস্রাবে জ্বালাপোড়া বা ইনফেকশন হলে এর কচি লতা সিদ্ধ করা পানি পান করলে শান্তি পাওয়া যায়।</li>
-                <li><strong>কাশি ও কফ:</strong> শ্লেষ্মা জনিত সমস্যায় এই লতার রস মধুর সাথে মিশিয়ে খেলে ফুসফুস থেকে কফ পরিষ্কার হয়।</li>
-                <li><strong>ক্ষত নিরাময়:</strong> এর পাতার কষ বা আঠা ক্ষতস্থানে লাগালে অ্যান্টিসেপটিক হিসেবে কাজ করে এবং দ্রুত শুকিয়ে যায়।</li>
+                <li><strong>হাঁপানি ও ব্রঙ্কাইটিস:</strong> এটি ব্রঙ্কাল টিউবের শিথিলতা ঘটায় এবং শ্বাসকষ্ট দ্রুত কমাতে সাহায্য করে।</li>
+                <li><strong>আমাশয় ও ডায়রিয়া:</strong> দুধলতার পাতার রস পুরনো আমাশয় এবং রক্ত আমাশয় সারাতে অতুলনীয়।</li>
+                <li><strong>মাতৃদুগ্ধ বৃদ্ধি:</strong> প্রসূতি মায়েদের বুকের দুধের পরিমাণ বাড়াতে এর পরিমিত সেবন অত্যন্ত উপকারী।</li>
+                <li><strong>চর্মরোগ ও আঁচিল:</strong> আঁচিলের ওপর এর সাদা কষ নিয়মিত কয়েকদিন লাগালে আঁচিল খসে পড়ে যায়।</li>
+                <li><strong>যৌন দুর্বলতা:</strong> শুক্রাণুর সংখ্যা বৃদ্ধি এবং শারীরিক শক্তি পুনরুদ্ধারে এর মূলের চূর্ণ ব্যবহৃত হয়।</li>
             </ul>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. স্তন্যদুগ্ধ বৃদ্ধিতে:</h4>
-                <p>দুধলতার ৫-১০ মিলি রস এবং এক কাপ গরুর দুধ মিশিয়ে সকালে ও রাতে পান করলে ভালো ফল পাওয়া যায়।</p>
+                <h4>১. শ্বাসকষ্ট বা হাঁপানিতে:</h4>
+                <p>১ চা-চামচ দুধলতার ক্বাথ আধা কাপ গরম পানির সাথে মিশিয়ে দিনে ২ বার পান করলে কাশির প্রকোপ কমে যায়।</p>
             </div>
             <div class="usage-card">
-                <h4>২. সাধারণ বলবর্ধক হিসেবে:</h4>
-                <p>দুধলতার মূল শুকিয়ে চূর্ণ করে ১ গ্রাম পরিমাণ পাউডার মধুর সাথে মিশিয়ে নিয়মিত খেলে শরীরের জীবনীশক্তি বৃদ্ধি পায়।</p>
+                <h4>২. আমাশয় নিরাময়ে:</h4>
+                <p>তাজা দুধলতার পাতা ৪-৫টি পিষে ১ চা-চামচ মধুসহ দিনে ২ বার খেলে পেটের ব্যাথা ও আমাশয় দূর হয়।</p>
             </div>
-            <div class="usage-card">
-                <h4>৩. মুখ ও গলার ঘায়ে:</h4>
-                <p>এই লতা দিয়ে তৈরি ক্বাথ (সিদ্ধ পানি) দিয়ে কুলকুচি করলে মুখের ভেতরের ক্ষত বা ঘা দ্রুত সেরে যায়।</p>
+            <div class="usage-card)
+                <h4>৩. বিষাক্ত কামড়ে:</h4>
+                <p>মাকড়সা বা কোনো পোকামাকড় কামড়ালে আক্রান্ত স্থানে দুধলতার কষ লাগালে বিষক্রিয়া ও জ্বালা কমে যায়।</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি (ডোজ)</h3>
+            <p style="margin-bottom: 20px;">দুধলতা ব্যবহারের সুনির্দিষ্ট মাত্রা নিচে প্রদান করা হলো:</p>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>সেবনের মাত্রা (রস/চূর্ণ)</th>
+                            <th>সময়কাল ও নিয়ম</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>৮ - ১৪ বছর</td>
+                            <td>১/২ চা চামচ</td>
+                            <td>খালি পেটে মধুর সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>১৪ - ১৮ বছর</td>
+                            <td>১ চা চামচ</td>
+                            <td>দিনে ২ বার (ভরা পেটে)</td>
+                        </tr>
+                        <tr>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>২ চা চামচ (১০ মিলি)</td>
+                            <td>দিনে ২ বার (সকাল ও রাত)</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ</td>
+                            <td>১ চা চামচ</td>
+                            <td>উষ্ণ পানির সাথে রাতে</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
         <div class="info-section">
             <div class="warning-box">
-                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা</h4>
-                <p>• দুধলতা ব্যবহারের আগে এটি সঠিক উদ্ভিদ কি না তা নিশ্চিত হতে হবে, কারণ লতা জাতীয় অনেক উদ্ভিদ বিষাক্ত হতে পারে।</p>
-                <p>• গর্ভবতী মায়েদের জন্য এটি ব্যবহারের আগে অবশ্যই একজন অভিজ্ঞ আয়ুর্বেদিক চিকিৎসকের পরামর্শ নেওয়া জরুরি।</p>
-                <p>• রাস্তার ধারের ধুলোবালি যুক্ত লতা ব্যবহার না করে পরিষ্কার জায়গার লতা সংগ্রহ করুন।</p>
+                <h4 style="color: #e65100; margin-bottom: 15px;"><i class="fas fa-exclamation-triangle"></i> বিশেষ সতর্কতা</h4>
+                <p>• অতিরিক্ত মাত্রায় সেবনের ফলে বমি বা বমি বমি ভাব হতে পারে।</p>
+                <p>• হার্টের রোগীরা এটি সেবনের আগে অবশ্যই বিশেষজ্ঞ চিকিৎসকের পরামর্শ নিবেন।</p>
+                <p>• এর কষ সরাসরি চোখের সংস্পর্শে আনবেন না, এটি অত্যন্ত জ্বালাপোড়া তৈরি করতে পারে।</p>
+                <p>• গর্ভাবস্থায় এই ভেষজটির অভ্যন্তরীণ সেবন থেকে বিরত থাকা ভালো।</p>
             </div>
         </div>
 
@@ -278,6 +356,8 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
     <div class="footer-social-container">
         <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
     <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
