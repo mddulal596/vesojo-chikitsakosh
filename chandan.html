@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#a1887f;
-    --dark:#5d4037;
-    --light:#efebe9;
-    --accent:#8d6e63;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #f7f3f2;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #d7ccc8;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -196,18 +224,19 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
         <div class="plant-header">
             <div class="plant-icon-large">🪵</div>
             <h2>২৭. চন্দন (Chandan)</h2>
-            <small>Scientific Name: Santalum album L.</small>
+            <small>Scientific Name: Santalum album (শ্বেত) / Pterocarpus santalinus (রক্ত)</small>
             <div class="ayurvedic-specs">
                 <div class="spec-item">রস: তিক্ত, মধুর</div>
                 <div class="spec-item">বীর্য: শীত (Cooling)</div>
                 <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">গুণ: লঘু, রুক্ষ</div>
+                <div class="spec-item">দোষ: পিত্ত ও কফ নাশক</div>
+                <div class="spec-item">বিশেষত্ব: শীতলকারক ও সুগন্ধি ভেষজ</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>চন্দন বিশ্বের অন্যতম দামী ও সুগন্ধি কাঠ যা আদিমকাল থেকেই সৌন্দর্যচর্চা এবং ওষুধি কাজে ব্যবহৃত হয়ে আসছে। আয়ুর্বেদ শাস্ত্রে একে 'শীতলকারক' ভেষজ হিসেবে অভিহিত করা হয়। এটি মূলত দুই প্রকার—শ্বেত চন্দন ও রক্ত চন্দন। ত্বকের প্রদাহ দূর করা, মন শান্ত রাখা এবং শরীরের তাপমাত্রা নিয়ন্ত্রণে চন্দনের জুড়ি নেই।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>চন্দন পৃথিবীর অন্যতম দামী এবং পবিত্র কাঠ হিসেবে পরিচিত। প্রাচীন ভারতীয় সংস্কৃতিতে পূজা-পার্বণ থেকে শুরু করে রূপচর্চা এবং চিকিৎসায় এর ব্যবহার অপরিহার্য। আয়ুর্বেদ শাস্ত্রে চন্দনকে তার অনন্য শীতল গুণের জন্য 'পিত্তশামক' হিসেবে গণ্য করা হয়। সাধারণত দুই ধরনের চন্দন বেশি ব্যবহৃত হয়: <strong>শ্বেত চন্দন</strong> (সুগন্ধি ও প্রসাধনীতে সেরা) এবং <strong>রক্ত চন্দন</strong> (চর্মরোগ ও ঔষধি চিকিৎসায় সেরা)।</p>
         </div>
 
         <div class="info-section">
@@ -216,57 +245,94 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
                 <div><strong>সংস্কৃত:</strong> চন্দনম, শ্রীখণ্ড</div>
                 <div><strong>ইংরেজি:</strong> Sandalwood</div>
                 <div><strong>হিন্দি:</strong> চন্দন (Chandan)</div>
-                <div><strong>তামিল:</strong> সানডানাম</div>
-                <div><strong>ফার্সি:</strong> সান্দাল</div>
+                <div><strong>তামিল:</strong> সান্দানাম</div>
+                <div><strong>বাংলা:</strong> চন্দন (শ্বেত ও রক্ত)</div>
+                <div><strong>আরবি:</strong> সান্দাল</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>চন্দন Santalaceae পরিবারের একটি চিরসবুজ ছোট থেকে মাঝারি আকারের গাছ। এটি মূলত অন্য গাছের শিকড়ের সাথে যুক্ত থেকে খাদ্য সংগ্রহ করে (আংশিক পরজীবী)। এর কাঠ থেকে অত্যন্ত মূল্যবান উদ্বায়ী তেল (Essential oil) পাওয়া যায়। ওষুধি কাজে মূলত এর সারকাঠ (Heartwood) ব্যবহৃত হয়।</p>
+            <p>চন্দন একটি চিরহরিৎ মাঝারি আকারের পরজীবী বৃক্ষ। এর মূল অন্য গাছের মূল থেকে পুষ্টি সংগ্রহ করে। শ্বেত চন্দন গাছের কাষ্ঠ অত্যন্ত সুগন্ধযুক্ত এবং হালকা হলুদাভ রঙের হয়। অন্যদিকে, রক্ত চন্দন বা লাল চন্দন মূলত অন্ধ্রপ্রদেশের পাহাড়ি এলাকায় পাওয়া যায়, যা ঘষলে গাঢ় লাল রঙ বের হয় কিন্তু এতে শ্বেত চন্দনের মতো তীব্র ঘ্রাণ থাকে না। একটি চন্দন গাছ পরিপক্ক হতে ২০ থেকে ৩০ বছর সময় লাগে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>সান্টালোল (Santalol):</strong> চন্দনের সুগন্ধ এবং ওষুধি গুণের মূল উৎস এই অ্যালকোহল জাতীয় উপাদান।</li>
-                <li><strong>অ্যান্টি-সেপটিক উপাদান:</strong> যা ত্বকের সংক্রমণ রোধে সাহায্য করে।</li>
-                <li><strong>অ্যান্টি-অক্সিডেন্ট:</strong> যা কোষের ক্ষয় রোধ করে ত্বক সতেজ রাখে।</li>
+                <li><strong>Santalol (Alpha & Beta):</strong> চন্দনের প্রধান সুগন্ধি ও ঔষধি উপাদান যা জীবাণুনাশক হিসেবে কাজ করে।</li>
+                <li><strong>Santene:</strong> এক প্রকার টারপিন যা এর বিশেষ গন্ধের জন্য দায়ী।</li>
+                <li><strong>Santalic Acid:</strong> রক্ত চন্দনে পাওয়া যায়, যা প্রদাহবিরোধী।</li>
+                <li><strong>Antioxidants:</strong> যা ত্বকের অকাল বার্ধক্য রোধ করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>ত্বকের উজ্জ্বলতা ও ব্রণ দূরীকরণ:</strong> চন্দন বাটা ত্বকের দাগ দূর করে এবং ব্রণ শুকাতে সাহায্য করে।</li>
-                <li><strong>প্রাকৃতিক শীতলকারক:</strong> এটি অতিরিক্ত রোদে পোড়া ত্বকের জ্বালাপোড়া এবং শরীরের জ্বালাপোড়া কমায়।</li>
-                <li><strong>উদ্বেগ ও অনিদ্রা হ্রাস:</strong> চন্দনের সুগন্ধ মস্তিষ্কে প্রশান্তি আনে এবং দ্রুত ঘুমাতে সাহায্য করে।</li>
-                <li><strong>মূত্রনালীর সংক্রমণ:</strong> মূত্রনালীর জ্বালাপোড়া ও সংক্রমণে চন্দন গুঁড়ো অত্যন্ত উপকারী।</li>
-                <li><strong>রক্তচাপ নিয়ন্ত্রণ:</strong> এটি হার্টের ওপর চাপ কমিয়ে রক্তচাপ স্বাভাবিক রাখতে সহায়তা করে।</li>
+                <li><strong>ত্বকের উজ্জ্বলতা:</strong> শ্বেত চন্দন ত্বকের রোদে পোড়া দাগ (Sunburn) দূর করে এবং ব্রণের সমস্যা সমাধান করে।</li>
+                <li><strong>উচ্চ রক্তচাপ নিয়ন্ত্রণ:</strong> চন্দনের শীতল গুণ রক্তচাপ কমাতে এবং মন শান্ত রাখতে সাহায্য করে।</li>
+                <li><strong>প্রস্রাবের জ্বালাপোড়া:</strong> প্রস্রাবের ইনফেকশন বা ইউটিআই (UTI) এর সমস্যায় চন্দন চূর্ণের শরবত খুবই উপকারী।</li>
+                <li><strong>জ্বর ও মাথা ব্যথা:</strong> অতিরিক্ত জ্বরে কপালে চন্দনের প্রলেপ দিলে তাপমাত্রা দ্রুত কমে এবং মানসিক প্রশান্তি আসে।</li>
+                <li><strong>রক্তক্ষরণ বন্ধ করা:</strong> রক্ত চন্দন ধারক বা অ্যাস্ট্রিজেন্ট হিসেবে কাজ করে, যা অভ্যন্তরীণ রক্তপাত (যেমন: পাইলস) বন্ধে সহায়ক।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. উজ্জ্বল ত্বকের জন্য:</h4>
-                <p>১ চা চামচ চন্দন বাটা বা গুঁড়োর সাথে সামান্য গোলাপ জল মিশিয়ে মুখে ২০ মিনিট লাগিয়ে ধুয়ে ফেলুন।</p>
+                <h4>১. ব্রণ ও মেছতা দূর করতে:</h4>
+                <p>শ্বেত চন্দন গুঁড়ো, সামান্য কাঁচা হলুদ এবং দুধ মিশিয়ে প্যাক তৈরি করে মুখে লাগান। ২০ মিনিট পর ধুয়ে ফেললে ত্বক উজ্জ্বল ও দাগমুক্ত হয়।</p>
             </div>
             <div class="usage-card">
-                <h4>২. মাথার যন্ত্রণায়:</h4>
-                <p>শ্বেত চন্দন বাটা কপালে প্রলেপ দিলে দ্রুত মাথা ব্যথা ও উত্তাপ কমে যায়।</p>
+                <h4>২. অতিরিক্ত ঘামাচি ও চুলকানিতে:</h4>
+                <p>রক্ত চন্দন ঘষে সেই প্রলেপ ঘামাচি আক্রান্ত স্থানে লাগালে দ্রুত আরাম পাওয়া যায় এবং লালচে ভাব কমে।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. ঘামাচি ও চুলকানিতে:</h4>
-                <p>চন্দন গুঁড়োর সাথে পানি মিশিয়ে শরীরে মাখলে ঘামাচি ও ঘামের দুর্গন্ধ দূর হয়।</p>
+                <h4>৩. মানসিক অস্থিরতা ও অনিদ্রায়:</h4>
+                <p>চন্দন তেলের ঘ্রাণ নিলে স্নায়ু শিথিল হয় এবং গভীর ঘুমে সাহায্য করে।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• চন্দন সরাসরি মুখে ব্যবহারের আগে অ্যালার্জি আছে কি না তা ছোট অংশে পরীক্ষা করে নিন।</p>
-            <p>• অভ্যন্তরীণ সেবনের ক্ষেত্রে সর্বদা বিশুদ্ধ চন্দন চূর্ণ এবং চিকিৎসকের পরামর্শ অনুযায়ী গ্রহণ করা উচিত।</p>
-            <p>• শিশুদের নাগালের বাইরে রাখুন।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> সেবন বিধি ও মাত্রা</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>ব্যবহারের পদ্ধতি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>চন্দন চূর্ণ (Powder)</td>
+                            <td>১ - ৩ গ্রাম</td>
+                            <td>পানি বা দুধের সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>চন্দনের জল/শরবত</td>
+                            <td>২০ - ৩০ মিলি</td>
+                            <td>মিছরি মিশিয়ে (পিত্ত প্রশমনে)</td>
+                        </tr>
+                        <tr>
+                            <td>চন্দন তেল (Oil)</td>
+                            <td>১ - ৩ ফোঁটা</td>
+                            <td>বিশেষজ্ঞের পরামর্শে অভ্যন্তরীণ বা বাহ্যিক</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• চন্দন সবসময় বিশুদ্ধ হওয়া জরুরি; বাজারে অনেক সময় কৃত্রিম সুগন্ধিযুক্ত চন্দন পাওয়া যায় যা ত্বকের ক্ষতি করতে পারে।</p>
+                <p>• কিডনি বা কিডনিজনিত গুরুতর সমস্যায় আক্রান্তদের চন্দন অভ্যন্তরীণভাবে সেবন করা নিষেধ।</p>
+                <p>• অত্যন্ত শীতকালে বা ঠান্ডা লাগার প্রবণতা থাকলে চন্দনের বাহ্যিক প্রলেপ বেশিক্ষণ রাখা উচিত নয়।</p>
+                <p>• সরাসরি চন্দন তেল ত্বকে ব্যবহারের আগে প্যাচ টেস্ট করে নেওয়া নিরাপদ।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
