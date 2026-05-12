@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>বরই (Boroi) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
+<title>বরই বা কুল (Boroi) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
-    --primary:#689f38;
-    --dark:#33691e;
-    --light:#f1f8e9;
-    --accent:#8bc34a;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #f1f8e9;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #c8e6c9;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -194,79 +222,117 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🍒</div>
-            <h2>২২. বরই (Boroi)</h2>
+            <div class="plant-icon-large">🍎</div>
+            <h2>২২. বরই বা কুল (Boroi)</h2>
             <small>Scientific Name: Ziziphus mauritiana Lam.</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: অম্ল, মধুর, কষায়</div>
-                <div class="spec-item">বীর্য: শীত (Cooling)</div>
+                <div class="spec-item">রস: মধুর, অম্ল, কষায়</div>
+                <div class="spec-item">বীর্য: শীতল (Cold)</div>
                 <div class="spec-item">বিপাক: মধুর</div>
-                <div class="spec-item">গুণ: গুরু, স্নিগ্ধ</div>
+                <div class="spec-item">দোষ: বাত ও পিত্ত নাশক</div>
+                <div class="spec-item">বিশেষত্ব: রক্ত শোধক ও পুষ্টিকারক</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>বরই বা কুল আমাদের দেশের একটি অত্যন্ত জনপ্রিয় এবং সহজলভ্য ফল। আয়ুর্বেদ শাস্ত্রে একে 'বদর' বা 'কোল' বলা হয়। এটি কেবল সুস্বাদু ফলই নয়, বরং এর পাতা, ছাল এবং শিকড় বহুমুখী ওষুধি গুণে সমৃদ্ধ। বিশেষ করে হজম শক্তি বৃদ্ধি, অনিদ্রা দূর করা এবং রক্ত পরিষ্কার করতে বরই গুরুত্বপূর্ণ ভূমিকা পালন করে। এটি অ্যান্টি-অক্সিডেন্টের চমৎকার উৎস যা শরীরের রোগ প্রতিরোধ ক্ষমতা শক্তিশালী করে।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>আয়ুর্বেদ শাস্ত্রে বরইকে 'বদরী' নামে অভিহিত করা হয়। এটি দক্ষিণ এশিয়ার অন্যতম প্রাচীন এবং জনপ্রিয় ফল। শুধু ফল হিসেবেই নয়, এর পাতা, ছাল এবং বীজ কয়েক হাজার বছর ধরে ভেষজ চিকিৎসায় ব্যবহৃত হয়ে আসছে। এটি শরীরকে শীতল করতে, বিষক্রিয়া দূর করতে এবং দীর্ঘস্থায়ী অবসাদ কমাতে অত্যন্ত কার্যকর হিসেবে পরিচিত।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> বদর, কোল, কুচফল</div>
-                <div><strong>ইংরেজি:</strong> Indian Jujube / Ber Fruit</div>
+                <div><strong>সংস্কৃত:</strong> বদরী, কোল, ফেনিল</div>
+                <div><strong>ইংরেজি:</strong> Indian Jujube, Ber Fruit</div>
                 <div><strong>হিন্দি:</strong> বের (Ber)</div>
-                <div><strong>তামিল:</strong> ইলামথাই</div>
-                <div><strong>উর্দু:</strong> বের (Ber)</div>
+                <div><strong>তামিল:</strong> ইলান্থাই</div>
+                <div><strong>বাংলা:</strong> বরই, কুল</div>
+                <div><strong>আরবি:</strong> সিদর (Sidr)</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>বরই Rhamnaceae পরিবারের একটি মাঝারি আকারের কন্টকাকীর্ণ (কাঁটাযুক্ত) পর্ণমোচী বৃক্ষ। এর শাখা-প্রশাখাগুলো ঝোপালো হয়। ফলগুলো কাঁচা অবস্থায় সবুজ এবং পাকলে লাল বা বাদামী বর্ণ ধারণ করে। ওষুধি কাজে মূলত এর ফল, পাতা এবং ছাল ব্যবহৃত হয়।</p>
+            <p>বরই গাছ একটি ছোট থেকে মাঝারি আকারের কাঁটাযুক্ত পর্ণমোচী বৃক্ষ। এর শাখাগুলো আঁকাবাঁকা এবং ঝোপালো প্রকৃতির হয়। পাতাগুলো ডিম্বাকৃতি এবং গাঢ় সবুজ বর্ণের। ফল গোলাকার বা ডিম্বাকৃতি হয়; যা কাঁচা অবস্থায় সবুজ এবং পাকলে লালচে বা বাদামী বর্ণ ধারণ করে। এটি মূলত গ্রীষ্মপ্রধান ও শুষ্ক অঞ্চলে ভালো জন্মে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>ভিটামিন সি ও এ:</strong> যা রোগ প্রতিরোধ ক্ষমতা বাড়ায় এবং ত্বকের সুরক্ষা দেয়।</li>
-                <li><strong>ফ্ল্যাভোনয়েডস:</strong> যা অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে ক্যানসার কোষের বিরুদ্ধে লড়াই করে।</li>
-                <li><strong>ক্যালসিয়াম ও ফসফরাস:</strong> যা হাড়ের ঘনত্ব বজায় রাখতে এবং দাঁত মজবুত করতে সাহায্য করে।</li>
+                <li><strong>Vitamin C:</strong> আমলকীর মতোই এতে প্রচুর ভিটামিন সি থাকে যা রোগ প্রতিরোধ ক্ষমতা বাড়ায়।</li>
+                <li><strong>Saponins & Triterpenoids:</strong> এগুলো মূলত শান্তকারক (Sedative) হিসেবে কাজ করে এবং ভালো ঘুমে সাহায্য করে।</li>
+                <li><strong>অ্যান্টি-অক্সিডেন্ট:</strong> যা লিভার সুরক্ষা এবং ক্যান্সার প্রতিরোধে সহায়ক।</li>
+                <li><strong>খনিজ উপাদান:</strong> এতে ক্যালসিয়াম, ফসফরাস এবং আয়রন প্রচুর পরিমাণে থাকে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>অনিদ্রা ও উদ্বেগ দূরীকরণ:</strong> বরই এবং এর বীজ স্নায়ুতন্ত্রকে শান্ত করে ভালো ঘুম নিশ্চিত করতে এবং মানসিক চাপ কমাতে সাহায্য করে।</li>
-                <li><strong>রক্ত পরিষ্কার ও প্রবাহ বৃদ্ধি:</strong> এটি শরীরে রক্ত সঞ্চালন উন্নত করে এবং রক্ত থেকে বিষাক্ত পদার্থ দূর করতে কার্যকর।</li>
-                <li><strong>হজম শক্তি ও কোষ্ঠকাঠিন্য:</strong> বরইয়ে প্রচুর ফাইবার থাকে যা পরিপাক নালী সুস্থ রাখে এবং কোষ্ঠকাঠিন্য দূর করে।</li>
-                <li><strong>ত্বকের তারুণ্য বজায় রাখা:</strong> এর অ্যান্টি-অক্সিডেন্ট গুণ ত্বকের বলিরেখা দূর করে এবং ত্বক উজ্জ্বল রাখে।</li>
-                <li><strong>ওজন নিয়ন্ত্রণ:</strong> বরইয়ে ক্যালরি কম কিন্তু পুষ্টিগুণ বেশি থাকায় এটি ডায়েটের জন্য আদর্শ ফল।</li>
+                <li><strong>অনিদ্রা ও দুশ্চিন্তা:</strong> বরই বীজ বা কুলের শাঁস স্নায়ুর উত্তেজনা কমিয়ে সুনিদ্রা নিশ্চিত করতে সাহায্য করে।</li>
+                <li><strong>রক্ত পরিষ্কারক:</strong> শুকনো বরই রক্ত থেকে টক্সিন বের করে দেয় এবং চর্মরোগ সারাতে সহায়তা করে।</li>
+                <li><strong>হজশ শক্তি বৃদ্ধি:</strong> এটি রুচিবর্ধক এবং পেটের আলসার বা অম্লতা কমাতে সাহায্য করে।</li>
+                <li><strong>লিভারের সুরক্ষা:</strong> বরইয়ের নির্যাস লিভারের কার্যক্ষমতা বাড়াতে এবং লিভারের চর্বি কমাতে ব্যবহৃত হয়।</li>
+                <li><strong>হাড়ের ক্ষয়রোধ:</strong> এতে থাকা ক্যালসিয়াম ও ফসফরাস হাড়ের গঠন মজবুত করে এবং পেশীর খিঁচুনি দূর করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. পেট ফাঁপা বা বদহজমে:</h4>
-                <p>শুকনো বরই বা বরই চূর্ণ লবণের সাথে খেলে দ্রুত বদহজম ও গ্যাসের সমস্যা থেকে আরাম পাওয়া যায়।</p>
+                <h4>১. ভালো ঘুমের জন্য:</h4>
+                <p>শুকনো বরই বা কুলের বীজের ভেতরের শাঁস চূর্ণ করে রাতে ঘুমানোর আগে সামান্য গরম পানি দিয়ে সেবন করুন।</p>
             </div>
             <div class="usage-card">
-                <h4>২. গলার খুশখুশে কাশিতে:</h4>
-                <p>বরই পাতার ক্বাথ তৈরি করে সেই পানি দিয়ে গড়গড়া করলে গলার ব্যথা ও খুশখুশে কাশি দ্রুত কমে।</p>
+                <h4>২. রক্তাল্পতা বা অ্যানিমিয়া দূর করতে:</h4>
+                <p>প্রতিদিন ৮-১০টি শুকনো বরই বা কুল চিবিয়ে খান। এতে শরীরে রক্তকণিকা বৃদ্ধি পায় এবং দুর্বলতা দূর হয়।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. অনিদ্রা সমস্যায়:</h4>
-                <p>প্রতিদিন রাতে ঘুমানোর আগে কয়েকটি বরই খেলে স্নায়বিক প্রশান্তি আসে এবং গভীর ঘুম হয়।</p>
+                <h4>৩. গলার খুশখুশে কাশি ও প্রদাহে:</h4>
+                <p>বরই পাতা সিদ্ধ পানি দিয়ে গড়গড়া (Gargle) করলে গলার ব্যথা এবং খুশখুশে কাশি দ্রুত উপশম হয়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• ডায়াবেটিস রোগীদের ক্ষেত্রে অতিরিক্ত পাকা বরই এড়িয়ে চলা উচিত কারণ এতে শর্করার মাত্রা বেশি থাকে।</p>
-            <p>• অতিরিক্ত টক বরই খালি পেটে খেলে এসিডিটির সমস্যা হতে পারে।</p>
-            <p>• শিশুদের বরই খাওয়ার সময় বীজের দিকে সতর্ক নজর রাখুন যেন গলায় না আটকে যায়।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> সেবন বিধি ও মাত্রা</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>ব্যবহারের পদ্ধতি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>শুকনো বরই</td>
+                            <td>১০ - ১৫ গ্রাম</td>
+                            <td>সরাসরি বা পানিতে ভিজিয়ে</td>
+                        </tr>
+                        <tr>
+                            <td>বীজ চূর্ণ</td>
+                            <td>১ - ৩ গ্রাম</td>
+                            <td>রাতে শোবার আগে</td>
+                        </tr>
+                        <tr>
+                            <td>পাতার ক্বাথ</td>
+                            <td>১০ - ২০ মিলি</td>
+                            <td>খাওয়ার পর (হজমের জন্য)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• কাঁচা বরই বা টক বরই পিত্ত বৃদ্ধি করতে পারে, তাই অতিরিক্ত না খাওয়াই ভালো।</p>
+                <p>• যাদের সর্দি বা কাশির ধাত আছে, তারা রাতে বরই খাওয়া এড়িয়ে চলুন।</p>
+                <p>• ডায়াবেটিস রোগীরা মিষ্টি বরই বা শুকনো কুল খাওয়ার সময় শর্করা নিয়ন্ত্রণের দিকে খেয়াল রাখুন।</p>
+                <p>• বনের বা অপরিচিত বুনো বরই খাওয়ার আগে সাবধানতা অবলম্বন করুন, কারণ কিছু জাতের বরই বিষক্রিয়া ঘটাতে পারে।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
