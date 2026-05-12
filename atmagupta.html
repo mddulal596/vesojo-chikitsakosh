@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#2e7d32;
-    --dark:#1b5e20;
-    --light:#e8f5e9;
-    --accent:#4caf50;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #f1f8e9;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #c8e6c9;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -199,75 +227,115 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
             <small>Scientific Name: Mucuna pruriens (L.) DC.</small>
             <div class="ayurvedic-specs">
                 <div class="spec-item">রস: মধুর, তিক্ত</div>
-                <div class="spec-item">বীর্য: উষ্ণ (Heating)</div>
+                <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
                 <div class="spec-item">বিপাক: মধুর</div>
-                <div class="spec-item">গুণ: গুরু, স্নিগ্ধ</div>
+                <div class="spec-item">দোষ: বাত ও পিত্ত নাশক</div>
+                <div class="spec-item">বিশেষত্ব: শ্রেষ্ঠ বাজীকরণ ও পারকিনসন নাশক</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>আত্মগুপ্তা বা আলকুশী একটি সুপরিচিত লতাজাতীয় ভেষজ উদ্ভিদ। আয়ুর্বেদ শাস্ত্রে একে শ্রেষ্ঠ 'বাজিকরণ' বা যৌন শক্তিবর্ধক হিসেবে গণ্য করা হয়। এর শুঁটির গায়ে থাকা রোম ত্বকের সংস্পর্শে আসলে প্রচণ্ড চুলকানি সৃষ্টি করে বলে একে লোকভাষায় 'আলকুশী' বলা হয়। তবে এর বীজ আধুনিক চিকিৎসাবিজ্ঞানে পার্কিনসন রোগের চিকিৎসায় ব্যবহৃত এল-ডোপা (L-Dopa) এর প্রধান প্রাকৃতিক উৎস।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>আয়ুর্বেদ শাস্ত্রে আত্মগুপ্তা বা আলকুশী একটি অত্যন্ত শক্তিশালী 'বাজীকরণ' (Aphrodisiac) ভেষজ হিসেবে পরিচিত। এর নামের অর্থ 'নিজেকে রক্ষা করা' (Self-protected), যা সম্ভবত এর ফলের গায়ের শুঙ্গ বা হুলগুলোকে নির্দেশ করে যা স্পর্শ করলে তীব্র চুলকানি হয়। প্রাচীন চিকিৎসা শাস্ত্র ও আধুনিক গবেষণায় এটি স্নায়ুরোগ এবং পুরুষের প্রজনন ক্ষমতার উন্নয়নের জন্য অদ্বিতীয় বলে প্রমাণিত হয়েছে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
                 <div><strong>সংস্কৃত:</strong> আত্মগুপ্তা, কপিকচ্ছু, বানরী</div>
-                <div><strong>ইংরেজি:</strong> Velvet Bean / Cowhage</div>
-                <div><strong>হিন্দি:</strong> কৌঁচ (Kaunch)</div>
-                <div><strong>তামিল:</strong> পুনালাইকালি</div>
-                <div><strong>তেলেগু:</strong> দুলগুন্দি</div>
-                <div><strong>ফার্সি:</strong> হাব-উল-কুলকুল</div>
+                <div><strong>ইংরেজি:</strong> Velvet Bean</div>
+                <div><strong>হিন্দি:</strong> কৌঞ্চ, কেওয়াচ (Kewanch)</div>
+                <div><strong>বাংলা:</strong> আলকুশী, বিড়ালের থাবা</div>
+                <div><strong>তামিল:</strong> পুনায়েককালি</div>
+                <div><strong>তেলুগু:</strong> দুলগুন্ডি</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>আলকুশী Fabaceae পরিবারের একটি লতানো উদ্ভিদ। এটি সাধারণত ঝোপঝাড় বা বড় গাছকে আশ্রয় করে বেয়ে ওঠে। এর ফুলগুলো গাঢ় বেগুনি বা সাদা রঙের হয়। ফল বা শুঁটি দেখতে অনেকটা শিমের মতো, যা মখমলের মতো রোমে ঢাকা থাকে। ওষুধি কাজে মূলত এর বীজ এবং মূল ব্যবহৃত হয়।</p>
+            <p>আলকুশী একটি লতানো গুল্ম জাতীয় উদ্ভিদ। এর লতাগুলো বেশ লম্বা হয় এবং অন্য গাছকে জড়িয়ে উপরে ওঠে। এর ফলগুলো দেখতে অনেকটা শিম বা কড়াইশুঁটির মতো, তবে পুরো ফলের গায়ে মখমলের মতো ঘন বাদামী রঙের শুঙ্গ বা হুল থাকে। এই হুল চামড়ায় লাগলে তীব্র জ্বালা ও চুলকানি হয়। এর ফুল বেগুনি বা সাদা বর্ণের হয়ে থাকে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>এল-ডোপা (L-Dopa):</strong> যা মস্তিষ্কে ডোপামিন হরমোন তৈরি করে পার্কিনসন নিরাময়ে কাজ করে।</li>
-                <li><strong>অ্যালকালয়েডস (Mucunine, Prurienine):</strong> যা স্নায়ুতন্ত্রকে উদ্দীপিত করে।</li>
-                <li><strong>প্রোটিন ও ফ্যাটি অ্যাসিড:</strong> যা শরীরের পেশী গঠন ও শক্তি বৃদ্ধিতে সহায়ক।</li>
+                <li><strong>L-Dopa (লেভোডোপা):</strong> এটি ডোপামিন হরমোনের প্রিকারসার, যা পারকিনসন রোগ চিকিৎসায় এবং মুড ভালো রাখতে অত্যন্ত কার্যকর।</li>
+                <li><strong>অ্যালকালয়েডস:</strong> মিউকুনাডিন ও প্রুরিয়েনিন, যা প্রজনন স্বাস্থ্যের উন্নতি ঘটায়।</li>
+                <li><strong>প্রোটিন ও ফ্যাটি অ্যাসিড:</strong> বীজে প্রচুর পরিমাণে পুষ্টিগুণ থাকে।</li>
+                <li><strong>সেরোটোনিন:</strong> যা মস্তিষ্কের কার্যকারিতা উন্নত করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>যৌন স্বাস্থ্য উন্নতি:</strong> এটি শুক্রাণুর সংখ্যা বৃদ্ধি করে এবং ধ্বজভঙ্গ বা যৌন অক্ষমতা দূর করতে অত্যন্ত কার্যকর।</li>
-                <li><strong>পার্কিনসন রোগের চিকিৎসা:</strong> ডোপামিনের প্রাকৃতিক উৎস হওয়ায় এটি হাত-পা কাঁপা বা স্নায়বিক দুর্বলতা কমাতে সাহায্য করে।</li>
-                <li><strong>মানসিক প্রশান্তি:</strong> এটি অবসাদ ও দুশ্চিন্তা কমিয়ে মনকে চনমনে রাখে এবং ভালো ঘুমে সাহায্য করে।</li>
-                <li><strong>পেশী গঠন ও শক্তিবৃদ্ধি:</strong> বডি-বিল্ডারদের জন্য এটি প্রাকৃতিক স্টেরয়েডের বিকল্প হিসেবে পেশীর জোর বাড়াতে কাজ করে।</li>
-                <li><strong>মাসিকের সমস্যা:</strong> নারীদের অনিয়মিত মাসিক ও শ্বেতপ্রদর সমস্যায় এর মূলের রস উপকারী।</li>
+                <li><strong>শুক্র তারল্য ও বন্ধ্যাত্ব:</strong> এটি বীর্যের ঘনত্ব বাড়াতে এবং শুক্রাণুর সংখ্যা ও গুণমান উন্নত করতে শ্রেষ্ঠ কাজ করে।</li>
+                <li><strong>পারকিনসন রোগ:</strong> শরীরের কাঁপুনি বা স্নায়বিক দুর্বলতা দূর করতে এর এল-ডোপা উপাদানটি কাজ করে।</li>
+                <li><strong>বলবর্ধক:</strong> এটি পেশি গঠন এবং শারীরিক শক্তি বৃদ্ধিতে বডি বিল্ডারদের জন্য প্রাকৃতিক সাপ্লিমেন্ট হিসেবে কাজ করে।</li>
+                <li><strong>মানসিক অবসাদ:</strong> এটি মস্তিষ্কের ডোপামিনের মাত্রা বাড়িয়ে স্ট্রেস ও ডিপ্রেশন কমাতে সাহায্য করে।</li>
+                <li><strong>স্মৃতিশক্তি:</strong> নিয়মিত সেবনে স্মৃতিশক্তি এবং মনোযোগ বৃদ্ধি পায়।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. বাজিকরণ বা শক্তিবর্ধনে:</h4>
-                <p>৩-৫ গ্রাম আলকুশী বীজের চূর্ণ এক গ্লাস গরম দুধ ও চিনির সাথে মিশিয়ে রাতে সেবন করলে বিশেষ উপকার পাওয়া যায়।</p>
+                <h4>১. পুরুষত্বহীনতা ও শুক্র বৃদ্ধিতে:</h4>
+                <p>আলকুশী বীজের চূর্ণ (শোধন করা) ৩-৫ গ্রাম পরিমাণ এক গ্লাস গরম দুধের সাথে রাতে শোয়ার আগে নিয়মিত সেবন করুন।</p>
             </div>
             <div class="usage-card">
-                <h4>২. স্নায়বিক দুর্বলতায়:</h4>
-                <p>আলকুশী বীজের গুড়ো এবং অশ্বগন্ধা চূর্ণ সমপরিমাণ মিশিয়ে দুধের সাথে খেলে শরীরের কাঁপুনি ও দুর্বলতা কমে।</p>
+                <h4>২. স্নায়বিক দুর্বলতা ও পারকিনসনে:</h4>
+                <p>কৌঞ্চ পাক বা আলকুশী বীজের হালুয়া নিয়মিত খেলে হাত-পা কাঁপা এবং স্নায়বিক টান কমে যায়।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. বাতের ব্যথায়:</h4>
-                <p>আলকুশী মূলের ক্বাথ বা ডিককশন তৈরি করে পান করলে জয়েন্টের ব্যথা ও বাত প্রশমিত হয়।</p>
+                <h4>৩. বল বৃদ্ধির জন্য:</h4>
+                <p>আলকুশী বীজের চূর্ণ এবং অশ্বগন্ধা চূর্ণ সমপরিমাণ মিশিয়ে মধুর সাথে খেলে শরীরের রোগ প্রতিরোধ ক্ষমতা বহুগুণ বেড়ে যায়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• আলকুশী বীজের খোসা বিষাক্ত হতে পারে, তাই ব্যবহারের আগে বীজগুলো দুধে সেদ্ধ করে খোসা ছাড়িয়ে (শোধন করে) চূর্ণ করা উচিত।</p>
-            <p>• এর শুঁটির গায়ে থাকা রোম সরাসরি স্পর্শ করবেন না, এটি তীব্র চুলকানি ও ত্বকে ফোস্কা সৃষ্টি করতে পারে।</p>
-            <p>• ডোপামিন বা সাইকিয়াট্রিক ওষুধ সেবনকারী এবং গর্ভবতী নারীদের এটি এড়িয়ে চলা উচিত।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> শোধন ও সেবন বিধি</h3>
+            <div class="usage-card" style="border-left: 5px solid var(--accent);">
+                <strong>বিশেষ নোট (শোধন):</strong> আলকুশী বীজ সরাসরি ব্যবহার করা উচিত নয়। প্রথমে বীজগুলো দুধে সেদ্ধ করে খোসা ছাড়িয়ে নিতে হয়, তারপর ছায়ায় শুকিয়ে চূর্ণ করতে হয়। একে 'শোধন' প্রক্রিয়া বলা হয়।
+            </div>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>সেবন পদ্ধতি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>শোধন করা বীজ চূর্ণ</td>
+                            <td>৩ - ৫ গ্রাম</td>
+                            <td>গরম দুধের সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>মূলের ক্বাথ</td>
+                            <td>১০ - ২০ মিলি</td>
+                            <td>দিনে ২ বার</td>
+                        </tr>
+                        <tr>
+                            <td>কৌঞ্চ পাক (অব্যর্থ ঔষধ)</td>
+                            <td>১০ - ২০ গ্রাম</td>
+                            <td>দুধের সাথে সকালে</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• আলকুশী ফলের হুল থেকে সাবধান! এটি চোখে বা ত্বকে লাগলে প্রচণ্ড চুলকানি হয়; এক্ষেত্রে তিলের তেল বা নারিকেল তেল মাখা কার্যকর।</p>
+                <p>• ডোপামিন সেনসিটিভ ওষুধ বা মানসিক রোগের ওষুধ চললে চিকিৎসকের পরামর্শ ছাড়া এটি সেবন করবেন না।</p>
+                <p>• গর্ভবতী ও স্তন্যদানকারী মায়েদের জন্য এটি সেবন করা নিষেধ।</p>
+                <p>• উচ্চ রক্তচাপ বা ডায়াবেটিস থাকলে চিকিৎসকের তদারকিতে সেবন করুন।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
