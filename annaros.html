@@ -1,81 +1,298 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>আনারস - ভেষজ চিকিৎসা কোষ</title>
-    <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; margin: 0; background: #f4f7f6; color: #333; }
-        
-        /* মেনু বার স্টাইল */
-        nav { background: #1e3d1a; display: flex; justify-content: space-between; align-items: center; padding: 0 5%; height: 60px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        nav a { color: white; text-decoration: none; font-size: 14px; margin-left: 15px; }
-        .logo { font-weight: bold; font-size: 18px !important; margin-left: 0 !important; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>আনারস (Pineapple) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        /* কার্ড স্টাইল */
-        .container { padding: 20px; }
-        .card { background: #fff; max-width: 800px; margin: 30px auto; padding: 40px; border-radius: 15px; border-top: 10px solid #27ae60; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h1 { color: #27ae60; text-align: center; margin-top: 0; }
-        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; margin-top: 25px; }
-        
-        /* ফুটার স্টাইল */
-        footer { background: #1e3d1a; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
-        footer a { color: white; text-decoration: none; margin: 0 10px; font-size: 14px; }
-        .social-btn { font-size: 18px; display: inline-block; margin: 15px 10px; }
-    </style>
+<style>
+:root{
+    --primary:#fbc02d;
+    --dark:#f57f17;
+    --light:#fffde7;
+    --accent:#fdd835;
+    --nav-blue: #1976d2; 
+    --blue-btn: #1976d2; 
+    --blue-hover: #115293; 
+    --white:#fff;
+    --footer-grey-light: #999999;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:var(--light);
+    color:#333;
+    line-height:1.8;
+}
+
+/* ================= NAVBAR (BLUE) ================= */
+nav{
+    position:sticky; top:0; z-index:999;
+    background:var(--nav-blue); display:flex;
+    justify-content:space-between; align-items:center;
+    padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+.nav-links { display:flex; align-items:center; list-style:none; }
+.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover { background:var(--blue-hover); }
+
+.nav-social { display:flex; gap:10px; align-items:center; }
+.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover { background:rgba(255,255,255,0.2); }
+
+/* ================= HEADER ================= */
+header{
+    background:linear-gradient(135deg,var(--accent),var(--dark));
+    color:#fff; text-align:center; padding:100px 20px;
+}
+
+/* ================= CONTENT CONTAINER ================= */
+.container {
+    max-width: 1000px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
+}
+
+.plant-detail-card {
+    background: white;
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.plant-header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
+.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
+
+.ayurvedic-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+.spec-item {
+    background: var(--blue-btn);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.info-section { margin-bottom: 60px; }
+.info-section h3 {
+    color: var(--dark);
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    background: #fffef2;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #fff59d;
+}
+
+.benefit-list { list-style: none; }
+.benefit-list li {
+    margin-bottom: 22px;
+    padding-left: 50px;
+    position: relative;
+    font-size: 1.1rem;
+}
+.benefit-list li::before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute; left: 0;
+    color: var(--dark);
+    font-size: 1.4rem;
+}
+
+.usage-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.warning-box {
+    background: #fff5f5;
+    border-radius: 15px;
+    padding: 35px;
+    border-left: 8px solid #e53935;
+    margin-top: 30px;
+}
+
+.btn-back-container { text-align: center; margin-top: 40px; }
+.btn-back-list {
+    text-decoration: none; background: var(--blue-btn); color: white; 
+    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+.btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
+
+.back-to-top {
+    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
+}
+
+/* ================= FOOTER (#999999) ================= */
+footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
+.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
+.footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
+
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+</style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
-        <div>
-            <a href="index.html">হোম</a>
-            <a href="about.html">সম্পর্কে</a>
-            <a href="contact.html">যোগাযোগ</a>
-        </div>
-    </nav>
+<nav>
+    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
+    <ul class="nav-links">
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="about.html">সম্পর্কে</a></li>
+        <li><a href="contact.html">যোগাযোগ</a></li>
+    </ul>
+    <div class="nav-social">
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</nav>
 
-    <div class="container">
-        <div class="card">
-            <h1>আনারস (Pineapple)</h1>
-            
-            <h2>রোগের বিবরণ:</h2>
-            <p>আনারস হজমশক্তি বৃদ্ধি করতে এবং কৃমি নাশক হিসেবে অত্যন্ত কার্যকর। এতে থাকা ব্রোমেলিন এনজাইম বাতের ব্যথা ও শরীরের প্রদাহ কমাতে সাহায্য করে। এছাড়া এটি জন্ডিস ও গলা ব্যথায় বেশ উপকারী এবং রোগ প্রতিরোধ ক্ষমতা বাড়ায়।</p>
-            
-            <h2>ব্যবহৃত অংশ:</h2> 
-            <p>পাকা ফল এবং কচি পাতার রস।</p>
-            
-            <h2>ঔষধ তৈরির পদ্ধতি:</h2>
-            <p>আনারসের রস বের করে তাজা অবস্থায় সেবন করা ভালো। কৃমির সমস্যার জন্য কচি পাতার রস মধুর সাথে মিশিয়ে ব্যবহার করা হয়।</p>
-            
-            <h2>খাবার নিয়ম:</h2>
-            <p>হজম বৃদ্ধির জন্য খাওয়ার পর এক গ্লাস আনারসের রস খান। কৃমির জন্য সকালে খালি পেটে কচি পাতার রস ১-২ চামচ সেবন করুন। তবে খালি পেটে আনারস খাওয়া থেকে বিরত থাকাই ভালো (পাতার রস বাদে)।</p>
+<header>
+    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
+</header>
+
+<div class="container">
+    <div class="plant-detail-card">
+        <div class="plant-header">
+            <div class="plant-icon-large">🍍</div>
+            <h2>৮. আনারস (Pineapple)</h2>
+            <small>Scientific Name: Ananas comosus (L.) Merr.</small>
+            <div class="ayurvedic-specs">
+                <div class="spec-item">রস: অম্ল, মধুর</div>
+                <div class="spec-item">বীর্য: শীত (Cooling)</div>
+                <div class="spec-item">বিপাক: মধুর</div>
+                <div class="spec-item">দোষ: বাত্ত-পিত্ত নাশক</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-history"></i> পরিচিতি ও ওষুধি গুরুত্ব</h3>
+            <p>আনারস একটি সুস্বাদু ও পুষ্টিকর গ্রীষ্মমন্ডলীয় ফল। তবে এটি কেবল খাদ্য হিসেবেই নয়, ওষুধি গুণের জন্যও অত্যন্ত পরিচিত। আয়ুর্বেদ ও ইউনানী চিকিৎসায় হজম প্রক্রিয়ার উন্নতি এবং কৃমিনাশক হিসেবে আনারসের ব্যবহার অনেক প্রাচীন। এতে থাকা 'ব্রোমেলিন' নামক এনজাইম শরীরের প্রদাহ কমাতে এবং প্রোটিন হজমে গুরুত্বপূর্ণ ভূমিকা রাখে।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+            <div class="lang-grid">
+                <div><strong>সংস্কৃত:</strong> বহুনেত্রফল, অনানাসম্</div>
+                <div><strong>ইংরেজি:</strong> Pineapple</div>
+                <div><strong>আরবি:</strong> অনানাস (Ananas)</div>
+                <div><strong>হিন্দি:</strong> অনানাস (Ananas)</div>
+                <div><strong>স্প্যানিশ:</strong> পিনিয়া (Piña)</div>
+                <div><strong>পর্তুগিজ:</strong> আবাকাসি</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>আনারস Bromeliaceae পরিবারের অন্তর্ভুক্ত একটি কন্টকাকীর্ণ ভেষজ উদ্ভিদ। এর পাতাগুলো লম্বা, তরবারির মতো এবং দুই পাশে ধারালো কাঁটা থাকে। ফলের গায়ের নকশা অনেকটা চোখের মতো হওয়ার কারণে সংস্কৃতে একে 'বহুনেত্রফল' বলা হয়। এটি একটি গুচ্ছফল যা মূলত গাছটির মাঝখানের পুষ্পদণ্ড থেকে উৎপন্ন হয়।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
+            <ul class="benefit-list">
+                <li><strong>ব্রোমেলিন (Bromelain):</strong> এটি একটি শক্তিশালী এনজাইম যা প্রোটিন হজম করতে এবং অপারেশন পরবর্তী ফোলা বা ক্ষত শুকাতে সাহায্য করে।</li>
+                <li><strong>ভিটামিন সি:</strong> প্রচুর পরিমাণে থাকে যা রোগ প্রতিরোধ ক্ষমতা বাড়ায়।</li>
+                <li><strong>ম্যাঙ্গানিজ:</strong> হাড়ের গঠন মজবুত করতে এবং টিস্যুর সুস্থতায় কাজ করে।</li>
+                <li><strong>ফাইবার:</strong> কোষ্ঠকাঠিন্য দূর করতে এবং অন্ত্রের স্বাস্থ্য রক্ষায় সহায়ক।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <ul class="benefit-list">
+                <li><strong>হজম শক্তি বৃদ্ধি:</strong> ভারী খাবার বা মাংস খাওয়ার পর আনারস খেলে দ্রুত হজম হয়।</li>
+                <li><strong>প্রদাহ বিরোধী গুণ:</strong> এটি বাতের ব্যথা (Arthritis) এবং মাংসপেশির প্রদাহ কমাতে সাহায্য করে।</li>
+                <li><strong>কৃমিনাশক:</strong> খালি পেটে আনারসের রস খেলে অন্ত্রের ক্ষতিকর কৃমি মারা যায়।</li>
+                <li><strong>ত্বকের উজ্জ্বলতা:</strong> এর অ্যান্টি-অক্সিডেন্ট ত্বকের তারুণ্য ধরে রাখে এবং ব্রণ কমাতে সাহায্য করে।</li>
+                <li><strong>জ্বর ও সর্দি-কাশি:</strong> আনারসের রস কফ পরিষ্কার করতে এবং জ্বর কমাতে ব্যবহার করা হয়।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <div class="usage-card">
+                <h4>১. কৃমি নিরাময়ে:</h4>
+                <p>পাকা আনারসের রস সামান্য লবণ ও গোলমরিচের গুঁড়ো মিশিয়ে সকালে খালি পেটে ৩-৫ দিন খেলে পেটের কৃমি দূর হয়।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. গলা ব্যথা ও কাশিতে:</h4>
+                <p>আনারসের রসের সাথে এক চামচ মধু মিশিয়ে খেলে গলার খুসখুসে কাশি এবং টনসিলের ফোলা কমে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৩. জন্ডিস ও প্রস্রাবের জ্বালাপোড়ায়:</h4>
+                <p>প্রতিদিন এক গ্লাস তাজা আনারসের রস খেলে লিভারের কর্মক্ষমতা বাড়ে এবং প্রস্রাব পরিষ্কার হয়।</p>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+            <p>• গর্ভাবস্থায় আনারস (বিশেষ করে কাঁচা আনারস) সেবন করা থেকে বিরত থাকা উচিত, কারণ এটি জরায়ুর সংকোচন ঘটাতে পারে।</p>
+            <p>• যাদের পেটে আলসার বা গ্যাস্ট্রিকের সমস্যা বেশি, তারা খালি পেটে আনারস খাবেন না।</p>
+            <p>• দুধ এবং আনারস একসাথে খাওয়া স্বাস্থ্যের জন্য ক্ষতিকর হতে পারে, তাই দুই খাবারের মাঝে অন্তত ২-৩ ঘণ্টা বিরতি রাখা ভালো।</p>
+        </div>
+
+        <div class="btn-back-container">
+            <a href="index.html" class="btn-back-list">
+                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
+            </a>
         </div>
     </div>
+</div>
 
-    <footer>
-        <div style="max-width: 1200px; margin: auto;">
-            <h3 style="margin-bottom: 10px;">ভেষজ চিকিৎসা কোষ</h3>
-            <p style="font-size: 14px; opacity: 0.8;">প্রকৃতির নিরাময় শক্তি ছড়িয়ে পড়ুক সবার মাঝে।</p>
-            
-            <div style="margin: 20px 0;">
-                <a href="index.html">হোম</a> | 
-                <a href="about.html">সম্পর্কে</a> | 
-                <a href="contact.html">যোগাযোগ</a>
-            </div>
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
 
-            <div style="margin-bottom: 20px;">
-                <a href="https://www.facebook.com/bonargidawahkana.net/" target="_blank" class="social-btn" style="color: #1877f2;">Facebook</a>
-                <a href="https://www.youtube.com/bonarjidawakhana" target="_blank" class="social-btn" style="color: #ff0000;">YouTube</a>
-            </div>
-
-            <p style="font-size: 12px; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-                &copy; ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত
-            </p>
-            
-            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="background: #27ae60; color: white; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer; margin-top: 15px;">উপরে যান ↑</button>
-        </div>
-    </footer>
+<footer>
+    <h2>ভেষজ চিকিৎসা কোষ</h2>
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
+</footer>
 
 </body>
 </html>
