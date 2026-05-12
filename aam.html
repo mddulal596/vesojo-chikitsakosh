@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>আম (Mango) - বিস্তারিত তথ্য | ভেষজ চিকিৎসা কোষ</title>
+<title>আম (Mango) - বিস্তারিত ভেষজ গুণাগুণ | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -21,7 +21,7 @@ body{
     font-family:'Segoe UI',sans-serif;
     background:var(--light);
     color:#333;
-    line-height:1.6;
+    line-height:1.8;
 }
 
 /* ================= NAVBAR ================= */
@@ -68,39 +68,47 @@ header{
 }
 
 .plant-icon-large { font-size: 4rem; margin-bottom: 10px; }
-.plant-detail-card h2 { color: var(--dark); font-size: 2rem; }
+.plant-detail-card h2 { color: var(--dark); font-size: 2.2rem; }
 .plant-detail-card small { color: #777; font-size: 1.1rem; font-style: italic; }
 
-.info-section { margin-bottom: 30px; }
+.info-section { margin-bottom: 35px; }
 .info-section h3 {
     color: var(--dark);
     border-left: 5px solid var(--accent);
     padding-left: 15px;
     margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    background: #fdf5e6;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px dashed var(--accent);
 }
 
 .benefit-list { list-style: none; }
 .benefit-list li {
-    margin-bottom: 10px;
-    padding-left: 30px;
+    margin-bottom: 12px;
+    padding-left: 35px;
     position: relative;
 }
 .benefit-list li::before {
-    content: "\f00c";
+    content: "\f058";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute; left: 0;
     color: var(--dark);
 }
 
-.lang-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    background: #f9f9f9;
-    padding: 20px;
+.warning-box {
+    background: #fff3f3;
     border-radius: 8px;
-    border-left: 4px solid var(--dark);
+    padding: 20px;
+    border-left: 5px solid #d32f2f;
 }
 
 /* ================= FOOTER ================= */
@@ -158,14 +166,11 @@ footer h2 { font-size: 24px; margin-bottom: 25px; font-weight: bold; }
     cursor: pointer;
     font-size: 14px;
     font-weight: bold;
-    transition: 0.3s;
 }
 
-.back-to-top:hover { background: var(--dark); }
-
 @media (max-width: 768px) {
-    nav { flex-direction: column; height: auto; padding: 15px; }
-    .footer-s-btn { padding: 8px 15px; font-size: 12px; }
+    .plant-detail-card { padding: 20px; }
+    .nav-links { display: none; }
 }
 </style>
 </head>
@@ -187,7 +192,7 @@ footer h2 { font-size: 24px; margin-bottom: 25px; font-weight: bold; }
 </nav>
 
 <header>
-    <h1>ভেষজ উদ্ভিদের বিস্তারিত তথ্য</h1>
+    <h1>ভেষজ উদ্ভিদের বিস্তারিত এনসাইক্লোপিডিয়া</h1>
 </header>
 
 <div class="container">
@@ -199,40 +204,55 @@ footer h2 { font-size: 24px; margin-bottom: 25px; font-weight: bold; }
         </div>
 
         <div class="info-section">
-            <h3>অন্যান্য দেশের নাম</h3>
+            <h3>আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
                 <div><strong>সংস্কৃত:</strong> আম্র (Amra)</div>
                 <div><strong>হিন্দি:</strong> আম (Aam)</div>
                 <div><strong>আরবি:</strong> মানজু (Manju)</div>
-                <div><strong>ফার্সি:</strong> আম্ব (Amb)</div>
                 <div><strong>ইংরেজি:</strong> Mango</div>
+                <div><strong>ফার্সি:</strong> আম্ব (Amb)</div>
                 <div><strong>তামিল:</strong> মাঙ্গাই (Maangai)</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3>পরিচিতি</h3>
-            <p>আম বাংলাদেশের জাতীয় গাছ এবং ফলের রাজা। এর প্রতিটি অংশই ঔষধি গুণাগুণে সমৃদ্ধ। কচি আম পাতা থেকে শুরু করে আমের আঁটি ও ছাল—সবই প্রাচীন আয়ুর্বেদিক চিকিৎসায় ব্যবহৃত হয়ে আসছে। এটি ভিটামিন এ, সি এবং পটাশিয়ামের চমৎকার উৎস।</p>
+            <h3>উদ্ভিদ পরিচিতি ও বৈশিষ্ট্য</h3>
+            <p>আম বাংলাদেশের জাতীয় বৃক্ষ এবং একে 'ফলের রাজা' বলা হয়। এটি একটি চিরহরিৎ বৃক্ষ যা সাধারণত ১০-৪০ মিটার পর্যন্ত লম্বা হতে পারে। এর পাতাগুলো লম্বাটে এবং উজ্জ্বল সবুজ বর্ণের হয়। কচি অবস্থায় পাতাগুলো তামাটে রঙের হয়ে থাকে। এর মঞ্জুরীতে অসংখ্য ছোট ছোট সুগন্ধি ফুল ফোটে যা থেকে ফল উৎপন্ন হয়। আমের প্রতিটি অংশ—পাতা, ছাল, মূল, ফুল ও ফল ঔষধি গুণে ভরপুর।</p>
         </div>
 
         <div class="info-section">
-            <h3>প্রধান উপকারিতা</h3>
+            <h3>রাসায়নিক উপাদান</h3>
+            <p>আমের মধ্যে প্রচুর পরিমাণে ভিটামিন এ, সি এবং ই রয়েছে। এছাড়াও এতে মঙ্গোফেরিন নামক একটি শক্তিশালী অ্যান্টিঅক্সিডেন্ট বিদ্যমান। এর পাতায় ফ্ল্যাভোনয়েড এবং ফেনোলিক উপাদান পাওয়া যায় যা রক্তের শর্করা নিয়ন্ত্রণে কাজ করে।</p>
+        </div>
+
+        <div class="info-section">
+            <h3>বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
             <ul class="benefit-list">
-                <li>**ডায়াবেটিস নিয়ন্ত্রণ:** কচি আম পাতা শুকিয়ে গুঁড়ো করে সেবন করলে রক্তে শর্করার মাত্রা নিয়ন্ত্রণে থাকে।</li>
-                <li>**হজম শক্তি বৃদ্ধি:** পাকা আম হজমে সহায়তা করে এবং কোষ্ঠকাঠিন্য দূর করতে কার্যকর।</li>
-                <li>**ত্বকের যত্ন:** আমের রস ত্বকে ব্যবহার করলে বলিরেখা কমে এবং ত্বকের উজ্জ্বলতা বৃদ্ধি পায়।</li>
-                <li>**মাড়ির সমস্যা:** আমের কচি পাতার রস দাঁতের মাড়ি মজবুত করতে এবং রক্ত পড়া বন্ধ করতে সাহায্য করে।</li>
+                <li><strong>ডায়াবেটিস ব্যবস্থাপনা:</strong> কচি আম পাতা শুকিয়ে গুঁড়ো করে প্রতিদিন সকালে সেবন করলে ইনসুলিনের মাত্রা উন্নত হয় এবং রক্তে শর্করার পরিমাণ কমে।</li>
+                <li><strong>হজম শক্তি ও কোষ্ঠকাঠিন্য:</strong> পাকা আমে থাকা ফাইবার ও এনজাইম কোষ্ঠকাঠিন্য দূর করে এবং হজম প্রক্রিয়াকে ত্বরান্বিত করে।</li>
+                <li><strong>রোগ প্রতিরোধ ক্ষমতা:</strong> প্রচুর ভিটামিন সি থাকায় এটি শরীরের রোগ প্রতিরোধ ক্ষমতা বহুগুণ বাড়িয়ে দেয়।</li>
+                <li><strong>ক্যান্সার প্রতিরোধ:</strong> এতে থাকা অ্যান্টিঅক্সিডেন্ট কোলন, স্তন ও প্রোস্টেট ক্যান্সার প্রতিরোধে সহায়ক ভূমিকা রাখে।</li>
+                <li><strong>ত্বক ও চোখের সুরক্ষা:</strong> আমের ভিটামিন এ রাতকানা রোগ প্রতিরোধ করে এবং ত্বকের বলিরেখা দূর করে উজ্জ্বলতা বাড়ায়।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3>ব্যবহার বিধি</h3>
-            <p>ডায়াবেটিসের জন্য প্রতিদিন সকালে খালি পেটে ১ চা চামচ শুকনো আম পাতার গুঁড়ো পানির সাথে মিশিয়ে পান করা যায়। এছাড়াও আমের ছালের ক্বাথ আমাশয় ও ডায়রিয়া সারাতে ব্যবহার করা হয়।</p>
+            <h3>ব্যবহার পদ্ধতি ও মাত্রা</h3>
+            <p>১. <strong>ডায়াবেটিসের জন্য:</strong> ১০-১৫টি কচি আম পাতা এক গ্লাস পানিতে ফুটিয়ে সারারাত রেখে দিন। সকালে সেই পানি ছেঁকে পান করুন।</p>
+            <p>২. <strong>পেটের সমস্যার জন্য:</strong> আমের শুকনো ছাল চূর্ণ ১-২ গ্রাম পরিমাণ মধুর সাথে মিশিয়ে সেবন করলে আমাশয় উপশম হয়।</p>
+            <p>৩. <strong>দাঁতের যত্বে:</strong> আম পাতা পুড়িয়ে সেই ছাই দিয়ে দাঁত মাজলে মাড়ি মজবুত হয়।</p>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #d32f2f; margin-bottom: 10px;"><i class="fas fa-exclamation-triangle"></i> সতর্কতা</h4>
+                <p>অতিরিক্ত পাকা আম খেলে রক্তে সুগার সাময়িকভাবে বেড়ে যেতে পারে, তাই ডায়াবেটিস রোগীদের পরিমিত খাওয়া উচিত। কাঁচা আম অতিরিক্ত খেলে দাঁতের এনামেল ক্ষতিগ্রস্ত হতে পারে এবং পেট খারাপের ঝুঁকি থাকে।</p>
+            </div>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" style="text-decoration: none; background: var(--dark); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold;">
-                <i class="fas fa-home"></i> তালিকায় ফিরে যান
+            <a href="index.html" style="text-decoration: none; background: var(--dark); color: white; padding: 12px 30px; border-radius: 30px; font-weight: bold; box-shadow: 0 4px 15px rgba(230,81,0,0.3);">
+                <i class="fas fa-arrow-left"></i> তালিকায় ফিরে যান
             </a>
         </div>
     </div>
