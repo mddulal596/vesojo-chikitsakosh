@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#33691e;
-    --dark:#1b5e20;
-    --light:#f1f8e9;
-    --accent:#689f38;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #f1f8e9;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #c8e6c9;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -196,77 +224,115 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
         <div class="plant-header">
             <div class="plant-icon-large">🍈</div>
             <h2>১৯. বেল (Bel)</h2>
-            <small>Scientific Name: Aegle marmelos (L.) Corrêa</small>
+            <small>Scientific Name: Aegle marmelos (L.) Correa</small>
             <div class="ayurvedic-specs">
                 <div class="spec-item">রস: কষায়, তিক্ত, মধুর</div>
-                <div class="spec-item">বীর্য: উষ্ণ (Heating)</div>
+                <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
                 <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">গুণ: লঘু, রুক্ষ</div>
+                <div class="spec-item">দোষ: কফ ও বাত নাশক</div>
+                <div class="spec-item">বিশেষত্ব: পেটের রোগের প্রধান ঔষধ ও সংগ্রাহক</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>বেল বাংলার একটি অত্যন্ত জনপ্রিয় এবং গুরুত্বপূর্ণ ভেষজ ফল। আয়ুর্বেদ শাস্ত্রে একে 'শ্রীফল' বলা হয়। এটি মূলত পেটের সকল রোগের মহৌষধ হিসেবে পরিচিত। কোষ্ঠকাঠিন্য, আমাশয় এবং হজমের সমস্যায় বেলের কার্যকারিতা অপরিসীম। এর প্রতিটি অংশ—ফল, পাতা, ছাল এবং মূল ওষুধি গুণে ভরপুর।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>আয়ুর্বেদ শাস্ত্রে বেলকে বলা হয় 'শ্রীফল'। এটি হিন্দু ধর্মে অত্যন্ত পবিত্র গাছ হিসেবে গণ্য করা হয় এবং মহাদেব শিবের প্রিয় ফল। এটি কয়েক হাজার বছর ধরে পেটের দীর্ঘস্থায়ী সমস্যা যেমন আমাশয়, ডায়রিয়া এবং কোষ্ঠকাঠিন্য নিরাময়ে ব্যবহৃত হয়ে আসছে। আয়ুর্বেদীয় চিকিৎসায় কচি বেল বা বেল শুঁটকে অন্ত্রের স্বাস্থ্যের জন্য সর্বোত্তম পথ্য মনে করা হয়।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> বিল্ব, শ্রীফল, শাণ্ডিল্য</div>
-                <div><strong>ইংরেজি:</strong> Wood Apple / Bael Fruit</div>
+                <div><strong>সংস্কৃত:</strong> বিল্ব, শ্রীফল, মালুর</div>
+                <div><strong>ইংরেজি:</strong> Wood Apple, Bael Fruit</div>
                 <div><strong>হিন্দি:</strong> বেল (Bel)</div>
                 <div><strong>তামিল:</strong> ভিলভাম</div>
-                <div><strong>উর্দু:</strong> বেল (Beel)</div>
+                <div><strong>বাংলা:</strong> বেল, বিল্ব</div>
+                <div><strong>তেলুগু:</strong> মারেডু</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>বেল Rutaceae পরিবারের একটি মাঝারি থেকে বড় আকারের পর্ণমোচী বৃক্ষ। এর পাতাগুলো ত্রিপত্রক (তিনটি পাতা একসাথে থাকে)। ফলগুলো শক্ত খোলসযুক্ত এবং ভেতরে আঠালো, সুগন্ধযুক্ত মিষ্টি শাঁস থাকে। ওষুধি কাজে কাঁচা এবং পাকা উভয় ফলই ব্যবহৃত হয়।</p>
+            <p>বেল একটি পর্ণমোচী ও মাঝারি আকারের কাঁটাযুক্ত বৃক্ষ। এর পাতাগুলো ত্রিপত্রক (তিনটি পাতা একসাথে থাকে), যা শিবের ত্রিশূলের মতো দেখায়। ফলগুলো গোলাকার এবং শক্ত খোলসযুক্ত হয়। কাঁচা অবস্থায় ফল সবুজ এবং পাকলে হলুদাভ হয়। ফলের ভেতর চটচটে আঠালো সুগন্ধি শাঁস থাকে। ভারত ও বাংলাদেশে এই গাছ প্রচুর পরিমাণে দেখা যায়।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>মারমেলোসিন (Marmelosin):</strong> যা হজম প্রক্রিয়া উন্নত করতে এবং অন্ত্রের সংক্রমণ রোধে কাজ করে।</li>
-                <li><strong>ট্যানিন (Tannin):</strong> যা আমাশয় এবং ডায়রিয়া নিয়ন্ত্রণে সাহায্য করে।</li>
-                <li><strong>ভিটামিন ও খনিজ:</strong> বেল ভিটামিন-সি, ভিটামিন-এ এবং ক্যালসিয়ামের চমৎকার উৎস।</li>
+                <li><strong>Marmelosin:</strong> এটি ফলের প্রধান সক্রিয় উপাদান যা হজমে সহায়তা করে।</li>
+                <li><strong>ট্যানিন:</strong> যা ডায়রিয়া ও আমাশয় সারাতে শক্তিশালী কাজ করে।</li>
+                <li><strong>পেকটিন:</strong> এটি কোষ্ঠকাঠিন্য দূর করতে এবং অন্ত্র পরিষ্কার করতে কার্যকর।</li>
+                <li><strong>অপরিহার্য তেল:</strong> যা অন্ত্রের কৃমি ধ্বংস করতে সাহায্য করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>হজম শক্তি বৃদ্ধি:</strong> পাকা বেলের শরবত কোষ্ঠকাঠিন্য দূর করে এবং নিয়মিত পেট পরিষ্কার রাখতে সাহায্য করে।</li>
-                <li><strong>আমাশয় নিরাময়:</strong> কচি বা কাঁচা বেল পুড়িয়ে বা শুকিয়ে (বেল শুঁট) খেলে দীর্ঘস্থায়ী আমাশয় দ্রুত সেরে যায়।</li>
-                <li><strong>ডায়াবেটিস নিয়ন্ত্রণ:</strong> বেলের পাতার রস নিয়মিত সেবনে রক্তে শর্করার মাত্রা নিয়ন্ত্রণে থাকে।</li>
-                <li><strong>হৃদপিণ্ডের সুরক্ষা:</strong> বেল হৃদপিণ্ডের পেশীকে শক্তিশালী করে এবং রক্তচাপ স্বাভাবিক রাখতে সাহায্য করে।</li>
-                <li><strong>জ্বর ও সর্দি:</strong> বেলের পাতার ক্বাথ মধু মিশিয়ে খেলে সর্দি-কাশি ও জ্বরে আরাম পাওয়া যায়।</li>
+                <li><strong>আমাশয় ও ডায়রিয়া:</strong> কচি বেলের পোড়া বা বেল শুঁট সিদ্ধ করে খেলে রক্ত আমাশয় ও দীর্ঘস্থায়ী ডায়রিয়া দ্রুত সেরে যায়।</li>
+                <li><strong>কোষ্ঠকাঠিন্য:</strong> পাকা বেলের শরবত নিয়মিত খেলে অন্ত্রের স্বাভাবিক চলন ফিরে আসে এবং দীর্ঘদিনের কোষ্ঠকাঠিন্য দূর হয়।</li>
+                <li><strong>পেপটিক আলসার:</strong> বেলের আঠালো মিউসিলেজ পাকস্থলীর গায়ে আবরণ তৈরি করে ক্ষত বা আলসার সারাতে সাহায্য করে।</li>
+                <li><strong>লিভারের সুরক্ষা:</strong> এটি রক্ত পরিষ্কার করে এবং লিভারের কার্যক্ষমতা বৃদ্ধি করে।</li>
+                <li><strong>জ্বর ও সর্দি:</strong> বেল পাতার রস খেলে সর্দিজনিত জ্বর এবং সাইনোসাইটিসের সমস্যায় আরাম পাওয়া যায়।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. কোষ্ঠকাঠিন্য দূর করতে:</h4>
-                <p>পাকা বেলের শাঁস পানিতে গুলে সামান্য গুড় বা চিনি দিয়ে শরবত করে প্রতিদিন সকালে খালি পেটে খান।</p>
+                <h4>১. দীর্ঘস্থায়ী আমাশয় নিরাময়ে:</h4>
+                <p>কচি বেলের শুঁট (শুকনো বেল) চূর্ণ ৩-৫ গ্রাম পরিমাণ মাঠা বা টক দইয়ের সাথে মিশিয়ে দিনে দুইবার সেবন করুন।</p>
             </div>
             <div class="usage-card">
-                <h4>২. দীর্ঘস্থায়ী আমাশয় সমস্যায়:</h4>
-                <p>কাঁচা বেলের শুঁট (বেল শুঁট) চূর্ণ দইয়ের সাথে মিশিয়ে খেলে আমাশয় ও ডায়রিয়া প্রশমিত হয়।</p>
+                <h4>২. কোষ্ঠকাঠিন্য ও পেট পরিষ্কারে:</h4>
+                <p>একটি মাঝারি পাকা বেলের শাঁস বের করে পানিতে গুলিয়ে শরবত তৈরি করে সামান্য গুড় বা মিছরি মিশিয়ে প্রতিদিন সকালে খান।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. ত্বকের উজ্জ্বলতা বৃদ্ধিতে:</h4>
-                <p>বেলের পাতার রস নিয়মিত গায়ে মাখলে ত্বকের দুর্গন্ধ দূর হয় এবং ত্বক সতেজ থাকে।</p>
+                <h4>৩. বহুমূত্র বা ডায়াবেটিস নিয়ন্ত্রণে:</h4>
+                <p>১০-১২টি বেল পাতা পিষে এর রস নিয়মিত সকালে খালি পেটে সেবন করলে রক্তের শর্করা নিয়ন্ত্রণে থাকে।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• পাকা বেল দীর্ঘকাল একটানা খেলে অন্ত্রের স্বাভাবিক কর্মক্ষমতা কিছুটা কমে যেতে পারে।</p>
-            <p>• অতিরিক্ত বেল সেবনে পেট ফাঁপা বা অস্বস্তি হতে পারে।</p>
-            <p>• গর্ভাবস্থায় বেলের পাতা বা অধিক পরিমাণে বেল খাওয়ার আগে চিকিৎসকের পরামর্শ নিন।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> সেবন বিধি ও মাত্রা</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>ব্যবহারের পদ্ধতি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>বেল শুঁট চূর্ণ</td>
+                            <td>৩ - ৬ গ্রাম</td>
+                            <td>পানি বা মাঠার সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>পাকা বেলের শাঁস</td>
+                            <td>৫০ - ১০০ গ্রাম</td>
+                            <td>শরবত হিসেবে</td>
+                        </tr>
+                        <tr>
+                            <td>পাতার রস</td>
+                            <td>১০ - ১৫ মিলি</td>
+                            <td>খালি পেটে</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• অতিরিক্ত বেল সেবন করলে পেট ফাঁপা বা হজমে গোলযোগ হতে পারে।</p>
+                <p>• দীর্ঘ সময় ধরে প্রতিদিন পাকা বেল খাওয়া উচিত নয়, এতে অন্ত্রের স্বাভাবিক কার্যক্ষমতা সাময়িকভাবে শিথিল হতে পারে।</p>
+                <p>• ডায়াবেটিস রোগীরা বেলের শরবতে চিনি বা অতিরিক্ত মিষ্টি ব্যবহার করবেন না।</p>
+                <p>• কাঁচা বেল ও পাকা বেলের কাজ সম্পূর্ণ আলাদা; তাই রোগ অনুযায়ী সঠিক অবস্থা নির্বাচন জরুরি।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
