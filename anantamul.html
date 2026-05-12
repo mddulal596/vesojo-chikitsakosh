@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#8d6e63;
-    --dark:#4e342e;
-    --light:#efebe9;
-    --accent:#a1887f;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #fafafa;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #d7ccc8;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -199,15 +227,16 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
             <small>Scientific Name: Hemidesmus indicus (L.) R. Br.</small>
             <div class="ayurvedic-specs">
                 <div class="spec-item">রস: মধুর, তিক্ত</div>
-                <div class="spec-item">বীর্য: শীত (Cooling)</div>
+                <div class="spec-item">বীর্য: শীতল (Cold)</div>
                 <div class="spec-item">বিপাক: মধুর</div>
-                <div class="spec-item">গুণ: গুরু, স্নিগ্ধ</div>
+                <div class="spec-item">দোষ: ত্রিদোষ নাশক (বিশেষত পিত্ত)</div>
+                <div class="spec-item">বিশেষত্ব: প্রাকৃতিক রক্ত শোধক</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>অনন্তমূল একটি লতাজাতীয় ভেষজ উদ্ভিদ যার শিকড় বা মূল সুগন্ধি এবং ওষুধি গুণে ভরপুর। আয়ুর্বেদ শাস্ত্রে একে 'সারিবাদ্বয়' এর অন্যতম প্রধান অংশ মনে করা হয়। এটি রক্ত পরিষ্কার করতে এবং শরীরের অতিরিক্ত তাপ কমাতে অতুলনীয়। এর শিকড় থেকে চন্দনের মতো এক প্রকার সুগন্ধ বের হয় বলে একে 'ভারতীয় সারসাপারিলা' বলা হয়।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>অনন্তমূল বা শ্যামালতা ভারতীয় উপমহাদেশের একটি সুপরিচিত ওষুধি লতা। একে 'সারিবাদ্বয়' এর অন্যতম প্রধান উপাদান হিসেবে গণ্য করা হয়। প্রাচীন আয়ুর্বেদ শাস্ত্রে একে রক্ত পরিষ্কার করার জন্য শ্রেষ্ঠ ভেষজ বলা হয়েছে। এটি কেবল ওষুধি গুণেই নয়, বরং এর শিকড়ের মনোরম সুগন্ধের কারণে 'ভারতীয় সারসাপারিলা' নামেও পরিচিত। ব্রিটিশ রাজত্বকালে এটি সিফিলিস ও চর্মরোগের চিকিৎসায় ব্যাপকভাবে ব্যবহৃত হতো।</p>
         </div>
 
         <div class="info-section">
@@ -215,59 +244,96 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
             <div class="lang-grid">
                 <div><strong>সংস্কৃত:</strong> সারিবা, অনন্তা, উৎপল সারিবা</div>
                 <div><strong>ইংরেজি:</strong> Indian Sarsaparilla</div>
-                <div><strong>হিন্দি:</strong> অনন্তমূল (Anantamul) / সারিবা</div>
-                <div><strong>তামিল:</strong> নান্নারি (Nannari)</div>
-                <div><strong>মালয়ালম:</strong> নুরুন্দি</div>
-                <div><strong>তেলেগু:</strong> সুগন্ধিপালা</div>
+                <div><strong>আরবি:</strong> উশবাতুল হিন্দি</div>
+                <div><strong>ফার্সি:</strong> উশবায়ে হিন্দি</div>
+                <div><strong>হিন্দি:</strong> অনন্তমূল (Anantamul)</div>
+                <div><strong>তামিল:</strong> নান্নারি</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>অনন্তমূল Apocynaceae পরিবারের অন্তর্ভুক্ত একটি সরু ও কাস্টল লতা। এর পাতাগুলো লম্বাটে এবং গাঢ় সবুজ রঙের হয়, যার মাঝখানে সাদা রেখা থাকে। এর ফুলগুলো বাইরে বেগুনি এবং ভেতরে হলুদাভ হয়। এর সবচেয়ে গুরুত্বপূর্ণ অংশ হলো মূল বা শিকড়, যা লম্বা এবং মাটির অনেক গভীরে চলে যায় বলে একে 'অনন্তমূল' বলা হয়।</p>
+            <p>অনন্তমূল একটি লতানো গুল্ম জাতীয় উদ্ভিদ। এর লতা মাটি দিয়ে ছড়িয়ে পড়ে বা অন্য গাছকে জড়িয়ে উপরে ওঠে। পাতাগুলো লম্বাটে, ডিম্বাকৃতি এবং গাঢ় সবুজ রঙের হয়, যার মাঝখানে সাদা রেখা দেখা যায়। এর শিকড় বা মূলটি বেশ লম্বা, নমনীয় এবং অত্যন্ত সুগন্ধযুক্ত। লতা বা পাতা ছিঁড়লে সাদা কষ বের হয়। এটি মূলত ঝোপঝাড় ও পরিত্যক্ত ছায়াযুক্ত স্থানে ভালো জন্মে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>পি-মিথক্সি স্যালিসাইলিক অ্যালডিহাইড:</strong> এটি অনন্তমূলের বৈশিষ্ট্যপূর্ণ সুগন্ধের প্রধান কারণ।</li>
-                <li><strong>স্যাপোনিনস (Saponins):</strong> যা রক্ত পরিষ্কার করতে এবং প্রদাহ কমাতে সাহায্য করে।</li>
-                <li><strong>ফ্ল্যাভোনয়েডস:</strong> এটি একটি শক্তিশালী অ্যান্টি-অক্সিডেন্ট যা কোষের ক্ষয় রোধ করে।</li>
+                <li><strong>টু-হাইড্রক্সি-ফোর-মিথক্সি বেনজালডিহাইড:</strong> এটি অনন্তমূলের মূল উপাদান যা একে বিশেষ সুগন্ধ প্রদান করে।</li>
+                <li><strong>স্যালিসাইলিক অ্যাসিড:</strong> এটি প্রাকৃতিক ব্যথানাশক ও প্রদাহনাশক হিসেবে কাজ করে।</li>
+                <li><strong>ট্যানিন ও রেজিন:</strong> যা চর্মরোগ সারাতে এবং হজম প্রক্রিয়া উন্নত করতে সহায়ক।</li>
+                <li><strong>স্যাফোনিন:</strong> যা রক্ত শোধনে এবং হরমোনের ভারসাম্য রক্ষায় সাহায্য করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>রক্ত পরিশোধন:</strong> এটি শরীর থেকে টক্সিন বের করে দেয় এবং চর্মরোগ যেমন একজিমা ও সোরিয়াসিস নিরাময়ে সাহায্য করে।</li>
-                <li><strong>মূত্রনালীর সংক্রমণ:</strong> প্রস্রাবের জ্বালাপোড়া এবং ইউরিনারি ট্র্যাক্ট ইনফেকশন (UTI) কমাতে এর শিকড়ের ক্বাথ অত্যন্ত কার্যকর।</li>
-                <li><strong>হজম শক্তি বৃদ্ধি:</strong> এটি অগ্নিমান্দ্য দূর করে এবং পেটের গ্যাসের সমস্যা প্রশমিত করে।</li>
-                <li><strong>মহিলাদের স্বাস্থ্য:</strong> এটি শ্বেতপ্রদর (Leucorrhea) এবং অনিয়মিত মাসিকের সমস্যা সমাধানে ব্যবহার করা হয়।</li>
-                <li><strong>জ্বর ও প্রদাহ:</strong> দীর্ঘস্থায়ী জ্বর এবং শরীরের অভ্যন্তরীণ প্রদাহ কমাতে এটি প্রাকৃতিক শীতলকারক হিসেবে কাজ করে।</li>
+                <li><strong>রক্ত পরিষ্কারক:</strong> এটি রক্ত থেকে বিষাক্ত পদার্থ (টক্সিন) বের করে দিয়ে শরীরকে ভেতর থেকে সতেজ রাখে।</li>
+                <li><strong>চর্মরোগ প্রতিকার:</strong> একজিমা, সোরিয়াসিস, চুলকানি এবং ব্রণের সমস্যায় অনন্তমূলের ক্বাথ বা চূর্ণ মহৌষধ।</li>
+                <li><strong>প্রস্রাবের সমস্যা:</strong> এটি মূত্রবর্ধক হিসেবে কাজ করে এবং প্রস্রাবের জ্বালাপোড়া ও ইউরিনারি ট্র্যাক্ট ইনফেকশন (UTI) কমায়।</li>
+                <li><strong>ক্ষুধা মন্দা ও হজম:</strong> এটি পাকস্থলীর শক্তি বাড়ায় এবং রুচি ফিরিয়ে আনতে সাহায্য করে।</li>
+                <li><strong>বাতের ব্যথা:</strong> রক্ত দোষজনিত বাতের ব্যথায় অনন্তমূল অত্যন্ত কার্যকর।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. শীতল শরবত (নান্নারি):</h4>
-                <p>অনন্তমূলের শিকড় থেঁতো করে পানিতে ফুটিয়ে সিরাপ তৈরি করে সেই পানি লেবুর রসের সাথে মিশিয়ে পান করলে শরীরের তাপমাত্রা কমে।</p>
+                <h4>১. চর্মরোগ ও রক্ত শোধনে:</h4>
+                <p>৫ গ্রাম অনন্তমূলের চূর্ণ এক গ্লাস পানিতে সারারাত ভিজিয়ে রেখে সকালে ছেঁকে নিয়ে পান করুন। এটি টানা ২১ দিন খেলে রক্ত পরিষ্কার হয়।</p>
             </div>
             <div class="usage-card">
-                <h4>২. রক্ত পরিষ্কার ও চর্মরোগে:</h4>
-                <p>অনন্তমূলের চূর্ণ ৫ গ্রাম পরিমাণ সকালে ও রাতে পানির সাথে সেবন করলে রক্ত পরিষ্কার হয় এবং ত্বকের উজ্জ্বলতা বাড়ে।</p>
+                <h4>২. প্রস্রাবের জ্বালাপোড়া কমাতে:</h4>
+                <p>অনন্তমূলের শিকড় বাটা ৩-৫ গ্রাম পরিমাণ ঠান্ডা পানি বা মিছরির শরবতের সাথে মিশিয়ে খেলে দ্রুত উপশম হয়।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. বাতের ব্যথায়:</h4>
-                <p>অনন্তমূলের শিকড় বাটা ব্যথার স্থানে প্রলেপ দিলে ফোলা এবং ব্যথা দ্রুত উপশম হয়।</p>
+                <h4>৩. শিশুদের পেটের সমস্যায়:</h4>
+                <p>শিশুদের হজমের সমস্যা বা শারীরিক দুর্বলতায় অনন্তমূলের শিকড় দিয়ে তৈরি দুধ (ক্ষীরপাক) অল্প মাত্রায় খাওয়ালে উপকার পাওয়া যায়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• অনন্তমূল সাধারণত নিরাপদ, তবে অতিরিক্ত সেবনে পেট খারাপ বা বমি ভাব হতে পারে।</p>
-            <p>• ডায়াবেটিস রোগীরা যদি এই উদ্ভিদের সিরাপ ব্যবহার করেন, তবে চিনি বা মধুর মাত্রার দিকে খেয়াল রাখুন।</p>
-            <p>• শিশুদের ক্ষেত্রে এবং গর্ভাবস্থায় ব্যবহারের আগে অবশ্যই বিশেষজ্ঞ চিকিৎসকের পরামর্শ নিন।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি (ডোজ)</h3>
+            <p style="margin-bottom: 20px;">অনন্তমূলের শুকনো চূর্ণ বা ক্বাথ সেবনের মাত্রা নিচে দেওয়া হলো:</p>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>শিকড় চূর্ণ (মাত্রা)</th>
+                            <th>ক্বাথ/ভিজানো পানি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>৫ - ১২ বছর</td>
+                            <td>১ - ২ গ্রাম</td>
+                            <td>২০ - ৩০ মিলি</td>
+                        </tr>
+                        <tr>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>৩ - ৬ গ্রাম</td>
+                            <td>৫০ - ১০০ মিলি</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ (৬৫+)</td>
+                            <td>২ - ৩ গ্রাম</td>
+                            <td>৩০ - ৫০ মিলি</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• অনন্তমূলের কোনো পার্শ্বপ্রতিক্রিয়া সাধারণত দেখা যায় না, তবে মাত্রারিক্ত সেবনে পেটে অস্বস্তি হতে পারে।</p>
+                <p>• বাজার থেকে কেনা অনন্তমূলের শিকড় ব্যবহারের আগে অবশ্যই ভালো করে ধুয়ে পরিষ্কার করে নিতে হবে।</p>
+                <p>• গর্ভাবস্থায় এবং দীর্ঘস্থায়ী কোনো রোগে আক্রান্ত থাকলে সেবনের আগে অভিজ্ঞ চিকিৎসকের পরামর্শ নিন।</p>
+                <p>• এর শিকড়টি সুগন্ধহীন হলে বুঝতে হবে সেটি আসল অনন্তমূল নয় বা অনেক পুরনো।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
