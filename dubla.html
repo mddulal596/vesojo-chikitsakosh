@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>দুর্বা ঘাস (Dubla) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
+<title>দূর্বা (Dubla) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
-    --primary:#4caf50;
-    --dark:#2e7d32;
+    --primary:#43a047; /* দূর্বা ঘাসের উজ্জ্বল সবুজ রঙ */
+    --dark:#1b5e20;
     --light:#e8f5e9;
-    --accent:#8bc34a;
+    --accent:#2e7d32;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -141,11 +141,35 @@ header{
 .usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 .usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
 
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:hover { background: #e8f5e9; }
+
 .warning-box {
-    background: #fff5f5;
+    background: #fff9c4;
     border-radius: 15px;
     padding: 35px;
-    border-left: 8px solid #e53935;
+    border-left: 8px solid #fbc02d;
     margin-top: 30px;
 }
 
@@ -158,7 +182,7 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--dark);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
@@ -197,67 +221,121 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🌾</div>
-            <h2>৩৯. দুর্বা ঘাস (Dubla Grass)</h2>
-            <small>Scientific Name: Cynodon dactylon (L.) Pers.</small>
+            <div class="plant-icon-large">🌱</div>
+            <h2>৩৯. দূর্বা (Dubla / Bermuda Grass)</h2>
+            <small>Scientific Name: Cynodon dactylon</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: কষায় ও মধুর</div>
+                <div class="spec-item">রস: কষায়, মিষ্টি</div>
                 <div class="spec-item">বীর্য: শীতল (Cold)</div>
-                <div class="spec-item">গুণ: লঘু ও স্নিগ্ধ</div>
-                <div class="spec-item">প্রভাব: রক্তপিত্ত নাশক</div>
+                <div class="spec-item">বিপাক: মিষ্টি</div>
+                <div class="spec-item">গুণ: লঘু, স্নিগ্ধ</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
-            <p>দুর্বা ঘাস পৃথিবীর প্রাচীনতম এবং সবচেয়ে পবিত্র উদ্ভিদগুলোর একটি। আয়ুর্বেদ শাস্ত্রে একে 'মহৌষধ' হিসেবে বর্ণনা করা হয়েছে। এটি শুধুমাত্র হিন্দু ধর্মীয় পূজা-পার্বণেই ব্যবহৃত হয় না, বরং এর ঔষধি গুণাবলীর জন্য এটি বিশ্বজুড়ে সমাদৃত। দুর্বা ঘাসকে জীবনীশক্তির প্রতীক মনে করা হয় কারণ এটি যেকোনো প্রতিকূল পরিবেশে বেঁচে থাকতে পারে। শরীরের অভ্যন্তরীণ ও বাহ্যিক রক্তপাত বন্ধ করতে এর চেয়ে দ্রুত কার্যকর প্রাকৃতিক উপাদান খুব কমই আছে।</p>
+            <p>দূর্বা ঘাস পৃথিবীর প্রাচীনতম এবং সহনশীল ঘাসগুলোর একটি। আয়ুর্বেদ শাস্ত্রে একে 'অনন্ত' বলা হয়, কারণ এর জীবনশক্তি অফুরন্ত। হিন্দু ধর্মাবলম্বীদের কাছে এটি অত্যন্ত পবিত্র এবং বিভিন্ন মাঙ্গলিক অনুষ্ঠানে ব্যবহৃত হয়। চিকিৎসার ক্ষেত্রে এটি শ্রেষ্ঠ রক্তরোধক (Haemostatic) হিসেবে পরিচিত। প্রাচীন চিকিৎসকরা শরীরের অভ্যন্তরীণ বা বাহ্যিক যেকোনো ধরনের রক্তক্ষরণ বন্ধে দূর্বার রস ব্যবহার করতেন।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> দূর্বা, শতপর্বা, নীলদূর্বা</div>
-                <div><strong>ইংরেজি:</strong> Bermuda Grass, Dog's Tooth Grass</div>
+                <div><strong>সংস্কৃত:</strong> দূর্বা, সহস্রবীর্য, শতপর্ক</div>
+                <div><strong>ইংরেজি:</strong> Bermuda Grass / Couch Grass</div>
                 <div><strong>হিন্দি:</strong> দূব (Doob)</div>
-                <div><strong>বাংলা:</strong> দুর্বা ঘাস / দুবলা</div>
-                <div><strong>আরবি:</strong> না জিল</div>
-                <div><strong>ফার্সি:</strong> চিবর</div>
+                <div><strong>আরবি:</strong> নাজম (Najm)</div>
+                <div><strong>বাংলা:</strong> দূর্বা / দুবলা</div>
+                <div><strong>তামিল:</strong> আরুগমপিল (Arugampul)</div>
             </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>দূর্বা ঘাস পোয়াসি (Poaceae) পরিবারের অন্তর্ভুক্ত একটি বহুবর্ষজীবী লতানো ঘাস। এটি মাটির ওপর দিয়ে ছড়িয়ে পড়ে এবং মাটির গভীরে শিকড় বিস্তার করে। এর কাণ্ড সরু এবং পাতাগুলো চিকন, লম্বাটে ও গাঢ় সবুজ বর্ণের হয়। এটি প্রতিকূল আবহাওয়ায় অত্যন্ত টিকে থাকতে সক্ষম এবং প্রায় যেকোনো ধরনের মাটিতে জন্মায়।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
+            <ul class="benefit-list">
+                <li><strong>ভিটামিন সি ও এ:</strong> ত্বক ও চোখের স্বাস্থ্যের জন্য উপকারী।</li>
+                <li><strong>ফ্ল্যাভোনয়েডস:</strong> প্রদাহ বিরোধী গুণসম্পন্ন।</li>
+                <li><strong>খনিজ উপাদান:</strong> ক্যালসিয়াম, পটাশিয়াম এবং ফসফরাস সমৃদ্ধ।</li>
+                <li><strong>ক্যারোটিন ও ট্রাইটারপেনয়েডস:</strong> যা রোগ প্রতিরোধ ক্ষমতা বাড়াতে সাহায্য করে।</li>
+            </ul>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>রক্তপাত বন্ধ করতে:</strong> শরীরের কোনো স্থান কেটে গেলে দুর্বা ঘাস পিষে লাগালে মুহূর্তের মধ্যে রক্তপাত বন্ধ হয় এবং ক্ষত দ্রুত শুকায়।</li>
-                <li><strong>নাক দিয়ে রক্ত পড়া:</strong> গরমে বা অন্য কারণে নাক দিয়ে রক্ত পড়লে দুর্বা ঘাসের রসের নস্যি নিলে দ্রুত আরাম পাওয়া যায়।</li>
-                <li><strong>প্রদর রোগ ও পিরিয়ডের সমস্যা:</strong> নারীদের অতিরিক্ত রক্তস্রাব বা শ্বেতপ্রদর নিয়ন্ত্রণে দুর্বা ঘাসের রস মহৌষধ।</li>
-                <li><strong>রক্ত আমাশয়:</strong> দুর্বা ঘাসের রসের সাথে সামান্য মধু মিশিয়ে খেলে রক্ত আমাশয় ও পেটের জ্বালাপোড়া কমে।</li>
-                <li><strong>ত্বকের যত্ন:</strong> দুর্বা ঘাস ও কাঁচা হলুদ একসাথে বেটে ত্বকে লাগালে এলার্জি, চুলকানি ও ত্বকের কালচে ছোপ দূর হয়।</li>
+                <li><strong>রক্তক্ষরণ বন্ধে:</strong> কেটে যাওয়া স্থানে দূর্বার রস লাগালে রক্ত দ্রুত জমাট বাঁধে এবং ক্ষত শুকায়।</li>
+                <li><strong>নাক দিয়ে রক্ত পড়া:</strong> নাকের ভেতরে দূর্বার রসের নস্যি নিলে নাক দিয়ে রক্ত পড়া (Epistaxis) বন্ধ হয়।</li>
+                <li><strong>পেটের রোগ ও আমাশয়:</strong> সাদা আমাশয় বা দীর্ঘমেয়াদী ডায়রিয়ায় দূর্বার রস দইয়ের সাথে মিশিয়ে খেলে দ্রুত ফল পাওয়া যায়।</li>
+                <li><strong>মূত্রনালীর সংক্রমণ:</strong> প্রস্রাবে জ্বালাপোড়া বা মূত্রথলির প্রদাহ কমাতে দূর্বার রসের শরবত অত্যন্ত কার্যকর।</li>
+                <li><strong>ত্বকের যত্ন:</strong> মুখে ব্রণ বা মেছতা দূর করতে দূর্বার রস ও হলুদ বাটা ব্যবহার করলে উজ্জ্বলতা বৃদ্ধি পায়।</li>
             </ul>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. পিত্ত ও শরীরের জ্বালাপোড়ায়:</h4>
-                <p>১০-১৫ মিলি দুর্বা ঘাসের রসের সাথে সামান্য মিছরি মিশিয়ে খালি পেটে সকালে পান করলে শরীরের ভেতরকার জ্বালাপোড়া ও পিত্ত প্রশমিত হয়।</p>
+                <h4>১. কাটা বা ক্ষত স্থানে:</h4>
+                <p>তাজা দূর্বা পরিষ্কার করে ধুয়ে চিবিয়ে বা পিষে কাটা স্থানে চেপে ধরুন। এটি অ্যান্টিসেপটিক হিসেবে কাজ করে এবং রক্তপাত বন্ধ করে।</p>
             </div>
             <div class="usage-card">
-                <h4>২. প্রস্রাবের সমস্যায়:</h4>
-                <p>যাদের প্রস্রাবে জ্বালাপোড়া হয় বা প্রস্রাব পরিষ্কার হয় না, তারা দুর্বা ঘাস সিদ্ধ করা পানি ঠান্ডা করে পান করলে বিশেষ উপকার পাবেন।</p>
+                <h4>২. নারীদের অতিরিক্ত ঋতুস্রাবে:</h4>
+                <p>২ চামচ দূর্বার রসের সাথে সামান্য মিছরি মিশিয়ে দিনে ২ বার সেবন করলে অতিরিক্ত রক্তক্ষরণ নিয়ন্ত্রণে আসে।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. দীর্ঘস্থায়ী রক্তশূন্যতায়:</h4>
-                <p>দুর্বা ঘাসের রসে প্রচুর ক্লোরোফিল থাকে যা রক্তে হিমোগ্লোবিনের মাত্রা বাড়াতে সাহায্য করে। নিয়মিত ১ চা চামচ রস সেবন রক্তশূন্যতা দূর করে।</p>
+                <h4>৩. মানসিক প্রশান্তি ও চোখের জন্য:</h4>
+                <p>ভোরবেলায় খালি পায়ে শিশিরভেজা দূর্বা ঘাসের ওপর হাঁটলে দৃষ্টিশক্তি বাড়ে এবং মানসিক চাপ কমে।</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি (ডোজ)</h3>
+            <p style="margin-bottom: 20px;">দূর্বার রস সেবনের সাধারণ নির্দেশিকা নিচে দেওয়া হলো:</p>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>সেবনের মাত্রা (রস)</th>
+                            <th>সময়কাল ও নিয়ম</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>৫ - ১২ বছর</td>
+                            <td>১ চা চামচ (৫ মিলি)</td>
+                            <td>সামান্য পানির সাথে সকালে</td>
+                        </tr>
+                        <tr>
+                            <td>১২ - ১৮ বছর</td>
+                            <td>২ চা চামচ (১০ মিলি)</td>
+                            <td>দিনে ২ বার (আহারের পর)</td>
+                        </tr>
+                        <tr>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>৩ - ৪ চা চামচ (২০ মিলি)</td>
+                            <td>দিনে ২-৩ বার প্রয়োজন অনুযায়ী</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ (৬৫ বছরের ঊর্ধ্বে)</td>
+                            <td>১ - ২ চা চামচ</td>
+                            <td>খালি পেটে অথবা মিছরির সাথে</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
         <div class="info-section">
             <div class="warning-box">
-                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা</h4>
-                <p>• রাস্তা বা দূষিত স্থান থেকে দুর্বা ঘাস সংগ্রহ করবেন না। সবসময় পরিষ্কার ও বাগান থেকে সংগৃহীত ঘাস ব্যবহার করবেন।</p>
-                <p>• ব্যবহারের আগে ঘাসগুলো ভালো করে বিশুদ্ধ পানি দিয়ে ধুয়ে নিতে হবে যাতে ধুলোবালি বা জীবাণু না থাকে।</p>
-                <p>• ঠাণ্ডার সমস্যা বা হাঁপানি রোগীদের ক্ষেত্রে অতিমাত্রায় সেবন এড়িয়ে চলাই ভালো।</p>
+                <h4 style="color: #f57f17; margin-bottom: 15px;"><i class="fas fa-exclamation-triangle"></i> বিশেষ সতর্কতা</h4>
+                <p>• ব্যবহারের আগে দূর্বা ঘাস খুব ভালোভাবে পরিষ্কার পানি দিয়ে ধুয়ে নিতে হবে (ধুলোবালি বা পোকামাকড়মুক্ত করতে)।</p>
+                <p>• রাস্তার ধারের বা রাসায়নিক কীটনাশক দেওয়া স্থানের ঘাস ব্যবহার করবেন না।</p>
+                <p>• দীর্ঘমেয়াদী সেবনের আগে অভিজ্ঞ চিকিৎসকের পরামর্শ নিন।</p>
+                <p>• খুব বেশি ঠান্ডা বা সর্দি থাকলে সেবন না করাই ভালো (শীতল গুণের কারণে)।</p>
             </div>
         </div>
 
@@ -278,6 +356,8 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
     <div class="footer-social-container">
         <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
     <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
