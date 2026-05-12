@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#ffb300;
-    --dark:#e65100;
-    --light:#fff3e0;
-    --accent:#ffa000;
+    --primary:#8bc34a; /* বেলের কাঁচা ও পাকা রঙের সংমিশ্রণ */
+    --dark:#33691e;
+    --light:#f1f8e9;
+    --accent:#558b2f;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -108,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #fffcf0;
+    background: #f9fbe7;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #ffe082;
+    border: 1px solid #dcedc8;
 }
 
 .benefit-list { list-style: none; }
@@ -141,11 +141,35 @@ header{
 .usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 .usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
 
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:hover { background: #f1f8e9; }
+
 .warning-box {
-    background: #fff5f5;
+    background: #fff8e1;
     border-radius: 15px;
     padding: 35px;
-    border-left: 8px solid #e53935;
+    border-left: 8px solid #ffca28;
     margin-top: 30px;
 }
 
@@ -199,65 +223,119 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
         <div class="plant-header">
             <div class="plant-icon-large">🍈</div>
             <h2>৩৭. বেল শুঁট (Dried Bael)</h2>
-            <small>Scientific Name: Aegle marmelos (L.) Correa (Dried)</small>
+            <small>Scientific Name: Aegle marmelos</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: কষায় ও তিক্ত</div>
+                <div class="spec-item">রস: কষায়, তিক্ত</div>
                 <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
                 <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">কাজ: গ্রাহী ও পাচক</div>
+                <div class="spec-item">গুণ: লঘু, স্নিগ্ধ</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
-            <p>বেল শুঁট মূলত কচি বেলকে স্লাইস করে রোদে শুকিয়ে তৈরি করা হয়। পাকা বেলের চেয়ে আয়ুর্বেদে কচি বেলের শুঁট বা 'বিল্ব খণ্ড' অনেক বেশি শক্তিশালী ঔষধ হিসেবে গণ্য। বিশেষ করে আমাশয় (Dysentery) এবং আইবিএস (IBS)-এর মতো দীর্ঘস্থায়ী পেটের সমস্যায় এটি মহৌষধ। এটি অন্ত্রের অতিরিক্ত তরল শোষণ করে মলকে সুগঠিত করে এবং পাচনতন্ত্রের শক্তি বৃদ্ধি করে। প্রাচীন গ্রামীণ বাংলায় একে 'বেলের মোরব্বা' বা শুঁট হিসেবে সংরক্ষণ করার রেওয়াজ দীর্ঘদিনের।</p>
+            <p>বেল গাছকে ভারতের পবিত্রতম গাছগুলোর একটি ধরা হয়। প্রাচীন আয়ুর্বেদ শাস্ত্রে বেল শুঁট বা শুকনো বেলকে দীর্ঘমেয়াদী আমাশয় এবং পেটের আলসার নিরাময়ে শ্রেষ্ঠ ভেষজ হিসেবে অভিহিত করা হয়েছে। কাঁচা বেলের তুলনায় শুকনো বেলের ঔষধি গুণাগুণ অনেক বেশি স্থিতিশীল এবং সংরক্ষণযোগ্য। একে 'শ্রীফল' বলা হয় কারণ এটি পুষ্টি ও কল্যাণের প্রতীক।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> বিল্ব কর্কটী, শলাটু</div>
-                <div><strong>ইংরেজি:</strong> Dried Quince / Dried Bael Fruit</div>
-                <div><strong>হিন্দি:</strong> বেলগিরি (Belgiri)</div>
-                <div><strong>বাংলা:</strong> বেল শুঁট / কচি বেল খণ্ড</div>
+                <div><strong>সংস্কৃত:</strong> বিল্ব, শ্রীফল, শাণ্ডিল্য</div>
+                <div><strong>ইংরেজি:</strong> Bengal Quince / Stone Apple</div>
+                <div><strong>আরবি:</strong> সফরজল-ই-হিন্দি</div>
+                <div><strong>ফার্সি:</strong> বেল (Beal)</div>
+                <div><strong>হিন্দি:</strong> বেল (Bel)</div>
                 <div><strong>তামিল:</strong> ভিলভাম (Vilvam)</div>
-                <div><strong>গুজরাটি:</strong> বিলু (Bilu)</div>
             </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>বেল একটি মধ্যম আকৃতির পর্ণমোচী বৃক্ষ। এর পাতাগুলো ত্রিপত্রক (৩টি পাতা একসাথে থাকে)। বেল ফল যখন কাঁচা থাকে তখন এটি সবুজ এবং অত্যন্ত শক্ত হয়। শুকনো বেল সাধারণত কাঁচা বা আধা-পাকা বেলকে টুকরো করে রোদে শুকিয়ে তৈরি করা হয়। শুকানোর ফলে এর ভেতরের আঠালো পদার্থ এবং ট্যানিন ঘনীভূত হয়, যা পেটের রোগের জন্য মহৌষধ হিসেবে কাজ করে।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
+            <ul class="benefit-list">
+                <li><strong>মারমেলোসিন (Marmelosin):</strong> এটি বেলের প্রধান সক্রিয় উপাদান যা হজম শক্তি বৃদ্ধি করে।</li>
+                <li><strong>ট্যানিন (Tannin):</strong> যা অন্ত্রের প্রদাহ কমাতে এবং আমাশয় নিরাময়ে সাহায্য করে।</li>
+                <li><strong>সরল শর্করা ও পেকটিন:</strong> এটি কোষ্ঠকাঠিন্য দূর করতে এবং অন্ত্র পরিষ্কার রাখতে সহায়তা করে।</li>
+                <li><strong>ভিটামিন সি ও এ:</strong> রোগ প্রতিরোধ ক্ষমতা বাড়াতে কার্যকর।</li>
+            </ul>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>দীর্ঘস্থায়ী আমাশয় নিরাময়:</strong> রক্ত আমাশয় বা সাধারণ দীর্ঘস্থায়ী আমাশয় নিয়ন্ত্রণে বেল শুঁট সবচেয়ে কার্যকর ভেষজ।</li>
-                <li><strong>আইবিএস (IBS-D) নিয়ন্ত্রণ:</strong> যাদের ঘন ঘন পাতলা পায়খানা হয়, বেল শুঁট তাদের অন্ত্রের কর্মক্ষমতা ফিরিয়ে আনে।</li>
-                <li><strong>পাচন শক্তি বৃদ্ধি:</strong> এটি অগ্নমান্দ্য বা হজমের দুর্বলতা দূর করে ক্ষুধা বৃদ্ধি করতে সাহায্য করে।</li>
-                <li><strong>কৃমিনাশক:</strong> নিয়মিত সেবনে পেটের ক্ষতিকর কৃমি ও জীবাণু দূর হয়।</li>
-                <li><strong>অন্ত্রের প্রদাহ রোধ:</strong> কোলাইটিস বা অন্ত্রের ঘা সারাতে এর কষায় গুণ অত্যন্ত সহায়ক।</li>
+                <li><strong>দীর্ঘমেয়াদী আমাশয়:</strong> পুরনো আমাশয় বা আইবিএস (IBS) সমস্যায় বেল শুঁটের চূর্ণ নিয়ম করে খেলে অন্ত্রের ঘা দ্রুত শুকায়।</li>
+                <li><strong>হজম শক্তি বৃদ্ধি:</strong> এটি অগ্নিনাশক হিসেবে কাজ করে এবং ক্ষুধামন্দা দূর করে।</li>
+                <li><strong>কোষ্ঠকাঠিন্য দূরীকরণ:</strong> বেল শুঁট অন্ত্রের চলন স্বাভাবিক রাখে এবং পেট পরিষ্কার করে।</li>
+                <li><strong>রক্তস্বল্পতা রোধ:</strong> বেলের পুষ্টি উপাদান শরীরে রক্তকণিকা তৈরিতে সাহায্য করে।</li>
+                <li><strong>ডায়াবেটিস নিয়ন্ত্রণ:</strong> এতে থাকা হাইপোগ্লাইসেমিক উপাদান রক্তে শর্করার মাত্রা নিয়ন্ত্রণে রাখে।</li>
             </ul>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. পুরাতন আমাশয় দূর করতে:</h4>
-                <p>২-৩ টুকরো বেল শুঁট ১ গ্লাস পানিতে সারা রাত ভিজিয়ে রাখুন। সকালে সেই পানি পান করুন অথবা শুঁট গুঁড়ো করে দইয়ের সাথে মিশিয়ে দিনে দুই বার সেবন করুন।</p>
+                <h4>১. পুরনো আমাশয় দূর করতে:</h4>
+                <p>২ চা-চামচ বেল শুঁটের চূর্ণ হালকা গরম পানিতে মিশিয়ে প্রতিদিন সকালে খালি পেটে এবং রাতে ঘুমানোর আগে সেবন করুন।</p>
             </div>
             <div class="usage-card">
-                <h4>২. পেটের ব্যথায়:</h4>
-                <p>বেল শুঁটের গুঁড়োর সাথে সামান্য আদাঁ চূর্ণ এবং বিট লবণ মিশিয়ে কুসুম গরম পানিতে পান করলে পেটের কামড়ানো ব্যথা কমে যায়।</p>
+                <h4>২. লিভারের সমস্যায়:</h4>
+                <p>বেল শুঁটের ক্বাথ বা সিরাপ তৈরি করে নিয়মিত খেলে লিভারের কার্যক্ষমতা বৃদ্ধি পায় এবং জন্ডিস পরবর্তী দুর্বলতা দূর হয়।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. শিশুদের পেটের গোলযোগে:</h4>
-                <p>অল্প পরিমাণ বেল শুঁটের ক্বাথ সামান্য মিছরি মিশিয়ে খাওয়ালে শিশুদের বারবার পাতলা পায়খানা হওয়া বন্ধ হয়।</p>
+                <h4>৩. পেট ফাঁপা ও গ্যাস কমাতে:</h4>
+                <p>বেল শুঁটের চূর্ণের সাথে সামান্য বিট লবণ ও আদা গুঁড়ো মিশিয়ে খেলে পেটের অস্বস্তি দ্রুত কমে যায়।</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি (ডোজ)</h3>
+            <p style="margin-bottom: 20px;">বেল শুঁট চূর্ণ সেবনের সাধারণ নির্দেশিকা নিচে দেওয়া হলো:</p>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>সেবনের মাত্রা (চূর্ণ)</th>
+                            <th>সময়কাল ও নিয়ম</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>৩ - ১০ বছর</td>
+                            <td>১/২ চা চামচ (২-৩ গ্রাম)</td>
+                            <td>মধু বা গুড়ের সাথে মিশিয়ে</td>
+                        </tr>
+                        <tr>
+                            <td>১০ - ১৮ বছর</td>
+                            <td>১ চা চামচ (৫ গ্রাম)</td>
+                            <td>হালকা গরম পানিসহ সকালে</td>
+                        </tr>
+                        <tr>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>১.৫ - ২ চা চামচ (১০ গ্রাম)</td>
+                            <td>দিনে ২ বার (খালি পেটে উত্তম)</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ (৬৫ বছরের ঊর্ধ্বে)</td>
+                            <td>১ চা চামচ</td>
+                            <td>রাতে শোবার আগে হালকা গরম পানিতে</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
         <div class="info-section">
             <div class="warning-box">
-                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-                <p>• যাদের কোষ্ঠকাঠিন্য (Constipation) আছে, তাদের জন্য বেল শুঁট ব্যবহার করা উচিত নয়, কারণ এটি মলকে আরও শক্ত করে দেয়।</p>
-                <p>• পাকা বেল কোষ্ঠকাঠিন্য দূর করে, কিন্তু বেল শুঁট (কচি বেল) কোষ্ঠকাঠিন্য সৃষ্টি করে—এই পার্থক্যটি মনে রাখা জরুরি।</p>
-                <p>• অত্যাধিক মাত্রায় সেবনে ক্ষুধামন্দা দেখা দিতে পারে, তাই পরিমিত পরিমাণে সেবন করুন।</p>
+                <h4 style="color: #f57f17; margin-bottom: 15px;"><i class="fas fa-exclamation-triangle"></i> বিশেষ সতর্কতা</h4>
+                <p>• অতিরিক্ত মাত্রায় বেল শুঁট সেবনে পেটে গ্যাস বা অস্বস্তি হতে পারে।</p>
+                <p>• গর্ভাবস্থায় বেল সেবন করার আগে বিশেষজ্ঞের পরামর্শ নেওয়া উত্তম।</p>
+                <p>• যাদের থাইরয়েডের সমস্যা আছে, তারা বেল সেবনে সতর্কতা অবলম্বন করুন।</p>
+                <p>• ডায়াবেটিস রোগীরা চিনি বা গুড় ছাড়াই বেল শুঁটের চূর্ণ সেবন করবেন।</p>
             </div>
         </div>
 
@@ -278,6 +356,8 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
     <div class="footer-social-container">
         <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
     <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
