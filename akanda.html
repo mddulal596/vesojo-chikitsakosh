@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -159,14 +188,13 @@ header{
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -198,77 +226,114 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
             <h2>৩. আকন্দ (Akanda)</h2>
             <small>Scientific Name: Calotropis gigantea (L.) Dryand.</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: কটু, তিক্ত</div>
+                <div class="spec-item">রস: কটু, তिक्त</div>
                 <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
                 <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">গুচ্ছ: অত্যন্ত শক্তিশালী</div>
+                <div class="spec-item">দোষ: কফ-বাত নাশক</div>
+                <div class="spec-item">প্রকৃতি: বিষাক্ত তবে ওষুধি</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>আকন্দ একটি অত্যন্ত পরিচিত ও শক্তিশালী ভেষজ গুল্ম। এর ডাল ভাঙলে দুধের মতো সাদা আঠা (Lactex) বের হয় বলে একে অনেক স্থানে 'দুগ্ধী' বলা হয়। আয়ুর্বেদ শাস্ত্রে একে বিষাক্ত ওষুধি হিসেবে গণ্য করা হলেও সঠিক মাত্রায় এর ব্যবহার বাত ও শ্বাসকষ্ট নিরাময়ে অবিশ্বাস্য ফল দেয়।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>আকন্দ ভারত ও বাংলাদেশের একটি অত্যন্ত পরিচিত ঝোপজাতীয় ওষুধি গাছ। প্রাচীন হিন্দু শাস্ত্রে শিব পূজায় এই ফুল ব্যবহৃত হয়। আয়ুর্বেদ ও ইউনানি চিকিৎসায় একে 'অর্ক' বলা হয়। এর প্রতিটি অংশ—মূল, পাতা, ফুল এবং আঠা বা ক্ষীর—ভেষজ চিকিৎসায় ব্যবহৃত হয়। যদিও এটি বিষাক্ত প্রকৃতির, সঠিক শোধন এবং পরিমিত ব্যবহারে এটি কঠিন রোগ নিরাময়ে সক্ষম।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> অর্ক, আদিত্য, ভাস্কর, মন্দার</div>
+                <div><strong>সংস্কৃত:</strong> অর্ক, আদিত্য, বিকিরণ</div>
                 <div><strong>ইংরেজি:</strong> Giant Milkweed / Crown Flower</div>
                 <div><strong>আরবি:</strong> উশার (Ushar)</div>
-                <div><strong>হিন্দি:</strong> মাদার (Madar) / আক (Aak)</div>
-                <div><strong>তামিল:</strong> এরুক্কু (Erukku)</div>
-                <div><strong>উর্দু:</strong> আক (Aak)</div>
+                <div><strong>ফার্সি:</strong> খর্ক (Khark)</div>
+                <div><strong>হিন্দি:</strong> মাদার (Madar)</div>
+                <div><strong>তামিল:</strong> এরুক্কু</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>আকন্দ Apocynaceae পরিবারের অন্তর্গত একটি বহুবর্ষজীবী উদ্ভিদ। এটি সাধারণত ৩ থেকে ৫ মিটার পর্যন্ত লম্বা হয়। পাতাগুলো পুরু, ডিম্বাকৃতি এবং উপরিভাগ মসৃণ হলেও নিচের দিকটা লোমশ ও সাদাটে। এর ফুলগুলো সাদা অথবা হালকা বেগুনি রঙের হয়, যা মুকুট আকৃতির। ফলগুলো জোড়ায় জোড়ায় থাকে এবং পেকে গেলে ফেটে গিয়ে অনেক নরম তুলা বের হয়।</p>
+            <p>আকন্দ একটি চিরহরিৎ গুল্ম জাতীয় উদ্ভিদ যা উচ্চতায় ৪ মিটার পর্যন্ত হতে পারে। এর পাতাগুলো বেশ মোটা, ডিম্বাকৃতি এবং ধবধবে সাদা রোমে ঢাকা থাকে। গাছ বা পাতা ভাঙলে দুধের মতো সাদা কষ বা ক্ষীর বের হয়। আকন্দের ফুল হালকা বেগুনি বা সাদা বর্ণের হয়ে থাকে। এটি মূলত রোদেলা পরিত্যক্ত জায়গায় এবং রাস্তার ধারে জন্মে থাকে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>ক্যালোট্রপিন (Calotropin):</strong> এটি একটি শক্তিশালী কার্ডিয়াক গ্লাইকোসাইড যা হৃদপিণ্ডের পেশীর ওপর প্রভাব ফেলে।</li>
-                <li><strong>উশারিন (Usharin):</strong> আকন্দের আঠায় থাকা এই উপাদানটি প্রদাহরোধী হিসেবে কাজ করে।</li>
-                <li><strong>এনজাইম:</strong> এতে প্রোটিওলাইটিক এনজাইম থাকে যা ব্যথা উপশমে সাহায্য করে।</li>
+                <li><strong>ক্যালোট্রপিন (Calotropin):</strong> এটি একটি শক্তিশালী কার্ডিয়াক গ্লাইকোসাইড যা হৃদযন্ত্রের ওপর প্রভাব ফেলে।</li>
+                <li><strong>গিগানটিন (Gigantin):</strong> আকন্দের ক্ষীরে থাকে এই বিশেষ উপাদান যা বিভিন্ন প্রদাহ ও ব্যথা নাশক হিসেবে কাজ করে।</li>
+                <li><strong>রেজিন ও ট্যানিন:</strong> এর মূলের ছালে প্রচুর পরিমাণে রেজিন ও ট্যানিন থাকে যা চর্মরোগ সারাতে সাহায্য করে।</li>
+                <li><strong>ক্যালোটক্সিন:</strong> এটি পতঙ্গনাশক ও জীবাণুনাশক গুণের জন্য দায়ী।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>বাত ও জয়েন্টের ব্যথা:</strong> আকন্দের পাতা গরম করে সেঁক দিলে দীর্ঘস্থায়ী বাতের ব্যথা ও ফোলা দ্রুত কমে।</li>
-                <li><strong>শ্বাসকষ্ট ও হাপানি:</strong> আকন্দের শিকড় ও মূলের ছাল স্বল্প মাত্রায় ব্যবহার করলে ফুসফুসের শ্লেষ্মা পরিষ্কার হয়।</li>
-                <li><strong>চর্মরোগ নিরাময়:</strong> এর আঠা দাদ, চুলকানি ও একজিমা সারাতে অত্যন্ত কার্যকর (সাবধানতার সাথে)।</li>
-                <li><strong>পায়ের ব্যথা ও গোড়ালি ফোলা:</strong> আকন্দ পাতা গরম পানির সাথে ফুটিয়ে সেই পানি দিয়ে পা ধুলে আরাম পাওয়া যায়।</li>
-                <li><strong>পোকা-মাকড়ের কামড়ে:</strong> বিছা বা অন্য বিষাক্ত পোকা কামড়ালে আক্রান্ত স্থানে আকন্দের আঠা লাগালে বিষ নেমে যায়।</li>
+                <li><strong>বাত ব্যথা ও ফোলা:</strong> আকন্দ পাতা গরম করে তেল দিয়ে মালিশ করলে বাতের ব্যথা ও জয়েন্টের ফোলা দ্রুত কমে।</li>
+                <li><strong>হাঁপানি ও শ্বাসকষ্ট:</strong> শুকনো আকন্দ ফুল চূর্ণ করে ধোঁয়া নিলে বা সীমিত মাত্রায় সেবন করলে হাঁপানি উপশম হয়।</li>
+                <li><strong>দাঁত ব্যথা:</strong> দাঁতে পোকা বা তীব্র ব্যথা হলে আকন্দের আঠা তুলায় ভিজিয়ে ব্যথার জায়গায় লাগালে আরাম পাওয়া যায়।</li>
+                <li><strong>চর্মরোগ ও চুলকানি:</strong> আকন্দের মূলের ছাল গুঁড়ো করে সরিষার তেলের সাথে মিশিয়ে লাগালে একজিমা ও খোসপাঁচড়া সারে।</li>
+                <li><strong>ফোড়া ফাটানো:</strong> ফোড়া কাঁচা অবস্থায় আকন্দ পাতা দিয়ে বেঁধে রাখলে তা দ্রুত পেকে ফেটে যায়।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. তীব্র বাতের ব্যথায় (সেঁক):</h4>
-                <p>আকন্দ পাতায় সরিষার তেল মাখিয়ে হালকা আঁচে গরম করে ব্যথার স্থানে বেঁধে রাখুন। এটি হাড়ের ভেতর পর্যন্ত কাজ করে ব্যথা কমিয়ে দেয়।</p>
+                <h4>১. হাঁপানির উপশমে:</h4>
+                <p>আকন্দ ফুলের মাঝখানের চৌকো অংশটি গোলমরিচের সাথে পিষে ছোট ছোট বড়ি তৈরি করে সকালে খালি পেটে ১টি করে সেবন করা হয় (বিশেষজ্ঞের তত্ত্বাবধানে)।</p>
             </div>
             <div class="usage-card">
-                <h4>২. কাঁটা বা ফোসকা বিঁধলে:</h4>
-                <p>শরীরের কোথাও কাঁটা বিঁধলে সহজে বের না হলে আকন্দের আঠা সেই স্থানে লাগিয়ে দিন। কিছুক্ষণ পর কাঁটাটি আলগা হয়ে উঠে আসবে।</p>
+                <h4>২. পায়ের গোড়ালি ব্যথায়:</h4>
+                <p>আকন্দ পাতা সামান্য ঘি বা সরিষার তেল দিয়ে গরম করে ব্যথার স্থানে সেঁক দিন। এটি ইনজুরি জনিত ব্যথাও কমায়।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. কান ব্যথায়:</h4>
-                <p>আকন্দ পাতার রসের সাথে সামান্য তিল তেল মিশিয়ে হালকা গরম করে কানের পাশে মালিশ করলে ব্যথা উপশম হয়। (সরাসরি কানে দেবেন না)।</p>
+                <h4>৩. কানের ব্যথায়:</h4>
+                <p>আকন্দের কচি পাতা গরম করে তার রস ১-২ ফোঁটা কানে দিলে কানের ব্যথা ও পুঁঁজ পড়া বন্ধ হয়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা (অত্যন্ত জরুরি)</h4>
-            <p>• আকন্দ একটি আংশিক বিষাক্ত উদ্ভিদ। এর আঠা যেন কোনোভাবেই **চোখে না লাগে**, লাগলে অন্ধত্ব হতে পারে।</p>
-            <p>• অভ্যন্তরীণ ব্যবহারের ক্ষেত্রে (মুখে সেবন) অবশ্যই দক্ষ কবিরাজ বা চিকিৎসকের পরামর্শ নিতে হবে।</p>
-            <p>• শিশুদের থেকে এই উদ্ভিদ দূরে রাখুন।</p>
-            <p>• গর্ভবতী ও স্তন্যদানকারী মায়েদের জন্য এর ব্যবহার নিষিদ্ধ।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি (ডোজ)</h3>
+            <p style="margin-bottom: 20px;">আকন্দ একটি বিষাক্ত ভেষজ, তাই এর অভ্যন্তরীণ প্রয়োগ অত্যন্ত সতর্কতার সাথে করতে হয়:</p>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>মূলের ছাল চূর্ণ (মাত্রা)</th>
+                            <th>ফুলের চূর্ণ (মাত্রা)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>৫ - ১২ বছর</td>
+                            <td>অভ্যন্তরীণ ব্যবহার নিষেধ</td>
+                            <td>৫০ মি.গ্রা. (সর্বোচ্চ)</td>
+                        </tr>
+                        <tr>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>২৫০ মি.গ্রা. - ৫০০ মি.গ্রা.</td>
+                            <td>১২৫ মি.গ্রা. - ২৫০ মি.গ্রা.</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ (৬৫+)</td>
+                            <td>১২৫ মি.গ্রা. (সতর্কতার সাথে)</td>
+                            <td>১০০ মি.গ্রা.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• আকন্দের আঠা বা ক্ষীর চোখে লাগলে অন্ধত্ব হওয়ার ঝুঁকি থাকে। কাজ শেষে হাত ভালো করে সাবান দিয়ে ধুয়ে নিন।</p>
+                <p>• এটি গর্ভবতী মহিলাদের জন্য অত্যন্ত বিপদজনক, গর্ভপাত ঘটাতে পারে।</p>
+                <p>• শিশুদের নাগালের বাইরে রাখুন। অভ্যন্তরীণ সেবন বিশেষজ্ঞ কবিরাজ বা চিকিৎসকের পরামর্শ ছাড়া করবেন না।</p>
+                <p>• অতিরিক্ত সেবনে বমি, পেট ব্যথা এবং হৃদস্পন্দন অস্বাভাবিক হতে পারে।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
