@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#795548;
-    --dark:#3e2723;
-    --light:#fbe9e7;
-    --accent:#a1887f;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #fdf6f5;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #d7ccc8;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -198,76 +226,113 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
             <h2>১০. অর্জুন (Arjun)</h2>
             <small>Scientific Name: Terminalia arjuna (Roxb. ex DC.) Wight & Arn.</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: কষায়</div>
-                <div class="spec-item">বীর্য: শীত (Cooling)</div>
+                <div class="spec-item">রস: কষায় (Astringent)</div>
+                <div class="spec-item">বীর্য: শীতল (Cold)</div>
                 <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">গুণ: লঘু, রুক্ষ</div>
+                <div class="spec-item">দোষ: কফ ও পিত্ত নাশক</div>
+                <div class="spec-item">বিশেষত্ব: হৃদরোগের প্রধান ভেষজ (Hridaya Tonic)</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও ওষুধি গুরুত্ব</h3>
-            <p>অর্জুন গাছ ভারতীয় উপমহাদেশের অন্যতম প্রধান ভেষজ বৃক্ষ যা প্রাচীনকাল থেকেই হৃদরোগের মহৌষধ হিসেবে স্বীকৃত। আয়ুর্বেদ মতে, অর্জুনের ছাল হৃদপিণ্ডের মাংসপেশিকে শক্তিশালী করতে এবং রক্ত সঞ্চালন স্বাভাবিক রাখতে অতুলনীয়। একে 'হৃদয় রক্ষক' বা 'হার্ট টনিক' বলা হয়।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>অর্জুন গাছকে আয়ুর্বেদে হৃদপিণ্ডের রক্ষাকবচ বলা হয়। আড়াই হাজার বছরেরও বেশি সময় ধরে ভারতীয় উপমহাদেশে হৃদরোগের চিকিৎসায় এর বাকল ব্যবহৃত হয়ে আসছে। ঋষি বাগভট্ট প্রথম হৃদরোগ নিরাময়ে অর্জুনের বাকলের কার্যকারিতা লিপিবদ্ধ করেন। এটি কেবল একটি গাছ নয়, বরং প্রাচীন ভারতের এক অমূল্য চিকিৎসা সম্পদ যা আজ আধুনিক গবেষণাতেও শ্রেষ্ঠ প্রমাণিত হয়েছে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> অর্জুন, ককুভ, পার্থ</div>
-                <div><strong>ইংরেজি:</strong> Arjun Tree / White Marudah</div>
+                <div><strong>সংস্কৃত:</strong> কুকুভ, ধবল, নদীসার্জ</div>
+                <div><strong>ইংরেজি:</strong> Arjuna Tree</div>
                 <div><strong>হিন্দি:</strong> অর্জুন (Arjun)</div>
-                <div><strong>তামিল:</strong> মারুদাম (Marudam)</div>
-                <div><strong>তেলেগু:</strong> তেল্লা মাড্ডি</div>
-                <div><strong>গুজরাটি:</strong> সাদাদ</div>
+                <div><strong>আরবি:</strong> অর্জুন গাছ</div>
+                <div><strong>ফার্সি:</strong> দর্খতে অর্জুন</div>
+                <div><strong>তামিল:</strong> মারুথু</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>অর্জুন Combretaceae পরিবারের একটি দীর্ঘজীবী বিশাল বৃক্ষ। এর ছাল মসৃণ এবং ধূসর বর্ণের হয়, যা সহজেই গাছ থেকে উঠে আসে। পাতাগুলো লম্বাটে এবং দেখতে অনেকটা পেয়ারা পাতার মতো। বসন্তকালে ছোট ছোট সাদা বা হলুদাভ ফুল ফোটে এবং ফলগুলো কামরাঙ্গার মতো খাঁজযুক্ত হয়। ওষুধি কাজে মূলত এর ছাল বা বাকল ব্যবহৃত হয়।</p>
+            <p>অর্জুন একটি বিশালাকার পর্ণমোচী বৃক্ষ যা ৬০-৮০ ফুট পর্যন্ত লম্বা হতে পারে। এর বাকল বা ছাল বেশ মসৃণ, ধূসর বর্ণের এবং পুরু। বাকলটি নির্দিষ্ট সময় অন্তর আপনিই খসে পড়ে। এর পাতাগুলো অনেকটা পেয়ারা পাতার মতো ডিম্বাকৃতি। ফলগুলো কামরাঙার মতো খাঁজকাটা এবং বেশ শক্ত। সাধারণত নদী বা খালের পাড়ে এই গাছ বেশি জন্মে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>ট্রাইটারপেনয়েডস:</strong> যা হৃদপিণ্ডের কার্যক্ষমতা বাড়াতে এবং কোলেস্টেরল নিয়ন্ত্রণে কাজ করে।</li>
-                <li><strong>ট্যানিন ও ফ্ল্যাভোনয়েডস:</strong> এটি একটি শক্তিশালী অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে।</li>
-                <li><strong>ক্যালসিয়াম ও ম্যাগনেসিয়াম:</strong> যা হাড়ের সুরক্ষা এবং রক্তচাপ নিয়ন্ত্রণে অপরিহার্য।</li>
+                <li><strong>অর্জুোেনাসাইডস:</strong> যা হৃদপিণ্ডের পেশিকে শক্তিশালী করে এবং রক্ত সঞ্চালন বাড়ায়।</li>
+                <li><strong>ফ্ল্যাভোনয়েডস:</strong> এটি শক্তিশালী অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে রক্তনালীর ক্ষতি রোধ করে।</li>
+                <li><strong>ট্যানিন:</strong> যা ক্ষত সারাতে এবং রক্তপাত বন্ধ করতে সাহায্য করে।</li>
+                <li><strong>ক্যালসিয়াম ও ম্যাগনেসিয়াম:</strong> হাড় মজবুত করতে এবং হৃদস্পন্দন স্বাভাবিক রাখতে সহায়ক।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>হৃদরোগ নিরাময়:</strong> এটি হৃদপিণ্ডের ধড়ফড়ানি কমায় এবং হার্ট অ্যাটাকের ঝুঁকি হ্রাস করে।</li>
-                <li><strong>উচ্চ রক্তচাপ নিয়ন্ত্রণ:</strong> অর্জুনের ছাল ধমনীর নমনীয়তা বাড়িয়ে রক্তচাপ স্বাভাবিক রাখতে সাহায্য করে।</li>
-                <li><strong>রক্তে কোলেস্টেরল হ্রাস:</strong> এটি ক্ষতিকারক এলডিএল কোলেস্টেরল কমিয়ে এইচডিএল বা ভালো কোলেস্টেরল বাড়াতে সাহায্য করে।</li>
-                <li><strong>হাড়ের চিকিৎসায়:</strong> ভাঙা হাড় দ্রুত জোড়া লাগাতে এবং হাড়ের ঘনত্ব বাড়াতে এর ছালের গুড়ো দুধের সাথে সেবন করা হয়।</li>
-                <li><strong>হাঁপানি ও কাশি:</strong> ফুসফুসের ক্ষমতা বৃদ্ধি এবং শ্বাসকষ্টজনিত সমস্যায় অর্জুন অত্যন্ত কার্যকর।</li>
+                <li><strong>হৃদরোগ নিরাময়:</strong> অর্জুনের ছাল হার্ট ব্লকেজ, বুক ধড়ফড়ানি এবং উচ্চ রক্তচাপ কমাতে অত্যন্ত কার্যকর।</li>
+                <li><strong>কোলেস্টেরল নিয়ন্ত্রণ:</strong> এটি রক্তের খারাপ কোলেস্টেরল (LDL) কমায় এবং ভালো কোলেস্টেরল বাড়ায়।</li>
+                <li><strong>হাড়ের জোড়া লাগানো:</strong> হাড় ভেঙে গেলে বা ফাটল ধরলে অর্জুনের ছাল চূর্ণ দুধের সাথে খেলে দ্রুত হাড় জোড়া লাগে।</li>
+                <li><strong>রক্ত আমাশয়:</strong> অর্জুনের বাকলের ক্বাথ খেলে রক্ত আমাশয় ও ডায়রিয়া দ্রুত সেরে যায়।</li>
+                <li><strong>ত্বকের উজ্জ্বলতা:</strong> এর ছাল বাটা মধুর সাথে মিশিয়ে মুখে লাগালে মেছতা ও ব্রণের দাগ দূর হয়।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. হার্ট টনিক হিসেবে:</h4>
-                <p>৫-১০ গ্রাম অর্জুন ছালের গুড়ো এক গ্লাস দুধ বা পানির সাথে মিশিয়ে সকালে খালি পেটে সেবন করলে হৃদপিণ্ড সবল থাকে।</p>
+                <h4>১. হার্টের টনিক হিসেবে (অর্জুন ক্ষীরপাক):</h4>
+                <p>৫ গ্রাম অর্জুন ছালের চূর্ণ ২৫০ মিলি দুধ এবং ২৫০ মিলি পানির সাথে মিশিয়ে জ্বাল দিন। পানি শুকিয়ে শুধু দুধ অবশিষ্ট থাকলে নামিয়ে ছেঁকে নিন। এটি নিয়মিত খেলে হৃদপিণ্ড শক্তিশালী হয়।</p>
             </div>
             <div class="usage-card">
-                <h4>২. রক্তচাপ নিয়ন্ত্রণে:</h4>
-                <p>অর্জুন ছাল ভিজিয়ে রাখা পানি ছেঁকে নিয়মিত পান করলে উচ্চ রক্তচাপের সমস্যা প্রশমিত হয়।</p>
+                <h4>২. উচ্চ রক্তচাপ কমাতে:</h4>
+                <p>অর্জুন ছাল ভিজানো পানি প্রতিদিন সকালে খালি পেটে পান করলে রক্তচাপ নিয়ন্ত্রণে থাকে।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. ত্বকের উজ্জ্বলতায়:</h4>
-                <p>অর্জুন ছালের গুড়ো মধুর সাথে মিশিয়ে মুখে প্রলেপ দিলে মেছতা ও ব্রণের দাগ দূর হয়।</p>
+                <h4>৩. রক্তপাত বন্ধে:</h4>
+                <p>শরীরের কোনো স্থানে কেটে গেলে বা রক্তপাত হলে অর্জুন ছালের রস বা চূর্ণ লাগালে দ্রুত রক্ত পড়া বন্ধ হয়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• মাত্রাতিরিক্ত সেবনে কোষ্ঠকাঠিন্য বা পেট ফাঁপা হতে পারে।</p>
-            <p>• গর্ভাবস্থায় এবং স্তন্যদানকারী মায়েদের ক্ষেত্রে ব্যবহারের আগে বিশেষজ্ঞের পরামর্শ নেওয়া উচিত।</p>
-            <p>• আপনি যদি আগে থেকেই কোনো হৃদরোগের ওষুধ সেবন করেন, তবে অর্জুন ব্যবহারের আগে অবশ্যই চিকিৎসকের সাথে আলোচনা করুন।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>শিশুদের মাত্রা (৫-১২ বছর)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>বাকল চূর্ণ</td>
+                            <td>৩ - ৬ গ্রাম</td>
+                            <td>১ - ২ গ্রাম</td>
+                        </tr>
+                        <tr>
+                            <td>বাকলের ক্বাথ</td>
+                            <td>২০ - ৪০ মিলি</td>
+                            <td>১০ মিলি</td>
+                        </tr>
+                        <tr>
+                            <td>অর্জুনারিষ্ট (তরল)</td>
+                            <td>১৫ - ২০ মিলি</td>
+                            <td>৫ মিলি</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• অর্জুন ছাল সাধারণত নিরাপদ, তবে অতিরিক্ত সেবনে কোষ্ঠকাঠিন্য হতে পারে।</p>
+                <p>• হৃদরোগের জন্য অন্য কোনো আধুনিক ওষুধ খেলে অর্জুন সেবনের আগে চিকিৎসকের পরামর্শ নিন।</p>
+                <p>• গর্ভবতী ও স্তন্যদানকারী মায়েদের চিকিৎসকের পরামর্শ ছাড়া এটি সেবন করা উচিত নয়।</p>
+                <p>• ভালো ফলের জন্য সবসময় তুষার বা হালকা লালচে বর্ণের তাজা বাকল চূর্ণ ব্যবহার করার চেষ্টা করুন।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
