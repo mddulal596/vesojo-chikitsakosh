@@ -1,176 +1,175 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ধনে (Dhone) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ধনে (Coriander) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #8bc34a;
+            --dark: #33691e;
+            --light: #f1f8e9;
+            --accent: #689f38;
+            --nav-blue: #1976d2; 
+            --blue-btn: #1976d2; 
+            --blue-hover: #115293; 
+            --white: #fff;
+            --footer-grey-light: #999999;
+        }
 
-<style>
-:root{
-    --primary:#ffb300;
-    --dark:#e65100;
-    --light:#fff3e0;
-    --accent:#ffa000;
-    --nav-blue: #1976d2; 
-    --blue-btn: #1976d2; 
-    --blue-hover: #115293; 
-    --white:#fff;
-    --footer-grey-light: #999999;
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--light);
+            color: #333;
+            line-height: 1.8;
+        }
 
-*{ margin:0; padding:0; box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
-body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:var(--light);
-    color:#333;
-    line-height:1.8;
-}
+        /* ================= NAVBAR ================= */
+        nav {
+            position: sticky; top: 0; z-index: 999;
+            background: var(--nav-blue); display: flex;
+            justify-content: space-between; align-items: center;
+            padding: 0 5%; height: 70px; box-shadow: 0 2px 10px rgba(0,0,0,.2);
+        }
+        .logo { color: #fff; text-decoration: none; font-size: 20px; font-weight: bold; }
+        .nav-links { display: flex; align-items: center; list-style: none; }
+        .nav-links a { color: #fff; text-decoration: none; padding: 24px 16px; display: block; transition: .3s; font-size: 15px; }
+        .nav-links a:hover { background: var(--blue-hover); }
 
-/* ================= NAVBAR ================= */
-nav{
-    position:sticky; top:0; z-index:999;
-    background:var(--nav-blue); display:flex;
-    justify-content:space-between; align-items:center;
-    padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
-}
-.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
-.nav-links { display:flex; align-items:center; list-style:none; }
-.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
-.nav-links a:hover { background:var(--blue-hover); }
+        .nav-social { display: flex; gap: 10px; align-items: center; }
+        .nav-social a { color: white; font-size: 16px; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: .3s; }
+        .nav-social a:hover { background: rgba(255,255,255,0.2); }
 
-.nav-social { display:flex; gap:10px; align-items:center; }
-.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
-.nav-social a:hover { background:rgba(255,255,255,0.2); }
+        /* ================= HEADER ================= */
+        header {
+            background: linear-gradient(135deg, var(--accent), var(--dark));
+            color: #fff; text-align: center; padding: 100px 20px;
+        }
 
-/* ================= HEADER ================= */
-header{
-    background:linear-gradient(135deg,var(--accent),var(--dark));
-    color:#fff; text-align:center; padding:100px 20px;
-}
+        /* ================= CONTENT CONTAINER ================= */
+        .container {
+            max-width: 1000px;
+            margin: -40px auto 60px;
+            padding: 0 20px;
+        }
 
-/* ================= CONTENT CONTAINER ================= */
-.container {
-    max-width: 1000px;
-    margin: -40px auto 60px;
-    padding: 0 20px;
-}
+        .plant-detail-card {
+            background: white;
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
 
-.plant-detail-card {
-    background: white;
-    padding: 60px;
-    border-radius: 25px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-}
+        .plant-header {
+            text-align: center;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
 
-.plant-header {
-    text-align: center;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 40px;
-    margin-bottom: 40px;
-}
+        .plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
+        .plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
+        .plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
 
-.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
-.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
-.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
+        .ayurvedic-specs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        .spec-item {
+            background: var(--blue-btn);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 1rem;
+            color: white;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
+        }
 
-.ayurvedic-specs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 30px;
-    justify-content: center;
-}
-.spec-item {
-    background: var(--blue-btn);
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-size: 1rem;
-    color: white;
-    font-weight: 500;
-    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
-}
+        .info-section { margin-bottom: 60px; }
+        .info-section h3 {
+            color: var(--dark);
+            border-left: 8px solid var(--accent);
+            padding-left: 20px;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-.info-section { margin-bottom: 60px; }
-.info-section h3 {
-    color: var(--dark);
-    border-left: 8px solid var(--accent);
-    padding-left: 20px;
-    margin-bottom: 25px;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+        .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            background: #f9fbe7;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #dcedc8;
+        }
 
-.lang-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    background: #fffcf0;
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid #ffe082;
-}
+        .benefit-list { list-style: none; }
+        .benefit-list li {
+            margin-bottom: 22px;
+            padding-left: 50px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        .benefit-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute; left: 0;
+            color: var(--dark);
+            font-size: 1.4rem;
+        }
 
-.benefit-list { list-style: none; }
-.benefit-list li {
-    margin-bottom: 22px;
-    padding-left: 50px;
-    position: relative;
-    font-size: 1.1rem;
-}
-.benefit-list li::before {
-    content: "\f058";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    position: absolute; left: 0;
-    color: var(--dark);
-    font-size: 1.4rem;
-}
+        .usage-card {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+        .usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+        .usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
 
-.usage-card {
-    background: #fdfdfd;
-    border: 1px solid #eee;
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-    transition: 0.3s;
-}
-.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+        .warning-box {
+            background: #fff5f5;
+            border-radius: 15px;
+            padding: 35px;
+            border-left: 8px solid #e53935;
+            margin-top: 30px;
+        }
 
-.warning-box {
-    background: #fff5f5;
-    border-radius: 15px;
-    padding: 35px;
-    border-left: 8px solid #e53935;
-    margin-top: 30px;
-}
+        .btn-back-container { text-align: center; margin-top: 40px; }
+        .btn-back-list {
+            text-decoration: none; background: var(--blue-btn); color: white; 
+            padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+            box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+        }
+        .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
-.btn-back-container { text-align: center; margin-top: 40px; }
-.btn-back-list {
-    text-decoration: none; background: var(--blue-btn); color: white; 
-    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
-    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
-}
-.btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
+        .back-to-top {
+            position: fixed; bottom: 30px; right: 30px; background: var(--accent);
+            color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+            font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
+        }
 
-.back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
-    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
-    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
-}
+        footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+        .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+        .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
+        .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
+        .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
-.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
-.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
-.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
-.footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
-
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
-</style>
+        @media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
+    </style>
 </head>
 <body>
 
@@ -198,66 +197,66 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
     <div class="plant-detail-card">
         <div class="plant-header">
             <div class="plant-icon-large">🌿</div>
-            <h2>৩৫. ধনে (Dhone)</h2>
+            <h2>৩৫. ধনে (Coriander)</h2>
             <small>Scientific Name: Coriandrum sativum L.</small>
             <div class="ayurvedic-specs">
                 <div class="spec-item">রস: কষায়, তিক্ত ও মধুর</div>
-                <div class="spec-item">বীর্য: শীত (Cooling)</div>
+                <div class="spec-item">বীর্য: উষ্ণ (সামান্য)</div>
                 <div class="spec-item">গুণ: লঘু ও স্নিগ্ধ</div>
-                <div class="spec-item">ত্রিদোষ: পিত্ত-বাত নাশক</div>
+                <div class="spec-item">বিপাক: মধুর</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
-            <p>ধনে একটি অতি প্রাচীন ভেষজ ও মশলা যা ভূমধ্যসাগরীয় অঞ্চল থেকে উদ্ভূত। আয়ুর্বেদ শাস্ত্রে একে 'ধান্যক' (Dhanyaka) বলা হয়। এটি অগ্নিকৃত (পাচক) এবং মূত্রল হিসেবে বিশেষভাবে পরিচিত। ধনের পাতা এবং বীজ—উভয়ই পৃথক পৃথক ঔষধি গুণসম্পন্ন। প্রাচীনকাল থেকেই শরীরে শীতলতা বজায় রাখতে এবং হজম প্রক্রিয়ার ভারসাম্য রক্ষায় ধনে ব্যবহৃত হয়ে আসছে।</p>
+            <p>ধনে বিশ্বের অন্যতম প্রাচীন মশলা এবং ভেষজ উদ্ভিদ। প্রাচীন মিশরীয় ও রোমান সভ্যতায় এর ব্যবহারের প্রমাণ পাওয়া যায়। আয়ুর্বেদ শাস্ত্রে ধনেকে 'ধান্যক' বলা হয়, যা কেবল রান্নার স্বাদ বাড়ায় না, বরং শরীরের পিত্ত প্রশমন এবং হজম প্রক্রিয়া উন্নত করতে অতুলনীয়। ধনে পাতা ও বীজ উভয়ই সমানভাবে ঔষধি গুণসম্পন্ন। এটি শরীরের অতিরিক্ত তাপ কমাতে এবং স্নায়ুকে শান্ত রাখতে দীর্ঘকাল ধরে ব্যবহৃত হয়ে আসছে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
                 <div><strong>সংস্কৃত:</strong> ধান্যক, কুস্তুম্বুরু</div>
-                <div><strong>ইংরেজি:</strong> Coriander / Cilantro</div>
-                <div><strong>হিন্দি:</strong> ধনিয়া (Dhaniya)</div>
-                <div><strong>আরবি:</strong> কুজবারা (Kuzbara)</div>
-                <div><strong>বাংলা:</strong> ধনে / ধনিয়া</div>
-                <div><strong>ফার্সি:</strong> গেশনিজ</div>
+                <div><strong>ইংরেজি:</strong> Coriander, Cilantro</div>
+                <div><strong>হিন্দি:</strong> ধনিয়া (Dhaniya)</div>
+                <div><strong>আরবি:</strong> কুজবারা</div>
+                <div><strong>বাংলা:</strong> ধনে / ধইন্যা</div>
+                <div><strong>ফার্সি:</strong> গিশনিজ</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>হজম শক্তি বৃদ্ধি:</strong> ধনে বীজ ভিজানো পানি পান করলে পেট ফাঁপা, গ্যাস এবং অরুচি দূর হয়।</li>
-                <li><strong>শরীরের তাপমাত্রা নিয়ন্ত্রণ:</strong> তীব্র গরমে ধনের শরবত শরীরকে ঠান্ডা রাখে এবং পিত্তের প্রকোপ কমায়।</li>
-                <li><strong>থাইরয়েড নিয়ন্ত্রণ:</strong> ধনে ভেজানো পানি নিয়মিত সেবন করলে থাইরয়েড হরমোনের ভারসাম্য রক্ষায় সহায়তা করে।</li>
-                <li><strong>চক্ষু রোগ নিরাময়:</strong> ধনের ক্বাথ দিয়ে চোখ ধুলে চোখ ওঠা বা লাল হওয়ার সমস্যায় দ্রুত আরাম পাওয়া যায়।</li>
-                <li><strong>কোলেস্টেরল নিয়ন্ত্রণ:</strong> এটি শরীরের এলডিএল (খারাপ কোলেস্টেরল) কমাতে এবং হার্টের সুরক্ষা দিতে সাহায্য করে।</li>
+                <li><strong>হজম ও গ্যাসের সমস্যা:</strong> ধনে বীজ হজম শক্তি বাড়ায় এবং পেট ফাঁপা বা গ্যাস দূর করতে অত্যন্ত কার্যকর।</li>
+                <li><strong>রক্তে শর্করার নিয়ন্ত্রণ:</strong> নিয়মিত ধনে বীজের পানি পানে ইনসুলিনের মাত্রা বজায় থাকে এবং সুগার নিয়ন্ত্রণে থাকে।</li>
+                <li><strong>ত্বকের যত্ন:</strong> ধনে পাতার রস ত্বকের এলার্জি, ব্রণ এবং কালো ছোপ দূর করতে সাহায্য করে।</li>
+                <li><strong>থাইরয়েড সমস্যা:</strong> আয়ুর্বেদে থাইরয়েড হরমোনের ভারসাম্য রক্ষা করতে ধনে বীজের পানির বিশেষ ভূমিকা রয়েছে।</li>
+                <li><strong>কোলেস্টেরল হ্রাস:</strong> ধনে ক্ষতিকারক কোলেস্টেরল (LDL) কমিয়ে হৃদরোগের ঝুঁকি কমায়।</li>
             </ul>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. হজম ও অরুচি দূর করতে:</h4>
-                <p>রাতে এক চামচ আস্ত ধনে এক গ্লাস পানিতে ভিজিয়ে রাখুন। সকালে ছেঁকে নিয়ে খালি পেটে সেই পানি পান করলে হজম শক্তি বাড়বে এবং লিভার সুস্থ থাকবে।</p>
+                <h4>১. পিত্ত ও জ্বালাপোড়ায়:</h4>
+                <p>এক গ্লাস পানিতে ১ চা চামচ আস্ত ধনে সারা রাত ভিজিয়ে রাখুন। সকালে সেই পানি পান করলে প্রস্রাবের জ্বালাপোড়া ও শরীরের অতিরিক্ত তাপ কমে।</p>
             </div>
             <div class="usage-card">
-                <h4>২. প্রস্রাবের জ্বালাপোড়ায়:</h4>
-                <p>ধনের গুঁড়ো এবং মিছরি সমপরিমাণ মিশিয়ে ঠান্ডা পানির সাথে শরবত করে পান করলে প্রস্রাবের জ্বালাপোড়া ও ইনফেকশন দূর হয়।</p>
+                <h4>২. মুখের দুর্গন্ধ দূর করতে:</h4>
+                <p>কয়েকটি শুকনো ধনে বীজ মুখে রেখে চিবুলে মুখের দুর্গন্ধ এবং মাড়ির ইনফেকশন দূর হয়।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. পিত্তজনিত মাথা ব্যথায়:</h4>
-                <p>কাঁচা ধনে পাতার রস কপালে প্রলেপ দিলে পিত্তজনিত কারণে হওয়া মাথা ব্যথা দ্রুত উপশম হয়।</p>
+                <h4>৩. দীর্ঘস্থায়ী মাথা ব্যথায়:</h4>
+                <p>ধনে বীজ পিষে কপালে প্রলেপ দিলে রোদে ঘোরাঘুরি বা পিত্তজনিত মাথা ব্যথা দ্রুত উপশম হয়।</p>
             </div>
         </div>
 
         <div class="info-section">
             <div class="warning-box">
-                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-                <p>• ধনে সাধারণত নিরাপদ, তবে যাদের শরীরে এলার্জির প্রবণতা আছে তাদের অতিরিক্ত কাঁচা পাতা সেবনে সতর্কতা অবলম্বন করা উচিত।</p>
-                <p>• ধনে বীর্যবর্ধক নয় বরং কিছুটা কাম উত্তেজক বিরোধী গুণ সম্পন্ন, তাই অত্যাধিক ব্যবহার পুরুষদের ক্ষেত্রে নিয়ন্ত্রিত হওয়া উচিত।</p>
-                <p>• কিডনির রোগীদের চিকিৎসকের পরামর্শ ছাড়া বড় মাত্রায় ধনের ক্বাথ ব্যবহার করা ঠিক নয়।</p>
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা</h4>
+                <p>• যাদের ধনে থেকে এলার্জি হয়, তারা সাবধানতার সাথে ব্যবহার করবেন।</p>
+                <p>• অতিরিক্ত মাত্রায় ধনে বীজের চূর্ণ সেবন করলে যৌন শক্তি সাময়িকভাবে হ্রাস পেতে পারে (অতিরিক্ত ব্যবহার অনুচিত)।</p>
+                <p>• গর্ভবতী মহিলারা উচ্চ মাত্রার ডোজ নেওয়ার আগে বিশেষজ্ঞের পরামর্শ নিন।</p>
             </div>
         </div>
 
@@ -278,6 +277,8 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
     <div class="footer-social-container">
         <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
     <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
