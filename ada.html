@@ -12,9 +12,11 @@
     --dark:#e65100;
     --light:#fff3e0;
     --accent:#ffa000;
+    --nav-blue: #1976d2; /* নেভিগেশন বারের জন্য নীল কালার */
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
     --white:#fff;
+    --footer-grey: #333333; 
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
@@ -26,17 +28,17 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= NAVBAR - Updated to Blue ================= */
 nav{
     position:sticky; top:0; z-index:999;
-    background:var(--dark); display:flex;
+    background:var(--nav-blue); display:flex;
     justify-content:space-between; align-items:center;
     padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
 }
 .logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
 .nav-links { display:flex; align-items:center; list-style:none; }
 .nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
-.nav-links a:hover { background:var(--accent); }
+.nav-links a:hover { background:var(--blue-hover); }
 
 .nav-social { display:flex; gap:10px; align-items:center; }
 .nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
@@ -87,7 +89,6 @@ header{
     font-size: 0.95rem;
     color: white;
     font-weight: 500;
-    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 50px; }
@@ -100,16 +101,6 @@ header{
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.lang-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 15px;
-    background: #fff8e1;
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -127,23 +118,18 @@ header{
     font-size: 1.3rem;
 }
 
-.usage-card {
-    background: #fdfdfd;
-    border: 1px solid #eee;
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-}
-.usage-card h4 { color: var(--dark); margin-bottom: 10px; font-size: 1.2rem; }
-
 .warning-box {
     background: #fff5f5;
     border-radius: 12px;
     padding: 30px;
     border-left: 6px solid #e53935;
     margin-top: 25px;
+    margin-bottom: 40px;
 }
 
+.btn-back-container {
+    text-align: center;
+}
 .btn-back-list {
     text-decoration: none; 
     background: var(--blue-btn); 
@@ -153,14 +139,10 @@ header{
     font-weight: bold; 
     display: inline-block; 
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
-    border: none;
 }
-
 .btn-back-list:hover {
     background: var(--blue-hover);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
 }
 
 .back-to-top {
@@ -174,27 +156,21 @@ header{
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
+/* ================= FOOTER - Grey Background ================= */
 footer {
-    background: #1a1101;
+    background: var(--footer-grey);
     color: #ffffff;
     text-align: center;
-    padding: 60px 20px 30px;
-    margin-top: 60px;
+    padding: 60px 20px 40px;
 }
 
 .footer-social-container {
     display: flex;
     justify-content: center;
     gap: 15px;
-    flex-wrap: wrap;
     margin-bottom: 35px;
 }
 
@@ -207,7 +183,6 @@ footer {
     color: white;
     text-decoration: none;
     font-size: 15px;
-    font-weight: 600;
     transition: 0.3s;
 }
 
@@ -218,7 +193,7 @@ footer {
 
 .footer-copyright {
     font-size: 14px;
-    color: #aaa;
+    color: #cccccc;
     border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 25px;
     margin-top: 25px;
@@ -255,111 +230,41 @@ footer {
     <div class="plant-detail-card">
         <div class="plant-header">
             <div class="plant-icon-large">🫚</div>
-            <h2>৩. আদা (Ginger)</h2>
+            <h2>২. আদা (Ginger)</h2>
             <small>Scientific Name: Zingiber officinale Roscoe.</small>
-            
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: কটু (Pungent)</div>
-                <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
-                <div class="spec-item">বিপাক: মধুর (Sweet)</div>
-                <div class="spec-item">গুণ: গুরু, তীক্ষ্ণ</div>
+                <div class="spec-item">রস: কটু</div>
+                <div class="spec-item">বীর্য: উষ্ণ</div>
+                <div class="spec-item">বিপাক: মধুর</div>
             </div>
         </div>
 
-        <!-- আন্তর্জাতিক নামসমূহ -->
         <div class="info-section">
-            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
-            <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> আর্দ্রক, শৃঙ্গবের, বিশ্বভেষজ</div>
-                <div><strong>হিন্দি:</strong> অদ্রক (Adrak), সোঁঠ (শুষ্ক আদা)</div>
-                <div><strong>ইংরেজি:</strong> Ginger</div>
-                <div><strong>আরবি:</strong> জানজাবিল (Zanjabil)</div>
-                <div><strong>ফার্সি:</strong> জঞ্জবিল</div>
-                <div><strong>তামিল:</strong> ইনজি</div>
-                <div><strong>উর্দু:</strong> আদ্রক</div>
-                <div><strong>চীনা:</strong> শেং জিয়াং (Sheng Jiang)</div>
-            </div>
-        </div>
-
-        <!-- উদ্ভিদ পরিচিতি -->
-        <div class="info-section">
-            <h3><i class="fas fa-seedling"></i> উদ্ভিদ পরিচিতি ও বোটানিক্যাল বর্ণনা</h3>
-            <p>আদা Zingiberaceae পরিবারের অন্তর্ভুক্ত একটি কন্দজাতীয় বা রাইজোম (Rhizome) উদ্ভিদ। এটি মূলত দক্ষিণ-পূর্ব এশিয়ার উদ্ভিদ হলেও বর্তমানে ভারত, বাংলাদেশ, চীন এবং আফ্রিকায় ব্যাপকভাবে চাষ হয়। আদা গাছ একবীজপত্রী এবং বহুবর্ষজীবী ভেষজ। এর কাণ্ড মাটির নিচে আড়াআড়িভাবে বৃদ্ধি পায়, যাকে আমরা সাধারণ ভাষায় 'আদা' বলি। মাটির ওপরে সরু, লম্বা পাতাযুক্ত ডাঁটা বের হয় যা সাধারণত ২-৩ ফুট লম্বা হয়। আদা ভেষজ বিজ্ঞানে 'বিশ্বভেষজ' বা 'Universal Medicine' নামে পরিচিত কারণ এটি অসংখ্য রোগের মহৌষধ হিসেবে কাজ করে।</p>
-        </div>
-
-        <!-- রাসায়নিক উপাদান -->
-        <div class="info-section">
-            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
-            <p>আদার তীব্র ঘ্রাণ এবং ওষুধি গুণের পেছনে এর বিশেষ তেলের ভূমিকা অপরিসীম:</p>
+            <h3><i class="fas fa-briefcase-medical"></i> স্বাস্থ্য উপকারিতা</h3>
             <ul class="benefit-list">
-                <li><strong>জিঞ্জেরল (Gingerol):</strong> এটি আদার প্রধান জৈব উপাদান যা শক্তিশালী প্রদাহরোধী (Anti-inflammatory) এবং অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে।</li>
-                <li><strong>শোগাওল (Shogaol):</strong> আদা শুকিয়ে গেলে জিঞ্জেরল শোগাওলে রূপান্তরিত হয়, যা ক্যানসার প্রতিরোধে কাজ করে।</li>
-                <li><strong>উদ্বায়ী তেল:</strong> জিংগিবেরিন, কার্কিউমিন এবং ক্যাম্পফিন নামক এসেনশিয়াল অয়েল যা হজম প্রক্রিয়ায় সহায়তা করে।</li>
-                <li><strong>ভিটামিন ও খনিজ:</strong> প্রচুর পরিমাণে পটাশিয়াম, ম্যাঙ্গানিজ, কপার এবং ভিটামিন বি-৬।</li>
+                <li><strong>হজম বৃদ্ধি:</strong> এটি বদহজম ও গ্যাসের সমস্যায় দ্রুত কাজ করে।</li>
+                <li><strong>ব্যথা উপশম:</strong> বাতের ব্যথা কমাতে আদার ব্যবহার প্রাচীনকাল থেকেই প্রচলিত।</li>
             </ul>
         </div>
 
-        <!-- বিস্তারিত স্বাস্থ্য উপকারিতা -->
-        <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা ও ভেষজ প্রয়োগ</h3>
-            <ul class="benefit-list">
-                <li><strong>হজম শক্তি বৃদ্ধি:</strong> আদা লালা গ্রন্থিকে উদ্দীপিত করে এবং পাচক এনজাইমের নিঃসরণ বাড়ায়। ফলে বদহজম, পেট ফাঁপা এবং গ্যাসের সমস্যা দ্রুত দূর হয়।</li>
-                <li><strong>বমিভাব ও গর্ভকালীন অস্বস্তি:</strong> মোশন সিকনেস, অস্ত্রোপচারের পরবর্তী বমিভাব এবং অন্তঃসত্ত্বা মহিলাদের সকালের বমিভাব (Morning Sickness) কমাতে আদা ম্যাজিকের মতো কাজ করে।</li>
-                <li><strong>সর্দি-কাশি ও শ্বাসকষ্ট:</strong> এটি ফুসফুসের শ্লেষ্মা বা কফ পরিষ্কার করে। আদা চা বা আদার রস সাইনাস এবং গলার সংক্রমণ রোধে অত্যন্ত কার্যকর।</li>
-                <li><strong>ব্যথা উপশম:</strong> আদার প্রদাহরোধী গুণ আর্থ্রাইটিস বা বাতের ব্যথা এবং পেশির ব্যথা কমাতে সাহায্য করে। মাসিক চলাকালীন তীব্র ব্যথা কমাতেও এটি উপকারী।</li>
-                <li><strong>হৃদরোগের ঝুঁকি হ্রাস:</strong> আদা রক্তচাপ নিয়ন্ত্রণে রাখে এবং ক্ষতিকর কোলেস্টেরল কমায়। এটি রক্ত জমাট বাঁধতে বাধা দেয়, ফলে স্ট্রোকের ঝুঁকি কমে।</li>
-                <li><strong>রোগ প্রতিরোধ ক্ষমতা:</strong> আদার অ্যান্টি-ব্যাকটেরিয়াল বৈশিষ্ট্য শরীরকে সংক্রামক রোগ থেকে সুরক্ষা দেয়।</li>
-            </ul>
+        <div class="warning-box">
+            <h4 style="color: #e53935; margin-bottom: 12px;"><i class="fas fa-exclamation-circle"></i> সতর্কতা</h4>
+            <p>অতিরিক্ত আদা সেবনে পেট জ্বালাপোড়া হতে পারে।</p>
         </div>
 
-        <!-- সুনির্দিষ্ট ব্যবহার বিধি -->
-        <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> বিভিন্ন রোগের ঘরোয়া প্রতিকার ও ব্যবহার বিধি</h3>
-            <div class="usage-card">
-                <h4>১. সর্দি ও দীর্ঘস্থায়ী কাশি:</h4>
-                <p>১ চা চামচ আদার রস ও ১ চা চামচ মধু মিশিয়ে সামান্য গরম করে দিনে ৩ বার পান করুন। এটি কফ বের করে দেয় এবং গলার খুসখুসে ভাব দূর করে।</p>
-            </div>
-            <div class="usage-card">
-                <h4>২. মাইগ্রেন বা মাথা ব্যথায়:</h4>
-                <p>আদা কুচি করে পানিতে ফুটিয়ে সেই পানির ভাপ (Inhalation) নিলে অথবা আদা চা খেলে রক্ত সঞ্চালন বৃদ্ধি পায় এবং মাথা ব্যথা কমে।</p>
-            </div>
-            <div class="usage-card">
-                <h4>৩. বাতের ব্যথা ও গাঁটের ফোলা ভাব:</h4>
-                <p>আদা তেলের সাথে তিলের তেল মিশিয়ে আক্রান্ত স্থানে হালকা মালিশ করুন। এছাড়া নিয়মিত কাঁচা আদা খাওয়ার অভ্যাস করলে শরীরের অভ্যন্তরীণ প্রদাহ কমে।</p>
-            </div>
-            <div class="usage-card">
-                <h4>৪. খাবারে অরুচি ও বদহজমে:</h4>
-                <p>খাওয়ার ২০ মিনিট আগে আদা কুচি সামান্য লবণ ও লেবুর রস দিয়ে চিবিয়ে খান। এটি ক্ষুধা বাড়ায় এবং হজম শক্তি দ্বিগুণ করে।</p>
-            </div>
-        </div>
-
-        <!-- সংরক্ষণ ও সতর্কতা -->
-        <div class="info-section">
-            <h3><i class="fas fa-box-open"></i> সংরক্ষণ পদ্ধতি</h3>
-            <p>তাজা আদা প্লাস্টিকে মুড়িয়ে ফ্রিজে রাখলে ৩-৪ সপ্তাহ ভালো থাকে। দীর্ঘস্থায়ী ব্যবহারের জন্য আদা ছোট ছোট টুকরো করে রোদে শুকিয়ে 'সোঁঠ' বা শুষ্ক আদা তৈরি করা যায়। এছাড়া আদা বেটে আইস ট্রিতে জমিয়ে কিউব করে রাখা যেতে পারে।</p>
-
-            <div class="warning-box">
-                <h4 style="color: #e53935; margin-bottom: 12px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও পার্শ্বপ্রতিক্রিয়া</h4>
-                <p>• অতিরিক্ত আদা সেবনে বুক জ্বালাপোড়া বা গ্যাস্ট্রিকের সমস্যা হতে পারে।</p>
-                <p>• রক্ত পাতলা করার ওষুধ (যেমন: Warfarin) খেলে আদা সেবনের আগে চিকিৎসকের পরামর্শ নিন।</p>
-                <p>• পিত্তথলিতে পাথর (Gallstones) থাকলে আদা পরিমিত খাওয়া উচিত কারণ এটি পিত্ত নিঃসরণ বাড়ায়।</p>
-                <p>• দিনে ৫ গ্রামের বেশি আদা সেবন করা উচিত নয়।</p>
-            </div>
+        <div class="btn-back-container">
+            <a href="index.html" class="btn-back-list">
+                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
+            </a>
         </div>
     </div>
 </div>
 
-<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="উপরে যান">
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
     <i class="fas fa-arrow-up"></i>
 </button>
 
 <footer>
-    <div style="margin-bottom: 35px; text-align: center;">
-        <a href="index.html" class="btn-back-list">
-            <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
-        </a>
-    </div>
-
     <h2>ভেষজ চিকিৎসা কোষ</h2>
     <div class="footer-social-container">
         <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
