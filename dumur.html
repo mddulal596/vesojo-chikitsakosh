@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#8d6e63;
-    --dark:#4e342e;
-    --light:#efebe9;
-    --accent:#795548;
+    --primary:#689f38; /* ডুমুরের গাঢ় সবুজ রঙ */
+    --dark:#33691e;
+    --light:#f1f8e9;
+    --accent:#558b2f;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -108,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #fdf5f2;
+    background: #f9fbe7;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #d7ccc8;
+    border: 1px solid #dcedc8;
 }
 
 .benefit-list { list-style: none; }
@@ -141,11 +141,35 @@ header{
 .usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 .usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
 
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:hover { background: #f1f8e9; }
+
 .warning-box {
-    background: #fff5f5;
+    background: #fff8e1;
     border-radius: 15px;
     padding: 35px;
-    border-left: 8px solid #e53935;
+    border-left: 8px solid #ffca28;
     margin-top: 30px;
 }
 
@@ -158,7 +182,7 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--dark);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
@@ -197,67 +221,121 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🍈</div>
-            <h2>৪১. ডুমুর (Dumur)</h2>
-            <small>Scientific Name: Ficus hispida L. f. / Ficus carica L.</small>
+            <div class="plant-icon-large">🫐</div>
+            <h2>৪১. ডুমুর (Dumur / Fig)</h2>
+            <small>Scientific Name: Ficus hispida / Ficus carica</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: কষায় ও মধুর</div>
+                <div class="spec-item">রস: কষায়, মিষ্টি</div>
                 <div class="spec-item">বীর্য: শীতল (Cold)</div>
-                <div class="spec-item">বিপাক: মধুর</div>
-                <div class="spec-item">কাজ: রক্তসংস্থাপক ও লঘুপাক</div>
+                <div class="spec-item">বিপাক: মিষ্টি</div>
+                <div class="spec-item">গুণ: গুরু, লঘু</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
-            <p>ডুমুর মানব সভ্যতার প্রাচীনতম ফলগুলোর মধ্যে একটি। পবিত্র ধর্মগ্রন্থগুলোতে ডুমুরের উল্লেখ পাওয়া যায় যা এর মাহাত্ম্য প্রমাণ করে। বাংলায় মূলত দুই ধরণের ডুমুর দেখা যায়—জগডুমুর এবং কাকডুমুর। আয়ুর্বেদে ডুমুরকে 'উদুম্বর' বলা হয়। এটি মূলত পিত্ত নাশক এবং রক্ত পরিষ্কারক হিসেবে প্রসিদ্ধ। জন্ডিস, ডায়াবেটিস এবং মেয়েদের শ্বেতপ্রদর রোগের চিকিৎসায় ডুমুরের মূল, ছাল এবং ফলের ব্যবহার বহু প্রাচীন।</p>
+            <p>ডুমুর মানব ইতিহাসের অন্যতম প্রাচীন ভেষজ ফল। ইসলাম ধর্মে 'তীন' নামে এই ফলের শপথ করা হয়েছে এবং বাইবেলেও এর উল্লেখ পাওয়া যায়। আয়ুর্বেদ ও ইউনানি চিকিৎসায় ডুমুরকে রক্ত পরিষ্কারক এবং শক্তিদায়ক হিসেবে গণ্য করা হয়। গ্রাম বাংলার সাধারণ ডুমুর (যগ্য ডুমুর) এবং বিদেশি মিষ্টি ডুমুর—উভয়ই ঔষধ হিসেবে অত্যন্ত কার্যকরী।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> উদুম্বর, যজ্ঞডুমুর</div>
-                <div><strong>ইংরেজি:</strong> Fig / Cluster Fig</div>
-                <div><strong>হিন্দি:</strong> গূলর (Gular)</div>
-                <div><strong>বাংলা:</strong> ডুমুর / যজ্ঞডুমুর</div>
+                <div><strong>সংস্কৃত:</strong> উডুম্বর, যজ্ঞডুমুর</div>
+                <div><strong>ইংরেজি:</strong> Hairy Fig / Cluster Fig</div>
                 <div><strong>আরবি:</strong> তীন (Tin)</div>
-                <div><strong>তামিল:</strong> আত্তি</div>
+                <div><strong>হিন্দি:</strong> গুরার (Gular)</div>
+                <div><strong>বাংলা:</strong> ডুমুর / খোকসা ডুমুর</div>
+                <div><strong>তামিল:</strong> আত্তি (Atti)</div>
             </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>ডুমুর একটি মাঝারি থেকে বড় আকারের বৃক্ষ। এর বৈশিষ্ট্য হলো এর ফুল ফলের ভেতরেই লুকানো থাকে, যা বাইরে থেকে দেখা যায় না। এর পাতা খসখসে এবং ফলগুলো কাঁচা অবস্থায় সবুজ এবং পাকলে লালচে বা হলুদ রঙের হয়। যজ্ঞ ডুমুর সাধারণত গুচ্ছাকারে গাছের কাণ্ডে ফলে থাকে।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
+            <ul class="benefit-list">
+                <li><strong>আয়রন ও ক্যালসিয়াম:</strong> যা হাড় মজবুত করে এবং রক্তাল্পতা দূর করে।</li>
+                <li><strong>পটাশিয়াম:</strong> উচ্চ রক্তচাপ নিয়ন্ত্রণে সাহায্য করে।</li>
+                <li><strong>ফাইবার (আঁশ):</strong> হজম প্রক্রিয়া উন্নত করে এবং দীর্ঘমেয়াদী কোষ্ঠকাঠিন্য সারায়।</li>
+                <li><strong>ফ্ল্যাভোনয়েডস:</strong> ক্যান্সার প্রতিরোধক ও অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে।</li>
+            </ul>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>রক্তশূন্যতা দূরীকরণ:</strong> ডুমুরে প্রচুর আয়রন থাকে, যা রক্তে হিমোগ্লোবিনের মাত্রা বাড়িয়ে এনিমিয়া বা রক্তশূন্যতা দূর করে।</li>
-                <li><strong>কোষ্ঠকাঠিন্য নিরাময়:</strong> পাকা ডুমুর বা শুকনো ডুমুর ফাইবার সমৃদ্ধ হওয়ায় এটি প্রাকৃতিকভাবে পেট পরিষ্কার রাখতে সাহায্য করে।</li>
-                <li><strong>ডায়াবেটিস নিয়ন্ত্রণ:</strong> ডুমুরের পাতার রস এবং কাঁচা ডুমুর রক্তে শর্করার মাত্রা নিয়ন্ত্রণে বিশেষ ভূমিকা রাখে।</li>
-                <li><strong>ত্বকের রোগ:</strong> শ্বেতী বা ত্বকের সাদা ছোপ দূর করতে ডুমুরের কষ বা ছালের ব্যবহার অত্যন্ত কার্যকর।</li>
-                <li><strong>উচ্চ রক্তচাপ:</strong> পটাশিয়াম সমৃদ্ধ হওয়ায় এটি সোডিয়ামের ভারসাম্য রক্ষা করে রক্তচাপ স্বাভাবিক রাখে।</li>
+                <li><strong>কোষ্ঠকাঠিন্য নিরাময়:</strong> শুকনো ডুমুর পানিতে ভিজিয়ে খেলে অন্ত্রের চলন স্বাভাবিক হয় এবং মল নরম করে।</li>
+                <li><strong>রক্তাল্পতা (Anemia):</strong> এতে প্রচুর আয়রন থাকায় হিমোগ্লোবিন বাড়াতে সাহায্য করে।</li>
+                <li><strong>ডায়াবেটিস নিয়ন্ত্রণ:</strong> ডুমুরের পাতার রস ইনসুলিন সংবেদনশীলতা বাড়াতে কাজ করে।</li>
+                <li><strong>ত্বকের রোগ:</strong> ডুমুর গাছের সাদা কষ আঁচিল এবং শ্বেতী রোগের চিকিৎসায় ব্যবহৃত হয়।</li>
+                <li><strong>কিডনির পাথর:</strong> ডুমুরের ফল সেদ্ধ করে সেই পানি পান করলে পাথুরি রোগ উপশম হয়।</li>
             </ul>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. আমাশয় ও ডায়রিয়ায়:</h4>
-                <p>ডুমুরের কচি পাতার রস এবং সামান্য মিছরি মিশিয়ে খেলে পেটের রোগ ও আমাশয় দ্রুত সেরে যায়।</p>
+                <h4>১. দীর্ঘমেয়াদী কোষ্ঠকাঠিন্যে:</h4>
+                <p>২-৩টি শুকনো ডুমুর এক গ্লাস দুধে বা পানিতে রাতে ভিজিয়ে রাখুন এবং সকালে চিবিয়ে খেয়ে নিন।</p>
             </div>
             <div class="usage-card">
-                <h4>২. রক্তপিত্ত বা নাক দিয়ে রক্ত পড়া:</h4>
-                <p>ডুমুর ফল সিদ্ধ করে সেই পানি পান করলে বা কাঁচা ডুমুর সবজি হিসেবে খেলে শরীরের অভ্যন্তরীণ রক্তপাত বন্ধ হয়।</p>
+                <h4>২. রক্ত আমাশয় বা অর্শ রোগে:</h4>
+                <p>কাঁচা ডুমুর সবজি হিসেবে রান্না করে খেলে অর্শের রক্তপাত এবং যন্ত্রণা দ্রুত কমে যায়।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. শারীরিক শক্তিবর্ধনে:</h4>
-                <p>শুকনো ডুমুর বা আঞ্জির রাতে দুধে ভিজিয়ে সকালে খেলে শারীরিক দুর্বলতা দূর হয় এবং শুক্রাণুর মান উন্নত হয়।</p>
+                <h4>৩. শারীরিক দুর্বলতা কাটাতে:</h4>
+                <p>ডুমুর চূর্ণের সাথে সামান্য মধু মিশিয়ে নিয়মিত সেবন করলে শরীরের ক্লান্তি দূর হয় এবং বল বৃদ্ধি পায়।</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি (ডোজ)</h3>
+            <p style="margin-bottom: 20px;">ডুমুর সেবনের সাধারণ নির্দেশিকা নিচে দেওয়া হলো:</p>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>সেবনের মাত্রা (শুকনো/সবজি)</th>
+                            <th>সময়কাল ও নিয়ম</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>৫ - ১২ বছর</td>
+                            <td>১টি শুকনো ডুমুর</td>
+                            <td>রাতে ভিজিয়ে সকালে</td>
+                        </tr>
+                        <tr>
+                            <td>১২ - ১৮ বছর</td>
+                            <td>১-২টি শুকনো ডুমুর</td>
+                            <td>প্রতিদিন সকালে খালি পেটে</td>
+                        </tr>
+                        <tr>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>৩-৪টি শুকনো ডুমুর বা ১০০ গ্রাম সবজি</td>
+                            <td>দিনে ১-২ বার</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ</td>
+                            <td>২টি শুকনো ডুমুর</td>
+                            <td>গরম দুধের সাথে রাতে</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
         <div class="info-section">
             <div class="warning-box">
-                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা</h4>
-                <p>• কাঁচা ডুমুর রান্নার আগে এর ভেতরকার দানা বা পোকা ভালো করে পরিষ্কার করে নেওয়া জরুরি।</p>
-                <p>• যাদের কিডনিতে পাথর আছে, তাদের শুকনো ডুমুর অতিরিক্ত সেবন না করাই ভালো কারণ এতে অক্সালেট থাকে।</p>
-                <p>• ডুমুরের কষ সরাসরি চোখে গেলে ক্ষতি হতে পারে, তাই সাবধানে ব্যবহার করুন।</p>
+                <h4 style="color: #f57f17; margin-bottom: 15px;"><i class="fas fa-exclamation-triangle"></i> বিশেষ সতর্কতা</h4>
+                <p>• অতিরিক্ত ডুমুর সেবনে পাতলা পায়খানা হতে পারে।</p>
+                <p>• কিডনিতে যাদের অক্সালেট স্টোনের প্রবণতা আছে, তারা ডুমুর কম খাবেন।</p>
+                <p>• ডুমুরের কষ সরাসরি চোখে লাগলে ক্ষতি হতে পারে।</p>
+                <p>• রক্ত পাতলা করার ওষুধ (Blood thinners) যারা খান, তারা ডুমুর খাওয়ার আগে ডাক্তারের পরামর্শ নিন।</p>
             </div>
         </div>
 
@@ -278,6 +356,8 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
     <div class="footer-social-container">
         <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
     <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
