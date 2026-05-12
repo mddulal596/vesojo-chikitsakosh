@@ -1,44 +1,359 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>গাব - ভেষজ চিকিৎসা কোষ</title>
-    <style>
-        /* ... Styles remain same ... */
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; margin: 0; background: #f4f7f6; color: #333; }
-        nav { background: #1e3d1a; display: flex; justify-content: space-between; align-items: center; padding: 0 5%; height: 60px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        nav a { color: white; text-decoration: none; font-size: 14px; margin-left: 15px; }
-        .logo { font-weight: bold; font-size: 18px !important; margin-left: 0 !important; }
-        .container { padding: 20px; }
-        .card { background: #fff; max-width: 800px; margin: 30px auto; padding: 40px; border-radius: 15px; border-top: 10px solid #27ae60; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h1 { color: #27ae60; text-align: center; margin-top: 0; }
-        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; margin-top: 25px; }
-        footer { background: #1e3d1a; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
-        footer a { color: white; text-decoration: none; margin: 0 10px; font-size: 14px; }
-        .social-btn { font-size: 18px; display: inline-block; margin: 15px 10px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>গাব (Gab) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#8d6e63; /* গাবের কাণ্ড ও বীজের খয়েরি আভা */
+    --dark:#4e342e;
+    --light:#efebe9;
+    --accent:#795548;
+    --nav-blue: #1976d2; 
+    --blue-btn: #1976d2; 
+    --blue-hover: #115293; 
+    --white:#fff;
+    --footer-grey-light: #999999;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:var(--light);
+    color:#333;
+    line-height:1.8;
+}
+
+/* ================= NAVBAR ================= */
+nav{
+    position:sticky; top:0; z-index:999;
+    background:var(--nav-blue); display:flex;
+    justify-content:space-between; align-items:center;
+    padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+.nav-links { display:flex; align-items:center; list-style:none; }
+.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover { background:var(--blue-hover); }
+
+.nav-social { display:flex; gap:10px; align-items:center; }
+.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover { background:rgba(255,255,255,0.2); }
+
+/* ================= HEADER ================= */
+header{
+    background:linear-gradient(135deg,var(--accent),var(--dark));
+    color:#fff; text-align:center; padding:100px 20px;
+}
+
+/* ================= CONTENT CONTAINER ================= */
+.container {
+    max-width: 1000px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
+}
+
+.plant-detail-card {
+    background: white;
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.plant-header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
+.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
+
+.ayurvedic-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+.spec-item {
+    background: var(--blue-btn);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
+}
+
+.info-section { margin-bottom: 60px; }
+.info-section h3 {
+    color: var(--dark);
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    background: #f7f3f2;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #d7ccc8;
+}
+
+.benefit-list { list-style: none; }
+.benefit-list li {
+    margin-bottom: 22px;
+    padding-left: 50px;
+    position: relative;
+    font-size: 1.1rem;
+}
+.benefit-list li::before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute; left: 0;
+    color: var(--dark);
+    font-size: 1.4rem;
+}
+
+.usage-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+    transition: 0.3s;
+}
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:hover { background: #efebe9; }
+
+.warning-box {
+    background: #fff3e0;
+    border-radius: 15px;
+    padding: 35px;
+    border-left: 8px solid #ff9800;
+    margin-top: 30px;
+}
+
+.btn-back-container { text-align: center; margin-top: 40px; }
+.btn-back-list {
+    text-decoration: none; background: var(--blue-btn); color: white; 
+    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+.btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
+
+.back-to-top {
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
+    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
+}
+
+footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
+.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
+.footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
+
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
+</style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
-        <div><a href="index.html">হোম</a><a href="about.html">সম্পর্কে</a><a href="contact.html">যোগাযোগ</a></div>
-    </nav>
-    <div class="container">
-        <div class="card">
-            <h1>২২. গাব (Velvet Apple)</h1>
-            <h2>রোগের বিবরণ:</h2> 
-            <p>গাব মূলত আমাশয় এবং ডায়রিয়া নিয়ন্ত্রণে ব্যবহৃত হয়। এর কষ ও ছাল রক্তপাত বন্ধে এবং ক্ষত সারাতে কার্যকর। এছাড়া এটি বহুমূত্র বা ডায়াবেটিস নিয়ন্ত্রণেও সাহায্য করে।</p>
-            <h2>ব্যবহৃত অংশ:</h2> <p>ফল, ছাল ও কষ।</p>
-            <h2>ঔষধ তৈরির পদ্ধতি:</h2> <p>কাঁচা ফলের কষ অথবা ছাল সেদ্ধ করে ক্বাথ তৈরি করা হয়।</p>
-            <h2>খাবার নিয়ম:</h2> <p>আমাশয় হলে কাঁচা গাব সেদ্ধ পানি ২ চামচ দিনে দুবার পান করুন।</p>
+
+<nav>
+    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
+    <ul class="nav-links">
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="about.html">সম্পর্কে</a></li>
+        <li><a href="contact.html">যোগাযোগ</a></li>
+    </ul>
+    <div class="nav-social">
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</nav>
+
+<header>
+    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
+</header>
+
+<div class="container">
+    <div class="plant-detail-card">
+        <div class="plant-header">
+            <div class="plant-icon-large">🟠</div>
+            <h2>৪৪. গাব (Gab / Indian Persimmon)</h2>
+            <small>Scientific Name: Diospyros malabarica</small>
+            <div class="ayurvedic-specs">
+                <div class="spec-item">রস: কষায়, তিক্ত</div>
+                <div class="spec-item">বীর্য: শীতল (Cold)</div>
+                <div class="spec-item">বিপাক: কটু</div>
+                <div class="spec-item">গুণ: লঘু, রুক্ষ</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>দেশি গাব গ্রাম বাংলার একটি চিরচেনা ফল। যদিও বর্তমানে এটি অবহেলিত, প্রাচীন আয়ুর্বেদ শাস্ত্রে গাব গাছের ছাল, ফল এবং পাতার বহুবিদ ব্যবহার বর্ণিত হয়েছে। এর কষায় (Astringent) গুণের কারণে এটি রক্তপাত বন্ধে এবং অন্ত্রের রোগ সারাতে যুগ যুগ ধরে ব্যবহৃত হয়ে আসছে। এছাড়াও জালের স্থায়িত্ব বাড়াতে জেলেরা গাবের কষ ব্যবহার করে থাকেন।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+            <div class="lang-grid">
+                <div><strong>সংস্কৃত:</strong> তিন্দুক, স্পন্দন</div>
+                <div><strong>ইংরেজি:</strong> Indian Persimmon / Gaub Tree</div>
+                <div><strong>হিন্দি:</strong> তেন্দু (Tendu)</div>
+                <div><strong>বাংলা:</strong> দেশি গাব</div>
+                <div><strong>তামিল:</strong> তুম্বিকা (Tumbika)</div>
+                <div><strong>আরবি:</strong> আবেনুশ (Abenush)</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>গাব একটি মাঝারি আকারের চিরহরিৎ বৃক্ষ। এর পাতাগুলো বেশ ঘন এবং গাঢ় সবুজ রঙের হয়। কাঁচা ফল সবুজ এবং আঠালো কষযুক্ত থাকে, যা পাকলে হলুদ বা লালচে হয়ে যায়। ফলগুলো গোলাকার এবং ভেতরে ৪-৮টি বীজ থাকে। এটি মূলত দক্ষিণ এশিয়ার ক্রান্তীয় অঞ্চলে দেখা যায়।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
+            <ul class="benefit-list">
+                <li><strong>ট্যানিন (Tannins):</strong> এটি প্রধান সক্রিয় উপাদান যা রক্তপাত বন্ধ করতে এবং অ্যান্টিসেপটিক হিসেবে কাজ করে।</li>
+                <li><strong>ফ্ল্যাভোনয়েডস:</strong> প্রদাহ বিরোধী এবং অ্যান্টি-অক্সিডেন্ট গুণ সম্পন্ন।</li>
+                <li><strong>স্যাকোজ ও গ্লুকোজ:</strong> পাকা ফলে প্রাকৃতিক শর্করার উপস্থিতি থাকে।</li>
+                <li><strong>পেপটিন:</strong> যা হজমে সহায়তা করে।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
+            <ul class="benefit-list">
+                <li><strong>আমাশয় ও ডায়রিয়া:</strong> কাঁচা গাবের রস বা ছালের ক্বাথ আমাশয় নিরাময়ে জাদুর মতো কাজ করে।</li>
+                <li><strong>রক্তক্ষরণ বন্ধে:</strong> বাহ্যিক ক্ষতের রক্তপাত বন্ধ করতে গাবের ছালের চূর্ণ বা কষ অত্যন্ত কার্যকর।</li>
+                <li><strong>চর্মরোগ:</strong> খোস-পাঁচড়া বা একজিমা সারাতে গাব বীজের তেল বা ফলের ক্বাথ ব্যবহৃত হয়।</li>
+                <li><strong>মুখের ঘা:</strong> গাবের ছাল সেদ্ধ পানি দিয়ে কুলকুচি করলে মুখের ক্ষত ও মাড়ির ব্যথা কমে।</li>
+                <li><strong>ডায়াবেটিস:</strong> এর কিছু উপাদান রক্তে শর্করার মাত্রা নিয়ন্ত্রণে সাহায্য করে বলে প্রচলিত বিশ্বাস রয়েছে।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
+            <div class="usage-card">
+                <h4>১. পুরাতন আমাশয়ে:</h4>
+                <p>৫-১০ মিলি কাঁচা গাবের রস সামান্য পানির সাথে মিশিয়ে দিনে ২ বার পান করলে মল পরিষ্কার হয় এবং পেটের ব্যাথা কমে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. ক্ষত বা ঘা শুকাতে:</h4>
+                <p>গাবের ছাল সেদ্ধ করা গাঢ় পানি দিয়ে আক্রান্ত স্থান ধুলে ইনফেকশন দূর হয় এবং ক্ষত দ্রুত শুকায়।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৩. মাড়ির রক্তক্ষরণে:</h4>
+                <p>গাবের ছালের চূর্ণ সামান্য লবণের সাথে মিশিয়ে দাঁত মাজলে মাড়ি মজবুত হয় এবং রক্ত পড়া বন্ধ হয়।</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি (ডোজ)</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>সেবনের মাত্রা (রস/ক্বাথ)</th>
+                            <th>সময়কাল ও নিয়ম</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>১০ - ১৮ বছর</td>
+                            <td>৫ মিলি (১ চা চামচ)</td>
+                            <td>দিনে ২ বার আহারের পর</td>
+                        </tr>
+                        <tr>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>১০ - ১৫ মিলি</td>
+                            <td>দিনে ২ বার মধুর সাথে মিশিয়ে</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ</td>
+                            <td>৫ মিলি</td>
+                            <td>রাতে শোবার আগে</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e65100; margin-bottom: 15px;"><i class="fas fa-exclamation-triangle"></i> বিশেষ সতর্কতা</h4>
+                <p>• কাঁচা গাব খালি পেটে সেবন করা উচিত নয়, কারণ এতে থাকা উচ্চমাত্রার ট্যানিন পেটে অস্বস্তি সৃষ্টি করতে পারে।</p>
+                <p>• কোষ্ঠকাঠিন্য রোগীদের গাব বা এর কষ ব্যবহার থেকে বিরত থাকা উচিত।</p>
+                <p>• গর্ভাবস্থায় এবং শিশুদের ক্ষেত্রে বিশেষজ্ঞ চিকিৎসকের পরামর্শ ছাড়া অভ্যন্তরীণ ব্যবহার নিষেধ।</p>
+            </div>
+        </div>
+
+        <div class="btn-back-container">
+            <a href="index.html" class="btn-back-list">
+                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
+            </a>
         </div>
     </div>
-    <footer>
-        <div style="max-width: 1200px; margin: auto;">
-            <h3 style="margin-bottom: 10px;">ভেষজ চিকিৎসা কোষ</h3>
-            <p>&copy; ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
-        </div>
-    </footer>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<footer>
+    <h2>ভেষজ চিকিৎসা কোষ</h2>
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
+</footer>
+
 </body>
 </html>
