@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>আম (Mango) - পূর্ণাঙ্গ ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
+<title>আম (Mango) - বিস্তারিত ভেষজ তথ্য | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -12,6 +12,7 @@
     --dark:#e65100;
     --light:#fff3e0;
     --accent:#ffa000;
+    --blue-btn: #1976d2; /* নীল বাটন কালার */
     --white:#fff;
 }
 
@@ -67,9 +68,28 @@ header{
     margin-bottom: 40px;
 }
 
-.plant-icon-large { font-size: 5rem; margin-bottom: 15px; filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1)); }
+.plant-icon-large { font-size: 5rem; margin-bottom: 15px; }
 .plant-detail-card h2 { color: var(--dark); font-size: 2.5rem; margin-bottom: 5px; }
 .plant-detail-card small { color: #777; font-size: 1.2rem; font-style: italic; }
+
+/* বাটন সেকশন ডিজাইন (মাঝখানে এবং নীল) */
+.ayurvedic-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+    justify-content: center; /* বাটনগুলো মাঝখানে রাখার জন্য */
+}
+.spec-item {
+    background: var(--blue-btn);
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
+    border: none;
+}
 
 .info-section { margin-bottom: 45px; }
 .info-section h3 {
@@ -106,21 +126,6 @@ header{
     position: absolute; left: 0;
     color: var(--dark);
     font-size: 1.2rem;
-}
-
-.ayurvedic-specs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 15px;
-}
-.spec-item {
-    background: #f1f8e9;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-size: 0.95rem;
-    color: #33691e;
-    border: 1px solid #c5e1a5;
 }
 
 .warning-box {
@@ -166,7 +171,7 @@ footer {
     text-decoration: none;
     font-size: 15px;
     font-weight: 600;
-    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: 0.3s;
 }
 
 .footer-s-btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
@@ -193,7 +198,6 @@ footer {
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 @media (max-width: 768px) {
@@ -229,11 +233,12 @@ footer {
             <div class="plant-icon-large">🥭</div>
             <h2>১. আম (Mango)</h2>
             <small>Scientific Name: Mangifera indica Linn.</small>
+            
             <div class="ayurvedic-specs">
-                <span class="spec-item">রস: কষায়, মধুর</span>
-                <span class="spec-item">বীর্য: শীত (Cold)</span>
-                <span class="spec-item">বিপাক: মধুর</span>
-                <span class="spec-item">গুণ: লঘু, রুক্ষ</span>
+                <div class="spec-item">রস: কষায়, মধুর</div>
+                <div class="spec-item">বীর্য: শীত (Cold)</div>
+                <div class="spec-item">বিপাক: মধুর</div>
+                <div class="spec-item">গুণ: লঘু, রুক্ষ</div>
             </div>
         </div>
 
@@ -252,7 +257,7 @@ footer {
 
         <div class="info-section">
             <h3><i class="fas fa-leaf"></i> উদ্ভিদ পরিচিতি ও গঠন</h3>
-            <p>আম একটি বিশালাকার চিরহরিৎ বৃক্ষ যা মূলত দক্ষিণ এশিয়ার উদ্ভিদ। এটি সাধারণত ৫০-৯০ ফুট পর্যন্ত উঁচু হতে পারে। এর কাণ্ড বেশ মোটা এবং ছাল ধূসর বর্ণের। পাতাগুলো লম্বা ও বল্লমাকৃতির, যা পিষেলে সুন্দর ঘ্রাণ পাওয়া যায়। বসন্তকালে এর শাখায় শাখায় মুকুল বা মঞ্জুরী দেখা দেয়। এর ফল 'অষ্ঠিফল' জাতীয় এবং পাকলে অত্যন্ত সুস্বাদু ও পুষ্টিকর হয়।</p>
+            <p>আম বাংলাদেশের জাতীয় বৃক্ষ এবং একে 'ফলের রাজা' বলা হয়। এটি একটি বিশালাকার চিরহরিৎ বৃক্ষ যা মূলত দক্ষিণ এশিয়ার উদ্ভিদ। এটি সাধারণত ৫০-৯০ ফুট পর্যন্ত উঁচু হতে পারে। এর কাণ্ড বেশ মোটা এবং ছাল ধূসর বর্ণের। পাতাগুলো লম্বা ও বল্লমাকৃতির, যা পিষেলে সুন্দর ঘ্রাণ পাওয়া যায়। বসন্তকালে এর শাখায় শাখায় মুকুল বা মঞ্জুরী দেখা দেয়। এর ফল 'অষ্ঠিফল' জাতীয় এবং পাকলে অত্যন্ত সুস্বাদু ও পুষ্টিকর হয়।</p>
         </div>
 
         <div class="info-section">
@@ -274,7 +279,7 @@ footer {
         <div class="info-section">
             <h3><i class="fas fa-mortar-pestle"></i> ব্যবহার বিধি ও ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <strong>১. বহুমূত্র বা ডায়াবেটিস:</strong> ৫-১০ গ্রাম আম পাতা ১ গ্লাস পানিতে সেদ্ধ করে অর্ধেক পরিমাণ করে নিন। এই ক্বাথ প্রতিদিন সকালে খালি পেটে সেবন করুন।
+                <strong>১. বহুমূত্র বা ডায়াবেটিস:</strong> ১০-১৫টি কচি আম পাতা এক গ্লাস পানিতে সেদ্ধ করে অর্ধেক পরিমাণ করে নিন। এই ক্বাথ প্রতিদিন সকালে খালি পেটে সেবন করুন।
             </div>
             <div class="usage-card">
                 <strong>২. দাঁত ও মাড়ির ব্যথায়:</strong> আম পাতার ছাই দিয়ে দাঁত মাজলে মাড়ি মজবুত হয় এবং মুখের দুর্গন্ধ দূর হয়।
@@ -282,22 +287,19 @@ footer {
             <div class="usage-card">
                 <strong>৩. আমাশয় প্রতিকারে:</strong> আমের ছালের রস ২ চা চামচ অল্প ছাগলের দুধের সাথে মিশিয়ে খেলে রক্ত আমাশয় দ্রুত বন্ধ হয়।
             </div>
-            <div class="usage-card">
-                <strong>৪. পোড়া স্থানে:</strong> আমের পাতা পুড়িয়ে মিহি ছাই তৈরি করে নারিকেল তেলের সাথে মিশিয়ে পোড়া স্থানে লাগালে ক্ষত দ্রুত শুকায়।
-            </div>
         </div>
 
         <div class="info-section">
             <div class="warning-box">
                 <h4 style="color: #e53935; margin-bottom: 12px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও পার্শ্বপ্রতিক্রিয়া</h4>
                 <p>• অতিরিক্ত পাকা আম খেলে ওজন বৃদ্ধি পেতে পারে এবং আমবাত (Hives) হতে পারে।</p>
-                <p>• আমের বোঁটার আঠা সরাসরি ত্বকে লাগলে ঘা বা চুলকানি হতে পারে, তাই সাবধান থাকা উচিত।</p>
-                <p>• কিডনি রোগীদের পটাশিয়াম সীমাবদ্ধতা থাকলে আম খাওয়ার আগে চিকিৎসকের পরামর্শ নেওয়া জরুরি।</p>
+                <p>• আমের বোঁটার আঠা সরাসরি ত্বকে লাগলে ঘা বা চুলকানি হতে পারে।</p>
+                <p>• কিডনি রোগীদের আম খাওয়ার আগে চিকিৎসকের পরামর্শ নেওয়া জরুরি।</p>
             </div>
         </div>
 
         <div style="text-align: center; margin-top: 50px;">
-            <a href="index.html" style="text-decoration: none; background: var(--dark); color: white; padding: 15px 40px; border-radius: 50px; font-weight: bold; box-shadow: 0 5px 20px rgba(230,81,0,0.4); display: inline-block;">
+            <a href="index.html" style="text-decoration: none; background: var(--dark); color: white; padding: 15px 40px; border-radius: 50px; font-weight: bold; display: inline-block;">
                 <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
             </a>
         </div>
