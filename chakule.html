@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#4e342e;
-    --dark:#3e2723;
-    --light:#efebe9;
-    --accent:#8d6e63;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #f7f3f2;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #d7ccc8;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -194,79 +222,116 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🌿</div>
+            <div class="plant-icon-large">🦴</div>
             <h2>২৫. চাকুলে (Chakule)</h2>
             <small>Scientific Name: Uraria picta (Jacq.) DC.</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: মধুর</div>
-                <div class="spec-item">বীর্য: উষ্ণ (Heating)</div>
+                <div class="spec-item">রস: মধুর, কটু</div>
+                <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
                 <div class="spec-item">বিপাক: মধুর</div>
-                <div class="spec-item">গুণ: লঘু, স্নিগ্ধ</div>
+                <div class="spec-item">দোষ: ত্রিদোষ নাশক</div>
+                <div class="spec-item">বিশেষত্ব: অস্থি সন্ধায়ক (Bone healer)</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>চাকুলে একটি অত্যন্ত গুরুত্বপূর্ণ আয়ুর্বেদিক ভেষজ যা 'দশমূল' (Dashamoola) ফর্মুলার অন্যতম প্রধান উপাদান। একে সংস্কৃতে 'পৃশ্নিপর্ণী' বলা হয়। এটি প্রধানত হাড় ভাঙা জোড়া লাগানো, রক্তক্ষরণ বন্ধ করা এবং প্রদাহ নিরাময়ে ব্যবহার করা হয়। এটি শরীরের বল বৃদ্ধি করতে এবং স্নায়বিক দুর্বলতা দূর করতে অত্যন্ত কার্যকর।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>চাকুলে আয়ুর্বেদ শাস্ত্রের বিখ্যাত 'দশমূল' (Dashamoola) এর অন্যতম একটি গুরুত্বপূর্ণ উপাদান। এটি মূলত হাড়ের ফ্র্যাকচার নিরাময় এবং বাত জনিত ব্যথায় প্রাচীনকাল থেকে ব্যবহৃত হয়ে আসছে। সুশ্রুত সংহিতায় একে 'সন্ধানীয়' ভেষজ হিসেবে উল্লেখ করা হয়েছে, যার অর্থ এটি শরীরের ভাঙা অংশ জোড়া লাগাতে সাহায্য করে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> পৃশ্নিপর্ণী, চিত্রপর্ণী</div>
-                <div><strong>ইংরেজি:</strong> Painted Uraria</div>
+                <div><strong>সংস্কৃত:</strong> পৃথ্বিপর্ণী, চিত্রপর্ণী</div>
+                <div><strong>ইংরেজি:</strong> Painted Leaf Plant</div>
                 <div><strong>হিন্দি:</strong> পিঠবন (Pithavan)</div>
-                <div><strong>তামিল:</strong> সিত্তরাত্তি</div>
-                <div><strong>উর্দু:</strong> পিঠবন</div>
+                <div><strong>তামিল:</strong> সিতামত্তি</div>
+                <div><strong>বাংলা:</strong> চাকুলে, শংকরজটা</div>
+                <div><strong>মালয়ালম:</strong> ওরিল</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>চাকুলে Fabaceae পরিবারের একটি ছোট চিরসবুজ গুল্ম জাতীয় উদ্ভিদ। এর পাতাগুলো লম্বাটে এবং মাঝখানে সাদা বা রূপালী রেখা থাকে, যা দেখতে অনেকটা মাছের হাড়ের মতো। এর ফুলগুলো বেগুনি বা লালচে রঙের হয়। ওষুধি কাজে মূলত এর মূল এবং পাতা ব্যবহৃত হয়।</p>
+            <p>চাকুলে একটি ছোট গুল্মজাতীয় উদ্ভিদ যা সাধারণত ২ থেকে ৪ ফুট পর্যন্ত লম্বা হয়। এর পাতার গঠন খুবই আকর্ষণীয়; পাতাগুলো লম্বাটে এবং মাঝখানে সাদাটে বা ধূসর রঙের ছোপ থাকে (এজন্য একে Painted Leaf বলা হয়)। ফুলগুলো লম্বা মঞ্জুরিতে লালচে বা বেগুনি বর্ণের হয়ে থাকে। এটি মূলত দক্ষিণ এশিয়ার বনাঞ্চলে প্রাকৃতিকভাবে জন্মে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>অ্যালকালয়েডস:</strong> যা প্রদাহ এবং ব্যথা কমাতে সাহায্য করে।</li>
-                <li><strong>ফ্ল্যাভোনয়েডস:</strong> অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে কোষের সুরক্ষা দেয়।</li>
-                <li><strong>খনিজ উপাদান:</strong> এতে হাড়ের স্বাস্থ্যের জন্য প্রয়োজনীয় ক্যালসিয়াম ও ফসফরাস বিদ্যমান।</li>
+                <li><strong>Flavonoids:</strong> যা প্রদাহবিরোধী (Anti-inflammatory) হিসেবে কাজ করে।</li>
+                <li><strong>Alkaloids:</strong> যা স্নায়বিক ব্যথা উপশম করতে সহায়ক।</li>
+                <li><strong>Steroids:</strong> এগুলো হাড়ের কোষ পুনর্গঠনে বিশেষ ভূমিকা রাখে।</li>
+                <li><strong>Glycosides:</strong> যা হৃদযন্ত্রের পেশী মজবুত করতে সাহায্য করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>হাড় জোড়া লাগানো:</strong> চাকুলে হাড়ের টিস্যু পুনর্গঠনে সাহায্য করে, ফলে ভাঙা হাড় দ্রুত জোড়া লাগে।</li>
-                <li><strong>রক্তক্ষরণ নিয়ন্ত্রণ:</strong> এটি যেকোনো অভ্যন্তরীণ বা বাহ্যিক রক্তক্ষরণ বন্ধ করতে অত্যন্ত কার্যকর।</li>
-                <li><strong>হৃদরোগ প্রতিরোধ:</strong> এটি হৃদপিণ্ডের পেশীকে শক্তিশালী করে এবং রক্ত সঞ্চালন স্বাভাবিক রাখে।</li>
-                <li><strong>জ্বর ও কাশি:</strong> ভাইরাল জ্বর এবং দীর্ঘস্থায়ী কাশি নিরাময়ে চাকুলের মূলের ক্বাথ ব্যবহৃত হয়।</li>
-                <li><strong>গর্ভাশয়ের সুরক্ষা:</strong> প্রসব পরবর্তী সময়ে জরায়ুর সুস্থতা ফিরিয়ে আনতে এটি আয়ুর্বেদে ব্যবহৃত হয়।</li>
+                <li><strong>হাড় ভাঙা নিরাময়:</strong> এটি হাড়ের ক্যালসিয়াম শোষণ ক্ষমতা বাড়ায় এবং ফ্র্যাকচার দ্রুত জোড়া লাগাতে সাহায্য করে।</li>
+                <li><strong>বাত ও জয়েন্টের ব্যথা:</strong> এর প্রদাহরোধী গুণ দীর্ঘস্থায়ী বাতের ব্যথা এবং ফোলা কমাতে অত্যন্ত কার্যকর।</li>
+                <li><strong>জ্বর ও সর্দি:</strong> কফজনিত জ্বর এবং শ্বাসনালীর প্রদাহ দূর করতে এর ক্বাথ ব্যবহৃত হয়।</li>
+                <li><strong>রক্তপাত বন্ধ করা:</strong> এটি একটি চমৎকার রক্তস্তম্ভক, যা শরীরের অভ্যন্তরীণ রক্তপাত বন্ধ করতে সাহায্য করে।</li>
+                <li><strong>স্নায়ুবিক দুর্বলতা:</strong> শরীরকে বলশালী করতে এবং স্নায়ুর কার্যক্ষমতা বাড়াতে এটি পুষ্টিকারক হিসেবে কাজ করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. ভাঙা হাড় জোড়া দিতে:</h4>
-                <p>চাকুলের পাতার পেস্ট বা চূর্ণ দুধের সাথে মিশিয়ে নিয়মিত সেবন করলে হাড়ের ঘনত্ব বৃদ্ধি পায় ও ক্ষত দ্রুত সারে।</p>
+                <h4>১. হাড় জোড়া লাগাতে:</h4>
+                <p>চাকুলের মূলের চূর্ণ ৫ গ্রাম পরিমাণ দুধের সাথে মিশিয়ে দিনে দুবার সেবন করলে হাড়ের আঘাত দ্রুত শুকায়।</p>
             </div>
             <div class="usage-card">
-                <h4>২. রক্ত আমাশয় বা রক্তক্ষরণে:</h4>
-                <p>চাকুলের মূলের ক্বাথ (ডেকোকশন) ১০-২০ মিলি পরিমাণে প্রতিদিন দুইবার খেলে রক্তক্ষরণ বন্ধ হয়।</p>
+                <h4>২. প্রস্রাবের জ্বালাপোড়ায়:</h4>
+                <p>চাকুলের পাতা ও মূলের রস ১০ মিলি পরিমাণ হালকা মিষ্টি পানির সাথে মিশিয়ে খেলে মূত্রনালীর সংক্রমণ ও জ্বালা কমে।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. শারীরিক দুর্বলতায়:</h4>
-                <p>চাকুলের মূলের গুঁড়ো মিছরি ও দুধের সাথে মিশিয়ে খেলে শরীরের শক্তি ও রোগ প্রতিরোধ ক্ষমতা বাড়ে।</p>
+                <h4>৩. বুকের কফ পরিষ্কারে:</h4>
+                <p>এর মূলের ক্বাথ সামান্য গোলমরিচ ও মধুর সাথে মিশিয়ে খেলে জমাট বাঁধা কফ সহজেই বেরিয়ে আসে।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• চাকুলে সবসময় পরিমিত মাত্রায় সেবন করা উচিত। অতিরিক্ত সেবনে হজমের সমস্যা হতে পারে।</p>
-            <p>• গর্ভবতী মহিলাদের ক্ষেত্রে এটি ব্যবহারের আগে বিশেষজ্ঞ ভেষজ চিকিৎসকের পরামর্শ নেওয়া বাধ্যতামূলক।</p>
-            <p>• শিশুদের ক্ষেত্রে মাত্রা নির্ধারণে বিশেষ সতর্কতা অবলম্বন করুন।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> সেবন বিধি ও মাত্রা</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>ব্যবহারের পদ্ধতি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>মূলের ক্বাথ</td>
+                            <td>২০ - ৩০ মিলি</td>
+                            <td>খাওয়ার পর (দিন দুবার)</td>
+                        </tr>
+                        <tr>
+                            <td>মূলের চূর্ণ</td>
+                            <td>৩ - ৬ গ্রাম</td>
+                            <td>দুধ বা মধুর সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>পাতার রস</td>
+                            <td>৫ - ১০ মিলি</td>
+                            <td>পানির সাথে মিশিয়ে</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• চাকুলে দীর্ঘ সময় ধরে অতিরিক্ত মাত্রায় সেবন করলে কোষ্ঠকাঠিন্য হতে পারে।</p>
+                <p>• গর্ভাবস্থায় কোনো শক্তিশালী ভেষজ সেবনের আগে অবশ্যই আয়ুর্বেদিক বিশেষজ্ঞের পরামর্শ নেওয়া জরুরি।</p>
+                <p>• এটি উষ্ণ বীর্যের ভেষজ হওয়ায় অত্যন্ত গরম আবহাওয়ায় সেবনের সময় পানির পরিমাণ বাড়িয়ে দেওয়া উচিত।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
