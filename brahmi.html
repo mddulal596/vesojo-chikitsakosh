@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#2e7d32;
-    --dark:#1b5e20;
-    --light:#f1f8e9;
-    --accent:#4caf50;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #f1f8e9;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #c8e6c9;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -194,79 +222,117 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🌿</div>
+            <div class="plant-icon-large">🧠</div>
             <h2>২৩. ব্রাহ্মী (Brahmi)</h2>
-            <small>Scientific Name: Bacopa monnieri (L.) Wettst.</small>
+            <small>Scientific Name: Bacopa monnieri (L.) Pennell</small>
             <div class="ayurvedic-specs">
                 <div class="spec-item">রস: তিক্ত, কষায়</div>
-                <div class="spec-item">বীর্য: শীত (Cooling)</div>
+                <div class="spec-item">বীর্য: শীতল (Cold)</div>
                 <div class="spec-item">বিপাক: মধুর</div>
-                <div class="spec-item">গুণ: লঘু, সার</div>
+                <div class="spec-item">দোষ: ত্রিদোষ নাশক (বিশেষ করে পিত্ত)</div>
+                <div class="spec-item">বিশেষত্ব: মেধা শক্তি ও স্মৃতিবর্ধক</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>ব্রাহ্মী হলো আয়ুর্বেদ শাস্ত্রের অন্যতম শ্রেষ্ঠ 'মেধ্য রসায়ন' বা মস্তিষ্ক সঞ্জীবনী ভেষজ। এটি স্মরণশক্তি বর্ধক এবং স্নায়ুতন্ত্রের শক্তিবর্ধক হিসেবে প্রাচীনকাল থেকেই ব্যবহৃত হয়ে আসছে। বিশেষ করে ছাত্রছাত্রী এবং বয়স্কদের স্মৃতিভ্রম প্রতিরোধে এটি অত্যন্ত কার্যকর। এটি মূলত জলাভূমি বা আর্দ্র স্থানে জন্মায় এবং সারা বছর পাওয়া যায়।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>ব্রাহ্মী আয়ুর্বেদ শাস্ত্রের অন্যতম শ্রেষ্ঠ 'মেধ্যা রসায়ন' (Nootropic) ভেষজ। এর নামকরণ করা হয়েছে সৃষ্টিশীলতার দেবতা 'ব্রহ্মা'-র নামানুসারে। হাজার হাজার বছর ধরে এটি মস্তিষ্ককে সচল রাখতে, স্মৃতিশক্তি বাড়াতে এবং মানসিক প্রশান্তি আনয়ন করতে ব্যবহৃত হয়ে আসছে। প্রাচীন ঋষিরা দীর্ঘ সময় একাগ্রতা ধরে রাখতে ব্রাহ্মী সেবন করতেন।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> ব্রাহ্মী, সরস্বতী, দিব্যা</div>
-                <div><strong>ইংরেজি:</strong> Water Hyssop</div>
-                <div><strong>হিন্দি:</strong> জল নিম (Jal Nim)</div>
+                <div><strong>সংস্কৃত:</strong> ব্রাহ্মী, সরস্বতী, সুগন্ধি</div>
+                <div><strong>ইংরেজি:</strong> Water Hyssop, Herb of Grace</div>
+                <div><strong>হিন্দি:</strong> ব্রাহ্মী (Brahmi)</div>
                 <div><strong>তামিল:</strong> নিরাব্রাহ্মী</div>
-                <div><strong>উর্দু:</strong> ব্রাহ্মী</div>
+                <div><strong>বাংলা:</strong> ব্রাহ্মী শাক, থুনকুনি (ভুলবশত)</div>
+                <div><strong>মালায়লাম:</strong> ব্রাহ্মী</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>ব্রাহ্মী Scrophulariaceae পরিবারের একটি রসালো ও লতানো বীরুৎ জাতীয় উদ্ভিদ। এর কাণ্ড ও পাতা বেশ কোমল এবং মাটির ওপর দিয়ে ছড়িয়ে পড়ে। ফুলগুলো সাধারণত সাদা বা হালকা নীল রঙের হয়। ওষুধি কাজে এর সমগ্র অংশ বা 'পঞ্চাঙ্গ' ব্যবহৃত হয়।</p>
+            <p>ব্রাহ্মী একটি রসালো, লতানো বহুবর্ষজীবী ভেষজ। এটি সাধারণত জলাভূমি বা স্যাঁতসেঁতে কর্দমাক্ত স্থানে মাটিতে লেপ্টে বেড়ে ওঠে। এর পাতাগুলো ছোট, পুরু এবং চামচের মতো আকৃতির হয়। ফুলগুলো খুব ছোট এবং সাধারণত হালকা নীল বা সাদা রঙের হয়ে থাকে। এর কাণ্ড নরম এবং গিঁট থেকে শিকড় বের হয়।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>ব্যাকোসাইডস (Bacosides):</strong> এটি স্মৃতিশক্তি বাড়াতে এবং স্নায়ু কোষ পুনর্গঠনে মূল ভূমিকা রাখে।</li>
-                <li><strong>ব্রাহ্মিন (Brahmin):</strong> একটি শক্তিশালী অ্যালকালয়েড যা মস্তিষ্কের কার্যকারিতা নিয়ন্ত্রণ করে।</li>
-                <li><strong>হার্পেস্টিন:</strong> যা স্ট্রেস বা মানসিক চাপ কমাতে সাহায্য করে।</li>
+                <li><strong>Bacosides A & B:</strong> এগুলো মূলত ক্ষতিগ্রস্ত নিউরন মেরামত করতে এবং স্মৃতিশক্তি উন্নত করতে প্রধান ভূমিকা পালন করে।</li>
+                <li><strong>Alkaloids:</strong> যা মস্তিষ্ককে শান্ত রাখতে এবং রক্তচাপ নিয়ন্ত্রণে সাহায্য করে।</li>
+                <li><strong>Saponins:</strong> এটি শক্তিশালী অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে।</li>
+                <li><strong>Sterols:</strong> যা শরীরের রোগ প্রতিরোধ ক্ষমতা বাড়াতে সহায়ক।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>স্মৃতিশক্তি ও বুদ্ধিবৃত্তি বৃদ্ধি:</strong> নিয়মিত ব্রাহ্মী সেবনে মনোযোগ বৃদ্ধি পায় এবং স্মৃতিশক্তি প্রখর হয়।</li>
-                <li><strong>মানসিক উদ্বেগ ও দুশ্চিন্তা হ্রাস:</strong> এটি কর্টিসল হরমোনের মাত্রা কমিয়ে মনকে শান্ত রাখতে সাহায্য করে।</li>
-                <li><strong>অনিদ্রা দূরীকরণ:</strong> মস্তিষ্কের স্নায়ুকে শিথিল করে এটি গভীর ঘুমে সহায়তা করে।</li>
-                <li><strong>মৃগী রোগ ও ফিট হওয়া:</strong> মৃগী রোগের চিকিৎসায় ব্রাহ্মী ঘৃত বা চূর্ণ অত্যন্ত কার্যকরী।</li>
-                <li><strong>রক্তচাপ নিয়ন্ত্রণ:</strong> এটি রক্তনালীকে প্রসারিত করে উচ্চ রক্তচাপ কমাতে সাহায্য করে।</li>
+                <li><strong>স্মৃতিশক্তি ও মেধা বৃদ্ধি:</strong> শিক্ষার্থী ও বৃদ্ধদের জন্য এটি একটি অতুলনীয় ব্রেইন টনিক। এটি একাগ্রতা এবং শেখার ক্ষমতা বাড়ায়।</li>
+                <li><strong>মানসিক চাপ ও দুশ্চিন্তা:</strong> এটি স্ট্রেস হরমোন 'কর্টিসল'-এর মাত্রা কমিয়ে মনকে শান্ত রাখে এবং উদ্বেগ দূর করে।</li>
+                <li><strong>অ্যালঝেইমার ও পারকিনসন:</strong> এটি মস্তিষ্কের কোষের অবক্ষয় রোধ করে বার্ধক্যজনিত স্মৃতিভ্রম কমাতে সাহায্য করে।</li>
+                <li><strong>চুল পড়া রোধ:</strong> ব্রাহ্মী তেল মাথায় ব্যবহার করলে চুলের গোড়া শক্ত হয় এবং অকাল পক্কতা রোধ পায়।</li>
+                <li><strong>রক্তচাপ নিয়ন্ত্রণ:</strong> এটি ধমনীর সংকোচন কমিয়ে উচ্চ রক্তচাপ নিয়ন্ত্রণে সহায়তা করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. স্মৃতিশক্তি বাড়াতে:</h4>
-                <p>১ চা চামচ ব্রাহ্মী পাতার রসের সাথে সামান্য মধু মিশিয়ে প্রতিদিন সকালে খালি পেটে খান।</p>
+                <h4>১. স্মৃতিশক্তি বৃদ্ধির জন্য:</h4>
+                <p>ব্রাহ্মী শাকের তাজা রস ১০ মিলি পরিমাণ ১ চামচ মধুর সাথে মিশিয়ে সকালে খালি পেটে সেবন করুন।</p>
             </div>
             <div class="usage-card">
-                <h4>২. দুশ্চিন্তা ও অনিদ্রায়:</h4>
-                <p>রাতে ঘুমানোর আগে ব্রাহ্মী চূর্ণ বা ব্রাহ্মী দিয়ে তৈরি ঘি দুধের সাথে মিশিয়ে সেবন করলে ভালো ফল পাওয়া যায়।</p>
+                <h4>২. অনিদ্রা ও মানসিক অস্থিরতায়:</h4>
+                <p>রাতে শোবার আগে ব্রাহ্মী চূর্ণ ৩ গ্রাম পরিমাণ এক গ্লাস কুসুম কুসুম গরম দুধের সাথে মিশিয়ে খান।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. চুলের যন্তে:</h4>
-                <p>ব্রাহ্মী তেল মাথায় মাখলে মস্তিষ্ক ঠান্ডা থাকে এবং অকালে চুল পাকা রোধ হয়।</p>
+                <h4>৩. শিশুদের মেধা বিকাশে:</h4>
+                <p>ব্রাহ্মী ঘৃত (Brahmi Ghrita) আধা চা চামচ ভাতের সাথে মিশিয়ে শিশুদের খাওয়ালে মেধা ও বাকশক্তি উন্নত হয়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• অতিরিক্ত মাত্রায় সেবনে পেট খারাপ বা বমি বমি ভাব হতে পারে।</p>
-            <p>• গর্ভাবস্থায় এবং স্তন্যদানকালে চিকিৎসকের পরামর্শ ছাড়া এটি ব্যবহার করবেন না।</p>
-            <p>• থাইরয়েড বা হৃদরোগের ওষুধ সেবনকারীরা সতর্কতার সাথে এটি গ্রহণ করবেন।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> সেবন বিধি ও মাত্রা</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>ব্যবহারের পদ্ধতি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>তাজা রস</td>
+                            <td>১০ - ২০ মিলি</td>
+                            <td>মধু বা হালকা পানির সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>শুকনো চূর্ণ</td>
+                            <td>৩ - ৫ গ্রাম</td>
+                            <td>দুধ বা মধুর সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>ব্রাহ্মী ক্যাপসুল</td>
+                            <td>২৫০ - ৫০০ মি.গ্রা.</td>
+                            <td>দিনে দুইবার (খাওয়ার পর)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• খালি পেটে ব্রাহ্মী সেবন করলে কারো কারো ক্ষেত্রে বমিভাব বা পেটের অস্বস্তি হতে পারে।</p>
+                <p>• ব্রাহ্মী সেবনের ফলে হার্টের গতি (Heart rate) কিছুটা কমতে পারে, তাই ব্র্যাডিকার্ডিয়া রোগীদের সাবধান থাকা উচিত।</p>
+                <p>• থাইরয়েড হরমোনের ওষুধের সাথে ব্রাহ্মী সেবন করার আগে চিকিৎসকের পরামর্শ নিন।</p>
+                <p>• দীর্ঘস্থায়ী আলসার বা অ্যাজমা রোগীদের ক্ষেত্রে এটি বিশেষজ্ঞের পরামর্শ ছাড়া সেবন করা অনুচিত।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
