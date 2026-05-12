@@ -3,149 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>বেড়েলা (Bala) - বিস্তারিত তথ্য | ভেষজ চিকিৎসা কোষ</title>
+<title>বলা (Bala) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
-    --primary:#ffd54f;
-    --dark:#ff8f00;
-    --light:#fff8e1;
-    --accent:#ffe082;
+    --primary:#fbc02d;
+    --dark:#f57f17;
+    --light:#fffde7;
+    --accent:#fff176;
+    --nav-blue: #1976d2; 
+    --blue-btn: #1976d2; 
+    --blue-hover: #115293; 
     --white:#fff;
+    --footer-grey-light: #999999;
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body{
-    font-family:'Segoe UI',sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background:var(--light);
     color:#333;
-    line-height:1.6;
+    line-height:1.8;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= NAVBAR (BLUE) ================= */
 nav{
     position:sticky; top:0; z-index:999;
-    background:var(--dark); display:flex;
+    background:var(--nav-blue); display:flex;
     justify-content:space-between; align-items:center;
     padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
 }
-.logo{ color:#fff; text-decoration:none; font-size:24px; font-weight:bold; }
-.nav-links{ display:flex; align-items:center; list-style:none; }
-.nav-links a{ color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
-.nav-links a:hover{ background:var(--primary); color:#333; }
+.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+.nav-links { display:flex; align-items:center; list-style:none; }
+.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover { background:var(--blue-hover); }
 
-.nav-social{ display:flex; gap:10px; }
-.nav-social a{ color:white; font-size:16px; width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
-.nav-social a:hover{ background:rgba(255,255,255,.15); }
+.nav-social { display:flex; gap:10px; align-items:center; }
+.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover { background:rgba(255,255,255,0.2); }
 
 /* ================= HEADER ================= */
 header{
-    background:linear-gradient(135deg,var(--primary),var(--dark));
-    color:#fff; text-align:center; padding:60px 20px;
+    background:linear-gradient(135deg,var(--accent),var(--dark));
+    color:#fff; text-align:center; padding:100px 20px;
 }
 
 /* ================= CONTENT CONTAINER ================= */
 .container {
     max-width: 1000px;
-    margin: -30px auto 50px;
-    padding: 20px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
 }
 
 .plant-detail-card {
     background: white;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
 .plant-header {
     text-align: center;
     border-bottom: 2px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
-.plant-icon-large { font-size: 4rem; margin-bottom: 10px; }
-.plant-detail-card h2 { color: var(--dark); font-size: 2rem; }
-.plant-detail-card small { color: #777; font-size: 1.1rem; font-style: italic; }
+.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
+.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
 
-.info-section { margin-bottom: 30px; }
+.ayurvedic-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+.spec-item {
+    background: var(--blue-btn);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.info-section { margin-bottom: 60px; }
 .info-section h3 {
     color: var(--dark);
-    border-left: 5px solid var(--primary);
-    padding-left: 15px;
-    margin-bottom: 15px;
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    background: #fffde7;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #fff59d;
 }
 
 .benefit-list { list-style: none; }
 .benefit-list li {
-    margin-bottom: 10px;
-    padding-left: 30px;
+    margin-bottom: 22px;
+    padding-left: 50px;
     position: relative;
+    font-size: 1.1rem;
 }
 .benefit-list li::before {
-    content: "\f00c";
+    content: "\f058";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute; left: 0;
     color: var(--dark);
+    font-size: 1.4rem;
 }
 
-/* ================= FOOTER ================= */
-footer {
-    background: #1d1200;
-    color: #ffffff;
-    text-align: center;
-    padding: 50px 20px 30px;
-    margin-top: 50px;
+.usage-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
 }
 
-footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
-
-.footer-nav { margin-bottom: 25px; }
-.footer-nav a { color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px; }
-
-.social-container {
-    display: flex; justify-content: center;
-    gap: 12px; flex-wrap: wrap; margin-bottom: 30px;
+.warning-box {
+    background: #fff5f5;
+    border-radius: 15px;
+    padding: 35px;
+    border-left: 8px solid #e53935;
+    margin-top: 30px;
 }
 
-.s-btn {
-    display: flex; align-items: center; gap: 8px;
-    padding: 10px 20px; border-radius: 50px;
-    color: white; text-decoration: none; font-size: 14px;
-    transition: 0.3s;
+.btn-back-container { text-align: center; margin-top: 40px; }
+.btn-back-list {
+    text-decoration: none; background: var(--blue-btn); color: white; 
+    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
 }
-
-.s-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
-
-.fb { background: #1877F2; }
-.yt { background: #FF0000; }
-.ig { background: #E4405F; }
-.ln { background: #0077B5; }
-
-.copyright {
-    font-size: 13px; color: #b0b0b0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px; margin-bottom: 20px;
-}
+.btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    background: var(--primary); color: #333; border: none;
-    padding: 8px 20px; border-radius: 20px; cursor: pointer;
-    font-size: 14px; transition: 0.3s; font-weight: bold;
+    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-.back-to-top:hover { background: var(--dark); color: white; }
+/* ================= FOOTER (#999999) ================= */
+footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
+.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
+.footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-/* MOBILE OPTIMIZATION */
-@media(max-width:768px){
-    nav{ flex-direction: column; height:auto; padding:15px; gap: 10px; }
-    .plant-detail-card { padding: 20px; }
-    .plant-detail-card h2 { font-size: 1.5rem; }
-}
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
 </style>
 </head>
 <body>
@@ -160,68 +181,116 @@ footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
     <div class="nav-social">
         <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
 </nav>
 
 <header>
-    <h1>ভেষজ উদ্ভিদের বিস্তারিত তথ্য</h1>
+    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
 </header>
 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🌻</div>
-            <h2>৮২. বেড়েলা (Bala)</h2>
-            <small>Scientific Name: Sida cordifolia</small>
+            <div class="plant-icon-large">🌼</div>
+            <h2>১৬. বলা (Bala)</h2>
+            <small>Scientific Name: Sida cordifolia L.</small>
+            <div class="ayurvedic-specs">
+                <div class="spec-item">রস: মধুর</div>
+                <div class="spec-item">বীর্য: শীত (Cooling)</div>
+                <div class="spec-item) বিপাক: মধুর</div>
+                <div class="spec-item">গুণ: গুরু, স্নিগ্ধ, পিচ্ছিল</div>
+            </div>
         </div>
 
         <div class="info-section">
-            <h3>পরিচিতি</h3>
-            <p>বেড়েলা বা 'বলা' শব্দের অর্থ শক্তি। আয়ুর্বেদ শাস্ত্র অনুযায়ী এটি শরীরকে বল বা শক্তি প্রদানকারী অন্যতম শ্রেষ্ঠ ভেষজ। এটি মূলত একটি ছোট গুল্মজাতীয় উদ্ভিদ যার শেকড় ও বীজ ওষধি গুণে ভরপুর। এটি শরীরের তিনটি দোষ (বাত, পিত্ত, কফ) ভারসাম্য বজায় রাখতে সাহায্য করে, বিশেষ করে বাত নাশক হিসেবে এটি অত্যন্ত সুপরিচিত।</p>
+            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
+            <p>আয়ুর্বেদ শাস্ত্রে 'বলা' বা বেড়লা একটি অত্যন্ত শক্তিশালী বলকারক এবং পুষ্টিকর ভেষজ হিসেবে পরিচিত। এর নামের অর্থই হলো 'শক্তি' (Strength)। এটি শরীরের রোগ প্রতিরোধ ক্ষমতা বাড়াতে, পেশী গঠন করতে এবং স্নায়ুবিক দুর্বলতা দূর করতে ব্যবহৃত হয়। প্রাচীনকাল থেকেই আয়ুর্বেদীয় চিকিৎসায় বলা তিল তেলের সাথে মিশিয়ে মালিশের কাজে এবং অভ্যন্তরীণ ওষুধের উপাদান হিসেবে ব্যবহৃত হয়ে আসছে।</p>
         </div>
 
         <div class="info-section">
-            <h3>প্রধান উপকারিতা</h3>
+            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+            <div class="lang-grid">
+                <div><strong>সংস্কৃত:</strong> বলা, বাতকান্তি, ভদ্রৌদনী</div>
+                <div><strong>ইংরেজি:</strong> Country Mallow / Flannel Weed</div>
+                <div><strong>হিন্দি:</strong> খরেন্টি (Kharenti)</div>
+                <div><strong>তামিল:</strong> কুরুন্তোটি (Kurunthotti)</div>
+                <div><strong>তেলেগু:</strong> অন্তিসা</div>
+                <div><strong>মারাঠি:</strong> চিকণা</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>বলা বা বেড়লা Malvaceae পরিবারের একটি বহুবর্ষজীবী বীরুৎ জাতীয় উদ্ভিদ। এটি সাধারণত ১ মিটার পর্যন্ত লম্বা হয়। এর পাতাগুলো হৃদপিণ্ড আকৃতির এবং রোমশ, তাই একে 'cordifolia' বলা হয়। গাছটিতে ছোট ছোট হালকা হলুদ বা সাদা রঙের ফুল ফোটে। ওষুধি কাজে মূলত এর মূল (Root), পাতা এবং বীজ ব্যবহৃত হয়।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li>**স্নায়বিক শক্তি:** এটি স্নায়ু পদ্ধতিকে শক্তিশালী করে এবং প্যারালাইসিস বা স্নায়বিক দুর্বলতা উপশমে সাহায্য করে।</li>
-                <li>**পেশি মজবুত করা:** শারীরিক দুর্বলতা দূর করে পেশিকে শক্তিশালী ও সুগঠিত করতে এটি টনিক হিসেবে কাজ করে।</li>
-                <li>**বাত ব্যথা:** জয়েন্টের ব্যথা ও বাতজনিত রোগ নিরাময়ে বেড়েলা গাছের শেকড়ের ব্যবহার অত্যন্ত প্রাচীন।</li>
-                <li>**প্রজনন স্বাস্থ্য:** এটি শরীরের শুক্রাণুর গুণগত মান বৃদ্ধি করতে এবং প্রজননতন্ত্রকে সুস্থ রাখতে সহায়ক।</li>
+                <li><strong>এফ্রিড্রিন (Ephedrine):</strong> যা রক্তচাপ এবং শ্বাসতন্ত্রের উপর কাজ করে।</li>
+                <li><strong>স্যাফোনিন ও অ্যালকালয়েডস:</strong> যা শরীরে প্রদাহ কমায় এবং শক্তি যোগায়।</li>
+                <li><strong>ফাইটোটেরল:</strong> যা হৃদপিণ্ডের কার্যক্ষমতা উন্নত করতে সাহায্য করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3>ব্যবহার বিধি</h3>
-            <p>সাধারণত বেড়েলা শেকড়ের চূর্ণ ৩-৫ গ্রাম পরিমাণ এক গ্লাস গরম দুধ বা মধুর সাথে মিশিয়ে সেবনের পরামর্শ দেওয়া হয়। বাতের ব্যথায় বেড়েলা সিদ্ধ তেলের মালিশ অত্যন্ত কার্যকর। শারীরিক শক্তি বৃদ্ধির জন্য নিয়মিত এটি সেবন করা যায়, তবে উচ্চ রক্তচাপ বা অন্য কোনো জটিলতা থাকলে বিশেষজ্ঞ আয়ুর্বেদ চিকিৎসকের পরামর্শ অনুযায়ী মাত্রা নির্ধারণ করা বাঞ্ছনীয়।</p>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <ul class="benefit-list">
+                <li><strong>শারীরিক শক্তি বৃদ্ধি:</strong> এটি দীর্ঘস্থায়ী অসুস্থতার পর শরীরের ওজন বাড়াতে এবং জীবনীশক্তি ফিরে পেতে সাহায্য করে।</li>
+                <li><strong>স্নায়ুবিক রোগের চিকিৎসা:</strong> বাত রোগ, পক্ষাঘাত (Paralysis) এবং সায়াটিকার চিকিৎসায় বলা তেল বা এর নির্যাস অত্যন্ত কার্যকর।</li>
+                <li><strong>মূত্রনালীর সংক্রমণ:</strong> এটি মূত্রবর্ধক এবং মূত্রথলির প্রদাহ দূর করতে সহায়ক।</li>
+                <li><strong>যৌন স্বাস্থ্য উন্নতি:</strong> পুরুষের বীর্যের গুণমান বাড়াতে এবং প্রজনন ক্ষমতা বৃদ্ধিতে এটি ব্যবহৃত হয়।</li>
+                <li><strong>হাঁপানি ও সর্দি:</strong> এটি ফুসফুসের ক্ষমতা বৃদ্ধি করে শ্বাসকষ্টজনিত সমস্যায় আরাম দেয়।</li>
+            </ul>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" style="text-decoration: none; background: var(--dark); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;">
-                <i class="fas fa-home"></i> তালিকায় ফিরে যান
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <div class="usage-card">
+                <h4>১. বলবর্ধক টনিক হিসেবে:</h4>
+                <p>৩-৫ গ্রাম বলা মূলের চূর্ণ এক গ্লাস গরম দুধ এবং সামান্য চিনির সাথে মিশিয়ে নিয়মিত সেবন করলে পেশী সুগঠিত হয়।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. ব্যথার মালিশ তেল তৈরিতে:</h4>
+                <p>বলা মূলের ক্বাথ এবং তিল তেল সমপরিমাণ মিশিয়ে জ্বাল দিয়ে সিদ্ধ তেল তৈরি করে ব্যথার স্থানে মালিশ করলে বাত সেরে যায়।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৩. শিশুদের পুষ্টির জন্য:</h4>
+                <p>অল্প পরিমাণে বলা মূলের ক্বাথ দুধের সাথে মিশিয়ে শিশুদের খাওয়ালে তাদের হাড় মজবুত হয়।</p>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+            <p>• বলায় উপস্থিত এফ্রিড্রিন উচ্চ রক্তচাপ বা হৃদরোগীদের জন্য সমস্যা সৃষ্টি করতে পারে, তাই চিকিৎসকের পরামর্শ ছাড়া এটি সেবন করবেন না।</p>
+            <p>• গর্ভাবস্থায় এবং স্তন্যদানকালে এর ব্যবহার এড়িয়ে চলাই উত্তম।</p>
+            <p>• অতিরিক্ত সেবনে কোষ্ঠকাঠিন্য বা ক্ষুধামন্দা হতে পারে।</p>
+        </div>
+
+        <div class="btn-back-container">
+            <a href="index.html" class="btn-back-list">
+                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
             </a>
         </div>
     </div>
 </div>
 
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 <footer>
     <h2>ভেষজ চিকিৎসা কোষ</h2>
-    <div class="footer-nav">
-        <a href="index.html">হোম</a>
-        <a href="about.html">সম্পর্কে</a>
-        <a href="contact.html">যোগাযোগ</a>
-        <a href="disclaimer.html">সতর্কবার্তা</a>
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
-    
-    <div class="social-container">
-        <a href="https://www.facebook.com/bonargidawahkana.net" class="s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-        <a href="https://www.youtube.com/c/bonarjidawakhana" class="s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://www.instagram.com/mddulal596" class="s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-    </div>
-    
-    <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
-    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">উপরে যান ↑</button>
+    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
 </body>
