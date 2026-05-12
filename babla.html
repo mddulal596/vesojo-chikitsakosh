@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#827717;
-    --dark:#33691e;
-    --light:#f9fbe7;
-    --accent:#afb42b;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #f1f8e9;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #dcedc8;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -196,78 +224,115 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
         <div class="plant-header">
             <div class="plant-icon-large">🌳</div>
             <h2>১৪. বাবলা (Babla)</h2>
-            <small>Scientific Name: Vachellia nilotica (L.) P.J.H.Hurter & Mabb.</small>
+            <small>Scientific Name: Acacia nilotica (L.) Delile</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: কষায়</div>
-                <div class="spec-item">বীর্য: শীত (Cooling)</div>
+                <div class="spec-item">রস: কষায় (Astringent)</div>
+                <div class="spec-item">বীর্য: শীতল (Cold)</div>
                 <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">গুণ: গুরু, রুক্ষ</div>
+                <div class="spec-item">দোষ: কফ ও পিত্ত নাশক</div>
+                <div class="spec-item">বিশেষত্ব: শক্তিশালী স্তম্ভক ও দন্তরোগ নাশক</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>বাবলা একটি কাটাযুক্ত ওষুধি বৃক্ষ যা শুষ্ক অঞ্চলে প্রচুর জন্মে। আয়ুর্বেদ চিকিৎসা ব্যবস্থায় এর কষায় গুণের কারণে এটি মুখগহ্বর, দাঁত এবং পেটের পীড়ায় অত্যন্ত কার্যকরী হিসেবে স্বীকৃত। এর ডাল দিয়ে দাঁত মাজার প্রচলন গ্রাম বাংলায় এখনও ব্যাপক জনপ্রিয়। এছাড়াও বাবলার আঠা (Gum Arabic) বিভিন্ন পুষ্টিকর খাদ্য ও ওষুধ তৈরিতে ব্যবহৃত হয়।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>বাবলা ভারতীয় উপমহাদেশের একটি অত্যন্ত পরিচিত ওষুধি বৃক্ষ। প্রাচীনকাল থেকেই এর ডাল দাঁত মাজার মেসওয়াক হিসেবে ব্যবহৃত হয়ে আসছে। আয়ুর্বেদে একে 'বব্বল' বলা হয়। এর আঠা (Gum Arabic), ছাল এবং পাতা বিভিন্ন জটিল রোগ নিরাময়ে প্রাচীন মিশরীয় এবং ভারতীয় চিকিৎসকরা ব্যবহার করতেন। এটি মূলত একটি শক্তিশালী প্রাকৃতিক অ্যান্টি-সেপটিক এবং সংকোচনকারী (Astringent) ভেষজ।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> বব্বর, বাবল, কিক্কর</div>
+                <div><strong>সংস্কৃত:</strong> বব্বল, আভা, কণ্টকালু</div>
                 <div><strong>ইংরেজি:</strong> Gum Arabic Tree / Babul</div>
-                <div><strong>হিন্দি:</strong> বাবুল (Babul)</div>
+                <div><strong>হিন্দি:</strong> বাবুল (Babul), কিকার</div>
+                <div><strong>আরবি:</strong> উম্মে গিলাান</div>
+                <div><strong>ফার্সি:</strong> মুগিলান</div>
                 <div><strong>তামিল:</strong> কারুভেলাম</div>
-                <div><strong>তেলেগু:</strong> নাল্লা তুম্মা</div>
-                <div><strong>আরবি:</strong> উম্মে ঘিলান</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>বাবলা Fabaceae পরিবারের একটি মাঝারি আকারের চিরহরিৎ বৃক্ষ। এর ডালপালায় জোড়ায় জোড়ায় লম্বা সাদা কাঁটা থাকে। এর পাতাগুলো খুব ছোট এবং দ্বিপক্ষল। ছোট ছোট গোল গোল উজ্জ্বল হলুদ রঙের ফুল ফোটে যা থেকে লম্বা চ্যাপ্টা ফল (শুঁটি) হয়। ওষুধি কাজে মূলত এর ছাল, পাতা, আঠা এবং কচি ডাল ব্যবহৃত হয়।</p>
+            <p>বাবলা একটি মাঝারি আকারের কাঁটাযুক্ত পর্ণমোচী গাছ। এর পাতাগুলো খুব ছোট এবং যৌগিক। গাছের ডালে লম্বা লম্বা সাদাটে কাঁটা থাকে। ফুলগুলো উজ্জ্বল হলুদ রঙের এবং গোলাকার থোকার মতো হয়। ফলগুলো চ্যাপ্টা ও লম্বাকৃতি শুঁটির মতো, যা পাকলে ধূসর বর্ণের হয়। গাছের বাকল খসখসে এবং কালচে রঙের।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>ট্যানিন (Tannins):</strong> বাবলার ছালে প্রচুর ট্যানিন থাকে যা রক্তপাত বন্ধ করতে এবং প্রদাহ কমাতে কাজ করে।</li>
-                <li><strong>গ্যালিক অ্যাসিড:</strong> এটি একটি শক্তিশালী অ্যান্টি-ব্যাকটেরিয়াল উপাদান যা মুখের জীবাণু ধ্বংস করে।</li>
-                <li><strong>মিউসিলেজ:</strong> যা বাবলার আঠায় থাকে এবং পরিপাকতন্ত্রের আস্তরণকে রক্ষা করে।</li>
+                <li><strong>ট্যানিন:</strong> বাকলে প্রচুর পরিমাণে ট্যানিন থাকে যা ক্ষত সারাতে ও রক্তপাত বন্ধ করতে মুখ্য ভূমিকা রাখে।</li>
+                <li><strong>গ্যালিক অ্যাসিড:</strong> এটি একটি শক্তিশালী অ্যান্টি-অক্সিডেন্ট যা প্রদাহ কমায়।</li>
+                <li><strong>মিউসিলেজ:</strong> বাবলার আঠায় থাকে যা পরিপাকতন্ত্রের জ্বালাপোড়া কমায়।</li>
+                <li><strong>ক্যাটচিন:</strong> যা দাঁতের মাড়ি ও এনামেল রক্ষা করতে সাহায্য করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>দাঁত ও মাড়ির সুরক্ষা:</strong> বাবলার ডাল দিয়ে মেসওয়াক করলে দাঁতের গোড়া শক্ত হয় এবং মাড়ির রক্ত পড়া বন্ধ হয়।</li>
-                <li><strong>ডায়রিয়া ও আমাশয়:</strong> বাবলার ছালের ক্বাথ পান করলে অন্ত্রের সংক্রমণ কমে এবং দ্রুত ডায়রিয়া নিয়ন্ত্রণ হয়।</li>
-                <li><strong>ডায়াবেটিস নিয়ন্ত্রণ:</strong> বাবলার পাতার নির্যাস রক্তে শর্করার মাত্রা নিয়ন্ত্রণে রাখতে সাহায্য করে।</li>
-                <li><strong>ত্বকের যত্ন:</strong> বাবলার পাতা বাটা ক্ষত স্থানে লাগালে দ্রুত শুকায় এবং চর্মরোগের চুলকানি কমায়।</li>
-                <li><strong>শারীরিক দুর্বলতা:</strong> বাবলার আঠা ঘি ও চিনির সাথে মিশিয়ে লাড্ডু বানিয়ে খেলে শরীরের শক্তি বৃদ্ধি পায়।</li>
+                <li><strong>মুখের স্বাস্থ্য:</strong> বাবলার ছাল সিদ্ধ পানি দিয়ে কুলকুচি করলে দাঁতের মাড়ি মজবুত হয়, মুখের দুর্গন্ধ দূর হয় এবং মুখের ঘা সারে।</li>
+                <li><strong>ডায়রিয়া ও আমাশয়:</strong> এর কষায় গুণ পাতলা পায়খানা এবং রক্ত আমাশয় বন্ধ করতে দ্রুত কাজ করে।</li>
+                <li><strong>ডায়াবেটিস নিয়ন্ত্রণ:</strong> বাবলার পাতা ও ফলের চূর্ণ রক্তে শর্করার মাত্রা নিয়ন্ত্রণে রাখতে সাহায্য করে।</li>
+                <li><strong>ক্ষত নিরাময়:</strong> এর বাকলের চূর্ণ ক্ষতস্থানে ছিটিয়ে দিলে রক্তপাত বন্ধ হয় এবং সংক্রমণ রোধ হয়।</li>
+                <li><strong>প্রদর রোগ:</strong> নারীদের শ্বেতপ্রদর বা লিউকোরিয়া চিকিৎসায় বাবলার ছালের ক্বাথ অত্যন্ত কার্যকর।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. মুখের ঘা ও মাড়ির সমস্যায়:</h4>
-                <p>বাবলার ছাল পানিতে ফুটিয়ে সেই পানি দিয়ে কুলকুচি (Gargle) করলে মুখের ঘা এবং গলার ব্যথা দ্রুত সেরে যায়।</p>
+                <h4>১. নড়বড়ে দাঁত মজবুত করতে:</h4>
+                <p>বাবলার বাকল, লবঙ্গ এবং সামান্য লবণ একসাথে ফুটিয়ে সেই পানি দিয়ে প্রতিদিন সকালে ও রাতে কুলকুচি করুন।</p>
             </div>
             <div class="usage-card">
-                <h4>২. রক্ত আমাশয়ে:</h4>
-                <p>বাবলার কচি পাতার রস এবং সামান্য মধু মিশিয়ে সেবন করলে আমাশয়ের প্রকোপ কমে।</p>
+                <h4>২. পুরাতন ডায়রিয়া বা আমাশয়ে:</h4>
+                <p>বাবলার কচি পাতা বেটে পানির সাথে মিশিয়ে দিনে ২ বার পান করুন। এটি পেটের মোচড়ানি কমিয়ে মল স্বাভাবিক করে।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. দীর্ঘস্থায়ী কাশিতে:</h4>
-                <p>বাবলার আঠা চুষে খেলে বুকের কফ পরিষ্কার হয় এবং কাশির তীব্রতা কমে।</p>
+                <h4>৩. শরীরের পোড়া বা ঘায়ের চিকিৎসায়:</h4>
+                <p>বাবলার আঠা পানিতে গুলে পোড়া জায়গায় লাগালে জ্বালাপোড়া কমে এবং দাগ দ্রুত মিলিয়ে যায়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• বাবলার কষায় গুণ অত্যন্ত তীব্র, তাই এটি কোষ্ঠকাঠিন্যের সমস্যা থাকলে অধিক মাত্রায় সেবন করবেন না।</p>
-            <p>• দীর্ঘকাল ধরে বাবলার ছাল অভ্যন্তরীণভাবে সেবনের আগে অভিজ্ঞ চিকিৎসকের পরামর্শ নিন।</p>
-            <p>• গর্ভাবস্থায় বা শিশুদের ক্ষেত্রে এর ব্যবহারের মাত্রা অত্যন্ত সীমিত রাখা প্রয়োজন।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> সেবন বিধি ও মাত্রা</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>ব্যবহারের পদ্ধতি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>বাকলের ক্বাথ</td>
+                            <td>৩০ - ৫০ মিলি</td>
+                            <td>খাবারের পর (দিনে ২ বার)</td>
+                        </tr>
+                        <tr>
+                            <td>পাতা/ফল চূর্ণ</td>
+                            <td>৩ - ৬ গ্রাম</td>
+                            <td>পানির সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>বাবলার আঠা চূর্ণ</td>
+                            <td>১ - ৩ গ্রাম</td>
+                            <td>দুধ বা মধুর সাথে</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• অতিরিক্ত মাত্রায় বাবলার বাকল সেবন করলে কোষ্ঠকাঠিন্য হতে পারে।</p>
+                <p>• যারা দীর্ঘস্থায়ী কোষ্ঠকাঠিন্যে ভুগছেন, তারা এটি সেবন থেকে বিরত থাকুন।</p>
+                <p>• কিডনি বা লিভারের জটিল সমস্যা থাকলে চিকিৎসকের পরামর্শ ছাড়া দীর্ঘকাল ব্যবহার করবেন না।</p>
+                <p>• গর্ভবতী মহিলাদের ক্ষেত্রে বাবলা সেবনের আগে বিশেষজ্ঞের মতামত নেওয়া জরুরি।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
