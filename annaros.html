@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#fbc02d;
-    --dark:#f57f17;
-    --light:#fffde7;
-    --accent:#fdd835;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #fffef2;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #fff59d;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -199,76 +227,113 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
             <small>Scientific Name: Ananas comosus (L.) Merr.</small>
             <div class="ayurvedic-specs">
                 <div class="spec-item">রস: অম্ল, মধুর</div>
-                <div class="spec-item">বীর্য: শীত (Cooling)</div>
+                <div class="spec-item">বীর্য: শীতল</div>
                 <div class="spec-item">বিপাক: মধুর</div>
-                <div class="spec-item">দোষ: বাত্ত-পিত্ত নাশক</div>
+                <div class="spec-item">দোষ: বাত নাশক, পিত্ত বর্ধক (অতিরিক্ত খেলে)</div>
+                <div class="spec-item">বিশেষত্ব: পাচক এনজাইম সমৃদ্ধ</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও ওষুধি গুরুত্ব</h3>
-            <p>আনারস একটি সুস্বাদু ও পুষ্টিকর গ্রীষ্মমন্ডলীয় ফল। তবে এটি কেবল খাদ্য হিসেবেই নয়, ওষুধি গুণের জন্যও অত্যন্ত পরিচিত। আয়ুর্বেদ ও ইউনানী চিকিৎসায় হজম প্রক্রিয়ার উন্নতি এবং কৃমিনাশক হিসেবে আনারসের ব্যবহার অনেক প্রাচীন। এতে থাকা 'ব্রোমেলিন' নামক এনজাইম শরীরের প্রদাহ কমাতে এবং প্রোটিন হজমে গুরুত্বপূর্ণ ভূমিকা রাখে।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>আনারস মূলত দক্ষিণ আমেরিকার উদ্ভিদ হলেও বর্তমানে এটি বাংলাদেশের অন্যতম প্রধান অর্থকরী ফল। আয়ুর্বেদ শাস্ত্রে একে 'বহুনেত্র' বলা হয়। এটি কেবল সুস্বাদু ফলই নয়, বরং এর ওষুধি গুণাবলির জন্য এটি প্রাচীন চিকিৎসা পদ্ধতিতে ব্যবহৃত হয়ে আসছে। বিশেষ করে হজমের সমস্যা এবং কৃমিনাশক হিসেবে আনারসের পাতা ও কাঁচা ফলের ব্যবহার বহু পুরনো।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> বহুনেত্রফল, অনানাসম্</div>
+                <div><strong>সংস্কৃত:</strong> অনানাসম, বহুনেত্রফল</div>
                 <div><strong>ইংরেজি:</strong> Pineapple</div>
-                <div><strong>আরবি:</strong> অনানাস (Ananas)</div>
                 <div><strong>হিন্দি:</strong> অনানাস (Ananas)</div>
-                <div><strong>স্প্যানিশ:</strong> পিনিয়া (Piña)</div>
-                <div><strong>পর্তুগিজ:</strong> আবাকাসি</div>
+                <div><strong>আরবি:</strong> আইনানাস</div>
+                <div><strong>ফার্সি:</strong> আইনানাস</div>
+                <div><strong>তামিল:</strong> অন্নাসিপ্পালাম</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>আনারস Bromeliaceae পরিবারের অন্তর্ভুক্ত একটি কন্টকাকীর্ণ ভেষজ উদ্ভিদ। এর পাতাগুলো লম্বা, তরবারির মতো এবং দুই পাশে ধারালো কাঁটা থাকে। ফলের গায়ের নকশা অনেকটা চোখের মতো হওয়ার কারণে সংস্কৃতে একে 'বহুনেত্রফল' বলা হয়। এটি একটি গুচ্ছফল যা মূলত গাছটির মাঝখানের পুষ্পদণ্ড থেকে উৎপন্ন হয়।</p>
+            <p>আনারস একটি বহুবর্ষজীবী গুল্ম জাতীয় উদ্ভিদ। এর পাতাগুলো লম্বা, শক্ত এবং করাতের মতো কাঁটাযুক্ত হয়। গাছের মাঝখান থেকে একটি শক্ত ডাঁটার উপরে ফল ধরে। ফলের উপরে পাতার একটি ঝুঁপটি থাকে যাকে 'ক্রাউন' বলা হয়। ফলের গা খাঁজকাটা এবং অনেকগুলো চোখের মতো অংশ থাকে। পাকার পর ফলটি হলুদ বা কমলা রঙ ধারণ করে এবং অত্যন্ত সুগন্ধ ছড়ায়।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>ব্রোমেলিন (Bromelain):</strong> এটি একটি শক্তিশালী এনজাইম যা প্রোটিন হজম করতে এবং অপারেশন পরবর্তী ফোলা বা ক্ষত শুকাতে সাহায্য করে।</li>
-                <li><strong>ভিটামিন সি:</strong> প্রচুর পরিমাণে থাকে যা রোগ প্রতিরোধ ক্ষমতা বাড়ায়।</li>
-                <li><strong>ম্যাঙ্গানিজ:</strong> হাড়ের গঠন মজবুত করতে এবং টিস্যুর সুস্থতায় কাজ করে।</li>
-                <li><strong>ফাইবার:</strong> কোষ্ঠকাঠিন্য দূর করতে এবং অন্ত্রের স্বাস্থ্য রক্ষায় সহায়ক।</li>
+                <li><strong>ব্রোমেলিন (Bromelain):</strong> এটি আনারসের সবচেয়ে গুরুত্বপূর্ণ এনজাইম যা প্রোটিন পরিপাকে সাহায্য করে এবং প্রদাহ কমায়।</li>
+                <li><strong>ভিটামিন সি:</strong> প্রচুর পরিমাণে অ্যান্টি-অক্সিডেন্ট যা রোগ প্রতিরোধ ক্ষমতা বাড়ায়।</li>
+                <li><strong>ম্যাঙ্গানিজ:</strong> হাড়ের গঠন এবং কোষের পুনর্গঠনে অত্যন্ত প্রয়োজনীয় খনিজ।</li>
+                <li><strong>খাদ্য আঁশ (Fiber):</strong> যা পরিপাকতন্ত্রকে সচল রাখতে সাহায্য করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>হজম শক্তি বৃদ্ধি:</strong> ভারী খাবার বা মাংস খাওয়ার পর আনারস খেলে দ্রুত হজম হয়।</li>
-                <li><strong>প্রদাহ বিরোধী গুণ:</strong> এটি বাতের ব্যথা (Arthritis) এবং মাংসপেশির প্রদাহ কমাতে সাহায্য করে।</li>
-                <li><strong>কৃমিনাশক:</strong> খালি পেটে আনারসের রস খেলে অন্ত্রের ক্ষতিকর কৃমি মারা যায়।</li>
-                <li><strong>ত্বকের উজ্জ্বলতা:</strong> এর অ্যান্টি-অক্সিডেন্ট ত্বকের তারুণ্য ধরে রাখে এবং ব্রণ কমাতে সাহায্য করে।</li>
-                <li><strong>জ্বর ও সর্দি-কাশি:</strong> আনারসের রস কফ পরিষ্কার করতে এবং জ্বর কমাতে ব্যবহার করা হয়।</li>
+                <li><strong>হজম শক্তি বৃদ্ধি:</strong> ভারী খাবার বা মাংস খাওয়ার পর আনারস খেলে হজম দ্রুত হয়।</li>
+                <li><strong>কৃমিনাশক:</strong> কাঁচা আনারসের রস কৃমি দূর করতে অত্যন্ত কার্যকরী ভূমিকা পালন করে।</li>
+                <li><strong>প্রদাহ নাশক:</strong> বাতের ব্যথা বা শরীরের যেকোনো ফোলা ভাব কমাতে আনারসের ব্রোমেলিন কাজ করে।</li>
+                <li><strong>জ্বর ও সর্দি:</strong> জ্বর হলে আনারসের রস খেলে শরীরের তাপমাত্রা কমে এবং তৃষ্ণা মেটে।</li>
+                <li><strong>ওজন নিয়ন্ত্রণ:</strong> এতে ক্যালোরি কম এবং ফাইবার বেশি থাকায় এটি ওজন কমাতে সহায়ক।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. কৃমি নিরাময়ে:</h4>
-                <p>পাকা আনারসের রস সামান্য লবণ ও গোলমরিচের গুঁড়ো মিশিয়ে সকালে খালি পেটে ৩-৫ দিন খেলে পেটের কৃমি দূর হয়।</p>
+                <h4>১. কৃমির সমস্যায়:</h4>
+                <p>অল্প কাঁচা আনারসের রস সকালে খালি পেটে ৩-৫ দিন খেলে পেটের কৃমি মারা যায়। (সতর্কতার সাথে ব্যবহার্য)।</p>
             </div>
             <div class="usage-card">
-                <h4>২. গলা ব্যথা ও কাশিতে:</h4>
-                <p>আনারসের রসের সাথে এক চামচ মধু মিশিয়ে খেলে গলার খুসখুসে কাশি এবং টনসিলের ফোলা কমে।</p>
+                <h4>২. হজম ও অরুচিতে:</h4>
+                <p>পাকা আনারস টুকরো করে তাতে সামান্য বিট লবণ ও গোলমরিচ গুঁড়ো মিশিয়ে খেলে রুচি বাড়ে এবং কোষ্ঠকাঠিন্য দূর হয়।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. জন্ডিস ও প্রস্রাবের জ্বালাপোড়ায়:</h4>
-                <p>প্রতিদিন এক গ্লাস তাজা আনারসের রস খেলে লিভারের কর্মক্ষমতা বাড়ে এবং প্রস্রাব পরিষ্কার হয়।</p>
+                <h4>৩. গলা ব্যথায়:</h4>
+                <p>আনারসের রস সামান্য গরম করে তাতে মধু মিশিয়ে খেলে গলার খুশখুশে ভাব এবং কাশি কমে।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• গর্ভাবস্থায় আনারস (বিশেষ করে কাঁচা আনারস) সেবন করা থেকে বিরত থাকা উচিত, কারণ এটি জরায়ুর সংকোচন ঘটাতে পারে।</p>
-            <p>• যাদের পেটে আলসার বা গ্যাস্ট্রিকের সমস্যা বেশি, তারা খালি পেটে আনারস খাবেন না।</p>
-            <p>• দুধ এবং আনারস একসাথে খাওয়া স্বাস্থ্যের জন্য ক্ষতিকর হতে পারে, তাই দুই খাবারের মাঝে অন্তত ২-৩ ঘণ্টা বিরতি রাখা ভালো।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি (ডোজ)</h3>
+            <p style="margin-bottom: 20px;">আনারস বা এর রস সেবনের সাধারণ মাত্রা নিচে দেওয়া হলো:</p>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>ফলের পরিমাণ</th>
+                            <th>তাজা রস (মাত্রা)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>৫ - ১২ বছর</td>
+                            <td>২-৩ টুকরো</td>
+                            <td>৩০ - ৫০ মিলি</td>
+                        </tr>
+                        <tr>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>১ কাপ টুকরো</td>
+                            <td>১০০ - ১৫০ মিলি</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ (৬৫+)</td>
+                            <td>৩-৪ টুকরো</td>
+                            <td>৫০ - ৮০ মিলি</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• **গর্ভাবস্থায়:** কাঁচা বা আধাপাকা আনারস এবং আনারসের পাতা গর্ভাবস্থায় একেবারে নিষিদ্ধ, কারণ এটি গর্ভপাতের ঝুঁকি বাড়াতে পারে।</p>
+                <p>• খালি পেটে খুব বেশি টক আনারস খেলে পেটে ব্যথা বা গ্যাস্ট্রিকের সমস্যা হতে পারে।</p>
+                <p>• যাদের কিডনিতে পাথর আছে, তাদের আনারস কম খাওয়া উচিত কারণ এতে ক্যালসিয়াম অক্সালেট থাকে।</p>
+                <p>• আনারস খাওয়ার পর দুধ খাওয়া এড়িয়ে চলুন, কারণ এটি অনেক সময় বদহজম বা বিষক্রিয়া তৈরি করতে পারে।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
