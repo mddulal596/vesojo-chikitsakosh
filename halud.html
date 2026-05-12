@@ -3,148 +3,197 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>হলুদ (Turmeric) - বিস্তারিত তথ্য | ভেষজ চিকিৎসা কোষ</title>
+<title>হলুদ (Halud) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
-    --primary:#2d5a27;
-    --dark:#1e3d1a;
-    --light:#f4faf4;
+    --primary:#fff176; /* হলুদের উজ্জ্বল হলুদ আভা */
+    --dark:#5d4037;
+    --light:#fffde7;
+    --accent:#fbc02d;
+    --nav-blue: #1976d2; 
+    --blue-btn: #1976d2; 
+    --blue-hover: #115293; 
     --white:#fff;
+    --footer-grey-light: #999999;
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body{
-    font-family:'Segoe UI',sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background:var(--light);
     color:#333;
-    line-height:1.6;
+    line-height:1.8;
 }
 
 /* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
-    background:var(--dark); display:flex;
+    background:var(--nav-blue); display:flex;
     justify-content:space-between; align-items:center;
     padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
 }
-.logo{ color:#fff; text-decoration:none; font-size:24px; font-weight:bold; }
-.nav-links{ display:flex; align-items:center; list-style:none; }
-.nav-links a{ color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
-.nav-links a:hover{ background:var(--primary); }
+.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+.nav-links { display:flex; align-items:center; list-style:none; }
+.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover { background:var(--blue-hover); }
 
-.nav-social{ display:flex; gap:10px; }
-.nav-social a{ color:white; font-size:16px; width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
-.nav-social a:hover{ background:rgba(255,255,255,.15); }
+.nav-social { display:flex; gap:10px; align-items:center; }
+.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover { background:rgba(255,255,255,0.2); }
 
 /* ================= HEADER ================= */
 header{
-    background:linear-gradient(135deg,var(--primary),var(--dark));
-    color:#fff; text-align:center; padding:60px 20px;
+    background:linear-gradient(135deg,var(--accent),var(--dark));
+    color:#fff; text-align:center; padding:100px 20px;
 }
 
 /* ================= CONTENT CONTAINER ================= */
 .container {
     max-width: 1000px;
-    margin: -30px auto 50px;
-    padding: 20px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
 }
 
 .plant-detail-card {
     background: white;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
 .plant-header {
     text-align: center;
     border-bottom: 2px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
-.plant-icon-large { font-size: 4rem; margin-bottom: 10px; }
-.plant-detail-card h2 { color: var(--primary); font-size: 2rem; }
-.plant-detail-card small { color: #777; font-size: 1.1rem; font-style: italic; }
+.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
+.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
 
-.info-section { margin-bottom: 30px; }
+.ayurvedic-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+.spec-item {
+    background: var(--blue-btn);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
+}
+
+.info-section { margin-bottom: 60px; }
 .info-section h3 {
     color: var(--dark);
-    border-left: 5px solid var(--primary);
-    padding-left: 15px;
-    margin-bottom: 15px;
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    background: #fff9c4;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #fff59d;
 }
 
 .benefit-list { list-style: none; }
 .benefit-list li {
-    margin-bottom: 10px;
-    padding-left: 30px;
+    margin-bottom: 22px;
+    padding-left: 50px;
     position: relative;
+    font-size: 1.1rem;
 }
 .benefit-list li::before {
-    content: "\f00c";
+    content: "\f058";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute; left: 0;
-    color: var(--primary);
+    color: var(--accent);
+    font-size: 1.4rem;
 }
 
-/* ================= FOOTER ================= */
-footer {
-    background: #1e3d1a;
-    color: #ffffff;
-    text-align: center;
-    padding: 50px 20px 30px;
-    margin-top: 50px;
-}
-
-footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
-
-.footer-nav { margin-bottom: 25px; }
-.footer-nav a { color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px; }
-
-.social-container {
-    display: flex; justify-content: center;
-    gap: 12px; flex-wrap: wrap; margin-bottom: 30px;
-}
-
-.s-btn {
-    display: flex; align-items: center; gap: 8px;
-    padding: 10px 20px; border-radius: 50px;
-    color: white; text-decoration: none; font-size: 14px;
+.usage-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
     transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
 
-.s-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
-
-.fb { background: #1877F2; }
-.yt { background: #FF0000; }
-.ig { background: #E4405F; }
-.ln { background: #0077B5; }
-
-.copyright {
-    font-size: 13px; color: #b0b0b0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px; margin-bottom: 20px;
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
 }
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:hover { background: #fffde7; }
+
+.warning-box {
+    background: #fff3e0;
+    border-radius: 15px;
+    padding: 35px;
+    border-left: 8px solid #ff9800;
+    margin-top: 30px;
+}
+
+.btn-back-container { text-align: center; margin-top: 40px; }
+.btn-back-list {
+    text-decoration: none; background: var(--blue-btn); color: white; 
+    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+.btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    background: #2d5a27; color: white; border: none;
-    padding: 8px 20px; border-radius: 20px; cursor: pointer;
-    font-size: 14px; transition: 0.3s;
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
+    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-.back-to-top:hover { background: #3d7a35; }
+footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
+.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
+.footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-/* MOBILE OPTIMIZATION */
-@media(max-width:768px){
-    nav{ flex-direction: column; height:auto; padding:15px; gap: 10px; }
-    .plant-detail-card { padding: 20px; }
-    .plant-detail-card h2 { font-size: 1.5rem; }
-}
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -159,68 +208,152 @@ footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
     <div class="nav-social">
         <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
 </nav>
 
 <header>
-    <h1>ভেষজ উদ্ভিদের বিস্তারিত তথ্য</h1>
+    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
 </header>
 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🟡</div>
-            <h2>৯. হলুদ (Turmeric)</h2>
+            <div class="plant-icon-large">🫚</div>
+            <h2>৪৯. হলুদ (Halud / Turmeric)</h2>
             <small>Scientific Name: Curcuma longa</small>
+            <div class="ayurvedic-specs">
+                <div class="spec-item">রস: তিক্ত, কটু</div>
+                <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
+                <div class="spec-item">বিপাক: কটু</div>
+                <div class="spec-item">গুণ: রুক্ষ, লঘু</div>
+            </div>
         </div>
 
         <div class="info-section">
-            <h3>পরিচিতি</h3>
-            <p>হলুদ কেবল রান্নার মশলা নয়, এটি একটি শক্তিশালী ভেষজ ঔষধ। এর মধ্যে থাকা 'কারকিউমিন' নামক উপাদান শরীরকে সুস্থ রাখতে জাদুকরী ভূমিকা পালন করে। আয়ুর্বেদ ও প্রাকৃতিক চিকিৎসায় হলুদকে প্রদাহরোধী এবং রোগ প্রতিরোধ ক্ষমতা বৃদ্ধিকারী হিসেবে উচ্চ মর্যাদা দেওয়া হয়।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>হলুদ কেবল একটি মশলা নয়, বরং ভারতীয় সংস্কৃতির অবিচ্ছেদ্য অংশ। আয়ুর্বেদে একে 'হরিদ্রা' বলা হয়। আজ থেকে প্রায় ৪০০০ বছর আগে বৈদিক যুগেও হলুদের ওষধি ব্যবহারের উল্লেখ পাওয়া যায়। হিন্দু ধর্মে হলুদকে পবিত্রতার প্রতীক মনে করা হয় এবং বিয়ে বা বিভিন্ন মাঙ্গলিক কাজে এর ব্যবহার বাধ্যতামূলক। আধুনিক বিজ্ঞান হলুদের সক্রিয় উপাদান 'কারকিউমিন' নিয়ে কয়েক হাজার গবেষণা সম্পন্ন করেছে যা এর কার্যকারিতা প্রমাণ করে।</p>
         </div>
 
         <div class="info-section">
-            <h3>প্রধান উপকারিতা</h3>
+            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+            <div class="lang-grid">
+                <div><strong>সংস্কৃত:</strong> হরিদ্রা, কাঞ্চনী</div>
+                <div><strong>ইংরেজি:</strong> Turmeric</div>
+                <div><strong>হিন্দি:</strong> হলদি (Haldi)</div>
+                <div><strong>বাংলা:</strong> হলুদ / হলদি</div>
+                <div><strong>আরবি:</strong> কুরকুম (Kurkum)</div>
+                <div><strong>ফারসি:</strong> জর্দচুবে (Zardchubeh)</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>হলুদ একটি বহুবর্ষজীবী কন্দজাতীয় উদ্ভিদ। এর ভূ-গর্ভস্থ রাইজোম বা কন্দই মূলত হলুদ হিসেবে ব্যবহৃত হয়। এর পাতাগুলো লম্বা, প্রশস্ত এবং উজ্জ্বল সবুজ। গাছটি সাধারণত ২-৩ ফুট লম্বা হয়। ভারত, বাংলাদেশ ও দক্ষিণ-পূর্ব এশিয়ার জলবায়ু হলুদ চাষের জন্য সবচেয়ে উপযুক্ত। এর উজ্জ্বল হলুদ রঙের কারণ হলো এতে থাকা কারকিউমিনয়েডস।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li>শরীরের অভ্যন্তরীণ প্রদাহ (Inflammation) এবং জয়েন্টের ব্যথা কমাতে অত্যন্ত কার্যকর।</li>
-                <li>রক্ত পরিষ্কার রাখে এবং ত্বকের উজ্জ্বলতা বৃদ্ধিতে সাহায্য করে।</li>
-                <li>লিভার সুস্থ রাখতে এবং হজম প্রক্রিয়া উন্নত করতে সহায়তা করে।</li>
-                <li>ক্যানসার প্রতিরোধক এবং হার্ট সুস্থ রাখার গুণাগুণ হলুদে বিদ্যমান।</li>
+                <li><strong>কারকিউমিন (Curcumin):</strong> হলুদের প্রধান সক্রিয় উপাদান যা প্রদাহ নাশক।</li>
+                <li><strong>উদ্বায়ী তেল (Volatile Oils):</strong> হজম ও শ্বাসকষ্টে সহায়তা করে।</li>
+                <li><strong>ভিটামিন ও খনিজ:</strong> এতে প্রচুর ভিটামিন সি, বি-৬ এবং পটাশিয়াম ও আয়রন রয়েছে।</li>
+                <li><strong>অ্যান্টি-অক্সিডেন্ট:</strong> যা শরীরের রোগ প্রতিরোধ ক্ষমতা বহুগুণ বাড়িয়ে দেয়।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3>ব্যবহার বিধি</h3>
-            <p>প্রতিদিন রাতে এক গ্লাস কুসুম গরম দুধের সাথে সামান্য হলুদের গুঁড়ো মিশিয়ে পান করলে ভালো ফল পাওয়া যায়। এছাড়া কাটা-ছেঁড়া বা ক্ষতে কাঁচা হলুদের রস সরাসরি অ্যান্টিসেপটিক হিসেবে লাগানো যেতে পারে। সর্দি-কাশির জন্য আদা ও হলুদের চা পান করাও বেশ উপকারী।</p>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
+            <ul class="benefit-list">
+                <li><strong>প্রদাহ নাশক:</strong> বাতের ব্যথা বা যেকোনো দীর্ঘস্থায়ী প্রদাহ কমাতে হলুদ জাদুর মতো কাজ করে।</li>
+                <li><strong>ত্বকের উজ্জ্বলতা:</strong> ত্বকের কালচে দাগ দূর করতে এবং উজ্জ্বলতা বাড়াতে কাঁচা হলুদের প্রলেপ অপ্রতিদ্বন্দ্বী।</li>
+                <li><strong>ক্ষত নিরাময়:</strong> এর অ্যান্টিসেপটিক গুণ কাটা-ছেঁড়া দ্রুত শুকাতে এবং ইনফেকশন রোধ করতে সাহায্য করে।</li>
+                <li><strong>ক্যান্সার প্রতিরোধ:</strong> গবেষণায় দেখা গেছে কারকিউমিন ক্যান্সারের কোষ বৃদ্ধিতে বাধা দেয়।</li>
+                <li><strong>লিভার ডিটক্স:</strong> নিয়মিত হলুদ সেবন যকৃৎ থেকে টক্সিন বের করে দেয় এবং কোলেস্টেরল কমায়।</li>
+            </ul>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" style="text-decoration: none; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;">
-                <i class="fas fa-home"></i> তালিকায় ফিরে যান
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
+            <div class="usage-card">
+                <h4>১. গোল্ডেন মিল্ক (ঠান্ডা ও সর্দিতে):</h4>
+                <p>এক গ্লাস গরম দুধে আধা চা চামচ হলুদের গুঁড়ো এবং সামান্য গোলমরিচ মিশিয়ে পান করলে কাশি ও ঠান্ডা দ্রুত কমে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. রক্ত পরিষ্কার করতে:</h4>
+                <p>প্রতিদিন সকালে এক টুকরো কাঁচা হলুদ ও সামান্য গুড় খালি পেটে খেলে রক্ত পরিষ্কার হয় এবং চর্মরোগ দূর হয়।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৩. হাড়ের ব্যথায়:</h4>
+                <p>হলুদ বাটা ও চুন মিশিয়ে হালকা গরম করে ব্যথার স্থানে প্রলেপ দিলে মোচকা বা হাড়ের ব্যথা উপশম হয়।</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>সেবনের মাত্রা (চূর্ণ/রস)</th>
+                            <th>সময়কাল ও নিয়ম</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>৫ - ১২ বছর</td>
+                            <td>১ - ২ গ্রাম চূর্ণ</td>
+                            <td>দুধের সাথে রাতে শোবার আগে</td>
+                        </tr>
+                        <tr>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>৩ - ৫ গ্রাম চূর্ণ</td>
+                            <td>খালি পেটে বা গরম পানির সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ</td>
+                            <td>২ - ৩ গ্রাম চূর্ণ</td>
+                            <td>বাতের ব্যথায় দিনে ২ বার আহারের পর</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #ef6c00; margin-bottom: 15px;"><i class="fas fa-exclamation-triangle"></i> বিশেষ সতর্কতা</h4>
+                <p>• যাদের পিত্তথলিতে পাথর (Gallbladder stone) আছে, তাদের অতিরিক্ত হলুদ সেবন এড়িয়ে চলা উচিত।</p>
+                <p>• অতিরিক্ত সেবনে পাকস্থলীতে জ্বালাপোড়া বা গ্যাস্ট্রিকের সমস্যা হতে পারে।</p>
+                <p>• রক্ত পাতলা করার ওষুধ (Blood thinners) খেলে ডাক্তারের পরামর্শ ছাড়া হলুদ সেবন করবেন না।</p>
+                <p>• সার্জারির দুই সপ্তাহ আগে অধিক মাত্রায় হলুদ সেবন বন্ধ রাখা জরুরি।</p>
+            </div>
+        </div>
+
+        <div class="btn-back-container">
+            <a href="index.html" class="btn-back-list">
+                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
             </a>
         </div>
     </div>
 </div>
 
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 <footer>
     <h2>ভেষজ চিকিৎসা কোষ</h2>
-    <div class="footer-nav">
-        <a href="index.html">হোম</a>
-        <a href="about.html">সম্পর্কে</a>
-        <a href="contact.html">যোগাযোগ</a>
-        <a href="disclaimer.html">সতর্কবার্তা</a>
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
-    
-    <div class="social-container">
-        <a href="https://www.facebook.com/bonargidawahkana.net" class="s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-        <a href="https://www.youtube.com/c/bonarjidawakhana" class="s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://www.instagram.com/mddulal596" class="s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-    </div>
-    
-    <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
-    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">উপরে যান ↑</button>
+    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
 </body>
