@@ -1,51 +1,296 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>বচ - ভেষজ চিকিৎসা কোষ</title>
-    <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.8; margin: 0; background: #f4f7f6; color: #333; }
-        nav { background: #1e3d1a; display: flex; justify-content: space-between; align-items: center; padding: 0 5%; height: 60px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        nav a { color: white; text-decoration: none; font-size: 14px; margin-left: 15px; }
-        .logo { font-weight: bold; font-size: 18px !important; margin-left: 0 !important; }
-        .container { padding: 20px; }
-        .card { background: #fff; max-width: 800px; margin: 30px auto; padding: 40px; border-radius: 15px; border-top: 10px solid #27ae60; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h1 { color: #27ae60; text-align: center; margin-top: 0; }
-        h2 { color: #e67e22; border-left: 5px solid #e67e22; padding-left: 10px; margin-top: 25px; }
-        footer { background: #1e3d1a; color: white; padding: 40px 20px; text-align: center; margin-top: 50px; }
-        footer a { color: white; text-decoration: none; margin: 0 10px; font-size: 14px; }
-        .social-btn { font-size: 18px; display: inline-block; margin: 15px 10px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>বচ (Boch) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#795548;
+    --dark:#4e342e;
+    --light:#efebe9;
+    --accent:#a1887f;
+    --nav-blue: #1976d2; 
+    --blue-btn: #1976d2; 
+    --blue-hover: #115293; 
+    --white:#fff;
+    --footer-grey-light: #999999;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:var(--light);
+    color:#333;
+    line-height:1.8;
+}
+
+/* ================= NAVBAR (BLUE) ================= */
+nav{
+    position:sticky; top:0; z-index:999;
+    background:var(--nav-blue); display:flex;
+    justify-content:space-between; align-items:center;
+    padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+.nav-links { display:flex; align-items:center; list-style:none; }
+.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover { background:var(--blue-hover); }
+
+.nav-social { display:flex; gap:10px; align-items:center; }
+.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover { background:rgba(255,255,255,0.2); }
+
+/* ================= HEADER ================= */
+header{
+    background:linear-gradient(135deg,var(--accent),var(--dark));
+    color:#fff; text-align:center; padding:100px 20px;
+}
+
+/* ================= CONTENT CONTAINER ================= */
+.container {
+    max-width: 1000px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
+}
+
+.plant-detail-card {
+    background: white;
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.plant-header {
+    text-align: center;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
+.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
+
+.ayurvedic-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+.spec-item {
+    background: var(--blue-btn);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.info-section { margin-bottom: 60px; }
+.info-section h3 {
+    color: var(--dark);
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    background: #f7f2f0;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #d7ccc8;
+}
+
+.benefit-list { list-style: none; }
+.benefit-list li {
+    margin-bottom: 22px;
+    padding-left: 50px;
+    position: relative;
+    font-size: 1.1rem;
+}
+.benefit-list li::before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute; left: 0;
+    color: var(--dark);
+    font-size: 1.4rem;
+}
+
+.usage-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.warning-box {
+    background: #fff5f5;
+    border-radius: 15px;
+    padding: 35px;
+    border-left: 8px solid #e53935;
+    margin-top: 30px;
+}
+
+.btn-back-container { text-align: center; margin-top: 40px; }
+.btn-back-list {
+    text-decoration: none; background: var(--blue-btn); color: white; 
+    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+.btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
+
+.back-to-top {
+    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
+}
+
+/* ================= FOOTER (#999999) ================= */
+footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
+.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
+.footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
+
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+</style>
 </head>
 <body>
-    <nav>
-        <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
-        <div><a href="index.html">হোম</a><a href="about.html">সম্পর্কে</a><a href="contact.html">যোগাযোগ</a></div>
-    </nav>
-    <div class="container">
-        <div class="card">
-            <h1>বচ (Sweet Flag)</h1>
-            <h2>রোগের বিবরণ:</h2>
-            <p>স্মৃতিশক্তি বৃদ্ধিতে এবং তোতলামি দূর করতে বচ ব্যবহৃত হয়। এছাড়াও পেটে গ্যাস ও সর্দি-কাশিতে এটি উপকারী।</p>
-            <h2>ব্যবহৃত অংশ:</h2> <p>রাইজোম বা শিকড়।</p>
-            <h2>ঔষধ তৈরির পদ্ধতি:</h2>
-            <p>শিকড় শুকিয়ে মিহি গুঁড়া করে নিতে হয়।</p>
-            <h2>খাবার নিয়ম:</h2>
-            <p>অল্প পরিমাণ (২৫০ মিগ্রা) গুঁড়া মধুর সাথে মিশিয়ে চেটে খান। শিশুদের ক্ষেত্রে সাবধানতা অবলম্বন করুন।</p>
+
+<nav>
+    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
+    <ul class="nav-links">
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="about.html">সম্পর্কে</a></li>
+        <li><a href="contact.html">যোগাযোগ</a></li>
+    </ul>
+    <div class="nav-social">
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</nav>
+
+<header>
+    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
+</header>
+
+<div class="container">
+    <div class="plant-detail-card">
+        <div class="plant-header">
+            <div class="plant-icon-large">🪵</div>
+            <h2>২১. বচ (Boch)</h2>
+            <small>Scientific Name: Acorus calamus L.</small>
+            <div class="ayurvedic-specs">
+                <div class="spec-item">রস: কটু, তিক্ত</div>
+                <div class="spec-item">বীর্য: উষ্ণ (Heating)</div>
+                <div class="spec-item">বিপাক: কটু</div>
+                <div class="spec-item">গুণ: লঘু, তীক্ষ্ণ</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
+            <p>বচ একটি সুগন্ধি কন্দযুক্ত ভেষজ যা আয়ুর্বেদ শাস্ত্রে 'স্মৃতিশক্তি বর্ধক' হিসেবে অত্যন্ত সমাদৃত। স্মৃতিশক্তি বৃদ্ধি, বাকশক্তির জড়তা দূর করা এবং মস্তিষ্কের কার্যক্ষমতা বাড়াতে এটি মহৌষধ হিসেবে কাজ করে। এর উগ্র সুগন্ধের কারণে একে অনেক সময় 'উগ্রগন্ধা' বলা হয়। এটি মূলত জলাভূমি বা স্যাঁতসেঁতে স্থানে জন্মে।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+            <div class="lang-grid">
+                <div><strong>সংস্কৃত:</strong> বচা, উগ্রগন্ধা, গোলমী</div>
+                <div><strong>ইংরেজি:</strong> Sweet Flag / Calamus</div>
+                <div><strong>হিন্দি:</strong> বচ (Bacha)</div>
+                <div><strong>তামিল:</strong> বসাম্বু</div>
+                <div><strong>ফার্সি:</strong> আগর</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>বচ Acoraceae পরিবারের একটি বহুবর্ষজীবী বীরুৎ। এর পাতাগুলো লম্বা, তলোয়ারের মতো এবং উজ্জ্বল সবুজ বর্ণের। এর মাটির নিচের রাইজোম বা কন্দ অংশটিই ওষুধি কাজে ব্যবহৃত হয়। এই কন্দটি বেশ সুগন্ধি এবং কিছুটা তিক্ত স্বাদের।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
+            <ul class="benefit-list">
+                <li><strong>অ্যাসারন (Asarone):</strong> এটি প্রধান সক্রিয় উপাদান যা স্নায়ুতন্ত্রের ওপর কাজ করে।</li>
+                <li><strong>অপরিহার্য তেল:</strong> যা এর উগ্র সুগন্ধ এবং ওষুধি গুণের প্রধান কারণ।</li>
+                <li><strong>অ্যাকোরিন:</strong> একটি তিক্ত গ্লাইকোসাইড যা পরিপাকতন্ত্রের উন্নতি ঘটায়।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <ul class="benefit-list">
+                <li><strong>স্মৃতিশক্তি ও মেধা বৃদ্ধি:</strong> বচ চূর্ণ স্মৃতিশক্তি তীক্ষ্ণ করতে এবং পড়াশোনায় মনোযোগ বাড়াতে সাহায্য করে।</li>
+                <li><strong>তোতলামি ও বাক জড়তা:</strong> শিশুদের কথা বলতে দেরি হলে বা তোতলামি থাকলে মধুসহ বচ চূর্ণ জিহ্বায় ঘষলে উপকার পাওয়া যায়।</li>
+                <li><strong>হজম ও পেট ফাঁপা:</strong> এটি পরিপাক নালীর গ্যাস দূর করে এবং ক্ষুধা বাড়াতে সাহায্য করে।</li>
+                <li><strong>মানসিক প্রশান্তি:</strong> অনিদ্রা, উদ্বেগ এবং মানসিক অবসাদ দূর করতে এটি প্রাকৃতিক ট্রাঙ্কুলাইজার হিসেবে কাজ করে।</li>
+                <li><strong>কৃমিনাশক:</strong> এটি পেটের ক্ষতিকর কৃমি ধ্বংস করতে কার্যকর।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <div class="usage-card">
+                <h4>১. স্মৃতিশক্তি বাড়াতে:</h4>
+                <p>১-২ চিমটি বচ চূর্ণ এক চা চামচ মধুর সাথে মিশিয়ে প্রতিদিন সকালে খালি পেটে সেবন করুন।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. তোতলামি দূর করতে:</h4>
+                <p>সামান্য বচ চূর্ণ মধুর সাথে মিশিয়ে হালকা করে জিহ্বায় নিয়মিত মালিশ করলে বাক জড়তা কমে আসে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৩. পেট ব্যথায়:</h4>
+                <p>বচ এবং আদা সমপরিমাণ নিয়ে ক্বাথ তৈরি করে কুসুম গরম অবস্থায় সেবন করলে পেটের বায়ু ও ব্যথা দূর হয়।</p>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+            <p>• বচ উচ্চ মাত্রায় বা দীর্ঘকাল সেবনের ফলে বমি বমি ভাব হতে পারে।</p>
+            <p>• গর্ভাবস্থায় এবং শিশুদের ক্ষেত্রে এটি ব্যবহারের আগে অবশ্যই বিশেষজ্ঞ চিকিৎসকের পরামর্শ নিন।</p>
+            <p>• এটি গরম প্রকৃতির ভেষজ, তাই যারা অতিরিক্ত পিত্ত বা গরম শরীর সম্পন্ন তারা সাবধানে ব্যবহার করবেন।</p>
+        </div>
+
+        <div class="btn-back-container">
+            <a href="index.html" class="btn-back-list">
+                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
+            </a>
         </div>
     </div>
-    <footer>
-        <div style="max-width: 1200px; margin: auto;">
-            <h3 style="margin-bottom: 10px;">ভেষজ চিকিৎসা কোষ</h3>
-            <div style="margin: 20px 0;"><a href="index.html">হোম</a> | <a href="about.html">সম্পর্কে</a> | <a href="contact.html">যোগাযোগ</a></div>
-            <div style="margin-bottom: 20px;">
-                <a href="https://www.facebook.com/bonargidawahkana.net/" target="_blank" class="social-btn" style="color: #1877f2;">Facebook</a>
-                <a href="https://www.youtube.com/bonarjidawakhana" target="_blank" class="social-btn" style="color: #ff0000;">YouTube</a>
-            </div>
-            <p>&copy; ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
-            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="background: #27ae60; color: white; border: none; padding: 8px 15px; border-radius: 20px; cursor: pointer;">উপরে যান ↑</button>
-        </div>
-    </footer>
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<footer>
+    <h2>ভেষজ চিকিৎসা কোষ</h2>
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
+</footer>
+
 </body>
 </html>
