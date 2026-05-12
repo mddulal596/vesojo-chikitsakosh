@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>আতিস (Atis) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
+<title>অতিবিষ (Atis) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
-    --primary:#ef5350;
-    --dark:#b71c1c;
-    --light:#ffebee;
-    --accent:#e57373;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #fffafa;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #ffcdd2;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -194,80 +222,117 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🧪</div>
-            <h2>১২. আতিস (Atis)</h2>
+            <div class="plant-icon-large">❄️</div>
+            <h2>১২. অতিবিষ (Atis)</h2>
             <small>Scientific Name: Aconitum heterophyllum Wall. ex Royle</small>
             <div class="ayurvedic-specs">
                 <div class="spec-item">রস: তিক্ত, কটু</div>
-                <div class="spec-item">বীর্য: উষ্ণ (Heating)</div>
+                <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
                 <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">গুণ: লঘু, রুক্ষ</div>
+                <div class="spec-item) দোষ: ত্রিদোষ নাশক (বিশেষ করে কফ-পিত্ত)</div>
+                <div class="spec-item">বিশেষত্ব: শিশুদের মহৌষধ ও বিষনাশক</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>আতিস বা অতবিষ হিমালয় অঞ্চলের একটি অত্যন্ত মূল্যবান ভেষজ উদ্ভিদ। আয়ুর্বেদ শাস্ত্রে একে 'সর্ববিষহৃৎ' বলা হয়। এটি শিশুদের পেটের অসুখ, জ্বর এবং আমাশয় নিরাময়ে অপ্রতিদ্বন্দ্বী। যদিও এটি 'অ্যাকোনাইট' পরিবারের অন্তর্ভুক্ত, তবুও অন্যান্য প্রজাতির মতো এটি বিষাক্ত নয়; বরং সঠিক মাত্রায় ব্যবহার করলে এটি জীবন রক্ষাকারী ওষুধ হিসেবে কাজ করে।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>অতিবিষ বা আতিস হিমালয়ের উচ্চ পার্বত্য অঞ্চলে পাওয়া একটি অত্যন্ত শক্তিশালী ভেষজ। আয়ুর্বেদ শাস্ত্রে একে 'শিশুরক্ষক' বলা হয়, কারণ শিশুদের ডায়রিয়া, জ্বর এবং পেট ফাঁপায় এর মতো কার্যকরী ভেষজ খুব কমই আছে। যদিও এর নামে 'বিষ' শব্দটি রয়েছে, কিন্তু এটি স্বভাবে নির্বিষ (Non-toxic) এবং অন্যান্য 'একোনাইট' প্রজাতির মতো বিষাক্ত নয়। প্রাচীন সংহিতায় একে অম্লপিত্ত ও ক্রিমিনাশক হিসেবে উচ্চ প্রশংসা করা হয়েছে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> অতবিষা, শুক্লকন্দা</div>
+                <div><strong>সংস্কৃত:</strong> অতিবিষা, শুক্লকন্দা, ঘুঘুনপ্রিয়া</div>
                 <div><strong>ইংরেজি:</strong> Indian Atees</div>
-                <div><strong>হিন্দি:</strong> অতীস (Atis)</div>
-                <div><strong>তামিল:</strong> অতিভিদওয়াম</div>
-                <div><strong>তেলেগু:</strong> অতিভাসা</div>
-                <div><strong>মারাঠি:</strong> অতিবিষ</div>
+                <div><strong>হিন্দি:</strong> অতিস, আতিস (Atis)</div>
+                <div><strong>কাশ্মীরি:</strong> পতিস</div>
+                <div><strong>পাঞ্জাবি:</strong> আতিস</div>
+                <div><strong>তামিল:</strong> অতিভিদায়াম</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>আতিস Ranunculaceae পরিবারের একটি বহুবর্ষজীবী বীরুৎ। এটি সাধারণত হিমালয়ের ২,৫০০ থেকে ৪,০০০ মিটার উচ্চতায় জন্মায়। গাছটি ১-৩ ফুট লম্বা হয়। এর ফুলগুলো উজ্জ্বল নীল বা বেগুনি রঙের এবং দেখতে অনেকটা হুড বা টুপির মতো। ওষুধি কাজে মূলত এর কন্দ বা মূল (Tuberous root) ব্যবহৃত হয়, যা দেখতে সাদাটে বা ধূসর বর্ণের হয়।</p>
+            <p>এটি একটি বহুবর্ষজীবী বীরুৎ জাতীয় গাছ যা সাধারণত ১-৩ ফুট লম্বা হয়। এটি হিমালয়ের ৭,০০০ থেকে ১৫,০০০ ফুট উচ্চতায় জন্মে। এর পাতাগুলো হৃদপিণ্ড আকৃতির এবং ফুলগুলো নীল বা বেগুনি বর্ণের হয়। ওষুধি কাজের জন্য এর কন্দ বা মূল ব্যবহৃত হয়। মূলটি দেখতে শঙ্কু আকৃতির এবং এর স্বাদ অত্যন্ত তিতকুটে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>অ্যাটসিন (Atisine):</strong> এটি প্রধান সক্রিয় অ্যালকালয়েড যা জ্বর ও ব্যথা কমাতে সাহায্য করে।</li>
-                <li><strong>অ্যাটপেলাইন (Atpedine):</strong> এটি শরীরের রোগ প্রতিরোধ ক্ষমতা বৃদ্ধিতে সহায়ক।</li>
-                <li><strong>ট্যানিন ও সুগার:</strong> যা হজম প্রক্রিয়া উন্নত করতে কার্যকর।</li>
+                <li><strong>অ্যাটসিন (Atisine):</strong> এটি একটি প্রধান অ্যালকালয়েড যা রক্তচাপ নিয়ন্ত্রণে এবং ব্যথানাশক হিসেবে কাজ করে।</li>
+                <li><strong>হেটেরোফাইলাইন:</strong> যা জ্বরের তীব্রতা কমাতে সাহায্য করে।</li>
+                <li><strong>অ্যাকিটিক অ্যাসিড:</strong> এটি পরিপাকতন্ত্রের সংক্রমণ রোধে ভূমিকা রাখে।</li>
+                <li><strong>স্টার্চ ও ফ্যাট:</strong> যা শরীরকে শক্তি জোগায়।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>শিশুদের হজমজনিত সমস্যা:</strong> শিশুদের পাতলা পায়খানা, বমি এবং কৃমির সমস্যায় আতিস চূর্ণ জাদুকরী ভূমিকা পালন করে।</li>
-                <li><strong>জ্বর নিরাময়:</strong> এটি একটি প্রাকৃতিক জ্বরনাশক (Antipyretic), যা ম্যালেরিয়া বা সাধারণ ইনফ্লুয়েঞ্জা পরবর্তী জ্বর কমাতে অত্যন্ত কার্যকর।</li>
-                <li><strong>আমাশয় ও ডায়রিয়া:</strong> এটি অন্ত্রের সংক্রমণ দূর করে এবং দ্রুত পেটের গোলযোগ নিয়ন্ত্রণে আনে।</li>
-                <li><strong>ক্ষুধা মন্দা দূরীকরণ:</strong> যারা দীর্ঘদিন ক্ষুধাহীনতায় ভুগছেন, তাদের রুচি ফিরিয়ে আনতে আতিস সাহায্য করে।</li>
-                <li><strong>রক্তস্বল্পতা:</strong> আয়ুর্বেদ মতে, এটি রক্ত বৃদ্ধিতে এবং শরীরের সামগ্রিক শক্তি যোগাতে সহায়ক।</li>
+                <li><strong>শিশুদের ডায়রিয়া:</strong> শিশুদের দাঁত ওঠার সময় বা অন্য কারণে পাতলা পায়খানা হলে অতিবিষের চূর্ণ মধুর সাথে মিশিয়ে খাওয়ালে দ্রুত কাজ দেয়।</li>
+                <li><strong>জ্বর নিরাময়:</strong> এটি বিষম জ্বর বা বারবার আসা জ্বর (যেমন ম্যালেরিয়া পরবর্তী ক্লান্তি) কমাতে অত্যন্ত কার্যকর।</li>
+                <li><strong>অগ্নিমান্দ্য বা হজমের সমস্যা:</strong> ক্ষুধা কম লাগা বা পেট ফাঁপা দূর করতে এটি পাচক রস নিঃসরণ বাড়ায়।</li>
+                <li><strong>ক্রিমি নাশক:</strong> অন্ত্রের ক্ষতিকর ক্রিমি ধ্বংস করতে এটি ব্যবহৃত হয়।</li>
+                <li><strong>রক্তস্বল্পতা:</strong> এটি রক্তকণিকা বৃদ্ধিতে এবং শরীরের রোগ প্রতিরোধ ক্ষমতা বাড়াতে সাহায্য করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. শিশুদের ডায়রিয়া বা আমাশয়ে:</h4>
-                <p>অর্ধেক বা এক গ্রাম আতিস চূর্ণ মধুর সাথে মিশিয়ে দিনে দুইবার খাওয়ালে শিশুদের পেটের অসুখ ভালো হয়।</p>
+                <h4>১. শিশুদের পেট খারাপে:</h4>
+                <p>১২৫ মিলিগ্রাম (এক চিমটি) অতিবিষ চূর্ণ সামান্য মধুর সাথে মিশিয়ে দিনে ২-৩ বার চাটতে দিন।</p>
             </div>
             <div class="usage-card">
-                <h4>২. দীর্ঘমেয়াদী জ্বরে:</h4>
-                <p>আতিস চূর্ণ এবং সুঁট (শুকনো আদা) সমপরিমাণ মিশিয়ে হালকা গরম পানির সাথে খেলে জ্বরের তীব্রতা কমে এবং শরীরে বল পাওয়া যায়।</p>
+                <h4>২. আমাশয় বা পুরাতন ডায়রিয়ায়:</h4>
+                <p>অতিবিষ চূর্ণ এবং কুড়চি ছালের চূর্ণ সমপরিমাণ মিশিয়ে হালকা গরম পানির সাথে খেলে দ্রুত উপকার পাওয়া যায়।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. কৃমি সমস্যায়:</h4>
-                <p>আতিস চূর্ণ নিয়মিত ৩-৫ দিন সেবন করলে অন্ত্রের ক্ষতিকর পরজীবী বা কৃমি দূর হয়।</p>
+                <h4>৩. কাশির সমস্যায়:</h4>
+                <p>অতিবিষের ক্বাথ আদার রসের সাথে মিশিয়ে পান করলে গলার খুসখুসে ভাব ও কফ কমে যায়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• আতিস অত্যন্ত শক্তিশালী ভেষজ, তাই বিশেষজ্ঞ চিকিৎসকের পরামর্শ অনুযায়ী নির্দিষ্ট মাত্রায় সেবন করা উচিত।</p>
-            <p>• গর্ভাবস্থায় এবং স্তন্যদানকালে এটি এড়িয়ে চলাই ভালো।</p>
-            <p>• এটি বাজারের সাধারণ 'অ্যাকোনাইট' (মিঠাবিষ) এর সাথে গুলিয়ে ফেলবেন না, কারণ মিঠাবিষ অত্যন্ত বিষাক্ত।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>চূর্ণের মাত্রা (পাউডার)</th>
+                            <th>সেবন পদ্ধতি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>শিশু (৬ মাস - ২ বছর)</td>
+                            <td>৬০ - ১২৫ মিলিগ্রাম</td>
+                            <td>মধুর সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>শিশু (৩ - ১২ বছর)</td>
+                            <td>২৫০ - ৫০০ মিলিগ্রাম</td>
+                            <td>কুসুম গরম পানির সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>প্রাপ্তবয়স্ক</td>
+                            <td>১ - ৩ গ্রাম</td>
+                            <td>দিনে ২ বার (খাবারের পর)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• অতিবিষ অত্যন্ত শক্তিশালী তিতকুটে ভেষজ, তাই নির্ধারিত মাত্রার চেয়ে বেশি সেবন করলে বমি হতে পারে।</p>
+                <p>• এটি বাজারে অনেক সময় ভেজাল আকারে পাওয়া যায়, তাই নির্ভরযোগ্য স্থান থেকে সংগ্রহ করুন।</p>
+                <p>• গর্ভাবস্থায় এবং দীর্ঘস্থায়ী কোষ্ঠকাঠিন্য থাকলে চিকিৎসকের পরামর্শ ছাড়া এটি সেবন করবেন না।</p>
+                <p>• এটি কেবল ওষুধি হিসেবেই ব্যবহার্য, সাধারণ খাদ্য হিসেবে নয়।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
