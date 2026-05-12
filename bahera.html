@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#558b2f;
-    --dark:#2e7d32;
-    --light:#f1f8e9;
-    --accent:#8bc34a;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #f9fff5;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #c8e6c9;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -194,80 +222,117 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🫐</div>
+            <div class="plant-icon-large">🌰</div>
             <h2>১৫. বহেড়া (Bahera)</h2>
             <small>Scientific Name: Terminalia bellirica (Gaertn.) Roxb.</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: কষায়</div>
-                <div class="spec-item">বীর্য: উষ্ণ (Heating)</div>
-                <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">গুণ: লঘু, রুক্ষ</div>
+                <div class="spec-item">রস: কষায় (Astringent)</div>
+                <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
+                <div class="spec-item">বিপাক: মধুর</div>
+                <div class="spec-item">দোষ: ত্রিদোষ নাশক (বিশেষত কফ)</div>
+                <div class="spec-item">বিশেষত্ব: নেত্র ও কেশ হিতকর (চোখ ও চুলের জন্য উপকারী)</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>বহেড়া আয়ুর্বেদ শাস্ত্রের বিখ্যাত 'ত্রিফলা' (আমলকী, হরিতকী ও বহেড়া) মিশ্রণের অন্যতম প্রধান উপাদান। এটি মূলত শ্বাসতন্ত্রের রোগ, হজম শক্তি বৃদ্ধি এবং চুলের যত্নে প্রাচীনকাল থেকে ব্যবহৃত হয়ে আসছে। বহেড়া শরীরের অতিরিক্ত কফ দূর করতে এবং রোগ প্রতিরোধ ক্ষমতা বাড়াতে অত্যন্ত কার্যকর।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>আয়ুর্বেদের বিখ্যাত 'ত্রিফলা' (আমলকী, হরিতকী ও বহেড়া)-র অন্যতম প্রধান উপাদান হলো বহেড়া। একে 'বিভীতকী' বলা হয়, যার অর্থ 'যা ভয় দূর করে' (এখানে রোগের ভয়)। এটি প্রাচীন কাল থেকেই শ্বাসকষ্ট, কাশি এবং হজম প্রক্রিয়ার সমস্যার সমাধানে ব্যবহৃত হয়ে আসছে। এটি শুধুমাত্র শরীরের রোগই দূর করে না, বরং চুল পড়া বন্ধ করতে এবং দৃষ্টিশক্তি বাড়াতে জাদুকরী ভূমিকা পালন করে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
                 <div><strong>সংস্কৃত:</strong> বিভীতকী, অক্ষ, কলিদ্রুম</div>
-                <div><strong>ইংরেজি:</strong> Belleric Myrobalan</div>
+                <div><strong>ইংরেজি:</strong> Beleric Myrobalan</div>
                 <div><strong>হিন্দি:</strong> বহেরা (Bahera)</div>
-                <div><strong>তামিল:</strong> তানিাক্কায়</div>
-                <div><strong>ফার্সি:</strong> বেলীলাহ</div>
-                <div><strong>আরবি:</strong> বালিলাজ</div>
+                <div><strong>তামিল:</strong> থানি (Thani)</div>
+                <div><strong>তেলুগু:</strong> তানি কায়া</div>
+                <div><strong>বাংলা:</strong> বহেড়া</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>বহেড়া Combretaceae পরিবারের একটি বিশাল পর্ণমোচী বৃক্ষ যা দক্ষিণ এশিয়ায় প্রচুর জন্মে। এর উচ্চতা সাধারণত ২০-৩০ মিটার পর্যন্ত হতে পারে। এর ফলগুলো গোল বা ডিম্বাকৃতির এবং ধূসর বর্ণের সূক্ষ্ম রোমে ঢাকা থাকে। ওষুধি কাজে মূলত এর ফলের শ্বাস বা মজ্জা (Pericarp) ব্যবহৃত হয়।</p>
+            <p>বহেড়া একটি দীর্ঘজীবী বিশাল আকৃতির বৃক্ষ। এর ফলগুলো ডিম্বাকৃতি এবং ১ থেকে ২ সেমি পর্যন্ত লম্বা হয়। কাঁচা অবস্থায় ফলগুলো হালকা সবুজ থাকলেও শুকিয়ে গেলে ধূসর বা কালচে বাদামী বর্ণ ধারণ করে। ফলের উপরিভাগ কিছুটা রোমশ এবং ভেতরে একটি শক্ত বীজ থাকে। এর কাঠ বেশ শক্ত এবং টেকসই হয়।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>ট্যানিন ও গ্যালিক অ্যাসিড:</strong> যা শক্তিশালী অ্যান্টি-সেপটিক এবং অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে।</li>
-                <li><strong>বিটা-সাইটোস্টেরল:</strong> যা প্রদাহ কমাতে এবং কোলেস্টেরল নিয়ন্ত্রণে সাহায্য করে।</li>
-                <li><strong>ফ্ল্যাভোনয়েডস:</strong> যা শরীরের রোগ প্রতিরোধ ক্ষমতা শক্তিশালী করে।</li>
+                <li><strong>ট্যানিন ও গ্যালিক অ্যাসিড:</strong> যা হজম প্রক্রিয়ায় এবং অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে।</li>
+                <li><strong>বিটা-সিটোস্টেরল:</strong> যা কোলেস্টেরল নিয়ন্ত্রণে সাহায্য করে।</li>
+                <li><strong>ম্যানিটল ও গ্যালাকটোজ:</strong> যা পুষ্টি সরবরাহ নিশ্চিত করে।</li>
+                <li><strong>চিবিউলাজিক অ্যাসিড:</strong> এটি একটি শক্তিশালী ভাইরাসবিরোধী উপাদান।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>কাশি ও শ্বাসকষ্ট নিরাময়:</strong> এটি ফুসফুস থেকে অতিরিক্ত কফ পরিষ্কার করে হাঁপানি ও দীর্ঘস্থায়ী কাশি কমাতে সাহায্য করে।</li>
-                <li><strong>পরিপাকতন্ত্রের উন্নতি:</strong> বহেড়া কোষ্ঠকাঠিন্য দূর করে এবং হজম প্রক্রিয়াকে ত্বরান্বিত করে।</li>
-                <li><strong>দৃষ্টিশক্তি বৃদ্ধি:</strong> এটি চোখের স্নায়ুকে সবল রাখে এবং দৃষ্টিশক্তি উন্নত করতে সহায়ক।</li>
-                <li><strong>চুলের যত্নে:</strong> বহেড়া ফলের নির্যাস চুলের অকাল পক্কতা রোধ করে এবং চুল পড়া কমায়।</li>
-                <li><strong>কৃমিনাশক:</strong> এটি অন্ত্রের ক্ষতিকর কৃমি ও পরজীবী ধ্বংস করতে কার্যকর ভূমিকা পালন করে।</li>
+                <li><strong>কাশির মহৌষধ:</strong> এটি কফ নিঃসরণ সহজ করে এবং পুরানো কাশি বা ব্রঙ্কাইটিস সারাতে দারুণ কার্যকর।</li>
+                <li><strong>চুল পড়া রোধ:</strong> বহেড়ার বীজের মজ্জা তেলের সাথে মিশিয়ে ব্যবহার করলে অকালে চুল পাকা এবং চুল পড়া বন্ধ হয়।</li>
+                <li><strong>হজম শক্তি বৃদ্ধি:</strong> এটি কৃমি নাশক হিসেবে কাজ করে এবং পেটের গোলযোগ বা অজীর্ণ রোগ দূর করে।</li>
+                <li><strong>চোখের জ্যোতি:</strong> নিয়মিত নির্দিষ্ট মাত্রায় বহেড়া চূর্ণ সেবন করলে দৃষ্টিশক্তি প্রখর হয়।</li>
+                <li><strong>রক্তপাত বন্ধ:</strong> শরীর কোথাও কেটে গেলে বহেড়ার ছালের রস লাগালে রক্তপাত দ্রুত বন্ধ হয়।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. সর্দি ও কাশির জন্য:</h4>
-                <p>বহেড়া ফলের খোসা গুড়ো করে মধুর সাথে মিশিয়ে দিনে দুইবার চেটে খেলে গলা ব্যথা ও কাশি দ্রুত কমে যায়।</p>
+                <h4>১. গলা বসা ও খুশখুশে কাশিতে:</h4>
+                <p>বহেড়ার ফলের খোসা মুখে নিয়ে চুষলে তাৎক্ষণিকভাবে গলার খুশখুশে ভাব এবং কাশি কমে যায়।</p>
             </div>
             <div class="usage-card">
-                <h4>২. হজম শক্তি বৃদ্ধিতে:</h4>
-                <p>প্রতিদিন রাতে ৩-৫ গ্রাম বহেড়া চূর্ণ কুসুম গরম পানির সাথে মিশিয়ে সেবন করলে পেটের ফাঁপা ও হজমের সমস্যা দূর হয়।</p>
+                <h4>২. অজীর্ণ বা পেট ফাঁপায়:</h4>
+                <p>বহেড়া চূর্ণ ৩ গ্রাম পরিমাণ সামান্য বিট লবণ ও হালকা গরম পানির সাথে মিশিয়ে খাওয়ার পর সেবন করুন।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. রক্ত আমাশয় ও ডায়রিয়ায়:</h4>
-                <p>বহেড়া চূর্ণ সামান্য মাখনের সাথে মিশিয়ে সেবন করলে আমাশয়ের প্রকোপ কমে।</p>
+                <h4>৩. আমাশয় দূর করতে:</h4>
+                <p>বহেড়ার ক্বাথ ৫-১০ মিলি পরিমাণ সকালে ও রাতে মধু মিশিয়ে খেলে আমাশয় এবং পেটের কৃমি দূর হয়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• বহেড়া অতিরিক্ত মাত্রায় সেবনে কোষ্ঠকাঠিন্য হতে পারে।</p>
-            <p>• গর্ভাবস্থায় এবং স্তন্যদানকালে চিকিৎসকের পরামর্শ ছাড়া এটি সেবন করা উচিত নয়।</p>
-            <p>• দীর্ঘস্থায়ী কোনো ওষুধ সেবন করলে বহেড়া ব্যবহারের আগে বিশেষজ্ঞ চিকিৎসকের পরামর্শ নিন।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> সেবন বিধি ও মাত্রা</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>ব্যবহারের পদ্ধতি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>বহেড়া ফল চূর্ণ</td>
+                            <td>৩ - ৬ গ্রাম</td>
+                            <td>মধু বা গরম পানির সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>ত্রিফলা চূর্ণ (রাতে)</td>
+                            <td>৫ গ্রাম</td>
+                            <td>এক গ্লাস পানির সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>বীজের তেল (বাহ্যিক)</td>
+                            <td>প্রয়োজনমতো</td>
+                            <td>মাথায় বা ত্বকে ম্যাসাজ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• বহেড়ার বীজ সেবন করবেন না, শুধুমাত্র ফলের খোসা বা শাঁস ওষুধি কাজে ব্যবহার করুন।</p>
+                <p>• অতিরিক্ত মাত্রায় সেবন করলে কোষ্ঠকাঠিন্য হতে পারে (ত্রিফলা বা হরিতকীর সাথে নিলে এই সমস্যা হয় না)।</p>
+                <p>• গর্ভাবস্থায় এবং শিশুদের ক্ষেত্রে এটি ব্যবহারের আগে আয়ুর্বেদিক চিকিৎসকের পরামর্শ নিন।</p>
+                <p>• খালি পেটে দীর্ঘ সময় ধরে শুধুমাত্র বহেড়া সেবন করা এড়িয়ে চলুন।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
