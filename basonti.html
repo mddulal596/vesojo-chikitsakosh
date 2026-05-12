@@ -9,9 +9,9 @@
 <style>
 :root{
     --primary:#ffb300;
-    --dark:#ff8f00;
-    --light:#fff8e1;
-    --accent:#ffd54f;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #fffdf0;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #ffecb3;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -196,77 +224,115 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
         <div class="plant-header">
             <div class="plant-icon-large">🌼</div>
             <h2>১৮. বাসন্তী (Basonti)</h2>
-            <small>Scientific Name: Reinwardtia indica Dumort.</small>
+            <small>Scientific Name: Barleria prionitis L.</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: তিক্ত, কষায়</div>
-                <div class="spec-item">বীর্য: উষ্ণ (Heating)</div>
+                <div class="spec-item">রস: তিক্ত, মধুর</div>
+                <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
                 <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">গুণ: লঘু, রুক্ষ</div>
+                <div class="spec-item">দোষ: কফ ও বাত নাশক</div>
+                <div class="spec-item">বিশেষত্ব: দন্ত ও চর্মরোগের মহৌষধ</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>বাসন্তী বা 'বসন্ত ফুল' মূলত হিমালয় পাদদেশীয় অঞ্চলের একটি ওষুধি গাছ। এর উজ্জ্বল হলুদ রঙের ফুল বসন্তের আগমন জানান দেয় বলে একে বাসন্তী বলা হয়। আয়ুর্বেদ এবং লোকজ চিকিৎসায় এটি মূলত চর্মরোগ এবং ক্ষত নিরাময়ে ব্যাপকভাবে ব্যবহৃত হয়। গবাদি পশুর শরীরের ক্ষত বা পোকামাকড়ের আক্রমণ রোধেও এর পাতার রসের কার্যকারিতা প্রাচীনকাল থেকেই স্বীকৃত।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>আয়ুর্বেদ শাস্ত্রে একে 'বজ্রদন্তী' বা 'ঝিন্টি' বলা হয়। এর নাম থেকেই বোঝা যায় এটি দাঁতকে বজ্রের মতো মজবুত করতে সক্ষম। প্রাচীন কাল থেকেই দাঁতের গোড়া ফুলে যাওয়া, ব্যথা এবং রক্ত পড়ার চিকিৎসায় বাসন্তী বা পীত ঝিন্টি ব্যবহার হয়ে আসছে। এছাড়াও এটি বাতের ব্যথা ও ত্বকের বিভিন্ন সংক্রমণে অত্যন্ত কার্যকরী একটি ভেষজ।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> বাসন্তী, পীতপুষ্পা</div>
-                <div><strong>ইংরেজি:</strong> Yellow Flax / Pyoli</div>
-                <div><strong>হিন্দি:</strong> বসন্তী (Basanti)</div>
-                <div><strong>তামিল:</strong> কাত্তু সেনবগাম</div>
-                <div><strong>উর্দু:</strong> গুল-এ-বসন্ত</div>
+                <div><strong>সংস্কৃত:</strong> ঝিন্টি, বজ্রদন্তী, কুরণ্টক</div>
+                <div><strong>ইংরেজি:</strong> Porcupine Flower</div>
+                <div><strong>হিন্দি:</strong> কটসরাইয়া (Katsaraiya)</div>
+                <div><strong>তামিল:</strong> চেম্মুল্লি</div>
+                <div><strong>বাংলা:</strong> বাসন্তী, পীত ঝিন্টি, বিষঝিন্টি</div>
+                <div><strong>তেলুগু:</strong> মুল্লুগোরিন্টা</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>বাসন্তী Linaceae পরিবারের একটি চিরহরিৎ ক্ষুদ্র গুল্মজাতীয় উদ্ভিদ। এটি সাধারণত ১ মিটার পর্যন্ত উঁচু হয়। এর পাতাগুলো লম্বাটে এবং উজ্জ্বল সবুজ বর্ণের। জানুয়ারি থেকে মার্চ মাসের মধ্যে এতে ফানেল আকৃতির উজ্জ্বল হলুদ ফুল ফোটে। ওষুধি কাজে মূলত এর পাতা এবং কচি ডাল ব্যবহৃত হয়।</p>
+            <p>বাসন্তী একটি কাঁটাযুক্ত গুল্ম জাতীয় উদ্ভিদ। এর কাণ্ডে তীক্ষ্ণ কাঁটা থাকে এবং ফুলগুলো সাধারণত উজ্জ্বল হলুদ বা সোনালী রঙের হয়। পাতাগুলো বিপরীতমুখী এবং অগ্রভাগ কিছুটা সুচালো। এটি সারা বছরই ফুল দেয়, তবে বসন্তকালে এর প্রাচুর্য বেশি দেখা যায়। এটি সাধারণত বাড়ির আশেপাশে বেড়া হিসেবে বা শোভাবর্ধক গাছ হিসেবে লাগানো হয়।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>ফ্ল্যাভোনয়েডস:</strong> যা শক্তিশালী অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে।</li>
-                <li><strong>ট্যানিন:</strong> যা ক্ষত দ্রুত শুকিয়ে যেতে সাহায্য করে।</li>
-                <li><strong>মিউসিলেজ:</strong> যা ত্বকের প্রদাহ কমাতে এবং আর্দ্রতা ধরে রাখতে সহায়ক।</li>
+                <li><strong>Barlerin:</strong> এটি একটি শক্তিশালী প্রদাহরোধী উপাদান।</li>
+                <li><strong>পটাশিয়াম লবণ:</strong> যা দাঁতের এনামেল রক্ষা করতে এবং মাড়ি সুস্থ রাখতে সাহায্য করে।</li>
+                <li><strong>ফ্ল্যাভোনয়েডস:</strong> যা অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে শরীরকে জীবাণুমুক্ত রাখে।</li>
+                <li><strong>ট্যানিন:</strong> যা ক্ষত শুকাতে এবং রক্তপাত বন্ধ করতে সাহায্য করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>চর্মরোগ নিরাময়:</strong> একজিমা, চুলকানি বা ত্বকের র‍্যাশ সারাতে বাসন্তী পাতার প্রলেপ অত্যন্ত কার্যকর।</li>
-                <li><strong>ক্ষত নিরাময়:</strong> শরীরের কোনো স্থানে ক্ষত হলে বাসন্তী পাতা বেটে লাগালে তা দ্রুত শুকিয়ে যায় এবং জীবাণুমুক্ত থাকে।</li>
-                <li><strong>পোকামাকড়ের কামড়ে:</strong> বিষাক্ত পোকামাকড়ের কামড়ের জ্বালা ও ফোলা কমাতে বাসন্তী পাতার রস ব্যবহার করা হয়।</li>
-                <li><strong>প্যারালাইসিস বা বাত:</strong> আয়ুর্বেদ মতে, এর পাতা সেদ্ধ করা পানি দিয়ে আক্রান্ত স্থান ধুলে বাতের ব্যথা এবং স্নায়বিক দুর্বলতা কমে।</li>
-                <li><strong>অ্যান্টি-সেপটিক গুণ:</strong> এর রস প্রাকৃতিক অ্যান্টি-সেপটিক হিসেবে কাজ করে যা সংক্রমণের হাত থেকে শরীরকে রক্ষা করে।</li>
+                <li><strong>দাঁতের সুরক্ষা:</strong> দাঁতের গোড়া থেকে রক্ত পড়া, মাড়ি ফোলা এবং দাঁত নড়া বন্ধ করতে এর শিকড় বা পাতার ক্বাথ অপ্রতিদ্বন্দ্বী।</li>
+                <li><strong>বাতের ব্যথা:</strong> শরীরের জয়েন্টে ব্যথা বা আমবাত থাকলে বাসন্তী পাতার রস তেলের সাথে মিশিয়ে মালিশ করলে উপশম হয়।</li>
+                <li><strong>চর্মরোগ:</strong> দাউদ, চুলকানি বা একজিমা সারাতে বাসন্তী পাতার রস এবং কাঁচা হলুদ মিশিয়ে ব্যবহার করলে দ্রুত ফল পাওয়া যায়।</li>
+                <li><strong>কাশি ও কফ:</strong> কফজনিত কাশি এবং বুকের জমানো কফ বের করতে এর পাতার রস মধুর সাথে সেবন করা হয়।</li>
+                <li><strong>ফোড়া বা ক্ষত:</strong> বিষাক্ত ফোড়া বা ক্ষত শুকাতে এর পাতার প্রলেপ ব্যবহার করা হয়।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. একজিমা বা চর্মরোগে:</h4>
-                <p>তাজা বাসন্তী পাতা বেটে আক্রান্ত স্থানে দিনে ২-৩ বার প্রলেপ দিলে চুলকানি ও ঘা দ্রুত সেরে যায়।</p>
+                <h4>১. দাঁতের ব্যথায় মাউথওয়াশ হিসেবে:</h4>
+                <p>বাসন্তী পাতার ক্বাথ সামান্য লবণ দিয়ে ফুটিয়ে ঠান্ডা করে সেই পানি দিয়ে কুলকুচি করুন। এটি মাড়ির ইনফেকশন দূর করবে।</p>
             </div>
             <div class="usage-card">
-                <h4>২. ক্ষত জীবাণুমুক্ত করতে:</h4>
-                <p>বাসন্তী পাতার রস এবং নারিকেল তেল মিশিয়ে ক্ষতে লাগালে তা দ্রুত শুকায় এবং সংক্রমণের ভয় থাকে না।</p>
+                <h4>২. ফোলা ও বাতের ব্যথায়:</h4>
+                <p>বাসন্তী পাতার রস হালকা গরম করে ব্যথার স্থানে প্রলেপ দিন অথবা তিল তেলের সাথে জ্বাল দিয়ে সেই তেল মালিশ করুন।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. বাতের ব্যথায়:</h4>
-                <p>বাসন্তী পাতা এবং নিমের পাতা একসাথে সেদ্ধ করে সেই কুসুম গরম পানি দিয়ে আক্রান্ত স্থানে সেঁক দিলে ফোলা ও ব্যথা কমে।</p>
+                <h4>৩. শিশুদের সর্দি-কাশিতে:</h4>
+                <p>বাসন্তী পাতার রস আধা চামচ পরিমাণ এবং আধা চামচ মধু মিশিয়ে শিশুদের খাওয়ালে বুকের কফ পরিষ্কার হয়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• বাসন্তী পাতা অভ্যন্তরীণভাবে সেবনের আগে অবশ্যই বিশেষজ্ঞ ভেষজ চিকিৎসকের পরামর্শ নিন।</p>
-            <p>• সংবেদনশীল ত্বকে ব্যবহারের আগে সামান্য স্থানে পরীক্ষা (Patch Test) করে নেওয়া ভালো।</p>
-            <p>• শিশুদের নাগালের বাইরে রাখুন এবং সরাসরি চোখের সংস্পর্শ থেকে দূরে রাখুন।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> সেবন বিধি ও মাত্রা</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>ব্যবহারের পদ্ধতি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>পাতার তাজা রস</td>
+                            <td>১০ - ১৫ মিলি</td>
+                            <td>মধুর সাথে (খালি পেটে)</td>
+                        </tr>
+                        <tr>
+                            <td>শিকড়ের ক্বাথ</td>
+                            <td>২০ - ৩০ মিলি</td>
+                            <td>কুলকুচি বা সেবনের জন্য</td>
+                        </tr>
+                        <tr>
+                            <td>পাতার প্রলেপ</td>
+                            <td>প্রয়োজনমতো</td>
+                            <td>আক্রান্ত স্থানে বাহ্যিক ব্যবহার</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• এর কাণ্ডে তীক্ষ্ণ কাঁটা থাকে, তাই সংগ্রহের সময় সতর্কতা অবলম্বন করুন।</p>
+                <p>• গর্ভবতী মহিলাদের অভ্যন্তরীণ সেবনের ক্ষেত্রে অভিজ্ঞ কবিরাজ বা চিকিৎসকের পরামর্শ নেওয়া বাঞ্ছনীয়।</p>
+                <p>• এটি তিক্ত স্বাদের হওয়ায় সরাসরি সেবন না করে মধু বা গুড় মিশিয়ে নেওয়া ভালো।</p>
+                <p>• দীর্ঘস্থায়ী রোগের ক্ষেত্রে নিয়মিত সেবনের আগে অবশ্যই মাত্রা পরীক্ষা করে নিন।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
