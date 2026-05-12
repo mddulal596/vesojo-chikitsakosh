@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ধুতুরা (Dhutura) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
+<title>ধুতুরা (Datura) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
-    --primary:#ffb300;
-    --dark:#e65100;
-    --light:#fff3e0;
-    --accent:#ffa000;
+    --primary:#9c27b0; /* ধুতুরা ফুলের বেগুনি আভা অনুযায়ী */
+    --dark:#4a148c;
+    --light:#f3e5f5;
+    --accent:#7b1fa2;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -108,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #fffcf0;
+    background: #f3e5f5;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #ffe082;
+    border: 1px solid #e1bee7;
 }
 
 .benefit-list { list-style: none; }
@@ -140,6 +140,30 @@ header{
 }
 .usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 .usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:hover { background: #f3e5f5; }
 
 .warning-box {
     background: #fff5f5;
@@ -197,68 +221,116 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🎺</div>
-            <h2>৩৬. ধুতুরা (Dhutura)</h2>
+            <div class="plant-icon-large">🌺</div>
+            <h2>৩৬. ধুতুরা (Datura)</h2>
             <small>Scientific Name: Datura metel L.</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: তিক্ত ও কটু</div>
+                <div class="spec-item">রস: তিক্ত, কটু</div>
                 <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
-                <div class="spec-item">গুণ: লঘু, রুক্ষ ও বিশদ</div>
-                <div class="spec-item">প্রকৃতি: বিষাক্ত (Toxic)</div>
+                <div class="spec-item">বিপাক: কটু</div>
+                <div class="spec-item">গুণ: লঘু, তীক্ষ্ণ, বিষাক্ত</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
-            <p>ধুতুরা একটি অত্যন্ত শক্তিশালী এবং বিষাক্ত ভেষজ যা আয়ুর্বেদে 'উপবিষ' শ্রেণীতে অন্তর্ভুক্ত। এটি মূলত শিবপূজায় ব্যবহৃত হলেও চিকিৎসাবিজ্ঞানে এর গুরুত্ব অপরিসীম। সঠিকভাবে শোধন করলে এটি প্রাণদায়ী ঔষধ হতে পারে, অন্যথায় এটি মারাত্মক বিষ। আয়ুর্বেদ শাস্ত্রে একে 'উন্মত্ত' বা 'কনক' নামেও অভিহিত করা হয়। এটি মূলত ব্যথা নাশক এবং শ্বাসকষ্ট উপশমে প্রাচীনকাল থেকে ব্যবহৃত হয়ে আসছে।</p>
+            <p>ধুতুরা প্রাচীনকাল থেকেই হিন্দুধর্মে ভগবান শিবের অত্যন্ত প্রিয় ফুল হিসেবে পরিচিত। আয়ুর্বেদ শাস্ত্রে এটি একটি 'উপবিষ' বা গৌণ বিষ হিসেবে গণ্য হয়। সঠিক শোধন প্রক্রিয়ার মাধ্যমে এর বিষাক্ত গুণ দূর করে এটিকে মহৌষধ হিসেবে ব্যবহার করা হয়। এটি মূলত ব্যথানাশক এবং শ্বাসকষ্টের চিকিৎসায় ঐতিহাসিকভাবে ব্যবহৃত হয়ে আসছে। তবে এর অপব্যবহার বা অনিয়ন্ত্রিত সেবন মারাত্মক মানসিক বিভ্রম বা মৃত্যুর কারণ হতে পারে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> ধুতুর, কনক, শিবপ্রিয়</div>
-                <div><strong>ইংরেজি:</strong> Devil's Trumpet, Thorn Apple</div>
-                <div><strong>হিন্দি:</strong> ধতূরা (Dhatura)</div>
-                <div><strong>আরবি:</strong> জউয মাসিল</div>
+                <div><strong>সংস্কৃত:</strong> ধুতুর, কনক, উম্মত্ত, শিবপ্রিয়</div>
+                <div><strong>ইংরেজি:</strong> Thorn Apple / Devil's Trumpet</div>
+                <div><strong>আরবি:</strong> জাওয মাশিল</div>
+                <div><strong>ফার্সি:</strong> ততুরাহ্</div>
+                <div><strong>হিন্দি:</strong> ধতুরা (Dhatura)</div>
                 <div><strong>বাংলা:</strong> ধুতুরা / ধুতরো</div>
-                <div><strong>ফার্সি:</strong> ততোরা</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> ভেষজ গুণ ও বাহ্যিক প্রয়োগ</h3>
-            <p style="color: #d32f2f; font-weight: bold; margin-bottom: 15px;">সতর্কতা: ধুতুরা অভ্যন্তরীণভাবে সেবন করা অত্যন্ত ঝুঁকিপূর্ণ। এটি শুধুমাত্র চিকিৎসকের তত্ত্বাবধানে শোধন করে ব্যবহার্য।</p>
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>ধুতুরা Solanaceae পরিবারের অন্তর্ভুক্ত একটি গুল্মজাতীয় উদ্ভিদ। এটি সাধারণত ৩-৫ ফুট উঁচু হয়। এর পাতাগুলো বড়, ডিম্বাকৃতির এবং ঢেউখেলানো কিনারাযুক্ত। ফুলগুলো দেখতে অনেকটা লম্বাটে শিঙা বা ট্রাম্পেটের মতো, যা সাদা বা বেগুনি বর্ণের হতে পারে। ফলগুলো গোলাকার এবং গায়ে অসংখ্য কাঁটা থাকে। এর প্রতিটি অংশই অ্যালকালয়েড সমৃদ্ধ এবং অত্যন্ত বিষাক্ত।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>বাত ব্যথা উপশম:</strong> ধুতুরার পাতা গরম করে ব্যথার স্থানে সেঁক দিলে বা ধুতুরার তেল মালিশ করলে বাতের ব্যথা ও ফোলা দ্রুত কমে।</li>
-                <li><strong>শ্বাসকষ্ট ও হাঁপানি:</strong> ধুতুরার শুকনো পাতার ধোঁয়া (সীমিত মাত্রায়) হাঁপানির টান কমাতে ব্যবহৃত হয়, তবে এটি বিশেষজ্ঞের পরামর্শ ছাড়া নিষিদ্ধ।</li>
-                <li><strong>চুলকানি ও চর্মরোগ:</strong> পাতার রস তেলের সাথে মিশিয়ে ব্যবহার করলে পুরনো পাঁচড়া ও চর্মরোগ সেরে যায়।</li>
-                <li><strong>চুল পড়া রোধ:</strong> ধুতুরা পাতার রস মাথায় লাগালে খুশকি কমে এবং উকুন ধ্বংস হয়।</li>
-                <li><strong>স্তনের প্রদাহ:</strong> নারীদের স্তনে ফোলা বা ব্যথা হলে ধুতুরা পাতা গরম করে প্রলেপ দিলে উপকার পাওয়া যায়।</li>
+                <li><strong>স্কোপোলামিন (Scopolamine):</strong> এটি কেন্দ্রীয় স্নায়ুতন্ত্রের ওপর প্রভাব ফেলে এবং ব্যথা কমাতে সাহায্য করে।</li>
+                <li><strong>হায়োসাইয়ামিন (Hyoscyamine):</strong> এটি পেশির খিঁচুনি রোধ করতে ব্যবহৃত হয়।</li>
+                <li><strong>অ্যাট্রোপিন (Atropine):</strong> এটি চোখের চিকিৎসায় এবং হৃৎপিণ্ডের গতি নিয়ন্ত্রণে ভূমিকা রাখে।</li>
+                <li><strong>ট্রোপেন অ্যালকালয়েডস:</strong> যা এই গাছের বিষাক্ততা ও ঔষধি গুণের মূল উৎস।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট বাহ্যিক ব্যবহার</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
+            <ul class="benefit-list">
+                <li><strong>বাত ব্যথা নিরাময়ে:</strong> ধুতুরার পাতার রস সরিষার তেলের সাথে ফুটিয়ে মালিশ করলে বাত বা জয়েন্টের ব্যথা দ্রুত কমে।</li>
+                <li><strong>শ্বাসকষ্ট ও হাঁপানি:</strong> ধুতুরার শুকনো পাতা পুড়িয়ে তার ধোঁয়া ইনহেলার হিসেবে (খুবই অল্প মাত্রায়) ব্যবহার করলে হাঁপানির কষ্ট লাঘব হয়।</li>
+                <li><strong>কানে ব্যথা ও ফোলা:</strong> ধুতুরার পাতা গরম করে কানে ভাপ দিলে বা রস লাগালে কানের ব্যথা ও ফোলা কমে।</li>
+                <li><strong>স্তনের ফোলা কমাতে:</strong> প্রসূতি মায়েদের স্তনে দুধ জমে ফুলে গেলে ধুতুরা পাতা গরম করে সেঁক দিলে আরাম পাওয়া যায়।</li>
+                <li><strong>ক্ষত সারাতে:</strong> সঠিক মাত্রায় এর পাতার প্রলেপ পচনশীল ক্ষত সারাতে অ্যান্টিসেপটিক হিসেবে কাজ করে।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. তীব্র বাতের ব্যথায়:</h4>
-                <p>ধুতুরার কাঁচা পাতা সরিষার তেলের সাথে ফুটিয়ে সেই তেল ব্যথার স্থানে দিনে ২ বার হালকা মালিশ করুন।</p>
+                <h4>১. গেঁটে বাত বা জয়েন্টের ব্যথায়:</h4>
+                <p>ধুতুরার পাতার রস তিল তেল বা সরিষার তেলের সাথে মিশিয়ে হালকা গরম করে ব্যথার স্থানে মালিশ করুন। এটি কেবল বাহ্যিক ব্যবহারের জন্য।</p>
             </div>
             <div class="usage-card">
-                <h4>২. ফোড়া পাকানোর জন্য:</h4>
-                <p>যদি ফোড়া না পাকে এবং যন্ত্রণা করে, তবে ধুতুরা পাতায় তেল মাখিয়ে গরম করে ফোড়ার ওপর বেঁধে রাখলে দ্রুত পেকে ফেটে যায়।</p>
+                <h4>২. টাক পড়া সমস্যায়:</h4>
+                <p>ধুতুরা পাতার রস মাথায় মালিশ করলে অনেক ক্ষেত্রে নতুন চুল গজাতে সাহায্য করে (সাবধানতা আবশ্যক)।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. কানের ব্যথায়:</h4>
-                <p>ধুতুরার পাতার রস সামান্য গরম করে ১-২ ফোঁটা কানে দিলে কানের ব্যথা কমে (পর্দা ফেটে যাওয়া রোগীদের জন্য প্রযোজ্য নয়)।</p>
+                <h4>৩. কুষ্ঠ বা চর্মরোগে:</h4>
+                <p>ধুতুরার বীজ তেলের সাথে পিষে চর্মরোগের স্থানে লাগালে চুলকানি ও ঘা দ্রুত শুকায়।</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি (ডোজ)</h3>
+            <p style="margin-bottom: 20px; color: #e53935; font-weight: bold;">সতর্কতা: ধুতুরা কখনোই শোধন ছাড়া বা চিকিৎসকের পরামর্শ ছাড়া অভ্যন্তরীণভাবে সেবন করবেন না। নিচে কেবল বাহ্যিক ব্যবহারের সাধারণ ধারণা দেওয়া হলো:</p>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>ব্যবহারের ধরন</th>
+                            <th>পরিমাণ</th>
+                            <th>নিয়ম</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>পাতার রস (মালিশের জন্য)</td>
+                            <td>৫ - ১০ মিলি (তেলের সাথে)</td>
+                            <td>দিনে ২ বার ব্যথার স্থানে</td>
+                        </tr>
+                        <tr>
+                            <td>পাতার প্রলেপ</td>
+                            <td>১ - ২টি পাতা</td>
+                            <td>হালকা গরম করে সেঁক</td>
+                        </tr>
+                        <tr>
+                            <td>বীজ চূর্ণ (শোধনকৃত)</td>
+                            <td>৩০ - ৬০ মি.গ্রা.</td>
+                            <td>কেবল বিশেষজ্ঞের অধীনে</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
         <div class="info-section">
             <div class="warning-box">
-                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> অতি জরুরি সতর্কতা</h4>
-                <p>• ধুতুরার বীজ বা পাতা ভুলেও মুখে দেবেন না। এর বীজ সেবনে মানুষ পাগল হয়ে যেতে পারে বা মৃত্যু হতে পারে।</p>
-                <p>• ধুতুরা নাড়াচাড়া করার পর অবশ্যই হাত ভালো করে সাবান দিয়ে ধুয়ে ফেলবেন। চোখে এর রস গেলে অন্ধত্ব হতে পারে।</p>
-                <p>• শিশুদের নাগালের বাইরে রাখুন। এটি একটি শক্তিশালী হ্যালুসিনোজেনিক উদ্ভিদ যা মস্তিস্কের স্নায়ুতন্ত্রকে বিকল করে দিতে পারে।</p>
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-triangle"></i> মারাত্মক ঝুঁকি ও সতর্কতা</h4>
+                <p>• ধুতুরা একটি **মারাত্মক বিষাক্ত** উদ্ভিদ। এর ফল বা বীজ খেলে মতিভ্রম, পাগলামি, খিঁচুনি এবং মৃত্যু হতে পারে।</p>
+                <p>• শিশুদের নাগালের বাইরে রাখুন। ভুলবশত কেউ খেয়ে ফেললে দ্রুত হাসপাতালে নিয়ে যান।</p>
+                <p>• এটি ব্যবহারের পর হাত খুব ভালোভাবে সাবান দিয়ে ধুয়ে ফেলুন। চোখে যেন রস না লাগে সেদিকে খেয়াল রাখুন।</p>
+                <p>• দীর্ঘসময় এর প্রলেপ লাগিয়ে রাখবেন না, এতে ত্বকে ফোস্কা পড়তে পারে।</p>
             </div>
         </div>
 
@@ -279,6 +351,8 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
     <div class="footer-social-container">
         <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
     <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
