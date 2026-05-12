@@ -3,149 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>অনন্তমূল (Anantamul) - বিস্তারিত তথ্য | ভেষজ চিকিৎসা কোষ</title>
+<title>অনন্তমূল (Anantamul) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
-    --primary:#8bc34a;
-    --dark:#33691e;
-    --light:#f1f8e9;
-    --accent:#dcedc8;
+    --primary:#8d6e63;
+    --dark:#4e342e;
+    --light:#efebe9;
+    --accent:#a1887f;
+    --nav-blue: #1976d2; 
+    --blue-btn: #1976d2; 
+    --blue-hover: #115293; 
     --white:#fff;
+    --footer-grey-light: #999999;
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body{
-    font-family:'Segoe UI',sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background:var(--light);
     color:#333;
-    line-height:1.6;
+    line-height:1.8;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= NAVBAR (BLUE) ================= */
 nav{
     position:sticky; top:0; z-index:999;
-    background:var(--dark); display:flex;
+    background:var(--nav-blue); display:flex;
     justify-content:space-between; align-items:center;
     padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
 }
-.logo{ color:#fff; text-decoration:none; font-size:24px; font-weight:bold; }
-.nav-links{ display:flex; align-items:center; list-style:none; }
-.nav-links a{ color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
-.nav-links a:hover{ background:var(--primary); }
+.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+.nav-links { display:flex; align-items:center; list-style:none; }
+.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover { background:var(--blue-hover); }
 
-.nav-social{ display:flex; gap:10px; }
-.nav-social a{ color:white; font-size:16px; width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
-.nav-social a:hover{ background:rgba(255,255,255,.15); }
+.nav-social { display:flex; gap:10px; align-items:center; }
+.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover { background:rgba(255,255,255,0.2); }
 
 /* ================= HEADER ================= */
 header{
-    background:linear-gradient(135deg,var(--primary),var(--dark));
-    color:#fff; text-align:center; padding:60px 20px;
+    background:linear-gradient(135deg,var(--accent),var(--dark));
+    color:#fff; text-align:center; padding:100px 20px;
 }
 
 /* ================= CONTENT CONTAINER ================= */
 .container {
     max-width: 1000px;
-    margin: -30px auto 50px;
-    padding: 20px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
 }
 
 .plant-detail-card {
     background: white;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
 .plant-header {
     text-align: center;
     border-bottom: 2px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
-.plant-icon-large { font-size: 4rem; margin-bottom: 10px; }
-.plant-detail-card h2 { color: var(--dark); font-size: 2rem; }
-.plant-detail-card small { color: #777; font-size: 1.1rem; font-style: italic; }
+.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
+.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
 
-.info-section { margin-bottom: 30px; }
+.ayurvedic-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+.spec-item {
+    background: var(--blue-btn);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.info-section { margin-bottom: 60px; }
 .info-section h3 {
     color: var(--dark);
-    border-left: 5px solid var(--primary);
-    padding-left: 15px;
-    margin-bottom: 15px;
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    background: #fafafa;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #d7ccc8;
 }
 
 .benefit-list { list-style: none; }
 .benefit-list li {
-    margin-bottom: 10px;
-    padding-left: 30px;
+    margin-bottom: 22px;
+    padding-left: 50px;
     position: relative;
+    font-size: 1.1rem;
 }
 .benefit-list li::before {
-    content: "\f00c";
+    content: "\f058";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute; left: 0;
-    color: var(--primary);
+    color: var(--dark);
+    font-size: 1.4rem;
 }
 
-/* ================= FOOTER ================= */
-footer {
-    background: #1b2e10;
-    color: #ffffff;
-    text-align: center;
-    padding: 50px 20px 30px;
-    margin-top: 50px;
+.usage-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
 }
 
-footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
-
-.footer-nav { margin-bottom: 25px; }
-.footer-nav a { color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px; }
-
-.social-container {
-    display: flex; justify-content: center;
-    gap: 12px; flex-wrap: wrap; margin-bottom: 30px;
+.warning-box {
+    background: #fff5f5;
+    border-radius: 15px;
+    padding: 35px;
+    border-left: 8px solid #e53935;
+    margin-top: 30px;
 }
 
-.s-btn {
-    display: flex; align-items: center; gap: 8px;
-    padding: 10px 20px; border-radius: 50px;
-    color: white; text-decoration: none; font-size: 14px;
-    transition: 0.3s;
+.btn-back-container { text-align: center; margin-top: 40px; }
+.btn-back-list {
+    text-decoration: none; background: var(--blue-btn); color: white; 
+    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
 }
-
-.s-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
-
-.fb { background: #1877F2; }
-.yt { background: #FF0000; }
-.ig { background: #E4405F; }
-.ln { background: #0077B5; }
-
-.copyright {
-    font-size: 13px; color: #b0b0b0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px; margin-bottom: 20px;
-}
+.btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    background: var(--primary); color: white; border: none;
-    padding: 8px 20px; border-radius: 20px; cursor: pointer;
-    font-size: 14px; transition: 0.3s;
+    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-.back-to-top:hover { background: var(--dark); }
+/* ================= FOOTER (#999999) ================= */
+footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
+.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
+.footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-/* MOBILE OPTIMIZATION */
-@media(max-width:768px){
-    nav{ flex-direction: column; height:auto; padding:15px; gap: 10px; }
-    .plant-detail-card { padding: 20px; }
-    .plant-detail-card h2 { font-size: 1.5rem; }
-}
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
 </style>
 </head>
 <body>
@@ -160,68 +181,116 @@ footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
     <div class="nav-social">
         <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
 </nav>
 
 <header>
-    <h1>ভেষজ উদ্ভিদের বিস্তারিত তথ্য</h1>
+    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
 </header>
 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🌱</div>
-            <h2>৭১. অনন্তমূল (Anantamul)</h2>
-            <small>Scientific Name: Hemidesmus indicus</small>
+            <div class="plant-icon-large">🪴</div>
+            <h2>৭. অনন্তমূল (Anantamul)</h2>
+            <small>Scientific Name: Hemidesmus indicus (L.) R. Br.</small>
+            <div class="ayurvedic-specs">
+                <div class="spec-item">রস: মধুর, তিক্ত</div>
+                <div class="spec-item">বীর্য: শীত (Cooling)</div>
+                <div class="spec-item">বিপাক: মধুর</div>
+                <div class="spec-item">গুণ: গুরু, স্নিগ্ধ</div>
+            </div>
         </div>
 
         <div class="info-section">
-            <h3>পরিচিতি</h3>
-            <p>অনন্তমূল একটি লতানো ভেষজ উদ্ভিদ যার শেকড় থেকে মিষ্টি সুগন্ধ বের হয়। এর শেকড়ের বিস্তৃতি মাটির অনেক গভীর পর্যন্ত পৌঁছায় বলে একে 'অনন্তমূল' বলা হয়। এটি রক্ত পরিষ্কার করতে এবং দেহের বিষাক্ত পদার্থ (টক্সিন) বের করে দিতে আয়ুর্বেদিক চিকিৎসায় অনন্য। এর শীতল কারক গুণের জন্য এটি চর্মরোগ এবং প্রস্রাবজনিত সমস্যায় বহুল ব্যবহৃত।</p>
+            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
+            <p>অনন্তমূল একটি লতাজাতীয় ভেষজ উদ্ভিদ যার শিকড় বা মূল সুগন্ধি এবং ওষুধি গুণে ভরপুর। আয়ুর্বেদ শাস্ত্রে একে 'সারিবাদ্বয়' এর অন্যতম প্রধান অংশ মনে করা হয়। এটি রক্ত পরিষ্কার করতে এবং শরীরের অতিরিক্ত তাপ কমাতে অতুলনীয়। এর শিকড় থেকে চন্দনের মতো এক প্রকার সুগন্ধ বের হয় বলে একে 'ভারতীয় সারসাপারিলা' বলা হয়।</p>
         </div>
 
         <div class="info-section">
-            <h3>প্রধান উপকারিতা</h3>
+            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+            <div class="lang-grid">
+                <div><strong>সংস্কৃত:</strong> সারিবা, অনন্তা, উৎপল সারিবা</div>
+                <div><strong>ইংরেজি:</strong> Indian Sarsaparilla</div>
+                <div><strong>হিন্দি:</strong> অনন্তমূল (Anantamul) / সারিবা</div>
+                <div><strong>তামিল:</strong> নান্নারি (Nannari)</div>
+                <div><strong>মালয়ালম:</strong> নুরুন্দি</div>
+                <div><strong>তেলেগু:</strong> সুগন্ধিপালা</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>অনন্তমূল Apocynaceae পরিবারের অন্তর্ভুক্ত একটি সরু ও কাস্টল লতা। এর পাতাগুলো লম্বাটে এবং গাঢ় সবুজ রঙের হয়, যার মাঝখানে সাদা রেখা থাকে। এর ফুলগুলো বাইরে বেগুনি এবং ভেতরে হলুদাভ হয়। এর সবচেয়ে গুরুত্বপূর্ণ অংশ হলো মূল বা শিকড়, যা লম্বা এবং মাটির অনেক গভীরে চলে যায় বলে একে 'অনন্তমূল' বলা হয়।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li>**রক্ত পরিশোধন:** এটি রক্ত থেকে বিষাক্ত উপাদান দূর করে এবং রক্তস্বল্পতা রোধে সহায়ক।</li>
-                <li>**প্রস্রাব পরিষ্কার:** প্রস্রাবের জ্বালাপোড়া এবং কিডনি ও মূত্রাশয়ের সংক্রমণ দূর করতে কার্যকর।</li>
-                <li>**চর্মরোগ:** একজিমা, চুলকানি ও ব্রণের সমস্যা কমাতে এর নিয়মিত সেবন ফলদায়ক।</li>
-                <li>**ক্ষুধা বৃদ্ধি:** এটি পরিপাকতন্ত্র উন্নত করে এবং রুচি বাড়াতে সাহায্য করে।</li>
+                <li><strong>পি-মিথক্সি স্যালিসাইলিক অ্যালডিহাইড:</strong> এটি অনন্তমূলের বৈশিষ্ট্যপূর্ণ সুগন্ধের প্রধান কারণ।</li>
+                <li><strong>স্যাপোনিনস (Saponins):</strong> যা রক্ত পরিষ্কার করতে এবং প্রদাহ কমাতে সাহায্য করে।</li>
+                <li><strong>ফ্ল্যাভোনয়েডস:</strong> এটি একটি শক্তিশালী অ্যান্টি-অক্সিডেন্ট যা কোষের ক্ষয় রোধ করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3>ব্যবহার বিধি</h3>
-            <p>রক্ত ও প্রস্রাব পরিষ্কার রাখতে ৫-১০ গ্রাম অনন্তমূলের শেকড় এক গ্লাস পানিতে ফুটিয়ে ক্বাথ তৈরি করে প্রতিদিন সকালে পান করা যায়। চর্মরোগের জন্য এর শেকড় বাটা আক্রান্ত স্থানে প্রলেপ হিসেবে লাগানো হয়। ভালো মানের শুষ্ক চূর্ণ মধুর সাথে মিশিয়েও সেবন করা যেতে পারে। দীর্ঘস্থায়ী রোগের ক্ষেত্রে বিশেষজ্ঞের পরামর্শ গ্রহণ করা উচিত।</p>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <ul class="benefit-list">
+                <li><strong>রক্ত পরিশোধন:</strong> এটি শরীর থেকে টক্সিন বের করে দেয় এবং চর্মরোগ যেমন একজিমা ও সোরিয়াসিস নিরাময়ে সাহায্য করে।</li>
+                <li><strong>মূত্রনালীর সংক্রমণ:</strong> প্রস্রাবের জ্বালাপোড়া এবং ইউরিনারি ট্র্যাক্ট ইনফেকশন (UTI) কমাতে এর শিকড়ের ক্বাথ অত্যন্ত কার্যকর।</li>
+                <li><strong>হজম শক্তি বৃদ্ধি:</strong> এটি অগ্নিমান্দ্য দূর করে এবং পেটের গ্যাসের সমস্যা প্রশমিত করে।</li>
+                <li><strong>মহিলাদের স্বাস্থ্য:</strong> এটি শ্বেতপ্রদর (Leucorrhea) এবং অনিয়মিত মাসিকের সমস্যা সমাধানে ব্যবহার করা হয়।</li>
+                <li><strong>জ্বর ও প্রদাহ:</strong> দীর্ঘস্থায়ী জ্বর এবং শরীরের অভ্যন্তরীণ প্রদাহ কমাতে এটি প্রাকৃতিক শীতলকারক হিসেবে কাজ করে।</li>
+            </ul>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" style="text-decoration: none; background: var(--dark); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;">
-                <i class="fas fa-home"></i> তালিকায় ফিরে যান
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <div class="usage-card">
+                <h4>১. শীতল শরবত (নান্নারি):</h4>
+                <p>অনন্তমূলের শিকড় থেঁতো করে পানিতে ফুটিয়ে সিরাপ তৈরি করে সেই পানি লেবুর রসের সাথে মিশিয়ে পান করলে শরীরের তাপমাত্রা কমে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. রক্ত পরিষ্কার ও চর্মরোগে:</h4>
+                <p>অনন্তমূলের চূর্ণ ৫ গ্রাম পরিমাণ সকালে ও রাতে পানির সাথে সেবন করলে রক্ত পরিষ্কার হয় এবং ত্বকের উজ্জ্বলতা বাড়ে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৩. বাতের ব্যথায়:</h4>
+                <p>অনন্তমূলের শিকড় বাটা ব্যথার স্থানে প্রলেপ দিলে ফোলা এবং ব্যথা দ্রুত উপশম হয়।</p>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+            <p>• অনন্তমূল সাধারণত নিরাপদ, তবে অতিরিক্ত সেবনে পেট খারাপ বা বমি ভাব হতে পারে।</p>
+            <p>• ডায়াবেটিস রোগীরা যদি এই উদ্ভিদের সিরাপ ব্যবহার করেন, তবে চিনি বা মধুর মাত্রার দিকে খেয়াল রাখুন।</p>
+            <p>• শিশুদের ক্ষেত্রে এবং গর্ভাবস্থায় ব্যবহারের আগে অবশ্যই বিশেষজ্ঞ চিকিৎসকের পরামর্শ নিন।</p>
+        </div>
+
+        <div class="btn-back-container">
+            <a href="index.html" class="btn-back-list">
+                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
             </a>
         </div>
     </div>
 </div>
 
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 <footer>
     <h2>ভেষজ চিকিৎসা কোষ</h2>
-    <div class="footer-nav">
-        <a href="index.html">হোম</a>
-        <a href="about.html">সম্পর্কে</a>
-        <a href="contact.html">যোগাযোগ</a>
-        <a href="disclaimer.html">সতর্কবার্তা</a>
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
-    
-    <div class="social-container">
-        <a href="https://www.facebook.com/bonargidawahkana.net" class="s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-        <a href="https://www.youtube.com/c/bonarjidawakhana" class="s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://www.instagram.com/mddulal596" class="s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-    </div>
-    
-    <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
-    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">উপরে যান ↑</button>
+    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
 </body>
