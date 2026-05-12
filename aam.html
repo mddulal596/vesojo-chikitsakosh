@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>আম (Aam) - বিস্তারিত তথ্য | ভেষজ চিকিৎসা কোষ</title>
+<title>আম (Mango) - বিস্তারিত তথ্য | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
-    --primary:#ff8f00;
+    --primary:#ffb300;
     --dark:#e65100;
-    --light:#fff8e1;
-    --accent:#ffb300;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --white:#fff;
 }
 
@@ -31,18 +31,18 @@ nav{
     justify-content:space-between; align-items:center;
     padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
 }
-.logo{ color:#fff; text-decoration:none; font-size:24px; font-weight:bold; }
-.nav-links{ display:flex; align-items:center; list-style:none; }
-.nav-links a{ color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
-.nav-links a:hover{ background:var(--primary); }
+.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+.nav-links { display:flex; align-items:center; list-style:none; }
+.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover { background:var(--accent); }
 
-.nav-social{ display:flex; gap:10px; }
-.nav-social a{ color:white; font-size:16px; width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
-.nav-social a:hover{ background:rgba(255,255,255,.15); }
+.nav-social { display:flex; gap:10px; align-items:center; }
+.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover { background:rgba(255,255,255,0.2); }
 
 /* ================= HEADER ================= */
 header{
-    background:linear-gradient(135deg,var(--primary),var(--dark));
+    background:linear-gradient(135deg,var(--accent),var(--dark));
     color:#fff; text-align:center; padding:60px 20px;
 }
 
@@ -74,7 +74,7 @@ header{
 .info-section { margin-bottom: 30px; }
 .info-section h3 {
     color: var(--dark);
-    border-left: 5px solid var(--primary);
+    border-left: 5px solid var(--accent);
     padding-left: 15px;
     margin-bottom: 15px;
 }
@@ -90,61 +90,72 @@ header{
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute; left: 0;
-    color: var(--primary);
+    color: var(--dark);
 }
 
 /* ================= FOOTER ================= */
 footer {
-    background: #3e2723;
+    background: #211301;
     color: #ffffff;
     text-align: center;
     padding: 50px 20px 30px;
     margin-top: 50px;
 }
 
-footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
+footer h2 { font-size: 24px; margin-bottom: 25px; font-weight: bold; }
 
-.footer-nav { margin-bottom: 25px; }
-.footer-nav a { color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px; }
-
-.social-container {
-    display: flex; justify-content: center;
-    gap: 12px; flex-wrap: wrap; margin-bottom: 30px;
+.footer-social-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
-.s-btn {
-    display: flex; align-items: center; gap: 8px;
-    padding: 10px 20px; border-radius: 50px;
-    color: white; text-decoration: none; font-size: 14px;
+.footer-s-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
     transition: 0.3s;
 }
 
-.s-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+.footer-s-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
 
 .fb { background: #1877F2; }
 .yt { background: #FF0000; }
 .ig { background: #E4405F; }
 .ln { background: #0077B5; }
 
-.copyright {
-    font-size: 13px; color: #b0b0b0;
+.footer-copyright {
+    font-size: 13px;
+    color: #b0b0b0;
     border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px; margin-bottom: 20px;
+    padding-top: 20px;
+    margin-bottom: 20px;
 }
 
 .back-to-top {
-    background: var(--primary); color: white; border: none;
-    padding: 8px 20px; border-radius: 20px; cursor: pointer;
-    font-size: 14px; transition: 0.3s;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 .back-to-top:hover { background: var(--dark); }
 
-/* MOBILE OPTIMIZATION */
-@media(max-width:768px){
-    nav{ flex-direction: column; height:auto; padding:15px; gap: 10px; }
-    .plant-detail-card { padding: 20px; }
-    .plant-detail-card h2 { font-size: 1.5rem; }
+@media (max-width: 768px) {
+    nav { flex-direction: column; height: auto; padding: 15px; }
+    .footer-s-btn { padding: 8px 15px; font-size: 12px; }
 }
 </style>
 </head>
@@ -160,6 +171,7 @@ footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
     <div class="nav-social">
         <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
 </nav>
@@ -172,32 +184,32 @@ footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
     <div class="plant-detail-card">
         <div class="plant-header">
             <div class="plant-icon-large">🥭</div>
-            <h2>৪৫. আম (Mango)</h2>
+            <h2>১. আম (Mango)</h2>
             <small>Scientific Name: Mangifera indica</small>
         </div>
 
         <div class="info-section">
             <h3>পরিচিতি</h3>
-            <p>আম শুধু সুস্বাদু ফলই নয়, এটি অত্যন্ত শক্তিশালী ঔষধি গুণসম্পন্ন একটি গাছ। আয়ুর্বেদ শাস্ত্রে আমের কচি পাতা, বীজের শাঁস এবং ছাল বিভিন্ন জটিল রোগের চিকিৎসায় ব্যবহৃত হয়। আমে প্রচুর পরিমাণে ভিটামিন এ, সি এবং অ্যান্টি-অক্সিডেন্ট থাকে যা শরীরের রোগ প্রতিরোধ ক্ষমতা বৃদ্ধিতে এবং হজম প্রক্রিয়ায় গুরুত্বপূর্ণ ভূমিকা পালন করে।</p>
+            <p>আম বাংলাদেশের জাতীয় গাছ এবং ফলের রাজা। এর প্রতিটি অংশই ঔষধি গুণাগুণে সমৃদ্ধ। কচি আম পাতা থেকে শুরু করে আমের আঁটি ও ছাল—সবই প্রাচীন আয়ুর্বেদিক চিকিৎসায় ব্যবহৃত হয়ে আসছে। এটি ভিটামিন এ, সি এবং পটাশিয়ামের চমৎকার উৎস।</p>
         </div>
 
         <div class="info-section">
             <h3>প্রধান উপকারিতা</h3>
             <ul class="benefit-list">
-                <li>আমের কচি পাতা রক্তে শর্করার মাত্রা বা ডায়াবেটিস নিয়ন্ত্রণে জাদুকরী কাজ করে।</li>
-                <li>আমাশয় এবং পেটের সমস্যায় আমের কচি পাতা বা আমের বীজের শাঁসের গুঁড়ো অত্যন্ত ফলপ্রসূ।</li>
-                <li>এটি শরীরের রক্ত পরিষ্কার করতে এবং লিভারের কার্যক্ষমতা বৃদ্ধিতে সাহায্য করে।</li>
-                <li>পোড়া স্থানে আমের পাতা পুড়িয়ে সেই ছাই লাগালে দ্রুত ক্ষত নিরাময় হয়।</li>
+                <li>**ডায়াবেটিস নিয়ন্ত্রণ:** কচি আম পাতা শুকিয়ে গুঁড়ো করে সেবন করলে রক্তে শর্করার মাত্রা নিয়ন্ত্রণে থাকে।</li>
+                <li>**হজম শক্তি বৃদ্ধি:** পাকা আম হজমে সহায়তা করে এবং কোষ্ঠকাঠিন্য দূর করতে কার্যকর।</li>
+                <li>**ত্বকের যত্ন:** আমের রস ত্বকে ব্যবহার করলে বলিরেখা কমে এবং ত্বকের উজ্জ্বলতা বৃদ্ধি পায়।</li>
+                <li>**মাড়ির সমস্যা:** আমের কচি পাতার রস দাঁতের মাড়ি মজবুত করতে এবং রক্ত পড়া বন্ধ করতে সাহায্য করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
             <h3>ব্যবহার বিধি</h3>
-            <p>ডায়াবেটিস নিয়ন্ত্রণে ৫-১০টি কচি আম পাতা এক গ্লাস পানিতে সারারাত ভিজিয়ে রেখে সকালে ছেঁকে খেলে উপকার পাওয়া যায়। ডায়রিয়া বা আমাশয়ের জন্য আমের বীজের শুকনো শাঁস গুঁড়ো করে মধুর সাথে মিশিয়ে খেলে দ্রুত আরাম মেলে। মাড়ির রক্তপাত বন্ধ করতে আমের শুকনো পাতা পুড়িয়ে সেই গুঁড়ো দিয়ে দাঁত মাজলে উপকার হয়। এছাড়া কচি আমের রস গরমে শরীরে প্রশান্তি আনে এবং লু (Heat Stroke) থেকে রক্ষা করে।</p>
+            <p>ডায়াবেটিসের জন্য প্রতিদিন সকালে খালি পেটে ১ চা চামচ শুকনো আম পাতার গুঁড়ো পানির সাথে মিশিয়ে পান করা যায়। এছাড়াও আমের ছালের ক্বাথ আমাশয় ও ডায়রিয়া সারাতে ব্যবহার করা হয়।</p>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" style="text-decoration: none; background: var(--primary); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;">
+            <a href="index.html" style="text-decoration: none; background: var(--dark); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold;">
                 <i class="fas fa-home"></i> তালিকায় ফিরে যান
             </a>
         </div>
@@ -206,21 +218,13 @@ footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
 
 <footer>
     <h2>ভেষজ চিকিৎসা কোষ</h2>
-    <div class="footer-nav">
-        <a href="index.html">হোম</a>
-        <a href="about.html">সম্পর্কে</a>
-        <a href="contact.html">যোগাযোগ</a>
-        <a href="disclaimer.html">সতর্কবার্তা</a>
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
-    
-    <div class="social-container">
-        <a href="https://www.facebook.com/bonargidawahkana.net" class="s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-        <a href="https://www.youtube.com/c/bonarjidawakhana" class="s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://www.instagram.com/mddulal596" class="s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-    </div>
-    
-    <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
+    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
     <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">উপরে যান ↑</button>
 </footer>
 
