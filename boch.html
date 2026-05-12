@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#795548;
-    --dark:#4e342e;
-    --light:#efebe9;
-    --accent:#a1887f;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #f7f2f0;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #d7ccc8;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -194,79 +222,117 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🪵</div>
+            <div class="plant-icon-large">🪴</div>
             <h2>২১. বচ (Boch)</h2>
             <small>Scientific Name: Acorus calamus L.</small>
             <div class="ayurvedic-specs">
                 <div class="spec-item">রস: কটু, তিক্ত</div>
-                <div class="spec-item">বীর্য: উষ্ণ (Heating)</div>
+                <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
                 <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">গুণ: লঘু, তীক্ষ্ণ</div>
+                <div class="spec-item">দোষ: কফ ও বাত নাশক</div>
+                <div class="spec-item">বিশেষত্ব: মেধাশক্তি ও কণ্ঠস্বর বৃদ্ধিকারক</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>বচ একটি সুগন্ধি কন্দযুক্ত ভেষজ যা আয়ুর্বেদ শাস্ত্রে 'স্মৃতিশক্তি বর্ধক' হিসেবে অত্যন্ত সমাদৃত। স্মৃতিশক্তি বৃদ্ধি, বাকশক্তির জড়তা দূর করা এবং মস্তিষ্কের কার্যক্ষমতা বাড়াতে এটি মহৌষধ হিসেবে কাজ করে। এর উগ্র সুগন্ধের কারণে একে অনেক সময় 'উগ্রগন্ধা' বলা হয়। এটি মূলত জলাভূমি বা স্যাঁতসেঁতে স্থানে জন্মে।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>আয়ুর্বেদ শাস্ত্রে বচকে 'বচা' বলা হয়, যার অর্থ হলো 'কথা বলা'। এটি মস্তিষ্কের স্নায়ুকে উদ্দীপিত করতে এবং কণ্ঠস্বর পরিষ্কার করতে প্রাচীনকাল থেকেই অত্যন্ত সমাদৃত। শিশুদের তোতলামি বা কথা বলতে দেরি হওয়া এবং বয়স্কদের স্মৃতিভ্রম বা অ্যালঝেইমার চিকিৎসায় বচ একটি অনন্য ভেষজ। এর সুগন্ধি রাইজোম বা কাণ্ড ঔষধ হিসেবে ব্যবহৃত হয়।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> বচা, উগ্রগন্ধা, গোলমী</div>
-                <div><strong>ইংরেজি:</strong> Sweet Flag / Calamus</div>
-                <div><strong>হিন্দি:</strong> বচ (Bacha)</div>
+                <div><strong>সংস্কৃত:</strong> বচা, উগ্রগন্ধা, জটিলা</div>
+                <div><strong>ইংরেজি:</strong> Sweet Flag, Calamus</div>
+                <div><strong>হিন্দি:</strong> বচ (Vacha)</div>
                 <div><strong>তামিল:</strong> বসাম্বু</div>
-                <div><strong>ফার্সি:</strong> আগর</div>
+                <div><strong>বাংলা:</strong> বচ, ঘোড়াবচ</div>
+                <div><strong>তেলুগু:</strong> বাজা</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>বচ Acoraceae পরিবারের একটি বহুবর্ষজীবী বীরুৎ। এর পাতাগুলো লম্বা, তলোয়ারের মতো এবং উজ্জ্বল সবুজ বর্ণের। এর মাটির নিচের রাইজোম বা কন্দ অংশটিই ওষুধি কাজে ব্যবহৃত হয়। এই কন্দটি বেশ সুগন্ধি এবং কিছুটা তিক্ত স্বাদের।</p>
+            <p>বচ একটি বহুবর্ষজীবী জলজ বা জলাভূমিজাতীয় উদ্ভিদ। এটি দেখতে অনেকটা ঘাসের মতো হলেও এর পাতাগুলো লম্বা ও তরবারির মতো ধারালো হয়। এর প্রধান ঔষধি অংশ হলো মাটির নিচে থাকা সুগন্ধি কাণ্ড বা রাইজোম। এই রাইজোমটি আদার মতো গিঁটযুক্ত এবং তীব্র সুগন্ধযুক্ত হয়। জলাশয় বা নদীর ধারে এটি প্রচুর পরিমাণে জন্মে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>অ্যাসারন (Asarone):</strong> এটি প্রধান সক্রিয় উপাদান যা স্নায়ুতন্ত্রের ওপর কাজ করে।</li>
-                <li><strong>অপরিহার্য তেল:</strong> যা এর উগ্র সুগন্ধ এবং ওষুধি গুণের প্রধান কারণ।</li>
-                <li><strong>অ্যাকোরিন:</strong> একটি তিক্ত গ্লাইকোসাইড যা পরিপাকতন্ত্রের উন্নতি ঘটায়।</li>
+                <li><strong>Acorin:</strong> এটি একটি গ্লাইকোসাইড যা স্নায়ুতন্ত্রের ওপর কাজ করে।</li>
+                <li><strong>Asarone:</strong> এটি মূলত মস্তিষ্কের প্রশান্তিতে এবং স্মৃতিশক্তি বাড়াতে সাহায্য করে।</li>
+                <li><strong>অপরিহার্য তেল:</strong> যা শ্বাসযন্ত্রের সর্দি ও কফ বের করে দিতে অত্যন্ত কার্যকর।</li>
+                <li><strong>মিউসিলেজ:</strong> যা কণ্ঠস্বরের জড়তা কাটাতে সহায়তা করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>স্মৃতিশক্তি ও মেধা বৃদ্ধি:</strong> বচ চূর্ণ স্মৃতিশক্তি তীক্ষ্ণ করতে এবং পড়াশোনায় মনোযোগ বাড়াতে সাহায্য করে।</li>
-                <li><strong>তোতলামি ও বাক জড়তা:</strong> শিশুদের কথা বলতে দেরি হলে বা তোতলামি থাকলে মধুসহ বচ চূর্ণ জিহ্বায় ঘষলে উপকার পাওয়া যায়।</li>
-                <li><strong>হজম ও পেট ফাঁপা:</strong> এটি পরিপাক নালীর গ্যাস দূর করে এবং ক্ষুধা বাড়াতে সাহায্য করে।</li>
-                <li><strong>মানসিক প্রশান্তি:</strong> অনিদ্রা, উদ্বেগ এবং মানসিক অবসাদ দূর করতে এটি প্রাকৃতিক ট্রাঙ্কুলাইজার হিসেবে কাজ করে।</li>
-                <li><strong>কৃমিনাশক:</strong> এটি পেটের ক্ষতিকর কৃমি ধ্বংস করতে কার্যকর।</li>
+                <li><strong>স্মৃতিশক্তি ও বুদ্ধি বৃদ্ধি:</strong> নিয়মিত সামান্য পরিমাণে বচ চূর্ণ মধু দিয়ে সেবন করলে মেধাশক্তি ও একাগ্রতা বৃদ্ধি পায়।</li>
+                <li><strong>তোতলামি ও কণ্ঠস্বর:</strong> শিশুদের কথা বলতে অসুবিধা হলে বা কণ্ঠস্বর কর্কশ হয়ে গেলে বচ চূর্ণ জিভে ঘষলে বা মধুসহ চাটালে বিশেষ উপকার হয়।</li>
+                <li><strong>পেটের গ্যাস ও বদহজম:</strong> এটি বায়ুনাশক হিসেবে কাজ করে এবং দীর্ঘস্থায়ী অজীর্ণ রোগে অত্যন্ত ফলপ্রসূ।</li>
+                <li><strong>শ্বাসকষ্ট ও কাশি:</strong> এটি কফ নিঃসারক হিসেবে কাজ করে ব্রঙ্কাইটিস এবং হাঁপানিতে উপশম দেয়।</li>
+                <li><strong>উন্মাদনা ও মৃগীরোগ:</strong> মস্তিষ্কের স্নায়ুকে শান্ত রাখতে আয়ুর্বেদে বচ মিশ্রিত ঘি বা তেলের নস্যি ব্যবহারের বিধান আছে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. স্মৃতিশক্তি বাড়াতে:</h4>
-                <p>১-২ চিমটি বচ চূর্ণ এক চা চামচ মধুর সাথে মিশিয়ে প্রতিদিন সকালে খালি পেটে সেবন করুন।</p>
+                <h4>১. শিশুদের কথা বলার জড়তা দূর করতে:</h4>
+                <p>বচ সামান্য ঘষে বা চিমটি পরিমাণ চূর্ণ মধুর সাথে মিশিয়ে শিশুর জিভে হালকা করে লাগিয়ে দিন। এটি প্রতিদিন সকালে একবার করানো যেতে পারে।</p>
             </div>
             <div class="usage-card">
-                <h4>২. তোতলামি দূর করতে:</h4>
-                <p>সামান্য বচ চূর্ণ মধুর সাথে মিশিয়ে হালকা করে জিহ্বায় নিয়মিত মালিশ করলে বাক জড়তা কমে আসে।</p>
+                <h4>২. পেটের গ্যাস ও শূল ব্যথায়:</h4>
+                <p>বচ চূর্ণ ২ গ্রাম পরিমাণ কুসুম কুসুম গরম পানির সাথে মিশিয়ে খেলে পেটের ফোলা ভাব এবং ব্যথা দ্রুত কমে যায়।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. পেট ব্যথায়:</h4>
-                <p>বচ এবং আদা সমপরিমাণ নিয়ে ক্বাথ তৈরি করে কুসুম গরম অবস্থায় সেবন করলে পেটের বায়ু ও ব্যথা দূর হয়।</p>
+                <h4>৩. স্মৃতিশক্তি বাড়াতে:</h4>
+                <p>বচ চূর্ণ ৫০০ মিলিগ্রাম (আধা গ্রাম) এবং সামান্য ঘি ও মধু মিশিয়ে নিয়মিত ১ মাস সেবন করলে স্মরণশক্তি উন্নত হয়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• বচ উচ্চ মাত্রায় বা দীর্ঘকাল সেবনের ফলে বমি বমি ভাব হতে পারে।</p>
-            <p>• গর্ভাবস্থায় এবং শিশুদের ক্ষেত্রে এটি ব্যবহারের আগে অবশ্যই বিশেষজ্ঞ চিকিৎসকের পরামর্শ নিন।</p>
-            <p>• এটি গরম প্রকৃতির ভেষজ, তাই যারা অতিরিক্ত পিত্ত বা গরম শরীর সম্পন্ন তারা সাবধানে ব্যবহার করবেন।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> সেবন বিধি ও মাত্রা</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>ব্যবহারের পদ্ধতি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>বচ চূর্ণ (পাউডার)</td>
+                            <td>১২৫ - ৫০০ মিলিগ্রাম</td>
+                            <td>মধু বা ঘিয়ের সাথে</td>
+                        </tr>
+                        <tr>
+                            <td>বচ সিদ্ধ পানি</td>
+                            <td>১৫ - ২০ মিলি</td>
+                            <td>গলা পরিষ্কারের জন্য</td>
+                        </tr>
+                        <tr>
+                            <td>নস্যি (তেল/ঘি)</td>
+                            <td>১ - ২ ফোঁটা</td>
+                            <td>নাকের ছিদ্রে (বিশেষজ্ঞের পরামর্শে)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• বচ অতিরিক্ত মাত্রায় সেবন করলে বমি হতে পারে, তাই পরিমাণের দিকে লক্ষ্য রাখা জরুরি।</p>
+                <p>• দীর্ঘ সময় ধরে বা অতিরিক্ত মাত্রায় ব্যবহারে স্নায়বিক দুর্বলতা দেখা দিতে পারে।</p>
+                <p>• গর্ভাবস্থায় এবং যারা উচ্চ রক্তচাপের ওষুধ খাচ্ছেন, তাদের জন্য বচ সেবন নিষিদ্ধ বা সীমিত করা উচিত।</p>
+                <p>• এটি অত্যন্ত উষ্ণ বীর্য হওয়ায় গরমকালে বা পিত্ত প্রকৃতিসম্পন্ন ব্যক্তিদের সাবধানে ব্যবহার করা উচিত।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
