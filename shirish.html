@@ -38,7 +38,7 @@ nav{
 
 .nav-social { display:flex; gap:10px; align-items:center; }
 .nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
-.nav-social a:hover { background:rgba(255,255,255,0.2); transform: translateY(-2px); }
+.nav-social a:hover { background:rgba(255,255,255,0.2); }
 
 /* ================= HEADER ================= */
 header{
@@ -93,62 +93,93 @@ header{
     color: var(--dark);
 }
 
-/* ================= FOOTER ================= */
+/* ================= FOOTER (As per Image) ================= */
 footer {
-    background: #0d1a01;
+    background: #142214;
     color: #ffffff;
     text-align: center;
     padding: 50px 20px 30px;
     margin-top: 50px;
 }
 
-.copyright {
-    font-size: 13px; color: #b0b0b0;
+footer h2 { font-size: 24px; margin-bottom: 25px; font-weight: bold; }
+
+.footer-social-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.footer-s-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-s-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
+
+.fb { background: #1877F2; }
+.yt { background: #FF0000; }
+.ig { background: #E4405F; }
+.ln { background: #0077B5; }
+
+.footer-copyright {
+    font-size: 13px;
+    color: #b0b0b0;
     border-top: 1px solid rgba(255,255,255,0.1);
     padding-top: 20px;
+    margin-bottom: 20px;
 }
 
 .back-to-top {
-    background: var(--accent); color: #fff; border: none;
-    padding: 8px 20px; border-radius: 20px; cursor: pointer;
-    font-size: 14px; margin-top: 15px; font-weight: bold;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-/* MOBILE OPTIMIZATION */
+.back-to-top:hover { background: var(--dark); }
+
 @media (max-width: 768px) {
-    nav { flex-direction: column; height: auto; padding: 15px; gap: 10px; }
-    .nav-links { gap: 5px; }
-    .nav-links a { padding: 10px; font-size: 14px; }
-    .plant-detail-card { padding: 20px; }
+    .footer-social-container { gap: 8px; }
+    .footer-s-btn { padding: 8px 15px; font-size: 12px; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
-    
     <ul class="nav-links">
         <li><a href="index.html">হোম</a></li>
         <li><a href="about.html">সম্পর্কে</a></li>
         <li><a href="contact.html">যোগাযোগ</a></li>
     </ul>
-
     <div class="nav-social">
-        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/mddulal596" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
 </nav>
 
-<!-- HEADER -->
 <header>
     <h1>ভেষজ উদ্ভিদের বিস্তারিত তথ্য</h1>
 </header>
 
-<!-- MAIN CONTENT -->
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
@@ -178,16 +209,25 @@ footer {
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" style="text-decoration: none; background: var(--dark); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;">
+            <a href="index.html" style="text-decoration: none; background: var(--dark); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold;">
                 <i class="fas fa-home"></i> তালিকায় ফিরে যান
             </a>
         </div>
     </div>
 </div>
 
-<!-- FOOTER -->
+<!-- FOOTER START -->
 <footer>
-    <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
+    <h2>ভেষজ চিকিৎসা কোষ</h2>
+    
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+    
+    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
     <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">উপরে যান ↑</button>
 </footer>
 
