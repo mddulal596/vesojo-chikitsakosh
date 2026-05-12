@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#ffb300;
-    --dark:#e65100;
-    --light:#fff3e0;
-    --accent:#ffa000;
+    --primary:#81c784; /* দ্রোণপুষ্পীর সবুজ আভা */
+    --dark:#2e7d32;
+    --light:#f1f8e9;
+    --accent:#388e3c;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -108,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #fffcf0;
+    background: #f9fbe7;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #ffe082;
+    border: 1px solid #dcedc8;
 }
 
 .benefit-list { list-style: none; }
@@ -140,6 +140,30 @@ header{
 }
 .usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
 .usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:hover { background: #f1f8e9; }
 
 .warning-box {
     background: #fff5f5;
@@ -197,67 +221,121 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🌱</div>
-            <h2>৩৮. দ্রোণপুষ্পী / দন্ডকলস (Dronapushpi)</h2>
-            <small>Scientific Name: Leucas aspera (Willd.) Link</small>
+            <div class="plant-icon-large">🌿</div>
+            <h2>৩৮. দ্রোণপুষ্পী (Dronapushpi)</h2>
+            <small>Scientific Name: Leucas aspera</small>
             <div class="ayurvedic-specs">
-                <div class="spec-item">রস: কটু</div>
+                <div class="spec-item">রস: কটু, লবণ</div>
                 <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
                 <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">প্রভাব: কফ-বাত নাশক</div>
+                <div class="spec-item">গুণ: গুরু, রুক্ষ, তীক্ষ্ণ</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
-            <p>দ্রোণপুষ্পী, যা সাধারণ মানুষের কাছে 'দন্ডকলস' বা 'দুলফি' নামে পরিচিত, বাংলার পথে-প্রান্তরে অবহেলায় বেড়ে ওঠা এক বিস্ময়কর ভেষজ। এর ফুলের আকৃতি দ্রোণের (পাত্র বা কলস) মতো হওয়ায় আয়ুর্বেদে একে 'দ্রোণপুষ্পী' বলা হয়। এটি মূলত সাইনাস, সর্দি-কাশি এবং লিভারের সমস্যায় মহৌষধ হিসেবে ব্যবহৃত হয়ে আসছে। প্রাচীনকাল থেকেই বিষাক্ত পোকার কামড় নিরাময়ে এবং জ্বরের চিকিৎসায় এর পাতার রস ব্যবহারের কথা বিভিন্ন পাণ্ডুলিপিতে পাওয়া যায়।</p>
+            <p>দ্রোণপুষ্পী বা স্থানীয় ভাষায় যাকে আমরা 'দণ্ডকলস' বা 'হলকুশা' বলে চিনি, এটি গ্রাম বাংলার একটি অত্যন্ত পরিচিত ভেষজ। আয়ুর্বেদ শাস্ত্রে এর ফুলের আকৃতি দ্রোণী বা নৌকার মতো হওয়ায় একে 'দ্রোণপুষ্পী' বলা হয়। এটি কফ এবং বাত নাশক হিসেবে অত্যন্ত কার্যকর। প্রাচীন কাল থেকেই সাপের বিষ নামাতে এবং সাইনোসাইটিসের ব্যথায় এই ভেষজটির বিস্ময়কর ব্যবহার হয়ে আসছে।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> দ্রোণপুষ্পী, চিত্রপত্রক</div>
-                <div><strong>ইংরেজি:</strong> Common Leucas / Thumba</div>
-                <div><strong>হিন্দি:</strong> গোমা / গুমা (Guma)</div>
-                <div><strong>বাংলা:</strong> দন্ডকলস / দুলফি / শ্বেতদ্রোণ</div>
+                <div><strong>সংস্কৃত:</strong> দ্রোণপুষ্পী, চিত্রক্ষুপ</div>
+                <div><strong>ইংরেজি:</strong> Thumba / Common Leucas</div>
+                <div><strong>হিন্দি:</strong> গুমা (Guma)</div>
                 <div><strong>তামিল:</strong> থুম্বাই (Thumbai)</div>
-                <div><strong>মালয়ালাম:</strong> থুম্বা</div>
+                <div><strong>বাংলা:</strong> দণ্ডকলস, হলকুশা</div>
+                <div><strong>মারাঠি:</strong> তুম্বা (Tumba)</div>
             </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>এটি একটি একবর্ষজীবী গুল্মজাতীয় উদ্ভিদ যা সাধারণত ৩০-৯০ সেন্টিমিটার পর্যন্ত উঁচু হয়। এর কাণ্ড চারকোনা এবং লোমশ। পাতাগুলো লম্বাকৃতির এবং কিনারা খাঁজকাটা। গাছের শীর্ষে সাদা রঙের ছোট ছোট ফুল ফোটে যা দেখতে অনেকটা কলসের মতো বা নৌকার মতো। এটি সাধারণত রাস্তার ধারে বা ফসলের জমিতে আগাছা হিসেবে জন্মালেও এর ঔষধি গুণ অপরিসীম।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
+            <ul class="benefit-list">
+                <li><strong>অ্যালকালয়েডস:</strong> এতে লিউসিন (Leucin) নামক বিশেষ অ্যালকালয়েড থাকে যা ব্যথানাশক।</li>
+                <li><strong>ফ্ল্যাভোনয়েডস:</strong> যা অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে শরীরকে জীবাণুমুক্ত রাখে।</li>
+                <li><strong>ট্রাইটারপেনয়েডস:</strong> অন্ত্রের কৃমি এবং প্রদাহ দূর করতে সাহায্য করে।</li>
+                <li><strong>অপরিহার্য তেল (Essential Oil):</strong> যা সর্দি-কাশি ও শ্বাসকষ্ট উপশমে কাজ করে।</li>
+            </ul>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
-                <li><strong>সাইনাস ও মাথা ব্যথা:</strong> এর পাতার রসের নস্যি নিলে দীর্ঘদিনের সাইনাস ও সর্দিজনিত মাথা ব্যথা দ্রুত সেরে যায়।</li>
-                <li><strong>সর্দি-কাশি ও হাঁপানি:</strong> কফ নিঃসারক হিসেবে দন্ডকলসের রস মধুর সাথে মিশিয়ে খেলে ফুসফুস পরিষ্কার হয়।</li>
-                <li><strong>লিভার ও জন্ডিস:</strong> জন্ডিস রোগে এর পাতার রস গোলমরিচ মিশিয়ে সেবন করলে লিভারের কর্মক্ষমতা বাড়ে।</li>
-                <li><strong>চর্মরোগ ও চুলকানি:</strong> শরীরের চুলকানি বা একজিমায় দন্ডকলসের রস নিয়মিত মাখলে সংক্রমণ দূর হয়।</li>
-                <li><strong>বিষাক্ত পোকার কামড়:</strong> মৌমাছি বা বিচ্ছু কামড়ালে ক্ষতস্থানে এর পাতার রস দ্রুত বিষ উপশম করে।</li>
+                <li><strong>সাইনোসাইটিস ও মাথা ব্যথা:</strong> দ্রোণপুষ্পীর পাতার রসের নস্যি নিলে সাইনাসের ব্যথা এবং পুরনো মাথা ব্যথা দ্রুত সেরে যায়।</li>
+                <li><strong>জ্বর ও সর্দি:</strong> ম্যালেরিয়া বা সাধারণ সর্দি-জ্বরে এর পাতার ক্বাথ শরীর থেকে ঘাম বের করে জ্বর নামাতে সাহায্য করে।</li>
+                <li><strong>চর্মরোগ ও চুলকানি:</strong> পাতার রস আক্রান্ত স্থানে লাগালে দাউদ, একজিমা এবং পুরনো চুলকানি দূর হয়।</li>
+                <li><strong>কৃমিনাশক:</strong> শিশুদের পেটের কৃমি দূর করতে দ্রোণপুষ্পীর পাতার রস অত্যন্ত ফলদায়ক।</li>
+                <li><strong>লিভারের সুরক্ষা:</strong> এটি জন্ডিস এবং লিভারের ফোলা কমাতে সাহায্য করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. বাচ্চাদের সর্দি-কাশিতে:</h4>
-                <p>দন্ডকলসের ৪-৫টি কচি পাতার রস এবং সামান্য মধু মিশিয়ে অল্প গরম করে সকালে খাওয়ালে বাচ্চাদের বুকের জমাট কফ বেরিয়ে যায়।</p>
+                <h4>১. তীব্র মাথা ব্যথায়:</h4>
+                <p>দ্রোণপুষ্পীর কচি পাতার রস ২-৩ ফোঁটা নাকের ছিদ্রে নস্যি হিসেবে ব্যবহার করলে মাথা ব্যথায় তাৎক্ষণিক আরাম পাওয়া যায়।</p>
             </div>
             <div class="usage-card">
-                <h4>২. সাইনাসের যন্ত্রণায়:</h4>
-                <p>২ ফোঁটা দন্ডকলসের পাতার রস নাকের ছিদ্রে নস্যি হিসেবে নিলে (টানলে) জমে থাকা শ্লেষ্মা বেরিয়ে যায় এবং সাইনাসের চাপ কমে।</p>
+                <h4>২. পেটের কৃমি দূর করতে:</h4>
+                <p>১ চা-চামচ পাতার রসের সাথে সামান্য মধু মিশিয়ে সকালে খালি পেটে ৩-৫ দিন সেবন করুন।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. ক্ষুধামন্দা দূর করতে:</h4>
-                <p>দন্ডকলস পাতা শাক হিসেবে ভেজে ভাতের সাথে খেলে রুচি বৃদ্ধি পায় এবং পেটের বায়ু নাশ হয়।</p>
+                <h4>৩. বিষাক্ত পোকামাকড়ের কামড়ে:</h4>
+                <p>মৌমাছি বা বিচ্ছু কামড়ালে দ্রোণপুষ্পীর পাতা পিষে সেই স্থানে প্রলেপ দিলে বিষ ও জ্বালা উভয়ই কমে যায়।</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি (ডোজ)</h3>
+            <p style="margin-bottom: 20px;">দ্রোণপুষ্পীর রস সেবনের সাধারণ মাত্রা নিচে দেওয়া হলো:</p>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>বয়স সীমা</th>
+                            <th>সেবনের মাত্রা (রসের পরিমাণ)</th>
+                            <th>সময়কাল ও নিয়ম</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>৫ - ১২ বছর</td>
+                            <td>১/২ চা চামচ</td>
+                            <td>সকালে খালি পেটে (মধুসহ)</td>
+                        </tr>
+                        <tr>
+                            <td>১২ - ১৮ বছর</td>
+                            <td>১ চা চামচ</td>
+                            <td>দিনে ২ বার (আহারের আগে)</td>
+                        </tr>
+                        <tr>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>২ চা চামচ (১০ মিলি)</td>
+                            <td>দিনে ২-৩ বার</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ (৬৫ বছরের ঊর্ধ্বে)</td>
+                            <td>১ চা চামচ</td>
+                            <td>দিনে ১ বার (সকাল)</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
         <div class="info-section">
             <div class="warning-box">
-                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-                <p>• দন্ডকলস অত্যন্ত উষ্ণ গুণসম্পন্ন, তাই এটি অতিরিক্ত মাত্রায় সেবন করলে শরীরে জ্বালাপোড়া হতে পারে।</p>
-                <p>• গর্ভবতী মহিলাদের এবং পিত্ত প্রকৃতির রোগীদের ক্ষেত্রে এটি ব্যবহার না করাই ভালো।</p>
-                <p>• নস্যি হিসেবে ব্যবহারের সময় অবশ্যই বিশেষজ্ঞের পরামর্শ নিন, কারণ এর তীক্ষ্ণ রস নাকে জ্বালা করতে পারে।</p>
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-triangle"></i> বিশেষ সতর্কতা</h4>
+                <p>• দ্রোণপুষ্পীর রস অত্যন্ত তীক্ষ্ণ, তাই নাকের নস্যি নেওয়ার সময় সাবধানতা অবলম্বন করুন।</p>
+                <p>• অতিরিক্ত সেবনে বমি বমি ভাব হতে পারে।</p>
+                <p>• গর্ভাবস্থায় এবং স্তন্যদানকারী মায়েদের জন্য এটি সেবন করা নিষেধ।</p>
+                <p>• ৫ বছরের নিচের শিশুদের অভ্যন্তরীণ সেবনের ক্ষেত্রে বিশেষজ্ঞের পরামর্শ নিন।</p>
             </div>
         </div>
 
@@ -278,6 +356,8 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
     <div class="footer-social-container">
         <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
     <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
