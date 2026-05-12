@@ -3,149 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>বাবলা (Babla) - বিস্তারিত তথ্য | ভেষজ চিকিৎসা কোষ</title>
+<title>বাবলা (Babla) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root{
-    --primary:#3d2b1f;
-    --dark:#261b13;
-    --light:#fdfaf7;
-    --accent:#8b4513;
+    --primary:#827717;
+    --dark:#33691e;
+    --light:#f9fbe7;
+    --accent:#afb42b;
+    --nav-blue: #1976d2; 
+    --blue-btn: #1976d2; 
+    --blue-hover: #115293; 
     --white:#fff;
+    --footer-grey-light: #999999;
 }
 
 *{ margin:0; padding:0; box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body{
-    font-family:'Segoe UI',sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background:var(--light);
     color:#333;
-    line-height:1.6;
+    line-height:1.8;
 }
 
-/* ================= NAVBAR ================= */
+/* ================= NAVBAR (BLUE) ================= */
 nav{
     position:sticky; top:0; z-index:999;
-    background:var(--dark); display:flex;
+    background:var(--nav-blue); display:flex;
     justify-content:space-between; align-items:center;
     padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
 }
-.logo{ color:#fff; text-decoration:none; font-size:24px; font-weight:bold; }
-.nav-links{ display:flex; align-items:center; list-style:none; }
-.nav-links a{ color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
-.nav-links a:hover{ background:var(--accent); }
+.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
+.nav-links { display:flex; align-items:center; list-style:none; }
+.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
+.nav-links a:hover { background:var(--blue-hover); }
 
-.nav-social{ display:flex; gap:10px; }
-.nav-social a{ color:white; font-size:16px; width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
-.nav-social a:hover{ background:rgba(255,255,255,.15); }
+.nav-social { display:flex; gap:10px; align-items:center; }
+.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
+.nav-social a:hover { background:rgba(255,255,255,0.2); }
 
 /* ================= HEADER ================= */
 header{
     background:linear-gradient(135deg,var(--accent),var(--dark));
-    color:#fff; text-align:center; padding:60px 20px;
+    color:#fff; text-align:center; padding:100px 20px;
 }
 
 /* ================= CONTENT CONTAINER ================= */
 .container {
     max-width: 1000px;
-    margin: -30px auto 50px;
-    padding: 20px;
+    margin: -40px auto 60px;
+    padding: 0 20px;
 }
 
 .plant-detail-card {
     background: white;
-    padding: 40px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 60px;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
 }
 
 .plant-header {
     text-align: center;
     border-bottom: 2px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
 }
 
-.plant-icon-large { font-size: 4rem; margin-bottom: 10px; }
-.plant-detail-card h2 { color: var(--accent); font-size: 2rem; }
-.plant-detail-card small { color: #777; font-size: 1.1rem; font-style: italic; }
+.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
+.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
 
-.info-section { margin-bottom: 30px; }
+.ayurvedic-specs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+.spec-item {
+    background: var(--blue-btn);
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 500;
+}
+
+.info-section { margin-bottom: 60px; }
 .info-section h3 {
     color: var(--dark);
-    border-left: 5px solid var(--accent);
-    padding-left: 15px;
-    margin-bottom: 15px;
+    border-left: 8px solid var(--accent);
+    padding-left: 20px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    background: #f1f8e9;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #dcedc8;
 }
 
 .benefit-list { list-style: none; }
 .benefit-list li {
-    margin-bottom: 10px;
-    padding-left: 30px;
+    margin-bottom: 22px;
+    padding-left: 50px;
     position: relative;
+    font-size: 1.1rem;
 }
 .benefit-list li::before {
-    content: "\f00c";
+    content: "\f058";
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute; left: 0;
-    color: var(--accent);
+    color: var(--dark);
+    font-size: 1.4rem;
 }
 
-/* ================= FOOTER ================= */
-footer {
-    background: #261b13;
-    color: #ffffff;
-    text-align: center;
-    padding: 50px 20px 30px;
-    margin-top: 50px;
+.usage-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 25px;
 }
 
-footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
-
-.footer-nav { margin-bottom: 25px; }
-.footer-nav a { color: #ccc; text-decoration: none; margin: 0 10px; font-size: 14px; }
-
-.social-container {
-    display: flex; justify-content: center;
-    gap: 12px; flex-wrap: wrap; margin-bottom: 30px;
+.warning-box {
+    background: #fff5f5;
+    border-radius: 15px;
+    padding: 35px;
+    border-left: 8px solid #e53935;
+    margin-top: 30px;
 }
 
-.s-btn {
-    display: flex; align-items: center; gap: 8px;
-    padding: 10px 20px; border-radius: 50px;
-    color: white; text-decoration: none; font-size: 14px;
-    transition: 0.3s;
+.btn-back-container { text-align: center; margin-top: 40px; }
+.btn-back-list {
+    text-decoration: none; background: var(--blue-btn); color: white; 
+    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
 }
-
-.s-btn:hover { transform: translateY(-3px); filter: brightness(1.1); }
-
-.fb { background: #1877F2; }
-.yt { background: #FF0000; }
-.ig { background: #E4405F; }
-.ln { background: #0077B5; }
-
-.copyright {
-    font-size: 13px; color: #b0b0b0;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 20px; margin-bottom: 20px;
-}
+.btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    background: #8b4513; color: white; border: none;
-    padding: 8px 20px; border-radius: 20px; cursor: pointer;
-    font-size: 14px; transition: 0.3s;
+    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-.back-to-top:hover { background: #a0522d; }
+/* ================= FOOTER (#999999) ================= */
+footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
+.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
+.footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-/* MOBILE OPTIMIZATION */
-@media(max-width:768px){
-    nav{ flex-direction: column; height:auto; padding:15px; gap: 10px; }
-    .plant-detail-card { padding: 20px; }
-    .plant-detail-card h2 { font-size: 1.5rem; }
-}
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
 </style>
 </head>
 <body>
@@ -160,68 +181,116 @@ footer h2 { font-size: 22px; margin-bottom: 20px; font-weight: bold; }
     <div class="nav-social">
         <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
 </nav>
 
 <header>
-    <h1>ভেষজ উদ্ভিদের বিস্তারিত তথ্য</h1>
+    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
 </header>
 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
             <div class="plant-icon-large">🌳</div>
-            <h2>৩৬. বাবলা (Babla)</h2>
-            <small>Scientific Name: Acacia nilotica</small>
+            <h2>১৪. বাবলা (Babla)</h2>
+            <small>Scientific Name: Vachellia nilotica (L.) P.J.H.Hurter & Mabb.</small>
+            <div class="ayurvedic-specs">
+                <div class="spec-item">রস: কষায়</div>
+                <div class="spec-item">বীর্য: শীত (Cooling)</div>
+                <div class="spec-item">বিপাক: কটু</div>
+                <div class="spec-item">গুণ: গুরু, রুক্ষ</div>
+            </div>
         </div>
 
         <div class="info-section">
-            <h3>পরিচিতি</h3>
-            <p>বাবলা একটি কাঁটাযুক্ত মাঝারি আকারের বৃক্ষজাতীয় উদ্ভিদ। এর ছাল, পাতা, ফুল এবং আঠা—সবই ওষধি গুণে ভরপুর। একে প্রাচীনকাল থেকেই দাঁতের রোগ এবং অভ্যন্তরীণ রক্তক্ষরণ বন্ধের মহৌষধ হিসেবে ব্যবহার করা হয়। বাবলার ছালে থাকা ট্যানিন শক্তিশালী অ্যাস্ট্রিনজেন্ট হিসেবে কাজ করে যা টিস্যু সংকুচিত করে ক্ষত দ্রুত সারাতে সাহায্য করে।</p>
+            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
+            <p>বাবলা একটি কাটাযুক্ত ওষুধি বৃক্ষ যা শুষ্ক অঞ্চলে প্রচুর জন্মে। আয়ুর্বেদ চিকিৎসা ব্যবস্থায় এর কষায় গুণের কারণে এটি মুখগহ্বর, দাঁত এবং পেটের পীড়ায় অত্যন্ত কার্যকরী হিসেবে স্বীকৃত। এর ডাল দিয়ে দাঁত মাজার প্রচলন গ্রাম বাংলায় এখনও ব্যাপক জনপ্রিয়। এছাড়াও বাবলার আঠা (Gum Arabic) বিভিন্ন পুষ্টিকর খাদ্য ও ওষুধ তৈরিতে ব্যবহৃত হয়।</p>
         </div>
 
         <div class="info-section">
-            <h3>প্রধান উপকারিতা</h3>
+            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+            <div class="lang-grid">
+                <div><strong>সংস্কৃত:</strong> বব্বর, বাবল, কিক্কর</div>
+                <div><strong>ইংরেজি:</strong> Gum Arabic Tree / Babul</div>
+                <div><strong>হিন্দি:</strong> বাবুল (Babul)</div>
+                <div><strong>তামিল:</strong> কারুভেলাম</div>
+                <div><strong>তেলেগু:</strong> নাল্লা তুম্মা</div>
+                <div><strong>আরবি:</strong> উম্মে ঘিলান</div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
+            <p>বাবলা Fabaceae পরিবারের একটি মাঝারি আকারের চিরহরিৎ বৃক্ষ। এর ডালপালায় জোড়ায় জোড়ায় লম্বা সাদা কাঁটা থাকে। এর পাতাগুলো খুব ছোট এবং দ্বিপক্ষল। ছোট ছোট গোল গোল উজ্জ্বল হলুদ রঙের ফুল ফোটে যা থেকে লম্বা চ্যাপ্টা ফল (শুঁটি) হয়। ওষুধি কাজে মূলত এর ছাল, পাতা, আঠা এবং কচি ডাল ব্যবহৃত হয়।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li>দাঁতের মাড়ি দিয়ে রক্ত পড়া বন্ধ করে এবং দাঁতকে মজবুত রাখতে সাহায্য করে।</li>
-                <li>মুখের ঘা বা আলসার নিরাময়ে এর ক্বাথ দিয়ে কুলকুচি করা অত্যন্ত ফলপ্রসূ।</li>
-                <li>রক্ত আমাশয় এবং দীর্ঘমেয়াদী ডায়েরিয়া নিয়ন্ত্রণে বাবলা ছালের রস জাদুকরী ভূমিকা রাখে।</li>
-                <li>ত্বকের জ্বালাপোড়া এবং চর্মরোগ সারাতে বাবলার পাতার প্রলেপ কার্যকর।</li>
+                <li><strong>ট্যানিন (Tannins):</strong> বাবলার ছালে প্রচুর ট্যানিন থাকে যা রক্তপাত বন্ধ করতে এবং প্রদাহ কমাতে কাজ করে।</li>
+                <li><strong>গ্যালিক অ্যাসিড:</strong> এটি একটি শক্তিশালী অ্যান্টি-ব্যাকটেরিয়াল উপাদান যা মুখের জীবাণু ধ্বংস করে।</li>
+                <li><strong>মিউসিলেজ:</strong> যা বাবলার আঠায় থাকে এবং পরিপাকতন্ত্রের আস্তরণকে রক্ষা করে।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3>ব্যবহার বিধি</h3>
-            <p>দাঁতের ব্যথার জন্য বাবলার কচি ডাল দিয়ে মেসওয়াক করা শ্রেষ্ঠ উপায়। পেটের সমস্যার জন্য বাবলার ছাল গুঁড়ো করে সামান্য মধুর সাথে মিশিয়ে খেলে উপকার পাওয়া যায়। মুখের ঘায়ের জন্য বাবলার ছাল সেদ্ধ পানি দিয়ে দিনে ৩-৪ বার কুলকুচি করতে হবে। এছাড়া বাবলার আঠা পানিতে ভিজিয়ে খেলে শরীরের শক্তি বৃদ্ধি পায় এবং ধাতু দুর্বলতা দূর হয়।</p>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <ul class="benefit-list">
+                <li><strong>দাঁত ও মাড়ির সুরক্ষা:</strong> বাবলার ডাল দিয়ে মেসওয়াক করলে দাঁতের গোড়া শক্ত হয় এবং মাড়ির রক্ত পড়া বন্ধ হয়।</li>
+                <li><strong>ডায়রিয়া ও আমাশয়:</strong> বাবলার ছালের ক্বাথ পান করলে অন্ত্রের সংক্রমণ কমে এবং দ্রুত ডায়রিয়া নিয়ন্ত্রণ হয়।</li>
+                <li><strong>ডায়াবেটিস নিয়ন্ত্রণ:</strong> বাবলার পাতার নির্যাস রক্তে শর্করার মাত্রা নিয়ন্ত্রণে রাখতে সাহায্য করে।</li>
+                <li><strong>ত্বকের যত্ন:</strong> বাবলার পাতা বাটা ক্ষত স্থানে লাগালে দ্রুত শুকায় এবং চর্মরোগের চুলকানি কমায়।</li>
+                <li><strong>শারীরিক দুর্বলতা:</strong> বাবলার আঠা ঘি ও চিনির সাথে মিশিয়ে লাড্ডু বানিয়ে খেলে শরীরের শক্তি বৃদ্ধি পায়।</li>
+            </ul>
         </div>
 
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="index.html" style="text-decoration: none; background: var(--accent); color: white; padding: 12px 25px; border-radius: 30px; font-weight: bold; transition: 0.3s;">
-                <i class="fas fa-home"></i> তালিকায় ফিরে যান
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <div class="usage-card">
+                <h4>১. মুখের ঘা ও মাড়ির সমস্যায়:</h4>
+                <p>বাবলার ছাল পানিতে ফুটিয়ে সেই পানি দিয়ে কুলকুচি (Gargle) করলে মুখের ঘা এবং গলার ব্যথা দ্রুত সেরে যায়।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. রক্ত আমাশয়ে:</h4>
+                <p>বাবলার কচি পাতার রস এবং সামান্য মধু মিশিয়ে সেবন করলে আমাশয়ের প্রকোপ কমে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৩. দীর্ঘস্থায়ী কাশিতে:</h4>
+                <p>বাবলার আঠা চুষে খেলে বুকের কফ পরিষ্কার হয় এবং কাশির তীব্রতা কমে।</p>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+            <p>• বাবলার কষায় গুণ অত্যন্ত তীব্র, তাই এটি কোষ্ঠকাঠিন্যের সমস্যা থাকলে অধিক মাত্রায় সেবন করবেন না।</p>
+            <p>• দীর্ঘকাল ধরে বাবলার ছাল অভ্যন্তরীণভাবে সেবনের আগে অভিজ্ঞ চিকিৎসকের পরামর্শ নিন।</p>
+            <p>• গর্ভাবস্থায় বা শিশুদের ক্ষেত্রে এর ব্যবহারের মাত্রা অত্যন্ত সীমিত রাখা প্রয়োজন।</p>
+        </div>
+
+        <div class="btn-back-container">
+            <a href="index.html" class="btn-back-list">
+                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
             </a>
         </div>
     </div>
 </div>
 
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 <footer>
     <h2>ভেষজ চিকিৎসা কোষ</h2>
-    <div class="footer-nav">
-        <a href="index.html">হোম</a>
-        <a href="about.html">সম্পর্কে</a>
-        <a href="contact.html">যোগাযোগ</a>
-        <a href="disclaimer.html">সতর্কবার্তা</a>
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
-    
-    <div class="social-container">
-        <a href="https://www.facebook.com/bonargidawahkana.net" class="s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-        <a href="https://www.youtube.com/c/bonarjidawakhana" class="s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://www.instagram.com/mddulal596" class="s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-    </div>
-    
-    <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
-    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">উপরে যান ↑</button>
+    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
 </body>
