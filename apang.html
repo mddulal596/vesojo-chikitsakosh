@@ -8,10 +8,10 @@
 
 <style>
 :root{
-    --primary:#66bb6a;
-    --dark:#2e7d32;
-    --light:#f1f8e9;
-    --accent:#8bc34a;
+    --primary:#ffb300;
+    --dark:#e65100;
+    --light:#fff3e0;
+    --accent:#ffa000;
     --nav-blue: #1976d2; 
     --blue-btn: #1976d2; 
     --blue-hover: #115293; 
@@ -28,7 +28,7 @@ body{
     line-height:1.8;
 }
 
-/* ================= NAVBAR (BLUE) ================= */
+/* ================= NAVBAR ================= */
 nav{
     position:sticky; top:0; z-index:999;
     background:var(--nav-blue); display:flex;
@@ -89,6 +89,7 @@ header{
     font-size: 1rem;
     color: white;
     font-weight: 500;
+    box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
 .info-section { margin-bottom: 60px; }
@@ -107,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #f9fff5;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #c8e6c9;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -135,7 +136,35 @@ header{
     padding: 30px;
     border-radius: 15px;
     margin-bottom: 25px;
+    transition: 0.3s;
 }
+.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
+
+.dosage-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid #eee;
+}
+.dosage-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+.dosage-table th, .dosage-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+.dosage-table th {
+    background: #f8f9fa;
+    color: var(--dark);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+.dosage-table tr:last-child td { border-bottom: none; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
     background: #fff5f5;
@@ -154,19 +183,18 @@ header{
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
 .back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--primary);
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
     color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
-/* ================= FOOTER (#999999) ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
 .footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
 .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -194,71 +222,117 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 <div class="container">
     <div class="plant-detail-card">
         <div class="plant-header">
-            <div class="plant-icon-large">🌿</div>
+            <div class="plant-icon-large">🌾</div>
             <h2>৯. আপাং (Apang)</h2>
             <small>Scientific Name: Achyranthes aspera L.</small>
             <div class="ayurvedic-specs">
                 <div class="spec-item">রস: কটু, তিক্ত</div>
-                <div class="spec-item">বীর্য: উষ্ণ (Heating)</div>
+                <div class="spec-item">বীর্য: উষ্ণ (Hot)</div>
                 <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">গুণ: লঘু, তীক্ষ্ণ</div>
+                <div class="spec-item">দোষ: কফ ও বাত নাশক</div>
+                <div class="spec-item">বিশেষত্ব: দাঁতের ও কিডনি রোগের মহৌষধ</div>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-history"></i> পরিচিতি ও গুরুত্ব</h3>
-            <p>আপাং একটি অতি পরিচিত ওষুধি আগাছা যা ভারত ও বাংলাদেশের গ্রামগঞ্জে রাস্তার পাশে প্রচুর দেখা যায়। আয়ুর্বেদ শাস্ত্রে একে 'অপাং' বা 'অ্যামারান্থাস' বলা হয়। এটি প্রধানত মূত্রাশয় ও কিডনির রোগ নিরাময়ে এবং দাঁতের চিকিৎসায় প্রাচীনকাল থেকে ব্যবহৃত হয়ে আসছে। এর বীজ, পাতা এবং মূল—সবই ওষুধি গুণসম্পন্ন।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>আপাং বা চিরচিরা একটি অত্যন্ত পরিচিত আগাছা জাতীয় ওষুধি গাছ। আয়ুর্বেদ ও আধ্যাত্মিক চিকিৎসায় এর গুরুত্ব অপরিসীম। প্রাচীন ভারতে একে 'অঘামাঝা' বলা হতো। একে সৌভাগ্যের প্রতীক হিসেবেও অনেক সময় দেখা হয়। তবে ভেষজ চিকিৎসায় এর মূল, পাতা ও বীজের বহুমুখী ব্যবহার রয়েছে। বিশেষ করে দাঁতের মাজল তৈরিতে এবং বৃক্কের (কিডনি) পাথর অপসারণে এর ব্যবহার ঐতিহাসিকভাবে স্বীকৃত।</p>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> অপামার্গ, শিখরী</div>
+                <div><strong>সংস্কৃত:</strong> অপামার্গ, শিখরী, খর মঞ্জরী</div>
                 <div><strong>ইংরেজি:</strong> Prickly Chaff Flower</div>
-                <div><strong>হিন্দি:</strong> চিরচিটা (Chirchita)</div>
-                <div><strong>তামিল:</strong> নাউরুভি (Nayuruvi)</div>
+                <div><strong>হিন্দি:</strong> লটজিরা, চিরচিরা (Chirchira)</div>
                 <div><strong>আরবি:</strong> আতকুশ</div>
-                <div><strong>ফার্সি:</strong> খারে-ভঝগুন</div>
+                <div><strong>ফার্সি:</strong> খারে-ভাজন</div>
+                <div><strong>তামিল:</strong> নায়াউরুভি</div>
             </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-seedling"></i> বোটানিক্যাল বর্ণনা</h3>
-            <p>আপাং Amaranthaceae পরিবারের অন্তর্ভুক্ত একটি বর্ষজীবী বীরুৎ জাতীয় উদ্ভিদ। এটি সাধারণত ১-৩ ফুট লম্বা হয়। এর কাণ্ড চারকোণা এবং পাতাগুলো ডিম্বাকৃতির ও খসখসে। লম্বা মঞ্জুরিতে এর ফুলগুলো নিচের দিকে মুখ করে থাকে। এর বীজগুলো কাপড়ে সহজেই আটকে যায় বলে একে গ্রাম বাংলায় 'চিড়চিড়ি'ও বলা হয়।</p>
+            <p>আপাং একটি বর্ষজীবী বা বহুবর্ষজীবী বীরুৎ জাতীয় উদ্ভিদ। এটি সাধারণত ১-৩ ফুট পর্যন্ত উঁচু হয়। এর ডাঁটাগুলো চারকোনা এবং গিঁটযুক্ত। পাতাগুলো ডিম্বাকৃতি এবং কিছুটা খসখসে। এর মঞ্জরী বা ফুলের ছড়াটি বেশ লম্বা হয় এবং এতে অনেক ছোট ছোট ফল থাকে। ফলগুলো নিচের দিকে মুখ করে থাকে এবং কাপড়ে আটকে যাওয়ার প্রবণতা থাকে। এটি রাস্তার পাশে বা পরিত্যক্ত স্থানে প্রচুর পরিমাণে দেখা যায়।</p>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা</h3>
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
             <ul class="benefit-list">
-                <li><strong>দাঁতের যত্নে:</strong> আপাং-এর ডাল দিয়ে দাঁত মাজলে দাঁতের গোড়া শক্ত হয় এবং মাড়ির রোগ নিরাময় হয়।</li>
-                <li><strong>কিডনির পাথর ও মূত্ররোগ:</strong> এর ক্ষারীয় গুণ কিডনির পাথর গলাতে এবং মূত্রনালীর সংক্রমণ দূর করতে সাহায্য করে।</li>
-                <li><strong>ক্ষুধা নিয়ন্ত্রণে (স্থূলতা):</strong> আপাং-এর বীজ বা চালের ভাত খেলে দীর্ঘ সময় ক্ষুধা লাগে না, যা ওজন কমাতে অত্যন্ত সহায়ক।</li>
-                <li><strong>হাঁপানি ও কাশি:</strong> এর পাতার রস বা ভস্ম মধুর সাথে মিশিয়ে খেলে কফ পরিষ্কার হয় এবং শ্বাসকষ্ট কমে।</li>
-                <li><strong>চর্মরোগ ও বিষাক্ত কামড়:</strong> পোকামাকড় বা বিছা কামড়ালে এর পাতার রস লাগালে বিষ দ্রুত নেমে যায়।</li>
+                <li><strong>অ্যাকিরাস্থিন:</strong> এটি গাছের প্রধান অ্যালকালয়েড যা ওষুধি কাজে মুখ্য ভূমিকা রাখে।</li>
+                <li><strong>পটাশিয়াম লবণ:</strong> প্রচুর পরিমাণে পটাশিয়াম থাকায় এটি মূত্রবর্ধক হিসেবে কাজ করে।</li>
+                <li><strong>স্যাপোনিনস:</strong> যা প্রদাহ কমাতে এবং সংক্রমণ রোধে সহায়ক।</li>
+                <li><strong>অলিক অ্যাসিড:</strong> বীজের তেলের প্রধান উপাদান যা ত্বকের জন্য উপকারী।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া চিকিৎসা ও ব্যবহার বিধি</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
+            <ul class="benefit-list">
+                <li><strong>দাঁতের রোগ নিরাময়:</strong> আপাং-এর মূল দিয়ে দাঁত মাজলে দাঁত মজবুত হয় এবং পাইোরিয়া বা মাড়ির রক্ত পড়া বন্ধ হয়।</li>
+                <li><strong>কিডনির পাথর:</strong> এর ক্বাথ নিয়মিত সেবনে পিত্তথলি ও কিডনির পাথর গলিয়ে বের করে দিতে সাহায্য করে।</li>
+                <li><strong>হাঁপানি ও কাশি:</strong> আপাং গাছের ক্ষার মধুর সাথে মিশিয়ে খেলে পুরানো কাশি ও হাঁপানিতে আরাম পাওয়া যায়।</li>
+                <li><strong>চর্মরোগ:</strong> খোস-পাঁচড়া বা বিষাক্ত পোকার কামড়ে এর পাতার রস লাগালে দ্রুত জ্বালাপোড়া ও ক্ষত কমে।</li>
+                <li><strong>ওজন হ্রাস:</strong> এর বীজ ভক্ষণ করলে ক্ষুধা কম লাগে, যা স্থূলতা কমাতে সাহায্য করে (বিশেষ আয়ুর্বেদিক পদ্ধতিতে)।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
-                <h4>১. পাইলস বা অর্শ্ব রোগে:</h4>
-                <p>আপাং-এর তাজা পাতার রস প্রতিদিন সকালে খালি পেটে সেবন করলে অর্শ্বের রক্ত পড়া বন্ধ হয় এবং কষ্টকাঠিন্য দূর হয়।</p>
+                <h4>১. দাঁতের ব্যথায়:</h4>
+                <p>তাজা আপাং মূল দিয়ে সকালে মেসওয়াকের মতো দাঁত মাজুন। এটি দাঁতের পোকা মারতে এবং শিরশিরানি দূর করতে অদ্বিতীয়।</p>
             </div>
             <div class="usage-card">
-                <h4>২. কান ব্যথায়:</h4>
-                <p>আপাং পাতার রস তিলের তেলের সাথে মিশিয়ে সামান্য গরম করে কানে ২-৩ ফোঁটা দিলে কানের ব্যথা প্রশমিত হয়।</p>
+                <h4>২. প্রস্রাবের জ্বালাপোড়ায়:</h4>
+                <p>পুরো গাছ (পঞ্চাঙ্গ) শুকিয়ে পুড়িয়ে ক্ষার তৈরি করুন। ২ রতি পরিমাণ ক্ষার আধা কাপ পানির সাথে মিশিয়ে খেলে প্রস্রাব পরিষ্কার হয়।</p>
             </div>
             <div class="usage-card">
-                <h4>৩. আমাশয় নিরাময়ে:</h4>
-                <p>গাছের শিকড় বা মূলের ক্বাথ তৈরি করে প্রতিদিন নিয়ম করে খেলে পুরাতন আমাশয় থেকে মুক্তি পাওয়া যায়।</p>
+                <h4>৩. পাইলস বা অর্শ রোগে:</h4>
+                <p>আপাং বীজ চূর্ণ করে চাল ধোয়া পানির সাথে নিয়মিত খেলে অর্শের রক্ত পড়া বন্ধ হয়।</p>
             </div>
         </div>
 
-        <div class="warning-box">
-            <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
-            <p>• গর্ভাবস্থায় আপাং সেবন করা একদম নিষেধ, কারণ এটি গর্ভপাতের ঝুঁকি তৈরি করতে পারে।</p>
-            <p>• অতিরিক্ত মাত্রায় সেবনে বমি ভাব বা পেটে অস্বস্তি হতে পারে।</p>
-            <p>• যেকোনো দীর্ঘস্থায়ী রোগে ব্যবহারের আগে অবশ্যই একজন বিশেষজ্ঞ চিকিৎসকের পরামর্শ নেওয়া বাঞ্ছনীয়।</p>
+        <div class="info-section">
+            <h3><i class="fas fa-clock"></i> সেবন বিধি ও মাত্রা</h3>
+            <div class="dosage-table-container">
+                <table class="dosage-table">
+                    <thead>
+                        <tr>
+                            <th>উপাদান</th>
+                            <th>প্রাপ্তবয়স্ক মাত্রা</th>
+                            <th>সেবন পদ্ধতি</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>মূল/পাতা চূর্ণ</td>
+                            <td>৩ - ৫ গ্রাম</td>
+                            <td>মধুর সাথে দিনে ২ বার</td>
+                        </tr>
+                        <tr>
+                            <td>তাজা রস</td>
+                            <td>১০ - ২০ মিলি</td>
+                            <td>খালি পেটে</td>
+                        </tr>
+                        <tr>
+                            <td>ক্ষার (Ash)</td>
+                            <td>১২৫ - ২৫০ মিলিগ্রাম</td>
+                            <td>পানির সাথে</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="warning-box">
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• **গর্ভাবস্থায়:** গর্ভবতী মহিলাদের জন্য আপাং সেবন করা কঠোরভাবে নিষিদ্ধ, কারণ এটি গর্ভপাত ঘটাতে পারে।</p>
+                <p>• দীর্ঘ সময় অতিরিক্ত মাত্রায় সেবন করলে বমি বমি ভাব বা পাকস্থলীতে অস্বস্তি হতে পারে।</p>
+                <p>• আপাং-এর ক্ষার অত্যন্ত শক্তিশালী, তাই সরাসরি ত্বকে বা জিহ্বায় ব্যবহারের আগে সাবধান হতে হবে।</p>
+                <p>• যে কোনো ওষুধি ব্যবহারের আগে অভিজ্ঞ আয়ুর্বেদ চিকিৎসকের পরামর্শ নেওয়া বাঞ্ছনীয়।</p>
+            </div>
         </div>
 
         <div class="btn-back-container">
