@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>আম (Mango) - বিস্তারিত ভেষজ তথ্য | ভেষজ চিকিৎসা কোষ</title>
+<title>আম (Mango) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -69,7 +69,7 @@ header{
 }
 
 .plant-icon-large { font-size: 5rem; margin-bottom: 15px; }
-.plant-detail-card h2 { color: var(--dark); font-size: 2.5rem; margin-bottom: 5px; }
+.plant-detail-card h2 { color: var(--dark); font-size: 2.8rem; margin-bottom: 5px; }
 .plant-detail-card small { color: #777; font-size: 1.2rem; font-style: italic; }
 
 .ayurvedic-specs {
@@ -89,13 +89,13 @@ header{
     box-shadow: 0 4px 10px rgba(25, 118, 210, 0.2);
 }
 
-.info-section { margin-bottom: 45px; }
+.info-section { margin-bottom: 50px; }
 .info-section h3 {
     color: var(--dark);
     border-left: 6px solid var(--accent);
     padding-left: 18px;
     margin-bottom: 20px;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -113,8 +113,8 @@ header{
 
 .benefit-list { list-style: none; }
 .benefit-list li {
-    margin-bottom: 15px;
-    padding-left: 40px;
+    margin-bottom: 18px;
+    padding-left: 45px;
     position: relative;
 }
 .benefit-list li::before {
@@ -123,23 +123,44 @@ header{
     font-weight: 900;
     position: absolute; left: 0;
     color: var(--dark);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
+
+.usage-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.usage-card h4 { color: var(--dark); margin-bottom: 10px; font-size: 1.2rem; }
 
 .warning-box {
     background: #fff5f5;
     border-radius: 12px;
-    padding: 25px;
+    padding: 30px;
     border-left: 6px solid #e53935;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
-.usage-card {
-    background: #fafafa;
-    border: 1px solid #eee;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 15px;
+/* ফিক্সড ব্যাক টু টপ বাটন */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ================= FOOTER ================= */
@@ -185,30 +206,10 @@ footer {
     margin-top: 25px;
 }
 
-/* ফিক্সড ব্যাক টু টপ বাটন */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--accent);
-    color: white;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 20px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 @media (max-width: 768px) {
-    .plant-detail-card { padding: 30px 20px; }
+    .plant-detail-card { padding: 30px 15px; }
     .nav-links { display: none; }
-    .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+    .plant-detail-card h2 { font-size: 2rem; }
 }
 </style>
 </head>
@@ -230,7 +231,7 @@ footer {
 </nav>
 
 <header>
-    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ তথ্যকোষ</h1>
+    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
 </header>
 
 <div class="container">
@@ -248,44 +249,89 @@ footer {
             </div>
         </div>
 
-        <!-- বাকি কন্টেন্ট আগের মতই থাকবে -->
         <div class="info-section">
             <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> আম্র, চ্যুত, সহকার</div>
+                <div><strong>সংস্কৃত:</strong> আম্র, সহকার, অতিসৌরভ</div>
                 <div><strong>হিন্দি:</strong> আম (Aam)</div>
-                <div><strong>ইংরেজি:</strong> Mango Tree</div>
+                <div><strong>ইংরেজি:</strong> Mango</div>
                 <div><strong>আরবি:</strong> মানজু (Manju)</div>
-                <div><strong>ফার্সি:</strong> আম্ব / নগজক</div>
+                <div><strong>ফার্সি:</strong> আম্ব (Amb)</div>
                 <div><strong>তামিল:</strong> মাঙ্গাই</div>
                 <div><strong>উর্দু:</strong> আম (Aam)</div>
+                <div><strong>তেলেগু:</strong> মামিডি</div>
             </div>
-        </div>
-        
-        <!-- অন্যান্য সেকশনগুলো... -->
-        <div class="info-section">
-            <h3><i class="fas fa-leaf"></i> উদ্ভিদ পরিচিতি ও গঠন</h3>
-            <p>আম বাংলাদেশের জাতীয় বৃক্ষ এবং একে 'ফলের রাজা' বলা হয়। এটি একটি বিশালাকার চিরহরিৎ বৃক্ষ যা মূলত দক্ষিণ এশিয়ার উদ্ভিদ। এটি সাধারণত ৫০-৯০ ফুট পর্যন্ত উঁচু হতে পারে। এর কাণ্ড বেশ মোটা এবং ছাল ধূসর বর্ণের। পাতাগুলো লম্বা ও বল্লমাকৃতির, যা পিষেলে সুন্দর ঘ্রাণ পাওয়া যায়। বসন্তকালে এর শাখায় শাখায় মুকুল বা মঞ্জুরী দেখা দেয়। এর ফল 'অষ্ঠিফল' জাতীয় এবং পাকলে অত্যন্ত সুস্বাদু ও পুষ্টিকর হয়।</p>
         </div>
 
         <div class="info-section">
+            <h3><i class="fas fa-seedling"></i> উদ্ভিদ পরিচিতি ও বোটানিক্যাল বর্ণনা</h3>
+            <p>আম Anacardiaceae পরিবারের অন্তর্ভুক্ত একটি অত্যন্ত গুরুত্বপূর্ণ ভেষজ বৃক্ষ। এটি মূলত দক্ষিণ এশিয়ার উদ্ভিদ হলেও বর্তমানে ক্রান্তীয় অঞ্চলের সর্বত্র এটি চাষ করা হয়। আম গাছ সাধারণত ১৫ থেকে ৩০ মিটার পর্যন্ত লম্বা হতে পারে। এর ছাল ধূসর এবং কাণ্ড বেশ শক্ত হয়। পাতাগুলো গাঢ় সবুজ, ১০-৩৫ সেমি লম্বা এবং ২-১৬ সেমি চওড়া হয়ে থাকে। পাতাগুলো পিষেলে একটি তীব্র সুগন্ধি বের হয়। আমের মুকুল বা পুষ্পমঞ্জুরী ছোট ছোট ফুল দ্বারা গঠিত হয়, যার ঘ্রাণ অত্যন্ত মনোহর। এর ফল রসালো এবং সুস্বাদু, যা 'ফলের রাজা' হিসেবে বিশ্বব্যাপী সমাদৃত।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-flask"></i> প্রধান রাসায়নিক উপাদানসমূহ</h3>
+            <p>আমের প্রতিটি অংশে গুরুত্বপূর্ণ জৈব রাসায়নিক উপাদান পাওয়া যায়:</p>
+            <ul class="benefit-list">
+                <li><strong>ম্যাঙ্গিফেরিন (Mangiferin):</strong> এটি আমের পাতা ও ছালের প্রধান উপাদান যা শক্তিশালী অ্যান্টি-অক্সিডেন্ট হিসেবে কাজ করে।</li>
+                <li><strong>পলিফেনল:</strong> কোয়ারসেটিন, ক্যাটেচিন এবং এন্থোসায়ানিন যা শরীরের কোষে ফ্রি র‍্যাডিকেল নষ্ট হতে দেয় না।</li>
+                <li><strong>ভিটামিন:</strong> ভিটামিন এ (বিটা-ক্যারোটিন), সি, ই, কে এবং বি-কমপ্লেক্স।</li>
+                <li><strong>খনিজ উপাদান:</strong> পটাশিয়াম, ম্যাগনেসিয়াম, কপার এবং অল্প পরিমাণে ক্যালসিয়াম ও ফসফরাস।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত স্বাস্থ্য উপকারিতা ও ভেষজ প্রয়োগ</h3>
+            <ul class="benefit-list">
+                <li><strong>ডায়াবেটিস বা বহুমূত্র রোগ:</strong> কচি আম পাতা ডায়াবেটিস নিয়ন্ত্রণে অত্যন্ত কার্যকর। এটি অগ্ন্যাশয় থেকে ইনসুলিন নিঃসরণ উদ্দীপিত করে এবং রক্তে গ্লুকোজের শোষণ কমায়।</li>
+                <li><strong>হজম ও কোষ্ঠকাঠিন্য:</strong> আমে প্রচুর ফাইবার বা আঁশ থাকে। এটি অন্ত্রের চলাচল বৃদ্ধি করে কোষ্ঠকাঠিন্য দূর করে এবং হজম ক্ষমতা বাড়াতে সাহায্য করে।</li>
+                <li><strong>ক্যান্সার প্রতিরোধ:</strong> এতে থাকা ম্যাঙ্গিফেরিন কোলন, স্তন, রক্ত (লিউকেমিয়া) এবং প্রোস্টেট ক্যান্সার প্রতিরোধে সহায়তা করে বলে গবেষণায় দেখা গেছে।</li>
+                <li><strong>চোখের স্বাস্থ্য:</strong> প্রচুর ভিটামিন এ থাকায় এটি রাতকানা রোগ দূর করে, কর্নিয়াকে সুস্থ রাখে এবং চোখের শুষ্কতা কমায়।</li>
+                <li><strong>দাঁত ও মাড়ির যত্ব:</strong> আম পাতার ছাই দিয়ে দাঁত মাজলে মাড়ি মজবুত হয় এবং দাঁত সাদা ও ঝকঝকে হয়।</li>
+                <li><strong>রক্তস্বল্পতা (Anemia):</strong> আমের আঁটির চূর্ণ আয়রন সমৃদ্ধ হওয়ায় এটি রক্তে লোহিত কণা বৃদ্ধিতে সাহায্য করে।</li>
+            </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> বিভিন্ন রোগের ঘরোয়া প্রতিকার ও ব্যবহার বিধি</h3>
+            <div class="usage-card">
+                <h4>১. বহুমূত্র বা ডায়াবেটিসের ক্বাথ:</h4>
+                <p>১০-১২টি কচি আম পাতা ১ গ্লাস পানিতে ফুটিয়ে নিন যতক্ষণ পানি অর্ধেক না হয়। এই ক্বাথ প্রতিদিন সকালে খালি পেটে পান করলে ৩-৪ সপ্তাহের মধ্যে সুগার নিয়ন্ত্রণে আসে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. রক্ত আমাশয় ও ডায়রিয়া:</h4>
+                <p>আমের শুকনো ছালের চূর্ণ ২ গ্রাম পরিমাণ অল্প ছাগলের দুধ বা মধুর সাথে মিশিয়ে দিনে ২ বার সেবন করুন। এটি অন্ত্রের ইনফেকশন দ্রুত দূর করে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৩. ত্বকের উজ্জ্বলতা ও ব্রণের সমস্যা:</h4>
+                <p>পাকা আমের ক্বাথ বা পাল্প মুখে ২০ মিনিট লাগিয়ে ধুয়ে ফেলুন। এটি রোদে পোড়া ভাব (Sunburn) দূর করে এবং ত্বককে পুষ্ট করে।</p>
+            </div>
+            <div class="usage-card">
+                <h4>৪. গলার ব্যথায়:</h4>
+                <p>আম পাতা পোড়া ছাই সামান্য পানি দিয়ে পেস্ট তৈরি করে গলায় প্রলেপ দিলে গলার ব্যথা ও ইনফ্লামেশন কমে।</p>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-box-open"></i> সংরক্ষণ পদ্ধতি</h3>
+            <p>ভেষজ ব্যবহারের জন্য আমের পাতা এবং ছাল রোদে শুকিয়ে গুঁড়ো করে কাঁচের পাত্রে বায়ুরোধী করে রাখলে ১ বছর পর্যন্ত এর গুণাগুণ অক্ষুণ্ণ থাকে। কাঁচা বা পাকা ফল স্বাভাবিক তাপমাত্রায় কয়েকদিন এবং ফ্রিজে এক সপ্তাহ পর্যন্ত রাখা যায়।</p>
+
             <div class="warning-box">
                 <h4 style="color: #e53935; margin-bottom: 12px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও পার্শ্বপ্রতিক্রিয়া</h4>
-                <p>• অতিরিক্ত পাকা আম খেলে ওজন বৃদ্ধি পেতে পারে এবং আমবাত (Hives) হতে পারে।</p>
-                <p>• কিডনি রোগীদের আম খাওয়ার আগে চিকিৎসকের পরামর্শ নেওয়া জরুরি।</p>
+                <p>• অতিরিক্ত পাকা আম খেলে ওজন বাড়তে পারে এবং এটি রক্তে শর্করার মাত্রা বাড়িয়ে দিতে পারে।</p>
+                <p>• আমের বোঁটার সাদা আঠা বা কষ ত্বকে লাগলে অ্যালার্জি বা ঘা হতে পারে, তাই সাবধান।</p>
+                <p>• কিডনিতে পাথর থাকার সম্ভাবনা থাকলে অক্সালেট সমৃদ্ধ আম পরিমিত খাওয়া উচিত।</p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- ফিক্সড বাটনটি বডির শেষে থাকবে -->
 <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="উপরে যান">
     <i class="fas fa-arrow-up"></i>
 </button>
 
 <footer>
-    <div style="margin-bottom: 30px;">
-        <a href="index.html" style="text-decoration: none; background: var(--dark); color: white; padding: 12px 35px; border-radius: 50px; font-weight: bold; display: inline-block; border: 2px solid var(--accent);">
+    <div style="margin-bottom: 35px;">
+        <a href="index.html" style="text-decoration: none; background: var(--dark); color: white; padding: 14px 40px; border-radius: 50px; font-weight: bold; display: inline-block; border: 2px solid var(--accent); transition: 0.3s;">
             <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
         </a>
     </div>
