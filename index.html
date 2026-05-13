@@ -14,7 +14,7 @@
 content="বাংলার প্রাচীন ভেষজ চিকিৎসা ও ১০০+ ঔষধি গাছের গুণাগুণ, ব্যবহার, সেবন বিধি ও বিস্তারিত তথ্য।">
 
 <meta name="keywords"
-content="ভেষজ চিকিৎসা, ঔষধি গাছ, Herbal Medicine, Ayurvedic Plants, বাংলা herbal এনসাইক্লোপিডিয়া">
+content="ভেষজ চিকিৎসা, ঔষধি গাছ, Herbal Medicine, Ayurvedic Plants, বাংলা হারবাল এনসাইক্লোপিডিয়া">
 
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -73,6 +73,7 @@ nav{
 .nav-links{
     display:flex;
     list-style:none;
+    align-items: center;
 }
 
 .nav-links li a{
@@ -85,6 +86,54 @@ nav{
 
 .nav-links li a:hover{
     background:#115293;
+}
+
+/* Auth Buttons & Profile */
+.auth-btn {
+    background: white;
+    color: #1976d2;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    background: #e3f2fd;
+}
+
+.user-profile {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    margin-left: 15px;
+    color: white;
+    background: rgba(255,255,255,0.1);
+    padding: 5px 15px;
+    border-radius: 50px;
+}
+
+.user-profile img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+.logout-btn {
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    color: #ffcdd2;
 }
 
 .nav-social{
@@ -219,6 +268,29 @@ nav{
     color:#01579b;
 }
 
+/* FILTER BUTTONS */
+.filter-btns {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    padding: 10px 22px;
+    margin: 5px;
+    border: 2px solid #039be5;
+    background: transparent;
+    color: #039be5;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #039be5;
+    color: white;
+}
+
 /* HERB CARDS */
 
 .herb-grid{
@@ -284,74 +356,6 @@ nav{
     background:#115293;
 }
 
-/* FEATURES */
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
-
-.feature-box{
-    background:white;
-    padding:35px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:var(--shadow);
-}
-
-.feature-box i{
-    font-size:3rem;
-    color:#039be5;
-    margin-bottom:20px;
-}
-
-.feature-box h3{
-    margin-bottom:15px;
-    color:#01579b;
-}
-
-/* NEWSLETTER */
-
-.newsletter{
-    background:linear-gradient(135deg,#039be5,#01579b);
-    padding:70px 20px;
-    border-radius:30px;
-    color:white;
-    text-align:center;
-}
-
-.newsletter h2{
-    font-size:2.5rem;
-    margin-bottom:20px;
-}
-
-.newsletter-form{
-    max-width:650px;
-    margin:30px auto 0;
-    display:flex;
-    background:white;
-    border-radius:60px;
-    overflow:hidden;
-}
-
-.newsletter-form input{
-    flex:1;
-    padding:18px 25px;
-    border:none;
-    outline:none;
-    font-size:16px;
-}
-
-.newsletter-form button{
-    border:none;
-    background:#ff9800;
-    color:white;
-    padding:0 35px;
-    font-size:16px;
-    cursor:pointer;
-}
-
 /* FOOTER */
 
 footer{
@@ -361,67 +365,9 @@ footer{
     padding:80px 20px 45px;
 }
 
-.footer-title{
-    font-size:38px;
-    font-weight:700;
-    margin-bottom:30px;
-}
-
-.footer-social{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    flex-wrap:wrap;
-    margin-bottom:40px;
-}
-
-.footer-btn{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:14px 28px;
-    border-radius:50px;
-    color:white;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.footer-btn:hover{
-    transform:translateY(-5px);
-}
-
-.fb{background:#1877F2;}
-.yt{background:#FF0000;}
-.ig{
-background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
-}
-.ln{background:#0077B5;}
-
 .footer-copy{
     font-size:20px;
     font-weight:600;
-}
-
-/* অতিরিক্ত স্টাইল শুধুমাত্র ফিল্টার বাটনের জন্য */
-.filter-btns {
-    text-align: center;
-    margin-bottom: 30px;
-}
-.filter-btn {
-    padding: 10px 20px;
-    margin: 5px;
-    border: 2px solid var(--primary);
-    background: white;
-    color: var(--primary);
-    border-radius: 30px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s;
-}
-.filter-btn.active, .filter-btn:hover {
-    background: var(--primary);
-    color: white;
 }
 
 /* RESPONSIVE */
@@ -434,41 +380,6 @@ background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 
     .hero h1{
         font-size:2.2rem;
-    }
-
-    .hero p{
-        font-size:1rem;
-    }
-
-    .section-title h2{
-        font-size:2rem;
-    }
-
-    .newsletter h2{
-        font-size:2rem;
-    }
-
-    .newsletter-form{
-        flex-direction:column;
-        border-radius:20px;
-    }
-
-    .newsletter-form button{
-        padding:18px;
-    }
-
-    .footer-title{
-        font-size:30px;
-    }
-
-    .footer-btn{
-        width:100%;
-        justify-content:center;
-        max-width:280px;
-    }
-
-    .footer-copy{
-        font-size:16px;
     }
 }
 
@@ -489,12 +400,19 @@ background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 <ul class="nav-links">
 
 <li><a href="#">হোম</a></li>
-
-<li><a href="#herb-section">ভেষজ তালিকা</a></li>
-
-<li><a href="#">রোগ অনুযায়ী চিকিৎসা</a></li>
-
+<li><a href="#herb-list">ভেষজ তালিকা</a></li>
 <li><a href="#">যোগাযোগ</a></li>
+
+<!-- Google Login UI -->
+<button id="loginBtn" class="auth-btn" onclick="googleLogin()">
+    <i class="fab fa-google"></i> লগইন
+</button>
+
+<div id="userProfile" class="user-profile">
+    <img id="userImg" src="" alt="Profile">
+    <span id="userName"></span>
+    <i class="fas fa-sign-out-alt logout-btn" onclick="googleLogout()" title="লগআউট"></i>
+</div>
 
 </ul>
 
@@ -508,14 +426,6 @@ background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 <i class="fab fa-youtube"></i>
 </a>
 
-<a href="https://www.instagram.com/mddulal596" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
-
-<a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank">
-<i class="fab fa-linkedin-in"></i>
-</a>
-
 </div>
 
 </nav>
@@ -524,24 +434,16 @@ background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 
 <section class="hero">
 
-<h1>
-🌿 ভেষজ চিকিৎসা কোষ
-</h1>
+<h1>🌿 ভেষজ চিকিৎসা কোষ</h1>
 
 <p>
 বাংলার প্রাচীন ভেষজ চিকিৎসা ও ১০০+ ঔষধি গাছের গুণাগুণ, ব্যবহার,
-সেবন বিধি ও স্বাস্থ্য উপকারিতা সম্পর্কে বিস্তারিত তথ্য।
+সেবন বিধি ও বিস্তারিত তথ্য।
 </p>
 
 <div class="search-box">
-
-<!-- ফিচার ১: সার্চ ইনপুট ফিল্ড -->
-<input type="text" id="herbSearchInput" placeholder="ভেষজ গাছ খুঁজুন..." onkeyup="searchHerb()">
-
-<button onclick="searchHerb()">
-<i class="fas fa-search"></i>
-</button>
-
+<input type="text" id="herbSearch" placeholder="ভেষজ গাছ খুঁজুন..." onkeyup="searchHerb()">
+<button><i class="fas fa-search"></i></button>
 </div>
 
 </section>
@@ -549,241 +451,55 @@ background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 <!-- STATS -->
 
 <div class="container">
-
 <div class="stats">
-
-<div class="stat-card">
-
-<i class="fas fa-leaf"></i>
-
-<h3>১০০+</h3>
-
-<p>ঔষধি গাছ</p>
-
+<div class="stat-card"><i class="fas fa-leaf"></i><h3>১০০+</h3><p>ঔষধি গাছ</p></div>
+<div class="stat-card"><i class="fas fa-book-medical"></i><h3>৫০০+</h3><p>ভেষজ তথ্য</p></div>
+<div class="stat-card"><i class="fas fa-heart-pulse"></i><h3>১০০০+</h3><p>স্বাস্থ্য টিপস</p></div>
 </div>
-
-<div class="stat-card">
-
-<i class="fas fa-book-medical"></i>
-
-<h3>৫০০+</h3>
-
-<p>ভেষজ তথ্য</p>
-
-</div>
-
-<div class="stat-card">
-
-<i class="fas fa-user-doctor"></i>
-
-<h3>৫০+</h3>
-
-<p>প্রাকৃতিক সমাধান</p>
-
-</div>
-
-<div class="stat-card">
-
-<i class="fas fa-heart-pulse"></i>
-
-<h3>১০০০+</h3>
-
-<p>স্বাস্থ্য টিপস</p>
-
-</div>
-
-</div>
-
 </div>
 
 <!-- POPULAR HERBS -->
 
-<section class="container" id="herb-section">
+<section class="container" id="herb-list">
 
 <div class="section-title">
-
-<h2>
-জনপ্রিয় ভেষজ গাছসমূহ
-</h2>
-
-<p>
-বাংলার সবচেয়ে কার্যকর ও জনপ্রিয় ভেষজ উদ্ভিদ
-</p>
-
+<h2>জনপ্রিয় ভেষজ গাছসমূহ</h2>
+<p>আপনার প্রয়োজনীয় ভেষজটি খুঁজে নিন</p>
 </div>
 
-<!-- ফিচার ২: ক্যাটাগরি ফিল্টার বাটনসমূহ -->
 <div class="filter-btns">
-    <button class="filter-btn active" onclick="filterHerbs('all')">সবগুলো</button>
-    <button class="filter-btn" onclick="filterHerbs('সর্দি')">সর্দি-কাশি</button>
-    <button class="filter-btn" onclick="filterHerbs('ত্বক')">ত্বক ও চর্ম</button>
-    <button class="filter-btn" onclick="filterHerbs('হজম')">হজম ও পেট</button>
+    <button class="filter-btn active" onclick="filterCategory('all')">সবগুলো</button>
+    <button class="filter-btn" onclick="filterCategory('সর্দি')">সর্দি-কাশি</button>
+    <button class="filter-btn" onclick="filterCategory('ত্বক')">ত্বক ও চুল</button>
 </div>
 
 <div class="herb-grid" id="herbGrid">
 
-<!-- CARD 1 -->
-
-<div class="herb-card" data-category="সর্দি">
-
-<div class="herb-image">
-
-<img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=1200&auto=format&fit=crop">
-
-</div>
-
+<div class="herb-card" data-tag="সর্দি">
+<div class="herb-image"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=600"></div>
 <div class="herb-content">
-
 <h3>তুলসী</h3>
-
-<p>
-সর্দি, কাশি ও রোগ প্রতিরোধ ক্ষমতা বাড়াতে অত্যন্ত উপকারী।
-</p>
-
-<a href="tulsi.html" class="herb-btn">
-বিস্তারিত দেখুন
-</a>
-
+<p>সর্দি, কাশি ও রোগ প্রতিরোধ ক্ষমতা বাড়াতে অত্যন্ত উপকারী।</p>
+<a href="#" class="herb-btn">বিস্তারিত</a>
+</div>
 </div>
 
-</div>
-
-<!-- CARD 2 -->
-
-<div class="herb-card" data-category="ত্বক হজম">
-
-<div class="herb-image">
-
-<img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1200&auto=format&fit=crop">
-
-</div>
-
+<div class="herb-card" data-tag="ত্বক">
+<div class="herb-image"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600"></div>
 <div class="herb-content">
-
 <h3>অ্যালোভেরা</h3>
-
-<p>
-ত্বক, চুল ও হজমের জন্য বহুল ব্যবহৃত প্রাকৃতিক ভেষজ।
-</p>
-
-<a href="aloe-vera.html" class="herb-btn">
-বিস্তারিত দেখুন
-</a>
-
+<p>ত্বক, চুল ও হজমের জন্য বহুল ব্যবহৃত প্রাকৃতিক ভেষজ।</p>
+<a href="#" class="herb-btn">বিস্তারিত</a>
+</div>
 </div>
 
-</div>
-
-<!-- CARD 3 -->
-
-<div class="herb-card" data-category="ত্বক">
-
-<div class="herb-image">
-
-<img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?q=80&w=1200&auto=format&fit=crop">
-
-</div>
-
+<div class="herb-card" data-tag="ত্বক">
+<div class="herb-image"><img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=600"></div>
 <div class="herb-content">
-
 <h3>নিম</h3>
-
-<p>
-চর্মরোগ, রক্ত পরিষ্কার ও জীবাণুনাশক হিসেবে বিখ্যাত।
-</p>
-
-<a href="neem.html" class="herb-btn">
-বিস্তারিত দেখুন
-</a>
-
+<p>চর্মরোগ, রক্ত পরিষ্কার ও জীবাণুনাশক হিসেবে বিখ্যাত।</p>
+<a href="#" class="herb-btn">বিস্তারিত</a>
 </div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FEATURES -->
-
-<section class="container">
-
-<div class="section-title">
-
-<h2>
-কেন ভেষজ চিকিৎসা কোষ?
-</h2>
-
-<p>
-প্রাকৃতিক চিকিৎসার নির্ভরযোগ্য ডিজিটাল প্ল্যাটফর্ম
-</p>
-
-</div>
-
-<div class="features">
-
-<div class="feature-box">
-
-<i class="fas fa-seedling"></i>
-
-<h3>প্রাকৃতিক সমাধান</h3>
-
-<p>
-প্রাচীন ভেষজ জ্ঞান ও আধুনিক তথ্যের সমন্বয়।
-</p>
-
-</div>
-
-<div class="feature-box">
-
-<i class="fas fa-book-open"></i>
-
-<h3>বিস্তারিত তথ্য</h3>
-
-<p>
-প্রতিটি উদ্ভিদের গুণাগুণ, ব্যবহার ও সতর্কতা।
-</p>
-
-</div>
-
-<div class="feature-box">
-
-<i class="fas fa-shield-heart"></i>
-
-<h3>স্বাস্থ্য সচেতনতা</h3>
-
-<p>
-নিরাপদ ও সচেতন ভেষজ ব্যবহারের নির্দেশনা।
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- NEWSLETTER -->
-
-<section class="container">
-
-<div class="newsletter">
-
-<h2>
-নতুন ভেষজ তথ্য পেতে যুক্ত থাকুন
-</h2>
-
-<p>
-আপনার ইমেইল দিয়ে নতুন স্বাস্থ্য টিপস ও ভেষজ তথ্য সংগ্রহ করুন।
-</p>
-
-<div class="newsletter-form">
-
-<input type="email" placeholder="আপনার ইমেইল লিখুন">
-
-<button>
-সাবস্ক্রাইব
-</button>
-
 </div>
 
 </div>
@@ -793,100 +509,83 @@ background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 <!-- FOOTER -->
 
 <footer>
-
-<h2 class="footer-title">
-🌿 ভেষজ চিকিৎসা কোষ
-</h2>
-
-<div class="footer-social">
-
-<a href="https://www.facebook.com/bonargidawahkana.net"
-class="footer-btn fb"
-target="_blank">
-
-<i class="fab fa-facebook-f"></i>
-Facebook
-
-</a>
-
-<a href="https://www.youtube.com/c/bonarjidawakhana"
-class="footer-btn yt"
-target="_blank">
-
-<i class="fab fa-youtube"></i>
-YouTube
-
-</a>
-
-<a href="https://www.instagram.com/mddulal596"
-class="footer-btn ig"
-target="_blank">
-
-<i class="fab fa-instagram"></i>
-Instagram
-
-</a>
-
-<a href="https://www.linkedin.com/in/bonargidawakhana/"
-class="footer-btn ln"
-target="_blank">
-
-<i class="fab fa-linkedin-in"></i>
-LinkedIn
-
-</a>
-
-</div>
-
-<p class="footer-copy">
-
-© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক
-
-</p>
-
+<h2 class="footer-title">🌿 ভেষজ চিকিৎসা কোষ</h2>
+<p class="footer-copy">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
-<!-- ফিচার ৩: জাভাস্ক্রিপ্ট কোড (সার্চ এবং ফিল্টার সক্রিয় করতে) -->
-<script>
-    // সার্চ ফাংশন
-    function searchHerb() {
-        let input = document.getElementById('herbSearchInput').value.toLowerCase();
-        let cards = document.getElementsByClassName('herb-card');
+<!-- Firebase Compat SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
 
-        for (let i = 0; i < cards.length; i++) {
-            let title = cards[i].querySelector('h3').innerText.toLowerCase();
-            if (title.includes(input)) {
-                cards[i].style.display = "block";
-            } else {
-                cards[i].style.display = "none";
-            }
-        }
+<script>
+    // আপনার দেওয়া Firebase কনফিগারেশন
+    const firebaseConfig = {
+      apiKey: "AIzaSyC2Ak9UCORHwy0HJrl3eIbfS2ILBdK_bBE",
+      authDomain: "vesojo-chikitsakosh.firebaseapp.com",
+      projectId: "vesojo-chikitsakosh",
+      storageBucket: "vesojo-chikitsakosh.firebasestorage.app",
+      messagingSenderId: "698398476413",
+      appId: "1:698398476413:web:18853c971dbca60d02c914",
+      measurementId: "G-F651KC1N3Y"
+    };
+
+    // Firebase ইনিশিয়ালাইজ করা
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+
+    // গুগল লগইন ফাংশন
+    function googleLogin() {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        auth.signInWithPopup(provider).catch(err => alert(err.message));
     }
 
-    // ফিল্টার ফাংশন
-    function filterHerbs(category) {
-        let cards = document.getElementsByClassName('herb-card');
-        let btns = document.getElementsByClassName('filter-btn');
+    // লগআউট ফাংশন
+    function googleLogout() {
+        auth.signOut();
+    }
 
-        // বাটনের একটিভ ক্লাস পরিবর্তন
-        for (let btn of btns) {
-            btn.classList.remove('active');
-            if(btn.innerText.toLowerCase().includes(category) || (category === 'all' && btn.innerText === 'সবগুলো')){
-                btn.classList.add('active');
-            }
+    // ইউজার স্ট্যাটাস মনিটর করা
+    auth.onAuthStateChanged(user => {
+        const loginBtn = document.getElementById('loginBtn');
+        const userProfile = document.getElementById('userProfile');
+        if (user) {
+            loginBtn.style.display = 'none';
+            userProfile.style.display = 'flex';
+            document.getElementById('userImg').src = user.photoURL;
+            document.getElementById('userName').innerText = user.displayName.split(' ')[0];
+        } else {
+            loginBtn.style.display = 'flex';
+            userProfile.style.display = 'none';
         }
+    });
 
-        // কার্ড প্রদর্শন নিয়ন্ত্রণ
-        for (let card of cards) {
-            let cardCat = card.getAttribute('data-category');
-            if (category === 'all' || cardCat.includes(category)) {
-                card.style.display = "block";
+    // সার্চ ফাংশন
+    function searchHerb() {
+        let term = document.getElementById('herbSearch').value.toLowerCase();
+        let cards = document.querySelectorAll('.herb-card');
+        cards.forEach(card => {
+            let title = card.querySelector('h3').innerText.toLowerCase();
+            card.style.display = title.includes(term) ? 'block' : 'none';
+        });
+    }
+
+    // ক্যাটাগরি ফিল্টার
+    function filterCategory(cat) {
+        let cards = document.querySelectorAll('.herb-card');
+        let btns = document.querySelectorAll('.filter-btn');
+        
+        btns.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        cards.forEach(card => {
+            if(cat === 'all' || card.getAttribute('data-tag').includes(cat)) {
+                card.style.display = 'block';
             } else {
-                card.style.display = "none";
+                card.style.display = 'none';
             }
-        }
+        });
     }
 </script>
 
 </body>
-</html>
+    </html>
