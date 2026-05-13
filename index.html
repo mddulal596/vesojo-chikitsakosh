@@ -1,890 +1,199 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ভেষজ চিকিৎসা কোষ | ১৪১টি ঔষধি গাছের বিশাল সংগ্রহ</title>
-
-<meta name="description" content="বাংলার ১৪১টি ঔষধি গাছের বিশাল ভেষজ এনসাইক্লোপিডিয়া। রোগ অনুযায়ী ভেষজ চিকিৎসা, উপকারিতা, ব্যবহার ও সতর্কতা।">
-
-<meta name="keywords" content="ভেষজ চিকিৎসা, herbal medicine, neem, tulsi, aloe vera, ayurveda, bangla herbal encyclopedia">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-    --primary:#2e7d32;
-    --secondary:#43a047;
-    --dark:#102314;
-    --light:#f3fff4;
-    --white:#ffffff;
-    --text:#222;
-    --card:#ffffff;
-    --shadow:0 10px 25px rgba(0,0,0,.08);
-}
-
-.dark-mode{
-    --primary:#66bb6a;
-    --secondary:#81c784;
-    --dark:#08110a;
-    --light:#111;
-    --white:#1a1a1a;
-    --text:#f5f5f5;
-    --card:#1e1e1e;
-    --shadow:0 10px 25px rgba(0,0,0,.4);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Hind Siliguri',sans-serif;
-    background:var(--light);
-    color:var(--text);
-    transition:.4s;
-}
-
-/* ================= NAVBAR ================= */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:999;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 5%;
-    background:rgba(16,35,20,.92);
-    backdrop-filter:blur(10px);
-    box-shadow:0 2px 20px rgba(0,0,0,.2);
-}
-
-.logo{
-    color:#fff;
-    text-decoration:none;
-    font-size:28px;
-    font-weight:700;
-}
-
-.nav-links{
-    display:flex;
-    list-style:none;
-    gap:10px;
-}
-
-.nav-links a{
-    color:#fff;
-    text-decoration:none;
-    padding:10px 18px;
-    border-radius:30px;
-    transition:.3s;
-    font-size:15px;
-}
-
-.nav-links a:hover{
-    background:rgba(255,255,255,.12);
-}
-
-.right-nav{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.theme-btn{
-    width:45px;
-    height:45px;
-    border:none;
-    border-radius:50%;
-    background:rgba(255,255,255,.15);
-    color:#fff;
-    cursor:pointer;
-    font-size:18px;
-    transition:.3s;
-}
-
-.theme-btn:hover{
-    transform:rotate(180deg);
-}
-
-/* ================= HERO ================= */
-
-header{
-    min-height:85vh;
-    background:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url('https://images.unsplash.com/photo-1514996937319-344454492b37?q=80&w=1600&auto=format&fit=crop') center/cover;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:20px;
-    color:#fff;
-}
-
-.hero-content{
-    max-width:850px;
-}
-
-.hero-content h1{
-    font-size:4rem;
-    margin-bottom:20px;
-    line-height:1.2;
-}
-
-.hero-content p{
-    font-size:1.3rem;
-    margin-bottom:35px;
-}
-
-.hero-btns{
-    display:flex;
-    gap:15px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.hero-btn{
-    padding:14px 28px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
-}
-
-.primary-btn{
-    background:var(--secondary);
-    color:#fff;
-}
-
-.secondary-btn{
-    background:rgba(255,255,255,.15);
-    color:#fff;
-    backdrop-filter:blur(10px);
-}
-
-.hero-btn:hover{
-    transform:translateY(-4px);
-}
-
-/* ================= STATS ================= */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-    max-width:1200px;
-    margin:-70px auto 50px;
-    padding:0 20px;
-    position:relative;
-    z-index:5;
-}
-
-.stat-box{
-    background:rgba(255,255,255,.8);
-    backdrop-filter:blur(12px);
-    border-radius:25px;
-    padding:35px 20px;
-    text-align:center;
-    box-shadow:var(--shadow);
-}
-
-.dark-mode .stat-box{
-    background:rgba(30,30,30,.85);
-}
-
-.stat-box i{
-    font-size:40px;
-    color:var(--primary);
-    margin-bottom:15px;
-}
-
-.stat-box h2{
-    font-size:2rem;
-    color:var(--primary);
-}
-
-.stat-box p{
-    color:#777;
-}
-
-/* ================= SEARCH ================= */
-
-.search-wrapper{
-    max-width:800px;
-    margin:40px auto;
-    padding:0 20px;
-}
-
-.search-box{
-    position:relative;
-}
-
-.search-box input{
-    width:100%;
-    padding:20px 70px 20px 25px;
-    border:none;
-    border-radius:60px;
-    font-size:18px;
-    outline:none;
-    background:var(--card);
-    color:var(--text);
-    box-shadow:var(--shadow);
-}
-
-.search-box i{
-    position:absolute;
-    right:25px;
-    top:50%;
-    transform:translateY(-50%);
-    color:var(--primary);
-    font-size:22px;
-}
-
-/* ================= CATEGORY ================= */
-
-.categories{
-    display:flex;
-    gap:12px;
-    overflow:auto;
-    padding:10px 20px 30px;
-    max-width:1200px;
-    margin:auto;
-}
-
-.categories button{
-    border:none;
-    padding:12px 22px;
-    border-radius:40px;
-    background:var(--card);
-    color:var(--text);
-    cursor:pointer;
-    white-space:nowrap;
-    box-shadow:var(--shadow);
-    transition:.3s;
-}
-
-.categories button:hover{
-    background:var(--primary);
-    color:#fff;
-}
-
-/* ================= GRID ================= */
-
-.container{
-    max-width:1300px;
-    margin:auto;
-    padding:20px;
-}
-
-.plant-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-    gap:25px;
-}
-
-.plant-card{
-    background:var(--card);
-    border-radius:24px;
-    overflow:hidden;
-    text-decoration:none;
-    color:inherit;
-    box-shadow:var(--shadow);
-    transition:.4s;
-    border:1px solid rgba(255,255,255,.1);
-}
-
-.plant-card:hover{
-    transform:translateY(-10px) scale(1.02);
-}
-
-.plant-card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-.card-content{
-    padding:20px;
-}
-
-.card-content h3{
-    color:var(--primary);
-    margin-bottom:8px;
-    font-size:1.4rem;
-}
-
-.card-content small{
-    color:#888;
-    display:block;
-    margin-bottom:12px;
-}
-
-.card-content p{
-    color:#666;
-    font-size:15px;
-}
-
-/* ================= TIPS ================= */
-
-.tips{
-    margin:70px auto;
-    max-width:1200px;
-    padding:0 20px;
-}
-
-.tip-box{
-    background:linear-gradient(135deg,var(--primary),var(--secondary));
-    border-radius:30px;
-    color:#fff;
-    padding:50px;
-    text-align:center;
-}
-
-.tip-box h2{
-    font-size:2rem;
-    margin-bottom:15px;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:var(--dark);
-    color:#fff;
-    padding:70px 20px 40px;
-    margin-top:70px;
-}
-
-.footer-container{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:40px;
-}
-
-.footer-box h3{
-    margin-bottom:20px;
-}
-
-.footer-box a{
-    display:block;
-    color:#ccc;
-    text-decoration:none;
-    margin-bottom:10px;
-    transition:.3s;
-}
-
-.footer-box a:hover{
-    color:#fff;
-}
-
-.socials{
-    display:flex;
-    gap:12px;
-    margin-top:20px;
-}
-
-.socials a{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:rgba(255,255,255,.1);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    text-decoration:none;
-    transition:.3s;
-}
-
-.socials a:hover{
-    background:var(--primary);
-    transform:translateY(-3px);
-}
-
-.footer-bottom{
-    text-align:center;
-    margin-top:50px;
-    border-top:1px solid rgba(255,255,255,.1);
-    padding-top:25px;
-    color:#aaa;
-}
-
-/* ================= WHATSAPP ================= */
-
-.whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:#25D366;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:28px;
-    text-decoration:none;
-    z-index:999;
-    box-shadow:0 10px 20px rgba(0,0,0,.2);
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:768px){
-
-    nav{
-        flex-wrap:wrap;
-        gap:15px;
-    }
-
-    .nav-links{
-        width:100%;
-        justify-content:center;
-        flex-wrap:wrap;
-    }
-
-    .hero-content h1{
-        font-size:2.4rem;
-    }
-
-    .hero-content p{
-        font-size:1rem;
-    }
-
-    .tip-box{
-        padding:35px 20px;
-    }
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ভেষজ চিকিৎসাকোষ | ১০০টি ঔষধি গাছের পূর্ণাঙ্গ নির্দেশিকা</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="রোগমুক্তির সহজ ভেষজ — ১০০টি ঔষধি গাছের পূর্ণাঙ্গ নির্দেশিকা। প্রাকৃতিক উপায়ে রোগ নিরাময়ের ঘরোয়া সমাধান।">
+    <meta name="author" content="Md. Dulal Hosen">
+
+    <!-- Icons & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #2d5a27;
+            --dark: #1e3d1a;
+            --accent: #ffb100;
+            --light: #f4faf4;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--light); color: #333; line-height: 1.6; }
+
+        /* Navigation */
+        nav {
+            position: sticky; top: 0; z-index: 999; background: var(--dark);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 0 5%; height: 75px; box-shadow: 0 2px 10px rgba(0,0,0,.2);
+        }
+        .logo { color: #fff; text-decoration: none; font-size: 22px; font-weight: bold; }
+        .nav-links { display: flex; list-style: none; }
+        .nav-links a { color: #fff; text-decoration: none; padding: 25px 15px; display: block; transition: .3s; }
+        .nav-links a:hover { background: var(--primary); }
+
+        /* Hero Section */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: #fff; text-align: center; padding: 100px 20px;
+        }
+        header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        /* Search Bar */
+        .search-container { max-width: 600px; margin: -35px auto 40px; padding: 0 20px; position: relative; }
+        #searchInput {
+            width: 100%; padding: 18px 25px; border: none; border-radius: 50px;
+            font-size: 18px; box-shadow: 0 10px 25px rgba(0,0,0,.1); outline: none;
+        }
+
+        /* Plant Grid */
+        .container { max-width: 1200px; margin: auto; padding: 20px; }
+        .plant-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .plant-item {
+            background: var(--white); border-radius: 15px; padding: 25px; text-align: center;
+            text-decoration: none; color: inherit; border: 1px solid #eee; transition: .3s;
+        }
+        .plant-item:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .plant-icon { font-size: 40px; margin-bottom: 15px; display: block; }
+        .plant-item span { display: block; color: var(--primary); font-size: 1.2rem; font-weight: bold; }
+        .plant-item small { color: #888; display: block; margin-bottom: 10px; font-style: italic; }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed; bottom: 30px; right: 30px; background: #25d366;
+            color: white; width: 60px; height: 60px; border-radius: 50%;
+            display: flex; justify-content: center; align-items: center;
+            font-size: 30px; box-shadow: 2px 5px 15px rgba(0,0,0,0.2); z-index: 1000;
+        }
+
+        /* Footer */
+        footer { background: var(--dark); color: #fff; text-align: center; padding: 50px 20px; margin-top: 60px; }
+        .social-links a { color: white; font-size: 20px; margin: 0 10px; transition: .3s; }
+        .social-links a:hover { color: var(--accent); }
+
+        /* Mobile View */
+        @media(max-width: 768px) {
+            nav { height: auto; flex-direction: column; padding: 15px; }
+            .nav-links { margin-top: 10px; }
+            .nav-links a { padding: 10px; font-size: 14px; }
+            header h1 { font-size: 1.8rem; }
+            .plant-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- ================= NAVBAR ================= -->
-
-<nav>
-
-<a href="index.html" class="logo">
-🌿 ভেষজ চিকিৎসাকোষ
-</a>
-
-<ul class="nav-links">
-
-<li><a href="index.html">হোম</a></li>
-<li><a href="#plants">ভেষজ তালিকা</a></li>
-<li><a href="about.html">সম্পর্কে</a></li>
-<li><a href="contact.html">যোগাযোগ</a></li>
-
-</ul>
-
-<div class="right-nav">
-
-<button class="theme-btn" onclick="toggleTheme()">
-<i class="fas fa-moon"></i>
-</button>
-
-</div>
-
-</nav>
-
-<!-- ================= HERO ================= -->
-
-<header>
-
-<div class="hero-content">
-
-<h1>প্রাকৃতিক ভেষজ চিকিৎসা কোষ</h1>
-
-<p>
-১৪১টি ঔষধি গাছের বাংলা ভেষজ এনসাইক্লোপিডিয়া —
-রোগমুক্তির সহজ প্রাকৃতিক সমাধান
-</p>
-
-<div class="hero-btns">
-
-<a href="#plants" class="hero-btn primary-btn">
-ভেষজ দেখুন
-</a>
-
-<a href="about.html" class="hero-btn secondary-btn">
-আরও জানুন
-</a>
-
-</div>
-
-</div>
-
-</header>
-
-<!-- ================= STATS ================= -->
-
-<section class="stats">
-
-<div class="stat-box">
-<i class="fas fa-leaf"></i>
-<h2>১৪১+</h2>
-<p>ঔষধি গাছ</p>
-</div>
-
-<div class="stat-box">
-<i class="fas fa-heartbeat"></i>
-<h2>৫০০+</h2>
-<p>প্রাকৃতিক চিকিৎসা</p>
-</div>
-
-<div class="stat-box">
-<i class="fas fa-book-medical"></i>
-<h2>১০০০+</h2>
-<p>ভেষজ উপকারিতা</p>
-</div>
-
-<div class="stat-box">
-<i class="fas fa-users"></i>
-<h2>২৪/৭</h2>
-<p>স্বাস্থ্য সচেতনতা</p>
-</div>
-
-</section>
-
-<!-- ================= SEARCH ================= -->
-
-<div class="search-wrapper">
-
-<div class="search-box">
-
-<input
-type="text"
-id="searchInput"
-placeholder="ভেষজ গাছের নাম লিখুন..."
-onkeyup="searchPlants()">
-
-<i class="fas fa-search"></i>
-
-</div>
-
-</div>
-
-<!-- ================= CATEGORY ================= -->
-
-<div class="categories">
-
-<button>সব</button>
-<button>সর্দি-কাশি</button>
-<button>চর্মরোগ</button>
-<button>ডায়াবেটিস</button>
-<button>চুল</button>
-<button>লিভার</button>
-<button>হজম</button>
-<button>হৃদরোগ</button>
-<button>রক্তচাপ</button>
-
-</div>
-
-<!-- ================= PLANTS ================= -->
-
-<section class="container" id="plants">
-
-<div class="plant-grid" id="plantGrid">
-
-<!-- CARD -->
-
-<a href="neem.html" class="plant-card">
-
-<img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=1200&auto=format&fit=crop" alt="Neem">
-
-<div class="card-content">
-
-<h3>নিম</h3>
-
-<small>Neem</small>
-
-<p>
-চর্মরোগ, ব্রণ, চুলকানি ও রক্ত পরিশোধনে অত্যন্ত উপকারী।
-</p>
-
-</div>
-
-</a>
-
-<!-- CARD -->
-
-<a href="tulsi.html" class="plant-card">
-
-<img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?q=80&w=1200&auto=format&fit=crop" alt="Tulsi">
-
-<div class="card-content">
-
-<h3>তুলসী</h3>
-
-<small>Holy Basil</small>
-
-<p>
-সর্দি, কাশি, জ্বর ও রোগ প্রতিরোধ ক্ষমতা বৃদ্ধিতে কার্যকর।
-</p>
-
-</div>
-
-</a>
-
-<!-- CARD -->
-
-<a href="aloevera.html" class="plant-card">
-
-<img src="https://images.unsplash.com/photo-1628771065518-0d82f1938462?q=80&w=1200&auto=format&fit=crop" alt="Aloe Vera">
-
-<div class="card-content">
-
-<h3>ঘৃতকুমারী</h3>
-
-<small>Aloe Vera</small>
-
-<p>
-ত্বক, চুল ও হজম সমস্যার প্রাকৃতিক সমাধান।
-</p>
-
-</div>
-
-</a>
-
-<!-- CARD -->
-
-<a href="ada.html" class="plant-card">
-
-<img src="https://images.unsplash.com/photo-1615485925873-6f0d7a6d37d6?q=80&w=1200&auto=format&fit=crop" alt="Ginger">
-
-<div class="card-content">
-
-<h3>আদা</h3>
-
-<small>Ginger</small>
-
-<p>
-সর্দি, কাশি, বমিভাব ও বদহজম কমাতে সাহায্য করে।
-</p>
-
-</div>
-
-</a>
-
-<!-- CARD -->
-
-<a href="amla.html" class="plant-card">
-
-<img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?q=80&w=1200&auto=format&fit=crop" alt="Amla">
-
-<div class="card-content">
-
-<h3>আমলকী</h3>
-
-<small>Amla</small>
-
-<p>
-ভিটামিন সি সমৃদ্ধ শক্তিশালী প্রাকৃতিক অ্যান্টিঅক্সিডেন্ট।
-</p>
-
-</div>
-
-</a>
-
-<!-- CARD -->
-
-<a href="ashwagondha.html" class="plant-card">
-
-<img src="https://images.unsplash.com/photo-1514996937319-344454492b37?q=80&w=1200&auto=format&fit=crop" alt="Ashwagandha">
-
-<div class="card-content">
-
-<h3>অশ্বগন্ধা</h3>
-
-<small>Ashwagandha</small>
-
-<p>
-স্ট্রেস কমানো ও শারীরিক শক্তি বৃদ্ধিতে বিশেষভাবে কার্যকর।
-</p>
-
-</div>
-
-</a>
-
-</div>
-
-</section>
-
-<!-- ================= TIPS ================= -->
-
-<section class="tips">
-
-<div class="tip-box">
-
-<h2>🌿 আজকের ভেষজ পরামর্শ</h2>
-
-<p id="tipText">
-প্রতিদিন সকালে কুসুম গরম পানির সাথে মধু ও আদা খেলে রোগ প্রতিরোধ ক্ষমতা বৃদ্ধি পায়।
-</p>
-
-</div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<div class="footer-container">
-
-<div class="footer-box">
-
-<h3>ভেষজ চিকিৎসাকোষ</h3>
-
-<p>
-বাংলার প্রাচীন ভেষজ চিকিৎসাকে আধুনিকভাবে সবার কাছে পৌঁছে দেওয়ার উদ্যোগ।
-</p>
-
-<div class="socials">
-
-<a href="#"><i class="fab fa-facebook-f"></i></a>
-<a href="#"><i class="fab fa-youtube"></i></a>
-<a href="#"><i class="fab fa-instagram"></i></a>
-<a href="#"><i class="fab fa-linkedin-in"></i></a>
-
-</div>
-
-</div>
-
-<div class="footer-box">
-
-<h3>গুরুত্বপূর্ণ লিংক</h3>
-
-<a href="index.html">হোম</a>
-<a href="about.html">সম্পর্কে</a>
-<a href="contact.html">যোগাযোগ</a>
-<a href="privacy.html">Privacy Policy</a>
-
-</div>
-
-<div class="footer-box">
-
-<h3>জনপ্রিয় ভেষজ</h3>
-
-<a href="neem.html">নিম</a>
-<a href="tulsi.html">তুলসী</a>
-<a href="aloevera.html">ঘৃতকুমারী</a>
-<a href="amla.html">আমলকী</a>
-
-</div>
-
-</div>
-
-<div class="footer-bottom">
-
-© ২০২৬ ভেষজ চিকিৎসাকোষ | সর্বস্বত্ব সংরক্ষিত
-
-</div>
-
-</footer>
-
-<!-- ================= WHATSAPP ================= -->
-
-<a href="https://wa.me/8801XXXXXXXXX"
-class="whatsapp">
-
-<i class="fab fa-whatsapp"></i>
-
-</a>
-
-<!-- ================= SCRIPT ================= -->
-
-<script>
-
-function searchPlants(){
-
-let input =
-document.getElementById("searchInput");
-
-let filter =
-input.value.toUpperCase();
-
-let cards =
-document.getElementsByClassName("plant-card");
-
-for(let i=0;i<cards.length;i++){
-
-let txt =
-cards[i].textContent || cards[i].innerText;
-
-if(txt.toUpperCase().indexOf(filter)>-1){
-
-cards[i].style.display="block";
-
-}else{
-
-cards[i].style.display="none";
-
-}
-
-}
-
-}
-
-/* ================= DARK MODE ================= */
-
-function toggleTheme(){
-
-document.body.classList.toggle("dark-mode");
-
-}
-
-/* ================= HERBAL TIPS ================= */
-
-const tips = [
-
-"প্রতিদিন সকালে তুলসী পাতা খেলে রোগ প্রতিরোধ ক্ষমতা বাড়ে।",
-
-"আমলকী চুল ও ত্বকের জন্য অত্যন্ত উপকারী।",
-
-"নিমপাতা ব্রণ ও চর্মরোগ কমাতে সাহায্য করে।",
-
-"আদা ও মধু কাশি কমাতে কার্যকর।",
-
-"অ্যালোভেরা ত্বক ও চুল উজ্জ্বল রাখতে সাহায্য করে।"
-
-];
-
-let currentTip = 0;
-
-setInterval(()=>{
-
-currentTip++;
-
-if(currentTip >= tips.length){
-
-currentTip = 0;
-
-}
-
-document.getElementById("tipText")
-.innerText = tips[currentTip];
-
-},4000);
-
-</script>
-
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসাকোষ</a>
+        <ul class="nav-links">
+            <li><a href="index.html">হোম</a></li>
+            <li><a href="#" id="login-btn">লগইন</a></li>
+            <li><a href="contact.html">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <header>
+        <h1>প্রাকৃতিক ভেষজ চিকিৎসা কোষ</h1>
+        <p>রোগমুক্তির সহজ ভেষজ — ১০০টি ঔষধি গাছের পূর্ণাঙ্গ নির্দেশিকা</p>
+    </header>
+
+    <!-- Search -->
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="ভেষজ বা রোগের নাম লিখে সার্চ করুন...">
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="plant-grid" id="plantList">
+            <!-- Sample Items (আপনি আপনার ১০০টি তালিকা এখানে রাখবেন) -->
+            <a href="neem.html" class="plant-item">
+                <div class="plant-icon">🌿</div>
+                <span>১. নিম</span>
+                <small>Neem</small>
+                <p>চর্মরোগ, ব্রণ ও রক্ত পরিশোধনে উপকারী।</p>
+            </a>
+
+            <a href="tulsi.html" class="plant-item">
+                <div class="plant-icon">🍃</div>
+                <span>২. তুলসী</span>
+                <small>Holy Basil</small>
+                <p>সর্দি, কাশি ও শ্বাসকষ্টে অত্যন্ত উপকারী।</p>
+            </a>
+
+            <a href="aloevera.html" class="plant-item">
+                <div class="plant-icon">🌵</div>
+                <span>৩. ঘৃতকুমারী</span>
+                <small>Aloe Vera</small>
+                <p>ত্বক, চুল ও হজম সমস্যার প্রাকৃতিক সমাধান।</p>
+            </a>
+            
+            <!-- ১০০টি ডাটা এখানে ক্রমান্বয়ে যোগ করবেন -->
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/8801917044596" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
+        <div class="social-links" style="margin-top: 15px;">
+            <a href="https://facebook.com/bonargidawahkana.net"><i class="fab fa-facebook"></i></a>
+            <a href="https://youtube.com/c/bonarjidawakhana"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+    <!-- Firebase & Custom JS -->
+    <script type="module">
+        // Firebase Integration
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC2Ak9UCORHwy0HJrl3eIbfS2ILBdK_bBE",
+            authDomain: "vesojo-chikitsakosh.firebaseapp.com",
+            projectId: "vesojo-chikitsakosh",
+            storageBucket: "vesojo-chikitsakosh.firebasestorage.app",
+            messagingSenderId: "698398476413",
+            appId: "1:698398476413:web:18853c971dbca60d02c914"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // লগইন চেক
+        onAuthStateChanged(auth, (user) => {
+            const btn = document.getElementById('login-btn');
+            if (user) {
+                btn.innerHTML = '<i class="fas fa-user"></i> প্রোফাইল';
+            }
+        });
+    </script>
+
+    <script>
+        // লাইভ সার্চ ফাংশন
+        function searchFunction() {
+            let input = document.getElementById("searchInput");
+            let filter = input.value.toUpperCase();
+            let items = document.getElementsByClassName("plant-item");
+            
+            for (let i = 0; i < items.length; i++) {
+                let text = items[i].innerText || items[i].textContent;
+                if (text.toUpperCase().indexOf(filter) > -1) {
+                    items[i].style.display = "";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
