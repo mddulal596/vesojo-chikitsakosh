@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ভেষজ তালিকা | ভেষজ চিকিৎসা কোষ</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+:root{
+    --blue:#1976d2;
+    --dark:#01579b;
+    --light:#f5fbff;
+}
+
+/* GLOBAL */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--light);
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#039be5,#01579b);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+header h1{
+    font-size:2.8rem;
+}
+
+/* CONTAINER */
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+/* SEARCH */
+.search-box{
+    max-width:600px;
+    margin:30px auto;
+    display:flex;
+    background:white;
+    border-radius:50px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.search-box input{
+    flex:1;
+    padding:15px;
+    border:none;
+    outline:none;
+}
+
+.search-box button{
+    background:var(--blue);
+    color:white;
+    border:none;
+    padding:0 20px;
+}
+
+/* GRID */
+.herb-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+.herb-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.herb-card:hover{
+    transform:translateY(-8px);
+}
+
+.herb-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.herb-card h3{
+    color:var(--dark);
+    margin:10px 0;
+}
+
+.herb-card p{
+    padding:0 15px;
+    color:#555;
+}
+
+.herb-card a{
+    display:inline-block;
+    margin:15px;
+    padding:10px 20px;
+    background:var(--blue);
+    color:white;
+    text-decoration:none;
+    border-radius:30px;
+}
+
+/* FOOTER */
+footer{
+    background:#6d6d6d;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    margin-top:60px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    header h1{
+        font-size:2rem;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+
+<h1>🌿 ভেষজ গাছের পূর্ণ তালিকা</h1>
+
+<p>সব ঔষধি গাছের বিস্তারিত তথ্য এক জায়গায়</p>
+
+</header>
+
+<!-- SEARCH -->
+<div class="search-box">
+
+<input type="text" placeholder="গাছ খুঁজুন...">
+<button><i class="fas fa-search"></i></button>
+
+</div>
+
+<!-- HERB LIST -->
+<div class="container">
+
+<div class="herb-grid">
+
+<!-- CARD 1 -->
+<div class="herb-card">
+    <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5">
+    <h3>তুলসী</h3>
+    <p>রোগ প্রতিরোধ ক্ষমতা বাড়ায় ও সর্দি-কাশিতে উপকারী</p>
+    <a href="tulsi.html">বিস্তারিত</a>
+</div>
+
+<!-- CARD 2 -->
+<div class="herb-card">
+    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d">
+    <h3>অ্যালোভেরা</h3>
+    <p>ত্বক, চুল ও হজমের জন্য অত্যন্ত উপকারী</p>
+    <a href="aloe-vera.html">বিস্তারিত</a>
+</div>
+
+<!-- CARD 3 -->
+<div class="herb-card">
+    <img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6">
+    <h3>নিম</h3>
+    <p>চর্মরোগ ও জীবাণুনাশক হিসেবে কার্যকর</p>
+    <a href="neem.html">বিস্তারিত</a>
+</div>
+
+<!-- CARD 4 -->
+<div class="herb-card">
+    <img src="https://images.unsplash.com/photo-1615484477778-7f6a8d6a1b5a">
+    <h3>হলুদ</h3>
+    <p>প্রাকৃতিক অ্যান্টিসেপটিক ও প্রদাহ কমায়</p>
+    <a href="turmeric.html">বিস্তারিত</a>
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+<p>© ২০২৬ ভেষজ চিকিৎসা কোষ | সকল অধিকার সংরক্ষিত</p>
+
+</footer>
+
+</body>
+
+</html>
