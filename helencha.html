@@ -1,257 +1,611 @@
 <!DOCTYPE html>
 <html lang="bn">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>হেলঞ্চা (Helencha) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<title>
+হেলঞ্চা (Helencha) | ভেষজ চিকিৎসা কোষ
+</title>
+
+<meta name="description"
+content="হেলঞ্চা (Enhydra fluctuans) এর ভেষজ গুণাগুণ, ব্যবহার, সেবন বিধি, সতর্কতা ও বিস্তারিত তথ্য জানুন।">
+
+<meta name="keywords"
+content="হেলঞ্চা, Helencha, Enhydra fluctuans, ভেষজ শাক, লিভারের যত্ন, হার্বাল মেডিসিন">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+
+/* ===================================================== */
+/* ROOT */
+/* ===================================================== */
+
 :root{
-    --primary:#d1f2eb; 
-    --dark:#00695c;
-    --light:#f4fbf9;
-    --accent:#1abc9c;
-    --nav-blue: #1976d2; 
-    --blue-btn: #1976d2; 
-    --blue-hover: #115293; 
-    --white:#fff;
-    --footer-grey-light: #999999;
+    --primary:#e8f5e9;
+    --dark:#1b5e20;
+    --accent:#4caf50;
+    --light:#f1f8e9;
+    --white:#ffffff;
+    --text:#333;
+    --shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-*{ margin:0; padding:0; box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+/* ===================================================== */
+/* GLOBAL */
+/* ===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI',sans-serif;
     background:var(--light);
-    color:#333;
+    color:var(--text);
     line-height:1.8;
 }
 
-/* ================= NAVBAR ================= */
+/* ===================================================== */
+/* NAVBAR */
+/* ===================================================== */
+
 nav{
-    position:sticky; top:0; z-index:999;
-    background:var(--nav-blue); display:flex;
-    justify-content:space-between; align-items:center;
-    padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:#1976d2;
+    height:75px;
+    padding:0 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
-.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
-.nav-links { display:flex; list-style:none; }
-.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
-.nav-links a:hover { background:var(--blue-hover); }
 
-/* ================= HEADER ================= */
+.logo{
+    color:white;
+    text-decoration:none;
+    font-size:24px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+}
+
+.nav-links li a{
+    color:white;
+    text-decoration:none;
+    padding:28px 18px;
+    display:block;
+    transition:0.3s;
+}
+
+.nav-links li a:hover{
+    background:#115293;
+}
+
+.nav-social{
+    display:flex;
+    gap:10px;
+}
+
+.nav-social a{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.nav-social a:hover{
+    background:rgba(255,255,255,0.2);
+    transform:translateY(-3px);
+}
+
+/* ===================================================== */
+/* HERO */
+/* ===================================================== */
+
 header{
-    background:linear-gradient(135deg,var(--accent),var(--dark));
-    color:#fff; text-align:center; padding:100px 20px;
+    background:linear-gradient(135deg,#43a047,#1b5e20);
+    color:white;
+    text-align:center;
+    padding:100px 20px;
 }
 
-/* ================= CONTENT CONTAINER ================= */
-.container {
-    max-width: 1000px;
-    margin: -40px auto 60px;
-    padding: 0 20px;
+header h1{
+    font-size:3rem;
+    margin-bottom:15px;
 }
 
-.plant-detail-card {
-    background: white;
-    padding: 60px;
-    border-radius: 25px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+header p{
+    font-size:1.2rem;
 }
 
-.plant-header {
-    text-align: center;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 40px;
-    margin-bottom: 40px;
+/* ===================================================== */
+/* MAIN CONTAINER */
+/* ===================================================== */
+
+.container{
+    max-width:1100px;
+    margin:-50px auto 70px;
+    padding:0 20px;
 }
 
-.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
-.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
-.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
+/* ===================================================== */
+/* CARD */
+/* ===================================================== */
 
-.ayurvedic-specs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 30px;
-    justify-content: center;
-}
-.spec-item {
-    background: var(--blue-btn);
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-size: 1rem;
-    color: white;
-    font-weight: 500;
+.card{
+    background:white;
+    padding:60px;
+    border-radius:25px;
+    box-shadow:var(--shadow);
 }
 
-.info-section { margin-bottom: 60px; }
-.info-section h3 {
-    color: var(--dark);
-    border-left: 8px solid var(--accent);
-    padding-left: 20px;
-    margin-bottom: 25px;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+/* ===================================================== */
+/* PLANT HEADER */
+/* ===================================================== */
+
+.plant-header{
+    text-align:center;
+    border-bottom:2px solid #eee;
+    padding-bottom:40px;
+    margin-bottom:45px;
 }
 
-.benefit-list { list-style: none; }
-.benefit-list li {
-    margin-bottom: 22px;
-    padding-left: 50px;
-    position: relative;
-    font-size: 1.1rem;
-}
-.benefit-list li::before {
-    content: "\f058";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    position: absolute; left: 0;
-    color: var(--accent);
-    font-size: 1.4rem;
+.plant-icon{
+    font-size:6rem;
+    margin-bottom:20px;
 }
 
-.dosage-table-container {
-    overflow-x: auto;
-    margin-top: 20px;
-    border-radius: 15px;
-    border: 1px solid #eee;
-}
-.dosage-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-}
-.dosage-table th, .dosage-table td {
-    padding: 15px 20px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
-.dosage-table th {
-    background: #f8f9fa;
-    color: var(--dark);
-    font-weight: bold;
+.plant-header h2{
+    color:var(--dark);
+    font-size:3rem;
 }
 
-.warning-box {
-    background: #fff8e1;
-    border-radius: 15px;
-    padding: 35px;
-    border-left: 8px solid #ffc107;
-    margin-top: 30px;
+.plant-header small{
+    color:#666;
+    font-size:1.2rem;
 }
 
-.btn-back-container { text-align: center; margin-top: 40px; }
-.btn-back-list {
-    text-decoration: none; background: var(--blue-btn); color: white; 
-    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+/* ===================================================== */
+/* TAGS */
+/* ===================================================== */
+
+.tags{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:30px;
 }
 
-footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.tag{
+    background:#1976d2;
+    color:white;
+    padding:12px 25px;
+    border-radius:50px;
+    font-size:15px;
+    font-weight:600;
+}
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+/* ===================================================== */
+/* SECTION */
+/* ===================================================== */
+
+.section{
+    margin-bottom:60px;
+}
+
+.section h3{
+    color:var(--dark);
+    font-size:2rem;
+    margin-bottom:25px;
+    padding-left:18px;
+    border-left:7px solid var(--accent);
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+/* ===================================================== */
+/* GRID */
+/* ===================================================== */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.grid-box{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* ===================================================== */
+/* LIST */
+/* ===================================================== */
+
+.benefit-list{
+    list-style:none;
+}
+
+.benefit-list li{
+    position:relative;
+    padding-left:50px;
+    margin-bottom:22px;
+}
+
+.benefit-list li::before{
+    content:"\f058";
+    font-family:"Font Awesome 6 Free";
+    font-weight:900;
+    position:absolute;
+    left:0;
+    color:var(--accent);
+    font-size:1.4rem;
+}
+
+/* ===================================================== */
+/* TABLE */
+/* ===================================================== */
+
+.table-container{
+    overflow-x:auto;
+    border-radius:15px;
+    border:1px solid #eee;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+table th,
+table td{
+    padding:16px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+}
+
+table th{
+    background:#f1f8e9;
+    color:var(--dark);
+}
+
+/* ===================================================== */
+/* WARNING */
+/* ===================================================== */
+
+.warning{
+    background:#fff4f4;
+    border-left:7px solid #e53935;
+    padding:30px;
+    border-radius:15px;
+}
+
+/* ===================================================== */
+/* RELATED */
+/* ===================================================== */
+
+.related{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.related-card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    transition:0.3s;
+}
+
+.related-card:hover{
+    transform:translateY(-5px);
+}
+
+.related-card i{
+    font-size:2rem;
+    color:var(--accent);
+    margin-bottom:10px;
+}
+
+/* ===================================================== */
+/* BUTTON */
+/* ===================================================== */
+
+.btn-area{
+    text-align:center;
+    margin-top:50px;
+}
+
+.btn{
+    display:inline-block;
+    background:#1976d2;
+    color:white;
+    text-decoration:none;
+    padding:16px 40px;
+    border-radius:50px;
+    font-weight:700;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#115293;
+    transform:translateY(-4px);
+}
+
+/* ===================================================== */
+/* BACK TO TOP */
+/* ===================================================== */
+
+.back-to-top{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:var(--accent);
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* ===================================================== */
+/* FOOTER */
+/* ===================================================== */
+
+footer{
+    background:linear-gradient(135deg,#1b5e20,#111111);
+    color:white;
+    text-align:center;
+    padding:80px 20px 45px;
+}
+
+.footer-title{
+    font-size:38px;
+    font-weight:700;
+    margin-bottom:30px;
+}
+
+.footer-social{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+.footer-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 28px;
+    border-radius:50px;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.footer-btn:hover{
+    transform:translateY(-5px);
+}
+
+.fb{background:#1877F2;}
+.yt{background:#FF0000;}
+.ig{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);}
+.ln{background:#0077B5;}
+
+.footer-copy{
+    font-size:20px;
+    font-weight:600;
+    margin-top:20px;
+}
+
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
+
+@media(max-width:768px){
+
+    .nav-links{
+        display:none;
+    }
+
+    header h1{
+        font-size:2rem;
+    }
+
+    .card{
+        padding:35px 20px;
+    }
+
+    .plant-header h2{
+        font-size:2.2rem;
+    }
+
+    .section h3{
+        font-size:1.5rem;
+    }
+
+    .footer-title{
+        font-size:30px;
+    }
+
+    .footer-btn{
+        width:100%;
+        justify-content:center;
+        max-width:280px;
+    }
+
+    .footer-copy{
+        font-size:16px;
+    }
+}
+
 </style>
+
 </head>
+
 <body>
 
 <nav>
-    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
-    <ul class="nav-links">
-        <li><a href="index.html">হোম</a></li>
-        <li><a href="about.html">সম্পর্কে</a></li>
-        <li><a href="contact.html">যোগাযোগ</a></li>
-    </ul>
+
+<a href="index.html" class="logo">
+🌿 ভেষজ চিকিৎসা কোষ
+</a>
+
+<ul class="nav-links">
+<li><a href="index.html">হোম</a></li>
+<li><a href="about.html">সম্পর্কে</a></li>
+<li><a href="contact.html">যোগাযোগ</a></li>
+</ul>
+
+<div class="nav-social">
+<a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+</div>
+
 </nav>
 
 <header>
-    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
-    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
+<h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+<p>প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
 </header>
 
 <div class="container">
-    <div class="plant-detail-card">
-        <div class="plant-header">
-            <div class="plant-icon-large">🌿</div>
-            <h2>৫২. হেলঞ্চা (Helencha)</h2>
-            <small>Scientific Name: Enhydra fluctuans</small>
-            <div class="ayurvedic-specs">
-                <div class="spec-item">রস: তিক্ত</div>
-                <div class="spec-item">বীর্য: শীতল (Cooling)</div>
-                <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">গুণ: লঘু</div>
-            </div>
-        </div>
 
-        <div class="info-section">
-            <h3><i class="fas fa-leaf"></i> ভেষজ পরিচয়</h3>
-            <p>হেলঞ্চা একটি জলজ বা আধা-জলজ ভেষজ উদ্ভিদ। এটি সাধারণত পুকুরের ধারে বা জলাশয়ে জন্মে। এর স্বাদ কিছুটা তিতকুটে হলেও এটি পুষ্টিগুণে ভরপুর একটি শাক। আয়ুর্বেদ শাস্ত্রে পিত্তনাশক ও রক্ত শোধক হিসেবে এর খ্যাতি রয়েছে।</p>
-        </div>
+<div class="card">
 
-        <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> প্রধান ভেষজ গুণাবলি</h3>
-            <ul class="benefit-list">
-                <li><strong>লিভার ও জন্ডিস:</strong> লিভারের কার্যক্ষমতা বাড়াতে এবং জন্ডিস নিরাময়ে হেলঞ্চার রস অত্যন্ত উপকারী।</li>
-                <li><strong>চর্মরোগ:</strong> রক্ত পরিষ্কার করার ক্ষমতা থাকায় এটি দাদ, চুলকানি ও একজিমা সারাতে সাহায্য করে।</li>
-                <li><strong>স্মৃতিশক্তি:</strong> এটি মস্তিষ্ককে ঠান্ডা রাখে এবং স্মৃতিশক্তি বৃদ্ধিতে সহায়তা করে।</li>
-                <li><strong>অনিদ্রা:</strong> দুশ্চিন্তা কমিয়ে ভালো ঘুমে সাহায্য করার ভেষজ গুণ এতে বিদ্যমান।</li>
-            </ul>
-        </div>
-
-        <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ব্যবহার ও সেবন বিধি (ডোজ টেবিল)</h3>
-            <div class="dosage-table-container">
-                <table class="dosage-table">
-                    <thead>
-                        <tr>
-                            <th>ব্যবহারের রূপ</th>
-                            <th>সেবনের মাত্রা (প্রাপ্তবয়স্ক)</th>
-                            <th>সেবনের নিয়ম ও সময়</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>ভেষজ চূর্ণ (Powder)</strong></td>
-                            <td>৩ - ৫ গ্রাম</td>
-                            <td>শুকনো হেলঞ্চা পাতা চূর্ণ করে পানির সাথে মিশিয়ে সকালে।</td>
-                        </tr>
-                        <tr>
-                            <td><strong>ভেষজ রস (Fresh Juice)</strong></td>
-                            <td>১০ - ১৫ মিলি</td>
-                            <td>সতেজ পাতার রস মধু বা সামান্য গরম পানির সাথে মিশিয়ে সেব্য।</td>
-                        </tr>
-                        <tr>
-                            <td><strong>ভেষজ ক্বাথ (Decoction)</strong></td>
-                            <td>২০ - ৩০ মিলি</td>
-                            <td>পাতা ও ডগা ফুটিয়ে তৈরি করা পানি ঠান্ডা করে দিনে ২ বার।</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="info-section">
-            <div class="warning-box">
-                <h4 style="color: #f57c00; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা</h4>
-                <p>• নোংরা বা দূষিত জলাশয় থেকে হেলঞ্চা সংগ্রহ করবেন না, কারণ এতে ক্ষতিকারক ব্যাকটেরিয়া থাকতে পারে।</p>
-                <p>• অতিরিক্ত সেবনে পেট খারাপ হতে পারে।</p>
-                <p>• কিডনি রোগীদের জন্য চিকিৎসকের পরামর্শ ছাড়া না খাওয়াই ভালো।</p>
-            </div>
-        </div>
-
-        <div class="btn-back-container">
-            <a href="index.html" class="btn-back-list">
-                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
-            </a>
-        </div>
-    </div>
+<div class="plant-header">
+<div class="plant-icon">🌿</div>
+<h2>৫২. হেলঞ্চা (Helencha)</h2>
+<small>Scientific Name: Enhydra fluctuans Lour.</small>
+<div class="tags">
+<div class="tag">রস: তিক্ত</div>
+<div class="tag">বীর্য: শীতল</div>
+<div class="tag">বিপাক: কটু</div>
+<div class="tag">গুণ: লঘু</div>
+</div>
 </div>
 
+<div class="section">
+<h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+<p>
+হেলঞ্চা একটি জলজ ওষধি শাক। প্রাচীনকাল থেকেই গ্রামবাংলার মানুষ পিত্তনাশক এবং যকৃতের চিকিৎসায় এটি ব্যবহার করে আসছে। আয়ুর্বেদ শাস্ত্রে এটিকে 'হরকচ' নামেও অভিহিত করা হয়। এটি জলাভূমি বা অগভীর পানিতে জন্মে থাকে।
+</p>
+</div>
+
+<div class="section">
+<h3><i class="fas fa-seedling"></i> উদ্ভিদের পরিচিতি</h3>
+<p>
+হেলঞ্চা সাধারণত জলাশয়, ডোবা বা বিলের কিনারায় জন্মে। এর কাণ্ড বেশ রসালো এবং ফাঁপা হয়। এর পাতাগুলো লম্বাটে এবং সামান্য খাঁজকাটা থাকে। এটি স্বাদে তেতো হলেও রান্না করে শাক হিসেবে জনপ্রিয়।
+</p>
+</div>
+
+<div class="section">
+<h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+<div class="grid">
+<div class="grid-box"><strong>সংস্কৃত:</strong> হরকচ (Harakacha)</div>
+<div class="grid-box"><strong>ইংরেজি:</strong> Water Cress</div>
+<div class="grid-box"><strong>হিন্দি:</strong> হরকচ (Harkuch)</div>
+<div class="grid-box"><strong>উর্দু:</strong> হেলঞ্চা</div>
+</div>
+</div>
+
+<div class="section">
+<h3><i class="fas fa-briefcase-medical"></i> ভেষজ গুণ ও প্রয়োগ</h3>
+<ul class="benefit-list">
+<li><strong>পিত্ত নাশক:</strong> অতিরিক্ত পিত্তের কারণে হওয়া জন্ডিস বা লিভারের সমস্যায় হেলঞ্চার রস অত্যন্ত কার্যকর।</li>
+<li><strong>হজম শক্তি:</strong> নিয়মিত হেলঞ্চা শাক খেলে কোষ্ঠকাঠিন্য দূর হয় এবং হজম শক্তি বৃদ্ধি পায়।</li>
+<li><strong>চর্মরোগ:</strong> রক্ত পরিষ্কার করতে এবং ত্বকের ঘা-প্যাঁচড়া শুকাতে এর রস সাহায্য করে।</li>
+<li><strong>অনিদ্রা দূরীকরণ:</strong> যারা অনিদ্রায় ভোগেন, তাদের জন্য হেলঞ্চা শাক একটি প্রাকৃতিক সমাধান হতে পারে।</li>
+</ul>
+</div>
+
+<div class="section">
+<h3><i class="fas fa-prescription-bottle-medical"></i> সেবন বিধি</h3>
+<div class="table-container">
+<table>
+<tr><th>ব্যবহারের ধরণ</th><th>পরিমাণ</th><th>সময়কাল</th></tr>
+<tr><td>কাঁচা রস</td><td>৫-১০ মিলি</td><td>সকালে খালি পেটে</td></tr>
+<tr><td>সিদ্ধ শাক</td><td>১ বাটি</td><td>দুপুরের খাবারের সাথে</td></tr>
+<tr><td>ক্বাথ</td><td>২০ মিলি</td><td>দিনের যে কোনো সময়</td></tr>
+</table>
+</div>
+</div>
+
+<div class="section">
+<h3><i class="fas fa-triangle-exclamation"></i> সতর্কতা</h3>
+<div class="warning">
+<p>
+যেহেতু এটি জলাশয়ে জন্মে, তাই রান্নার আগে বা রস তৈরির আগে খুব ভালো করে পরিষ্কার করে নেওয়া জরুরি। দূষিত পানির হেলঞ্চা ব্যবহার করলে আমাশয় বা সংক্রমণের ঝুঁকি থাকে।
+</p>
+</div>
+</div>
+
+<div class="section">
+<h3><i class="fas fa-seedling"></i> সম্পর্কিত ভেষজ</h3>
+<div class="related">
+<div class="related-card"><i class="fas fa-leaf"></i><h4>কলমি শাক</h4></div>
+<div class="related-card"><i class="fas fa-leaf"></i><h4>থানকুনি</h4></div>
+<div class="related-card"><i class="fas fa-leaf"></i><h4>কুলেখাড়া</h4></div>
+<div class="related-card"><i class="fas fa-leaf"></i><h4>ব্রাহ্মী</h4></div>
+</div>
+</div>
+
+<div class="btn-area">
+<a href="index.html" class="btn"><i class="fas fa-arrow-left"></i> সকল ভেষজ তালিকায় ফিরে যান</a>
+</div>
+
+</div>
+
+</div>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+<i class="fas fa-arrow-up"></i>
+</button>
+
 <footer>
-    <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
+<h2 class="footer-title">🌿 ভেষজ চিকিৎসা কোষ</h2>
+<div class="footer-social">
+<a href="https://www.facebook.com/bonargidawahkana.net" class="footer-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+<a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+<a href="https://www.instagram.com/mddulal596" class="footer-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+<a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+</div>
+<p class="footer-copy">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
 </body>
