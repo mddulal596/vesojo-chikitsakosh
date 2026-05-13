@@ -47,7 +47,7 @@
         .search-box input { flex: 1; padding: 18px 25px; border: none; outline: none; font-size: 16px; }
         .search-box button { width: 75px; border: none; background: var(--primary); color: white; cursor: pointer; font-size: 20px; }
 
-        /* NEWS TICKER - নিউজ মিডিয়া শিরোনাম */
+        /* NEWS TICKER */
         .news-ticker {
             background: #ffeb3b;
             color: #d32f2f;
@@ -55,7 +55,7 @@
             overflow: hidden;
             white-space: nowrap;
             font-weight: 800;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             border-bottom: 3px solid #fbc02d;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
@@ -106,19 +106,15 @@
         .newsletter-form button { border: none; background: #ff9800; color: white; padding: 0 35px; font-size: 17px; font-weight: 700; cursor: pointer; }
 
         /* FOOTER */
-        footer { background: linear-gradient(135deg, #444, #666); color: white; text-align: center; padding: 80px 20px 45px; }
+        footer { background: linear-gradient(135deg, #6d6d6d, #8d8d8d); color: white; text-align: center; padding: 80px 20px 45px; }
         .footer-social { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
         .footer-btn { display: flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; }
         .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: linear-gradient(45deg,#f09433,#dc2743,#bc1888); } .ln { background: #0077B5; }
-        
-        /* আপনার অনুরোধ অনুযায়ী বড় ফন্ট সাইজ */
-        .copyright { font-size: 26px; font-weight: bold; opacity: 1; margin-top: 20px; color: #fff; }
 
         @media(max-width:768px){ 
             .nav-links { display: none; }
             .hero h1 { font-size: 2.2rem; }
             .newsletter-form { flex-direction: column; border-radius: 20px; }
-            .copyright { font-size: 20px; }
         }
     </style>
 </head>
@@ -129,8 +125,8 @@
     <ul class="nav-links">
         <li><a href="#">হোম</a></li>
         <li><a href="#herb-section">ভেষজ তালিকা</a></li>
-        <li><a id="auth-action" onclick="handleAuth()">লগইন</a></li>
-        <li><a id="signup-action" class="signup-btn" onclick="handleAuth()">সাইন-আপ</a></li>
+        <li><a id="auth-action">লগইন</a></li>
+        <li><a id="signup-action" class="signup-btn">সাইন-আপ</a></li>
     </ul>
 </nav>
 
@@ -142,7 +138,6 @@
     </div>
 </section>
 
-<!-- নিউজ মিডিয়া শিরোনাম (ডান থেকে বামে) -->
 <div class="news-ticker">
     <div class="ticker-content">
         🔴 ব্রেকিং নিউজ: আমাদের প্ল্যাটফর্মে এখন ১০০টিরও বেশি ভেষজ গাছের তথ্য পাওয়া যাচ্ছে। &nbsp;&nbsp;&nbsp; 🌿 প্রাকৃতিক চিকিৎসায় নতুন বিপ্লব — সহজ সমাধান ঘরে বসেই! &nbsp;&nbsp;&nbsp; 🔴 ভেষজ চিকিৎসা কোষের ই-বুক "রোগমুক্তির সহজ ভেষজ" শীঘ্রই আসছে।
@@ -151,8 +146,8 @@
 
 <section class="container" id="herb-section">
     <div class="section-title">
-        <h2>জনপ্রিয় ভেষজ গাছসমূহ</h2>
-        <p>বাংলার সবচেয়ে কার্যকর ও জনপ্রিয় ভেষজ উদ্ভিদ</p>
+        <h2>জনপ্রিয় ভেষজ গাছসমূহ</h2>
+        <p>বাংলার সবচেয়ে কার্যকর ও জনপ্রিয় ভেষজ উদ্ভিদ</p>
     </div>
 
     <div class="filter-btns">
@@ -209,8 +204,7 @@
         <a href="https://www.instagram.com/mddulal596" class="footer-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
         <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
-    <!-- আপনার অনুরোধ অনুযায়ী বড় ফন্ট সাইজ এবং আপনার বিস্তারিত তথ্য -->
-    <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
+    <p>© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
 <script>
@@ -220,25 +214,38 @@
         else alert("অনুগ্রহ করে একটি সঠিক ইমেইল লিখুন।");
     }
     
-    window.searchHerb = function() {
+    // সার্চ ফাংশন
+    function searchHerb() {
         let input = document.getElementById('herbSearchInput').value.toLowerCase();
         let cards = document.getElementsByClassName('herb-card');
-        for (let card of cards) {
-            let title = card.querySelector('h3').innerText.toLowerCase();
-            card.style.display = title.includes(input) ? "block" : "none";
+        
+        for (let i = 0; i < cards.length; i++) {
+            let title = cards[i].querySelector('h3').innerText.toLowerCase();
+            if (title.includes(input)) {
+                cards[i].style.display = "block";
+            } else {
+                cards[i].style.display = "none";
+            }
         }
-    };
+    }
 
-    window.filterHerbs = function(category) {
+    // ফিল্টার ফাংশন
+    function filterHerbs(category) {
         let cards = document.getElementsByClassName('herb-card');
         let btns = document.getElementsByClassName('filter-btn');
+        
         for(let btn of btns) btn.classList.remove('active');
         event.currentTarget.classList.add('active');
+        
         for (let card of cards) {
             let cardCat = card.getAttribute('data-category');
-            card.style.display = (category === 'all' || cardCat.includes(category)) ? "block" : "none";
+            if (category === 'all' || cardCat.includes(category)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
         }
-    };
+    }
 </script>
 
 </body>
