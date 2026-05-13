@@ -3,266 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ভেষজ চিকিৎসা কোষ | ১৪১টি ঔষধি গাছের তালিকা</title>
+    <title>ভেষজ চিকিৎসা কোষ | প্রিমিয়াম ডিজিটাল গাইড</title>
     
-    <!-- Fonts & Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary-green: #2d5a27;
-            --accent-gold: #ffb100;
-            --dark-bg: #1a3317;
-            --light-bg: #f0f7ef;
-            --card-bg: #ffffff;
-            --text-color: #333333;
+            --primary: #2d5a27;
+            --accent: #ffb100;
+            --bg: #f4faf4;
+            --card: #ffffff;
+            --text: #333333;
+            --nav: #1a3317;
         }
 
-        /* ডার্ক মোড ভেরিয়েবল */
-        body.dark-mode {
-            --light-bg: #121212;
-            --card-bg: #1e1e1e;
-            --text-color: #e0e0e0;
-            --dark-bg: #000000;
+        [data-theme="dark"] {
+            --bg: #121212;
+            --card: #1e1e1e;
+            --text: #e0e0e0;
+            --nav: #000000;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; }
-        body { background: var(--light-bg); color: var(--text-color); transition: 0.3s; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; transition: 0.3s; }
+        body { background: var(--bg); color: var(--text); }
 
-        /* Navigation */
+        /* Navbar */
         nav {
-            position: sticky; top: 0; z-index: 1000; background: var(--dark-bg);
+            position: sticky; top: 0; z-index: 1000; background: var(--nav);
             display: flex; justify-content: space-between; align-items: center;
-            padding: 0 5%; height: 80px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            padding: 0 5%; height: 70px; box-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
-        .logo { color: #fff; text-decoration: none; font-size: 22px; font-weight: 700; }
+        .logo { color: #fff; text-decoration: none; font-size: 20px; font-weight: bold; }
+        .nav-actions { display: flex; align-items: center; gap: 15px; }
         
-        .nav-right { display: flex; align-items: center; gap: 20px; }
-        .theme-switch { cursor: pointer; color: #fff; font-size: 20px; transition: 0.3s; }
-        .theme-switch:hover { color: var(--accent-gold); }
+        .theme-toggle, .bookmark-btn { background: none; border: none; color: #fff; cursor: pointer; font-size: 1.2rem; }
+        .auth-btns a { text-decoration: none; padding: 6px 12px; border-radius: 4px; font-size: 14px; }
+        .login { color: #fff; border: 1px solid #fff; margin-right: 5px; }
+        .signup { background: var(--accent); color: #000; font-weight: bold; }
 
-        .social-icons-nav { display: flex; gap: 15px; }
-        .social-icons-nav a { color: #fff; font-size: 18px; transition: 0.3s; }
-        .social-icons-nav a:hover { color: var(--accent-gold); }
+        /* Header */
+        header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1502337580314-9b68974e2a5c?auto=format&fit=crop&q=80');
+                 background-size: cover; background-position: center; color: #fff; text-align: center; padding: 60px 20px; }
 
-        .auth-buttons { display: flex; gap: 10px; border-left: 1px solid #444; padding-left: 20px; }
-        .btn { padding: 8px 18px; border-radius: 5px; text-decoration: none; font-size: 14px; font-weight: 600; }
-        .btn-login { color: #fff; border: 1px solid #fff; }
-        .btn-signup { background: var(--accent-gold); color: #000; }
+        /* Filter & Search */
+        .controls { max-width: 800px; margin: -30px auto 30px; padding: 0 20px; }
+        .search-box { position: relative; margin-bottom: 15px; }
+        #searchInput { width: 100%; padding: 15px 25px; border-radius: 50px; border: none; box-shadow: 0 5px 15px rgba(0,0,0,0.2); outline: none; font-size: 16px; }
+        
+        .filter-tags { display: flex; gap: 10px; overflow-x: auto; padding: 10px 0; scrollbar-width: none; }
+        .tag { background: var(--card); padding: 5px 15px; border-radius: 20px; cursor: pointer; white-space: nowrap; border: 1px solid var(--primary); font-size: 14px; }
+        .tag.active { background: var(--primary); color: #fff; }
 
-        /* Hero */
-        header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1515248137880-45e105b710e0?auto=format&fit=crop&q=80&w=1000');
-            background-size: cover; background-position: center;
-            color: #fff; text-align: center; padding: 80px 20px;
-        }
-
-        /* Search & Filters */
-        .controls { max-width: 800px; margin: -30px auto 40px; padding: 0 20px; text-align: center; }
-        #searchInput {
-            width: 100%; padding: 18px 30px; border: none; border-radius: 50px;
-            font-size: 18px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); outline: none; margin-bottom: 20px;
-        }
-        .filter-tabs { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        .tab { 
-            padding: 8px 20px; background: var(--card-bg); border: 1px solid var(--primary-green); 
-            border-radius: 20px; cursor: pointer; transition: 0.3s; color: var(--text-color);
-        }
-        .tab.active { background: var(--primary-green); color: #fff; }
-
-        /* Grid */
+        /* Plant Grid */
         .container { max-width: 1200px; margin: auto; padding: 20px; }
-        .plant-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 15px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 15px; }
         
-        .plant-card {
-            background: var(--card-bg); border-radius: 15px; padding: 25px 15px; text-align: center;
-            text-decoration: none; color: inherit; transition: 0.4s; position: relative;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .plant-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.1); }
-        
-        .bookmark-btn { position: absolute; top: 12px; right: 12px; color: #ccc; cursor: pointer; font-size: 18px; transition: 0.3s; }
-        .bookmark-btn.active { color: var(--accent-gold); }
-        
-        .plant-card i.fa-leaf { font-size: 35px; color: var(--primary-green); margin-bottom: 12px; display: block; }
-        .plant-card span { font-weight: 700; font-size: 1.1rem; }
+        .card { background: var(--card); border-radius: 12px; padding: 15px; text-align: center; position: relative; text-decoration: none; color: inherit; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.15); }
+        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 10px; }
+        .card h3 { font-size: 1rem; margin-bottom: 5px; }
+        .save-icon { position: absolute; top: 10px; right: 10px; color: #ccc; cursor: pointer; }
+        .save-icon.active { color: #e74c3c; }
 
         /* Footer */
-        footer { background: var(--dark-bg); color: #fff; padding: 40px 20px; text-align: center; margin-top: 60px; }
-        .footer-social { display: flex; justify-content: center; gap: 20px; margin-bottom: 25px; }
-        .footer-social a { 
-            color: #fff; font-size: 22px; width: 45px; height: 45px; 
-            border: 1px solid #444; border-radius: 50%; display: flex; 
-            align-items: center; justify-content: center; transition: 0.3s;
-        }
-        .footer-social a:hover { background: var(--primary-green); transform: translateY(-5px); }
+        footer { background: var(--nav); color: #fff; padding: 40px 20px; text-align: center; margin-top: 50px; }
+        .footer-icons { display: flex; justify-content: center; gap: 20px; margin-bottom: 20px; }
+        .footer-icons a { color: #fff; font-size: 24px; transition: 0.3s; }
+        .footer-icons a:hover { color: var(--accent); transform: scale(1.2); }
 
-        @media(max-width: 768px) {
-            nav { flex-direction: column; height: auto; padding: 15px; gap: 10px; }
-            .auth-buttons { border: none; padding: 0; }
-            .plant-grid { grid-template-columns: 1fr 1fr; }
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr 1fr; }
+            header h1 { font-size: 1.5rem; }
         }
     </style>
 </head>
-<body id="body">
+<body data-theme="light">
 
 <nav>
     <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
-    
-    <div class="nav-right">
-        <i class="fas fa-moon theme-switch" onclick="toggleTheme()" title="ডার্ক মোড"></i>
-        
-        <div class="social-icons-nav">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        
-        <div class="auth-buttons">
-            <a href="login.html" class="btn btn-login">লগইন</a>
-            <a href="signup.html" class="btn btn-signup">সাইন-আপ</a>
+    <div class="nav-actions">
+        <button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button>
+        <div class="auth-btns">
+            <a href="login.html" class="login">লগইন</a>
+            <a href="signup.html" class="signup">সাইন-আপ</a>
         </div>
     </div>
 </nav>
 
 <header>
     <h1>ভেষজ চিকিৎসা কোষ</h1>
-    <p>১৪১টি ভেষজ উদ্ভিদের গুণাগুণ ও ব্যবহার বিধি</p>
+    <p>আপনার সুস্থতায় প্রকৃতির আশীর্বাদ</p>
 </header>
 
 <div class="controls">
-    <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="গাছের নাম লিখে খুঁজুন...">
-    
-    <div class="filter-tabs">
-        <div class="tab active" onclick="filterCategory('all')">সবগুলো</div>
-        <div class="tab" onclick="filterCategory('পেট')">পেটের সমস্যা</div>
-        <div class="tab" onclick="filterCategory('ত্বক')">ত্বক ও চুল</div>
-        <div class="tab" onclick="filterCategory('ঠান্ডা')">ঠান্ডা-কাশি</div>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="গাছের নাম বা রোগের নাম লিখুন..." onkeyup="filterPlants()">
+    </div>
+    <div class="filter-tags">
+        <div class="tag active" onclick="filterCategory('all')">সবগুলো</div>
+        <div class="tag" onclick="filterCategory('গ্যাস্ট্রিক')">গ্যাস্ট্রিক</div>
+        <div class="tag" onclick="filterCategory('জ্বর-কাশি')">জ্বর ও কাশি</div>
+        <div class="tag" onclick="filterCategory('চর্মরোগ')">চর্মরোগ</div>
+        <div class="tag" onclick="filterCategory('ডায়াবেটিস')">ডায়াবেটিস</div>
+        <div class="tag" onclick="filterCategory('শারীরিক শক্তি')">শারীরিক শক্তি</div>
     </div>
 </div>
 
 <div class="container">
-    <div class="plant-grid" id="plantList">
-        <!-- ১-১০ -->
-        <a href="aam.html" class="plant-card" data-category="পেট">
-            <i class="fas fa-bookmark bookmark-btn" onclick="toggleBookmark(event, this)"></i>
-            <i class="fas fa-leaf"></i><span>১. আম</span>
+    <div class="grid" id="plantGrid">
+        <!-- নমুনা হিসেবে কয়েকটি দেওয়া হলো, আপনি ১৪১টি এখানে বসাবেন -->
+        <a href="aam.html" class="card" data-category="জ্বর-কাশি">
+            <i class="fas fa-leaf"></i>
+            <h3>১. আম</h3>
+            <span class="save-icon" onclick="toggleSave(event, this)"><i class="fas fa-heart"></i></span>
         </a>
-        <a href="ada.html" class="plant-card" data-category="ঠান্ডা">
-            <i class="fas fa-bookmark bookmark-btn" onclick="toggleBookmark(event, this)"></i>
-            <i class="fas fa-leaf"></i><span>২. আদা</span>
+        <a href="aloevera.html" class="card" data-category="চর্মরোগ">
+            <i class="fas fa-leaf"></i>
+            <h3>৫. ঘৃতকুমারী</h3>
+            <span class="save-icon" onclick="toggleSave(event, this)"><i class="fas fa-heart"></i></span>
         </a>
-        <a href="akanda.html" class="plant-card">
-            <i class="fas fa-bookmark bookmark-btn" onclick="toggleBookmark(event, this)"></i>
-            <i class="fas fa-leaf"></i><span>৩. আকন্দ</span>
+        <a href="basak.html" class="card" data-category="জ্বর-কাশি">
+            <i class="fas fa-leaf"></i>
+            <h3>১৭. বাসক</h3>
+            <span class="save-icon" onclick="toggleSave(event, this)"><i class="fas fa-heart"></i></span>
         </a>
-        <a href="alkushi.html" class="plant-card">
-            <i class="fas fa-bookmark bookmark-btn" onclick="toggleBookmark(event, this)"></i>
-            <i class="fas fa-leaf"></i><span>৪. আলকুশি</span>
+        <a href="kalojira.html" class="card" data-category="শারীরিক শক্তি">
+            <i class="fas fa-leaf"></i>
+            <h3>৬৯. কালোজিরা</h3>
+            <span class="save-icon" onclick="toggleSave(event, this)"><i class="fas fa-heart"></i></span>
         </a>
-        <a href="aloevera.html" class="plant-card" data-category="ত্বক">
-            <i class="fas fa-bookmark bookmark-btn" onclick="toggleBookmark(event, this)"></i>
-            <i class="fas fa-leaf"></i><span>৫. ঘৃতকুমারী</span>
-        </a>
-        <a href="amla.html" class="plant-card" data-category="ত্বক">
-            <i class="fas fa-bookmark bookmark-btn" onclick="toggleBookmark(event, this)"></i>
-            <i class="fas fa-leaf"></i><span>৬. আমলকী</span>
-        </a>
-        <a href="anantamul.html" class="plant-card">
-            <i class="fas fa-bookmark bookmark-btn" onclick="toggleBookmark(event, this)"></i>
-            <i class="fas fa-leaf"></i><span>৭. অনন্তমূল</span>
-        </a>
-        <a href="annaros.html" class="plant-card" data-category="পেট">
-            <i class="fas fa-bookmark bookmark-btn" onclick="toggleBookmark(event, this)"></i>
-            <i class="fas fa-leaf"></i><span>৮. আনারস</span>
-        </a>
-        <a href="apang.html" class="plant-card">
-            <i class="fas fa-bookmark bookmark-btn" onclick="toggleBookmark(event, this)"></i>
-            <i class="fas fa-leaf"></i><span>৯. আপাং</span>
-        </a>
-        <a href="arjun.html" class="plant-card">
-            <i class="fas fa-bookmark bookmark-btn" onclick="toggleBookmark(event, this)"></i>
-            <i class="fas fa-leaf"></i><span>১০. অর্জুন</span>
-        </a>
-
-        <!-- একইভাবে ১১ থেকে ১৪১ পর্যন্ত যুক্ত হবে। নিচে নমুনা দেওয়া হলো -->
-        <a href="tulsi.html" class="plant-card" data-category="ঠান্ডা">
-            <i class="fas fa-bookmark bookmark-btn" onclick="toggleBookmark(event, this)"></i>
-            <i class="fas fa-leaf"></i><span>১৩৬. তুলসী</span>
-        </a>
-        <a href="thankuni.html" class="plant-card" data-category="পেট">
-            <i class="fas fa-bookmark bookmark-btn" onclick="toggleBookmark(event, this)"></i>
-            <i class="fas fa-leaf"></i><span>১৩৪. থানকুনি</span>
-        </a>
-        <!-- এখানে আপনার বাকি সব আইটেমগুলো পেস্ট করুন -->
-
+        <!-- আপনার সম্পূর্ণ ১৪১টি লিস্ট এখানে যোগ করুন -->
     </div>
 </div>
 
 <footer>
-    <div class="footer-social">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <div class="footer-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-youtube"></i></a>
         <a href="#"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:info@example.com"><i class="fas fa-envelope"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
     </div>
-    <p>© ২০২৬ <b>ভেষজ চিকিৎসা কোষ</b> | মোঃ দুলাল হোসেন কর্তৃক সংরক্ষিত</p>
+    <p>© ২০২৬ <b>ভেষজ চিকিৎসা কোষ</b> | মোঃ দুলাল হোসেন</p>
 </footer>
 
 <script>
     // ডার্ক মোড লজিক
     function toggleTheme() {
-        const body = document.getElementById('body');
-        const icon = document.querySelector('.theme-switch');
-        body.classList.toggle('dark-mode');
-        
-        if(body.classList.contains('dark-mode')) {
+        const body = document.body;
+        const icon = document.querySelector('.theme-toggle i');
+        if (body.getAttribute('data-theme') === 'light') {
+            body.setAttribute('data-theme', 'dark');
             icon.classList.replace('fa-moon', 'fa-sun');
         } else {
+            body.setAttribute('data-theme', 'light');
             icon.classList.replace('fa-sun', 'fa-moon');
         }
     }
 
-    // সার্চ লজিক
-    function searchFunction() {
-        let input = document.getElementById("searchInput").value.toUpperCase();
-        let cards = document.getElementsByClassName("plant-card");
-
-        for (let i = 0; i < cards.length; i++) {
-            let name = cards[i].querySelector("span").innerText;
-            if (name.toUpperCase().indexOf(input) > -1) {
-                cards[i].style.display = "";
-            } else {
-                cards[i].style.display = "none";
-            }
+    // সার্চ ফিল্টার
+    function filterPlants() {
+        let input = document.getElementById('searchInput').value.toUpperCase();
+        let cards = document.getElementsByClassName('card');
+        for (let card of cards) {
+            let title = card.getElementsByTagName('h3')[0].innerText;
+            card.style.display = title.toUpperCase().includes(input) ? "" : "none";
         }
     }
 
-    // ফিল্টার লজিক
+    // ক্যাটাগরি ফিল্টার
     function filterCategory(cat) {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        let cards = document.getElementsByClassName('card');
+        let tags = document.getElementsByClassName('tag');
+        
+        for (let tag of tags) tag.classList.remove('active');
         event.target.classList.add('active');
 
-        let cards = document.getElementsByClassName("plant-card");
-        for (let i = 0; i < cards.length; i++) {
-            let category = cards[i].getAttribute('data-category');
-            if (cat === 'all' || category === cat) {
-                cards[i].style.display = "";
+        for (let card of cards) {
+            if (cat === 'all') {
+                card.style.display = "";
             } else {
-                cards[i].style.display = "none";
+                card.style.display = card.getAttribute('data-category') === cat ? "" : "none";
             }
         }
     }
 
-    // বুকমার্ক লজিক
-    function toggleBookmark(e, el) {
-        e.preventDefault();
-        el.classList.toggle('active');
-        const name = el.parentElement.querySelector('span').innerText;
-        if(el.classList.contains('active')) {
-            console.log(name + " saved!");
-        }
+    // বুকমার্ক সেভ (Local Storage)
+    function toggleSave(event, element) {
+        event.preventDefault(); // লিংক ওপেন হওয়া বন্ধ করবে
+        element.classList.toggle('active');
+        // এখানে আপনি ডাটাবেস বা লোকাল স্টোরেজে সেভ করার কোড লিখতে পারেন
+        const plantName = element.parentElement.querySelector('h3').innerText;
+        alert(plantName + " ফেভারিট লিস্টে যোগ করা হয়েছে!");
     }
 </script>
 
