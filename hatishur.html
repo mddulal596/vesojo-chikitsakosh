@@ -1,29 +1,47 @@
+<!-- ===================================================== -->
+<!-- FILE NAME: hatishur.html -->
+<!-- ===================================================== -->
+
 <!DOCTYPE html>
 <html lang="bn">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>হাতিশুঁড় (Hatishur) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
+<title>
+হাতিশুঁড় (Hatishur) | ভেষজ চিকিৎসা কোষ
+</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="description"
+content="হাতিশুঁড় (Heliotropium indicum) এর ভেষজ গুণাগুণ, ব্যবহার, সেবন বিধি, সতর্কতা ও বিস্তারিত তথ্য জানুন।">
+
+<meta name="keywords"
+content="হাতিশুঁড়, Hatishur, Heliotropium indicum, ভেষজ চিকিৎসা, হারবাল মেডিসিন">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 
-/* ================= ROOT COLORS ================= */
+/* ===================================================== */
+/* ROOT */
+/* ===================================================== */
 
 :root{
-    --primary:#e1f5fe;
+    --primary:#e3f2fd;
     --dark:#01579b;
-    --light:#f4fbff;
     --accent:#039be5;
-    --nav-blue:#1976d2;
-    --blue-btn:#1976d2;
-    --blue-hover:#115293;
+    --light:#f5fbff;
     --white:#ffffff;
+    --text:#333;
+    --shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
-/* ================= GLOBAL ================= */
+/* ===================================================== */
+/* GLOBAL */
+/* ===================================================== */
 
 *{
     margin:0;
@@ -36,29 +54,31 @@ html{
 }
 
 body{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI',sans-serif;
     background:var(--light);
-    color:#333;
+    color:var(--text);
     line-height:1.8;
 }
 
-/* ================= NAVBAR ================= */
+/* ===================================================== */
+/* NAVBAR */
+/* ===================================================== */
 
 nav{
     position:sticky;
     top:0;
     z-index:999;
+    background:#1976d2;
     height:75px;
-    background:var(--nav-blue);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
     padding:0 5%;
-    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
 .logo{
-    color:#fff;
+    color:white;
     text-decoration:none;
     font-size:24px;
     font-weight:700;
@@ -67,21 +87,18 @@ nav{
 .nav-links{
     display:flex;
     list-style:none;
-    align-items:center;
 }
 
 .nav-links li a{
-    color:#fff;
+    color:white;
     text-decoration:none;
-    padding:26px 18px;
+    padding:28px 18px;
     display:block;
     transition:0.3s;
-    font-size:15px;
-    font-weight:500;
 }
 
 .nav-links li a:hover{
-    background:var(--blue-hover);
+    background:#115293;
 }
 
 .nav-social{
@@ -96,7 +113,7 @@ nav{
     display:flex;
     align-items:center;
     justify-content:center;
-    color:#fff;
+    color:white;
     text-decoration:none;
     transition:0.3s;
 }
@@ -106,13 +123,15 @@ nav{
     transform:translateY(-3px);
 }
 
-/* ================= HEADER ================= */
+/* ===================================================== */
+/* HERO */
+/* ===================================================== */
 
 header{
-    background:linear-gradient(135deg,var(--accent),var(--dark));
-    color:#fff;
+    background:linear-gradient(135deg,#039be5,#01579b);
+    color:white;
     text-align:center;
-    padding:110px 20px;
+    padding:120px 20px;
 }
 
 header h1{
@@ -124,7 +143,9 @@ header p{
     font-size:1.2rem;
 }
 
-/* ================= MAIN CONTAINER ================= */
+/* ===================================================== */
+/* MAIN CONTAINER */
+/* ===================================================== */
 
 .container{
     max-width:1100px;
@@ -132,16 +153,20 @@ header p{
     padding:0 20px;
 }
 
-/* ================= CARD ================= */
+/* ===================================================== */
+/* CARD */
+/* ===================================================== */
 
-.plant-detail-card{
-    background:#fff;
+.card{
+    background:white;
     padding:60px;
     border-radius:25px;
-    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+    box-shadow:var(--shadow);
 }
 
-/* ================= PLANT HEADER ================= */
+/* ===================================================== */
+/* PLANT HEADER */
+/* ===================================================== */
 
 .plant-header{
     text-align:center;
@@ -150,7 +175,7 @@ header p{
     margin-bottom:45px;
 }
 
-.plant-icon-large{
+.plant-icon{
     font-size:6rem;
     margin-bottom:20px;
 }
@@ -158,18 +183,18 @@ header p{
 .plant-header h2{
     color:var(--dark);
     font-size:3rem;
-    margin-bottom:10px;
 }
 
 .plant-header small{
+    color:#666;
     font-size:1.2rem;
-    color:#777;
-    font-style:italic;
 }
 
-/* ================= AYURVEDIC SPECS ================= */
+/* ===================================================== */
+/* TAGS */
+/* ===================================================== */
 
-.ayurvedic-specs{
+.tags{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
@@ -177,53 +202,54 @@ header p{
     margin-top:30px;
 }
 
-.spec-item{
-    background:var(--blue-btn);
-    color:#fff;
+.tag{
+    background:#1976d2;
+    color:white;
     padding:12px 25px;
     border-radius:50px;
     font-size:15px;
     font-weight:600;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* ================= INFO SECTION ================= */
+/* ===================================================== */
+/* SECTION */
+/* ===================================================== */
 
-.info-section{
+.section{
     margin-bottom:60px;
 }
 
-.info-section h3{
+.section h3{
     color:var(--dark);
-    border-left:7px solid var(--accent);
-    padding-left:18px;
-    margin-bottom:25px;
     font-size:2rem;
+    margin-bottom:25px;
+    padding-left:18px;
+    border-left:7px solid var(--accent);
     display:flex;
     align-items:center;
     gap:12px;
 }
 
-/* ================= LANGUAGE GRID ================= */
+/* ===================================================== */
+/* GRID */
+/* ===================================================== */
 
-.lang-grid{
+.grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:18px;
-    background:#fffef5;
-    padding:30px;
-    border-radius:18px;
-    border:1px solid #ffe082;
 }
 
-.lang-grid div{
-    background:#fff;
-    padding:15px;
-    border-radius:12px;
-    box-shadow:0 5px 12px rgba(0,0,0,0.04);
+.grid-box{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* ================= BENEFITS ================= */
+/* ===================================================== */
+/* LIST */
+/* ===================================================== */
 
 .benefit-list{
     list-style:none;
@@ -232,8 +258,7 @@ header p{
 .benefit-list li{
     position:relative;
     padding-left:50px;
-    margin-bottom:25px;
-    font-size:1.1rem;
+    margin-bottom:22px;
 }
 
 .benefit-list li::before{
@@ -242,36 +267,106 @@ header p{
     font-weight:900;
     position:absolute;
     left:0;
-    top:0;
-    color:var(--dark);
+    color:#0288d1;
     font-size:1.4rem;
 }
 
-/* ================= BUTTON ================= */
+/* ===================================================== */
+/* TABLE */
+/* ===================================================== */
 
-.btn-back-container{
+.table-container{
+    overflow-x:auto;
+    border-radius:15px;
+    border:1px solid #eee;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+table th,
+table td{
+    padding:16px;
+    border-bottom:1px solid #eee;
+    text-align:left;
+}
+
+table th{
+    background:#f1f8ff;
+    color:var(--dark);
+}
+
+/* ===================================================== */
+/* WARNING */
+/* ===================================================== */
+
+.warning{
+    background:#fff4f4;
+    border-left:7px solid #e53935;
+    padding:30px;
+    border-radius:15px;
+}
+
+/* ===================================================== */
+/* RELATED */
+/* ===================================================== */
+
+.related{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.related-card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    transition:0.3s;
+}
+
+.related-card:hover{
+    transform:translateY(-5px);
+}
+
+.related-card i{
+    font-size:2rem;
+    color:#0288d1;
+    margin-bottom:10px;
+}
+
+/* ===================================================== */
+/* BUTTON */
+/* ===================================================== */
+
+.btn-area{
     text-align:center;
     margin-top:50px;
 }
 
-.btn-back-list{
-    background:var(--blue-btn);
-    color:#fff;
+.btn{
+    display:inline-block;
+    background:#1976d2;
+    color:white;
     text-decoration:none;
-    padding:17px 40px;
+    padding:16px 40px;
     border-radius:50px;
     font-weight:700;
-    display:inline-block;
     transition:0.3s;
-    box-shadow:0 10px 20px rgba(0,0,0,0.12);
 }
 
-.btn-back-list:hover{
-    background:var(--blue-hover);
+.btn:hover{
+    background:#115293;
     transform:translateY(-4px);
 }
 
-/* ================= BACK TO TOP ================= */
+/* ===================================================== */
+/* BACK TO TOP */
+/* ===================================================== */
 
 .back-to-top{
     position:fixed;
@@ -281,24 +376,20 @@ header p{
     height:55px;
     border:none;
     border-radius:50%;
-    background:var(--accent);
-    color:#fff;
+    background:#039be5;
+    color:white;
     font-size:22px;
     cursor:pointer;
-    box-shadow:0 5px 15px rgba(0,0,0,0.3);
-    z-index:1000;
-    transition:0.3s;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
 }
 
-.back-to-top:hover{
-    transform:translateY(-4px);
-}
-
-/* ================= FOOTER ================= */
+/* ===================================================== */
+/* FOOTER */
+/* ===================================================== */
 
 footer{
     background:linear-gradient(135deg,#6d6d6d,#8d8d8d);
-    color:#fff;
+    color:white;
     text-align:center;
     padding:80px 20px 45px;
 }
@@ -306,12 +397,10 @@ footer{
 .footer-title{
     font-size:38px;
     font-weight:700;
-    letter-spacing:1px;
     margin-bottom:30px;
-    text-shadow:2px 2px 10px rgba(0,0,0,0.2);
 }
 
-.footer-social-container{
+.footer-social{
     display:flex;
     justify-content:center;
     gap:18px;
@@ -319,56 +408,39 @@ footer{
     margin-bottom:40px;
 }
 
-.footer-s-btn{
+.footer-btn{
     display:flex;
     align-items:center;
     gap:10px;
     padding:14px 28px;
     border-radius:50px;
-    color:#fff;
+    color:white;
     text-decoration:none;
-    font-size:15px;
     font-weight:600;
-    transition:0.35s;
-    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    transition:0.3s;
 }
 
-.footer-s-btn:hover{
+.footer-btn:hover{
     transform:translateY(-5px);
 }
 
-.fb{
-    background:#1877F2;
-}
-
-.yt{
-    background:#FF0000;
-}
-
+.fb{background:#1877F2;}
+.yt{background:#FF0000;}
 .ig{
-    background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 }
+.ln{background:#0077B5;}
 
-.ln{
-    background:#0077B5;
-}
-
-.footer-copyright{
+.footer-copy{
     font-size:20px;
     font-weight:600;
-    margin-top:20px;
-    line-height:1.8;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ===================================================== */
+/* RESPONSIVE */
+/* ===================================================== */
 
-@media (max-width:768px){
-
-    nav{
-        flex-wrap:wrap;
-        height:auto;
-        padding:15px;
-    }
+@media(max-width:768px){
 
     .nav-links{
         display:none;
@@ -378,7 +450,7 @@ footer{
         font-size:2rem;
     }
 
-    .plant-detail-card{
+    .card{
         padding:35px 20px;
     }
 
@@ -386,7 +458,7 @@ footer{
         font-size:2.2rem;
     }
 
-    .info-section h3{
+    .section h3{
         font-size:1.5rem;
     }
 
@@ -394,256 +466,464 @@ footer{
         font-size:30px;
     }
 
-    .footer-s-btn{
+    .footer-btn{
         width:100%;
         justify-content:center;
         max-width:280px;
     }
 
-    .footer-copyright{
+    .footer-copy{
         font-size:16px;
     }
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+<!-- ===================================================== -->
+<!-- NAVBAR -->
+<!-- ===================================================== -->
 
 <nav>
 
-    <a href="index.html" class="logo">
-        🌿 ভেষজ চিকিৎসা কোষ
-    </a>
+<a href="index.html" class="logo">
+🌿 ভেষজ চিকিৎসা কোষ
+</a>
 
-    <ul class="nav-links">
-        <li><a href="index.html">হোম</a></li>
-        <li><a href="about.html">সম্পর্কে</a></li>
-        <li><a href="contact.html">যোগাযোগ</a></li>
-    </ul>
+<ul class="nav-links">
 
-    <div class="nav-social">
-        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank">
-            <i class="fab fa-facebook-f"></i>
-        </a>
+<li><a href="index.html">হোম</a></li>
 
-        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank">
-            <i class="fab fa-youtube"></i>
-        </a>
+<li><a href="about.html">সম্পর্কে</a></li>
 
-        <a href="https://www.instagram.com/mddulal596" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
+<li><a href="contact.html">যোগাযোগ</a></li>
 
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-    </div>
+</ul>
 
-</nav>
+<div class="nav-social">
 
-<!-- ================= HEADER ================= -->
+<a href="https://www.facebook.com/bonargidawahkana.net"
+target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
 
-<header>
+<a href="https://www.youtube.com/c/bonarjidawakhana"
+target="_blank">
+<i class="fab fa-youtube"></i>
+</a>
 
-    <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
+<a href="https://www.instagram.com/mddulal596"
+target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
 
-    <p>
-        প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন
-    </p>
-
-</header>
-
-<!-- ================= MAIN CONTENT ================= -->
-
-<div class="container">
-
-    <div class="plant-detail-card">
-
-        <!-- PLANT HEADER -->
-
-        <div class="plant-header">
-
-            <div class="plant-icon-large">🌿</div>
-
-            <h2>৫১. হাতিশুঁড় (Hatishur)</h2>
-
-            <small>
-                Scientific Name: Heliotropium indicum
-            </small>
-
-            <div class="ayurvedic-specs">
-
-                <div class="spec-item">রস: তিকত, কটু</div>
-
-                <div class="spec-item">বীর্য: উষ্ণ</div>
-
-                <div class="spec-item">বিপাক: কটু</div>
-
-                <div class="spec-item">দোষ: কফ নাশক</div>
-
-            </div>
-
-        </div>
-
-        <!-- HISTORY -->
-
-        <div class="info-section">
-
-            <h3>
-                <i class="fas fa-history"></i>
-                ঐতিহাসিক প্রেক্ষাপট
-            </h3>
-
-            <p>
-                হাতিশুঁড় একটি প্রাচীন ওষধি উদ্ভিদ। এর মঞ্জরি হাতির শুঁড়ের মতো বাঁকানো থাকে বলেই এই নাম। 
-                প্রাচীন চিকিৎসায় এটি বিষ ও চর্মরোগের মহৌষধ হিসেবে পরিচিত।
-            </p>
-
-        </div>
-
-        <!-- INTERNATIONAL NAMES -->
-
-        <div class="info-section">
-
-            <h3>
-                <i class="fas fa-globe"></i>
-                আন্তর্জাতিক নামসমূহ
-            </h3>
-
-            <div class="lang-grid">
-
-                <div>
-                    <strong>সংস্কৃত:</strong> শ্রীহস্তিনী
-                </div>
-
-                <div>
-                    <strong>ইংরেজি:</strong> Indian Heliotrope
-                </div>
-
-                <div>
-                    <strong>হিন্দি:</strong> হাতিশুঁড়া
-                </div>
-
-                <div>
-                    <strong>ফার্সি:</strong> তরমাসুল
-                </div>
-
-            </div>
-
-        </div>
-
-        <!-- BENEFITS -->
-
-        <div class="info-section">
-
-            <h3>
-                <i class="fas fa-briefcase-medical"></i>
-                ভেষজ গুণ ও প্রয়োগ
-            </h3>
-
-            <ul class="benefit-list">
-
-                <li>
-                    বিচ্ছু বা পোকামাকড়ের কামড়ে এর পাতার রস দ্রুত কাজ করে।
-                </li>
-
-                <li>
-                    দাদ বা চর্মরোগে এর পাতা বাটা অত্যন্ত কার্যকর।
-                </li>
-
-                <li>
-                    বাতের ব্যথায় প্রলেপ দিলে ফোলা কমে।
-                </li>
-
-            </ul>
-
-        </div>
-
-        <!-- BUTTON -->
-
-        <div class="btn-back-container">
-
-            <a href="index.html" class="btn-back-list">
-
-                <i class="fas fa-chevron-left"></i>
-
-                সকল ভেষজের তালিকায় ফিরে যান
-
-            </a>
-
-        </div>
-
-    </div>
+<a href="https://www.linkedin.com/in/bonargidawakhana/"
+target="_blank">
+<i class="fab fa-linkedin-in"></i>
+</a>
 
 </div>
 
-<!-- ================= BACK TO TOP ================= -->
+</nav>
+
+<!-- ===================================================== -->
+<!-- HERO -->
+<!-- ===================================================== -->
+
+<header>
+
+<h1>
+ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া
+</h1>
+
+<p>
+প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন
+</p>
+
+</header>
+
+<!-- ===================================================== -->
+<!-- MAIN CONTENT -->
+<!-- ===================================================== -->
+
+<div class="container">
+
+<div class="card">
+
+<!-- PLANT HEADER -->
+
+<div class="plant-header">
+
+<div class="plant-icon">
+🌿
+</div>
+
+<h2>
+৫১. হাতিশুঁড় (Hatishur)
+</h2>
+
+<small>
+Scientific Name: Heliotropium indicum
+</small>
+
+<div class="tags">
+
+<div class="tag">রস: তিকত</div>
+
+<div class="tag">বীর্য: উষ্ণ</div>
+
+<div class="tag">বিপাক: কটু</div>
+
+<div class="tag">দোষ: কফ নাশক</div>
+
+</div>
+
+</div>
+
+<!-- HISTORY -->
+
+<div class="section">
+
+<h3>
+<i class="fas fa-history"></i>
+ঐতিহাসিক প্রেক্ষাপট
+</h3>
+
+<p>
+হাতিশুঁড় একটি প্রাচীন ভেষজ উদ্ভিদ। এর মঞ্জরি হাতির শুঁড়ের মতো বাঁকানো থাকে বলেই এই নামকরণ করা হয়েছে।
+প্রাচীন আয়ুর্বেদিক চিকিৎসায় এটি চর্মরোগ ও বিষক্রিয়ায় ব্যবহৃত হত।
+</p>
+
+</div>
+
+<!-- INTRODUCTION -->
+
+<div class="section">
+
+<h3>
+<i class="fas fa-seedling"></i>
+উদ্ভিদের পরিচিতি
+</h3>
+
+<p>
+এটি সাধারণত রাস্তার পাশে, খোলা মাঠে এবং পতিত জমিতে জন্মায়।
+গাছটি ছোট আকৃতির এবং বেগুনি রঙের ফুল ফোটে।
+</p>
+
+</div>
+
+<!-- INTERNATIONAL NAMES -->
+
+<div class="section">
+
+<h3>
+<i class="fas fa-globe"></i>
+আন্তর্জাতিক নামসমূহ
+</h3>
+
+<div class="grid">
+
+<div class="grid-box">
+<strong>সংস্কৃত:</strong> শ্রীহস্তিনী
+</div>
+
+<div class="grid-box">
+<strong>ইংরেজি:</strong> Indian Heliotrope
+</div>
+
+<div class="grid-box">
+<strong>হিন্দি:</strong> হাতিশুঁড়া
+</div>
+
+<div class="grid-box">
+<strong>ফার্সি:</strong> তরমাসুল
+</div>
+
+</div>
+
+</div>
+
+<!-- USED PARTS -->
+
+<div class="section">
+
+<h3>
+<i class="fas fa-leaf"></i>
+ব্যবহৃত অংশ
+</h3>
+
+<ul class="benefit-list">
+
+<li>পাতা</li>
+
+<li>মূল</li>
+
+<li>ফুল</li>
+
+<li>কাণ্ড</li>
+
+</ul>
+
+</div>
+
+<!-- BENEFITS -->
+
+<div class="section">
+
+<h3>
+<i class="fas fa-briefcase-medical"></i>
+ভেষজ গুণ ও প্রয়োগ
+</h3>
+
+<ul class="benefit-list">
+
+<li>
+বিচ্ছু বা পোকামাকড়ের কামড়ে পাতার রস কার্যকর।
+</li>
+
+<li>
+চর্মরোগ ও দাদে পাতা বাটা উপকারী।
+</li>
+
+<li>
+বাতের ব্যথা ও ফোলায় প্রলেপ দেওয়া হয়।
+</li>
+
+<li>
+ক্ষত শুকাতে ব্যবহৃত হয়।
+</li>
+
+</ul>
+
+</div>
+
+<!-- DOSAGE -->
+
+<div class="section">
+
+<h3>
+<i class="fas fa-prescription-bottle-medical"></i>
+সেবন বিধি
+</h3>
+
+<div class="table-container">
+
+<table>
+
+<tr>
+<th>বয়স</th>
+<th>ব্যবহার</th>
+</tr>
+
+<tr>
+<td>৫-১২ বছর</td>
+<td>অল্প পরিমাণ পাতার রস</td>
+</tr>
+
+<tr>
+<td>প্রাপ্তবয়স্ক</td>
+<td>চিকিৎসকের পরামর্শ অনুযায়ী</td>
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- CHEMICAL -->
+
+<div class="section">
+
+<h3>
+<i class="fas fa-flask"></i>
+রাসায়নিক উপাদান
+</h3>
+
+<ul class="benefit-list">
+
+<li>Alkaloids</li>
+
+<li>Flavonoids</li>
+
+<li>Tannins</li>
+
+<li>Glycosides</li>
+
+</ul>
+
+</div>
+
+<!-- WARNING -->
+
+<div class="section">
+
+<h3>
+<i class="fas fa-triangle-exclamation"></i>
+সতর্কতা
+</h3>
+
+<div class="warning">
+
+<p>
+অতিরিক্ত সেবন ক্ষতিকর হতে পারে। গর্ভবতী নারী ও শিশুদের ক্ষেত্রে বিশেষজ্ঞের পরামর্শ ছাড়া ব্যবহার করা উচিত নয়।
+</p>
+
+</div>
+
+</div>
+
+<!-- FAQ -->
+
+<div class="section">
+
+<h3>
+<i class="fas fa-circle-question"></i>
+সাধারণ প্রশ্ন
+</h3>
+
+<ul class="benefit-list">
+
+<li>
+হাতিশুঁড় কি খাওয়া যায়?
+</li>
+
+<li>
+এটি দিনে কতবার ব্যবহার করা উচিত?
+</li>
+
+<li>
+শিশুদের জন্য নিরাপদ কি?
+</li>
+
+</ul>
+
+</div>
+
+<!-- RELATED -->
+
+<div class="section">
+
+<h3>
+<i class="fas fa-seedling"></i>
+সম্পর্কিত ভেষজ
+</h3>
+
+<div class="related">
+
+<div class="related-card">
+<i class="fas fa-leaf"></i>
+<h4>তুলসী</h4>
+</div>
+
+<div class="related-card">
+<i class="fas fa-leaf"></i>
+<h4>নিম</h4>
+</div>
+
+<div class="related-card">
+<i class="fas fa-leaf"></i>
+<h4>বাসক</h4>
+</div>
+
+<div class="related-card">
+<i class="fas fa-leaf"></i>
+<h4>অ্যালোভেরা</h4>
+</div>
+
+</div>
+
+</div>
+
+<!-- BUTTON -->
+
+<div class="btn-area">
+
+<a href="index.html" class="btn">
+
+<i class="fas fa-arrow-left"></i>
+
+সকল ভেষজ তালিকায় ফিরে যান
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ===================================================== -->
+<!-- BACK TO TOP -->
+<!-- ===================================================== -->
 
 <button class="back-to-top"
-onclick="window.scrollTo({top:0, behavior:'smooth'})">
+onclick="window.scrollTo({top:0,behavior:'smooth'})">
 
-    <i class="fas fa-arrow-up"></i>
+<i class="fas fa-arrow-up"></i>
 
 </button>
 
-<!-- ================= FOOTER ================= -->
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
 
 <footer>
 
-    <h2 class="footer-title">
-        🌿 ভেষজ চিকিৎসা কোষ
-    </h2>
+<h2 class="footer-title">
+🌿 ভেষজ চিকিৎসা কোষ
+</h2>
 
-    <div class="footer-social-container">
+<div class="footer-social">
 
-        <a href="https://www.facebook.com/bonargidawahkana.net"
-           class="footer-s-btn fb"
-           target="_blank">
+<a href="https://www.facebook.com/bonargidawahkana.net"
+class="footer-btn fb"
+target="_blank">
 
-           <i class="fab fa-facebook-f"></i>
-           Facebook
+<i class="fab fa-facebook-f"></i>
+Facebook
 
-        </a>
+</a>
 
-        <a href="https://www.youtube.com/c/bonarjidawakhana"
-           class="footer-s-btn yt"
-           target="_blank">
+<a href="https://www.youtube.com/c/bonarjidawakhana"
+class="footer-btn yt"
+target="_blank">
 
-           <i class="fab fa-youtube"></i>
-           YouTube
+<i class="fab fa-youtube"></i>
+YouTube
 
-        </a>
+</a>
 
-        <a href="https://www.instagram.com/mddulal596"
-           class="footer-s-btn ig"
-           target="_blank">
+<a href="https://www.instagram.com/mddulal596"
+class="footer-btn ig"
+target="_blank">
 
-           <i class="fab fa-instagram"></i>
-           Instagram
+<i class="fab fa-instagram"></i>
+Instagram
 
-        </a>
+</a>
 
-        <a href="https://www.linkedin.com/in/bonargidawakhana/"
-           class="footer-s-btn ln"
-           target="_blank">
+<a href="https://www.linkedin.com/in/bonargidawakhana/"
+class="footer-btn ln"
+target="_blank">
 
-           <i class="fab fa-linkedin-in"></i>
-           LinkedIn
+<i class="fab fa-linkedin-in"></i>
+LinkedIn
 
-        </a>
+</a>
 
-    </div>
+</div>
 
-    <p class="footer-copyright">
+<p class="footer-copy">
 
-        © ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক
+© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক
 
-    </p>
+</p>
 
 </footer>
 
 </body>
-</html>
+    </html>
