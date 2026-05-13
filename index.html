@@ -3,197 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ভেষজ চিকিৎসাকোষ | ১০০টি ঔষধি গাছের পূর্ণাঙ্গ নির্দেশিকা</title>
+    <title>ভেষজ চিকিৎসাকোষ | ১৪১টি ঔষধি গাছের তালিকা</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="রোগমুক্তির সহজ ভেষজ — ১০০টি ঔষধি গাছের পূর্ণাঙ্গ নির্দেশিকা। প্রাকৃতিক উপায়ে রোগ নিরাময়ের ঘরোয়া সমাধান।">
-    <meta name="author" content="Md. Dulal Hosen">
-
-    <!-- Icons & Fonts -->
+    <!-- SEO & Icons -->
+    <meta name="description" content="রোগমুক্তির সহজ ভেষজ — ১৪১টি ঔষধি গাছের পূর্ণাঙ্গ নির্দেশিকা।">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
             --primary: #2d5a27;
             --dark: #1e3d1a;
-            --accent: #ffb100;
             --light: #f4faf4;
             --white: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
         body { background: var(--light); color: #333; line-height: 1.6; }
 
-        /* Navigation */
+        /* Navbar */
         nav {
-            position: sticky; top: 0; z-index: 999; background: var(--dark);
+            position: sticky; top: 0; z-index: 1000; background: var(--dark);
             display: flex; justify-content: space-between; align-items: center;
-            padding: 0 5%; height: 75px; box-shadow: 0 2px 10px rgba(0,0,0,.2);
+            padding: 0 5%; height: 70px; box-shadow: 0 2px 10px rgba(0,0,0,.2);
         }
-        .logo { color: #fff; text-decoration: none; font-size: 22px; font-weight: bold; }
+        .logo { color: #fff; text-decoration: none; font-size: 24px; font-weight: bold; }
         .nav-links { display: flex; list-style: none; }
-        .nav-links a { color: #fff; text-decoration: none; padding: 25px 15px; display: block; transition: .3s; }
-        .nav-links a:hover { background: var(--primary); }
+        .nav-links a { color: #fff; text-decoration: none; padding: 10px 15px; transition: .3s; }
+        .nav-links a:hover { color: #ffb100; }
 
-        /* Hero Section */
+        /* Hero */
         header {
             background: linear-gradient(135deg, var(--primary), var(--dark));
-            color: #fff; text-align: center; padding: 100px 20px;
+            color: #fff; text-align: center; padding: 80px 20px;
         }
         header h1 { font-size: 2.5rem; margin-bottom: 10px; }
 
-        /* Search Bar */
-        .search-container { max-width: 600px; margin: -35px auto 40px; padding: 0 20px; position: relative; }
+        /* Search */
+        .search-container { max-width: 650px; margin: -35px auto 40px; padding: 0 20px; }
         #searchInput {
             width: 100%; padding: 18px 25px; border: none; border-radius: 50px;
-            font-size: 18px; box-shadow: 0 10px 25px rgba(0,0,0,.1); outline: none;
+            font-size: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.15); outline: none;
         }
 
-        /* Plant Grid */
+        /* Grid */
         .container { max-width: 1200px; margin: auto; padding: 20px; }
-        .plant-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
+        .plant-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+        
         .plant-item {
-            background: var(--white); border-radius: 15px; padding: 25px; text-align: center;
+            background: #fff; border-radius: 12px; padding: 20px; text-align: center;
             text-decoration: none; color: inherit; border: 1px solid #eee; transition: .3s;
+            display: flex; flex-direction: column; align-items: center;
         }
-        .plant-item:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-        .plant-icon { font-size: 40px; margin-bottom: 15px; display: block; }
-        .plant-item span { display: block; color: var(--primary); font-size: 1.2rem; font-weight: bold; }
-        .plant-item small { color: #888; display: block; margin-bottom: 10px; font-style: italic; }
+        .plant-item:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .plant-icon { font-size: 35px; margin-bottom: 10px; }
+        .plant-item span { display: block; color: var(--primary); font-size: 1.1rem; font-weight: bold; }
+        .plant-item small { color: #777; font-style: italic; }
 
-        /* WhatsApp Button */
+        /* WhatsApp */
         .whatsapp-float {
             position: fixed; bottom: 30px; right: 30px; background: #25d366;
             color: white; width: 60px; height: 60px; border-radius: 50%;
             display: flex; justify-content: center; align-items: center;
-            font-size: 30px; box-shadow: 2px 5px 15px rgba(0,0,0,0.2); z-index: 1000;
+            font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000;
         }
 
-        /* Footer */
-        footer { background: var(--dark); color: #fff; text-align: center; padding: 50px 20px; margin-top: 60px; }
-        .social-links a { color: white; font-size: 20px; margin: 0 10px; transition: .3s; }
-        .social-links a:hover { color: var(--accent); }
+        footer { background: var(--dark); color: #fff; text-align: center; padding: 40px; margin-top: 50px; }
 
-        /* Mobile View */
-        @media(max-width: 768px) {
-            nav { height: auto; flex-direction: column; padding: 15px; }
-            .nav-links { margin-top: 10px; }
-            .nav-links a { padding: 10px; font-size: 14px; }
+        @media(max-width: 600px) {
+            .plant-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
             header h1 { font-size: 1.8rem; }
-            .plant-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসাকোষ</a>
-        <ul class="nav-links">
-            <li><a href="index.html">হোম</a></li>
-            <li><a href="#" id="login-btn">লগইন</a></li>
-            <li><a href="contact.html">যোগাযোগ</a></li>
-        </ul>
-    </nav>
+<nav>
+    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসাকোষ</a>
+    <ul class="nav-links">
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="contact.html">যোগাযোগ</a></li>
+    </ul>
+</nav>
 
-    <!-- Hero -->
-    <header>
-        <h1>প্রাকৃতিক ভেষজ চিকিৎসা কোষ</h1>
-        <p>রোগমুক্তির সহজ ভেষজ — ১০০টি ঔষধি গাছের পূর্ণাঙ্গ নির্দেশিকা</p>
-    </header>
+<header>
+    <h1>প্রাকৃতিক ভেষজ চিকিৎসা কোষ</h1>
+    <p>১৪১টি ঔষধি গাছের বিস্তারিত তথ্য ও নির্দেশিকা</p>
+</header>
 
-    <!-- Search -->
-    <div class="search-container">
-        <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="ভেষজ বা রোগের নাম লিখে সার্চ করুন...">
+<div class="search-container">
+    <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="গাছের নাম লিখে সার্চ করুন...">
+</div>
+
+<div class="container">
+    <div class="plant-grid" id="plantList">
+        <!-- ১৪১টি গাছের তালিকা -->
+        <a href="aam.html" class="plant-item"><div class="plant-icon">🥭</div><span>১. আম</span><small>Mango</small></a>
+        <a href="ada.html" class="plant-item"><div class="plant-icon">🫚</div><span>২. আদা</span><small>Ginger</small></a>
+        <a href="akanda.html" class="plant-item"><div class="plant-icon">🌱</div><span>৩. আকন্দ</span><small>Akanda</small></a>
+        <a href="alkushi.html" class="plant-item"><div class="plant-icon">🌿</div><span>৪. আলকুশি</span><small>Velvet Bean</small></a>
+        <a href="aloevera.html" class="plant-item"><div class="plant-icon">🌵</div><span>৫. ঘৃতকুমারী</span><small>Aloe Vera</small></a>
+        <a href="amla.html" class="plant-item"><div class="plant-icon">🍏</div><span>৬. আমলকী</span><small>Amla</small></a>
+        <a href="anantamul.html" class="plant-item"><div class="plant-icon">🌱</div><span>৭. অনন্তমূল</span><small>Sarsaparilla</small></a>
+        <a href="annaros.html" class="plant-item"><div class="plant-icon">🍍</div><span>৮. আনারস</span><small>Pineapple</small></a>
+        <a href="apang.html" class="plant-item"><div class="plant-icon">🌾</div><span>৯. আপাং</span><small>Apang</small></a>
+        <a href="arjun.html" class="plant-item"><div class="plant-icon">🌳</div><span>১০. অর্জুন</span><small>Arjun</small></a>
+        <a href="ashwagondha.html" class="plant-item"><div class="plant-icon">🍂</div><span>১১. অশ্বগন্ধা</span><small>Ashwagandha</small></a>
+        <a href="atis.html" class="plant-item"><div class="plant-icon">🌿</div><span>১২. অতিবিষ</span><small>Atis</small></a>
+        <a href="atmagupta.html" class="plant-item"><div class="plant-icon">🌱</div><span>১৩. আত্মগুপ্তা</span><small>Mucuna</small></a>
+        <a href="babla.html" class="plant-item"><div class="plant-icon">🌳</div><span>১৪. বাবলা</span><small>Babla</small></a>
+        <a href="bahera.html" class="plant-item"><div class="plant-icon">🌰</div><span>১৫. বহেড়া</span><small>Bahera</small></a>
+        <a href="bala.html" class="plant-item"><div class="plant-icon">🌻</div><span>১৬. বেড়েলা</span><small>Bala</small></a>
+        <a href="basak.html" class="plant-item"><div class="plant-icon">🍀</div><span>১৭. বাসক</span><small>Vasaka</small></a>
+        <a href="basonti.html" class="plant-item"><div class="plant-icon">🌿</div><span>১৮. বাসন্তী</span><small>Basonti</small></a>
+        <a href="bel.html" class="plant-item"><div class="plant-icon">🍈</div><span>১৯. বেল</span><small>Bael</small></a>
+        <a href="bhumiamlaki.html" class="plant-item"><div class="plant-icon">🌿</div><span>২০. ভূঁই আমলকী</span><small>Bhui Amla</small></a>
+        <a href="boch.html" class="plant-item"><div class="plant-icon">🌱</div><span>২১. বচ</span><small>Vacha</small></a>
+        <a href="boroi.html" class="plant-item"><div class="plant-icon">🍒</div><span>২২. বড়ই</span><small>Jujube</small></a>
+        <a href="brahmi.html" class="plant-item"><div class="plant-icon">🍃</div><span>২৩. ব্রাহ্মী শাক</span><small>Brahmi</small></a>
+        <a href="brihati.html" class="plant-item"><div class="plant-icon">🌳</div><span>২৪. বৃহতী</span><small>Brihati</small></a>
+        <a href="chakule.html" class="plant-item"><div class="plant-icon">🍃</div><span>২৫. চাকুলে</span><small>Chakule</small></a>
+        <a href="chakunda.html" class="plant-item"><div class="plant-icon">🌱</div><span>২৬. চাকুন্দা</span><small>Cassia Tora</small></a>
+        <a href="chandan.html" class="plant-item"><div class="plant-icon">🪵</div><span>২৭. চন্দন</span><small>Sandalwood</small></a>
+        <a href="chirota.html" class="plant-item"><div class="plant-icon">🌱</div><span>২৮. চিরতা</span><small>Chirata</small></a>
+        <a href="chita.html" class="plant-item"><div class="plant-icon">🔥</div><span>২৯. চিতা</span><small>Leadwort</small></a>
+        <a href="chitrak.html" class="plant-item"><div class="plant-icon">🌼</div><span>৩০. চিত্রমূল</span><small>Chitrak</small></a>
+        <a href="dadmordon.html" class="plant-item"><div class="plant-icon">🍃</div><span>৩১. দাদমর্দন</span><small>Dadmurdon</small></a>
+        <a href="dalim.html" class="plant-item"><div class="plant-icon">🍎</div><span>৩২. ডালিম</span><small>Pomegranate</small></a>
+        <a href="daruchini.html" class="plant-item"><div class="plant-icon">🌰</div><span>৩৩. দারুচিনি</span><small>Cinnamon</small></a>
+        <a href="daruharidra.html" class="plant-item"><div class="plant-icon">🌼</div><span>৩৪. দারুহরিদ্রা</span><small>Tree Turmeric</small></a>
+        <a href="dhone.html" class="plant-item"><div class="plant-icon">🌿</div><span>৩৫. ধনিয়া</span><small>Coriander</small></a>
+        <a href="dhutura.html" class="plant-item"><div class="plant-icon">🌼</div><span>৩৬. ধুতুরা</span><small>Datura</small></a>
+        <a href="dried-bael.html" class="plant-item"><div class="plant-icon">🍈</div><span>৩৭. বেল শুঁট</span><small>Dried Bael</small></a>
+        <a href="dronapushpi.html" class="plant-item"><div class="plant-icon">🌱</div><span>৩৮. দন্ডকলস</span><small>Dronapushpi</small></a>
+        <a href="dubla.html" class="plant-item"><div class="plant-icon">🌾</div><span>৩৯. দুবলা</span><small>Dubla</small></a>
+        <a href="dudhlata.html" class="plant-item"><div class="plant-icon">🌿</div><span>৪০. দুধলতা</span><small>Dudhlata</small></a>
+        <a href="dumur.html" class="plant-item"><div class="plant-icon">🌳</div><span>৪১. ডুমুর</span><small>Fig</small></a>
+        <a href="durbaghash.html" class="plant-item"><div class="plant-icon">🌾</div><span>৪২. দূর্বা ঘাস</span><small>Bermuda Grass</small></a>
+        <a href="elachi.html" class="plant-item"><div class="plant-icon">🟢</div><span>৪৩. এলাচ</span><small>Cardamom</small></a>
+        <a href="gab.html" class="plant-item"><div class="plant-icon">🌳</div><span>৪৪. গাব</span><small>Gab</small></a>
+        <a href="gambhari.html" class="plant-item"><div class="plant-icon">🌳</div><span>৪৫. গাম্ভারী</span><small>Gambhari</small></a>
+        <a href="ghreeta_kanchan.html" class="plant-item"><div class="plant-icon">🌵</div><span>৪৬. ঘৃতকাঞ্চন</span><small>Ghreeta Kanchan</small></a>
+        <a href="ghritokumari.html" class="plant-item"><div class="plant-icon">🌵</div><span>৪৭. ঘৃতকুমারী</span><small>Aloe Vera</small></a>
+        <a href="gokhru.html" class="plant-item"><div class="plant-icon">🌱</div><span>৪৮. গোকখুর</span><small>Gokhru</small></a>
+        <a href="halud.html" class="plant-item"><div class="plant-icon">🌼</div><span>৪৯. হলুদ</span><small>Turmeric</small></a>
+        <a href="haritaki.html" class="plant-item"><div class="plant-icon">🍂</div><span>৫০. হরিতকী</span><small>Haritaki</small></a>
+        <a href="hatishur.html" class="plant-item"><div class="plant-icon">🐘</div><span>৫১. হাতিশুঁড়</span><small>Heliotrope</small></a>
+        <a href="helencha.html" class="plant-item"><div class="plant-icon">🍃</div><span>৫২. হেলঞ্চা</span><small>Helencha</small></a>
+        <a href="hings.html" class="plant-item"><div class="plant-icon">🧂</div><span>৫৩. হিং</span><small>Asafoetida</small></a>
+        <a href="indrayab.html" class="plant-item"><div class="plant-icon">🌿</div><span>৫৫. ইন্দ্রযব</span><small>Indrayab</small></a>
+        <a href="isabgol.html" class="plant-item"><div class="plant-icon">🌾</div><span>৫৬. ইসুবগুল</span><small>Psyllium</small></a>
+        <a href="isabgol_bhusi.html" class="plant-item"><div class="plant-icon">🌾</div><span>৫৭. ইসুবগুল ভুষি</span><small>Psyllium Husk</small></a>
+        <a href="jaam.html" class="plant-item"><div class="plant-icon">🍇</div><span>৫৮. জাম</span><small>Black Plum</small></a>
+        <a href="jafran.html" class="plant-item"><div class="plant-icon">🌸</div><span>৫৯. জাফরান</span><small>Saffron</small></a>
+        <a href="jashtimadhu.html" class="plant-item"><div class="plant-icon">🌿</div><span>৬০. যষ্টিমধু</span><small>Licorice</small></a>
+        <a href="joba.html" class="plant-item"><div class="plant-icon">🌺</div><span>৬১. জবা</span><small>Hibiscus</small></a>
+        <a href="jowan.html" class="plant-item"><div class="plant-icon">🌱</div><span>৬২. জোয়ান</span><small>Carom Seeds</small></a>
+        <a href="joyfol.html" class="plant-item"><div class="plant-icon">🌰</div><span>৬৩. জয়ফল</span><small>Nutmeg</small></a>
+        <a href="joyotri.html" class="plant-item"><div class="plant-icon">🍂</div><span>৬৪. জয়ত্রী</span><small>Mace</small></a>
+        <a href="kadam.html" class="plant-item"><div class="plant-icon">🌼</div><span>৬৫. কদম</span><small>Kadam</small></a>
+        <a href="kakoli.html" class="plant-item"><div class="plant-icon">🌿</div><span>৬৬. কাকলী</span><small>Kakoli</small></a>
+        <a href="kalmegh.html" class="plant-item"><div class="plant-icon">🌱</div><span>৬৭. কালোমেঘ</span><small>Kalmegh</small></a>
+        <a href="kalo_morich.html" class="plant-item"><div class="plant-icon">⚫</div><span>৬৮. গোল মরিচ</span><small>Black Pepper</small></a>
+        <a href="kalojira.html" class="plant-item"><div class="plant-icon">⚫</div><span>৬৯. কালোজিরা</span><small>Black Seed</small></a>
+        <a href="kamini.html" class="plant-item"><div class="plant-icon">🌼</div><span>৭০. কামিনী</span><small>Kamini</small></a>
+        <a href="kamranga.html" class="plant-item"><div class="plant-icon">⭐</div><span>৭১. কামরাঙা</span><small>Star Fruit</small></a>
+        <a href="kanchan.html" class="plant-item"><div class="plant-icon">🌸</div><span>৭২. কাঞ্চন</span><small>Bauhinia</small></a>
+        <a href="kantakari.html" class="plant-item"><div class="plant-icon">🌿</div><span>৭৩. কন্টকারী</span><small>Kantakari</small></a>
+        <a href="karomcha.html" class="plant-item"><div class="plant-icon">🍒</div><span>৭৪. করমচা</span><small>Bengal Currant</small></a>
+        <a href="keshraj.html" class="plant-item"><div class="plant-icon">🍃</div><span>৭৫. কেশরাজ</span><small>Eclipta</small></a>
+        <a href="keya.html" class="plant-item"><div class="plant-icon">🌵</div><span>৭৬. কেয়া</span><small>Pandanus</small></a>
+        <a href="khayer.html" class="plant-item"><div class="plant-icon">🍂</div><span>৭৭. খয়ের</span><small>Catechu</small></a>
+        <a href="kokilaksha.html" class="plant-item"><div class="plant-icon">🌾</div><span>৭৮. কুলেখাড়া</span><small>Kokilaksha</small></a>
+        <a href="kolmi.html" class="plant-item"><div class="plant-icon">🍃</div><span>৭৯. কলমি</span><small>Water Spinach</small></a>
+        <a href="kulekhara.html" class="plant-item"><div class="plant-icon">🌾</div><span>৮০. কুলেখাড়া</span><small>Kulekhara</small></a>
+        <a href="kurchi.html" class="plant-item"><div class="plant-icon">🌳</div><span>৮১. কুর্চি</span><small>Kurchi</small></a>
+        <a href="kutki.html" class="plant-item"><div class="plant-icon">🌿</div><span>৮২. কুটকী</span><small>Kutki</small></a>
+        <a href="lata_kosturi.html" class="plant-item"><div class="plant-icon">🌼</div><span>৮৩. লতাকস্তুরী</span><small>Lata Kosturi</small></a>
+        <a href="lobongo.html" class="plant-item"><div class="plant-icon">🌺</div><span>৮৪. লবঙ্গ</span><small>Clove</small></a>
+        <a href="lodhra.html" class="plant-item"><div class="plant-icon">🌳</div><span>৮৫. লোধ্র</span><small>Lodhra</small></a>
+        <a href="lojjaboti.html" class="plant-item"><div class="plant-icon">🌿</div><span>৮৬. লজ্জাবতী</span><small>Mimosa</small></a>
+        <a href="lotkon.html" class="plant-item"><div class="plant-icon">🟡</div><span>৮৭. লটকন</span><small>Lotkon</small></a>
+        <a href="manjistha.html" class="plant-item"><div class="plant-icon">🌱</div><span>৮৮. মঞ্জিষ্ঠা</span><small>Manjistha</small></a>
+        <a href="mankochu.html" class="plant-item"><div class="plant-icon">🍃</div><span>৮৯. মানকচু</span><small>Giant Taro</small></a>
+        <a href="mendi_pata.html" class="plant-item"><div class="plant-icon">🌿</div><span>৯০. মেহেদি</span><small>Henna</small></a>
+        <a href="methi.html" class="plant-item"><div class="plant-icon">🌾</div><span>৯১. মেথি</span><small>Fenugreek</small></a>
+        <a href="mouri.html" class="plant-item"><div class="plant-icon">🌾</div><span>৯২. মৌরি</span><small>Fennel</small></a>
+        <a href="musta.html" class="plant-item"><div class="plant-icon">🌱</div><span>৯৩. মুথা ঘাস</span><small>Musta</small></a>
+        <a href="nageshwar.html" class="plant-item"><div class="plant-icon">🌼</div><span>৯৪. নাগেশ্বর</span><small>Nageshwar</small></a>
+        <a href="nagkesar.html" class="plant-item"><div class="plant-icon">🌼</div><span>৯৫. নাগকেশর</span><small>Nagkesar</small></a>
+        <a href="neem.html" class="plant-item"><div class="plant-icon">🌿</div><span>৯৬. নিম</span><small>Neem</small></a>
+        <a href="nishinda.html" class="plant-item"><div class="plant-icon">🌿</div><span>৯৭. নিশিন্দা</span><small>Nishinda</small></a>
+        <a href="onjon.html" class="plant-item"><div class="plant-icon">🫐</div><span>৯৮. অঞ্জন</span><small>Onjon</small></a>
+        <a href="oporajita.html" class="plant-item"><div class="plant-icon">🦋</div><span>৯৯. অপরাজিতা</span><small>Blue Pea</small></a>
+        <a href="palash.html" class="plant-item"><div class="plant-icon">🔥</div><span>১০০. পলাশ</span><small>Palash</small></a>
+        <a href="parpat.html" class="plant-item"><div class="plant-icon">🍃</div><span>১০১. ক্ষেতপাপড়া</span><small>Parpat</small></a>
+        <a href="pashanbhed.html" class="plant-item"><div class="plant-icon">🍃</div><span>১০২. পাষাণভেদ</span><small>Pashanbhed</small></a>
+        <a href="patha.html" class="plant-item"><div class="plant-icon">🍃</div><span>১০৩. আকন্দি</span><small>Patha</small></a>
+        <a href="pathorkuchi.html" class="plant-item"><div class="plant-icon">🍃</div><span>১০৪. পাথরকুচি</span><small>Pathorkuchi</small></a>
+        <a href="periwinkle.html" class="plant-item"><div class="plant-icon">🌸</div><span>১০৫. নয়নতারা</span><small>Periwinkle</small></a>
+        <a href="peyaj.html" class="plant-item"><div class="plant-icon">🧅</div><span>১০৬. পেঁয়াজ</span><small>Onion</small></a>
+        <a href="peyara.html" class="plant-item"><div class="plant-icon">🍏</div><span>১০৭. পেয়ারা</span><small>Guava</small></a>
+        <a href="pipul.html" class="plant-item"><div class="plant-icon">🌶️</div><span>১০৮. পিপুল</span><small>Long Pepper</small></a>
+        <a href="pitraj.html" class="plant-item"><div class="plant-icon">🌳</div><span>১০৯. পিত্রাজ</span><small>Pitraj</small></a>
+        <a href="priyangu.html" class="plant-item"><div class="plant-icon">🌿</div><span>১১০. প্রিয়ঙ্গু</span><small>Priyangu</small></a>
+        <a href="pudina.html" class="plant-item"><div class="plant-icon">🌿</div><span>১১১. পুদিনা</span><small>Mint</small></a>
+        <a href="purnarnava.html" class="plant-item"><div class="plant-icon">🌿</div><span>১১২. পুনর্নবা</span><small>Punarnava</small></a>
+        <a href="roktokorobi.html" class="plant-item"><div class="plant-icon">🌺</div><span>১১৩. রক্তকরবী</span><small>Oleander</small></a>
+        <a href="senna.html" class="plant-item"><div class="plant-icon">🌿</div><span>১১৪. সোনা পাতা</span><small>Senna</small></a>
+        <a href="shahidana.html" class="plant-item"><div class="plant-icon">🌾</div><span>১১৫. শাহিদান</span><small>Shahidana</small></a>
+        <a href="shat_muli.html" class="plant-item"><div class="plant-icon">🌿</div><span>১১৬. গুলঞ্চ</span><small>Giloy</small></a>
+        <a href="shatavari.html" class="plant-item"><div class="plant-icon">🌿</div><span>১১৭. শতমূলী</span><small>Shatavari</small></a>
+        <a href="shilajit.html" class="plant-item"><div class="plant-icon">⛰️</div><span>১১৮. শিলাজিত</span><small>Shilajit</small></a>
+        <a href="shimal.html" class="plant-item"><div class="plant-icon">🌳</div><span>১১৯. শিমুল</span><small>Silk Cotton</small></a>
+        <a href="shirish.html" class="plant-item"><div class="plant-icon">🌳</div><span>১২০. শিরীষ</span><small>Siris</small></a>
+        <a href="shiuli.html" class="plant-item"><div class="plant-icon">🌼</div><span>১২১. শিউলি</span><small>Night Jasmine</small></a>
+        <a href="shiyal_moti.html" class="plant-item"><div class="plant-icon">🌱</div><span>১২২. শিয়াল মোতি</span><small>Shiyal Moti</small></a>
+        <a href="shojne.html" class="plant-item"><div class="plant-icon">🌿</div><span>১২৩. সজিনা</span><small>Moringa</small></a>
+        <a href="shonkhopushpi.html" class="plant-item"><div class="plant-icon">🌸</div><span>১২৪. শঙ্খপুষ্পী</span><small>Shankhpushpi</small></a>
+        <a href="shosher_tel.html" class="plant-item"><div class="plant-icon">🛢️</div><span>১২৫. সরিষার তেল</span><small>Mustard Oil</small></a>
+        <a href="shwet_akondo.html" class="plant-item"><div class="plant-icon">⚪</div><span>১২৬. শ্বেত আকন্দ</span><small>White Akanda</small></a>
+        <a href="shwet_chondon.html" class="plant-item"><div class="plant-icon">🪵</div><span>১২৭. শ্বেত চন্দন</span><small>White Sandalwood</small></a>
+        <a href="sorpogondha.html" class="plant-item"><div class="plant-icon">🍂</div><span>১২৮. সর্পগন্ধা</span><small>Snakeroot</small></a>
+        <a href="talmakhana.html" class="plant-item"><div class="plant-icon">🌾</div><span>১২৯. তালমাখানা</span><small>Talmakhana</small></a>
+        <a href="tejbol.html" class="plant-item"><div class="plant-icon">🌿</div><span>১৩০. তেজবল</span><small>Tejbol</small></a>
+        <a href="tejpata.html" class="plant-item"><div class="plant-icon">🍃</div><span>১৩১. তেজপাতা</span><small>Bay Leaf</small></a>
+        <a href="telakucha.html" class="plant-item"><div class="plant-icon">🍃</div><span>১৩২. তেলাকুচা</span><small>Telakucha</small></a>
+        <a href="tetul.html" class="plant-item"><div class="plant-icon">🤎</div><span>১৩৩. তেঁতুল</span><small>Tamarind</small></a>
+        <a href="thankuni.html" class="plant-item"><div class="plant-icon">🌱</div><span>১৩৪. থানকুনি</span><small>Thankuni</small></a>
+        <a href="trivrit.html" class="plant-item"><div class="plant-icon">🌱</div><span>১৩৫. তেউড়ীমূল</span><small>Trivrit</small></a>
+        <a href="tulsi.html" class="plant-item"><div class="plant-icon">🍃</div><span>১৩৬. তুলসী</span><small>Holy Basil</small></a>
+        <a href="ulotkombol.html" class="plant-item"><div class="plant-icon">🌿</div><span>১৩৭. উলটকম্বল</span><small>Ulotkombol</small></a>
+        <a href="vacha.html" class="plant-item"><div class="plant-icon">🌱</div><span>১৩৮. বচ</span><small>Vacha</small></a>
+        <a href="vanda.html" class="plant-item"><div class="plant-icon">🌿</div><span>১৩৯. ভান্দা</span><small>Vanda</small></a>
+        <a href="vidari.html" class="plant-item"><div class="plant-icon">🍠</div><span>১৪০. ভূমিকুষ্মাণ্ড</span><small>Vidari Kand</small></a>
+        <a href="vringoraj.html" class="plant-item"><div class="plant-icon">🌱</div><span>১৪১. ভৃঙ্গরাজ</span><small>Bhringraj</small></a>
     </div>
+</div>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="plant-grid" id="plantList">
-            <!-- Sample Items (আপনি আপনার ১০০টি তালিকা এখানে রাখবেন) -->
-            <a href="neem.html" class="plant-item">
-                <div class="plant-icon">🌿</div>
-                <span>১. নিম</span>
-                <small>Neem</small>
-                <p>চর্মরোগ, ব্রণ ও রক্ত পরিশোধনে উপকারী।</p>
-            </a>
+<a href="https://wa.me/8801917044596" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
-            <a href="tulsi.html" class="plant-item">
-                <div class="plant-icon">🍃</div>
-                <span>২. তুলসী</span>
-                <small>Holy Basil</small>
-                <p>সর্দি, কাশি ও শ্বাসকষ্টে অত্যন্ত উপকারী।</p>
-            </a>
+<footer>
+    <p>© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
+</footer>
 
-            <a href="aloevera.html" class="plant-item">
-                <div class="plant-icon">🌵</div>
-                <span>৩. ঘৃতকুমারী</span>
-                <small>Aloe Vera</small>
-                <p>ত্বক, চুল ও হজম সমস্যার প্রাকৃতিক সমাধান।</p>
-            </a>
-            
-            <!-- ১০০টি ডাটা এখানে ক্রমান্বয়ে যোগ করবেন -->
-        </div>
-    </div>
+<script>
+function searchFunction() {
+    let input = document.getElementById("searchInput");
+    let filter = input.value.toUpperCase();
+    let grid = document.getElementById("plantList");
+    let items = grid.getElementsByClassName("plant-item");
 
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/8801917044596" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Footer -->
-    <footer>
-        <p>© ২০২৬ মোঃ দুলাল হোসেন | সর্বস্বত্ব সংরক্ষিত</p>
-        <div class="social-links" style="margin-top: 15px;">
-            <a href="https://facebook.com/bonargidawahkana.net"><i class="fab fa-facebook"></i></a>
-            <a href="https://youtube.com/c/bonarjidawakhana"><i class="fab fa-youtube"></i></a>
-        </div>
-    </footer>
-
-    <!-- Firebase & Custom JS -->
-    <script type="module">
-        // Firebase Integration
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyC2Ak9UCORHwy0HJrl3eIbfS2ILBdK_bBE",
-            authDomain: "vesojo-chikitsakosh.firebaseapp.com",
-            projectId: "vesojo-chikitsakosh",
-            storageBucket: "vesojo-chikitsakosh.firebasestorage.app",
-            messagingSenderId: "698398476413",
-            appId: "1:698398476413:web:18853c971dbca60d02c914"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-
-        // লগইন চেক
-        onAuthStateChanged(auth, (user) => {
-            const btn = document.getElementById('login-btn');
-            if (user) {
-                btn.innerHTML = '<i class="fas fa-user"></i> প্রোফাইল';
-            }
-        });
-    </script>
-
-    <script>
-        // লাইভ সার্চ ফাংশন
-        function searchFunction() {
-            let input = document.getElementById("searchInput");
-            let filter = input.value.toUpperCase();
-            let items = document.getElementsByClassName("plant-item");
-            
-            for (let i = 0; i < items.length; i++) {
-                let text = items[i].innerText || items[i].textContent;
-                if (text.toUpperCase().indexOf(filter) > -1) {
-                    items[i].style.display = "";
-                } else {
-                    items[i].style.display = "none";
-                }
-            }
+    for (let i = 0; i < items.length; i++) {
+        let txt = items[i].textContent || items[i].innerText;
+        if (txt.toUpperCase().indexOf(filter) > -1) {
+            items[i].style.display = "";
+        } else {
+            items[i].style.display = "none";
         }
-    </script>
+    }
+}
+</script>
+
 </body>
 </html>
