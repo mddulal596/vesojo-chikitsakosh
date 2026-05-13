@@ -32,9 +32,13 @@
             box-shadow:0 5px 20px rgba(0,0,0,0.1);
         }
         .logo{ color:white; text-decoration:none; font-size:24px; font-weight:700; }
-        .nav-links{ display:flex; list-style:none; }
-        .nav-links li a{ color:white; text-decoration:none; padding:28px 18px; display:block; transition:0.3s; }
-        .nav-links li a:hover{ background:#115293; }
+        .nav-links{ display:flex; list-style:none; gap: 15px; }
+        .nav-links li a{ color:white; text-decoration:none; padding:10px; transition:0.3s; }
+        .nav-links li a:hover{ background:#115293; border-radius: 5px; }
+
+        .auth-btns { display: flex; align-items: center; gap: 10px; }
+        .login-btn { color: white; border: 1px solid white; padding: 6px 15px; border-radius: 50px; text-decoration: none; cursor: pointer; transition: 0.3s; }
+        .login-btn:hover { background: white; color: var(--primary); }
 
         /* Hero */
         .hero{
@@ -97,11 +101,10 @@
 
 <nav>
     <a href="#" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
-    <ul class="nav-links">
-        <li><a href="#">হোম</a></li>
-        <li><a href="#herb-section">ভেষজ তালিকা</a></li>
-        <li><a href="#">স্বাস্থ্য টিপস</a></li>
-    </ul>
+    <div class="auth-btns" id="authBtnContainer">
+        <!-- লগইন বাটন এখানে থাকবে -->
+        <a href="javascript:void(0)" class="login-btn" onclick="loginWithGoogle()">লগইন</a>
+    </div>
 </nav>
 
 <section class="hero">
@@ -136,107 +139,89 @@
     </div>
 
     <div class="herb-grid" id="herbGrid">
-        <!-- ১. তুলসী -->
         <div class="herb-card" data-category="সর্দি">
             <div class="herb-image"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500"></div>
-            <div class="herb-content">
-                <h3>তুলসী</h3>
-                <p>সর্দি, কাশি ও রোগ প্রতিরোধ ক্ষমতা বাড়াতে অত্যন্ত উপকারী।</p>
-                <a href="#" class="herb-btn">বিস্তারিত দেখুন</a>
-            </div>
+            <div class="herb-content"><h3>তুলসী</h3><p>সর্দি, কাশি ও রোগ প্রতিরোধ ক্ষমতা বাড়াতে অত্যন্ত উপকারী।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
         </div>
-        <!-- ২. অ্যালোভেরা -->
         <div class="herb-card" data-category="ত্বক হজম">
             <div class="herb-image"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500"></div>
-            <div class="herb-content">
-                <h3>অ্যালোভেরা</h3>
-                <p>ত্বক, চুল ও হজমের সমস্যার জন্য অত্যন্ত কার্যকরী প্রাকৃতিক উপাদান।</p>
-                <a href="#" class="herb-btn">বিস্তারিত দেখুন</a>
-            </div>
+            <div class="herb-content"><h3>অ্যালোভেরা</h3><p>ত্বক, চুল ও হজমের সমস্যার জন্য অত্যন্ত কার্যকরী প্রাকৃতিক উপাদান।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
         </div>
-        <!-- ৩. নিম -->
         <div class="herb-card" data-category="ত্বক">
             <div class="herb-image"><img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=500"></div>
-            <div class="herb-content">
-                <h3>নিম</h3>
-                <p>চর্মরোগ নিরাময় ও রক্ত পরিষ্কার করতে নিমের কোনো বিকল্প নেই।</p>
-                <a href="#" class="herb-btn">বিস্তারিত দেখুন</a>
-            </div>
+            <div class="herb-content"><h3>নিম</h3><p>চর্মরোগ নিরাময় ও রক্ত পরিষ্কার করতে নিমের কোনো বিকল্প নেই।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
         </div>
-        <!-- ৪. বাসক -->
-        <div class="herb-card" data-category="সর্দি">
-            <div class="herb-image"><img src="https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=500"></div>
-            <div class="herb-content">
-                <h3>বাসক</h3>
-                <p>পুরানো কাশি এবং কফ পরিষ্কার করতে বাসক পাতার রস জাদুর মতো কাজ করে।</p>
-                <a href="#" class="herb-btn">বিস্তারিত দেখুন</a>
-            </div>
-        </div>
-        <!-- ৫. অর্জুন -->
-        <div class="herb-card" data-category="হৃদরোগ">
-            <div class="herb-image"><img src="https://images.unsplash.com/photo-1599059021750-82716ae2b661?w=500"></div>
-            <div class="herb-content">
-                <h3>অর্জুন</h3>
-                <p>হৃদরোগ নিয়ন্ত্রণ এবং উচ্চ রক্তচাপ কমাতে অর্জুন গাছের ছাল ব্যবহৃত হয়।</p>
-                <a href="#" class="herb-btn">বিস্তারিত দেখুন</a>
-            </div>
-        </div>
-        <!-- ৬. আমলকী -->
-        <div class="herb-card" data-category="হজম ত্বক">
-            <div class="herb-image"><img src="https://images.unsplash.com/photo-1606500465376-bc3d67f7966a?w=500"></div>
-            <div class="herb-content">
-                <h3>আমলকী</h3>
-                <p>ভিটামিন-সি সমৃদ্ধ এই ফল হজম শক্তি ও চুলের স্বাস্থ্যের জন্য সেরা।</p>
-                <a href="#" class="herb-btn">বিস্তারিত দেখুন</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="container">
-    <div class="section-title">
-        <h2>আমাদের বিশেষত্ব</h2>
-    </div>
-    <div class="features-grid">
-        <div class="feature-box"><i class="fas fa-seedling"></i><h3>বিশুদ্ধ তথ্য</h3><p>প্রাচীন আয়ুর্বেদ ও আধুনিক গবেষণার সঠিক সংমিশ্রণ।</p></div>
-        <div class="feature-box"><i class="fas fa-mobile-screen"></i><h3>স্মার্ট অ্যাক্সেস</h3><p>যেকোনো সময় মোবাইল থেকে সহজেই তথ্য পাওয়ার সুবিধা।</p></div>
-        <div class="feature-box"><i class="fas fa-shield-heart"></i><h3>নিরাপদ ব্যবহার</h3><p>ভেষজ ব্যবহারের সঠিক নিয়ম ও সতর্কতা প্রদান।</p></div>
     </div>
 </section>
 
 <footer>
-    <h2 class="footer-title">🌿 ভেষজ চিকিৎসা কোষ</h2>
     <div class="footer-social">
         <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://www.instagram.com/mddulal596" class="footer-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
     <p>© ২০২৬ <b>মোঃ দুলাল হোসেন</b> | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
-<script>
-    function searchHerb() {
-        let input = document.getElementById('herbSearchInput').value.toLowerCase();
-        let cards = document.getElementsByClassName('herb-card');
-        for (let i = 0; i < cards.length; i++) {
-            let title = cards[i].querySelector('h3').innerText.toLowerCase();
-            let desc = cards[i].querySelector('p').innerText.toLowerCase();
-            cards[i].style.display = (title.includes(input) || desc.includes(input)) ? "block" : "none";
-        }
-    }
+<!-- Firebase SDKs -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
-    function filterHerbs(category) {
-        let cards = document.getElementsByClassName('herb-card');
-        let btns = document.getElementsByClassName('filter-btn');
-        for (let btn of btns) btn.classList.remove('active');
-        event.target.classList.add('active');
+  // আপনার দেওয়া কনফিগারেশন
+  const firebaseConfig = {
+    apiKey: "AIzaSyC2Ak9UCORHwy0HJrl3eIbfS2ILBdK_bBE",
+    authDomain: "vesojo-chikitsakosh.firebaseapp.com",
+    projectId: "vesojo-chikitsakosh",
+    storageBucket: "vesojo-chikitsakosh.firebasestorage.app",
+    messagingSenderId: "698398476413",
+    appId: "1:698398476413:web:18853c971dbca60d02c914",
+    measurementId: "G-F651KC1N3Y"
+  };
 
-        for (let card of cards) {
-            let cardCat = card.getAttribute('data-category');
-            card.style.display = (category === 'all' || cardCat.includes(category)) ? "block" : "none";
-        }
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  // লগইন ফাংশন
+  window.loginWithGoogle = function() {
+    signInWithPopup(auth, provider).catch((error) => alert("লগইন ত্রুটি: " + error.message));
+  }
+
+  // লগআউট ফাংশন
+  window.logout = function() {
+    signOut(auth).then(() => location.reload());
+  }
+
+  // ইউজার স্টেট চেক
+  onAuthStateChanged(auth, (user) => {
+    const container = document.getElementById('authBtnContainer');
+    if (user) {
+      container.innerHTML = `
+        <span style="color:white; margin-right:10px;">${user.displayName}</span>
+        <a href="javascript:void(0)" onclick="logout()" class="login-btn">লগআউট</a>
+      `;
+    } else {
+      container.innerHTML = `<a href="javascript:void(0)" class="login-btn" onclick="loginWithGoogle()">লগইন</a>`;
     }
+  });
+
+  // সার্চ ও ফিল্টার ফাংশন
+  window.searchHerb = function() {
+    let input = document.getElementById('herbSearchInput').value.toLowerCase();
+    let cards = document.getElementsByClassName('herb-card');
+    for (let card of cards) {
+      let title = card.querySelector('h3').innerText.toLowerCase();
+      card.style.display = title.includes(input) ? "block" : "none";
+    }
+  }
+
+  window.filterHerbs = function(category) {
+    let cards = document.getElementsByClassName('herb-card');
+    for (let card of cards) {
+      let cardCat = card.getAttribute('data-category');
+      card.style.display = (category === 'all' || cardCat.includes(category)) ? "block" : "none";
+    }
+  }
 </script>
 
 </body>
