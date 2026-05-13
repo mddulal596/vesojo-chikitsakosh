@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ভেষজ চিকিৎসা কোষ | ১০০+ ঔষধি গাছের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</title>
+    <title>ভেষজ চিকিৎসা কোষ | ১০০+ ওষধি গাছের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</title>
     
-    <!-- Google Fonts & Font Awesome -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -75,47 +75,25 @@
         .herb-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
         .herb-btn { display: inline-block; padding: 10px 30px; background: #1976d2; color: white; text-decoration: none; border-radius: 50px; font-weight: 600; margin-top: 15px; }
 
-        /* FEATURES SECTION */
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
-        .feature-box { background: white; padding: 40px 30px; border-radius: 20px; text-align: center; box-shadow: var(--shadow); }
-        .feature-box i { font-size: 3.5rem; color: var(--primary); margin-bottom: 20px; display: block; }
-
-        /* NEWSLETTER */
-        .newsletter {
-            background: linear-gradient(135deg, #039be5, #01579b);
-            padding: 60px 20px; border-radius: 30px; color: white; text-align: center; margin-top: 40px;
-        }
-        .newsletter-form {
-            max-width: 600px; margin: 25px auto 0; display: flex; background: white; border-radius: 60px; overflow: hidden;
-        }
-        .newsletter-form input { flex: 1; padding: 15px 25px; border: none; outline: none; font-size: 16px; color: #333; }
-        .newsletter-form button { border: none; background: #ff9800; color: white; padding: 0 30px; font-weight: 700; cursor: pointer; }
-
-        /* FOOTER */
         footer { background: #444; color: white; text-align: center; padding: 60px 20px; margin-top: 50px; }
         .footer-social { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
-        .footer-btn { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; }
+        .footer-btn { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; transition: 0.3s; }
         
-        .fb { background: #1877F2; }
-        .yt { background: #FF0000; }
-        .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
-        .li { background: #0077B5; }
+        .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #bc1888; }
 
         @media(max-width:768px){ 
             .hero h1 { font-size: 2rem; }
             .nav-links { display: none; }
-            .newsletter-form { flex-direction: column; background: transparent; border-radius: 0; }
-            .newsletter-form input, .newsletter-form button { border-radius: 50px; margin-bottom: 10px; padding: 15px; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
+    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
     <ul class="nav-links">
         <li><a href="index.html">হোম</a></li>
-        <li><a href="Herbs-list.html">সকল তালিকা</a></li>
+        <li><a href="herbs-list.html">সকল তালিকা</a></li> <!-- lowercase name -->
         <li id="logout-li" style="display:none;"><a onclick="logoutUser()">লগ আউট</a></li>
         <li><a id="nav-login" class="signup-btn" onclick="loginWithGoogle()"><i class="fab fa-google"></i> গুগল দিয়ে প্রবেশ</a></li>
     </ul>
@@ -131,7 +109,7 @@
 
 <div class="news-ticker">
     <div class="ticker-content">
-        🔴 ব্রেকিং নিউজ: আমাদের প্ল্যাটফর্মে এখন ১৪১টি ভেষজ গাছের তথ্য পাওয়া যাচ্ছে। &nbsp;&nbsp;&nbsp; 🌿 প্রাকৃতিক চিকিৎসায় নতুন বিপ্লব! &nbsp;&nbsp;&nbsp; 🔴 ই-বুক "রোগমুক্তির সহজ ভেষজ" শীঘ্রই আসছে।
+        🔴 ব্রেকিং নিউজ: আমাদের প্ল্যাটফর্মে এখন ১৪১টি ভেষজ গাছের তথ্য পাওয়া যাচ্ছে। &nbsp;&nbsp;&nbsp; 🌿 ই-বুক "রোগমুক্তির সহজ ভেষজ" শীঘ্রই আসছে।
     </div>
 </div>
 
@@ -165,42 +143,7 @@
         </div>
     </div>
     <div style="text-align:center; margin-top:40px;">
-        <a href="Herbs-list.html" class="herb-btn" style="background:#4caf50;">সকল ১৪১টি ভেষজ দেখুন</a>
-    </div>
-</section>
-
-<section class="container">
-    <div class="section-title">
-        <h2>কেন ভেষজ চিকিৎসা কোষ?</h2>
-        <p>প্রাকৃতিক চিকিৎসার নির্ভরযোগ্য ডিজিটাল প্ল্যাটফর্ম</p>
-    </div>
-    <div class="features">
-        <div class="feature-box">
-            <i class="fas fa-seedling"></i>
-            <h3>প্রাকৃতিক সমাধান</h3>
-            <p>প্রাচীন ভেষজ জ্ঞান ও আধুনিক তথ্যের সমন্বয়।</p>
-        </div>
-        <div class="feature-box">
-            <i class="fas fa-book-open"></i>
-            <h3>বিস্তারিত তথ্য</h3>
-            <p>প্রতিটি উদ্ভিদের গুণাগুণ, ব্যবহার ও সতর্কতা।</p>
-        </div>
-        <div class="feature-box">
-            <i class="fas fa-shield-heart"></i>
-            <h3>স্বাস্থ্য সচেতনতা</h3>
-            <p>নিরাপদ ও সচেতন ভেষজ ব্যবহারের নির্দেশনা।</p>
-        </div>
-    </div>
-</section>
-
-<section class="container">
-    <div class="newsletter">
-        <h2>নতুন ভেষজ তথ্য পেতে যুক্ত থাকুন</h2>
-        <p>আপনার ইমেইল দিয়ে নতুন স্বাস্থ্য টিপস ও ভেষজ তথ্য সংগ্রহ করুন।</p>
-        <div class="newsletter-form">
-            <input type="email" placeholder="আপনার ইমেইল লিখুন">
-            <button onclick="alert('ধন্যবাদ! আপনি সাবস্ক্রাইব করেছেন।')">সাবস্ক্রাইব</button>
-        </div>
+        <a href="herbs-list.html" class="herb-btn" style="background:#4caf50;">সকল ১৪১টি ভেষজ দেখুন</a>
     </div>
 </section>
 
@@ -208,13 +151,11 @@
     <div class="footer-social">
         <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://www.instagram.com/mddulal596" class="footer-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-btn li" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
     </div>
     <p>© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
-<!-- Firebase -->
+<!-- Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
 
@@ -235,35 +176,21 @@
     function loginWithGoogle() { auth.signInWithPopup(provider); }
     function logoutUser() { auth.signOut(); }
 
-    // সার্চ ফাংশন: যা সরাসরি লিস্ট পেজে নিয়ে যাবে
     function handleSearch() {
         let query = document.getElementById('herbSearchInput').value.trim();
         if(query) {
-            window.location.href = "Herbs-list.html?search=" + encodeURIComponent(query);
+            // Updated to lowercase filename for GitHub compatibility
+            window.location.href = "herbs-list.html?search=" + encodeURIComponent(query);
         }
     }
 
-    document.getElementById('herbSearchInput').addEventListener("keypress", function(e) {
-        if (e.key === "Enter") handleSearch();
-    });
+    document.getElementById('herbSearchInput').addEventListener("keypress", (e) => { if (e.key === "Enter") handleSearch(); });
 
     auth.onAuthStateChanged(user => {
-        const herbSec = document.getElementById('herb-section');
-        const lockNotice = document.getElementById('lock-notice');
-        const logoutBtn = document.getElementById('logout-li');
-        const loginBtn = document.getElementById('nav-login');
-
-        if (user) {
-            herbSec.style.display = 'block';
-            lockNotice.style.display = 'none';
-            logoutBtn.style.display = 'block';
-            loginBtn.style.display = 'none';
-        } else {
-            herbSec.style.display = 'none';
-            lockNotice.style.display = 'block';
-            logoutBtn.style.display = 'none';
-            loginBtn.style.display = 'block';
-        }
+        document.getElementById('herb-section').style.display = user ? 'block' : 'none';
+        document.getElementById('lock-notice').style.display = user ? 'none' : 'block';
+        document.getElementById('logout-li').style.display = user ? 'block' : 'none';
+        document.getElementById('nav-login').style.display = user ? 'none' : 'block';
     });
 </script>
 </body>
