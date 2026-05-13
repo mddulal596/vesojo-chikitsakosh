@@ -2,243 +2,432 @@
 <html lang="bn">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ভেষজ চিকিৎসা কোষ | ১০০+ ঔষধি গাছের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ভেষজ চিকিৎসা কোষ | ১০০+ ঔষধি গাছের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style>
-:root{
-    --primary:#039be5;
-    --dark:#01579b;
-    --light:#f5fbff;
-    --white:#ffffff;
-    --text:#333;
-    --shadow:0 10px 30px rgba(0,0,0,0.08);
-}
+    <style>
+        :root {
+            --primary: #039be5;
+            --dark: #01579b;
+            --light: #f5fbff;
+            --white: #ffffff;
+            --text: #333;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
 
-*{ margin:0; padding:0; box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
-body{ font-family:'Segoe UI',sans-serif; background:var(--light); color:var(--text); line-height:1.7; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* NAVBAR */
-nav{
-    position:sticky; top:0; z-index:999; background:#1976d2;
-    height:75px; padding:0 5%; display:flex;
-    justify-content:space-between; align-items:center;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-.logo{ color:white; text-decoration:none; font-size:24px; font-weight:700; }
-.nav-links{ display:flex; list-style:none; align-items: center; }
-.nav-links li a{ color:white; text-decoration:none; padding:28px 18px; display:block; transition:0.3s; }
-.nav-links li a:hover{ background:#115293; }
+        html {
+            scroll-behavior: smooth;
+        }
 
-.google-btn {
-    background: white; color: #1976d2; border: none; padding: 8px 15px;
-    border-radius: 5px; font-weight: 600; cursor: pointer; margin-left: 10px;
-    display: flex; align-items: center; gap: 8px;
-}
-.user-info { display: none; align-items: center; gap: 10px; color: white; margin-left: 15px; }
-.user-info img { width: 35px; height: 35px; border-radius: 50%; border: 2px solid white; }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--light);
+            color: var(--text);
+            line-height: 1.7;
+        }
 
-/* HERO */
-.hero{
-    background: linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
-    url('https://images.unsplash.com/photo-1471193945509-9ad0617afabf?q=80&w=1400&auto=format&fit=crop');
-    background-size:cover; background-position:center;
-    color:white; text-align:center; padding:140px 20px;
-}
-.hero h1{ font-size:3.5rem; margin-bottom:20px; }
-.hero p{ font-size:1.3rem; max-width:850px; margin:auto; }
-.search-box{
-    max-width:700px; margin:40px auto 0; display:flex;
-    background:white; border-radius:60px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
-.search-box input{ flex:1; padding:18px 25px; border:none; outline:none; font-size:16px; }
-.search-box button{ width:70px; border:none; background:#039be5; color:white; font-size:20px; cursor:pointer; }
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            background: #1976d2;
+            height: 75px;
+            padding: 0 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
 
-/* STATS */
-.container{ max-width:1200px; margin:auto; padding:80px 20px; }
-.stats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:25px; margin-top:-70px; }
-.stat-card{ background:white; padding:35px; border-radius:20px; text-align:center; box-shadow:var(--shadow); }
-.stat-card i{ font-size:3rem; color:#039be5; margin-bottom:15px; }
-.stat-card h3{ font-size:2rem; color:#01579b; }
+        .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 700;
+        }
 
-/* FILTER */
-.filter-container { text-align: center; margin-bottom: 40px; }
-.filter-btn {
-    padding: 10px 20px; margin: 5px; border: 2px solid #1976d2;
-    background: white; color: #1976d2; border-radius: 30px; cursor: pointer; font-weight: 600;
-}
-.filter-btn.active, .filter-btn:hover { background: #1976d2; color: white; }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
 
-/* HERB CARDS */
-.section-title{ text-align:center; margin-bottom:50px; }
-.section-title h2{ font-size:2.7rem; color:#01579b; margin-bottom:10px; }
-.herb-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px; }
-.herb-card{ background:white; border-radius:22px; overflow:hidden; box-shadow:var(--shadow); transition:0.35s; }
-.herb-card:hover{ transform:translateY(-10px); }
-.herb-image{ height:220px; overflow:hidden; }
-.herb-image img{ width:100%; height:100%; object-fit:cover; transition:0.4s; }
-.herb-card:hover img{ transform:scale(1.08); }
-.herb-content{ padding:25px; }
-.herb-btn{ display:inline-block; padding:12px 25px; background:#1976d2; color:white; text-decoration:none; border-radius:50px; }
+        .nav-links li a {
+            color: white;
+            text-decoration: none;
+            padding: 20px 15px;
+            display: block;
+            transition: 0.3s;
+        }
 
-/* FEATURES */
-.features{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
-.feature-box{ background:white; padding:35px; border-radius:20px; text-align:center; box-shadow:var(--shadow); }
-.feature-box i{ font-size:3rem; color:#039be5; margin-bottom:20px; }
+        .nav-links li a:hover {
+            background: #115293;
+        }
 
-/* NEWSLETTER */
-.newsletter{
-    background:linear-gradient(135deg,#039be5,#01579b);
-    padding:70px 20px; border-radius:30px; color:white; text-align:center;
-}
-.newsletter-form{
-    max-width:650px; margin:30px auto 0; display:flex;
-    background:white; border-radius:60px; overflow:hidden;
-}
-.newsletter-form input{ flex:1; padding:18px 25px; border:none; outline:none; }
-.newsletter-form button{ border:none; background:#ff9800; color:white; padding:0 35px; cursor:pointer; }
+        /* AUTH UI */
+        .google-btn {
+            background: white;
+            color: #1976d2;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-left: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-/* FOOTER & SOCIALS */
-footer{ background:linear-gradient(135deg,#6d6d6d,#8d8d8d); color:white; text-align:center; padding:80px 20px 45px; }
-.footer-title{ font-size:38px; font-weight:700; margin-bottom:30px; }
-.footer-social{ display:flex; justify-content:center; gap:18px; flex-wrap:wrap; margin-bottom:40px; }
-.footer-btn{
-    display:flex; align-items:center; gap:10px; padding:14px 28px;
-    border-radius:50px; color:white; text-decoration:none; font-weight:600; transition:0.3s;
-}
-.fb{background:#1877F2;} .yt{background:#FF0000;} .ig{background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);} .ln{background:#0077B5;}
+        .user-info {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            margin-left: 15px;
+        }
 
-@media(max-width:768px){
-    .nav-links{ display:none; }
-    .hero h1{ font-size:2.2rem; }
-    .footer-btn{ width:100%; justify-content:center; max-width:280px; }
-}
-</style>
+        .user-info img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+                url('https://images.unsplash.com/photo-1471193945509-9ad0617afabf?q=80&w=1400');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            max-width: 700px;
+            margin: 40px auto 0;
+            display: flex;
+            background: white;
+            border-radius: 60px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 18px 25px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .search-box button {
+            width: 70px;
+            border: none;
+            background: #039be5;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* CONTAINER & TITLE */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.7rem;
+            color: #01579b;
+        }
+
+        /* FILTER BUTTONS */
+        .filter-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            margin: 5px;
+            border: 2px solid #1976d2;
+            background: white;
+            color: #1976d2;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: #1976d2;
+            color: white;
+        }
+
+        /* HERB GRID */
+        .herb-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .herb-card {
+            background: white;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: 0.35s;
+        }
+
+        .herb-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .herb-image img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .herb-content {
+            padding: 25px;
+        }
+
+        .herb-btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #1976d2;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+        }
+
+        /* FEATURES */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-box {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .feature-box i {
+            font-size: 3rem;
+            color: #039be5;
+            margin-bottom: 20px;
+        }
+
+        /* FOOTER & SOCIALS */
+        footer {
+            background: linear-gradient(135deg, #6d6d6d, #8d8d8d);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .footer-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .fb { background: #1877F2; }
+        .yt { background: #FF0000; }
+        .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+        .ln { background: #0077B5; }
+
+        @media(max-width:768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .footer-btn { width: 100%; max-width: 250px; justify-content: center; }
+        }
+    </style>
 </head>
 
 <body>
 
-<nav>
-    <a href="#" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
-    <ul class="nav-links">
-        <li><a href="#">হোম</a></li>
-        <li><a href="#herb-section">ভেষজ তালিকা</a></li>
-        <li><a href="#">রোগ অনুযায়ী চিকিৎসা</a></li>
-        <li><a href="#">যোগাযোগ</a></li>
-        <button id="loginBtn" class="google-btn" onclick="login()"><i class="fab fa-google"></i> লগইন</button>
-        <div id="userInfo" class="user-info">
-            <img id="userImg" src="" alt="User">
-            <span id="userName" style="font-weight: 600;"></span>
-            <i class="fas fa-sign-out-alt" onclick="logout()" style="cursor:pointer; margin-left:10px;"></i>
+    <nav>
+        <a href="#" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
+        <ul class="nav-links">
+            <li><a href="#">হোম</a></li>
+            <li><a href="#herb-section">ভেষজ তালিকা</a></li>
+            <li><a href="#">যোগাযোগ</a></li>
+            <button id="loginBtn" class="google-btn" onclick="login()"><i class="fab fa-google"></i> লগইন</button>
+            <div id="userInfo" class="user-info">
+                <img id="userImg" src="" alt="User">
+                <span id="userName"></span>
+                <i class="fas fa-sign-out-alt" onclick="logout()" style="cursor:pointer; margin-left: 10px;"></i>
+            </div>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h1>🌿 ভেষজ চিকিৎসা কোষ</h1>
+        <p>বাংলার প্রাচীন ভেষজ চিকিৎসা ও ১০০+ ঔষধি গাছের বিস্তারিত তথ্য।</p>
+        <div class="search-box">
+            <input type="text" id="herbSearch" placeholder="ভেষজ গাছ খুঁজুন..." onkeyup="searchHerb()">
+            <button onclick="searchHerb()"><i class="fas fa-search"></i></button>
         </div>
-    </ul>
-    <!-- টপ সোশ্যাল আইকন মুছে দেওয়া হয়েছে -->
-</nav>
+    </section>
 
-<section class="hero">
-    <h1>🌿 ভেষজ চিকিৎসা কোষ</h1>
-    <p>বাংলার প্রাচীন ভেষজ চিকিৎসা ও ১০০+ ঔষধি গাছের বিস্তারিত তথ্য।</p>
-    <div class="search-box">
-        <input type="text" id="herbSearch" placeholder="ভেষজ গাছ খুঁজুন..." onkeyup="searchHerb()">
-        <button onclick="searchHerb()"><i class="fas fa-search"></i></button>
-    </div>
-</section>
-
-<div class="container">
-    <div class="stats">
-        <div class="stat-card"><i class="fas fa-leaf"></i><h3>১০০+</h3><p>ঔষধি গাছ</p></div>
-        <div class="stat-card"><i class="fas fa-book-medical"></i><h3>৫০০+</h3><p>ভেষজ তথ্য</p></div>
-        <div class="stat-card"><i class="fas fa-user-doctor"></i><h3>৫০+</h3><p>প্রাকৃতিক সমাধান</p></div>
-    </div>
-</div>
-
-<section class="container" id="herb-section">
-    <div class="section-title"><h2>জনপ্রিয় ভেষজ গাছসমূহ</h2><p>বাংলার সবচেয়ে কার্যকর ও জনপ্রিয় ভেষজ উদ্ভিদ</p></div>
-    <div class="filter-container">
-        <button class="filter-btn active" onclick="filterCategory('all')">সবগুলো</button>
-        <button class="filter-btn" onclick="filterCategory('সর্দি')">সর্দি-কাশি</button>
-        <button class="filter-btn" onclick="filterCategory('ত্বক')">ত্বক ও চুল</button>
-    </div>
-    <div class="herb-grid" id="herbGrid">
-        <div class="herb-card" data-category="সর্দি">
-            <div class="herb-image"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=600"></div>
-            <div class="herb-content"><h3>তুলসী</h3><p>সর্দি ও কাশি কমাতে অত্যন্ত উপকারী।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
+    <!-- POPULAR HERBS SECTION -->
+    <section class="container" id="herb-section">
+        <div class="section-title">
+            <h2>জনপ্রিয় ভেষজ গাছসমূহ</h2>
+            <p>বাংলার সবচেয়ে কার্যকর ও জনপ্রিয় ভেষজ উদ্ভিদ</p>
         </div>
-        <div class="herb-card" data-category="ত্বক">
-            <div class="herb-image"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600"></div>
-            <div class="herb-content"><h3>অ্যালোভেরা</h3><p>ত্বক ও চুলের যত্নে প্রাকৃতিক ভেষজ।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
+
+        <div class="filter-container">
+            <button class="filter-btn active" onclick="filterCategory('all')">সবগুলো</button>
+            <button class="filter-btn" onclick="filterCategory('সর্দি')">সর্দি-কাশি</button>
+            <button class="filter-btn" onclick="filterCategory('ত্বক')">ত্বক ও চুল</button>
         </div>
-    </div>
-</section>
 
-<section class="container">
-    <div class="section-title"><h2>কেন ভেষজ চিকিৎসা কোষ?</h2></div>
-    <div class="features">
-        <div class="feature-box"><i class="fas fa-seedling"></i><h3>প্রাকৃতিক সমাধান</h3><p>প্রাচীন ভেষজ জ্ঞান ও আধুনিক তথ্যের সমন্বয়।</p></div>
-        <div class="feature-box"><i class="fas fa-book-open"></i><h3>বিস্তারিত তথ্য</h3><p>প্রতিটি উদ্ভিদের গুণাগুণ ও সেবন বিধি।</p></div>
-    </div>
-</section>
+        <div class="herb-grid" id="herbGrid">
+            <div class="herb-card" data-category="সর্দি">
+                <div class="herb-image"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=600"></div>
+                <div class="herb-content">
+                    <h3>তুলসী</h3>
+                    <p>সর্দি ও কাশি কমাতে অত্যন্ত উপকারী।</p>
+                    <a href="#" class="herb-btn">বিস্তারিত দেখুন</a>
+                </div>
+            </div>
 
-<section class="container">
-    <div class="newsletter">
-        <h2>নতুন ভেষজ তথ্য পেতে যুক্ত থাকুন</h2>
-        <div class="newsletter-form"><input type="email" placeholder="আপনার ইমেইল"><button>সাবস্ক্রাইব</button></div>
-    </div>
-</section>
+            <div class="herb-card" data-category="ত্বক">
+                <div class="herb-image"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600"></div>
+                <div class="herb-content">
+                    <h3>অ্যালোভেরা</h3>
+                    <p>ত্বক ও চুলের যত্নে প্রাকৃতিক ভেষজ।</p>
+                    <a href="#" class="herb-btn">বিস্তারিত দেখুন</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer>
-    <h2 class="footer-title">🌿 ভেষজ চিকিৎসা কোষ</h2>
-    <div class="footer-social">
-        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
-        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-        <a href="https://www.instagram.com/mddulal596" class="footer-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-    </div>
-    <p class="footer-copy">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
-</footer>
+    <!-- WHY CHOOSE SECTION -->
+    <section class="container" style="background: #fff; border-radius: 30px;">
+        <div class="section-title">
+            <h2>কেন ভেষজ চিকিৎসা কোষ?</h2>
+        </div>
+        <div class="features">
+            <div class="feature-box">
+                <i class="fas fa-seedling"></i>
+                <h3>প্রাকৃতিক সমাধান</h3>
+                <p>প্রাচীন ভেষজ জ্ঞান ও আধুনিক তথ্যের সমন্বয়।</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-book-open"></i>
+                <h3>বিস্তারিত তথ্য</h3>
+                <p>প্রতিটি উদ্ভিদের গুণাগুণ ও সেবন বিধি।</p>
+            </div>
+        </div>
+    </section>
 
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
-<script>
-    const firebaseConfig = {
-      apiKey: "AIzaSyC2Ak9UCORHwy0HJrl3eIbfS2ILBdK_bBE",
-      authDomain: "vesojo-chikitsakosh.firebaseapp.com",
-      projectId: "vesojo-chikitsakosh",
-      storageBucket: "vesojo-chikitsakosh.firebasestorage.app",
-      messagingSenderId: "698398476413",
-      appId: "1:698398476413:web:18853c971dbca60d02c914"
-    };
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
-    function login() { auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()); }
-    function logout() { auth.signOut(); }
-    auth.onAuthStateChanged(user => {
-        const loginBtn = document.getElementById('loginBtn');
-        const userInfo = document.getElementById('userInfo');
-        if (user) {
-            loginBtn.style.display = 'none'; userInfo.style.display = 'flex';
-            document.getElementById('userImg').src = user.photoURL;
-            document.getElementById('userName').innerText = user.displayName.split(' ')[0];
-        } else { loginBtn.style.display = 'flex'; userInfo.style.display = 'none'; }
-    });
-    function searchHerb() {
-        let input = document.getElementById('herbSearch').value.toLowerCase();
-        let cards = document.getElementsByClassName('herb-card');
-        for (let card of cards) {
-            let title = card.querySelector('h3').innerText.toLowerCase();
-            card.style.display = title.includes(input) ? "block" : "none";
+    <footer>
+        <h2 style="font-size: 28px;">🌿 ভেষজ চিকিৎসা কোষ</h2>
+        
+        <!-- FOOTER SOCIAL ICONS -->
+        <div class="footer-social">
+            <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="https://www.instagram.com/mddulal596" class="footer-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+
+        <p>© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
+    </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyC2Ak9UCORHwy0HJrl3eIbfS2ILBdK_bBE",
+            authDomain: "vesojo-chikitsakosh.firebaseapp.com",
+            projectId: "vesojo-chikitsakosh",
+            storageBucket: "vesojo-chikitsakosh.firebasestorage.app",
+            messagingSenderId: "698398476413",
+            appId: "1:698398476413:web:18853c971dbca60d02c914"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        function login() { auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()); }
+        function logout() { auth.signOut(); }
+
+        auth.onAuthStateChanged(user => {
+            const loginBtn = document.getElementById('loginBtn');
+            const userInfo = document.getElementById('userInfo');
+            if (user) {
+                loginBtn.style.display = 'none'; userInfo.style.display = 'flex';
+                document.getElementById('userImg').src = user.photoURL;
+                document.getElementById('userName').innerText = user.displayName.split(' ')[0];
+            } else {
+                loginBtn.style.display = 'flex'; userInfo.style.display = 'none';
+            }
+        });
+
+        function filterCategory(cat) {
+            const cards = document.querySelectorAll('.herb-card');
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            cards.forEach(card => {
+                const category = card.getAttribute('data-category');
+                card.style.display = (cat === 'all' || category === cat) ? "block" : "none";
+            });
         }
-    }
-    function filterCategory(cat) {
-        let cards = document.getElementsByClassName('herb-card');
-        for (let card of cards) {
-            let category = card.getAttribute('data-category');
-            card.style.display = (cat === 'all' || category === cat) ? "block" : "none";
+
+        function searchHerb() {
+            let input = document.getElementById('herbSearch').value.toLowerCase();
+            let cards = document.querySelectorAll('.herb-card');
+            cards.forEach(card => {
+                let title = card.querySelector('h3').innerText.toLowerCase();
+                card.style.display = title.includes(input) ? "block" : "none";
+            });
         }
-    }
-</script>
+    </script>
 </body>
+
 </html>
