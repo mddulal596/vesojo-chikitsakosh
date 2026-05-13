@@ -108,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #e1f5fe;
+    background: #e3f2fd;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #b3e5fc;
+    border: 1px solid #bbdefb;
 }
 
 .benefit-list { list-style: none; }
@@ -139,6 +139,7 @@ header{
     transition: 0.3s;
 }
 .usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
 
 .dosage-table-container {
     overflow-x: auto;
@@ -162,6 +163,7 @@ header{
     font-weight: bold;
     font-size: 1.1rem;
 }
+.dosage-table tr:hover { background: #e3f2fd; }
 
 .warning-box {
     background: #fff8e1;
@@ -176,11 +178,18 @@ header{
     text-decoration: none; background: var(--blue-btn); color: white; 
     padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
 }
+.btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
+
+.back-to-top {
+    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
+    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
+    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
+}
 
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
 </style>
 </head>
 <body>
@@ -192,6 +201,10 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
         <li><a href="about.html">সম্পর্কে</a></li>
         <li><a href="contact.html">যোগাযোগ</a></li>
     </ul>
+    <div class="nav-social">
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
 </nav>
 
 <header>
@@ -214,18 +227,41 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-seedling"></i> উদ্ভিদের পরিচয়</h3>
-            <p>হাতিশুঁড় একটি বর্ষজীবী আগাছা জাতীয় ওষধি গাছ। এর ফুলের মঞ্জরি দেখতে হাতির শুঁড়ের মতো বাঁকানো থাকে বলেই একে হাতিশুঁড় বলা হয়। গ্রামের রাস্তার পাশে বা পরিত্যক্ত স্থানে এটি প্রচুর জন্মে। এটি বিষ নিরাময় এবং প্রদাহ কমাতে অত্যন্ত কার্যকর।</p>
+            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
+            <p>হাতিশুঁড় একটি প্রাচীন ওষধি উদ্ভিদ যা গ্রামবাংলার মানুষের কাছে অতি পরিচিত। এর ফুলের মঞ্জরি হাতির শুঁড়ের মতো বাঁকানো থাকে বলেই এর নাম হয়েছে 'হাতিশুঁড়'। প্রাচীন ভেষজ শাস্ত্রে বিষাক্ত পোকামাকড়ের কামড় এবং কঠিন চর্মরোগ নিরাময়ে এই গাছকে অনন্য হিসেবে বর্ণনা করা হয়েছে।</p>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+            <div class="lang-grid">
+                <div><strong>সংস্কৃত:</strong> শ্রীহস্তিনী, ধূসরপত্রিকা</div>
+                <div><strong>ইংরেজি:</strong> Indian Heliotrope</div>
+                <div><strong>হিন্দি:</strong> হাতিশুঁড়া (Hatishura)</div>
+                <div><strong>তামিল:</strong> থেল-কোদুক্কু</div>
+                <div><strong>ফার্সি:</strong> তরমাসুল</div>
+            </div>
         </div>
 
         <div class="info-section">
             <h3><i class="fas fa-briefcase-medical"></i> প্রধান ভেষজ গুণাবলি</h3>
             <ul class="benefit-list">
-                <li><strong>বিষাক্ত কামড়:</strong> বিচ্ছু বা বিষাক্ত পোকামাকড়ের কামড়ে এর পাতার রস লাগালে দ্রুত বিষ ও ব্যথা কমে।</li>
-                <li><strong>বাতব্যথা ও ফোলা:</strong> জয়েন্টের ব্যথা বা শরীরের কোনো অংশ ফুলে গেলে এর পাতা বেটে গরম করে প্রলেপ দিলে উপকার পাওয়া যায়।</li>
-                <li><strong>চর্মরোগ:</strong> দাদ, একজিমা বা চুলকানিতে হাতিশুঁড় পাতার রস জাদুর মতো কাজ করে।</li>
-                <li><strong>জ্বর ও সর্দি:</strong> টাইফয়েড বা পুরাতন জ্বর নিরাময়ে এর মূলের ক্বাথ ব্যবহৃত হয়।</li>
+                <li><strong>বিষ নিরাময়:</strong> বিচ্ছু বা বিষাক্ত পোকামাকড়ের কামড়ে এর পাতার রস দ্রুত বিষ ও যন্ত্রণা প্রশমিত করে।</li>
+                <li><strong>চর্মরোগ:</strong> দাদ, একজিমা ও চুলকানিতে এর পাতা বাটা প্রয়োগ করলে দ্রুত ফল পাওয়া যায়।</li>
+                <li><strong>বাতব্যথা:</strong> শরীরের কোনো অংশ ফুলে গেলে বা বাতের ব্যথা হলে হাতিশুঁড় পাতা গরম করে প্রলেপ দিলে আরাম পাওয়া যায়।</li>
+                <li><strong>জ্বর ও সর্দি:</strong> দীর্ঘস্থায়ী জ্বর বা টাইফয়েড পরবর্তী দুর্বলতায় এর মূলের ক্বাথ অত্যন্ত কার্যকর।</li>
             </ul>
+        </div>
+
+        <div class="info-section">
+            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া প্রতিকার</h3>
+            <div class="usage-card">
+                <h4>১. বিষাক্ত দংশনে:</h4>
+                <p>আক্রান্ত স্থানে হাতিশুঁড় পাতার রস লাগিয়ে দিলে জ্বালা-পোড়া কমে এবং বিষের প্রভাব নষ্ট হয়।</p>
+            </div>
+            <div class="usage-card">
+                <h4>২. ফোলা ও প্রদাহে:</h4>
+                <p>গাছের সম্পূর্ণ অংশ পিষে সামান্য গরম করে ফোলা স্থানে ব্যান্ডেজ করে রাখলে প্রদাহ কমে যায়।</p>
+            </div>
         </div>
 
         <div class="info-section">
@@ -243,17 +279,17 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
                         <tr>
                             <td><strong>ভেষজ চূর্ণ (Powder)</strong></td>
                             <td>১ - ৩ গ্রাম</td>
-                            <td>শুষ্ক পাতার চূর্ণ পানির সাথে মিশিয়ে দিনে ২ বার।</td>
+                            <td>শুষ্ক পাতার চূর্ণ পানির সাথে দিনে ২ বার।</td>
                         </tr>
                         <tr>
                             <td><strong>ভেষজ রস (Fresh Juice)</strong></td>
                             <td>৫ - ১০ মিলি</td>
-                            <td>সতেজ পাতার রস সমপরিমাণ পানির সাথে আহারের পর।</td>
+                            <td>সতেজ পাতার রস মধুর সাথে আহারের পর।</td>
                         </tr>
                         <tr>
                             <td><strong>ভেষজ ক্বাথ (Decoction)</strong></td>
                             <td>১৫ - ৩০ মিলি</td>
-                            <td>মূল বা কান্ড সেদ্ধ করা পানি ঠান্ডা করে খালি পেটে।</td>
+                            <td>মূল বা কান্ড সেদ্ধ করা পানি ঠান্ডা করে সেব্য।</td>
                         </tr>
                     </tbody>
                 </table>
@@ -263,9 +299,9 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
         <div class="info-section">
             <div class="warning-box">
                 <h4 style="color: #f57c00; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা</h4>
-                <p>• হাতিশুঁড় দীর্ঘকাল অভ্যন্তরীণভাবে সেবন করা উচিত নয়, কারণ এতে লিভারের ক্ষতি হতে পারে এমন অ্যালকালয়েড থাকে।</p>
-                <p>• বাহ্যিক ব্যবহারের ক্ষেত্রে (প্রলেপ) এটি নিরাপদ, তবে অভ্যন্তরীণ সেবনের আগে অবশ্যই বিশেষজ্ঞের পরামর্শ নিন।</p>
-                <p>• গর্ভবতী নারী এবং শিশুদের জন্য এটি এড়িয়ে চলা উচিত।</p>
+                <p>• হাতিশুঁড় দীর্ঘকাল অভ্যন্তরীণভাবে সেবন করা উচিত নয়, কারণ এতে লিভারের জন্য ক্ষতিকারক উপাদান থাকতে পারে।</p>
+                <p>• বাহ্যিক ব্যবহারের ক্ষেত্রে এটি সম্পূর্ণ নিরাপদ।</p>
+                <p>• গর্ভবতী নারী ও শিশুদের ক্ষেত্রে অভ্যন্তরীণ সেবন থেকে বিরত থাকুন।</p>
             </div>
         </div>
 
@@ -276,6 +312,10 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
         </div>
     </div>
 </div>
+
+<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+</button>
 
 <footer>
     <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
