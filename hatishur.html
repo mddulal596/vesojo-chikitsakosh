@@ -8,7 +8,7 @@
 
 <style>
 :root{
-    --primary:#e1f5fe; 
+    --primary:#e1f5fe;
     --dark:#01579b;
     --light:#f1f8e9;
     --accent:#039be5;
@@ -108,10 +108,10 @@ header{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 15px;
-    background: #e3f2fd;
+    background: #fffcf0;
     padding: 30px;
     border-radius: 15px;
-    border: 1px solid #bbdefb;
+    border: 1px solid #ffe082;
 }
 
 .benefit-list { list-style: none; }
@@ -126,7 +126,7 @@ header{
     font-family: "Font Awesome 6 Free";
     font-weight: 900;
     position: absolute; left: 0;
-    color: var(--accent);
+    color: var(--dark);
     font-size: 1.4rem;
 }
 
@@ -163,13 +163,13 @@ header{
     font-weight: bold;
     font-size: 1.1rem;
 }
-.dosage-table tr:hover { background: #e3f2fd; }
+.dosage-table tr:hover { background: #fffcf0; }
 
 .warning-box {
-    background: #fff8e1;
+    background: #fff5f5;
     border-radius: 15px;
     padding: 35px;
-    border-left: 8px solid #ffc107;
+    border-left: 8px solid #e53935;
     margin-top: 30px;
 }
 
@@ -177,6 +177,7 @@ header{
 .btn-back-list {
     text-decoration: none; background: var(--blue-btn); color: white; 
     padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
 }
 .btn-back-list:hover { background: var(--blue-hover); transform: translateY(-2px); }
 
@@ -186,7 +187,11 @@ header{
     font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
 }
 
+/* ================= FOOTER ================= */
 footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
+.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
+.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
+.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
 .footer-copyright { font-size: 15px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 30px; margin-top: 30px; color: #f0f0f0; }
 
 @media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } .plant-detail-card h2 { font-size: 2.2rem; } }
@@ -204,6 +209,8 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
     <div class="nav-social">
         <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
     </div>
 </nav>
 
@@ -222,7 +229,7 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
                 <div class="spec-item">রস: তিকত, কটু</div>
                 <div class="spec-item">বীর্য: উষ্ণ (Heating)</div>
                 <div class="spec-item">বিপাক: কটু</div>
-                <div class="spec-item">গুণ: লঘু, তীক্ষ্ণ</div>
+                <div class="spec-item">দোষ: কফ নাশক</div>
             </div>
         </div>
 
@@ -243,53 +250,58 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> প্রধান ভেষজ গুণাবলি</h3>
+            <h3><i class="fas fa-briefcase-medical"></i> বিস্তারিত ভেষজ গুণ ও প্রয়োগ</h3>
             <ul class="benefit-list">
                 <li><strong>বিষ নিরাময়:</strong> বিচ্ছু বা বিষাক্ত পোকামাকড়ের কামড়ে এর পাতার রস দ্রুত বিষ ও যন্ত্রণা প্রশমিত করে।</li>
                 <li><strong>চর্মরোগ:</strong> দাদ, একজিমা ও চুলকানিতে এর পাতা বাটা প্রয়োগ করলে দ্রুত ফল পাওয়া যায়।</li>
                 <li><strong>বাতব্যথা:</strong> শরীরের কোনো অংশ ফুলে গেলে বা বাতের ব্যথা হলে হাতিশুঁড় পাতা গরম করে প্রলেপ দিলে আরাম পাওয়া যায়।</li>
-                <li><strong>জ্বর ও সর্দি:</strong> দীর্ঘস্থায়ী জ্বর বা টাইফয়েড পরবর্তী দুর্বলতায় এর মূলের ক্বাথ অত্যন্ত কার্যকর।</li>
+                <li><strong>টাইফয়েড ও জ্বর:</strong> দীর্ঘস্থায়ী জ্বর বা টাইফয়েড পরবর্তী শারীরিক জটিলতায় এর মূলের ক্বাথ অত্যন্ত কার্যকর।</li>
             </ul>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ঘরোয়া প্রতিকার</h3>
+            <h3><i class="fas fa-mortar-pestle"></i> সুনির্দিষ্ট ঘরোয়া প্রতিকার</h3>
             <div class="usage-card">
                 <h4>১. বিষাক্ত দংশনে:</h4>
-                <p>আক্রান্ত স্থানে হাতিশুঁড় পাতার রস লাগিয়ে দিলে জ্বালা-পোড়া কমে এবং বিষের প্রভাব নষ্ট হয়।</p>
+                <p>আক্রান্ত স্থানে হাতিশুঁড় পাতার টাটকা রস লাগিয়ে দিলে জ্বালা-পোড়া কমে এবং বিষের প্রভাব নষ্ট হয়।</p>
             </div>
             <div class="usage-card">
-                <h4>২. ফোলা ও প্রদাহে:</h4>
-                <p>গাছের সম্পূর্ণ অংশ পিষে সামান্য গরম করে ফোলা স্থানে ব্যান্ডেজ করে রাখলে প্রদাহ কমে যায়।</p>
+                <h4>২. ফোঁড়া ও ফোলা স্থানে:</h4>
+                <p>হাতিশুঁড় পাতা পিষে সামান্য গরম করে প্রলেপ দিলে ফোঁড়া দ্রুত ফেটে যায় অথবা ফোলা কমে যায়।</p>
             </div>
         </div>
 
         <div class="info-section">
-            <h3><i class="fas fa-mortar-pestle"></i> ব্যবহার ও সেবন বিধি (ডোজ টেবিল)</h3>
+            <h3><i class="fas fa-clock"></i> বয়স অনুযায়ী সেবন বিধি (ডোজ)</h3>
             <div class="dosage-table-container">
                 <table class="dosage-table">
                     <thead>
                         <tr>
-                            <th>ব্যবহারের রূপ</th>
-                            <th>সেবনের মাত্রা (প্রাপ্তবয়স্ক)</th>
-                            <th>সেবনের নিয়ম ও সময়</th>
+                            <th>বয়স সীমা</th>
+                            <th>সেবনের মাত্রা (পরিমাণ)</th>
+                            <th>সময়কাল ও নিয়ম</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>ভেষজ চূর্ণ (Powder)</strong></td>
-                            <td>১ - ৩ গ্রাম</td>
-                            <td>শুষ্ক পাতার চূর্ণ পানির সাথে দিনে ২ বার।</td>
+                            <td>৫ - ১২ বছর</td>
+                            <td>১ - ২ মিলি (রস)</td>
+                            <td>দিনে ১ বার (খাবারের পর)</td>
                         </tr>
                         <tr>
-                            <td><strong>ভেষজ রস (Fresh Juice)</strong></td>
-                            <td>৫ - ১০ মিলি</td>
-                            <td>সতেজ পাতার রস মধুর সাথে আহারের পর।</td>
+                            <td>১২ - ১৮ বছর</td>
+                            <td>৩ - ৫ মিলি (রস)</td>
+                            <td>দিনে ২ বার (সকাল ও রাত)</td>
                         </tr>
                         <tr>
-                            <td><strong>ভেষজ ক্বাথ (Decoction)</strong></td>
-                            <td>১৫ - ৩০ মিলি</td>
-                            <td>মূল বা কান্ড সেদ্ধ করা পানি ঠান্ডা করে সেব্য।</td>
+                            <td>১৮ বছর + (প্রাপ্তবয়স্ক)</td>
+                            <td>৫ - ১০ মিলি (রস)</td>
+                            <td>দিনে ২ বার ভরা পেটে</td>
+                        </tr>
+                        <tr>
+                            <td>বৃদ্ধ (৬৫ বছরের ঊর্ধ্বে)</td>
+                            <td>৩ - ৫ গ্রাম (ক্বাথ)</td>
+                            <td>চিকিৎসকের পরামর্শে সেব্য</td>
                         </tr>
                     </tbody>
                 </table>
@@ -298,10 +310,10 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 
         <div class="info-section">
             <div class="warning-box">
-                <h4 style="color: #f57c00; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা</h4>
-                <p>• হাতিশুঁড় দীর্ঘকাল অভ্যন্তরীণভাবে সেবন করা উচিত নয়, কারণ এতে লিভারের জন্য ক্ষতিকারক উপাদান থাকতে পারে।</p>
-                <p>• বাহ্যিক ব্যবহারের ক্ষেত্রে এটি সম্পূর্ণ নিরাপদ।</p>
-                <p>• গর্ভবতী নারী ও শিশুদের ক্ষেত্রে অভ্যন্তরীণ সেবন থেকে বিরত থাকুন।</p>
+                <h4 style="color: #e53935; margin-bottom: 15px;"><i class="fas fa-exclamation-circle"></i> বিশেষ সতর্কতা ও সুরক্ষা</h4>
+                <p>• হাতিশুঁড় দীর্ঘকাল অভ্যন্তরীণভাবে সেবন করা উচিত নয়, কারণ এতে লিভারের জন্য ক্ষতিকারক পাইরোলিজিডিন অ্যালকালয়েড থাকতে পারে।</p>
+                <p>• বাহ্যিক ব্যবহারের ক্ষেত্রে এটি সম্পূর্ণ নিরাপদ হিসেবে গণ্য করা হয়।</p>
+                <p>• গর্ভবতী নারী ও শিশুদের ক্ষেত্রে অভ্যন্তরীণ সেবন থেকে বিরত থাকা শ্রেয়।</p>
             </div>
         </div>
 
@@ -318,6 +330,13 @@ footer { background: var(--footer-grey-light); color: #fff; text-align: center; 
 </button>
 
 <footer>
+    <h2>ভেষজ চিকিৎসা কোষ</h2>
+    <div class="footer-social-container">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
     <p class="footer-copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
