@@ -3,24 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>হাতিশুঁড় (Hatishur) - বিস্তারিত ভেষজ এনসাইক্লোপিডিয়া | ভেষজ চিকিৎসা কোষ</title>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+
+/* ================= ROOT COLORS ================= */
+
 :root{
     --primary:#e1f5fe;
     --dark:#01579b;
-    --light:#f1f8e9;
+    --light:#f4fbff;
     --accent:#039be5;
-    --nav-blue: #1976d2; 
-    --blue-btn: #1976d2; 
-    --blue-hover: #115293; 
-    --white:#fff;
-    --footer-grey-light: #999999;
+    --nav-blue:#1976d2;
+    --blue-btn:#1976d2;
+    --blue-hover:#115293;
+    --white:#ffffff;
 }
 
-*{ margin:0; padding:0; box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+/* ================= GLOBAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background:var(--light);
@@ -29,268 +43,606 @@ body{
 }
 
 /* ================= NAVBAR ================= */
-nav{
-    position:sticky; top:0; z-index:999;
-    background:var(--nav-blue); display:flex;
-    justify-content:space-between; align-items:center;
-    padding:0 5%; height:70px; box-shadow:0 2px 10px rgba(0,0,0,.2);
-}
-.logo { color:#fff; text-decoration:none; font-size:20px; font-weight:bold; }
-.nav-links { display:flex; align-items:center; list-style:none; }
-.nav-links a { color:#fff; text-decoration:none; padding:24px 16px; display:block; transition:.3s; font-size:15px; }
-.nav-links a:hover { background:var(--blue-hover); }
 
-.nav-social { display:flex; gap:10px; align-items:center; }
-.nav-social a { color:white; font-size:16px; width:35px; height:35px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; transition:.3s; }
-.nav-social a:hover { background:rgba(255,255,255,0.2); }
+nav{
+    position:sticky;
+    top:0;
+    z-index:999;
+    height:75px;
+    background:var(--nav-blue);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 5%;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:24px;
+    font-weight:700;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    align-items:center;
+}
+
+.nav-links li a{
+    color:#fff;
+    text-decoration:none;
+    padding:26px 18px;
+    display:block;
+    transition:0.3s;
+    font-size:15px;
+    font-weight:500;
+}
+
+.nav-links li a:hover{
+    background:var(--blue-hover);
+}
+
+.nav-social{
+    display:flex;
+    gap:10px;
+}
+
+.nav-social a{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.nav-social a:hover{
+    background:rgba(255,255,255,0.2);
+    transform:translateY(-3px);
+}
 
 /* ================= HEADER ================= */
+
 header{
     background:linear-gradient(135deg,var(--accent),var(--dark));
-    color:#fff; text-align:center; padding:100px 20px;
+    color:#fff;
+    text-align:center;
+    padding:110px 20px;
 }
 
-/* ================= CONTENT CONTAINER ================= */
-.container {
-    max-width: 1000px;
-    margin: -40px auto 60px;
-    padding: 0 20px;
+header h1{
+    font-size:3rem;
+    margin-bottom:15px;
 }
 
-.plant-detail-card {
-    background: white;
-    padding: 60px;
-    border-radius: 25px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+header p{
+    font-size:1.2rem;
 }
 
-.plant-header {
-    text-align: center;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 40px;
-    margin-bottom: 40px;
+/* ================= MAIN CONTAINER ================= */
+
+.container{
+    max-width:1100px;
+    margin:-50px auto 70px;
+    padding:0 20px;
 }
 
-.plant-icon-large { font-size: 6rem; margin-bottom: 20px; }
-.plant-detail-card h2 { color: var(--dark); font-size: 3.2rem; margin-bottom: 10px; }
-.plant-detail-card small { color: #777; font-size: 1.3rem; font-style: italic; }
+/* ================= CARD ================= */
 
-.ayurvedic-specs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 30px;
-    justify-content: center;
-}
-.spec-item {
-    background: var(--blue-btn);
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-size: 1rem;
-    color: white;
-    font-weight: 500;
+.plant-detail-card{
+    background:#fff;
+    padding:60px;
+    border-radius:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
 }
 
-.info-section { margin-bottom: 60px; }
-.info-section h3 {
-    color: var(--dark);
-    border-left: 8px solid var(--accent);
-    padding-left: 20px;
-    margin-bottom: 25px;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+/* ================= PLANT HEADER ================= */
+
+.plant-header{
+    text-align:center;
+    border-bottom:2px solid #eee;
+    padding-bottom:40px;
+    margin-bottom:45px;
 }
 
-.lang-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-    background: #fffcf0;
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid #ffe082;
+.plant-icon-large{
+    font-size:6rem;
+    margin-bottom:20px;
 }
 
-.benefit-list { list-style: none; }
-.benefit-list li {
-    margin-bottom: 22px;
-    padding-left: 50px;
-    position: relative;
-    font-size: 1.1rem;
-}
-.benefit-list li::before {
-    content: "\f058";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    position: absolute; left: 0;
-    color: var(--dark);
-    font-size: 1.4rem;
+.plant-header h2{
+    color:var(--dark);
+    font-size:3rem;
+    margin-bottom:10px;
 }
 
-.usage-card {
-    background: #fdfdfd;
-    border: 1px solid #eee;
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 25px;
-    transition: 0.3s;
-}
-.usage-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-.usage-card h4 { color: var(--dark); margin-bottom: 12px; font-size: 1.4rem; }
-
-.dosage-table-container {
-    overflow-x: auto;
-    margin-top: 20px;
-    border-radius: 15px;
-    border: 1px solid #eee;
-}
-.dosage-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-}
-.dosage-table th, .dosage-table td {
-    padding: 15px 20px;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-}
-.dosage-table th {
-    background: #f8f9fa;
-    color: var(--dark);
-    font-weight: bold;
+.plant-header small{
+    font-size:1.2rem;
+    color:#777;
+    font-style:italic;
 }
 
-.warning-box {
-    background: #fff5f5;
-    border-radius: 15px;
-    padding: 35px;
-    border-left: 8px solid #e53935;
-    margin-top: 30px;
+/* ================= AYURVEDIC SPECS ================= */
+
+.ayurvedic-specs{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:30px;
 }
 
-.btn-back-container { text-align: center; margin-top: 40px; }
-.btn-back-list {
-    text-decoration: none; background: var(--blue-btn); color: white; 
-    padding: 16px 45px; border-radius: 50px; font-weight: bold; display: inline-block; transition: .3s;
+.spec-item{
+    background:var(--blue-btn);
+    color:#fff;
+    padding:12px 25px;
+    border-radius:50px;
+    font-size:15px;
+    font-weight:600;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-.back-to-top {
-    position: fixed; bottom: 30px; right: 30px; background: var(--accent);
-    color: white; border: none; width: 55px; height: 55px; border-radius: 50%; cursor: pointer;
-    font-size: 22px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000;
+/* ================= INFO SECTION ================= */
+
+.info-section{
+    margin-bottom:60px;
 }
 
-/* ================= FOOTER STYLES ================= */
-footer { background: var(--footer-grey-light); color: #fff; text-align: center; padding: 70px 20px 40px; }
-.footer-social-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
-.footer-s-btn { display: flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; color: white; text-decoration: none; font-size: 15px; font-weight: 600; transition: 0.3s; }
-.fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: #E4405F; } .ln { background: #0077B5; }
+.info-section h3{
+    color:var(--dark);
+    border-left:7px solid var(--accent);
+    padding-left:18px;
+    margin-bottom:25px;
+    font-size:2rem;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
 
-@media (max-width: 768px) { .plant-detail-card { padding: 40px 20px; } .nav-links { display: none; } }
+/* ================= LANGUAGE GRID ================= */
+
+.lang-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    background:#fffef5;
+    padding:30px;
+    border-radius:18px;
+    border:1px solid #ffe082;
+}
+
+.lang-grid div{
+    background:#fff;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 5px 12px rgba(0,0,0,0.04);
+}
+
+/* ================= BENEFITS ================= */
+
+.benefit-list{
+    list-style:none;
+}
+
+.benefit-list li{
+    position:relative;
+    padding-left:50px;
+    margin-bottom:25px;
+    font-size:1.1rem;
+}
+
+.benefit-list li::before{
+    content:"\f058";
+    font-family:"Font Awesome 6 Free";
+    font-weight:900;
+    position:absolute;
+    left:0;
+    top:0;
+    color:var(--dark);
+    font-size:1.4rem;
+}
+
+/* ================= BUTTON ================= */
+
+.btn-back-container{
+    text-align:center;
+    margin-top:50px;
+}
+
+.btn-back-list{
+    background:var(--blue-btn);
+    color:#fff;
+    text-decoration:none;
+    padding:17px 40px;
+    border-radius:50px;
+    font-weight:700;
+    display:inline-block;
+    transition:0.3s;
+    box-shadow:0 10px 20px rgba(0,0,0,0.12);
+}
+
+.btn-back-list:hover{
+    background:var(--blue-hover);
+    transform:translateY(-4px);
+}
+
+/* ================= BACK TO TOP ================= */
+
+.back-to-top{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:var(--accent);
+    color:#fff;
+    font-size:22px;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+    z-index:1000;
+    transition:0.3s;
+}
+
+.back-to-top:hover{
+    transform:translateY(-4px);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:linear-gradient(135deg,#6d6d6d,#8d8d8d);
+    color:#fff;
+    text-align:center;
+    padding:80px 20px 45px;
+}
+
+.footer-title{
+    font-size:38px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:30px;
+    text-shadow:2px 2px 10px rgba(0,0,0,0.2);
+}
+
+.footer-social-container{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+.footer-s-btn{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:14px 28px;
+    border-radius:50px;
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
+    transition:0.35s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+}
+
+.footer-s-btn:hover{
+    transform:translateY(-5px);
+}
+
+.fb{
+    background:#1877F2;
+}
+
+.yt{
+    background:#FF0000;
+}
+
+.ig{
+    background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+}
+
+.ln{
+    background:#0077B5;
+}
+
+.footer-copyright{
+    font-size:20px;
+    font-weight:600;
+    margin-top:20px;
+    line-height:1.8;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:768px){
+
+    nav{
+        flex-wrap:wrap;
+        height:auto;
+        padding:15px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    header h1{
+        font-size:2rem;
+    }
+
+    .plant-detail-card{
+        padding:35px 20px;
+    }
+
+    .plant-header h2{
+        font-size:2.2rem;
+    }
+
+    .info-section h3{
+        font-size:1.5rem;
+    }
+
+    .footer-title{
+        font-size:30px;
+    }
+
+    .footer-s-btn{
+        width:100%;
+        justify-content:center;
+        max-width:280px;
+    }
+
+    .footer-copyright{
+        font-size:16px;
+    }
+}
+
 </style>
 </head>
+
 <body>
 
+<!-- ================= NAVBAR ================= -->
+
 <nav>
-    <a href="index.html" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
+
+    <a href="index.html" class="logo">
+        🌿 ভেষজ চিকিৎসা কোষ
+    </a>
+
     <ul class="nav-links">
         <li><a href="index.html">হোম</a></li>
         <li><a href="about.html">সম্পর্কে</a></li>
         <li><a href="contact.html">যোগাযোগ</a></li>
     </ul>
+
     <div class="nav-social">
-        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/mddulal596" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="https://www.instagram.com/mddulal596" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" target="_blank">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
     </div>
+
 </nav>
 
+<!-- ================= HEADER ================= -->
+
 <header>
+
     <h1>ভেষজ উদ্ভিদের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</h1>
-    <p style="margin-top:15px; font-size: 1.2rem;">প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন</p>
+
+    <p>
+        প্রকৃতির নিরাময় শক্তি দিয়ে গড়ি রোগমুক্ত জীবন
+    </p>
+
 </header>
 
+<!-- ================= MAIN CONTENT ================= -->
+
 <div class="container">
+
     <div class="plant-detail-card">
+
+        <!-- PLANT HEADER -->
+
         <div class="plant-header">
+
             <div class="plant-icon-large">🌿</div>
+
             <h2>৫১. হাতিশুঁড় (Hatishur)</h2>
-            <small>Scientific Name: Heliotropium indicum</small>
+
+            <small>
+                Scientific Name: Heliotropium indicum
+            </small>
+
             <div class="ayurvedic-specs">
+
                 <div class="spec-item">রস: তিকত, কটু</div>
+
                 <div class="spec-item">বীর্য: উষ্ণ</div>
+
                 <div class="spec-item">বিপাক: কটু</div>
+
                 <div class="spec-item">দোষ: কফ নাশক</div>
+
             </div>
+
         </div>
 
-        <div class="info-section">
-            <h3><i class="fas fa-history"></i> ঐতিহাসিক প্রেক্ষাপট</h3>
-            <p>হাতিশুঁড় একটি প্রাচীন ওষধি উদ্ভিদ। এর মঞ্জরি হাতির শুঁড়ের মতো বাঁকানো থাকে বলেই এই নাম। প্রাচীন চিকিৎসায় এটি বিষ ও চর্মরোগের মহৌষধ হিসেবে পরিচিত।</p>
-        </div>
+        <!-- HISTORY -->
 
         <div class="info-section">
-            <h3><i class="fas fa-globe"></i> আন্তর্জাতিক নামসমূহ</h3>
+
+            <h3>
+                <i class="fas fa-history"></i>
+                ঐতিহাসিক প্রেক্ষাপট
+            </h3>
+
+            <p>
+                হাতিশুঁড় একটি প্রাচীন ওষধি উদ্ভিদ। এর মঞ্জরি হাতির শুঁড়ের মতো বাঁকানো থাকে বলেই এই নাম। 
+                প্রাচীন চিকিৎসায় এটি বিষ ও চর্মরোগের মহৌষধ হিসেবে পরিচিত।
+            </p>
+
+        </div>
+
+        <!-- INTERNATIONAL NAMES -->
+
+        <div class="info-section">
+
+            <h3>
+                <i class="fas fa-globe"></i>
+                আন্তর্জাতিক নামসমূহ
+            </h3>
+
             <div class="lang-grid">
-                <div><strong>সংস্কৃত:</strong> শ্রীহস্তিনী</div>
-                <div><strong>ইংরেজি:</strong> Indian Heliotrope</div>
-                <div><strong>হিন্দি:</strong> হাতিশুঁড়া</div>
-                <div><strong>ফার্সি:</strong> তরমাসুল</div>
+
+                <div>
+                    <strong>সংস্কৃত:</strong> শ্রীহস্তিনী
+                </div>
+
+                <div>
+                    <strong>ইংরেজি:</strong> Indian Heliotrope
+                </div>
+
+                <div>
+                    <strong>হিন্দি:</strong> হাতিশুঁড়া
+                </div>
+
+                <div>
+                    <strong>ফার্সি:</strong> তরমাসুল
+                </div>
+
             </div>
+
         </div>
 
+        <!-- BENEFITS -->
+
         <div class="info-section">
-            <h3><i class="fas fa-briefcase-medical"></i> ভেষজ গুণ ও প্রয়োগ</h3>
+
+            <h3>
+                <i class="fas fa-briefcase-medical"></i>
+                ভেষজ গুণ ও প্রয়োগ
+            </h3>
+
             <ul class="benefit-list">
-                <li>বিচ্ছু বা পোকামাকড়ের কামড়ে এর পাতার রস দ্রুত কাজ করে।</li>
-                <li>দাদ বা চর্মরোগে এর পাতা বাটা অত্যন্ত কার্যকর।</li>
-                <li>বাতের ব্যথায় প্রলেপ দিলে ফোলা কমে।</li>
+
+                <li>
+                    বিচ্ছু বা পোকামাকড়ের কামড়ে এর পাতার রস দ্রুত কাজ করে।
+                </li>
+
+                <li>
+                    দাদ বা চর্মরোগে এর পাতা বাটা অত্যন্ত কার্যকর।
+                </li>
+
+                <li>
+                    বাতের ব্যথায় প্রলেপ দিলে ফোলা কমে।
+                </li>
+
             </ul>
+
         </div>
+
+        <!-- BUTTON -->
 
         <div class="btn-back-container">
+
             <a href="index.html" class="btn-back-list">
-                <i class="fas fa-chevron-left"></i> সকল ভেষজের তালিকায় ফিরে যান
+
+                <i class="fas fa-chevron-left"></i>
+
+                সকল ভেষজের তালিকায় ফিরে যান
+
             </a>
+
         </div>
+
     </div>
+
 </div>
 
-<button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+<!-- ================= BACK TO TOP ================= -->
+
+<button class="back-to-top"
+onclick="window.scrollTo({top:0, behavior:'smooth'})">
+
     <i class="fas fa-arrow-up"></i>
+
 </button>
 
-<!-- আপনার চাহিত নতুন ফুটার ডিজাইন নিচে যুক্ত করা হলো -->
+<!-- ================= FOOTER ================= -->
+
 <footer>
-    <h2 style="font-size: 36px; font-weight: 700; letter-spacing: 1px;">
-        ভেষজ চিকিৎসা কোষ
+
+    <h2 class="footer-title">
+        🌿 ভেষজ চিকিৎসা কোষ
     </h2>
 
     <div class="footer-social-container">
-        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-s-btn fb" target="_blank">
-            <i class="fab fa-facebook-f"></i> Facebook
+
+        <a href="https://www.facebook.com/bonargidawahkana.net"
+           class="footer-s-btn fb"
+           target="_blank">
+
+           <i class="fab fa-facebook-f"></i>
+           Facebook
+
         </a>
 
-        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-s-btn yt" target="_blank">
-            <i class="fab fa-youtube"></i> YouTube
+        <a href="https://www.youtube.com/c/bonarjidawakhana"
+           class="footer-s-btn yt"
+           target="_blank">
+
+           <i class="fab fa-youtube"></i>
+           YouTube
+
         </a>
 
-        <a href="https://www.instagram.com/mddulal596" class="footer-s-btn ig" target="_blank">
-            <i class="fab fa-instagram"></i> Instagram
+        <a href="https://www.instagram.com/mddulal596"
+           class="footer-s-btn ig"
+           target="_blank">
+
+           <i class="fab fa-instagram"></i>
+           Instagram
+
         </a>
 
-        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-s-btn ln" target="_blank">
-            <i class="fab fa-linkedin-in"></i> LinkedIn
+        <a href="https://www.linkedin.com/in/bonargidawakhana/"
+           class="footer-s-btn ln"
+           target="_blank">
+
+           <i class="fab fa-linkedin-in"></i>
+           LinkedIn
+
         </a>
+
     </div>
 
-    <p class="footer-copyright" 
-       style="font-size: 20px; font-weight: 600; margin-top: 20px; line-height: 1.8;">
-       © ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক
+    <p class="footer-copyright">
+
+        © ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক
+
     </p>
+
 </footer>
 
 </body>
