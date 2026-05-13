@@ -81,6 +81,7 @@ nav{
     padding:28px 18px;
     display:block;
     transition:0.3s;
+    cursor: pointer;
 }
 
 .nav-links li a:hover{
@@ -403,7 +404,7 @@ background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
     font-weight:600;
 }
 
-/* অতিরিক্ত স্টাইল শুধুমাত্র ফিল্টার বাটনের জন্য */
+/* ফিল্টার বাটন স্টাইল */
 .filter-btns {
     text-align: center;
     margin-bottom: 30px;
@@ -494,7 +495,7 @@ background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 
 <li><a href="#">রোগ অনুযায়ী চিকিৎসা</a></li>
 
-<li><a href="#">যোগাযোগ</a></li>
+<li><a id="auth-action" onclick="handleAuth()">লগইন</a></li>
 
 </ul>
 
@@ -535,7 +536,6 @@ background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 
 <div class="search-box">
 
-<!-- ফিচার ১: সার্চ ইনপুট ফিল্ড -->
 <input type="text" id="herbSearchInput" placeholder="ভেষজ গাছ খুঁজুন..." onkeyup="searchHerb()">
 
 <button onclick="searchHerb()">
@@ -612,7 +612,6 @@ background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
 
 </div>
 
-<!-- ফিচার ২: ক্যাটাগরি ফিল্টার বাটনসমূহ -->
 <div class="filter-btns">
     <button class="filter-btn active" onclick="filterHerbs('all')">সবগুলো</button>
     <button class="filter-btn" onclick="filterHerbs('সর্দি')">সর্দি-কাশি</button>
@@ -846,10 +845,60 @@ LinkedIn
 
 </footer>
 
-<!-- ফিচার ৩: জাভাস্ক্রিপ্ট কোড (সার্চ এবং ফিল্টার সক্রিয় করতে) -->
-<script>
-    // সার্চ ফাংশন
-    function searchHerb() {
+<script type="module">
+    // Firebase SDKs
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+    // আপনার দেওয়া Firebase Configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyC2Ak9UCORHwy0HJrl3eIbfS2ILBdK_bBE",
+      authDomain: "vesojo-chikitsakosh.firebaseapp.com",
+      projectId: "vesojo-chikitsakosh",
+      storageBucket: "vesojo-chikitsakosh.firebasestorage.app",
+      messagingSenderId: "698398476413",
+      appId: "1:698398476413:web:18853c971dbca60d02c914",
+      measurementId: "G-F651KC1N3Y"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    const authLink = document.getElementById('auth-action');
+
+    // লগইন এবং লগআউট হ্যান্ডলার
+    window.handleAuth = function() {
+        if (auth.currentUser) {
+            // লগআউট প্রসেস
+            signOut(auth).then(() => {
+                alert("লগআউট সফল হয়েছে");
+            }).catch((error) => {
+                console.error("লগআউট ত্রুটি:", error);
+            });
+        } else {
+            // গুগল লগইন প্রসেস
+            signInWithPopup(auth, provider)
+                .then((result) => {
+                    alert("স্বাগতম, " + result.user.displayName);
+                }).catch((error) => {
+                    console.error("লগইন ত্রুটি:", error);
+                });
+        }
+    }
+
+    // ইউজার স্ট্যাটাস মনিটর করা
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            authLink.innerText = "লগআউট (" + user.displayName.split(' ')[0] + ")";
+        } else {
+            authLink.innerText = "লগইন";
+        }
+    });
+
+    // সার্চ ফাংশন (আপনার আগের কোড)
+    window.searchHerb = function() {
         let input = document.getElementById('herbSearchInput').value.toLowerCase();
         let cards = document.getElementsByClassName('herb-card');
 
@@ -863,12 +912,11 @@ LinkedIn
         }
     }
 
-    // ফিল্টার ফাংশন
-    function filterHerbs(category) {
+    // ফিল্টার ফাংশন (আপনার আগের কোড)
+    window.filterHerbs = function(category) {
         let cards = document.getElementsByClassName('herb-card');
         let btns = document.getElementsByClassName('filter-btn');
 
-        // বাটনের একটিভ ক্লাস পরিবর্তন
         for (let btn of btns) {
             btn.classList.remove('active');
             if(btn.innerText.toLowerCase().includes(category) || (category === 'all' && btn.innerText === 'সবগুলো')){
@@ -876,7 +924,6 @@ LinkedIn
             }
         }
 
-        // কার্ড প্রদর্শন নিয়ন্ত্রণ
         for (let card of cards) {
             let cardCat = card.getAttribute('data-category');
             if (category === 'all' || cardCat.includes(category)) {
