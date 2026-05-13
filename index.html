@@ -29,7 +29,7 @@
         }
         .logo { color: white; text-decoration: none; font-size: 22px; font-weight: 700; }
         .nav-links { display: flex; list-style: none; align-items: center; }
-        .nav-links li a { color: white; text-decoration: none; padding: 10px 18px; display: block; cursor: pointer; transition: 0.3s; }
+        .nav-links li a { color: white; text-decoration: none; padding: 10px 18px; display: block; transition: 0.3s; }
         .signup-btn {
             background: #ff9800; color: white !important; padding: 8px 25px !important;
             border-radius: 50px; margin-left: 15px; font-weight: 600; cursor: pointer;
@@ -58,8 +58,9 @@
         /* CONTAINER */
         .container { max-width: 1200px; margin: auto; padding: 50px 20px; }
         .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { font-size: 2.2rem; color: var(--dark); margin-bottom: 10px; }
 
-        /* HERB SECTION (Authenticated Only) */
+        /* HERB SECTION (Locked by Default) */
         #herb-section { display: none; }
         .locked-msg { text-align: center; padding: 60px 20px; background: #fff3e0; border-radius: 25px; box-shadow: var(--shadow); }
         .google-btn {
@@ -75,17 +76,40 @@
         .herb-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }
         .herb-btn { display: inline-block; padding: 10px 30px; background: #1976d2; color: white; text-decoration: none; border-radius: 50px; font-weight: 600; margin-top: 15px; }
 
+        /* FEATURES SECTION */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
+        .feature-box { background: white; padding: 40px 30px; border-radius: 20px; text-align: center; box-shadow: var(--shadow); transition: 0.3s; }
+        .feature-box:hover { transform: translateY(-5px); }
+        .feature-box i { font-size: 3.5rem; color: var(--primary); margin-bottom: 25px; display: block; }
+
+        /* NEWSLETTER SECTION */
+        .newsletter {
+            background: linear-gradient(135deg, #039be5, #01579b);
+            padding: 70px 20px; border-radius: 30px; color: white; text-align: center; margin-top: 50px;
+        }
+        .newsletter-form {
+            max-width: 650px; margin: 30px auto 0; display: flex; background: white; border-radius: 60px; overflow: hidden;
+        }
+        .newsletter-form input { flex: 1; padding: 18px 25px; border: none; outline: none; font-size: 16px; color: #333; }
+        .newsletter-form button { border: none; background: #ff9800; color: white; padding: 0 35px; font-size: 17px; font-weight: 700; cursor: pointer; }
+
         /* FOOTER */
         footer { background: #444; color: white; text-align: center; padding: 60px 20px; margin-top: 50px; }
         .footer-social { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
-        .footer-btn { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; }
+        .footer-btn { display: flex; align-items: center; gap: 8px; padding: 10px 25px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; }
         
         .fb { background: #1877F2; }
         .yt { background: #FF0000; }
         .ig { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
         .li { background: #0077B5; }
 
-        @media(max-width:768px){ .hero h1 { font-size: 2rem; } .nav-links { display: none; } }
+        @media(max-width:768px){ 
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+            .newsletter-form { flex-direction: column; border-radius: 20px; background: transparent; gap: 10px; }
+            .newsletter-form input { border-radius: 50px; padding: 15px; }
+            .newsletter-form button { border-radius: 50px; padding: 15px; }
+        }
     </style>
 </head>
 <body>
@@ -109,46 +133,76 @@
 
 <div class="news-ticker">
     <div class="ticker-content">
-        🔴 ব্রেকিং নিউজ: আমাদের প্ল্যাটফর্মে এখন ১০০টিরও বেশি ভেষজ গাছের তথ্য পাওয়া যাচ্ছে। &nbsp;&nbsp;&nbsp; 🌿 প্রাকৃতিক চিকিৎসায় নতুন বিপ্লব! &nbsp;&nbsp;&nbsp; 🔴 ভেষজ চিকিৎসা কোষের ই-বুক "রোগমুক্তির সহজ ভেষজ" শীঘ্রই আসছে।
+        🔴 ব্রেকিং নিউজ: আমাদের প্ল্যাটফর্মে এখন ১০০টিরও বেশি ভেষজ গাছের তথ্য পাওয়া যাচ্ছে। &nbsp;&nbsp;&nbsp; 🌿 প্রাকৃতিক চিকিৎসায় নতুন বিপ্লব! &nbsp;&nbsp;&nbsp; 🔴 ই-বুক "রোগমুক্তির সহজ ভেষজ" শীঘ্রই আসছে।
     </div>
 </div>
 
+<!-- Lock Notice -->
 <div id="lock-notice" class="container">
     <div class="locked-msg">
         <h2>🔒 তথ্যগুলো দেখতে লগইন করুন</h2>
-        <p>ভেষজ গাছের বিস্তারিত তালিকা পড়তে আপনার গুগল অ্যাকাউন্ট দিয়ে লগইন করুন।</p>
+        <p>ভেষজ গাছের বিস্তারিত তালিকা এবং গুণাগুণ জানতে গুগল অ্যাকাউন্ট দিয়ে লগইন করুন।</p>
         <button class="google-btn" onclick="loginWithGoogle()"><i class="fab fa-google"></i> Google দিয়ে লগইন করুন</button>
     </div>
 </div>
 
+<!-- Herb Section (Authenticated Only) -->
 <section class="container" id="herb-section">
     <div class="section-title">
         <h2>জনপ্রিয় ভেষজ গাছসমূহ</h2>
     </div>
     <div class="herb-grid" id="herbGrid">
-        <!-- ১. আম -->
         <div class="herb-card">
-            <div class="herb-image"><img src="https://images.unsplash.com/photo-1553279768-865429fa0078?w=500" alt="Aam"></div>
-            <h3>আম</h3><p>রুচি বাড়াতে এবং লিভারের যত্নে উপকারী।</p>
-            <a href="aam.html" class="herb-btn">বিস্তারিত দেখুন</a>
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500" alt="Tulsi"></div>
+            <h3>তুলসী</h3><p>সর্দি ও কাশি নিরাময়ে অত্যন্ত কার্যকর।</p>
+            <a href="tulsi.html" class="herb-btn">বিস্তারিত দেখুন</a>
         </div>
-        <!-- ৩৬. ধুতুরা -->
-        <div class="herb-card">
-            <div class="herb-image"><img src="https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=500" alt="Dhutura"></div>
-            <h3>ধুতুরা</h3><p>শ্বাসকষ্ট ও বাতের ব্যথায় ঔষধি হিসেবে ব্যবহৃত।</p>
-            <a href="dhutura.html" class="herb-btn">বিস্তারিত দেখুন</a>
-        </div>
-        <!-- ৯৬. নিম -->
         <div class="herb-card">
             <div class="herb-image"><img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=500" alt="Neem"></div>
             <h3>নিম</h3><p>চর্মরোগ ও রক্ত পরিষ্কারে সাহায্য করে।</p>
             <a href="neem.html" class="herb-btn">বিস্তারিত দেখুন</a>
         </div>
-        <!-- ১৩৬. তুলসী -->
         <div class="herb-card">
-            <div class="herb-image"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500" alt="Tulsi"></div>
-            <h3>তুলসী</h3><p>সর্দি ও কাশি নিরাময়ে অত্যন্ত কার্যকর।</p>
-            <a href="tulsi.html" class="herb-btn">বিস্তারিত দেখুন</a>
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1553279768-865429fa0078?w=500" alt="Aam"></div>
+            <h3>আম</h3><p>রুচি বাড়াতে এবং লিভারের যত্নে উপকারী।</p>
+            <a href="aam.html" class="herb-btn">বিস্তারিত দেখুন</a>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="container">
+    <div class="section-title">
+        <h2>কেন ভেষজ চিকিৎসা কোষ?</h2>
+        <p>প্রাকৃতিক চিকিৎসার নির্ভরযোগ্য ডিজিটাল প্ল্যাটফর্ম</p>
+    </div>
+    <div class="features">
+        <div class="feature-box">
+            <i class="fas fa-seedling"></i>
+            <h3>প্রাকৃতিক সমাধান</h3>
+            <p>প্রাচীন ভেষজ জ্ঞান ও আধুনিক তথ্যের সমন্বয়।</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-book-open"></i>
+            <h3>বিস্তারিত তথ্য</h3>
+            <p>প্রতিটি উদ্ভিদের গুণাগুণ, ব্যবহার ও সতর্কতা।</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-shield-heart"></i>
+            <h3>স্বাস্থ্য সচেতনতা</h3>
+            <p>নিরাপদ ও সচেতন ভেষজ ব্যবহারের নির্দেশনা।</p>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="container">
+    <div class="newsletter">
+        <h2>নতুন ভেষজ তথ্য পেতে যুক্ত থাকুন</h2>
+        <p>আপনার ইমেইল দিয়ে নতুন স্বাস্থ্য টিপস ও ভেষজ তথ্য সংগ্রহ করুন।</p>
+        <div class="newsletter-form">
+            <input type="email" id="subscriberEmail" placeholder="আপনার ইমেইল লিখুন">
+            <button onclick="subscribeUser()">সাবস্ক্রাইব</button>
         </div>
     </div>
 </section>
@@ -168,6 +222,7 @@
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
 
 <script>
+    // Firebase Config
     const firebaseConfig = {
       apiKey: "AIzaSyC2Ak9UCORHwy0HJrl3eIbfS2ILBdK_bBE",
       authDomain: "vesojo-chikitsakosh.firebaseapp.com",
@@ -186,6 +241,12 @@
     }
 
     function logoutUser() { auth.signOut(); }
+
+    function subscribeUser() {
+        let email = document.getElementById('subscriberEmail').value;
+        if(email) alert("ধন্যবাদ! আপনি সফলভাবে সাবস্ক্রাইব করেছেন।");
+        else alert("অনুগ্রহ করে একটি সঠিক ইমেইল লিখুন।");
+    }
 
     auth.onAuthStateChanged(user => {
         if (user) {
