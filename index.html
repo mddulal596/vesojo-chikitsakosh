@@ -29,10 +29,10 @@
         }
         .logo { color: white; text-decoration: none; font-size: 22px; font-weight: 700; }
         .nav-links { display: flex; list-style: none; align-items: center; }
-        .nav-links li a { color: white; text-decoration: none; padding: 10px 18px; display: block; transition: 0.3s; }
+        .nav-links li a { color: white; text-decoration: none; padding: 10px 18px; display: block; transition: 0.3s; cursor: pointer; }
         .signup-btn {
             background: #ff9800; color: white !important; padding: 8px 25px !important;
-            border-radius: 50px; margin-left: 15px; font-weight: 600; cursor: pointer;
+            border-radius: 50px; margin-left: 15px; font-weight: 600;
         }
 
         /* HERO SECTION */
@@ -44,7 +44,7 @@
         .search-box {
             max-width: 600px; margin: 30px auto 0; display: flex; background: white; border-radius: 60px; overflow: hidden;
         }
-        .search-box input { flex: 1; padding: 15px 25px; border: none; outline: none; font-size: 16px; }
+        .search-box input { flex: 1; padding: 15px 25px; border: none; outline: none; font-size: 16px; color: #333; }
         .search-box button { width: 65px; border: none; background: var(--primary); color: white; cursor: pointer; font-size: 18px; }
 
         /* NEWS TICKER */
@@ -60,7 +60,7 @@
         .section-title { text-align: center; margin-bottom: 40px; }
         .section-title h2 { font-size: 2.2rem; color: var(--dark); margin-bottom: 10px; }
 
-        /* HERB SECTION (Locked by Default) */
+        /* HERB SECTION */
         #herb-section { display: none; }
         .locked-msg { text-align: center; padding: 60px 20px; background: #fff3e0; border-radius: 25px; box-shadow: var(--shadow); }
         .google-btn {
@@ -68,7 +68,6 @@
             border-radius: 50px; font-weight: bold; cursor: pointer; font-size: 16px; margin-top: 15px;
         }
 
-        /* GRID */
         .herb-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .herb-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); text-align: center; padding-bottom: 25px; transition: 0.3s; }
         .herb-card:hover { transform: translateY(-8px); }
@@ -78,25 +77,24 @@
 
         /* FEATURES SECTION */
         .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 20px; }
-        .feature-box { background: white; padding: 40px 30px; border-radius: 20px; text-align: center; box-shadow: var(--shadow); transition: 0.3s; }
-        .feature-box:hover { transform: translateY(-5px); }
-        .feature-box i { font-size: 3.5rem; color: var(--primary); margin-bottom: 25px; display: block; }
+        .feature-box { background: white; padding: 40px 30px; border-radius: 20px; text-align: center; box-shadow: var(--shadow); }
+        .feature-box i { font-size: 3.5rem; color: var(--primary); margin-bottom: 20px; display: block; }
 
-        /* NEWSLETTER SECTION */
+        /* NEWSLETTER */
         .newsletter {
             background: linear-gradient(135deg, #039be5, #01579b);
-            padding: 70px 20px; border-radius: 30px; color: white; text-align: center; margin-top: 50px;
+            padding: 60px 20px; border-radius: 30px; color: white; text-align: center; margin-top: 40px;
         }
         .newsletter-form {
-            max-width: 650px; margin: 30px auto 0; display: flex; background: white; border-radius: 60px; overflow: hidden;
+            max-width: 600px; margin: 25px auto 0; display: flex; background: white; border-radius: 60px; overflow: hidden;
         }
-        .newsletter-form input { flex: 1; padding: 18px 25px; border: none; outline: none; font-size: 16px; color: #333; }
-        .newsletter-form button { border: none; background: #ff9800; color: white; padding: 0 35px; font-size: 17px; font-weight: 700; cursor: pointer; }
+        .newsletter-form input { flex: 1; padding: 15px 25px; border: none; outline: none; font-size: 16px; color: #333; }
+        .newsletter-form button { border: none; background: #ff9800; color: white; padding: 0 30px; font-weight: 700; cursor: pointer; }
 
         /* FOOTER */
         footer { background: #444; color: white; text-align: center; padding: 60px 20px; margin-top: 50px; }
         .footer-social { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
-        .footer-btn { display: flex; align-items: center; gap: 8px; padding: 10px 25px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; }
+        .footer-btn { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; font-size: 14px; transition: 0.3s; }
         
         .fb { background: #1877F2; }
         .yt { background: #FF0000; }
@@ -106,9 +104,8 @@
         @media(max-width:768px){ 
             .hero h1 { font-size: 2rem; }
             .nav-links { display: none; }
-            .newsletter-form { flex-direction: column; border-radius: 20px; background: transparent; gap: 10px; }
-            .newsletter-form input { border-radius: 50px; padding: 15px; }
-            .newsletter-form button { border-radius: 50px; padding: 15px; }
+            .newsletter-form { flex-direction: column; background: transparent; border-radius: 0; }
+            .newsletter-form input, .newsletter-form button { border-radius: 50px; margin-bottom: 10px; padding: 15px; }
         }
     </style>
 </head>
@@ -117,7 +114,8 @@
 <nav>
     <a href="#" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
     <ul class="nav-links">
-        <li><a href="#">হোম</a></li>
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="Herbs-list.html">সকল তালিকা</a></li>
         <li id="logout-li" style="display:none;"><a onclick="logoutUser()">লগ আউট</a></li>
         <li><a id="nav-login" class="signup-btn" onclick="loginWithGoogle()"><i class="fab fa-google"></i> গুগল দিয়ে প্রবেশ</a></li>
     </ul>
@@ -126,32 +124,30 @@
 <section class="hero">
     <h1>🌿 ভেষজ চিকিৎসা কোষ</h1>
     <div class="search-box">
-        <input type="text" id="herbSearchInput" placeholder="ভেষজ গাছ খুঁজুন..." onkeyup="searchHerb()">
-        <button onclick="searchHerb()"><i class="fas fa-search"></i></button>
+        <input type="text" id="herbSearchInput" placeholder="ভেষজ গাছ খুঁজুন (উদা: লটকন, নিম)...">
+        <button onclick="handleSearch()"><i class="fas fa-search"></i></button>
     </div>
 </section>
 
 <div class="news-ticker">
     <div class="ticker-content">
-        🔴 ব্রেকিং নিউজ: আমাদের প্ল্যাটফর্মে এখন ১০০টিরও বেশি ভেষজ গাছের তথ্য পাওয়া যাচ্ছে। &nbsp;&nbsp;&nbsp; 🌿 প্রাকৃতিক চিকিৎসায় নতুন বিপ্লব! &nbsp;&nbsp;&nbsp; 🔴 ই-বুক "রোগমুক্তির সহজ ভেষজ" শীঘ্রই আসছে।
+        🔴 ব্রেকিং নিউজ: আমাদের প্ল্যাটফর্মে এখন ১৪১টি ভেষজ গাছের তথ্য পাওয়া যাচ্ছে। &nbsp;&nbsp;&nbsp; 🌿 প্রাকৃতিক চিকিৎসায় নতুন বিপ্লব! &nbsp;&nbsp;&nbsp; 🔴 ই-বুক "রোগমুক্তির সহজ ভেষজ" শীঘ্রই আসছে।
     </div>
 </div>
 
-<!-- Lock Notice -->
 <div id="lock-notice" class="container">
     <div class="locked-msg">
         <h2>🔒 তথ্যগুলো দেখতে লগইন করুন</h2>
-        <p>ভেষজ গাছের বিস্তারিত তালিকা এবং গুণাগুণ জানতে গুগল অ্যাকাউন্ট দিয়ে লগইন করুন।</p>
+        <p>ভেষজ গাছের বিস্তারিত তালিকা পড়তে আপনার গুগল অ্যাকাউন্ট দিয়ে লগইন করুন।</p>
         <button class="google-btn" onclick="loginWithGoogle()"><i class="fab fa-google"></i> Google দিয়ে লগইন করুন</button>
     </div>
 </div>
 
-<!-- Herb Section (Authenticated Only) -->
 <section class="container" id="herb-section">
     <div class="section-title">
         <h2>জনপ্রিয় ভেষজ গাছসমূহ</h2>
     </div>
-    <div class="herb-grid" id="herbGrid">
+    <div class="herb-grid">
         <div class="herb-card">
             <div class="herb-image"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500" alt="Tulsi"></div>
             <h3>তুলসী</h3><p>সর্দি ও কাশি নিরাময়ে অত্যন্ত কার্যকর।</p>
@@ -168,9 +164,11 @@
             <a href="aam.html" class="herb-btn">বিস্তারিত দেখুন</a>
         </div>
     </div>
+    <div style="text-align:center; margin-top:40px;">
+        <a href="Herbs-list.html" class="herb-btn" style="background:#4caf50;">সকল ১৪১টি ভেষজ দেখুন</a>
+    </div>
 </section>
 
-<!-- Features Section -->
 <section class="container">
     <div class="section-title">
         <h2>কেন ভেষজ চিকিৎসা কোষ?</h2>
@@ -195,14 +193,13 @@
     </div>
 </section>
 
-<!-- Newsletter Section -->
 <section class="container">
     <div class="newsletter">
         <h2>নতুন ভেষজ তথ্য পেতে যুক্ত থাকুন</h2>
         <p>আপনার ইমেইল দিয়ে নতুন স্বাস্থ্য টিপস ও ভেষজ তথ্য সংগ্রহ করুন।</p>
         <div class="newsletter-form">
-            <input type="email" id="subscriberEmail" placeholder="আপনার ইমেইল লিখুন">
-            <button onclick="subscribeUser()">সাবস্ক্রাইব</button>
+            <input type="email" placeholder="আপনার ইমেইল লিখুন">
+            <button onclick="alert('ধন্যবাদ! আপনি সাবস্ক্রাইব করেছেন।')">সাবস্ক্রাইব</button>
         </div>
     </div>
 </section>
@@ -222,7 +219,6 @@
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
 
 <script>
-    // Firebase Config
     const firebaseConfig = {
       apiKey: "AIzaSyC2Ak9UCORHwy0HJrl3eIbfS2ILBdK_bBE",
       authDomain: "vesojo-chikitsakosh.firebaseapp.com",
@@ -236,40 +232,39 @@
     const auth = firebase.auth();
     const provider = new firebase.auth.GoogleAuthProvider();
 
-    function loginWithGoogle() {
-        auth.signInWithPopup(provider).catch((error) => { alert("ত্রুটি: " + error.message); });
-    }
-
+    function loginWithGoogle() { auth.signInWithPopup(provider); }
     function logoutUser() { auth.signOut(); }
 
-    function subscribeUser() {
-        let email = document.getElementById('subscriberEmail').value;
-        if(email) alert("ধন্যবাদ! আপনি সফলভাবে সাবস্ক্রাইব করেছেন।");
-        else alert("অনুগ্রহ করে একটি সঠিক ইমেইল লিখুন।");
+    // সার্চ ফাংশন: যা সরাসরি লিস্ট পেজে নিয়ে যাবে
+    function handleSearch() {
+        let query = document.getElementById('herbSearchInput').value.trim();
+        if(query) {
+            window.location.href = "Herbs-list.html?search=" + encodeURIComponent(query);
+        }
     }
 
-    auth.onAuthStateChanged(user => {
-        if (user) {
-            document.getElementById('herb-section').style.display = 'block';
-            document.getElementById('lock-notice').style.display = 'none';
-            document.getElementById('logout-li').style.display = 'block';
-            document.getElementById('nav-login').style.display = 'none';
-        } else {
-            document.getElementById('herb-section').style.display = 'none';
-            document.getElementById('lock-notice').style.display = 'block';
-            document.getElementById('logout-li').style.display = 'none';
-            document.getElementById('nav-login').style.display = 'block';
-        }
+    document.getElementById('herbSearchInput').addEventListener("keypress", function(e) {
+        if (e.key === "Enter") handleSearch();
     });
 
-    function searchHerb() {
-        let input = document.getElementById('herbSearchInput').value.toLowerCase();
-        let cards = document.getElementsByClassName('herb-card');
-        for (let card of cards) {
-            let title = card.querySelector('h3').innerText.toLowerCase();
-            card.style.display = title.includes(input) ? "block" : "none";
+    auth.onAuthStateChanged(user => {
+        const herbSec = document.getElementById('herb-section');
+        const lockNotice = document.getElementById('lock-notice');
+        const logoutBtn = document.getElementById('logout-li');
+        const loginBtn = document.getElementById('nav-login');
+
+        if (user) {
+            herbSec.style.display = 'block';
+            lockNotice.style.display = 'none';
+            logoutBtn.style.display = 'block';
+            loginBtn.style.display = 'none';
+        } else {
+            herbSec.style.display = 'none';
+            lockNotice.style.display = 'block';
+            logoutBtn.style.display = 'none';
+            loginBtn.style.display = 'block';
         }
-    }
+    });
 </script>
 </body>
 </html>
