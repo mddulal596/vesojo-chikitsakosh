@@ -1,241 +1,200 @@
 <!DOCTYPE html>
 <html lang="bn">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>সকল ভেষজ তালিকা | ভেষজ চিকিৎসা কোষ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --light: #f1f8e9;
+            --text: #333;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--light); color: var(--text); margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--primary); margin-bottom: 20px; }
+        
+        .search-box { position: relative; margin-bottom: 30px; }
+        .search-box input { width: 100%; padding: 15px 45px 15px 20px; border: 2px solid #ddd; border-radius: 50px; font-size: 16px; outline: none; transition: 0.3s; }
+        .search-box input:focus { border-color: var(--primary); }
+        .search-box i { position: absolute; right: 20px; top: 18px; color: #888; }
 
-<title>ভেষজ তালিকা | রোগ অনুযায়ী ভেষজ চিকিৎসা কোষ</title>
-
-<style>
-
-body{
-    font-family:'Segoe UI',sans-serif;
-    margin:0;
-    background:#f5fbff;
-}
-
-/* HEADER */
-header{
-    background:linear-gradient(135deg,#039be5,#01579b);
-    color:white;
-    text-align:center;
-    padding:70px 20px;
-}
-
-header h1{
-    margin:0;
-    font-size:2.4rem;
-}
-
-header p{
-    margin-top:10px;
-    opacity:0.9;
-}
-
-/* CONTAINER */
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:40px 20px;
-}
-
-/* SEARCH */
-.search-box{
-    max-width:650px;
-    margin:30px auto;
-}
-
-.search-box input{
-    width:100%;
-    padding:15px;
-    border-radius:50px;
-    border:1px solid #ccc;
-    outline:none;
-}
-
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
-}
-
-/* CARD */
-.card{
-    background:white;
-    border-radius:15px;
-    padding:20px;
-    box-shadow:0 10px 25px rgba(0,0,0,0.08);
-    border-left:6px solid #1976d2;
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-6px);
-}
-
-/* TITLE */
-.card h2{
-    margin:0;
-    color:#01579b;
-    font-size:1.4rem;
-}
-
-/* DISEASE TAGS */
-.tags{
-    margin-top:12px;
-}
-
-.tag{
-    display:inline-block;
-    background:#e3f2fd;
-    color:#01579b;
-    padding:5px 10px;
-    border-radius:20px;
-    font-size:0.85rem;
-    margin:3px;
-}
-
-/* BUTTON */
-.card a{
-    display:inline-block;
-    margin-top:15px;
-    padding:10px 18px;
-    background:#1976d2;
-    color:white;
-    text-decoration:none;
-    border-radius:25px;
-    font-size:14px;
-}
-
-/* FOOTER */
-footer{
-    text-align:center;
-    padding:30px;
-    background:#666;
-    color:white;
-    margin-top:50px;
-}
-
-</style>
-
+        .herb-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; list-style: none; padding: 0; }
+        .herb-item { background: #f9f9f9; border: 1px solid #eee; border-radius: 8px; transition: 0.2s; }
+        .herb-item:hover { background: #e8f5e9; transform: scale(1.02); }
+        .herb-item a { display: block; padding: 12px; text-decoration: none; color: #444; font-weight: 500; font-size: 15px; }
+        
+        .back-btn { display: inline-block; margin-bottom: 20px; text-decoration: none; color: var(--primary); font-weight: bold; }
+    </style>
 </head>
-
 <body>
 
-<header>
-    <h1>🌿 ভেষজ গাছের রোগ ভিত্তিক তালিকা</h1>
-    <p>প্রতিটি গাছ কোন রোগে কাজ করে তা এখানে দেখুন</p>
-</header>
-
 <div class="container">
-
-<!-- SEARCH -->
-<div class="search-box">
-    <input type="text" placeholder="গাছ বা রোগ খুঁজুন...">
-</div>
-
-<div class="grid">
-
-<!-- 1 -->
-<div class="card">
-    <h2>তুলসী (Tulsi)</h2>
-    <div class="tags">
-        <span class="tag">সর্দি</span>
-        <span class="tag">কাশি</span>
-        <span class="tag">জ্বর</span>
-        <span class="tag">ইমিউনিটি</span>
+    <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> ফিরে যান</a>
+    <h1>🌿 সকল ভেষজ গাছের তালিকা</h1>
+    
+    <div class="search-box">
+        <input type="text" id="listSearch" placeholder="নাম লিখে খুঁজুন (উদা: আম, নিম...)" onkeyup="filterList()">
+        <i class="fas fa-search"></i>
     </div>
-    <a href="tulsi.html">বিস্তারিত দেখুন</a>
+
+    <ul class="herb-list" id="herbList">
+        <!-- আপনার দেওয়া ১৪১টি ফাইল এখানে লিঙ্ক করা হলো -->
+        <li class="herb-item"><a href="aam.html">১. আম</a></li>
+        <li class="herb-item"><a href="ada.html">২. আদা</a></li>
+        <li class="herb-item"><a href="akanda.html">৩. আকন্দ</a></li>
+        <li class="herb-item"><a href="alkushi.html">৪. আলকুশি</a></li>
+        <li class="herb-item"><a href="aloevera.html">৫. অ্যালোভেরা</a></li>
+        <li class="herb-item"><a href="amla.html">৬. আমলকী</a></li>
+        <li class="herb-item"><a href="anantamul.html">৭. অনন্তমূল</a></li>
+        <li class="herb-item"><a href="annaros.html">৮. আনারস</a></li>
+        <li class="herb-item"><a href="apang.html">৯. আপাং</a></li>
+        <li class="herb-item"><a href="arjun.html">১০. অর্জুন</a></li>
+        <li class="herb-item"><a href="ashwagondha.html">১১. অশ্বগন্ধা</a></li>
+        <li class="herb-item"><a href="atis.html">১২. অতিশ</a></li>
+        <li class="herb-item"><a href="atmagupta.html">১৩. আত্মগুপ্ত</a></li>
+        <li class="herb-item"><a href="babla.html">১৪. বাবলা</a></li>
+        <li class="herb-item"><a href="bahera.html">১৫. বহেরা</a></li>
+        <li class="herb-item"><a href="bala.html">১৬. বালা</a></li>
+        <li class="herb-item"><a href="basak.html">১৭. বাসক</a></li>
+        <li class="herb-item"><a href="basonti.html">১৮. বাসন্তী</a></li>
+        <li class="herb-item"><a href="bel.html">১৯. বেল</a></li>
+        <li class="herb-item"><a href="bhumiamlaki.html">২০. ভূমি আমলকী</a></li>
+        <li class="herb-item"><a href="boch.html">২১. বচ</a></li>
+        <li class="herb-item"><a href="boroi.html">২২. বড়ই</a></li>
+        <li class="herb-item"><a href="brahmi.html">২৩. ব্রাহ্মী</a></li>
+        <li class="herb-item"><a href="brihati.html">২৪. বৃহতী</a></li>
+        <li class="herb-item"><a href="chakule.html">২৫. চাকুলে</a></li>
+        <li class="herb-item"><a href="chakunda.html">২৬. চাকুন্দা</a></li>
+        <li class="herb-item"><a href="chandan.html">২৭. চন্দন</a></li>
+        <li class="herb-item"><a href="chirota.html">২৮. চিরতা</a></li>
+        <li class="herb-item"><a href="chita.html">২৯. চিতা</a></li>
+        <li class="herb-item"><a href="chitrak.html">৩০. চিত্রাক</a></li>
+        <li class="herb-item"><a href="dadmordon.html">৩১. দাদমর্দন</a></li>
+        <li class="herb-item"><a href="dalim.html">৩২. ডালিম</a></li>
+        <li class="herb-item"><a href="daruchini.html">৩৩. দারুচিনি</a></li>
+        <li class="herb-item"><a href="daruharidra.html">৩৪. দারু হরিদ্রা</a></li>
+        <li class="herb-item"><a href="dhone.html">৩৫. ধনে</a></li>
+        <li class="herb-item"><a href="dhutura.html">৩৬. ধুতুরা</a></li>
+        <li class="herb-item"><a href="dried-bael.html">৩৭. বেল শুঁট</a></li>
+        <li class="herb-item"><a href="dronapushpi.html">৩৮. দণ্ডকলস</a></li>
+        <li class="herb-item"><a href="dubla.html">৩৯. দুবলা</a></li>
+        <li class="herb-item"><a href="dudhlata.html">৪০. দুধলতা</a></li>
+        <li class="herb-item"><a href="dumur.html">৪১. ডুমুর</a></li>
+        <li class="herb-item"><a href="durbaghash.html">৪২. দুর্বাঘাস</a></li>
+        <li class="herb-item"><a href="elachi.html">৪৩. এলাচি</a></li>
+        <li class="herb-item"><a href="gab.html">৪৪. গাব</a></li>
+        <li class="herb-item"><a href="gambhari.html">৪৫. গাম্ভারী</a></li>
+        <li class="herb-item"><a href="ghreeta_kanchan.html">৪৬. ঘৃত কাঞ্চন</a></li>
+        <li class="herb-item"><a href="ghritokumari.html">৪৭. ঘৃতকুমারী</a></li>
+        <li class="herb-item"><a href="gokhru.html">৪৮. গোখরু</a></li>
+        <li class="herb-item"><a href="halud.html">৪৯. হলুদ</a></li>
+        <li class="herb-item"><a href="haritaki.html">৫০. হরিতকী</a></li>
+        <li class="herb-item"><a href="hatishur.html">৫১. হাতিশুঁড়</a></li>
+        <li class="herb-item"><a href="helencha.html">৫২. হেলঞ্চা</a></li>
+        <li class="herb-item"><a href="hings.html">৫৩. হিঙ্গু</a></li>
+        <li class="herb-item"><a href="indrayab.html">৫৫. ইন্দ্রযব</a></li>
+        <li class="herb-item"><a href="isabgol.html">৫৬. ইসবগুল</a></li>
+        <li class="herb-item"><a href="isabgol_bhusi.html">৫৭. ইসবগুল ভুষি</a></li>
+        <li class="herb-item"><a href="jaam.html">৫৮. জাম</a></li>
+        <li class="herb-item"><a href="jafran.html">৫৯. জাফরান</a></li>
+        <li class="herb-item"><a href="jashtimadhu.html">৬০. যষ্টিমধু</a></li>
+        <li class="herb-item"><a href="joba.html">৬১. জবা</a></li>
+        <li class="herb-item"><a href="jowan.html">৬২. জোয়ান</a></li>
+        <li class="herb-item"><a href="joyfol.html">৬৩. জয়ফল</a></li>
+        <li class="herb-item"><a href="joyotri.html">৬৪. জয়ত্রী</a></li>
+        <li class="herb-item"><a href="kadam.html">৬৫. কদম</a></li>
+        <li class="herb-item"><a href="kakoli.html">৬৬. কাকোলী</a></li>
+        <li class="herb-item"><a href="kalmegh.html">৬৭. কালমেঘ</a></li>
+        <li class="herb-item"><a href="kalo_morich.html">৬৮. গোল মরিচ</a></li>
+        <li class="herb-item"><a href="kalojira.html">৬৯. কালোজিরা</a></li>
+        <li class="herb-item"><a href="kamini.html">৭০. কামিনী</a></li>
+        <li class="herb-item"><a href="kamranga.html">৭১. কামরাঙা</a></li>
+        <li class="herb-item"><a href="kanchan.html">৭২. কাঞ্চন</a></li>
+        <li class="herb-item"><a href="kantakari.html">৭৩. কন্টকারী</a></li>
+        <li class="herb-item"><a href="karomcha.html">৭৪. করমচা</a></li>
+        <li class="herb-item"><a href="keshraj.html">৭৫. কেশরাজ</a></li>
+        <li class="herb-item"><a href="keya.html">৭৬. কেয়া</a></li>
+        <li class="herb-item"><a href="khayer.html">৭৭. খয়ের</a></li>
+        <li class="herb-item"><a href="kokilaksha.html">৭৮. কোকিলাক্ষ</a></li>
+        <li class="herb-item"><a href="kolmi.html">৭৯. কলমি</a></li>
+        <li class="herb-item"><a href="kulekhara.html">৮০. কুলে খাড়া</a></li>
+        <li class="herb-item"><a href="kurchi.html">৮১. কুরচি</a></li>
+        <li class="herb-item"><a href="kutki.html">৮২. কুটকি</a></li>
+        <li class="herb-item"><a href="lata_kosturi.html">৮৩. লতা কস্তুরী</a></li>
+        <li class="herb-item"><a href="lobongo.html">৮৪. লবঙ্গ</a></li>
+        <li class="herb-item"><a href="lodhra.html">৮৫. লোধ্র</a></li>
+        <li class="herb-item"><a href="lojjaboti.html">৮৬. লজ্জাবতী</a></li>
+        <li class="herb-item"><a href="lotkon.html">৮৭. লটকন</a></li>
+        <li class="herb-item"><a href="manjistha.html">৮৮. মঞ্জিষ্ঠা</a></li>
+        <li class="herb-item"><a href="mankochu.html">৮৯. মানকচু</a></li>
+        <li class="herb-item"><a href="mendi_pata.html">৯০. মেহেদি পাতা</a></li>
+        <li class="herb-item"><a href="methi.html">৯১. মেথি</a></li>
+        <li class="herb-item"><a href="mouri.html">৯২. মৌরি</a></li>
+        <li class="herb-item"><a href="musta.html">৯৩. মুস্তা</a></li>
+        <li class="herb-item"><a href="nageshwar.html">৯৪. নাগেশ্বর</a></li>
+        <li class="herb-item"><a href="nagkesar.html">৯৫. নাগকেশর</a></li>
+        <li class="herb-item"><a href="neem.html">৯৬. নিম</a></li>
+        <li class="herb-item"><a href="nishinda.html">৯৭. নিশিন্দা</a></li>
+        <li class="herb-item"><a href="onjon.html">৯৮. অঞ্জন</a></li>
+        <li class="herb-item"><a href="oporajita.html">৯৯. অপরাজিতা</a></li>
+        <li class="herb-item"><a href="palash.html">১০০. পলাশ</a></li>
+        <li class="herb-item"><a href="parpat.html">১০১. পার্পট</a></li>
+        <li class="herb-item"><a href="pashanbhed.html">১০২. পাষাণভেদ</a></li>
+        <li class="herb-item"><a href="patha.html">১০৩. পাঠা</a></li>
+        <li class="herb-item"><a href="pathorkuchi.html">১০৪. পাথরকুচি</a></li>
+        <li class="herb-item"><a href="periwinkle.html">১০৫. নয়নতারা</a></li>
+        <li class="herb-item"><a href="peyaj.html">১০৬. পেঁয়াজ</a></li>
+        <li class="herb-item"><a href="peyara.html">১০৭. পেয়ারা</a></li>
+        <li class="herb-item"><a href="pipul.html">১০৮. পিপুল</a></li>
+        <li class="herb-item"><a href="pitraj.html">১০৯. পিটরাজ</a></li>
+        <li class="herb-item"><a href="priyangu.html">১১০. প্রিয়ঙ্গু</a></li>
+        <li class="herb-item"><a href="pudina.html">১১১. পুদিনা</a></li>
+        <li class="herb-item"><a href="purnarnava.html">১১২. পুনর্নবা</a></li>
+        <li class="herb-item"><a href="roktokorobi.html">১১৩. রক্ত করবী</a></li>
+        <li class="herb-item"><a href="senna.html">১১৪. সোনা পাতা</a></li>
+        <li class="herb-item"><a href="shahidana.html">১১৫. শাহি দানা</a></li>
+        <li class="herb-item"><a href="shat_muli.html">১১৬. শতমূলী</a></li>
+        <li class="herb-item"><a href="shatavari.html">১১৭. শতমূলী (শতাবরী)</a></li>
+        <li class="herb-item"><a href="shilajit.html">১১৮. শিলাজিৎ</a></li>
+        <li class="herb-item"><a href="shimal.html">১১৯. শিমুল</a></li>
+        <li class="herb-item"><a href="shirish.html">১২০. শিরীষ</a></li>
+        <li class="herb-item"><a href="shiuli.html">১২১. শিউলি</a></li>
+        <li class="herb-item"><a href="shiyal_moti.html">১২২. শিয়াল মতি</a></li>
+        <li class="herb-item"><a href="shojne.html">১২৩. সজনে</a></li>
+        <li class="herb-item"><a href="shonkhopushpi.html">১২৪. শঙ্খপুষ্পী</a></li>
+        <li class="herb-item"><a href="shosher_tel.html">১২৫. সরিষার তেল</a></li>
+        <li class="herb-item"><a href="shwet_akondo.html">১২৬. শ্বেত আকন্দ</a></li>
+        <li class="herb-item"><a href="shwet_chondon.html">১২৭. শ্বেত চন্দন</a></li>
+        <li class="herb-item"><a href="sorpogondha.html">১২৮. সর্পগন্ধা</a></li>
+        <li class="herb-item"><a href="talmakhana.html">১২৯. তালমাখনা</a></li>
+        <li class="herb-item"><a href="tejbol.html">১৩০. তেজবল</a></li>
+        <li class="herb-item"><a href="tejpata.html">১৩১. তেজপাতা</a></li>
+        <li class="herb-item"><a href="telakucha.html">১৩২. তেলাকুচা</a></li>
+        <li class="herb-item"><a href="tetul.html">১৩৩. তেঁতুল</a></li>
+        <li class="herb-item"><a href="thankuni.html">১৩৪. থানকুনি</a></li>
+        <li class="herb-item"><a href="trivrit.html">১৩৫. ত্রিভৃত</a></li>
+        <li class="herb-item"><a href="tulsi.html">১৩৬. তুলসী</a></li>
+        <li class="herb-item"><a href="ulotkombol.html">১৩৭. ওলটকম্বল</a></li>
+        <li class="herb-item"><a href="vacha.html">১৩৮. বচ</a></li>
+        <li class="herb-item"><a href="vanda.html">১৩৯. বান্দা</a></li>
+        <li class="herb-item"><a href="vidari.html">১৪০. বিদারি</a></li>
+        <li class="herb-item"><a href="vringoraj.html">১৪১. ভৃঙ্গরাজ</a></li>
+    </ul>
 </div>
 
-<!-- 2 -->
-<div class="card">
-    <h2>নিম (Neem)</h2>
-    <div class="tags">
-        <span class="tag">চর্মরোগ</span>
-        <span class="tag">ব্যাকটেরিয়া</span>
-        <span class="tag">ফাঙ্গাস</span>
-    </div>
-    <a href="neem.html">বিস্তারিত দেখুন</a>
-</div>
-
-<!-- 3 -->
-<div class="card">
-    <h2>অ্যালোভেরা</h2>
-    <div class="tags">
-        <span class="tag">ত্বক</span>
-        <span class="tag">চুল</span>
-        <span class="tag">হজম</span>
-    </div>
-    <a href="aloevera.html">বিস্তারিত দেখুন</a>
-</div>
-
-<!-- 4 -->
-<div class="card">
-    <h2>আদা (Ginger)</h2>
-    <div class="tags">
-        <span class="tag">সর্দি</span>
-        <span class="tag">গ্যাস</span>
-        <span class="tag">বমি</span>
-        <span class="tag">হজম</span>
-    </div>
-    <a href="ada.html">বিস্তারিত দেখুন</a>
-</div>
-
-<!-- 5 -->
-<div class="card">
-    <h2>হলুদ (Turmeric)</h2>
-    <div class="tags">
-        <span class="tag">প্রদাহ</span>
-        <span class="tag">ঘা</span>
-        <span class="tag">ইনফেকশন</span>
-    </div>
-    <a href="halud.html">বিস্তারিত দেখুন</a>
-</div>
-
-<!-- 6 -->
-<div class="card">
-    <h2>আমলকি (Amla)</h2>
-    <div class="tags">
-        <span class="tag">চুল</span>
-        <span class="tag">ডায়াবেটিস</span>
-        <span class="tag">ইমিউনিটি</span>
-    </div>
-    <a href="amla.html">বিস্তারিত দেখুন</a>
-</div>
-
-<!-- 7 -->
-<div class="card">
-    <h2>অশ্বগন্ধা</h2>
-    <div class="tags">
-        <span class="tag">স্ট্রেস</span>
-        <span class="tag">দুর্বলতা</span>
-        <span class="tag">ঘুম</span>
-    </div>
-    <a href="ashwagondha.html">বিস্তারিত দেখুন</a>
-</div>
-
-<!-- 8 -->
-<div class="card">
-    <h2>ব্রাহ্মী</h2>
-    <div class="tags">
-        <span class="tag">মস্তিষ্ক</span>
-        <span class="tag">স্মৃতি</span>
-        <span class="tag">মনোযোগ</span>
-    </div>
-    <a href="brahmi.html">বিস্তারিত দেখুন</a>
-</div>
-
-</div>
-
-</div>
-
-<footer>
-    🌿 ভেষজ চিকিৎসা কোষ © ২০২৬ | রোগ অনুযায়ী প্রাকৃতিক চিকিৎসা
-</footer>
+<script>
+    function filterList() {
+        let input = document.getElementById('listSearch').value.toLowerCase();
+        let items = document.getElementsByClassName('herb-item');
+        
+        for (let i = 0; i < items.length; i++) {
+            let text = items[i].innerText.toLowerCase();
+            items[i].style.display = text.includes(input) ? "" : "none";
+        }
+    }
+</script>
 
 </body>
-
 </html>
