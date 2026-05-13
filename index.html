@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ভেষজ চিকিৎসা কোষ | ১০০+ ঔষধি গাছের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</title>
-    <meta name="description" content="বাংলার প্রাচীন ভেষজ চিকিৎসা ও ১০০+ ঔষধি গাছের গুণাগুণ, ব্যবহার, সেবন বিধি ও বিস্তারিত তথ্য।">
-    <meta name="keywords" content="ভেষজ চিকিৎসা, ঔষধি গাছ, Herbal Medicine, Ayurvedic Plants, বাংলা herbal এনসাইক্লোপিডিয়া">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -20,7 +18,6 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', sans-serif; background: var(--light); color: var(--text); line-height: 1.7; }
 
         nav {
@@ -31,12 +28,8 @@
 
         .logo { color: white; text-decoration: none; font-size: 24px; font-weight: 700; }
         .nav-links { display: flex; list-style: none; }
-        .nav-links li a { color: white; text-decoration: none; padding: 28px 18px; display: block; transition: 0.3s; cursor: pointer; }
+        .nav-links li a { color: white; text-decoration: none; padding: 28px 18px; display: block; cursor: pointer; }
         .nav-links li a:hover { background: #115293; }
-
-        .nav-social { display: flex; gap: 10px; }
-        .nav-social a { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: 0.3s; }
-        .nav-social a:hover { background: rgba(255, 255, 255, 0.2); transform: translateY(-3px); }
 
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('https://images.unsplash.com/photo-1471193945509-9ad0617afabf?q=80&w=1400&auto=format&fit=crop');
@@ -44,8 +37,6 @@
         }
 
         .hero h1 { font-size: 3.5rem; margin-bottom: 20px; }
-        .hero p { font-size: 1.3rem; max-width: 850px; margin: auto; }
-
         .search-box {
             max-width: 700px; margin: 40px auto 0; display: flex; background: white; border-radius: 60px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
@@ -56,10 +47,6 @@
         .container { max-width: 1200px; margin: auto; padding: 80px 20px; }
         .section-title { text-align: center; margin-bottom: 50px; }
         .section-title h2 { font-size: 2.7rem; color: #01579b; margin-bottom: 10px; }
-
-        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: -70px; }
-        .stat-card { background: white; padding: 35px; border-radius: 20px; text-align: center; box-shadow: var(--shadow); }
-        .stat-card i { font-size: 3rem; color: #039be5; margin-bottom: 15px; }
 
         .herb-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
         .herb-card { background: white; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); transition: 0.35s; }
@@ -75,10 +62,7 @@
         .filter-btn { padding: 10px 20px; margin: 5px; border: 2px solid var(--primary); background: white; color: var(--primary); border-radius: 30px; cursor: pointer; font-weight: 600; transition: 0.3s; }
         .filter-btn.active { background: var(--primary); color: white; }
 
-        footer { background: linear-gradient(135deg, #6d6d6d, #8d8d8d); color: white; text-align: center; padding: 80px 20px 45px; }
-        .footer-social { display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; margin-bottom: 40px; }
-        .footer-btn { display: flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; }
-        .fb { background: #1877F2; } .yt { background: #FF0000; }
+        footer { background: linear-gradient(135deg, #6d6d6d, #8d8d8d); color: white; text-align: center; padding: 60px 20px; margin-top: 40px;}
     </style>
 </head>
 
@@ -91,10 +75,6 @@
         <li><a href="#herb-section">ভেষজ তালিকা</a></li>
         <li><a id="auth-action" onclick="handleAuth()">লগইন</a></li>
     </ul>
-    <div class="nav-social">
-        <a href="https://www.facebook.com/bonargidawahkana.net" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.youtube.com/c/bonarjidawakhana" target="_blank"><i class="fab fa-youtube"></i></a>
-    </div>
 </nav>
 
 <section class="hero">
@@ -110,19 +90,50 @@
     <div class="section-title">
         <h2>জনপ্রিয় ভেষজ গাছসমূহ</h2>
     </div>
+
     <div class="filter-btns">
         <button class="filter-btn active" onclick="filterHerbs('all')">সবগুলো</button>
+        <button class="filter-btn" onclick="filterHerbs('সর্দি')">সর্দি-কাশি</button>
+        <button class="filter-btn" onclick="filterHerbs('ত্বক')">ত্বক ও চর্ম</button>
+        <button class="filter-btn" onclick="filterHerbs('হজম')">হজম ও পেট</button>
     </div>
+
     <div class="herb-grid" id="herbGrid">
+        <!-- কার্ড ১ -->
         <div class="herb-card" data-category="সর্দি">
-            <div class="herb-image"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=1200&auto=format&fit=crop"></div>
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500"></div>
             <div class="herb-content"><h3>তুলসী</h3><p>সর্দি, কাশি ও রোগ প্রতিরোধ ক্ষমতা বাড়াতে অত্যন্ত উপকারী।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
+        </div>
+        <!-- কার্ড ২ -->
+        <div class="herb-card" data-category="ত্বক হজম">
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500"></div>
+            <div class="herb-content"><h3>অ্যালোভেরা</h3><p>ত্বক, চুল ও হজমের জন্য বহুল ব্যবহৃত প্রাকৃতিক ভেষজ।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
+        </div>
+        <!-- কার্ড ৩ -->
+        <div class="herb-card" data-category="ত্বক">
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=500"></div>
+            <div class="herb-content"><h3>নিম</h3><p>চর্মরোগ, রক্ত পরিষ্কার ও জীবাণুনাশক হিসেবে বিখ্যাত।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
+        </div>
+        <!-- কার্ড ৪ -->
+        <div class="herb-card" data-category="হজম">
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1594282486552-05b4d80fbb9f?w=500"></div>
+            <div class="herb-content"><h3>আদা</h3><p>হজম শক্তি বাড়াতে এবং বমি ভাব দূর করতে দারুণ কার্যকর।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
+        </div>
+        <!-- কার্ড ৫ -->
+        <div class="herb-card" data-category="সর্দি ত্বক">
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1615485500704-8e990f3900f7?w=500"></div>
+            <div class="herb-content"><h3>হলুদ</h3><p>প্রদাহ নাশক এবং ত্বকের উজ্জ্বলতা বৃদ্ধিতে ব্যবহৃত হয়।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
+        </div>
+        <!-- কার্ড ৬ -->
+        <div class="herb-card" data-category="হজম">
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1589012900764-1152d9b601ee?w=500"></div>
+            <div class="herb-content"><h3>আমলকী</h3><p>ভিটামিন-সি সমৃদ্ধ যা চুল পড়া বন্ধ ও হজমে সাহায্য করে।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
         </div>
     </div>
 </section>
 
 <footer>
-    <h2 class="footer-title">🌿 ভেষজ চিকিৎসা কোষ</h2>
+    <h2>🌿 ভেষজ চিকিৎসা কোষ</h2>
     <p>© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
@@ -149,27 +160,20 @@
         if (auth.currentUser) {
             signOut(auth).then(() => alert("লগআউট সফল হয়েছে"));
         } else {
-            signInWithPopup(auth, provider)
-                .then((result) => {
-                    const details = getAdditionalUserInfo(result);
-                    // লজিক: যদি ইউজার নতুন হয় (isNewUser = true), তার মানে সে আগে সাইন-আপ করেনি
-                    if (details.isNewUser) {
-                        alert("দুঃখিত! আপনি আগে সাইন-আপ করেননি। আগে রেজিস্ট্রেশন করুন।");
-                        // নতুন ইউজার হলে তাকে লগআউট করে দেওয়া হচ্ছে যাতে লগইন সফল না হয়
-                        signOut(auth);
-                    } else {
-                        alert("স্বাগতম, " + result.user.displayName);
-                    }
-                }).catch((error) => console.error("ত্রুটি:", error));
+            signInWithPopup(auth, provider).then((result) => {
+                const details = getAdditionalUserInfo(result);
+                if (details.isNewUser) {
+                    alert("দুঃখিত! আপনি আগে সাইন-আপ করেননি।");
+                    signOut(auth);
+                } else {
+                    alert("স্বাগতম, " + result.user.displayName);
+                }
+            }).catch((error) => console.error(error));
         }
-    }
+    };
 
     onAuthStateChanged(auth, (user) => {
-        if (user) {
-            authLink.innerText = "লগআউট (" + user.displayName.split(' ')[0] + ")";
-        } else {
-            authLink.innerText = "লগইন";
-        }
+        authLink.innerText = user ? "লগআউট (" + user.displayName.split(' ')[0] + ")" : "লগইন";
     });
 
     window.searchHerb = function() {
@@ -179,8 +183,19 @@
             let title = card.querySelector('h3').innerText.toLowerCase();
             card.style.display = title.includes(input) ? "block" : "none";
         }
-    }
-</script>
+    };
 
+    window.filterHerbs = function(category) {
+        let cards = document.getElementsByClassName('herb-card');
+        let btns = document.getElementsByClassName('filter-btn');
+        for (let btn of btns) btn.classList.remove('active');
+        event.currentTarget.classList.add('active');
+
+        for (let card of cards) {
+            let cardCat = card.getAttribute('data-category');
+            card.style.display = (category === 'all' || cardCat.includes(category)) ? "block" : "none";
+        }
+    };
+</script>
 </body>
 </html>
