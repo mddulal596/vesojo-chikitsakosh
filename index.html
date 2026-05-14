@@ -45,7 +45,8 @@
             max-width: 700px; margin: 40px auto 0; display: flex; background: white; border-radius: 60px; overflow: hidden;
         }
         .search-box input { flex: 1; padding: 18px 25px; border: none; outline: none; font-size: 16px; }
-        .search-box button { width: 75px; border: none; background: var(--primary); color: white; cursor: pointer; font-size: 20px; }
+        .search-box button { width: 75px; border: none; background: var(--primary); color: white; cursor: pointer; font-size: 20px; transition: 0.2s; }
+        .search-box button:hover { background: #0277bd; }
 
         /* NEWS TICKER */
         .news-ticker {
@@ -79,15 +80,18 @@
         .filter-btn {
             padding: 10px 25px; margin: 5px; border: 2.2px solid var(--primary);
             background: white; color: var(--primary); border-radius: 30px; cursor: pointer; font-weight: 600;
+            transition: 0.2s;
         }
         .filter-btn.active { background: var(--primary); color: white; }
+        .filter-btn:hover { background: #e1f5fe; }
 
         .herb-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .herb-card { background: white; border-radius: 25px; overflow: hidden; box-shadow: var(--shadow); text-align: center; padding-bottom: 25px; transition: 0.3s; }
         .herb-card:hover { transform: translateY(-10px); }
         .herb-image { height: 250px; padding: 20px; }
         .herb-image img { width: 100%; height: 100%; object-fit: contain; }
-        .herb-btn { display: inline-block; padding: 12px 35px; background: #1976d2; color: white; text-decoration: none; border-radius: 50px; font-weight: 600; }
+        .herb-btn { display: inline-block; padding: 12px 35px; background: #1976d2; color: white; text-decoration: none; border-radius: 50px; font-weight: 600; transition: 0.2s; }
+        .herb-btn:hover { background: #0d47a1; }
 
         /* বৈশিষ্ট্য সেকশন */
         .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
@@ -103,18 +107,21 @@
             max-width: 650px; margin: 30px auto 0; display: flex; background: white; border-radius: 60px; overflow: hidden;
         }
         .newsletter-form input { flex: 1; padding: 18px 25px; border: none; outline: none; font-size: 16px; }
-        .newsletter-form button { border: none; background: #ff9800; color: white; padding: 0 35px; font-size: 17px; font-weight: 700; cursor: pointer; }
+        .newsletter-form button { border: none; background: #ff9800; color: white; padding: 0 35px; font-size: 17px; font-weight: 700; cursor: pointer; transition: 0.2s; }
+        .newsletter-form button:hover { background: #f57c00; }
 
         /* FOOTER */
         footer { background: linear-gradient(135deg, #6d6d6d, #8d8d8d); color: white; text-align: center; padding: 80px 20px 45px; }
         .footer-social { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; }
-        .footer-btn { display: flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; }
+        .footer-btn { display: flex; align-items: center; gap: 10px; padding: 14px 28px; border-radius: 50px; color: white; text-decoration: none; font-weight: 600; transition: 0.2s; }
         .fb { background: #1877F2; } .yt { background: #FF0000; } .ig { background: linear-gradient(45deg,#f09433,#dc2743,#bc1888); } .ln { background: #0077B5; }
+        .footer-btn:hover { filter: brightness(0.9); transform: scale(1.02); }
 
         @media(max-width:768px){ 
             .nav-links { display: none; }
             .hero h1 { font-size: 2.2rem; }
             .newsletter-form { flex-direction: column; border-radius: 20px; }
+            .search-box button { width: 60px; }
         }
     </style>
 </head>
@@ -151,23 +158,23 @@
     </div>
 
     <div class="filter-btns">
-        <button class="filter-btn active" onclick="filterHerbs('all')">সবগুলো</button>
-        <button class="filter-btn" onclick="filterHerbs('সর্দি')">সর্দি-কাশি</button>
-        <button class="filter-btn" onclick="filterHerbs('ত্বক')">ত্বক ও চর্ম</button>
-        <button class="filter-btn" onclick="filterHerbs('হজম')">হজম ও পেট</button>
+        <button class="filter-btn active" onclick="filterHerbs('all', this)">সবগুলো</button>
+        <button class="filter-btn" onclick="filterHerbs('সর্দি', this)">সর্দি-কাশি</button>
+        <button class="filter-btn" onclick="filterHerbs('ত্বক', this)">ত্বক ও চর্ম</button>
+        <button class="filter-btn" onclick="filterHerbs('হজম', this)">হজম ও পেট</button>
     </div>
 
     <div class="herb-grid" id="herbGrid">
         <div class="herb-card" data-category="সর্দি">
-            <div class="herb-image"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500"></div>
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500" alt="তুলসী"></div>
             <div class="herb-content"><h3>তুলসী</h3><p>সর্দি, কাশি ও রোগ প্রতিরোধ ক্ষমতা বাড়াতে অত্যন্ত উপকারী।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
         </div>
         <div class="herb-card" data-category="ত্বক হজম">
-            <div class="herb-image"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500"></div>
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500" alt="অ্যালোভেরা"></div>
             <div class="herb-content"><h3>অ্যালোভেরা</h3><p>ত্বক, চুল ও হজমের জন্য বহুল ব্যবহৃত প্রাকৃতিক ভেষজ।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
         </div>
         <div class="herb-card" data-category="ত্বক">
-            <div class="herb-image"><img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=500"></div>
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=500" alt="নিম"></div>
             <div class="herb-content"><h3>নিম</h3><p>চর্মরোগ, রক্ত পরিষ্কার ও জীবাণুনাশক হিসেবে বিখ্যাত।</p><a href="#" class="herb-btn">বিস্তারিত দেখুন</a></div>
         </div>
     </div>
@@ -208,20 +215,28 @@
 </footer>
 
 <script>
+    // সাবস্ক্রাইব ফাংশন
     function subscribeUser() {
-        let email = document.getElementById('subscriberEmail').value;
-        if(email) alert("ধন্যবাদ! আপনি সফলভাবে সাবস্ক্রাইব করেছেন।");
-        else alert("অনুগ্রহ করে একটি সঠিক ইমেইল লিখুন।");
+        let email = document.getElementById('subscriberEmail').value.trim();
+        if(email && email.includes('@') && email.includes('.')) {
+            alert("ধন্যবাদ! আপনি সফলভাবে সাবস্ক্রাইব করেছেন।");
+            document.getElementById('subscriberEmail').value = '';
+        } else {
+            alert("অনুগ্রহ করে একটি সঠিক ইমেইল লিখুন (যেমন: example@domain.com)।");
+        }
     }
     
-    // সার্চ ফাংশন
+    // সার্চ ফাংশন (সার্চ বাটন ও এন্টার/কিপ্রেস দু'টোতেই কাজ করবে)
     function searchHerb() {
-        let input = document.getElementById('herbSearchInput').value.toLowerCase();
+        let input = document.getElementById('herbSearchInput').value.trim().toLowerCase();
         let cards = document.getElementsByClassName('herb-card');
         
+        // যদি ইনপুট ফাঁকা হয়, তাহলে সব কার্ড দেখাও (বা ফিল্টার রিসেট)
         for (let i = 0; i < cards.length; i++) {
-            let title = cards[i].querySelector('h3').innerText.toLowerCase();
-            if (title.includes(input)) {
+            let titleElem = cards[i].querySelector('h3');
+            if (!titleElem) continue;
+            let title = titleElem.innerText.toLowerCase();
+            if (input === "" || title.includes(input)) {
                 cards[i].style.display = "block";
             } else {
                 cards[i].style.display = "none";
@@ -229,23 +244,50 @@
         }
     }
 
-    // ফিল্টার ফাংশন
-    function filterHerbs(category) {
+    // ফিল্টার ফাংশন (এখন event এর পরিবর্তে বাটন অবজেক্ট পাস করছি)
+    function filterHerbs(category, btnElement) {
         let cards = document.getElementsByClassName('herb-card');
-        let btns = document.getElementsByClassName('filter-btn');
+        let allBtns = document.getElementsByClassName('filter-btn');
         
-        for(let btn of btns) btn.classList.remove('active');
-        event.currentTarget.classList.add('active');
+        // সব বাটন থেকে active ক্লাস সরান
+        for(let btn of allBtns) {
+            btn.classList.remove('active');
+        }
+        // বর্তমান বাটনে active যোগ করুন
+        btnElement.classList.add('active');
         
+        // প্রতিটি কার্ড চেক করে দেখানো/লুকানো
         for (let card of cards) {
-            let cardCat = card.getAttribute('data-category');
+            let cardCat = card.getAttribute('data-category') || "";
             if (category === 'all' || cardCat.includes(category)) {
                 card.style.display = "block";
             } else {
                 card.style.display = "none";
             }
         }
+        
+        // ফিল্টার করার সময় সার্চ ইনপুট ক্লিয়ার করে দেওয়া ভাল (অপশনাল)
+        // document.getElementById('herbSearchInput').value = '';
     }
+    
+    // পেজ লোড হলে নিশ্চিত করুন যে সার্চ ইনপুটে এন্টার চাপলেও সার্চ হয়
+    document.addEventListener('DOMContentLoaded', function() {
+        let searchInput = document.getElementById('herbSearchInput');
+        if(searchInput) {
+            searchInput.addEventListener('keypress', function(e) {
+                if(e.key === 'Enter') {
+                    e.preventDefault();
+                    searchHerb();
+                }
+            });
+        }
+        
+        // ডেমো: লগইন ও সাইন-আপ বাটনে ক্লিক ইভেন্ট (যেহেতু কোনো ব্যাকএন্ড নেই)
+        let authBtn = document.getElementById('auth-action');
+        let signupBtn = document.getElementById('signup-action');
+        if(authBtn) authBtn.addEventListener('click', () => alert('লগইন ফিচার শীঘ্রই আসছে।'));
+        if(signupBtn) signupBtn.addEventListener('click', () => alert('সাইন-আপ করতে আমাদের ওয়েবসাইট ভিজিট করুন।'));
+    });
 </script>
 
 </body>
