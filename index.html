@@ -1,131 +1,126 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ভেষজ চিকিৎসা কোষ | ১০০+ ঔষধি গাছের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</title>
+    <meta name="description" content="বাংলার সবচেয়ে বড় ভেষজ চিকিৎসা ও ঔষধি গাছের ডিজিটাল এনসাইক্লোপিডিয়া।">
+    <meta name="keywords" content="ভেষজ চিকিৎসা, Herbal, Tulsi, Neem, Aloe Vera">
+    <meta name="author" content="মোঃ দুলাল হোসেন">
 
-<title>ভেষজ চিকিৎসা কোষ | ১০০+ ঔষধি গাছের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</title>
-
-<meta name="description" content="বাংলার সবচেয়ে বড় ভেষজ চিকিৎসা ও ঔষধি গাছের ডিজিটাল এনসাইক্লোপিডিয়া।">
-<meta name="keywords" content="ভেষজ চিকিৎসা, Herbal, Tulsi, Neem, Aloe Vera">
-<meta name="author" content="মোঃ দুলাল হোসেন">
-
-<!-- FONT AWESOME -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<!-- GOOGLE FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- CSS FILE -->
-<link rel="stylesheet" href="style.css">
-
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- ================= NAVBAR ================= -->
 <nav>
-<a href="#" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
-
-<ul class="nav-links">
-<li><a href="#">হোম</a></li>
-<li><a href="#herb-section">ভেষজ তালিকা</a></li>
-
-<li><a id="login-btn" onclick="handleLogin()">লগইন</a></li>
-
-<li>
-<a id="user-info" class="signup-btn" onclick="handleLogin()">
-সাইন-আপ
-</a>
-</li>
-
-</ul>
+    <a href="#" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
+    <ul class="nav-links">
+        <li><a href="#">হোম</a></li>
+        <li><a href="#herb-section">ভেষজ তালিকা</a></li>
+        <li><a id="login-btn" onclick="handleLogin()">লগইন</a></li>
+        <li><a id="user-info" class="signup-btn" onclick="handleLogin()">সাইন-আপ</a></li>
+    </ul>
 </nav>
 
+<!-- ================= HERO ================= -->
 <section class="hero">
-<h1>🌿 ভেষজ চিকিৎসা কোষ</h1>
-<p>১০০+ ঔষধি গাছ ও প্রাকৃতিক স্বাস্থ্য সমাধান</p>
-
-<div class="search-box">
-<input type="text" id="herbSearchInput" placeholder="ভেষজ গাছ খুঁজুন..." onkeyup="searchHerb()">
-<button onclick="searchHerb()">
-<i class="fas fa-search"></i>
-</button>
-</div>
+    <h1>🌿 ভেষজ চিকিৎসা কোষ</h1>
+    <p>১০০+ ঔষধি গাছ ও প্রাকৃতিক স্বাস্থ্য সমাধান</p>
+    <div class="search-box">
+        <input type="text" id="herbSearchInput" placeholder="গাছের নাম বা রোগের নাম লিখুন..." onkeyup="searchHerb()">
+        <button onclick="searchHerb()"><i class="fas fa-search"></i></button>
+    </div>
 </section>
 
+<!-- ================= NEWS TICKER ================= -->
 <div class="news-ticker">
-<div class="ticker-content">
-🔴 ব্রেকিং নিউজ: ১০০+ ভেষজ তথ্য পাওয়া যাচ্ছে।
-&nbsp;&nbsp;&nbsp;
-🌿 প্রাকৃতিক চিকিৎসা সহজ সমাধান।
-</div>
+    <div class="ticker-content">
+        🔴 ব্রেকিং নিউজ: আমাদের প্ল্যাটফর্মে এখন ১০০টিরও বেশি ভেষজ গাছের তথ্য পাওয়া যাচ্ছে। &nbsp;&nbsp;&nbsp;
+        🌿 প্রাকৃতিক চিকিৎসায় নতুন বিপ্লব — সহজ সমাধান ঘরে বসেই! &nbsp;&nbsp;&nbsp;
+        📘 ভেষজ চিকিৎসা কোষের ই-বুক "রোগমুক্তির সহজ ভেষজ" শীঘ্রই আসছে।
+    </div>
 </div>
 
+<!-- ================= HERB SECTION ================= -->
 <section class="container" id="herb-section">
+    <div class="section-title">
+        <h2>জনপ্রিয় ভেষজ গাছসমূহ</h2>
+        <p>বাংলার সবচেয়ে কার্যকর ও জনপ্রিয় ভেষজ উদ্ভিদ</p>
+    </div>
 
-<div class="section-title">
-<h2>জনপ্রিয় ভেষজ গাছসমূহ</h2>
-<p>বাংলার সবচেয়ে কার্যকর ভেষজ</p>
-</div>
+    <div class="filter-btns">
+        <button class="filter-btn active" onclick="filterHerbs('all')">সবগুলো</button>
+        <button class="filter-btn" onclick="filterHerbs('সর্দি')">সর্দি-কাশি</button>
+        <button class="filter-btn" onclick="filterHerbs('ত্বক')">ত্বক ও চর্ম</button>
+        <button class="filter-btn" onclick="filterHerbs('হজম')">হজম ও পেট</button>
+    </div>
 
-<div class="filter-btns">
-<button class="filter-btn active" onclick="filterHerbs('all')">সবগুলো</button>
-<button class="filter-btn" onclick="filterHerbs('সর্দি')">সর্দি-কাশি</button>
-<button class="filter-btn" onclick="filterHerbs('ত্বক')">ত্বক</button>
-<button class="filter-btn" onclick="filterHerbs('হজম')">হজম</button>
-</div>
+    <div class="herb-grid" id="herbGrid">
+        <!-- TULSI -->
+        <div class="herb-card" data-category="সর্দি">
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500"></div>
+            <div class="herb-content">
+                <h3>তুলসী</h3>
+                <p>সর্দি, কাশি ও রোগ প্রতিরোধ ক্ষমতা বাড়াতে অত্যন্ত উপকারী।</p>
+                <a href="tulsi.html" class="herb-btn">বিস্তারিত দেখুন</a>
+            </div>
+        </div>
 
-<div class="herb-grid">
+        <!-- ALOEVERA -->
+        <div class="herb-card" data-category="ত্বক হজম">
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500"></div>
+            <div class="herb-content">
+                <h3>অ্যালোভেরা</h3>
+                <p>ত্বক, চুল ও হজমের জন্য বহুল ব্যবহৃত প্রাকৃতিক ভেষজ।</p>
+                <a href="aloevera.html" class="herb-btn">বিস্তারিত দেখুন</a>
+            </div>
+        </div>
 
-<div class="herb-card" data-category="সর্দি">
-<div class="herb-image">
-<img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500">
-</div>
-<div class="herb-content">
-<h3>তুলসী</h3>
-<p>সর্দি, কাশি ও রোগ প্রতিরোধ ক্ষমতা বাড়ায়।</p>
-<a href="tulsi.html" class="herb-btn">বিস্তারিত দেখুন</a>
-</div>
-</div>
-
-<div class="herb-card" data-category="ত্বক হজম">
-<div class="herb-image">
-<img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500">
-</div>
-<div class="herb-content">
-<h3>অ্যালোভেরা</h3>
-<p>ত্বক, চুল ও হজমে উপকারী।</p>
-<a href="aloevera.html" class="herb-btn">বিস্তারিত দেখুন</a>
-</div>
-</div>
-
-<div class="herb-card" data-category="ত্বক">
-<div class="herb-image">
-<img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=500">
-</div>
-<div class="herb-content">
-<h3>নিম</h3>
-<p>চর্মরোগ ও জীবাণুনাশক।</p>
-<a href="neem.html" class="herb-btn">বিস্তারিত দেখুন</a>
-</div>
-</div>
-
-</div>
+        <!-- NEEM -->
+        <div class="herb-card" data-category="ত্বক">
+            <div class="herb-image"><img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=500"></div>
+            <div class="herb-content">
+                <h3>নিম</h3>
+                <p>চর্মরোগ, রক্ত পরিষ্কার ও জীবাণুনাশক হিসেবে বিখ্যাত।</p>
+                <a href="neem.html" class="herb-btn">বিস্তারিত দেখুন</a>
+            </div>
+        </div>
+    </div>
 </section>
 
-<footer>
-<h2>🌿 ভেষজ চিকিৎসা কোষ</h2>
+<!-- ================= FEATURES ================= -->
+<section class="container">
+    <div class="section-title">
+        <h2>কেন ভেষজ চিকিৎসা কোষ?</h2>
+        <p>প্রাকৃতিক চিকিৎসার নির্ভরযোগ্য ডিজিটাল প্ল্যাটফর্ম</p>
+    </div>
+    <div class="features">
+        <div class="feature-box"><i class="fas fa-seedling"></i><h3>প্রাকৃতিক সমাধান</h3><p>প্রাচীন ভেষজ জ্ঞান ও আধুনিক তথ্যের সমন্বয়।</p></div>
+        <div class="feature-box"><i class="fas fa-book-open"></i><h3>বিস্তারিত তথ্য</h3><p>প্রতিটি উদ্ভিদের গুণাগুণ, ব্যবহার ও সতর্কতা।</p></div>
+        <div class="feature-box"><i class="fas fa-shield-heart"></i><h3>স্বাস্থ্য সচেতনতা</h3><p>নিরাপদ ও সচেতন ভেষজ ব্যবহারের নির্দেশনা।</p></div>
+    </div>
+</section>
 
-<p class="copyright">
-© ২০২৬ মোঃ দুলাল হোসেন
-</p>
+<!-- ================= FOOTER ================= -->
+<footer>
+    <h2 style="margin-bottom:30px; font-size:38px;">🌿 ভেষজ চিকিৎসা কোষ</h2>
+    <div class="footer-social">
+        <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.instagram.com/mddulal596" class="footer-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    </div>
+    <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
 </footer>
 
-<!-- Firebase -->
+<!-- FIREBASE -->
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-
-<!-- JS FILE -->
 <script src="script.js"></script>
-
 </body>
 </html>
