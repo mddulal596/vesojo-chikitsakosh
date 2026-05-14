@@ -1,969 +1,158 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ভেষজ চিকিৎসা কোষ | ১০০+ ঔষধি গাছের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</title>
-
-<meta name="description" content="বাংলার সবচেয়ে বড় ভেষজ চিকিৎসা ও ঔষধি গাছের ডিজিটাল এনসাইক্লোপিডিয়া।">
-
-<meta name="keywords" content="ভেষজ চিকিৎসা, Herbal, Tulsi, Neem, Aloe Vera">
-
-<meta name="author" content="মোঃ দুলাল হোসেন">
-
-<!-- FONT AWESOME -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<!-- GOOGLE FONT -->
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-:root{
-    --primary:#039be5;
-    --dark:#01579b;
-    --light:#f5fbff;
-    --text:#333;
-    --shadow:0 10px 30px rgba(0,0,0,0.08);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Hind Siliguri',sans-serif;
-    background:var(--light);
-    color:var(--text);
-    line-height:1.7;
-}
-
-/* ================= NAVBAR ================= */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:999;
-    background:#1976d2;
-    height:75px;
-    padding:0 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-
-.logo{
-    color:white;
-    text-decoration:none;
-    font-size:24px;
-    font-weight:700;
-}
-
-.nav-links{
-    display:flex;
-    list-style:none;
-    align-items:center;
-}
-
-.nav-links li a{
-    color:white;
-    text-decoration:none;
-    padding:10px 18px;
-    display:block;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.nav-links li a:hover{
-    opacity:0.85;
-}
-
-.signup-btn{
-    background:#ff9800;
-    color:white !important;
-    padding:8px 25px !important;
-    border-radius:50px;
-    margin-left:15px;
-    font-weight:600;
-}
-
-/* ================= HERO ================= */
-
-.hero{
-    background:
-    linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
-    url('https://images.unsplash.com/photo-1471193945509-9ad0617afabf?q=80&w=1400&auto=format&fit=crop');
-
-    background-size:cover;
-    background-position:center;
-
-    color:white;
-    text-align:center;
-    padding:120px 20px;
-}
-
-.hero h1{
-    font-size:3rem;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:1.2rem;
-}
-
-.search-box{
-    max-width:700px;
-    margin:40px auto 0;
-    display:flex;
-    background:white;
-    border-radius:60px;
-    overflow:hidden;
-    box-shadow:var(--shadow);
-}
-
-.search-box input{
-    flex:1;
-    padding:18px 25px;
-    border:none;
-    outline:none;
-    font-size:16px;
-}
-
-.search-box button{
-    width:75px;
-    border:none;
-    background:var(--primary);
-    color:white;
-    cursor:pointer;
-    font-size:20px;
-}
-
-/* ================= NEWS TICKER ================= */
-
-.news-ticker{
-    background:#ffeb3b;
-    color:#d32f2f;
-    padding:12px 0;
-    overflow:hidden;
-    white-space:nowrap;
-    font-weight:800;
-    font-size:1.1rem;
-    border-bottom:3px solid #fbc02d;
-}
-
-.ticker-content{
-    display:inline-block;
-    padding-left:100%;
-    animation:scroll-left 25s linear infinite;
-}
-
-@keyframes scroll-left{
-
-0%{
-    transform:translate(0,0);
-}
-
-100%{
-    transform:translate(-100%,0);
-}
-
-}
-
-/* ================= CONTAINER ================= */
-
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:70px 20px;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:50px;
-}
-
-.section-title h2{
-    font-size:2.5rem;
-    color:#01579b;
-    margin-bottom:10px;
-}
-
-/* ================= FILTER BUTTON ================= */
-
-.filter-btns{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.filter-btn{
-    padding:10px 25px;
-    margin:5px;
-    border:2px solid var(--primary);
-    background:white;
-    color:var(--primary);
-    border-radius:30px;
-    cursor:pointer;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.filter-btn.active,
-.filter-btn:hover{
-    background:var(--primary);
-    color:white;
-}
-
-/* ================= HERB CARD ================= */
-
-.herb-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-}
-
-.herb-card{
-    background:white;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:var(--shadow);
-    text-align:center;
-    padding-bottom:25px;
-    transition:0.3s;
-}
-
-.herb-card:hover{
-    transform:translateY(-10px);
-}
-
-.herb-image{
-    height:250px;
-    padding:20px;
-}
-
-.herb-image img{
-    width:100%;
-    height:100%;
-    object-fit:contain;
-}
-
-.herb-content{
-    padding:0 20px;
-}
-
-.herb-content h3{
-    margin-bottom:10px;
-    color:#01579b;
-}
-
-.herb-content p{
-    margin-bottom:20px;
-}
-
-.herb-btn{
-    display:inline-block;
-    padding:12px 35px;
-    background:#1976d2;
-    color:white;
-    text-decoration:none;
-    border-radius:50px;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.herb-btn:hover{
-    background:#01579b;
-}
-
-/* ================= FEATURES ================= */
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
-
-.feature-box{
-    background:white;
-    padding:35px;
-    border-radius:25px;
-    text-align:center;
-    box-shadow:var(--shadow);
-    transition:0.3s;
-}
-
-.feature-box:hover{
-    transform:translateY(-8px);
-}
-
-.feature-box i{
-    font-size:50px;
-    color:var(--primary);
-    margin-bottom:20px;
-}
-
-.feature-box h3{
-    margin-bottom:10px;
-}
-
-/* ================= NEWSLETTER ================= */
-
-.newsletter{
-    background:linear-gradient(135deg,#1976d2,#039be5);
-    color:white;
-    padding:60px 30px;
-    border-radius:30px;
-    text-align:center;
-}
-
-.newsletter h2{
-    font-size:2rem;
-    margin-bottom:15px;
-}
-
-.newsletter p{
-    margin-bottom:30px;
-}
-
-.newsletter-form{
-    max-width:650px;
-    margin:auto;
-    display:flex;
-    background:white;
-    border-radius:50px;
-    overflow:hidden;
-}
-
-.newsletter-form input{
-    flex:1;
-    padding:18px 20px;
-    border:none;
-    outline:none;
-    font-size:16px;
-}
-
-.newsletter-form button{
-    background:#ff9800;
-    color:white;
-    border:none;
-    padding:0 30px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-    background:linear-gradient(135deg,#444,#666);
-    color:white;
-    text-align:center;
-    padding:80px 20px 45px;
-}
-
-.footer-social{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-    margin-bottom:40px;
-}
-
-.footer-btn{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:14px 28px;
-    border-radius:50px;
-    color:white;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.footer-btn:hover{
-    transform:translateY(-4px);
-}
-
-.fb{
-    background:#1877F2;
-}
-
-.yt{
-    background:#FF0000;
-}
-
-.ig{
-    background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
-}
-
-.ln{
-    background:#0077B5;
-}
-
-.copyright{
-    font-size:24px;
-    font-weight:bold;
-    margin-top:20px;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:768px){
-
-.nav-links{
-    display:none;
-}
-
-.hero h1{
-    font-size:2.2rem;
-}
-
-.search-box{
-    border-radius:20px;
-}
-
-.newsletter-form{
-    flex-direction:column;
-    border-radius:20px;
-}
-
-.newsletter-form button{
-    padding:18px;
-}
-
-.copyright{
-    font-size:18px;
-}
-
-.section-title h2{
-    font-size:2rem;
-}
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ভেষজ চিকিৎসা কোষ | ১০০+ ঔষধি গাছের পূর্ণাঙ্গ এনসাইক্লোপিডিয়া</title>
+    <meta name="description" content="বাংলার সবচেয়ে বড় ভেষজ চিকিৎসা ও ঔষধি গাছের ডিজিটাল এনসাইক্লোপিডিয়া।">
+    <meta name="keywords" content="ভেষজ চিকিৎসা, Herbal, Tulsi, Neem, Aloe Vera">
+    <meta name="author" content="মোঃ দুলাল হোসেন">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
-
-<nav>
-
-<a href="#" class="logo">
-🌿 ভেষজ চিকিৎসা কোষ
-</a>
-
-<ul class="nav-links">
-
-<li>
-<a href="#">হোম</a>
-</li>
-
-<li>
-<a href="#herb-section">ভেষজ তালিকা</a>
-</li>
-
-<li>
-<a id="login-btn" onclick="handleLogin()">লগইন</a>
-</li>
-
-<li>
-<a id="user-info" class="signup-btn" onclick="handleLogin()">
-সাইন-আপ
-</a>
-</li>
-
-</ul>
-
-</nav>
-
-<!-- ================= HERO ================= -->
-
-<section class="hero">
-
-<h1>
-🌿 ভেষজ চিকিৎসা কোষ
-</h1>
-
-<p>
-১০০+ ঔষধি গাছ ও প্রাকৃতিক স্বাস্থ্য সমাধান
-</p>
-
-<div class="search-box">
-
-<input
-type="text"
-id="herbSearchInput"
-placeholder="ভেষজ গাছ খুঁজুন..."
-onkeyup="searchHerb()">
-
-<button onclick="searchHerb()">
-<i class="fas fa-search"></i>
-</button>
-
-</div>
-
-</section>
-
-<!-- ================= NEWS TICKER ================= -->
-
-<div class="news-ticker">
-
-<div class="ticker-content">
-
-🔴 ব্রেকিং নিউজ: আমাদের প্ল্যাটফর্মে এখন ১০০টিরও বেশি ভেষজ গাছের তথ্য পাওয়া যাচ্ছে।
-&nbsp;&nbsp;&nbsp;
-
-🌿 প্রাকৃতিক চিকিৎসায় নতুন বিপ্লব — সহজ সমাধান ঘরে বসেই!
-
-&nbsp;&nbsp;&nbsp;
-
-📘 ভেষজ চিকিৎসা কোষের ই-বুক "রোগমুক্তির সহজ ভেষজ" শীঘ্রই আসছে।
-
-</div>
-
-</div>
-
-<!-- ================= HERB SECTION ================= -->
-
-<section class="container" id="herb-section">
-
-<div class="section-title">
-
-<h2>
-জনপ্রিয় ভেষজ গাছসমূহ
-</h2>
-
-<p>
-বাংলার সবচেয়ে কার্যকর ও জনপ্রিয় ভেষজ উদ্ভিদ
-</p>
-
-</div>
-
-<div class="filter-btns">
-
-<button class="filter-btn active"
-onclick="filterHerbs('all')">
-
-সবগুলো
-
-</button>
-
-<button class="filter-btn"
-onclick="filterHerbs('সর্দি')">
-
-সর্দি-কাশি
-
-</button>
-
-<button class="filter-btn"
-onclick="filterHerbs('ত্বক')">
-
-ত্বক ও চর্ম
-
-</button>
-
-<button class="filter-btn"
-onclick="filterHerbs('হজম')">
-
-হজম ও পেট
-
-</button>
-
-</div>
-
-<div class="herb-grid" id="herbGrid">
-
-<!-- TULSI -->
-
-<div class="herb-card" data-category="সর্দি">
-
-<div class="herb-image">
-
-<img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500">
-
-</div>
-
-<div class="herb-content">
-
-<h3>
-তুলসী
-</h3>
-
-<p>
-সর্দি, কাশি ও রোগ প্রতিরোধ ক্ষমতা বাড়াতে অত্যন্ত উপকারী।
-</p>
-
-<a href="tulsi.html" class="herb-btn">
-বিস্তারিত দেখুন
-</a>
-
-</div>
-
-</div>
-
-<!-- ALOEVERA -->
-
-<div class="herb-card" data-category="ত্বক হজম">
-
-<div class="herb-image">
-
-<img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500">
-
-</div>
-
-<div class="herb-content">
-
-<h3>
-অ্যালোভেরা
-</h3>
-
-<p>
-ত্বক, চুল ও হজমের জন্য বহুল ব্যবহৃত প্রাকৃতিক ভেষজ।
-</p>
-
-<a href="aloevera.html" class="herb-btn">
-বিস্তারিত দেখুন
-</a>
-
-</div>
-
-</div>
-
-<!-- NEEM -->
-
-<div class="herb-card" data-category="ত্বক">
-
-<div class="herb-image">
-
-<img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=500">
-
-</div>
-
-<div class="herb-content">
-
-<h3>
-নিম
-</h3>
-
-<p>
-চর্মরোগ, রক্ত পরিষ্কার ও জীবাণুনাশক হিসেবে বিখ্যাত।
-</p>
-
-<a href="neem.html" class="herb-btn">
-বিস্তারিত দেখুন
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= FEATURES ================= -->
-
-<section class="container">
-
-<div class="section-title">
-
-<h2>
-কেন ভেষজ চিকিৎসা কোষ?
-</h2>
-
-<p>
-প্রাকৃতিক চিকিৎসার নির্ভরযোগ্য ডিজিটাল প্ল্যাটফর্ম
-</p>
-
-</div>
-
-<div class="features">
-
-<div class="feature-box">
-
-<i class="fas fa-seedling"></i>
-
-<h3>
-প্রাকৃতিক সমাধান
-</h3>
-
-<p>
-প্রাচীন ভেষজ জ্ঞান ও আধুনিক তথ্যের সমন্বয়।
-</p>
-
-</div>
-
-<div class="feature-box">
-
-<i class="fas fa-book-open"></i>
-
-<h3>
-বিস্তারিত তথ্য
-</h3>
-
-<p>
-প্রতিটি উদ্ভিদের গুণাগুণ, ব্যবহার ও সতর্কতা।
-</p>
-
-</div>
-
-<div class="feature-box">
-
-<i class="fas fa-shield-heart"></i>
-
-<h3>
-স্বাস্থ্য সচেতনতা
-</h3>
-
-<p>
-নিরাপদ ও সচেতন ভেষজ ব্যবহারের নির্দেশনা।
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= NEWSLETTER ================= -->
-
-<section class="container">
-
-<div class="newsletter">
-
-<h2>
-নতুন ভেষজ তথ্য পেতে যুক্ত থাকুন
-</h2>
-
-<p>
-আপনার ইমেইল দিয়ে নতুন স্বাস্থ্য টিপস ও ভেষজ তথ্য সংগ্রহ করুন।
-</p>
-
-<div class="newsletter-form">
-
-<input type="email"
-placeholder="আপনার ইমেইল লিখুন">
-
-<button>
-সাবস্ক্রাইব
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-<h2 style="margin-bottom:30px; font-size:38px;">
-🌿 ভেষজ চিকিৎসা কোষ
-</h2>
-
-<div class="footer-social">
-
-<a href="https://www.facebook.com/bonargidawahkana.net"
-class="footer-btn fb"
-target="_blank">
-
-<i class="fab fa-facebook-f"></i>
-Facebook
-
-</a>
-
-<a href="https://www.youtube.com/c/bonarjidawakhana"
-class="footer-btn yt"
-target="_blank">
-
-<i class="fab fa-youtube"></i>
-YouTube
-
-</a>
-
-<a href="https://www.instagram.com/mddulal596"
-class="footer-btn ig"
-target="_blank">
-
-<i class="fab fa-instagram"></i>
-Instagram
-
-</a>
-
-<a href="https://www.linkedin.com/in/bonargidawakhana/"
-class="footer-btn ln"
-target="_blank">
-
-<i class="fab fa-linkedin-in"></i>
-LinkedIn
-
-</a>
-
-</div>
-
-<p class="copyright">
-
-© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক
-
-</p>
-
-</footer>
-
-<!-- ================= FIREBASE ================= -->
-
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-
-<script>
-
-const firebaseConfig = {
-
-apiKey: "AIzaSyC2Ak9UCORHwy0HJrl3eIbfS2ILBdK_bBE",
-
-authDomain: "vesojo-chikitsakosh.firebaseapp.com",
-
-projectId: "vesojo-chikitsakosh",
-
-storageBucket: "vesojo-chikitsakosh.firebasestorage.app",
-
-messagingSenderId: "698398476413",
-
-appId: "1:698398476413:web:18853c971dbca60d02c914",
-
-measurementId: "G-F651KC1N3Y"
-
-};
-
-firebase.initializeApp(firebaseConfig);
-
-const auth = firebase.auth();
-
-/* ================= LOGIN ================= */
-
-async function handleLogin(){
-
-if(auth.currentUser){
-
-await auth.signOut();
-
-location.reload();
-
-}else{
-
-const provider = new firebase.auth.GoogleAuthProvider();
-
-try{
-
-await auth.signInWithPopup(provider);
-
-}catch(error){
-
-alert("লগইন করতে সমস্যা হয়েছে: " + error.message);
-
-}
-
-}
-
-}
-
-/* ================= AUTH ================= */
-
-auth.onAuthStateChanged(user=>{
-
-const loginBtn =
-document.getElementById('login-btn');
-
-const userInfo =
-document.getElementById('user-info');
-
-if(user){
-
-loginBtn.innerText = "লগআউট";
-
-userInfo.innerText = user.displayName;
-
-}else{
-
-loginBtn.innerText = "লগইন";
-
-userInfo.innerText = "সাইন-আপ";
-
-}
-
-});
-
-/* ================= SEARCH ================= */
-
-window.searchHerb = function(){
-
-let input =
-document.getElementById('herbSearchInput')
-.value.toLowerCase();
-
-let cards =
-document.getElementsByClassName('herb-card');
-
-for(let card of cards){
-
-let title =
-card.querySelector('h3')
-.innerText.toLowerCase();
-
-card.style.display =
-title.includes(input)
-? "block"
-: "none";
-
-}
-
-};
-
-/* ================= FILTER ================= */
-
-window.filterHerbs = function(category){
-
-let cards =
-document.getElementsByClassName('herb-card');
-
-let btns =
-document.getElementsByClassName('filter-btn');
-
-for(let btn of btns){
-
-btn.classList.remove('active');
-
-}
-
-event.currentTarget.classList.add('active');
-
-for(let card of cards){
-
-let cardCat =
-card.getAttribute('data-category');
-
-card.style.display =
-
-(category === 'all'
-|| cardCat.includes(category))
-
-? "block"
-: "none";
-
-}
-
-};
-
-</script>
-
+    <!-- NAVBAR -->
+    <nav>
+        <a href="#" class="logo">🌿 ভেষজ চিকিৎসা কোষ</a>
+        <ul class="nav-links">
+            <li><a href="#">হোম</a></li>
+            <li><a href="#herb-section">ভেষজ তালিকা</a></li>
+            <li><a id="login-btn" onclick="handleLogin()">লগইন</a></li>
+            <li><a id="user-info" class="signup-btn" onclick="handleLogin()">সাইন-আপ</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <h1>🌿 ভেষজ চিকিৎসা কোষ</h1>
+        <p>১০০+ ঔষধি গাছ ও প্রাকৃতিক স্বাস্থ্য সমাধান</p>
+        <div class="search-box">
+            <input type="text" id="herbSearchInput" placeholder="ভেষজ গাছ খুঁজুন..." onkeyup="searchHerb()">
+            <button onclick="searchHerb()"><i class="fas fa-search"></i></button>
+        </div>
+    </section>
+
+    <!-- NEWS TICKER -->
+    <div class="news-ticker">
+        <div class="ticker-content">
+            🔴 ব্রেকিং নিউজ: আমাদের প্ল্যাটফর্মে এখন ১০০টিরও বেশি ভেষজ গাছের তথ্য পাওয়া যাচ্ছে। &nbsp;&nbsp;&nbsp;
+            🌿 প্রাকৃতিক চিকিৎসায় নতুন বিপ্লব — সহজ সমাধান ঘরে বসেই! &nbsp;&nbsp;&nbsp;
+            📘 ভেষজ চিকিৎসা কোষের ই-বুক "রোগমুক্তির সহজ ভেষজ" শীঘ্রই আসছে।
+        </div>
+    </div>
+
+    <!-- HERB SECTION -->
+    <section class="container" id="herb-section">
+        <div class="section-title">
+            <h2>জনপ্রিয় ভেষজ গাছসমূহ</h2>
+            <p>বাংলার সবচেয়ে কার্যকর ও জনপ্রিয় ভেষজ উদ্ভিদ</p>
+        </div>
+
+        <div class="filter-btns">
+            <button class="filter-btn active" onclick="filterHerbs('all')">সবগুলো</button>
+            <button class="filter-btn" onclick="filterHerbs('সর্দি')">সর্দি-কাশি</button>
+            <button class="filter-btn" onclick="filterHerbs('ত্বক')">ত্বক ও চর্ম</button>
+            <button class="filter-btn" onclick="filterHerbs('হজম')">হজম ও পেট</button>
+        </div>
+
+        <div class="herb-grid" id="herbGrid">
+            <!-- TULSI -->
+            <div class="herb-card" data-category="সর্দি">
+                <div class="herb-image">
+                    <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=500">
+                </div>
+                <div class="herb-content">
+                    <h3>তুলসী</h3>
+                    <p>সর্দি, কাশি ও রোগ প্রতিরোধ ক্ষমতা বাড়াতে অত্যন্ত উপকারী।</p>
+                    <a href="tulsi.html" class="herb-btn">বিস্তারিত দেখুন</a>
+                </div>
+            </div>
+
+            <!-- ALOEVERA -->
+            <div class="herb-card" data-category="ত্বক হজম">
+                <div class="herb-image">
+                    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500">
+                </div>
+                <div class="herb-content">
+                    <h3>অ্যালোভেরা</h3>
+                    <p>ত্বক, চুল ও হজমের জন্য বহুল ব্যবহৃত প্রাকৃতিক ভেষজ।</p>
+                    <a href="aloevera.html" class="herb-btn">বিস্তারিত দেখুন</a>
+                </div>
+            </div>
+
+            <!-- NEEM -->
+            <div class="herb-card" data-category="ত্বক">
+                <div class="herb-image">
+                    <img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=500">
+                </div>
+                <div class="herb-content">
+                    <h3>নিম</h3>
+                    <p>চর্মরোগ, রক্ত পরিষ্কার ও জীবাণুনাশক হিসেবে বিখ্যাত।</p>
+                    <a href="neem.html" class="herb-btn">বিস্তারিত দেখুন</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="container">
+        <div class="section-title">
+            <h2>কেন ভেষজ চিকিৎসা কোষ?</h2>
+            <p>প্রাকৃতিক চিকিৎসার নির্ভরযোগ্য ডিজিটাল প্ল্যাটফর্ম</p>
+        </div>
+        <div class="features">
+            <div class="feature-box">
+                <i class="fas fa-seedling"></i>
+                <h3>প্রাকৃতিক সমাধান</h3>
+                <p>প্রাচীন ভেষজ জ্ঞান ও আধুনিক তথ্যের সমন্বয়।</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-book-open"></i>
+                <h3>বিস্তারিত তথ্য</h3>
+                <p>প্রতিটি উদ্ভিদের গুণাগুণ, ব্যবহার ও সতর্কতা।</p>
+            </div>
+            <div class="feature-box">
+                <i class="fas fa-shield-heart"></i>
+                <h3>স্বাস্থ্য সচেতনতা</h3>
+                <p>নিরাপদ ও সচেতন ভেষজ ব্যবহারের নির্দেশনা।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="container">
+        <div class="newsletter">
+            <h2>নতুন ভেষজ তথ্য পেতে যুক্ত থাকুন</h2>
+            <p>আপনার ইমেইল দিয়ে নতুন স্বাস্থ্য টিপস ও ভেষজ তথ্য সংগ্রহ করুন।</p>
+            <div class="newsletter-form">
+                <input type="email" placeholder="আপনার ইমেইল লিখুন">
+                <button>সাবস্ক্রাইব</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <h2 style="margin-bottom:30px; font-size:38px;">🌿 ভেষজ চিকিৎসা কোষ</h2>
+        <div class="footer-social">
+            <a href="https://www.facebook.com/bonargidawahkana.net" class="footer-btn fb" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://www.youtube.com/c/bonarjidawakhana" class="footer-btn yt" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="https://www.instagram.com/mddulal596" class="footer-btn ig" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://www.linkedin.com/in/bonargidawakhana/" class="footer-btn ln" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+        </div>
+        <p class="copyright">© ২০২৬ মোঃ দুলাল হোসেন | ডিজিটাল ক্রিয়েটর ও ভেষজ গবেষক</p>
+    </footer>
+
+    <!-- FIREBASE SDKS -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <!-- EXTERNAL JS -->
+    <script src="script.js"></script>
 </body>
 </html>
